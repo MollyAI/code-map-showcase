@@ -1,0 +1,2202 @@
+{
+  "anchor": "7a350986e3231a7b81cbfcc6e3c185327033422b",
+  "limit": 200,
+  "truncated": true,
+  "commits": [
+    {
+      "hash": "7a350986e3231a7b81cbfcc6e3c185327033422b",
+      "short": "7a350986e",
+      "time": 1780520363,
+      "subject": "Update bnd to v7.3.0 (#9475)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "0c5a45b1174b8f735cc251eb19faaed87b65d868",
+      "short": "0c5a45b11",
+      "time": 1780181140,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v13.5.0 (#9468)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "113ad17f70af6984a1a8b4d46024118e5409c44b",
+      "short": "113ad17f7",
+      "time": 1780044387,
+      "subject": "Update dependency macos to v26 (#9457)",
+      "files": [
+        ".github/workflows/publish.yml"
+      ]
+    },
+    {
+      "hash": "84f601af03d047eef3f4b2f0ca6b6f72303dcea1",
+      "short": "84f601af0",
+      "time": 1779975751,
+      "subject": "Update shadow.plugin to v9.4.2 (#9466)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7d463f4bcfca91e4466037f2c65c7c700545d64c",
+      "short": "7d463f4bc",
+      "time": 1779920706,
+      "subject": "Update spotless.plugin to v8.6.0 (#9464)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "3bf00f52921a0727bd18997cd92112dd2e582ed7",
+      "short": "3bf00f529",
+      "time": 1779912029,
+      "subject": "Update plugin com.diffplug.spotless to v8.6.0 (#9463)",
+      "files": [
+        "build-logic/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "cfc45a3f146d2389797a3d51d405e9118bed56c9",
+      "short": "cfc45a3f1",
+      "time": 1779725214,
+      "subject": "Update spotless.plugin to v8.5.1 (#9456)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "81c5006e336c1cb67870694e38707e2c1c44fb34",
+      "short": "81c5006e3",
+      "time": 1779703964,
+      "subject": "Apply gradle lint correctly (#9459)",
+      "files": [
+        "build-logic/build.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.quality-conventions.gradle.kts",
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "003d68d14f3c60e8fb20d08c50281e3410566acc",
+      "short": "003d68d14",
+      "time": 1779700642,
+      "subject": "Update org.bouncycastle to v1.84 (#9421)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "fbc810ece6f870aba76533611d89e9c23de37e34",
+      "short": "fbc810ece",
+      "time": 1779700631,
+      "subject": "Update kotlinx-coroutines monorepo to v1.11.0 (#9450)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "cab07951afccde4c44223c2750f8e3285b000933",
+      "short": "cab07951a",
+      "time": 1779700605,
+      "subject": "Update graalvm (#9427)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "517ecdc9e77f06cf3536355f1df8c4b061cc2bf9",
+      "short": "517ecdc9e",
+      "time": 1779700584,
+      "subject": "Update dependency com.github.iherasymenko.jlink to v0.9 (#9441)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "1509b260dd0a8dbd4cdb434c453ae7ff69d92444",
+      "short": "1509b260d",
+      "time": 1779700518,
+      "subject": "Update plugin com.diffplug.spotless to v8.5.1 (#9455)",
+      "files": [
+        "build-logic/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "0a96d3ef6240d51b483d06a9934d69f50a2f8702",
+      "short": "0a96d3ef6",
+      "time": 1779699189,
+      "subject": "Update Gradle to v9.5.1 (#9448)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "42995fba4dc50f38ba33777c36da2635a2f75ab6",
+      "short": "42995fba4",
+      "time": 1779587169,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v13.4.2 (#9432)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "cd011b2a44111871146979d450d4fb9bd5b10c05",
+      "short": "cd011b2a4",
+      "time": 1779573703,
+      "subject": "Update junit-framework monorepo to v1.14.4 (#9431)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "50797d59db18814ad97e762c660d2dae8cd9a64a",
+      "short": "50797d59d",
+      "time": 1779563632,
+      "subject": "Update rinchsan/renovate-config-validator action to v0.2.1 (#9425)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "1d9a8ba6c335355da9c71586abf82c9516e1bac5",
+      "short": "1d9a8ba6c",
+      "time": 1778843771,
+      "subject": "ci: declare contents:read on publish workflow (#9442)",
+      "files": [
+        ".github/workflows/publish.yml"
+      ]
+    },
+    {
+      "hash": "7442839891677985b42ea7b0c90e840160de1a41",
+      "short": "744283989",
+      "time": 1778717669,
+      "subject": "Update ksp monorepo to v2.3.8 (#9429)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e4ae9b02e913deec3a9da4c142064059436374fb",
+      "short": "e4ae9b02e",
+      "time": 1776712918,
+      "subject": "Update dependency org.jsoup:jsoup to v1.22.2 (#9424)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "ddd1c8fc4629576ca98568d56b5b0758bc01300f",
+      "short": "ddd1c8fc4",
+      "time": 1776590211,
+      "subject": "Update dependency org.apache.httpcomponents.client5:httpclient5 to v5.6.1 (#9423)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "5e5ff63f611715b32db397d9cdaf0be230907729",
+      "short": "5e5ff63f6",
+      "time": 1776206729,
+      "subject": "Update dependency com.google.guava:guava to v33.6.0-jre (#9422)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "b786cad2b05950dcfb667df50db16bb834fc5157",
+      "short": "b786cad2b",
+      "time": 1776153410,
+      "subject": "Update agp to v9.1.1 (#9419)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e43af3f8899bf25ee54d52bce762c4f624a1d465",
+      "short": "e43af3f88",
+      "time": 1776059592,
+      "subject": "Update dependency com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin to v0.4.2 (#9418)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "8a276b9dda950a52f6c0d88b15ed4a653623ae3e",
+      "short": "8a276b9dd",
+      "time": 1775807919,
+      "subject": "Update serialization to v1.11.0 (#9414)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "cc7262948a36d32249f61cb07014c8315854139f",
+      "short": "cc7262948",
+      "time": 1775683197,
+      "subject": "Update dependency androidx.annotation:annotation to v1.10.0 (#9413)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6b0151aa7512b5277c1e7337344f40467ad6ed4c",
+      "short": "6b0151aa7",
+      "time": 1775400823,
+      "subject": "Move androidDeviceTest to androidTest (#9405)",
+      "files": [
+        "android-test/build.gradle.kts",
+        "android-test/src/androidTest/README.md",
+        "android-test/src/androidTest/java/okhttp/android/test/OkHttpTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/SingleAndroidTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/StrictModeTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/alpn/AlpnOverrideTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/letsencrypt/LetsEncryptClientTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/sni/SniOverrideTest.kt"
+      ]
+    },
+    {
+      "hash": "ed800bf2db59c58a9ab849a6585f7d02814394f1",
+      "short": "ed800bf2d",
+      "time": 1775395654,
+      "subject": "Graal cleanup (#9404)",
+      "files": [
+        "okhttp/src/jvmMain/resources/META-INF/native-image/okhttp/okhttp/native-image.properties",
+        "okhttp/src/main/resources/META-INF/native-image/okhttp/okhttp/native-image.properties"
+      ]
+    },
+    {
+      "hash": "0981b93d868b57e344718a1f94c7378df4f1fea0",
+      "short": "0981b93d8",
+      "time": 1775389050,
+      "subject": "Update graalvm to v1 (major) (#9393)",
+      "files": [
+        ".github/workflows/build.yml",
+        "gradle/libs.versions.toml",
+        "okcurl/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "72e9c525cb453804b8806fca46e20decaad5824f",
+      "short": "72e9c525c",
+      "time": 1775388866,
+      "subject": "cleanup androidLibrary deprecation (#9403)",
+      "files": [
+        "okhttp/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "b938a8c60050d8af55ec4cd46fda5b29897989eb",
+      "short": "b938a8c60",
+      "time": 1775382174,
+      "subject": "Reject overflowing HPACK integers (#9401)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Hpack.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http2/HpackTest.kt"
+      ]
+    },
+    {
+      "hash": "6f053fe03ec5edcd1ce442d7a70883765b652f52",
+      "short": "6f053fe03",
+      "time": 1774994508,
+      "subject": "Update dependency com.github.jnr:jnr-unixsocket to v0.38.25 (#9399)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "99791c205d84bb4cacc433da99d418e93e1fccce",
+      "short": "99791c205",
+      "time": 1774922613,
+      "subject": "Update dependency com.gradleup.tapmoc:com.gradleup.tapmoc.gradle.plugin to v0.4.1 (#9398)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "dcd78b691ff9e1713ceec51a72a3776712d467fd",
+      "short": "dcd78b691",
+      "time": 1774852120,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v13.4.0 (#9394)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "c396b08f7a06e412c4cc8f5c83b0d7ed19f7fa6c",
+      "short": "c396b08f7",
+      "time": 1774631703,
+      "subject": "Update dependency com.squareup:kotlinpoet to v2.3.0 (#9392)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "346a1a70026dcbcb3abd3e054b060da1edccb000",
+      "short": "346a1a700",
+      "time": 1774616378,
+      "subject": "Update shadow.plugin to v9.4.1 (#9391)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "3640f2dc04d29bd911df412f7a6f9325bd3d65b0",
+      "short": "3640f2dc0",
+      "time": 1774601589,
+      "subject": "Update bnd to v7.2.3 (#9387)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "edbe2f451771dfb0226b73d4f9cf5def87f7dbc1",
+      "short": "edbe2f451",
+      "time": 1774600352,
+      "subject": "Update dokka to v2.2.0 (#9388)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "21ad1aa6aa4d5de7f5f52956f0841a5c304ab849",
+      "short": "21ad1aa6a",
+      "time": 1773998017,
+      "subject": "cache: guard null fields in Entry.writeTo() to fix NPE (#8962) (#9345)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Cache.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CacheTest.kt"
+      ]
+    },
+    {
+      "hash": "bbe4f22deca382a4842caf3a7949f9449d35e410",
+      "short": "bbe4f22de",
+      "time": 1773997150,
+      "subject": "Update Gradle to v9.4.1 (#9382)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.properties",
+        "gradlew"
+      ]
+    },
+    {
+      "hash": "d5e3c519804e00ae27e9632e06bc09cbe2dd489c",
+      "short": "d5e3c5198",
+      "time": 1773997135,
+      "subject": "Update spotless.plugin to v8.4.0 (#9381)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "af32975442e8bb27a8f0aed5abbf43956e4b3838",
+      "short": "af3297544",
+      "time": 1773996428,
+      "subject": "Revert JVM args for Gradle",
+      "files": [
+        "gradle.properties"
+      ]
+    },
+    {
+      "hash": "2ae6e02c2efa865585f9c0305c3163c1dcd84de3",
+      "short": "2ae6e02c2",
+      "time": 1773906399,
+      "subject": "Trim trailing whitespace in cookie value: JavaNetCookieJar to avoid crash (#9374)",
+      "files": [
+        "okhttp-java-net-cookiejar/src/main/kotlin/okhttp3/java/net/cookiejar/JavaNetCookieJar.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CookiesTest.kt"
+      ]
+    },
+    {
+      "hash": "2c7e2f9b790f06e336364abe93afbce3a146a843",
+      "short": "2c7e2f9b7",
+      "time": 1773857102,
+      "subject": "Update plugin com.diffplug.spotless to v8.4.0 (#9380)",
+      "files": [
+        "build-logic/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "a917c43f05dd65b45c1b2d4c8f4bfbf990fbde4b",
+      "short": "a917c43f0",
+      "time": 1773794932,
+      "subject": "Gradle and vscode tweaks (#9379)",
+      "files": [
+        ".gitignore",
+        ".vscode/settings.json",
+        "build-logic/build.gradle.kts",
+        "gradle.properties"
+      ]
+    },
+    {
+      "hash": "ab145845f644a744ed5e2a50d7a8ed6317dfc952",
+      "short": "ab145845f",
+      "time": 1773575875,
+      "subject": "Update shadow.plugin to v9.4.0 (#9376)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "332f403e5bd55a601b8c04d9e69ad5ef64334b2e",
+      "short": "332f403e5",
+      "time": 1773565338,
+      "subject": "Impose limits on HTTP/2 headers sizes (#9364)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/-HeadersCommon.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http1/HeadersReader.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Hpack.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Http2Reader.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CallLimitsTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CallTest.kt"
+      ]
+    },
+    {
+      "hash": "1694f67f48c8a6fb57c65e0f51d432db77e9259e",
+      "short": "1694f67f4",
+      "time": 1773565302,
+      "subject": "Update doc links from 4.x to 5.x (#9341)",
+      "files": [
+        ".gitignore",
+        "docs/features/caching.md",
+        "docs/features/calls.md",
+        "docs/features/connections.md",
+        "docs/features/events.md",
+        "docs/features/https.md",
+        "docs/recipes.md",
+        "okhttp-tls/README.md",
+        "test_docs.sh"
+      ]
+    },
+    {
+      "hash": "39dbb018b422333aa5d6551fcece2133b3480bd5",
+      "short": "39dbb018b",
+      "time": 1773565238,
+      "subject": "Added Android API check and dump tasks for the okhttp project. (#9375)",
+      "files": [
+        "build-logic/src/main/kotlin/okhttp.publish-conventions.gradle.kts"
+      ]
+    },
+    {
+      "hash": "c440d2265175ab80832bdcb832c96877ab7c7bb6",
+      "short": "c440d2265",
+      "time": 1773441851,
+      "subject": "Only declare KSP version once (#9371)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "2845669875dcc5629e8d0b70af184ded910b6f7a",
+      "short": "284566987",
+      "time": 1773441840,
+      "subject": "Only declare Dokka version once (#9368)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "147634bc3cc07e6d8bc9573d55e721c1af273b4a",
+      "short": "147634bc3",
+      "time": 1773407097,
+      "subject": "Update graalvm to v0.11.5 (#9352)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "932f2e169e95f2b2a67222552cbc4b6cd2aca374",
+      "short": "932f2e169",
+      "time": 1773300901,
+      "subject": "Update square.okio to v3.17.0 (#9367)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "90b706380d6a2e2eb011608a1c5e95a4650202eb",
+      "short": "90b706380",
+      "time": 1773207683,
+      "subject": "Replace ZstdInterceptor with CompressionInterceptor (#9336)",
+      "files": [
+        "okhttp-zstd/README.md"
+      ]
+    },
+    {
+      "hash": "1443c0c0746ab51f9ec8c7656e6e3ce6e4563ad3",
+      "short": "1443c0c07",
+      "time": 1773196620,
+      "subject": "Add copyright headers to some files that don't have 'em (#9363)",
+      "files": [
+        "build-logic/src/main/kotlin/okhttp3/buildsupport/OkHttpBuildUtils.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/InterceptorOverridesTest.kt",
+        "samples/static-server/src/main/java/okhttp3/sample/SampleServer.java"
+      ]
+    },
+    {
+      "hash": "385e70f1259d0970b9c657993687a9973aef0fd8",
+      "short": "385e70f12",
+      "time": 1773179240,
+      "subject": "Fix a binary-incompatible API change in Interceptor.Chain (#9360)",
+      "files": [
+        "mockwebserver-deprecated/build.gradle.kts",
+        "okhttp/api/android/okhttp.api",
+        "okhttp/api/jvm/okhttp.api",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Interceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/RealInterceptorChain.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/InterceptorOverridesTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/KotlinSourceModernTest.kt"
+      ]
+    },
+    {
+      "hash": "c85c685570d7a485721c0014bda3b3e52833b851",
+      "short": "c85c68557",
+      "time": 1773179114,
+      "subject": "Document WebSocket 16 MiB outgoing queue limit (#8123) (#9337)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/WebSocket.kt"
+      ]
+    },
+    {
+      "hash": "e81e7a2472241d14d654fb8f031ecab34f99b35a",
+      "short": "e81e7a247",
+      "time": 1773178705,
+      "subject": "Name the arguments to RealInterceptorChain (#9359)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/RealInterceptorChain.kt"
+      ]
+    },
+    {
+      "hash": "cdf075a8d018935cfcb408281212d465b83ec88a",
+      "short": "cdf075a8d",
+      "time": 1773159542,
+      "subject": "remove commented build steps (#9357)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "74f57581e4286ca9f107ad9ee4acc93d74efaa4f",
+      "short": "74f57581e",
+      "time": 1773083201,
+      "subject": "Update dependency org.eclipse.platform:org.eclipse.osgi to v3.24.100 (#9355)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e2061bdd146ae3ce5f097b78fa7a731dc7638510",
+      "short": "e2061bdd1",
+      "time": 1772661504,
+      "subject": "Update agp to v9.1.0 (#9351)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7c18d9324b03c298b9b32e353d711fecf13754b0",
+      "short": "7c18d9324",
+      "time": 1772656480,
+      "subject": "Update Gradle to v9.4.0 (#9353)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.jar",
+        "gradle/wrapper/gradle-wrapper.properties",
+        "gradlew"
+      ]
+    },
+    {
+      "hash": "3b0c9a43b1331c2e183106916b9d76b8862f5aec",
+      "short": "3b0c9a43b",
+      "time": 1772514979,
+      "subject": "Update plugin com.diffplug.spotless to v8.3.0 (#9348)",
+      "files": [
+        "build-logic/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "97c5db63a0a500ed7edc70f7045df91f8345b378",
+      "short": "97c5db63a",
+      "time": 1772514958,
+      "subject": "Update spotless.plugin to v8.3.0 (#9349)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7adfae242d5f6a58c6f087e9a134e3079df0cae8",
+      "short": "7adfae242",
+      "time": 1772330088,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v13.3.0 (#9346)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e3a0a685599c26471674664d8c41c7b414d97157",
+      "short": "e3a0a6855",
+      "time": 1772226973,
+      "subject": "Update dependency com.gradleup.shadow:shadow-gradle-plugin to v9.3.2 (#9344)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6ef2223507dd778c9858087dd980db051e7b8bce",
+      "short": "6ef222350",
+      "time": 1772143864,
+      "subject": "Update actions/upload-artifact action to v7 (#9343)",
+      "files": [
+        ".github/workflows/docs.yml"
+      ]
+    },
+    {
+      "hash": "2ece5518a26cc78e90c1b3a729d10747bdc6ea7d",
+      "short": "2ece5518a",
+      "time": 1771781770,
+      "subject": "Update ksp monorepo to v2.3.6 (#9332)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "608387b1eab183998af7551f086a67521e9d6530",
+      "short": "608387b1e",
+      "time": 1771781756,
+      "subject": "Update dependency org.jetbrains:annotations to v26.1.0 (#9333)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "37aa3580ace2864788a12a5333caab2f4fd7ea88",
+      "short": "37aa3580a",
+      "time": 1771270640,
+      "subject": "Update junit-framework monorepo to v1.14.3 (#9330)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "167be216044b01ae2fbf7305aaeb41906658eb59",
+      "short": "167be2160",
+      "time": 1771156938,
+      "subject": "Pin androidx dep for minSdk reasons",
+      "files": [
+        ".github/renovate.json"
+      ]
+    },
+    {
+      "hash": "00f218849781f7534bac8ebf3575424c1da178a5",
+      "short": "00f218849",
+      "time": 1771156667,
+      "subject": "Bury the Version 4.x section in CHANGELOG.md (#9328)",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "663068c1ba9092cb7846a5bdf195bc702ad08b0b",
+      "short": "663068c1b",
+      "time": 1771009616,
+      "subject": "Update agp to v9.0.1 (#9327)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e08bac1187cce67e324596d5f5022e6588b96840",
+      "short": "e08bac118",
+      "time": 1770648026,
+      "subject": "Apply kotlin version compat (#9322)",
+      "files": [
+        "build-logic/build.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.jvm-conventions.gradle.kts",
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "437103d2eed9b60624fbb75c55bdbd0aa35d4ecc",
+      "short": "437103d2e",
+      "time": 1770584821,
+      "subject": "Avoid a problem test with BC (#9323)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/HttpUpgradesTest.kt"
+      ]
+    },
+    {
+      "hash": "4317819d6a534adad139710457598f2777c7b7a4",
+      "short": "4317819d6",
+      "time": 1770581185,
+      "subject": "Allow write from jvm build (#9324)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "c7556e0ac6d690ccb71d304d22d636f2f86baf7b",
+      "short": "c7556e0ac",
+      "time": 1770448617,
+      "subject": "Fix OpenJSSE module config (#9316)",
+      "files": [
+        ".github/workflows/build.yml",
+        "build-logic/src/main/kotlin/okhttp.testing-conventions.gradle.kts",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CacheTest.kt"
+      ]
+    },
+    {
+      "hash": "062ed30ce968ce7e960eb65e9cf95155b1657c6c",
+      "short": "062ed30ce",
+      "time": 1770448004,
+      "subject": "Update actions/cache action to v5 (#9318)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "b6bff20bcd11283522a236f3be871d3b0f61cb54",
+      "short": "b6bff20bc",
+      "time": 1770447637,
+      "subject": "Use specific old build for ALPN testing (#9319)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "dfaf54f40c06249b0c4be2efdd5808c64bfa5e85",
+      "short": "dfaf54f40",
+      "time": 1770447394,
+      "subject": "CI workflow reorg (#9317)",
+      "files": [
+        ".github/workflows/build.yml",
+        "android-test-app/build.gradle.kts",
+        "regression-test/src/androidTest/java/okhttp/regression/compare/ApacheHttpClientHttp2Test.kt",
+        "regression-test/src/androidTest/java/okhttp/regression/compare/ApacheHttpClientTest.kt"
+      ]
+    },
+    {
+      "hash": "a0051a5dabd114c7b04d42e3c94103dc81ea5ed4",
+      "short": "a0051a5da",
+      "time": 1770331678,
+      "subject": "More config caching fixes (#9314)",
+      "files": [
+        "build-logic/src/main/kotlin/JavaModules.kt"
+      ]
+    },
+    {
+      "hash": "ea2f43c13f90c290c8adb4757ccadfb84f9eb566",
+      "short": "ea2f43c13",
+      "time": 1770328511,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v13.2.0 (#9312)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "a3281017d91590512e1005ed2f72b292c41065df",
+      "short": "a3281017d",
+      "time": 1770283053,
+      "subject": "Enable Gradle Configuration Cache — by refactoring OSGi/BND plugin (#9310)",
+      "files": [
+        "build-logic/build.gradle.kts",
+        "build-logic/src/main/kotlin/BndBuildAction.kt",
+        "build-logic/src/main/kotlin/Osgi.kt",
+        "build-logic/src/main/kotlin/okhttp.quality-conventions.gradle.kts",
+        "container-tests/build.gradle.kts",
+        "gradle.properties",
+        "gradle/libs.versions.toml",
+        "okcurl/build.gradle.kts",
+        "okhttp-osgi-tests/build.gradle.kts",
+        "settings.gradle.kts"
+      ]
+    },
+    {
+      "hash": "6ae3a59fc81ba53ed70454c4906f45faccc53d39",
+      "short": "6ae3a59fc",
+      "time": 1770282997,
+      "subject": "Refactor: Consolidate CI jobs using matrix strategies (#9311)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "855c008a99374bf80403f2757e737820c88522be",
+      "short": "855c008a9",
+      "time": 1770243399,
+      "subject": "Fix configuration cache issues (#9308)",
+      "files": [
+        "build-logic/src/main/kotlin/Osgi.kt",
+        "build-logic/src/main/kotlin/okhttp.base-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp3/buildsupport/OkHttpBuildUtils.kt",
+        "gradle.properties",
+        "okhttp-osgi-tests/build.gradle.kts",
+        "okhttp/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "06caf5682d5bae9afbcf8e6c6aa042761bd8a77f",
+      "short": "06caf5682",
+      "time": 1770243290,
+      "subject": "Integrate Spotless for build-logic (#9309)",
+      "files": [
+        "build-logic/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "7d7982e05e679b91f0e35c8eb3430aeac20ed30a",
+      "short": "7d7982e05",
+      "time": 1770239089,
+      "subject": "Update org.bouncycastle to v1.83 (#9212)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "2fa8db3c02ff6a16e4a255d2ae7ec5284ef9d96b",
+      "short": "2fa8db3c0",
+      "time": 1770239056,
+      "subject": "Update bnd to v7.2.1 (#9253)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "68eada197a8e6fbb32ebe894e41df640c4e16aa7",
+      "short": "68eada197",
+      "time": 1770237904,
+      "subject": "Move robolectric config to the right location (#9307)",
+      "files": [
+        "okhttp/src/androidHostTest/resources/okhttp3/robolectric.properties",
+        "okhttp/src/jvmTest/resources/okhttp3/robolectric.config"
+      ]
+    },
+    {
+      "hash": "c0d828ba9edaee2f2c4f87d4d68b3f67f4d9e90d",
+      "short": "c0d828ba9",
+      "time": 1770236929,
+      "subject": "Update junit-framework monorepo to v1.14.2 (#9278)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "a8f0be22e50a4ea8a5bcacc40cd382b39c5037a2",
+      "short": "a8f0be22e",
+      "time": 1770236885,
+      "subject": "Update ksp monorepo to v2.3.5 (#9297)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "526d796436d66487c6b95e38d984f469bb174771",
+      "short": "526d79643",
+      "time": 1770236618,
+      "subject": "Update dependency com.google.guava:guava to v33.5.0-jre (#9301)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "473caa8491a5bb6496c084f1fe9a59b21529ce15",
+      "short": "473caa849",
+      "time": 1770236594,
+      "subject": "Update dependency org.apache.httpcomponents.client5:httpclient5 to v5.6 (#9302)",
+      "files": [
+        "gradle/libs.versions.toml",
+        "samples/compare/src/test/kotlin/okhttp3/compare/ApacheHttpClientTest.kt"
+      ]
+    },
+    {
+      "hash": "27ee8c6c86ea77fff437fdc03fc356ebc61457ee",
+      "short": "27ee8c6c8",
+      "time": 1770236442,
+      "subject": "Bump JDK for maven build (#9306)",
+      "files": [
+        "maven-tests/pom.xml"
+      ]
+    },
+    {
+      "hash": "bdb4ad28a98ee241c6a954edacf805233b3d0a30",
+      "short": "bdb4ad28a",
+      "time": 1770236429,
+      "subject": "Avoid FakeDns flakes (#9305)",
+      "files": [
+        "okhttp-testing-support/src/main/kotlin/okhttp3/FakeDns.kt"
+      ]
+    },
+    {
+      "hash": "c5f0af085caadfc2f9c42e7f9febefac4e113ba8",
+      "short": "c5f0af085",
+      "time": 1770189163,
+      "subject": "Update dependency com.github.ajalt.clikt:clikt to v5.1.0 (#9300)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "c4f96b781aefd38dd217f675e8c09414a82faac4",
+      "short": "c4f96b781",
+      "time": 1770157079,
+      "subject": "Adopt a full modern gradle build (#9292)",
+      "files": [
+        ".github/workflows/build.yml",
+        ".github/workflows/containers.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/publish.yml",
+        "android-test-app/build.gradle.kts",
+        "android-test/build.gradle.kts",
+        "build-logic/build.gradle.kts",
+        "build-logic/settings.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.base-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.dokka-multimodule-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.jvm-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.publish-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.quality-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp.testing-conventions.gradle.kts",
+        "build-logic/src/main/kotlin/okhttp3/buildsupport/OkHttpBuildUtils.kt",
+        "build.gradle.kts",
+        "container-tests/build.gradle.kts",
+        "gradle/gradle-daemon-jvm.properties",
+        "gradle/libs.versions.toml",
+        "mockwebserver-deprecated/build.gradle.kts",
+        "mockwebserver-junit4/build.gradle.kts",
+        "mockwebserver-junit5/build.gradle.kts",
+        "mockwebserver-junit5/src/main/kotlin/mockwebserver3/junit5/internal/StartStopExtension.kt",
+        "mockwebserver/build.gradle.kts",
+        "module-tests/build.gradle.kts",
+        "native-image-tests/build.gradle.kts",
+        "okcurl/build.gradle.kts",
+        "okhttp-bom/build.gradle.kts",
+        "okhttp-brotli/build.gradle.kts",
+        "okhttp-coroutines/build.gradle.kts",
+        "okhttp-dnsoverhttps/build.gradle.kts",
+        "okhttp-hpacktests/build.gradle.kts",
+        "okhttp-idna-mapping-table/build.gradle.kts",
+        "okhttp-java-net-cookiejar/build.gradle.kts",
+        "okhttp-logging-interceptor/build.gradle.kts",
+        "okhttp-osgi-tests/build.gradle.kts",
+        "okhttp-sse/build.gradle.kts",
+        "okhttp-testing-support/build.gradle.kts",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/DelegatingSSLSession.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/FakeSSLSession.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/SimpleProvider.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/okio/LoggingFilesystem.kt",
+        "okhttp-tls/build.gradle.kts",
+        "okhttp-urlconnection/build.gradle.kts",
+        "okhttp-zstd/build.gradle.kts",
+        "okhttp/build.gradle.kts",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Headers.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/OkHttpClient.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/platform/Jdk9Platform.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/platform/Platform.kt",
+        "okhttp/src/jvmMain/java9/module-info.java",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CacheControlJvmTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CipherSuiteTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/EventListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/OkHttpClientTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RequestCommonTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RequestTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/cache/DiskLruCacheTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/concurrent/TaskRunnerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/ws/WebSocketRecorder.kt",
+        "okhttp/src/jvmTest/resources/okhttp3/robolectric.config",
+        "regression-test/build.gradle.kts",
+        "samples/compare/build.gradle.kts",
+        "samples/crawler/build.gradle.kts",
+        "samples/guide/build.gradle.kts",
+        "samples/simple-client/build.gradle.kts",
+        "samples/slack/build.gradle.kts",
+        "samples/static-server/build.gradle.kts",
+        "samples/tlssurvey/build.gradle.kts",
+        "samples/unixdomainsockets/build.gradle.kts",
+        "settings.gradle.kts"
+      ]
+    },
+    {
+      "hash": "3d4bef9019080e543e9085ea7fede1242347c5b2",
+      "short": "3d4bef901",
+      "time": 1770106575,
+      "subject": "Reformat (#9296)",
+      "files": [
+        "okhttp-tls/src/test/java/okhttp3/tls/HandshakeCertificatesTest.kt"
+      ]
+    },
+    {
+      "hash": "20e52968dc37c037280d593c3b0d10575066886a",
+      "short": "20e52968d",
+      "time": 1770106345,
+      "subject": "Fix flaky platformTrustedCertificates test for non-Entrust platforms (#9295)",
+      "files": [
+        "okhttp-tls/src/test/java/okhttp3/tls/HandshakeCertificatesTest.kt"
+      ]
+    },
+    {
+      "hash": "104efb7994414e5bdd02e70860f671540d4b60bd",
+      "short": "104efb799",
+      "time": 1769981150,
+      "subject": "Update plugin org.gradlex.extra-java-module-info to v1.14 (#9291)",
+      "files": [
+        "module-tests/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "7c2b61a46d8c1ff47ed0934b5c21c6f358522efb",
+      "short": "7c2b61a46",
+      "time": 1769965085,
+      "subject": "Update Gradle to v9.3.1 (#9290)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "7d2a30763cc53ea00dfd93162af5f589257d37db",
+      "short": "7d2a30763",
+      "time": 1769965054,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.3.5 (#9284)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6dd59fc379c063715b63ebb7d7be909d367a3ff3",
+      "short": "6dd59fc37",
+      "time": 1769963960,
+      "subject": "Update dependency net.ltgt.gradle:gradle-errorprone-plugin to v5 (#9285)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "9e9aab7eee6ad9b1c40953c2a95f99ae33f4bcbd",
+      "short": "9e9aab7ee",
+      "time": 1769963735,
+      "subject": "Introduce build-logic decoupled convention plugins (#9289)",
+      "files": [
+        "build-logic/build.gradle.kts",
+        "build-logic/settings.gradle.kts",
+        "build-logic/src/main/kotlin/AlpnVersions.kt",
+        "build-logic/src/main/kotlin/JavaModules.kt",
+        "build-logic/src/main/kotlin/Osgi.kt",
+        "build-logic/src/main/kotlin/okhttp.publish-conventions.gradle.kts",
+        "build.gradle.kts",
+        "buildSrc/build.gradle.kts",
+        "buildSrc/settings.gradle.kts",
+        "mockwebserver-deprecated/build.gradle.kts",
+        "mockwebserver-junit4/build.gradle.kts",
+        "mockwebserver-junit5/build.gradle.kts",
+        "mockwebserver/build.gradle.kts",
+        "okcurl/build.gradle.kts",
+        "okhttp-bom/build.gradle.kts",
+        "okhttp-brotli/build.gradle.kts",
+        "okhttp-coroutines/build.gradle.kts",
+        "okhttp-dnsoverhttps/build.gradle.kts",
+        "okhttp-java-net-cookiejar/build.gradle.kts",
+        "okhttp-logging-interceptor/build.gradle.kts",
+        "okhttp-sse/build.gradle.kts",
+        "okhttp-tls/build.gradle.kts",
+        "okhttp-urlconnection/build.gradle.kts",
+        "okhttp-zstd/build.gradle.kts",
+        "okhttp/build.gradle.kts",
+        "settings.gradle.kts"
+      ]
+    },
+    {
+      "hash": "861b1f7c3bee82d9360c8b4379e420491db3189b",
+      "short": "861b1f7c3",
+      "time": 1769590561,
+      "subject": "Update dependency com.diffplug.spotless:spotless-plugin-gradle to v8.2.1 (#9283)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "e7c50cce8cbe62d24ed63c65a18dd3a4818812fd",
+      "short": "e7c50cce8",
+      "time": 1769504439,
+      "subject": "Update dependency com.diffplug.spotless:spotless-plugin-gradle to v8.2.0 (#9268)",
+      "files": [
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/OkHttpTest.kt",
+        "build.gradle.kts",
+        "gradle/libs.versions.toml",
+        "mockwebserver-deprecated/src/main/kotlin/okhttp3/mockwebserver/DeprecationBridge.kt",
+        "mockwebserver/src/main/kotlin/mockwebserver3/MockWebServer.kt",
+        "okhttp-idna-mapping-table/src/main/kotlin/okhttp3/internal/idn/MappingTables.kt",
+        "okhttp-idna-mapping-table/src/main/kotlin/okhttp3/internal/idn/SimpleIdnaMappingTable.kt",
+        "okhttp-sse/src/main/kotlin/okhttp3/sse/internal/ServerSentEventReader.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/EventRecorder.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/JsseDebugLogging.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/RecordingConnectionListener.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/testing/Flaky.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/testing/PlatformRule.kt",
+        "okhttp-tls/src/main/kotlin/okhttp3/tls/HeldCertificate.kt",
+        "okhttp-tls/src/main/kotlin/okhttp3/tls/internal/der/CertificateAdapters.kt",
+        "okhttp-tls/src/main/kotlin/okhttp3/tls/internal/der/DerReader.kt",
+        "okhttp/src/androidMain/kotlin/okhttp3/internal/platform/android/ConscryptSocketAdapter.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/CertificatePinner.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Cookie.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Handshake.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Headers.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/HttpUrl.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/MediaType.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/MultipartReader.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/OkHttpClient.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Protocol.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/-CacheControlCommon.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/-UtilJvm.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/Tags.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache/CacheStrategy.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache/DiskLruCache.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/ConnectPlan.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/FastFallbackExchangeFinder.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealConnectionPool.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealRoutePlanner.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/HttpHeaders.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/RetryAndFollowUpInterceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http1/Http1ExchangeCodec.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Hpack.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Http2.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http2/Http2Connection.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/idn/IdnaMappingTable.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/idn/Punycode.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/internal.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/platform/Jdk9Platform.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/platform/Platform.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/tls/OkHostnameVerifier.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/ws/WebSocketExtensions.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/ws/WebSocketReader.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/ws/WebSocketWriter.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/BouncyCastlePlatform.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/ConscryptPlatform.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/OpenJSSEPlatform.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CallTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/ConnectionReuseTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/EventListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/FakeRoutePlanner.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/JSSETest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/SocksProxy.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/TrailersTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/URLConnectionTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/UrlComponentEncodingTester.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/UrlComponentEncodingTesterJvm.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http2/HttpOverHttp2Test.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/tls/CertificatePinnerChainValidationTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/tls/ClientAuthTest.kt",
+        "samples/guide/src/main/java/okhttp3/recipes/kt/WiresharkExample.kt",
+        "samples/guide/src/test/kotlin/okhttp3/AllMainsTest.kt"
+      ]
+    },
+    {
+      "hash": "781e7488409b45a48023533292a30df436209f44",
+      "short": "781e74884",
+      "time": 1769502415,
+      "subject": "Update dependency de.mannodermaus.gradle.plugins:android-junit5 to v2 (#9282)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "2b1b18d8981e694439239d465fe5ad98a2cf9275",
+      "short": "2b1b18d89",
+      "time": 1769502280,
+      "subject": "Update dependency com.gradleup.shadow:shadow-gradle-plugin to v9.3.1 (#9222)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "b933e5d78cc20f7d681f4b416aa58264eb7e5768",
+      "short": "b933e5d78",
+      "time": 1769502240,
+      "subject": "Update dependency org.jsoup:jsoup to v1.22.1 (#9255)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "b046ca3da24a9ddb580a41d69ecdb6e1505395eb",
+      "short": "b046ca3da",
+      "time": 1769502142,
+      "subject": "Update de.mannodermaus.junit5 to v2 (#9280)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "3d151350a332271541b05776c435e12a8094e867",
+      "short": "3d151350a",
+      "time": 1769502089,
+      "subject": "Update kotlinx.serialization to v1.10.0 (#9279)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "1768ecf0afd204c778789e5a1c55d2b1810a1ada",
+      "short": "1768ecf0a",
+      "time": 1769502000,
+      "subject": "Update Gradle to v9.3.0 (#9277)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.jar",
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "1023c0d009b2abad8162a299b107d1e184ff9db3",
+      "short": "1023c0d00",
+      "time": 1769501983,
+      "subject": "Update dependency org.codehaus.mojo:animal-sniffer-annotations to v1.27 (#9276)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "530600144f3d276ec327edae963e538869928c06",
+      "short": "530600144",
+      "time": 1769501969,
+      "subject": "Update dependency com.vanniktech:gradle-maven-publish-plugin to v0.36.0 (#9275)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "084eef611155b739442f63327e65502db94e6722",
+      "short": "084eef611",
+      "time": 1769500732,
+      "subject": "Update dependency org.robolectric:robolectric to v4.16.1 (#9266)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "1672930a0d206a8b45cba5d62f39c9b97741460b",
+      "short": "1672930a0",
+      "time": 1769413131,
+      "subject": "Enable AGP newDsl (#9269)",
+      "files": [
+        ".github/workflows/build.yml",
+        "android-test/src/androidDeviceTest/README.md",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/OkHttpTest.kt",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/SingleAndroidTest.kt",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/StrictModeTest.kt",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/alpn/AlpnOverrideTest.kt",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/letsencrypt/LetsEncryptClientTest.kt",
+        "android-test/src/androidDeviceTest/java/okhttp/android/test/sni/SniOverrideTest.kt",
+        "gradle.properties",
+        "okhttp/build.gradle.kts",
+        "okhttp/src/androidHostTest/kotlin/okhttp3/internal/publicsuffix/PublicSuffixTesting.android.kt"
+      ]
+    },
+    {
+      "hash": "bb420b201d9f01c01d493b82a7b4cd9efd38ec41",
+      "short": "bb420b201",
+      "time": 1769357606,
+      "subject": "Update graalvm (#9267)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "36de97b7536e138192fe94a531a8b52eea6845ed",
+      "short": "36de97b75",
+      "time": 1769354544,
+      "subject": "Update dependency net.ltgt.gradle:gradle-errorprone-plugin to v4.4.0 (#9254)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "d75b142c12e42cf6e966e98c988d69097263d2db",
+      "short": "d75b142c1",
+      "time": 1769353218,
+      "subject": "Update to AGP 9 (#9264)",
+      "files": [
+        "android-test-app/build.gradle.kts",
+        "android-test/build.gradle.kts",
+        "build.gradle.kts",
+        "gradle.properties",
+        "gradle/libs.versions.toml",
+        "regression-test/build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "01655fa803735efadf0c724d6762cdb44c6da222",
+      "short": "01655fa80",
+      "time": 1769346962,
+      "subject": "Fix JavaHttpClientTest (#9265)",
+      "files": [
+        "samples/compare/src/test/kotlin/okhttp3/compare/JavaHttpClientTest.kt"
+      ]
+    },
+    {
+      "hash": "7f3a2208779af439dd5d64e5bc31c1297a6d9673",
+      "short": "7f3a22087",
+      "time": 1769344633,
+      "subject": "Switch to Dokka v2 (#9263)",
+      "files": [
+        ".github/workflows/build.yml",
+        ".vscode/settings.json",
+        "build.gradle.kts",
+        "gradle.properties",
+        "gradle/libs.versions.toml",
+        "mockwebserver-deprecated/build.gradle.kts",
+        "mockwebserver-junit4/build.gradle.kts",
+        "mockwebserver-junit5/build.gradle.kts",
+        "mockwebserver/build.gradle.kts",
+        "module-tests/build.gradle.kts",
+        "okcurl/build.gradle.kts",
+        "okhttp-brotli/build.gradle.kts",
+        "okhttp-coroutines/build.gradle.kts",
+        "okhttp-dnsoverhttps/build.gradle.kts",
+        "okhttp-java-net-cookiejar/build.gradle.kts",
+        "okhttp-logging-interceptor/build.gradle.kts",
+        "okhttp-sse/build.gradle.kts",
+        "okhttp-tls/build.gradle.kts",
+        "okhttp-urlconnection/build.gradle.kts",
+        "okhttp-zstd/build.gradle.kts",
+        "okhttp/build.gradle.kts",
+        "settings.gradle.kts",
+        "test_docs.sh"
+      ]
+    },
+    {
+      "hash": "0f0615cdd99bb8463d2110512bc9c874c6c794e0",
+      "short": "0f0615cdd",
+      "time": 1768897521,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.3.1 (#9252)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "58da11d5787965c348fcf56fe67dbb625bfffdd9",
+      "short": "58da11d57",
+      "time": 1768373096,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.3.4 (#9208)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "9d5e7f10cc8beb03acb527ebc29a50cfa5fb3dbe",
+      "short": "9d5e7f10c",
+      "time": 1768373081,
+      "subject": "Update dependency com.diffplug.spotless:spotless-plugin-gradle to v8.1.0 (#9203)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7194e120e2839af2a069cb45ea7bdd08a50b4a47",
+      "short": "7194e120e",
+      "time": 1768373023,
+      "subject": "Update dependency org.eclipse.platform:org.eclipse.osgi to v3.24.0 (#9223)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6b4823392be16d683c3323f68b13bffbd716ee8b",
+      "short": "6b4823392",
+      "time": 1768142337,
+      "subject": "Prevent flaky tests by adding sleep in HttpOverHttp2Test (#9250)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http2/HttpOverHttp2Test.kt"
+      ]
+    },
+    {
+      "hash": "7c4b35ba270a86e2d83fbb0ebc539e11dfa8ca34",
+      "short": "7c4b35ba2",
+      "time": 1768133181,
+      "subject": "Allow OkHttpClient overrides in Interceptor (#9108)",
+      "files": [
+        "okhttp-testing-support/src/main/kotlin/okhttp3/TestValueFactory.kt",
+        "okhttp/api/android/okhttp.api",
+        "okhttp/api/jvm/okhttp.api",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Interceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/OkHttpClient.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache/CacheInterceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealCall.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/BridgeInterceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/RealInterceptorChain.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/RetryAndFollowUpInterceptor.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/InterceptorOverridesTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/KotlinSourceModernTest.kt"
+      ]
+    },
+    {
+      "hash": "a587ecddc69771a511868eda09488da60e2745ad",
+      "short": "a587ecddc",
+      "time": 1768132455,
+      "subject": "Avoid ServerTruncatesRequestTest windows failure (#9249)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/ServerTruncatesRequestTest.kt"
+      ]
+    },
+    {
+      "hash": "8040d35c95e78484777a98d4aa669ae398bf08a1",
+      "short": "8040d35c9",
+      "time": 1768070535,
+      "subject": "Fix CacheTest on Windows (#9248)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/CacheTest.kt"
+      ]
+    },
+    {
+      "hash": "8b44ff2caa926577b7a8a2fd29d6657d122c701a",
+      "short": "8b44ff2ca",
+      "time": 1768058706,
+      "subject": "Fix RouteFailureTest and use RepeatedTest (#9247)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/RouteFailureTest.kt"
+      ]
+    },
+    {
+      "hash": "010c4f3c300f706d04af8b04224637a870a7e610",
+      "short": "010c4f3c3",
+      "time": 1768037813,
+      "subject": "Clear a bunch of lint warnings. (#9242)",
+      "files": [
+        "build.gradle.kts",
+        "okhttp/api/android/okhttp.api",
+        "okhttp/api/jvm/okhttp.api",
+        "okhttp/build.gradle.kts",
+        "okhttp/src/androidMain/kotlin/okhttp3/internal/platform/android/Android10SocketAdapter.kt",
+        "okhttp/src/androidMain/kotlin/okhttp3/internal/platform/android/StandardAndroidSocketAdapter.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/ConnectionSpec.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/-HeadersCommon.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/SuppressSignatureCheck.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/BridgeInterceptor.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/BouncyCastlePlatform.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/ConscryptPlatform.kt",
+        "okhttp/src/jvmMain/kotlin/okhttp3/internal/platform/OpenJSSEPlatform.kt"
+      ]
+    },
+    {
+      "hash": "ace792f443b2ffb17974f5c0d1cecdf589309f26",
+      "short": "ace792f44",
+      "time": 1766181950,
+      "subject": "Update dependency org.apache.httpcomponents.client5:httpclient5 to v5.5.2 (#9234)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "8e0cc1b398a10c27a0921a14bc53ca770169d83c",
+      "short": "8e0cc1b39",
+      "time": 1765856188,
+      "subject": "Update testcontainers-java monorepo to v1.21.4 (#9230)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6fd2838111564c9b97975b960e03a7361e347f00",
+      "short": "6fd283811",
+      "time": 1765646735,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.3.0 (#9229)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "fabf46d1997ee366ff64355aa600f1864331dfc3",
+      "short": "fabf46d19",
+      "time": 1765582230,
+      "subject": "Update actions/upload-artifact action to v6 (#9227)",
+      "files": [
+        ".github/workflows/docs.yml"
+      ]
+    },
+    {
+      "hash": "59114ec8c5d8c35e99398541450bafe820bc549a",
+      "short": "59114ec8c",
+      "time": 1765514977,
+      "subject": "Update actions/cache action to v5 (#9226)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "5aaf6446ce041f4728b6066730517132e2622904",
+      "short": "5aaf6446c",
+      "time": 1764950579,
+      "subject": "Fix a changelog typo",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "9cf0d69b5d0cb3795fae214e78a3d56e84130a3a",
+      "short": "9cf0d69b5",
+      "time": 1764529233,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.2.0 (#9217)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "9dca358fbe1073fb8ee4ddaf115288e89b088609",
+      "short": "9dca358fb",
+      "time": 1764179647,
+      "subject": "Update com.squareup.okio to v3.16.4 (#9199)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "1bd382f5a9f3e4d9196f54e18c606749bef3ccde",
+      "short": "1bd382f5a",
+      "time": 1764167368,
+      "subject": "Update Gradle to v9.2.1 (#9201)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "239bd86129e95acd9e58e8294ba1f10968c45d3e",
+      "short": "239bd8612",
+      "time": 1764143978,
+      "subject": "Remove Thrifty from \"works with OkHttp\" (#9209)",
+      "files": [
+        "docs/works_with_okhttp.md"
+      ]
+    },
+    {
+      "hash": "0ec2a0cc2155c5f19531db7e8d04c588246e6b83",
+      "short": "0ec2a0cc2",
+      "time": 1763738785,
+      "subject": "Update actions/checkout action to v6 (#9206)",
+      "files": [
+        ".github/workflows/build.yml",
+        ".github/workflows/containers.yml",
+        ".github/workflows/docs.yml",
+        ".github/workflows/publish.yml"
+      ]
+    },
+    {
+      "hash": "80b9f556dc315f607cf24c910c79e2100dcdfd18",
+      "short": "80b9f556d",
+      "time": 1763728421,
+      "subject": "Don't run remote tests in CI (#9207)",
+      "files": [
+        "android-test/build.gradle.kts",
+        "android-test/src/androidTest/java/okhttp/android/test/SingleAndroidTest.kt",
+        "android-test/src/androidTest/java/okhttp/android/test/StrictModeTest.kt"
+      ]
+    },
+    {
+      "hash": "5b23df713244f82f76cb05e8164d6320b6dc1379",
+      "short": "5b23df713",
+      "time": 1763567122,
+      "subject": "Make the publish action work like Okio's (#9202)",
+      "files": [
+        ".github/workflows/publish.yml",
+        "docs/releasing.md"
+      ]
+    },
+    {
+      "hash": "442de1c9e71fda201c18889327eb1731e9c3e049",
+      "short": "442de1c9e",
+      "time": 1763481511,
+      "subject": "Changelog for 5.3.2 and 5.2.3",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "196c39105c23daa7472009fcef0c258aea99ee9a",
+      "short": "196c39105",
+      "time": 1763300213,
+      "subject": "Changelogs for 5.2.2 and 5.3.1",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "cf6dba115662dcaa7b969d13bd7a1c79cf4683d3",
+      "short": "cf6dba115",
+      "time": 1763299394,
+      "subject": "Update com.squareup.okio to v3.16.3 (#9194)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7f532d6eda24badfdd4619ac9caaaf8a0e5887bc",
+      "short": "7f532d6ed",
+      "time": 1763198839,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.3.2 (#9183)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6938d4a55fd7662e9fecc8aa6166ad151629ab68",
+      "short": "6938d4a55",
+      "time": 1763198811,
+      "subject": "Update dependency com.android.tools.build:gradle to v8.13.1 (#9186)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "a197235ca41cf80351da12bcc101ed45b99ac8e2",
+      "short": "a197235ca",
+      "time": 1763198791,
+      "subject": "Update dependency org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin to v0.11.3 (#9187)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "b6577502be8cfbb76591539e591e0426fc8eace0",
+      "short": "b6577502b",
+      "time": 1763198768,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.1.2 (#9189)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "7db01bf9aabd9933fc36946801b46d67484d759f",
+      "short": "7db01bf9a",
+      "time": 1763198758,
+      "subject": "Update dependency com.vanniktech:gradle-maven-publish-plugin to v0.35.0 (#9190)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "5bd96b41094f3f56fd2418e516cd8f80238f2d92",
+      "short": "5bd96b410",
+      "time": 1763198742,
+      "subject": "Update dependency maven to v4.0.0-rc-5 (#9192)",
+      "files": [
+        "maven-tests/.mvn/wrapper/maven-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "10861257022cf5daeecc0392f4c88930e6bdb47a",
+      "short": "108612570",
+      "time": 1762638304,
+      "subject": "Fix a flake in TrailersTest (#9185)",
+      "files": [
+        "okhttp/src/jvmTest/kotlin/okhttp3/TrailersTest.kt"
+      ]
+    },
+    {
+      "hash": "870872d0249e2baf9bffc52f8364878bfcd695ba",
+      "short": "870872d02",
+      "time": 1762484253,
+      "subject": "Handle UnreadableResponseBody in HttpLoggingInterceptor (#9184)",
+      "files": [
+        "okhttp-logging-interceptor/src/main/kotlin/okhttp3/logging/HttpLoggingInterceptor.kt",
+        "okhttp-logging-interceptor/src/test/java/okhttp3/logging/HttpLoggingInterceptorTest.kt"
+      ]
+    },
+    {
+      "hash": "e6b7eeee4b802fbbaa9c3cf0a03ae29eb6387638",
+      "short": "e6b7eeee4",
+      "time": 1762367315,
+      "subject": "Call.addEventListener (#9181)",
+      "files": [
+        "okhttp-testing-support/src/main/kotlin/okhttp3/EventListenerRelay.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/EventRecorder.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/FailingCall.kt",
+        "okhttp/api/android/okhttp.api",
+        "okhttp/api/jvm/okhttp.api",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Call.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache/CacheInterceptor.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/Exchange.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealCall.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/EventListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/KotlinSourceModernTest.kt"
+      ]
+    },
+    {
+      "hash": "c3f052fd9454bcc1f395346a92109e7be4282760",
+      "short": "c3f052fd9",
+      "time": 1762349247,
+      "subject": "Update mikepenz/action-junit-report action to v6 (#9175)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "24cc7ecbed26959b6e80c2ec1eeefa866bdcbf08",
+      "short": "24cc7ecbe",
+      "time": 1762292985,
+      "subject": "Delete Relay (#9182)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache2/FileOperator.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/cache2/Relay.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/cache2/FileOperatorTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/cache2/RelayTest.kt"
+      ]
+    },
+    {
+      "hash": "d1aaf7c6ccd62caf5cae57c3bdcd2837eb5e34f1",
+      "short": "d1aaf7c6c",
+      "time": 1762283632,
+      "subject": "Split RecordingEventListener in two (#9180)",
+      "files": [
+        "android-test/src/androidTest/java/okhttp/android/test/OkHttpTest.kt",
+        "okhttp-dnsoverhttps/src/test/java/okhttp3/dnsoverhttps/DnsOverHttpsTest.kt",
+        "okhttp-sse/src/test/java/okhttp3/sse/internal/EventSourceHttpTest.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/EventListenerAdapter.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/EventRecorder.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/OkHttpClientTestRule.kt",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/RecordingEventListener.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CallTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/DispatcherTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/DuplexTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/EventListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/FastFallbackTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RouteFailureTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/ServerTruncatesRequestTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/CancelTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/HttpUpgradesTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/tls/ClientAuthTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/ws/WebSocketHttpTest.kt"
+      ]
+    },
+    {
+      "hash": "9674bf0d06569dfe9ef25b7bdf7177e4a863a390",
+      "short": "9674bf0d0",
+      "time": 1762281228,
+      "subject": "Run all the tests in CI (#9178)",
+      "files": [
+        ".github/workflows/build.yml",
+        "okhttp-testing-support/build.gradle.kts",
+        "okhttp-testing-support/src/main/kotlin/okhttp3/OkHttpClientTestRule.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/ConnectionListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/ThreadInterruptTest.kt"
+      ]
+    },
+    {
+      "hash": "e4721510ae15fd60188ab8e49b362996d43b3081",
+      "short": "e4721510a",
+      "time": 1762272683,
+      "subject": "Fix some failing tests that CI hasn't been running (#9179)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/ws/WebSocketReader.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/InterceptorTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/tls/ClientAuthTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/ws/WebSocketReaderTest.kt"
+      ]
+    },
+    {
+      "hash": "55bf06e98f6599f0394c10eec19bd0af772874c4",
+      "short": "55bf06e98",
+      "time": 1762257527,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.3.1 (#9177)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "38ecc57eef695e41a168fdc36652b762c076c4b1",
+      "short": "38ecc57ee",
+      "time": 1761999491,
+      "subject": "Use Burst in DiskLruCacheTest (and 7 others) (#9174)",
+      "files": [
+        "build.gradle.kts",
+        "gradle/libs.versions.toml",
+        "okhttp/build.gradle.kts",
+        "okhttp/src/jvmTest/kotlin/okhttp3/ConnectionListenerTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CookieTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RouteFailureTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/SessionReuseTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/SocketChannelTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/cache/DiskLruCacheTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/CancelTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http2/HttpOverHttp2Test.kt"
+      ]
+    },
+    {
+      "hash": "a2b7c34fbc5ce54fc7202e7d70ffe1d49f8bf21f",
+      "short": "a2b7c34fb",
+      "time": 1761860426,
+      "subject": "Prepare next development version.",
+      "files": [
+        "build.gradle.kts"
+      ]
+    },
+    {
+      "hash": "0960b47ec28a02e893499d2a7e53bf462a62875e",
+      "short": "0960b47ec",
+      "time": 1761860399,
+      "subject": "Prepare for release 5.3.0.",
+      "files": [
+        "CHANGELOG.md",
+        "README.md",
+        "build.gradle.kts",
+        "mockwebserver-junit4/README.md",
+        "mockwebserver-junit5/README.md",
+        "mockwebserver/README.md",
+        "okhttp-brotli/README.md",
+        "okhttp-dnsoverhttps/README.md",
+        "okhttp-java-net-cookiejar/README.md",
+        "okhttp-logging-interceptor/README.md",
+        "okhttp-sse/README.md",
+        "okhttp-tls/README.md",
+        "okhttp-urlconnection/README.md",
+        "okhttp-zstd/README.md"
+      ]
+    },
+    {
+      "hash": "bfb24eb90b3be7fb73541ea02ce8d5dfc4021709",
+      "short": "bfb24eb90",
+      "time": 1761832018,
+      "subject": "Support Request Bodies on HTTP1.1 Connection Upgrades (#9159)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Request.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/Exchange.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealCall.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/http/CallServerInterceptor.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/http/HttpUpgradesTest.kt"
+      ]
+    },
+    {
+      "hash": "cf4a86439568e640c39da5e4e73af6565a5510b1",
+      "short": "cf4a86439",
+      "time": 1761789389,
+      "subject": "Update Gradle to v9.2.0 (#9171)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.jar",
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "4e7dbec1ea6c9cf8d80422ac9d44b9b185c749a3",
+      "short": "4e7dbec1e",
+      "time": 1761490810,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.1.1 (#9169)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "0470853d724ec9e3c68a6ef83a4d1a60a73ef289",
+      "short": "0470853d7",
+      "time": 1761490486,
+      "subject": "Add tags to calls, including computable tags (#9168)",
+      "files": [
+        "okhttp-testing-support/src/main/kotlin/okhttp3/FailingCall.kt",
+        "okhttp/api/android/okhttp.api",
+        "okhttp/api/jvm/okhttp.api",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Call.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealCall.kt",
+        "okhttp/src/jvmTest/java/okhttp3/CallJavaTest.java",
+        "okhttp/src/jvmTest/kotlin/okhttp3/CallTagsTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/KotlinSourceModernTest.kt"
+      ]
+    },
+    {
+      "hash": "2b70b39827518c0a8b350c77f32f314aa46de7ca",
+      "short": "2b70b3982",
+      "time": 1761390977,
+      "subject": "Catch UnsatisfiedLinkError in AndroidLog (#9137)",
+      "files": [
+        "okhttp/src/androidMain/kotlin/okhttp3/internal/platform/android/AndroidLog.kt"
+      ]
+    },
+    {
+      "hash": "35735556f4ab3400197c6dd6c113c62b8468c58d",
+      "short": "35735556f",
+      "time": 1761349388,
+      "subject": "Update dependency com.github.jnr:jnr-unixsocket to v0.38.24 (#9166)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "af8cf3024ace57dab436a9a289ac986cddf01ea8",
+      "short": "af8cf3024",
+      "time": 1761349001,
+      "subject": "Update actions/upload-artifact action to v5 (#9167)",
+      "files": [
+        ".github/workflows/docs.yml"
+      ]
+    },
+    {
+      "hash": "478e99cf506e4b63b6db0418f7f7490d734c2239",
+      "short": "478e99cf5",
+      "time": 1761305866,
+      "subject": "Build an computeIfAbsent() mechanism for tags (#9165)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/Tags.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/TagsTest.kt"
+      ]
+    },
+    {
+      "hash": "d393c868179ff06f870a98ec3bc161c391414eea",
+      "short": "d393c8681",
+      "time": 1761305774,
+      "subject": "Use Tags in okhttp3.Request (#9164)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/Request.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RequestCommonTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RequestTest.kt"
+      ]
+    },
+    {
+      "hash": "ca9f73e7b62e1c76188567ea7856f456f1da1a04",
+      "short": "ca9f73e7b",
+      "time": 1761249001,
+      "subject": "New datastructure to hold Tags (#9163)",
+      "files": [
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/Tags.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/RequestTest.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/TagsTest.kt"
+      ]
+    },
+    {
+      "hash": "fc41262525ac8c2b87142b382864bd36469ec9a3",
+      "short": "fc4126252",
+      "time": 1761219382,
+      "subject": "Update kotlin monorepo to v2.2.21 (#9161)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "31777fe35b29a396e8a54d8774d5380a006951b3",
+      "short": "31777fe35",
+      "time": 1761186111,
+      "subject": "Update dependency org.graalvm.nativeimage:svm to v25.0.1 (#9158)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "5feb53f87468ed21bad33887c43685a3ddd519cd",
+      "short": "5feb53f87",
+      "time": 1761164631,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.3.0 (#9160)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "b52c1c9e2e8b0d8da192dc0a5c68f413a999fcf5",
+      "short": "b52c1c9e2",
+      "time": 1760896708,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.1.0 (#9157)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "935c146b09329e06d1dc120b76db4ba6bc7025bc",
+      "short": "935c146b0",
+      "time": 1760622910,
+      "subject": "Update dependency org.graalvm.buildtools.native:org.graalvm.buildtools.native.gradle.plugin to v0.11.2 (#9153)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "ed7fcd86bb3a01b7556263d73b0443ff96b5c67f",
+      "short": "ed7fcd86b",
+      "time": 1760467980,
+      "subject": "Update com.squareup.okio to v3.16.2 (#9149)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "5d2fd3145fa9b87eda149faef05e7025b56ea6b4",
+      "short": "5d2fd3145",
+      "time": 1760220867,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12.0.1 (#9147)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "3cc91af61e1ef764bec630ef425d9aabecc7c86f",
+      "short": "3cc91af61",
+      "time": 1760197620,
+      "subject": "Update de.mannodermaus.junit5 to v1.9.0 (#9145)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "bc81a338b220e694647c8b44e15f6a27310b0f04",
+      "short": "bc81a338b",
+      "time": 1760197601,
+      "subject": "Update dependency de.mannodermaus.gradle.plugins:android-junit5 to v1.14.0.0 (#9146)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "fdbbdbdb50cc81b585270c06e7d5f6e5c28a68a2",
+      "short": "fdbbdbdb5",
+      "time": 1760174257,
+      "subject": "Resolve local.properties in a VS Code safe way (#9144)",
+      "files": [
+        ".gitignore",
+        "settings.gradle.kts"
+      ]
+    },
+    {
+      "hash": "a480881021bde96f536a81c06baa5497ee3acfb5",
+      "short": "a48088102",
+      "time": 1760173362,
+      "subject": "Bump Gradle to 9.1.0 (#9114)",
+      "files": [
+        "gradle/wrapper/gradle-wrapper.properties"
+      ]
+    },
+    {
+      "hash": "43f54705ec955b0f0cc086db47ebeb75bff9d2b9",
+      "short": "43f54705e",
+      "time": 1760171705,
+      "subject": "Change allowedVersions for junit5 to '<5.14.0'",
+      "files": [
+        ".github/renovate.json"
+      ]
+    },
+    {
+      "hash": "0c133b9c9779c930890cb889657d5e1775d7eecb",
+      "short": "0c133b9c9",
+      "time": 1760169794,
+      "subject": "revert some Renovate config (#9141)",
+      "files": [
+        ".github/renovate.json"
+      ]
+    },
+    {
+      "hash": "b0186243f9f9af081e45a0d5820e8e16ba7868dd",
+      "short": "b0186243f",
+      "time": 1760167649,
+      "subject": "Update junit configuration in renovate.json (#9138)",
+      "files": [
+        ".github/renovate.json"
+      ]
+    },
+    {
+      "hash": "690d1df9292ba63eb7874e0c9f35b58ba372819b",
+      "short": "690d1df92",
+      "time": 1760092004,
+      "subject": "Make tests fail on UnsupportedOperationException (#9135)",
+      "files": [
+        "android-test/src/androidTest/java/okhttp/android/test/SingleAndroidTest.kt"
+      ]
+    },
+    {
+      "hash": "d5b3f2c7621a89a4491cd4854f773bab5c91cbd1",
+      "short": "d5b3f2c76",
+      "time": 1760073586,
+      "subject": "Fix SSL Handshake issue affecting MockWebserver on Android 24 (#9129)",
+      "files": [
+        "android-test/src/androidTest/java/okhttp/android/test/SingleAndroidTest.kt",
+        "okhttp/src/androidMain/kotlin/okhttp3/internal/platform/AndroidPlatform.kt"
+      ]
+    },
+    {
+      "hash": "29bd9cda98417e9054b3d9ebd8c01fb14d132ef1",
+      "short": "29bd9cda9",
+      "time": 1760054008,
+      "subject": "Fix Okio 3.16.1 link",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "2bc1d55ee6470cdfbf159d119d1057293d532744",
+      "short": "2bc1d55ee",
+      "time": 1760052326,
+      "subject": "Update com.squareup.okio to v3.16.1 (#9133)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "dad534a815cf5abd2b87c7924e7a9ed64ab4cd96",
+      "short": "dad534a81",
+      "time": 1760051595,
+      "subject": "Put 5.2.1 in the changelog",
+      "files": [
+        "CHANGELOG.md",
+        "README.md",
+        "mockwebserver-junit4/README.md",
+        "mockwebserver-junit5/README.md",
+        "mockwebserver/README.md",
+        "okhttp-brotli/README.md",
+        "okhttp-dnsoverhttps/README.md",
+        "okhttp-java-net-cookiejar/README.md",
+        "okhttp-logging-interceptor/README.md",
+        "okhttp-sse/README.md",
+        "okhttp-tls/README.md",
+        "okhttp-urlconnection/README.md",
+        "okhttp-zstd/README.md"
+      ]
+    },
+    {
+      "hash": "2f3491c0fbc2b1d02c7e1ca8e5de9202a8251bea",
+      "short": "2f3491c0f",
+      "time": 1760044526,
+      "subject": "Run android tests on API 23 (#9128)",
+      "files": [
+        ".github/workflows/build.yml"
+      ]
+    },
+    {
+      "hash": "ce6c0a03b126b3d3877282edc3b8218b6216909f",
+      "short": "ce6c0a03b",
+      "time": 1760040044,
+      "subject": "Update dependency com.puppycrawl.tools:checkstyle to v12 (#9127)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "c04ea389babb2052d947c6cf263abc6827acdac0",
+      "short": "c04ea389b",
+      "time": 1760010766,
+      "subject": "Update dependency com.squareup.zstd:zstd-kmp-okio to v0.4.0 (#9096)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "6f1a51666e682f9bdb510dd003343445e748c64d",
+      "short": "6f1a51666",
+      "time": 1759985164,
+      "subject": "Update dependency org.codehaus.mojo:animal-sniffer-annotations to v1.26 (#9124)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    },
+    {
+      "hash": "0030b10a0b764f5145b68429216c7db087aefb17",
+      "short": "0030b10a0",
+      "time": 1759895405,
+      "subject": "Flatten ConnectionUser (#9122)",
+      "files": [
+        "okhttp-testing-support/src/main/kotlin/okhttp3/TestValueFactory.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/CallConnectionUser.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/ConnectPlan.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/ConnectionUser.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/PoolConnectionUser.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealCall.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealConnectionPool.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RealRoutePlanner.kt",
+        "okhttp/src/commonJvmAndroid/kotlin/okhttp3/internal/connection/RouteSelector.kt",
+        "okhttp/src/jvmTest/kotlin/okhttp3/internal/connection/RouteSelectorTest.kt"
+      ]
+    },
+    {
+      "hash": "3787f44778da510daa50b7784fc2b9faf2069a8b",
+      "short": "3787f4477",
+      "time": 1759875766,
+      "subject": "Update dependency com.google.devtools.ksp:symbol-processing-gradle-plugin to v2.2.20-2.0.4 (#9121)",
+      "files": [
+        "gradle/libs.versions.toml"
+      ]
+    }
+  ]
+}

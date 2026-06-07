@@ -19,6 +19,27 @@
       "generated_at": "2026-06-07T02:44:01",
       "refined": true,
       "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
+    },
+    {
+      "slug": "okhttp",
+      "name": "okhttp",
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "files": 561,
+      "declarations": 485,
+      "layers": 8,
+      "flows": 0,
+      "edges": 1470,
+      "git": {
+        "branch": "master",
+        "short": "7a350986e",
+        "commit": "7a350986e3231a7b81cbfcc6e3c185327033422b"
+      },
+      "generated_at": "2026-06-07T11:36:00",
+      "refined": true,
+      "description": "Square's meticulous HTTP client for the JVM, Android, and GraalVM."
     }
   ]
 }
