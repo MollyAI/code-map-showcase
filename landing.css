@@ -52,15 +52,15 @@ body.landing {
   color: var(--text-2);
   margin: 16px 0 0;
   max-width: 540px;
-  /* reserve two lines: EN wraps to 2, ZH to 1 — fixing the height keeps the
-     search box and the grid below from jumping when the language is switched */
-  min-height: 48px;
+  /* both EN and ZH taglines fit on a single line — reserve one line so the
+     search box and the grid below don't jump when the language is switched */
+  min-height: 24px;
 }
 
 .search {
   position: relative;
   width: min(560px, 100%);
-  margin-top: 34px;
+  margin-top: 20px;
 }
 .search-icon {
   position: absolute;
