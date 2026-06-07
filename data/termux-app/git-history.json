@@ -1,0 +1,2083 @@
+{
+  "anchor": "401bbe54b8f4e68302b1ff70678015a24628fb1d",
+  "limit": 200,
+  "truncated": true,
+  "commits": [
+    {
+      "hash": "401bbe54b8f4e68302b1ff70678015a24628fb1d",
+      "short": "401bbe5",
+      "time": 1780614942,
+      "subject": "Fixed: Do not add `BigTextStyle` to notification if big text is null",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/notification/NotificationUtils.java"
+      ]
+    },
+    {
+      "hash": "30ebb2dee381d292ade0f2868cfde0f9f20b89fe",
+      "short": "30ebb2d",
+      "time": 1775517087,
+      "subject": "Fixed: Fix inverted typo in termcap values for `KEYCODE_PAGE_UP` and `KEYCODE_PAGE_DOWN`",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/KeyHandler.java"
+      ]
+    },
+    {
+      "hash": "3f0dec3574a6617ff7ff0b78d30b29cfffd71b20",
+      "short": "3f0dec3",
+      "time": 1771670846,
+      "subject": "Fixed: Remove deprecated attribute extractNativeLibs",
+      "files": [
+        "app/src/main/AndroidManifest.xml"
+      ]
+    },
+    {
+      "hash": "ef4775b651c752d5876991a403ecad58bc1fb118",
+      "short": "ef4775b",
+      "time": 1771668282,
+      "subject": "Increase read buffer size from 4KB to 64KB",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalSession.java"
+      ]
+    },
+    {
+      "hash": "e50ac9e019f5dd359b252bc4312f25de7b7dc8ed",
+      "short": "e50ac9e",
+      "time": 1770877543,
+      "subject": "Changed: Change README termux.com links to termux.dev",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "5f578d56fcabd0ed21e2c109d5ccdb3b4de30dfa",
+      "short": "5f578d5",
+      "time": 1770855216,
+      "subject": "Update bootstrap packages from 2022.04.28 to 2026.02.12",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "1937595c5733a0a82b5dbc88670d71294ec79397",
+      "short": "1937595",
+      "time": 1768230151,
+      "subject": "Fixed: Revert `desugar_jdk_libs` back to 1.1.5",
+      "files": [
+        "app/build.gradle",
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "a1457d1254e50ff50169d3e530960da8012ac091",
+      "short": "a1457d1",
+      "time": 1768127196,
+      "subject": "Fixed: Correct publication of Maven libraries after update of Gradle to 9.2.1",
+      "files": [
+        "terminal-emulator/build.gradle",
+        "terminal-view/build.gradle",
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "2ad611280372dd9d482212d03a66976b32133849",
+      "short": "2ad6112",
+      "time": 1767746666,
+      "subject": "Changed: bug-report-template: scream that this is not the place to report bugs about packages (#3989)",
+      "files": [
+        ".github/ISSUE_TEMPLATE/01-bug-report.yml"
+      ]
+    },
+    {
+      "hash": "93c99973cc119558cf78be79924f0d6dd2cd4150",
+      "short": "93c9997",
+      "time": 1767745604,
+      "subject": "Changed: Remove no longer needed gradle jvm args",
+      "files": [
+        "gradle.properties"
+      ]
+    },
+    {
+      "hash": "7d87ed762901f3498847cc6e78a7600c4b26416a",
+      "short": "7d87ed7",
+      "time": 1767744955,
+      "subject": "Fixed: Allow language switch key on external keyboards (#4923)",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "53f75a8da3b823c18a8244b298da50e87382984d",
+      "short": "53f75a8",
+      "time": 1767492988,
+      "subject": "Changed: Update gradle, android gradle plugin and dependencies",
+      "files": [
+        ".github/workflows/debug_build.yml",
+        ".github/workflows/gradle-wrapper-validation.yml",
+        ".github/workflows/run_tests.yml",
+        "app/build.gradle",
+        "app/proguard-rules.pro",
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/termux/app/activities/HelpActivity.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionActivityClient.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "build.gradle",
+        "gradle.properties",
+        "gradle/wrapper/gradle-wrapper.jar",
+        "gradle/wrapper/gradle-wrapper.properties",
+        "gradlew",
+        "gradlew.bat",
+        "jitpack.yml",
+        "terminal-emulator/build.gradle",
+        "terminal-emulator/src/main/AndroidManifest.xml",
+        "terminal-view/build.gradle",
+        "terminal-view/src/main/AndroidManifest.xml",
+        "termux-shared/build.gradle",
+        "termux-shared/src/main/AndroidManifest.xml",
+        "termux-shared/src/main/java/com/termux/shared/interact/MessageDialogUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/view/ViewUtils.java"
+      ]
+    },
+    {
+      "hash": "bcb61c387c1eefe2d67c178a49e993e1efc6596e",
+      "short": "bcb61c3",
+      "time": 1767492494,
+      "subject": "Changed: Bump actions/upload-artifact from 4 to 6",
+      "files": [
+        ".github/workflows/debug_build.yml"
+      ]
+    },
+    {
+      "hash": "c6ec1cb64f1c61789287492f821908e08bdd21df",
+      "short": "c6ec1cb",
+      "time": 1767492363,
+      "subject": "Changed: Bump actions/checkout from 4 to 6 (#4859)",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml",
+        ".github/workflows/debug_build.yml",
+        ".github/workflows/dependency-submission.yml",
+        ".github/workflows/gradle-wrapper-validation.yml",
+        ".github/workflows/run_tests.yml"
+      ]
+    },
+    {
+      "hash": "382c9708b3df79c43f6dfac2310c07bf58735610",
+      "short": "382c970",
+      "time": 1767491726,
+      "subject": "Fixed: Update gradle wrapper validation in CI",
+      "files": [
+        ".github/workflows/gradle-wrapper-validation.yml"
+      ]
+    },
+    {
+      "hash": "edd44d2ce9cf95672969fa07ff55158335233f32",
+      "short": "edd44d2",
+      "time": 1767490975,
+      "subject": "Changed: Bump actions/setup-java from 4 to 5",
+      "files": [
+        ".github/workflows/dependency-submission.yml"
+      ]
+    },
+    {
+      "hash": "4183ffa122cada776a7455f29579d99fa3004c35",
+      "short": "4183ffa",
+      "time": 1767490951,
+      "subject": "Changed: Bump gradle/actions from 4 to 5",
+      "files": [
+        ".github/workflows/dependency-submission.yml"
+      ]
+    },
+    {
+      "hash": "8aca6dbbf475576bb2d0554041c047f279958b9e",
+      "short": "8aca6db",
+      "time": 1758909862,
+      "subject": "Added: Add Warp sponsors logo",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "1812a405eea04122645e1fddf2791ae0438c45b3",
+      "short": "1812a40",
+      "time": 1758909862,
+      "subject": "Added: Add Clouflare funders logo",
+      "files": [
+        "README.md",
+        "site/assets/sponsors/cloudflare.png"
+      ]
+    },
+    {
+      "hash": "338fb66e5cc908c3ce2b0d18f799cec3f577ad6c",
+      "short": "338fb66",
+      "time": 1758743771,
+      "subject": "Added: Add NLnet NGI Mobifree sponsors logo",
+      "files": [
+        "README.md",
+        "site/assets/sponsors/nlnet-ngi-mobifree.png"
+      ]
+    },
+    {
+      "hash": "f852dca0efca4015d81f0825d0cc1075321f1afc",
+      "short": "f852dca",
+      "time": 1758743765,
+      "subject": "Added: Add GitHub Secure Open Source Fund sponsors logo",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "8174a995ae24f8f4aef303af93308bbb09b6a2be",
+      "short": "8174a99",
+      "time": 1758743765,
+      "subject": "Added: Add GitHub Accelerator sponsors logo",
+      "files": [
+        "README.md",
+        "site/assets/sponsors/github.png"
+      ]
+    },
+    {
+      "hash": "7bceab88e2272f961d1b94ef736f1a9e20173247",
+      "short": "7bceab8",
+      "time": 1750867852,
+      "subject": "Added: Add `SECURITY.md`",
+      "files": [
+        "SECURITY.md"
+      ]
+    },
+    {
+      "hash": "2c1bd650b0275fe5944f45a9c26eb4576edee5e1",
+      "short": "2c1bd65",
+      "time": 1750408251,
+      "subject": "Added: Enable workflow dispatch trigger for Automatic Dependency Submission workflow",
+      "files": [
+        ".github/workflows/dependency-submission.yml"
+      ]
+    },
+    {
+      "hash": "4a9ad910ddc9ccaa872d37689705d21d98486821",
+      "short": "4a9ad91",
+      "time": 1750137464,
+      "subject": "Added: Add Automatic Dependency Submission for SBOM",
+      "files": [
+        ".github/workflows/dependency-submission.yml"
+      ]
+    },
+    {
+      "hash": "9d2ac14557c3436cee19d8973f271877a7237e7a",
+      "short": "9d2ac14",
+      "time": 1748588805,
+      "subject": "Fixed: Use `ndkVersion` specified in project properties or `$JITPACK_NDK_VERSION` env variable for `termux-shared` library",
+      "files": [
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "c6e2ca7fde421d97e8f2f4990cd443d621007a02",
+      "short": "c6e2ca7",
+      "time": 1747994513,
+      "subject": "Changed(README): Set latest version to 0.118.3",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "da3a0ac4e219b7a924af3a94cf4cfc4901f0f059",
+      "short": "da3a0ac",
+      "time": 1747949249,
+      "subject": "Fixed: Add explicit `serialVersionUID` to `Serializable` classes like `ReportInfo` and `TextIOInfo`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/models/ReportInfo.java",
+        "termux-shared/src/main/java/com/termux/shared/models/TextIOInfo.java"
+      ]
+    },
+    {
+      "hash": "4de0caac5b1afd55e717af2c7f8b653a80a0d86a",
+      "short": "4de0caa",
+      "time": 1747949207,
+      "subject": "Changed|Fixed: Bump `org.lsposed.hiddenapibypass:hiddenapibypass` to `6.1` to fix crash on Android 16 QPR1",
+      "files": [
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "bc321d0a7c4f5391aa83ecf315cb8a47ff4cf090",
+      "short": "bc321d0",
+      "time": 1743232510,
+      "subject": "Changed(README): Set latest version to 0.118.2",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "9ee1c9d5ad17cf8d48f890d15a8cf627bcfbbb65",
+      "short": "9ee1c9d",
+      "time": 1743226457,
+      "subject": "Fixed: Use `openjdk11` for jitpack builds of termux libraries",
+      "files": [
+        "jitpack.yml"
+      ]
+    },
+    {
+      "hash": "a988383e01b4bb76f5c0724421dd95047acea14a",
+      "short": "a988383",
+      "time": 1742019971,
+      "subject": "Fixed: Fully consume unknown CSI sequences containing unsupported parameter and intermediate bytes",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java"
+      ]
+    },
+    {
+      "hash": "d2cd6ac2e579869b4fa1b1d2737c434e64c20fb9",
+      "short": "d2cd6ac",
+      "time": 1737754220,
+      "subject": "Changed|Fixed: Bump `org.lsposed.hiddenapibypass:hiddenapibypass` to `5.0` to fix crash on Android 16",
+      "files": [
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "52da00e5c270a9049c37d46d42899eeffc27da1f",
+      "short": "52da00e",
+      "time": 1736721694,
+      "subject": "Fixed: Fix gradle build error if using jdk `17`",
+      "files": [
+        "gradle.properties"
+      ]
+    },
+    {
+      "hash": "b0e1dbc3da72b2716a3813a8e7991365478b6095",
+      "short": "b0e1dbc",
+      "time": 1736715045,
+      "subject": "Fixed: Use `TERMUX_STYLING_APP` for `TERMUX_STYLING_ACTIVITY_NAME` as per 078eea2b",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java"
+      ]
+    },
+    {
+      "hash": "078eea2b74173d4b28884af746d6c6b3c0208193",
+      "short": "078eea2",
+      "time": 1736713806,
+      "subject": "Added: Rename app classes in `TermuxConstants` with `_APP` suffix added and add `TERMUX_*_MAIN_ACTIVITY_NAME` and `TERMUX_*_LAUNCHER_ACTIVITY_NAME` constants to each app class",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"
+      ]
+    },
+    {
+      "hash": "fb01127ff2c95f6fa5f86a77956ca2d68afad9a9",
+      "short": "fb01127",
+      "time": 1730101539,
+      "subject": "Fixed: Fix tests added in b84dc703",
+      "files": [
+        "app/src/main/java/com/termux/app/api/file/FileReceiverActivity.java"
+      ]
+    },
+    {
+      "hash": "b84dc703e82105d4fcbfb1501632cece1322fa37",
+      "short": "b84dc70",
+      "time": 1730100871,
+      "subject": "Added: Add empty and null strings tests for invalid urls to `FileReceiverActivityTest`",
+      "files": [
+        "app/src/test/java/com/termux/app/api/file/FileReceiverActivityTest.java"
+      ]
+    },
+    {
+      "hash": "8be53336c381f427137d60170269966a08b6f462",
+      "short": "8be5333",
+      "time": 1727882828,
+      "subject": "Fixed: Implement colon separated CSI parameters",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ControlSequenceIntroducerTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTest.java"
+      ]
+    },
+    {
+      "hash": "d90e3fbca1af4f35b15ecfef6164590887a4e7cb",
+      "short": "d90e3fb",
+      "time": 1727645848,
+      "subject": "Fixed: Make ScrollDown escape respect margins",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ScrollRegionTest.java"
+      ]
+    },
+    {
+      "hash": "245158ceb98b58a3f179acbc89fab131081bf278",
+      "short": "245158c",
+      "time": 1727479190,
+      "subject": "Added: Basic MIME type recognition in ContentProvider",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxOpenReceiver.java"
+      ]
+    },
+    {
+      "hash": "6c00f1fc61e75df9e3b74ab42e2421623b646ca7",
+      "short": "6c00f1f",
+      "time": 1727429258,
+      "subject": "Fixed: Use Canvas.drawTextRun instead of drawText",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalRenderer.java"
+      ]
+    },
+    {
+      "hash": "03142590ff42579505476729ed1e189a2aa35ce4",
+      "short": "0314259",
+      "time": 1727380432,
+      "subject": "Added: Terminal CSI reporting of window and cell pixel size",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalSession.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ControlSequenceIntroducerTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/HistoryTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ResizeTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTestCase.java"
+      ]
+    },
+    {
+      "hash": "4443b657bf7fdf4aec5161f2a0c1099dbeaaad99",
+      "short": "4443b65",
+      "time": 1727364858,
+      "subject": "Fixed: Mark view as important for AutoFill before requesting an AutoFill",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "a8a69c6d80e9602ee3b236dbcdf94b42c18c5c20",
+      "short": "a8a69c6",
+      "time": 1727362556,
+      "subject": "Update latest version in README.md to v0.118.1",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "438cd73fffcaf7370fbf0ed6d4a9759fe3f0de98",
+      "short": "438cd73",
+      "time": 1727356149,
+      "subject": "Added|Changed: Fill `.ws_xpixel` and `.ws_ypixel` in `winsize`",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/JNI.java",
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalSession.java",
+        "terminal-emulator/src/main/jni/termux.c",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "36d811ea7d6b0e76a6860e58cd08b0a24bf9f69a",
+      "short": "36d811e",
+      "time": 1726691296,
+      "subject": "Fixed: Parse (but ignore for now) terminal APC sequences",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ApcTest.java"
+      ]
+    },
+    {
+      "hash": "c2d57f2ed810b6fa854a6c9ab0ecee4aac38a0cc",
+      "short": "c2d57f2",
+      "time": 1724773445,
+      "subject": "Added|Fixed: Do not show AutoFill UI on Termux start and add support for usernames",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java",
+        "app/src/main/res/layout/activity_termux.xml",
+        "app/src/main/res/values/strings.xml",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "661c37501f2f0d26a81c9d512e61d98ca05d987d",
+      "short": "661c375",
+      "time": 1723803534,
+      "subject": "Make Shift-PgUp and Shift-PgDn scroll by pages rather than lines",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "f80b46487df539c7e9214550002f461e5c66131c",
+      "short": "f80b464",
+      "time": 1723569638,
+      "subject": "Fixed: Improve handling of empty ';' SGR sequences",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTest.java"
+      ]
+    },
+    {
+      "hash": "a5de3d3a2bdaeff8c37c8df61059ae759a28a406",
+      "short": "a5de3d3",
+      "time": 1723569293,
+      "subject": "Fixed: Use current bg color when scrolling with horizontal margins",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/ScrollRegionTest.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTestCase.java"
+      ]
+    },
+    {
+      "hash": "57e4ef456b9ad154eccc4b049e21513f1ac5ec06",
+      "short": "57e4ef4",
+      "time": 1718658514,
+      "subject": "Added: Add support for GitHub action builds for `github-releases/**` branches",
+      "files": [
+        ".github/workflows/debug_build.yml"
+      ]
+    },
+    {
+      "hash": "d90be9cd508b26636d705cda95cbebaace3d9706",
+      "short": "d90be9c",
+      "time": 1718494008,
+      "subject": "Changed: Update information regarding Google Play in README",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "062c9771a9ca2efa23e8de109f880c10b93d3fe3",
+      "short": "062c977",
+      "time": 1717596837,
+      "subject": "Added: Request `SET_ALARM` permission to allow broadcasting an intent to set an alarm or timer in an alarm clock app",
+      "files": [
+        "app/src/main/AndroidManifest.xml"
+      ]
+    },
+    {
+      "hash": "2f40df91e54662190befe3b981595209944348e8",
+      "short": "2f40df9",
+      "time": 1713456729,
+      "subject": "Changed: Bump gradle/wrapper-validation-action from 2 to 3",
+      "files": [
+        ".github/workflows/gradle-wrapper-validation.yml"
+      ]
+    },
+    {
+      "hash": "755b752a95a0d1c15662713b38a7476b746a1e95",
+      "short": "755b752",
+      "time": 1713252871,
+      "subject": "Reverted: Revert \"ci: use termux/upload-release-actions to attach debug builds to new releases\"",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml"
+      ]
+    },
+    {
+      "hash": "67f489158062e7e8b69c234e896ec24a3287f9cb",
+      "short": "67f4891",
+      "time": 1712487168,
+      "subject": "Fixed: Limit max combining characters in TerminalRow to 15 characters to prevent buffer overflows",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalRow.java",
+        "terminal-emulator/src/main/java/com/termux/terminal/WcWidth.java"
+      ]
+    },
+    {
+      "hash": "7b19cd2f5a9da23ea56262fb342c1b0240ac8c88",
+      "short": "7b19cd2",
+      "time": 1712001937,
+      "subject": "Changed: Bump termux/upload-release-action from 4.1.0 to 4.2.0",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml"
+      ]
+    },
+    {
+      "hash": "882da34fcddf56a82966b1dc3dbc0a3501a03b7b",
+      "short": "882da34",
+      "time": 1712000083,
+      "subject": "Changed: Bump gradle/wrapper-validation-action from 1 to 2",
+      "files": [
+        ".github/workflows/gradle-wrapper-validation.yml"
+      ]
+    },
+    {
+      "hash": "8e3a8980a849046adbd4156741e1d84047ee1df6",
+      "short": "8e3a898",
+      "time": 1704122373,
+      "subject": "Changed: Bump actions/upload-artifact from 3 to 4 (#3735)",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml",
+        ".github/workflows/debug_build.yml"
+      ]
+    },
+    {
+      "hash": "e4385832b74e0272d6cd9c34c2c14f9be0031381",
+      "short": "e438583",
+      "time": 1704122349,
+      "subject": "Changed: Bump actions/download-artifact from 3 to 4 (#3736)",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml"
+      ]
+    },
+    {
+      "hash": "3b5018b4c79a2c2d218eb6fd570b2f2bebb8415a",
+      "short": "3b5018b",
+      "time": 1698898821,
+      "subject": "Changed: Update `Twitter` to `X (Twitter)` in README",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "c84d4804c82c8325d1037fc20a5a847026fa11ca",
+      "short": "c84d480",
+      "time": 1698841843,
+      "subject": "Changed!: Update commit messages guidelines in README to be more clear and remove `Docs` as a valid type",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "6727bbecc4ddc92933fbc7426cf153d11c09a12f",
+      "short": "6727bbe",
+      "time": 1697684685,
+      "subject": "Changed: Put GitHub debug keystore information in README in dropdown",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "e27f9fa979dfd386e54a94d65d4101eb717bd204",
+      "short": "e27f9fa",
+      "time": 1697684431,
+      "subject": "Changed: Update README with info on how to install termux for android 5 and 6",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "e2f0edf4d20bc17c99b39c551708296f2c5c7939",
+      "short": "e2f0edf",
+      "time": 1696795407,
+      "subject": "Chore: Add vim swap files to .gitignore",
+      "files": [
+        ".gitignore"
+      ]
+    },
+    {
+      "hash": "c5b69975e1a0fd7afc445e19174d83e9a4bd10b7",
+      "short": "c5b6997",
+      "time": 1696643728,
+      "subject": "Changed: Bump actions/checkout from 3 to 4",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml",
+        ".github/workflows/debug_build.yml",
+        ".github/workflows/gradle-wrapper-validation.yml",
+        ".github/workflows/run_tests.yml"
+      ]
+    },
+    {
+      "hash": "cce78cc274ef082e6fab6026d4b532a2a614c02d",
+      "short": "cce78cc",
+      "time": 1696643182,
+      "subject": "Fixed: Fix dependabot commit format to use convetional commit format",
+      "files": [
+        ".github/dependabot.yml"
+      ]
+    },
+    {
+      "hash": "32cd8a938442536d804ca00b3aef87a9ddd02f4e",
+      "short": "32cd8a9",
+      "time": 1696642610,
+      "subject": "Changed: Remove info from README.md that fornwall is inactive and issue #1072 needs extra attention",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "eef5ac43a72f6391a5360a7c1f123e97dee85182",
+      "short": "eef5ac4",
+      "time": 1692662507,
+      "subject": "Fixed: Fix headings in README.md",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "55cdef01e7b2c0c1c7946a95e716098bf441256c",
+      "short": "55cdef0",
+      "time": 1692399550,
+      "subject": "Fixed: Allow numbers and hyphens in domain extension for url selector",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/data/TermuxUrlUtils.java"
+      ]
+    },
+    {
+      "hash": "7c262b8d9917d953c4c899089a88b08899946737",
+      "short": "7c262b8",
+      "time": 1692027930,
+      "subject": "Fixed: Fix toggle toolbar not working due to accidental comment of function in a56ed577",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java"
+      ]
+    },
+    {
+      "hash": "06230f95dfa05cf4822aa619ed4328cb0f092ef1",
+      "short": "06230f9",
+      "time": 1691610404,
+      "subject": "Changed: Only show github action builds for pushes to master branch and not of other branches and pull requests",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "9d308c23314375f9d2b9f022f31ca6d7459cda72",
+      "short": "9d308c2",
+      "time": 1687721976,
+      "subject": "update readme",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "11d8e4ff8fd3517842a2687ac5779477cb572fae",
+      "short": "11d8e4f",
+      "time": 1685007774,
+      "subject": "update readme",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "66a9495d91b72119830fd2bafcc9f3e2230f754f",
+      "short": "66a9495",
+      "time": 1684637915,
+      "subject": "Fixed: Fix `SHIFT+PAGE_UP` and `SHIFT+PAGE_DOWN` behaviour to scroll `1` line of scrollback history instead of scrolling command history or changing pages",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java"
+      ]
+    },
+    {
+      "hash": "33295decbb73d6c4e53873d7df192ec088d1581e",
+      "short": "33295de",
+      "time": 1684637915,
+      "subject": "Changed: Add `PGUP` and `PGDN` extra keys to repetitive keys so that long holding them triggers page scrolling instead of having to repeatedly press the key to change pages",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/extrakeys/ExtraKeysConstants.java"
+      ]
+    },
+    {
+      "hash": "ba1fb850bff82b0196387a72206fa905b79cb1c7",
+      "short": "ba1fb85",
+      "time": 1682983235,
+      "subject": "Changed(README.md): Improved some links to Hyperlinks",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "1240c5ca471ee09f3cc2d3b404ec7d55e1079c8c",
+      "short": "1240c5c",
+      "time": 1682983235,
+      "subject": "Revert \"[doc](readme)modified the links in file\"",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "c1dca29076d43889cd0627080df8f02d38089eea",
+      "short": "c1dca29",
+      "time": 1682858824,
+      "subject": "[doc](readme)modified the links in file",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "93eafffb904035305c129d67e3087b9db85cccad",
+      "short": "93eafff",
+      "time": 1681667018,
+      "subject": "Changed: Bump Robolectric to 4.10",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "9b274f9a0dfdd17a6610ed27f8ffd62cdce573c1",
+      "short": "9b274f9",
+      "time": 1679465921,
+      "subject": "Changed: Bump robolectric to 4.9.2",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "b800f1cc819fd549c8ba4e2a3a1fee2f1d916a21",
+      "short": "b800f1c",
+      "time": 1677936258,
+      "subject": "Added: Add monochrome icon",
+      "files": [
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml",
+        "app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml"
+      ]
+    },
+    {
+      "hash": "2ac7fd1e565872d10b91157022485c13ab179524",
+      "short": "2ac7fd1",
+      "time": 1675863951,
+      "subject": "ci: use termux/upload-release-actions to attach debug builds to new releases",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml"
+      ]
+    },
+    {
+      "hash": "c6dce125104620befd24b8f14e5a9f5871ed63a3",
+      "short": "c6dce12",
+      "time": 1674465228,
+      "subject": "Fix GitHub spelling",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java"
+      ]
+    },
+    {
+      "hash": "2f5a6f7de663074df829a62e44a23ee70e932763",
+      "short": "2f5a6f7",
+      "time": 1671174100,
+      "subject": "WcWidth.c: fix 2nd typo",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/WcWidth.java"
+      ]
+    },
+    {
+      "hash": "82f83a2970b86f1e1f16233d8039abff95fc080e",
+      "short": "82f83a2",
+      "time": 1671173917,
+      "subject": "WcWidth.c: fix typo",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/WcWidth.java"
+      ]
+    },
+    {
+      "hash": "b1c043d54084d2325b0cfaf3056f54bac14d45a3",
+      "short": "b1c043d",
+      "time": 1671173787,
+      "subject": "update WcWidth.java to Unicode 15.0.0",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/WcWidth.java"
+      ]
+    },
+    {
+      "hash": "cff6cff609143d7441b42dad20c058ca26543247",
+      "short": "cff6cff",
+      "time": 1667783788,
+      "subject": "Create dependabot.yml",
+      "files": [
+        ".github/dependabot.yml"
+      ]
+    },
+    {
+      "hash": "29cf9820e1421e06c7d024dd34ddd0b4457fdeb5",
+      "short": "29cf982",
+      "time": 1666859837,
+      "subject": "Fix GitHub spelling",
+      "files": [
+        "README.md",
+        "termux-shared/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "c8a74dc58898ffee1d1207a125f2b4000d20b39b",
+      "short": "c8a74dc",
+      "time": 1666578517,
+      "subject": "feat(KeyHandler): respect modifiers with PgUp and PgDn",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/KeyHandler.java"
+      ]
+    },
+    {
+      "hash": "20dee0e9407f71c5189bb075fc32828c472132e1",
+      "short": "20dee0e",
+      "time": 1665730956,
+      "subject": "Update actions/upload-artifact to v3",
+      "files": [
+        ".github/workflows/debug_build.yml"
+      ]
+    },
+    {
+      "hash": "3516f1979f8ab77789048c816cc99effce3c049e",
+      "short": "3516f19",
+      "time": 1665647795,
+      "subject": "Update actions/checkout to v3",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml",
+        ".github/workflows/debug_build.yml",
+        ".github/workflows/gradle-wrapper-validation.yml",
+        ".github/workflows/run_tests.yml"
+      ]
+    },
+    {
+      "hash": "5bc3d2db8d4b2e401928df5cc11a225960a83751",
+      "short": "5bc3d2d",
+      "time": 1665632911,
+      "subject": "Added: Add `KEY_LAST_PENDING_INTENT_REQUEST_CODE` to `TermuxAPIAppSharedPreferences`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxAPIAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxPreferenceConstants.java"
+      ]
+    },
+    {
+      "hash": "3f7a93931329d4d5cd10a8ec45eb29126984bd5e",
+      "short": "3f7a939",
+      "time": 1664840878,
+      "subject": "Added: Add support for `Share selected text` of terminal in long hold `MORE` menu so that users don't have to copy and paste to move text between apps",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionActivityClient.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "app/src/main/res/values/strings.xml",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java",
+        "terminal-view/src/main/java/com/termux/view/textselection/TextSelectionCursorController.java",
+        "termux-shared/src/main/java/com/termux/shared/interact/ShareUtils.java"
+      ]
+    },
+    {
+      "hash": "0c14c291b2d8474d2f061576ebe596ae071d4496",
+      "short": "0c14c29",
+      "time": 1664839755,
+      "subject": "Changed: Use `ShareUtils` to copy and paste text and prevent potential `NPE`",
+      "files": [
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionActivityClient.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java",
+        "termux-shared/src/main/java/com/termux/shared/interact/ShareUtils.java"
+      ]
+    },
+    {
+      "hash": "63d035ce39bff075408815b7aded71063aa68cc3",
+      "short": "63d035c",
+      "time": 1664793446,
+      "subject": "Changed: Update phantom process links",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "8c1749ef9699e2953c7ca12a976c2fb70a6107e5",
+      "short": "8c1749e",
+      "time": 1664401531,
+      "subject": "Added|Changed: Add `AppSharedPreferences` to hold `SharedPreferences` of apps and inherit termux app prefrences from it",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/settings/preferences/AppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxAPIAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxBootAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxFloatAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxStylingAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxTaskerAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxWidgetAppSharedPreferences.java"
+      ]
+    },
+    {
+      "hash": "6c5607395807122b432514201f560aa7631a4b65",
+      "short": "6c56073",
+      "time": 1663779673,
+      "subject": "readme: add notes about test keystore",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "061dc776bd74101b7917c2c2551ca88d7dda8939",
+      "short": "061dc77",
+      "time": 1663745424,
+      "subject": "rename dev_keystore.jks to testkey_untrusted.jks",
+      "files": [
+        "app/build.gradle",
+        "app/testkey_untrusted.jks"
+      ]
+    },
+    {
+      "hash": "211340781bcb0576ffe100fda2e0ed87d7333d53",
+      "short": "2113407",
+      "time": 1658029683,
+      "subject": "Added: Add multi language i18n support for docs per termux/termux.github.io@f234d089e",
+      "files": [
+        "docs/en/index.md"
+      ]
+    },
+    {
+      "hash": "605dd6c192de882cea8113b2316fb4bca6bc370a",
+      "short": "605dd6c",
+      "time": 1657058016,
+      "subject": "Added: Add check for if Termux has been granted Display Over Apps Permission if starting activities and services with termux-am-socket on Android 10+",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/res/values/strings.xml",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketRunConfig.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/am/AmSocketServer.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/am/AmSocketServerRunConfig.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/am/TermuxAmSocketServer.java",
+        "termux-shared/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "4646aca597b64c9c7e34ee29b611efb2056657d7",
+      "short": "4646aca",
+      "time": 1655766683,
+      "subject": "Added: Start termux app docs support at https://termux.dev/docs/apps/termux as per termux/termux.github.io@612fa084 and termux/termux.github.io@f9c8d848",
+      "files": [
+        "docs/index.md"
+      ]
+    },
+    {
+      "hash": "f1d411a5abd4d9fce46a8a8545df4b25c24dc44d",
+      "short": "f1d411a",
+      "time": 1655590108,
+      "subject": "Fixed: Fix shared terminal transcript joining back lines",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalBuffer.java"
+      ]
+    },
+    {
+      "hash": "5fc2b4cd4ae59a7cbfccea60c76019e96efb847c",
+      "short": "5fc2b4c",
+      "time": 1655574348,
+      "subject": "Added: Add `SCROLL` extra key to toggle auto scrolling of terminal to bottom on terminal text updates and termux activity return",
+      "files": [
+        "app/src/main/java/com/termux/app/terminal/io/TermuxTerminalExtraKeys.java",
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/extrakeys/ExtraKeysConstants.java"
+      ]
+    },
+    {
+      "hash": "a2df7d791a5c09f9ed16e5755bb15ab871cee9e6",
+      "short": "a2df7d7",
+      "time": 1655513606,
+      "subject": "Fixed: Fix bootstrap not installing on app install",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxInstaller.java",
+        "termux-shared/src/main/java/com/termux/shared/errors/Errno.java",
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtilsErrno.java",
+        "termux-shared/src/main/java/com/termux/shared/file/tests/FileUtilsTests.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/file/TermuxFileUtils.java"
+      ]
+    },
+    {
+      "hash": "82b15803126138eef8899e0c7b582713f872cd09",
+      "short": "82b1580",
+      "time": 1655299889,
+      "subject": "Fixed: Fix `termux.properties` reload not working if the properties file didn't exist at app startup",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/settings/properties/SharedProperties.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxAppSharedProperties.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxPropertyConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxSharedProperties.java"
+      ]
+    },
+    {
+      "hash": "e92a6db06bb910a90b322af7c2813886d2156175",
+      "short": "e92a6db",
+      "time": 1655251504,
+      "subject": "Fixed: Ensure CSI parameter value is not greater than `9999` as per vt510",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java"
+      ]
+    },
+    {
+      "hash": "4c47f4f732c9d5e15df6536fa357ff43d0223b07",
+      "short": "4c47f4f",
+      "time": 1655251504,
+      "subject": "Fixed: Fix CSI parameters parsing like for SGR sequences that start with a `;` or have sequential `;` characters",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalEmulator.java",
+        "terminal-emulator/src/test/java/com/termux/terminal/TerminalTest.java"
+      ]
+    },
+    {
+      "hash": "26ff978b0ffc788385f74ada472e5b819615c0c0",
+      "short": "26ff978",
+      "time": 1655215999,
+      "subject": "Changed: Use black or white cursor color based on terminal background instead of always white if colors.properties didn't have cursor color set",
+      "files": [
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalColorScheme.java",
+        "terminal-emulator/src/main/java/com/termux/terminal/TerminalColors.java"
+      ]
+    },
+    {
+      "hash": "b80126fd61de3bcdaee3b38a6f1f4670838c9513",
+      "short": "b80126f",
+      "time": 1655161683,
+      "subject": "Fixed: Catch exceptions if failed to bypass hidden API restrictions",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/reflection/ReflectionUtils.java"
+      ]
+    },
+    {
+      "hash": "162469f7ced7ff2d1fdbeb3cd12a50737787e03f",
+      "short": "162469f",
+      "time": 1655161500,
+      "subject": "Fixed: Fix message dialog button text not showing in day mode due to white text",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/interact/MessageDialogUtils.java"
+      ]
+    },
+    {
+      "hash": "e75680a88428a01a6a4566bdf1cd0255c5981fee",
+      "short": "e75680a",
+      "time": 1655161449,
+      "subject": "Changed: Do not re-set component state if current state equals new state in `PackageUtils.setComponentState()`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/PackageUtils.java"
+      ]
+    },
+    {
+      "hash": "af6ac30bb1b062ccca5813e65380c8cafe20eaa3",
+      "short": "af6ac30",
+      "time": 1655161409,
+      "subject": "Added: Allow users to disable termux file view and share receivers",
+      "files": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/termux/app/TermuxActivity.java",
+        "app/src/main/java/com/termux/app/api/file/FileReceiverActivity.java",
+        "app/src/test/java/com/termux/app/api/file/FileReceiverActivityTest.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxPropertyConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxSharedProperties.java"
+      ]
+    },
+    {
+      "hash": "79d799a99d5fc3b9caba972079eb7804e0c61129",
+      "short": "79d799a",
+      "time": 1655118673,
+      "subject": "Fixed: Fix `ExecutionCommand.pid` not being set for first and background terminal sessions since `TermuxTerminalSessionClientBase` was still being used instead of `TermuxTerminalSessionActivityClient`",
+      "files": [
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionServiceClient.java"
+      ]
+    },
+    {
+      "hash": "841c41bf37e8d7a6b8bd20598f56daad6ffccce4",
+      "short": "841c41b",
+      "time": 1655118424,
+      "subject": "Added|Changed: Added `TermuxTerminalSessionServiceClient` and renamed `TermuxTerminalSessionClient` to `TermuxTerminalSessionActivityClient`",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionActivityClient.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionServiceClient.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "app/src/main/java/com/termux/app/terminal/io/TermuxTerminalExtraKeys.java"
+      ]
+    },
+    {
+      "hash": "c2ddc23ae5bc21f18bc886e30a8b67e1c3c987f0",
+      "short": "c2ddc23",
+      "time": 1654984238,
+      "subject": "Added: Add `MAX_PHANTOM_PROCESSES` and `DEVICE_CONFIG_SYNC_DISABLED` value to device info output like shown in Termux About page",
+      "files": [
+        "app/src/main/java/com/termux/app/activities/SettingsActivity.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "termux-shared/src/main/java/com/termux/shared/android/AndroidUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/markdown/MarkdownUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java",
+        "termux-shared/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "b69630355a45d4eb80ae3d35f633280b39477d00",
+      "short": "b696303",
+      "time": 1654984116,
+      "subject": "Added: Add `PhantomProcessUtils` to get phantom processes related settings values",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/FeatureFlagUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/android/PhantomProcessUtils.java"
+      ]
+    },
+    {
+      "hash": "42eee49d308958ee23376eb6e029a7bf61907f94",
+      "short": "42eee49",
+      "time": 1654983346,
+      "subject": "Added: Add `SettingsProviderUtils` to get `Setting` global, secure and system namespace values",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/SettingsProviderUtils.java"
+      ]
+    },
+    {
+      "hash": "03e1d14e1e65e054eeeb0ad672a46c2c17254d3e",
+      "short": "03e1d14",
+      "time": 1654977079,
+      "subject": "Added: Write termux shell environment to `/data/data/com.termux/files/usr/etc/termux/termux.env` on app startup and package changes",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/event/SystemEventReceiver.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/ShellEnvironmentUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/ShellEnvironmentVariable.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellEnvironment.java"
+      ]
+    },
+    {
+      "hash": "f76c20d036e88369c42958aa046a1c0345fdeca2",
+      "short": "f76c20d",
+      "time": 1654976282,
+      "subject": "Added: Init `TermuxShellEnvironment` at app startup",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellEnvironment.java"
+      ]
+    },
+    {
+      "hash": "150b1ff99c280dac09209b16c4149d3accf39591",
+      "short": "150b1ff",
+      "time": 1654976282,
+      "subject": "Added: Add `ShellCommandShellEnvironment` and `TermuxShellCommandShellEnvironment` to export `ExecutionCommand` variables",
+      "files": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/event/SystemEventReceiver.java",
+        "termux-shared/src/main/java/com/termux/shared/settings/preferences/SharedPreferenceUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/AndroidShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/ShellCommandShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxAppSharedPreferences.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/preferences/TermuxPreferenceConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellManager.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellCommandShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellEnvironment.java"
+      ]
+    },
+    {
+      "hash": "ebdab0e59c702434ead044198dbf4a945fe36c70",
+      "short": "ebdab0e",
+      "time": 1654975988,
+      "subject": "Changed: Update `TERMUX_APP__AM_SOCKET_SERVER_ENABLED` environment variable value if `termux-am-socket` server state changes",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/am/TermuxAmSocketServer.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxAppShellEnvironment.java"
+      ]
+    },
+    {
+      "hash": "afc06cfd0a9855e8443d0b62cd57d8fa9e4547a1",
+      "short": "afc06cf",
+      "time": 1654975987,
+      "subject": "Added|Changed!: Add `TermuxAppShellEnvironment` and `TermuxAPIShellEnvironment` to export `Termux` and `Termux:API` app variables in `TermuxShellEnvironment`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/am/TermuxAmSocketServer.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxAPIShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxAppShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellEnvironment.java"
+      ]
+    },
+    {
+      "hash": "9749360caacc8b4e3486343a44b7e0a8d87edf06",
+      "short": "9749360",
+      "time": 1654975938,
+      "subject": "Added: Add `UnixShellEnvironment.LOGIN_SHELL_BINARIES` variable for common/supported login shell binaries searched and add `fish` and `sh` shell as additional backups",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/UnixShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "29d05cc72c44b42df783b252eb3488b7f4d38c4e",
+      "short": "29d05cc",
+      "time": 1654975938,
+      "subject": "Changed: All `ExecutionCommands` not managed by `TermuxShellManager` should have `id` `-1`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/file/TermuxFileUtils.java"
+      ]
+    },
+    {
+      "hash": "2998558e9ffbac2af2527967a6481100fd911952",
+      "short": "2998558",
+      "time": 1654975938,
+      "subject": "Added: Add support in `AppShell` and `TermuxSession` for caller to add/override additional environment variables not added by `IShellEnvironment.setupShellCommandEnvironment()`",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/runner/app/AppShell.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/file/TermuxFileUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "13d93ccac70bd5ea7017f606ff05bd0b45ac5fa8",
+      "short": "13d93cc",
+      "time": 1654975938,
+      "subject": "Added: Add `TermuxShellManager` to manage all termux app wide shells",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellManager.java"
+      ]
+    },
+    {
+      "hash": "f102ea20b2041723c94a6fd5dd27558250beb5bd",
+      "short": "f102ea2",
+      "time": 1654975938,
+      "subject": "Added|Changed!: Implement new design for shell environment generation and add support for `MIT` licensed shell environment client",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/ShellEnvironmentClient.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/ShellUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/AndroidShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/IShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/ShellEnvironmentUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/environment/UnixShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/runner/app/AppShell.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/file/TermuxFileUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellEnvironmentClient.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/environment/TermuxShellEnvironment.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "0328d15ea77515469f1cd69afd1944f80ff71860",
+      "short": "0328d15",
+      "time": 1654939466,
+      "subject": "Fixed: Fix duplicate logging of `file` word in `FileUtils.copyOrMoveFile()`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtils.java"
+      ]
+    },
+    {
+      "hash": "f9e9193c4e1e1b0c061d68856e9b673f9d450ea4",
+      "short": "f9e9193",
+      "time": 1654938933,
+      "subject": "Added: Add package `APK_PATH`, `SE_PROCESS_CONTEXT`, `SE_FILE_CONTEXT` and `SE_INFO` when generating app info markdown string",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/AndroidUtils.java"
+      ]
+    },
+    {
+      "hash": "790481b8027d245bcd8180e95ca3aa42d2c045fc",
+      "short": "790481b",
+      "time": 1654938778,
+      "subject": "Added: Add functions to `PackageUtils` to get base APK path of package",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/PackageUtils.java"
+      ]
+    },
+    {
+      "hash": "1788013c80bbc48fafa7bf34712131270ccbf1d5",
+      "short": "1788013",
+      "time": 1654938718,
+      "subject": "Added: Add functions to `PackageUtils` to get `seInfo` and `seInfoUser` of package",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/PackageUtils.java"
+      ]
+    },
+    {
+      "hash": "575941110956b0c32723da73b739663d06d42459",
+      "short": "5759411",
+      "time": 1654938634,
+      "subject": "Added: Add `SELinuxUtils` to get process and file paths security contexts",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/SELinuxUtils.java"
+      ]
+    },
+    {
+      "hash": "0fd354a469c4a2943838aa7885c3bcd2525c1d88",
+      "short": "0fd354a",
+      "time": 1654937749,
+      "subject": "Changed: Ensure `TermuxSession` executable is `null` if its empty so that `login` shell can start",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "042487c2b460c759f5066cd9792d2f385a146f94",
+      "short": "042487c",
+      "time": 1654937530,
+      "subject": "Changed: Ensure `AppShell` executable is not `null` before trying to execute it",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/shell/command/runner/app/AppShell.java",
+        "termux-shared/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "b96fcb78fd9269ee40a3f488a425d35204d38251",
+      "short": "b96fcb7",
+      "time": 1654897269,
+      "subject": "Changed: Update termux twitter to https://twitter.com/termuxdevs",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "9547869a52f5c672e0577f772aea9ba986dd84e6",
+      "short": "9547869",
+      "time": 1654897269,
+      "subject": "Changed: Update funding link to https://termux.dev/donate",
+      "files": [
+        ".github/FUNDING.yml"
+      ]
+    },
+    {
+      "hash": "d29e20b0d0b7616be55d9ed22b625f7918ce7750",
+      "short": "d29e20b",
+      "time": 1654897269,
+      "subject": "Removed: Remove Termux game, root, science, unstable and x11 repo links since they have all been merged with https://github.com/termux/termux-packages",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java"
+      ]
+    },
+    {
+      "hash": "0c22067b5e7b90b8631fa0c8b1032de53f2be3a8",
+      "short": "0c22067",
+      "time": 1654897269,
+      "subject": "Added|Changed: Add termux site url and change donate url to https://termux.dev/donate",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"
+      ]
+    },
+    {
+      "hash": "d287734abae95107e73c763ccbd807315ca9a9c0",
+      "short": "d287734",
+      "time": 1654897269,
+      "subject": "Added|Changed!: Rename `SESSION_NAME` and `SESSION_CREATE_MODE` to `SHELL_NAME` and `SHELL_CREATE_MODE` and add support for `ShellCreateMode` to `AppShells`",
+      "files": [
+        "app/src/main/java/com/termux/app/RunCommandService.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionClient.java",
+        "app/src/main/res/values/strings.xml",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/runner/app/AppShell.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "46cfea09ec2409526269b4744a7d699d66527205",
+      "short": "46cfea0",
+      "time": 1654196958,
+      "subject": "Added: Add support for plugin apps to set TERMUX_APP_PACKAGE_VARIANT and TERMUX_APP_PACKAGE_MANAGER from Termux app APK BuildConfig.TERMUX_PACKAGE_VARIANT",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/reflection/ReflectionUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxBootstrap.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java"
+      ]
+    },
+    {
+      "hash": "980bf8f0ae8c88658660cf0fd8ce01babb2712f5",
+      "short": "980bf8f",
+      "time": 1654023965,
+      "subject": "Added: Add support to get termux app package context with code classloader for plugin usage",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/PackageUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java"
+      ]
+    },
+    {
+      "hash": "231ecff5f0837d1aa2831039b64afd07915e1cab",
+      "short": "231ecff",
+      "time": 1653846297,
+      "subject": "Changed: Do not modify code points for virtual or soft keyboard events",
+      "files": [
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/terminal/io/TerminalExtraKeys.java"
+      ]
+    },
+    {
+      "hash": "c1c46dfcfcff6fe2a21232d4fa2d0092c93e6cc1",
+      "short": "c1c46df",
+      "time": 1653794900,
+      "subject": "Changed: Change `TERMUX_APP.APPS_DIR_PATH` basename from `termux-app` to `com.termux`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"
+      ]
+    },
+    {
+      "hash": "37f08c4fccb79c9e8e911af9407168b566e890d9",
+      "short": "37f08c4",
+      "time": 1653792173,
+      "subject": "Fixed: Fix `Settings.ACTION_*` permission requests for non-activity contexts",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/PermissionUtils.java"
+      ]
+    },
+    {
+      "hash": "a50387b553afc96173e0eddaa5b37f1e18a24431",
+      "short": "a50387b",
+      "time": 1653792173,
+      "subject": "Changed: Change termux support email from termuxreports@groups.io to support@termux.dev",
+      "files": [
+        "README.md",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"
+      ]
+    },
+    {
+      "hash": "30cb848639487cc5129b21b3e44d92025e452348",
+      "short": "30cb848",
+      "time": 1653789241,
+      "subject": "Fixed: Do not setup plugin and crash notification channel on API `< 24` since NotificationManager.IMPORTANCE_HIGH requires API 24",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java"
+      ]
+    },
+    {
+      "hash": "b04f209f17403b5764cbbba246bdea9a6de09efe",
+      "short": "b04f209",
+      "time": 1653337244,
+      "subject": "Added: Add TERMUX_DEVS key SHA-256 digest to official signing keys list",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java"
+      ]
+    },
+    {
+      "hash": "7b222ba3921faaecd315955883b9634c9893c543",
+      "short": "7b222ba",
+      "time": 1653337243,
+      "subject": "Changed: Export correct PATH and also export LD_LIBRARY_PATH for `apt-android-5` variant instead of on Android 5/6",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java"
+      ]
+    },
+    {
+      "hash": "899ef71e17f496fffb680d51ed5834ff0c1157f5",
+      "short": "899ef71",
+      "time": 1653337185,
+      "subject": "Changed: Bump android-7 bootstraps to v2022.04.28-r5",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "4d084c02e7d889f8bc8678c5b7439e0a037de02b",
+      "short": "4d084c0",
+      "time": 1653337185,
+      "subject": "Changed: Bump android-5 bootstraps to v2022.04.28-r6",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "18a1a33e83f637a091e32275d83a558fd0c39468",
+      "short": "18a1a33",
+      "time": 1653337185,
+      "subject": "Added: Enable `TERMUX_PACKAGE_VARIANT` `apt-android-5` builds",
+      "files": [
+        "app/build.gradle",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxBootstrap.java"
+      ]
+    },
+    {
+      "hash": "7677633e8f5b7845fced2831144a733b43f4ff0b",
+      "short": "7677633",
+      "time": 1653337185,
+      "subject": "Fixed: Catch `UnsatisfiedLinkError` for `local-socket` library",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketManager.java"
+      ]
+    },
+    {
+      "hash": "007bef81321fd9659b816fe674166f1a9ffd5f12",
+      "short": "007bef8",
+      "time": 1653337185,
+      "subject": "Added: Add message to bootstrap error if user installed termux on portable/external/removable sd card since its not supported on some devices",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxInstaller.java",
+        "app/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "5290ce1f7745a4c47f88f22b4fb19de2acc10988",
+      "short": "5290ce1",
+      "time": 1653337185,
+      "subject": "Added|Fixed: Add `TermuxNotificationUtils.getTermuxOrPluginAppNotificationBuilder()` helper function and fix notification icon drawable resource id issue on Android 5",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/notification/NotificationUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/notification/TermuxNotificationUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java"
+      ]
+    },
+    {
+      "hash": "ab9b620c880f362fe27bcfb611d5eb929be4e635",
+      "short": "ab9b620",
+      "time": 1653337185,
+      "subject": "Added: Add ResourceUtils to get resource ids from names",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/resource/ResourceUtils.java"
+      ]
+    },
+    {
+      "hash": "4e08f76fd20a9d514c41e1888525b0ef661765fa",
+      "short": "4e08f76",
+      "time": 1653337185,
+      "subject": "Changed: Export correct PATH and also export LD_LIBRARY_PATH for Android 5/6 since packages won't use DT_RUNPATH",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java"
+      ]
+    },
+    {
+      "hash": "c549988434d532caf2e3f471fb783cd48bc1b730",
+      "short": "c549988",
+      "time": 1653337185,
+      "subject": "Fixed: Fix broken javadocs links",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/extrakeys/ExtraKeysInfo.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "55dcd09a096931833337336355e38da053442524",
+      "short": "55dcd09",
+      "time": 1653337185,
+      "subject": "Fixed: Fixed extra keys not showing properly on Android 5",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxActivity.java",
+        "app/src/main/java/com/termux/app/terminal/io/TerminalToolbarViewPager.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/extrakeys/ExtraKeysView.java"
+      ]
+    },
+    {
+      "hash": "677a5800424be462a369622b823e75a88b35a40d",
+      "short": "677a580",
+      "time": 1653337185,
+      "subject": "Changed: Add general compatibility fixes for `minSdkVerion` `21`",
+      "files": [
+        "app/src/main/AndroidManifest.xml",
+        "app/src/main/java/com/termux/app/TermuxInstaller.java",
+        "terminal-view/src/main/java/com/termux/view/TerminalView.java",
+        "terminal-view/src/main/java/com/termux/view/support/PopupWindowCompatGingerbread.java",
+        "terminal-view/src/main/java/com/termux/view/textselection/TextSelectionCursorController.java",
+        "terminal-view/src/main/java/com/termux/view/textselection/TextSelectionHandleView.java",
+        "termux-shared/src/main/java/com/termux/shared/android/AndroidUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/android/PackageUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/android/PermissionUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/file/filesystem/UnixConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/interact/ShareUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/extrakeys/SpecialButtonState.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/terminal/io/TerminalExtraKeys.java",
+        "termux-shared/src/main/java/com/termux/shared/view/KeyboardUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/view/ViewUtils.java"
+      ]
+    },
+    {
+      "hash": "fa829623a886319b8b8aa360efde6c348279d02e",
+      "short": "fa82962",
+      "time": 1653337185,
+      "subject": "Added: Add `ViewUtils.pxToDp()`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/view/ViewUtils.java"
+      ]
+    },
+    {
+      "hash": "14e9a8b6fc10379819f7e3406692151dc8759e59",
+      "short": "14e9a8b",
+      "time": 1653337185,
+      "subject": "Changed: Use float dp parameter instead of int for `ViewUtils.dpToPx()` to not lose precision",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/view/ViewUtils.java"
+      ]
+    },
+    {
+      "hash": "a1719d91b3ef32218a0ac6553c659f3e1baab4da",
+      "short": "a1719d9",
+      "time": 1653337185,
+      "subject": "Changed: Bump `termux-am-library` to 2.0.0 that uses `minSdkVersion` `21`",
+      "files": [
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "9143ebdc22752c8a3ea79503a3b76f603c8f8812",
+      "short": "9143ebd",
+      "time": 1653337185,
+      "subject": "Changed: Enable desugaring support to enable support for new language APIs like Java 8 on old android versions",
+      "files": [
+        "app/build.gradle",
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "623aaebb4a730289d61c02c8898d24e839427138",
+      "short": "623aaeb",
+      "time": 1653337185,
+      "subject": "Changed: Bump down `minSdkVersion` from `24` to `21` to restart supporting android 5/6 for the time being",
+      "files": [
+        "gradle.properties"
+      ]
+    },
+    {
+      "hash": "6213b7f7828b41ad2036431d53bf1994c770750c",
+      "short": "6213b7f",
+      "time": 1653337185,
+      "subject": "Changed: Use double quotes instead of single quotes for all gradle dependencies",
+      "files": [
+        "build.gradle",
+        "terminal-emulator/build.gradle",
+        "terminal-view/build.gradle",
+        "termux-shared/build.gradle"
+      ]
+    },
+    {
+      "hash": "0b4f4561323616b4b99867e6b0ebcccf94c47f69",
+      "short": "0b4f456",
+      "time": 1653336221,
+      "subject": "Changed: Write only our open collective to FUNDING.yml",
+      "files": [
+        ".github/FUNDING.yml"
+      ]
+    },
+    {
+      "hash": "b950efec27e71455c9e2c594c7ee45999927ed0b",
+      "short": "b950efe",
+      "time": 1651120400,
+      "subject": "Added: Add support for `TERMUX_APP_PACKAGE_MANAGER` and `TERMUX_APP_PACKAGE_VARIANT` to build APKs with different package manager configurations",
+      "files": [
+        ".github/workflows/attach_debug_apks_to_release.yml",
+        ".github/workflows/debug_build.yml",
+        "app/build.gradle",
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalViewClient.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxBootstrap.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java"
+      ]
+    },
+    {
+      "hash": "4b3b1a5b6a39bd390b430722e523dd623b2ad1ae",
+      "short": "4b3b1a5",
+      "time": 1650660576,
+      "subject": "Changed: Bump bootstrap to v2022.04.22-r1",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "7f7d889dd0fa53cd35408a09b9c5686f3602d152",
+      "short": "7f7d889",
+      "time": 1650656340,
+      "subject": "Fixed: Fix proguard removing JNI used methods for release builds",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/jni/models/JniResult.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/PeerCred.java"
+      ]
+    },
+    {
+      "hash": "53f26c9659df2919522c42f2b1c4c5c29de07e2f",
+      "short": "53f26c9",
+      "time": 1650656340,
+      "subject": "Changed: Refactor am socket server",
+      "files": [
+        "app/build.gradle",
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/build.gradle",
+        "termux-shared/src/main/java/com/termux/shared/shell/am/AmSocketServer.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/am/AmSocketServerErrno.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/TermuxShellUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/am/TermuxAmSocketServer.java"
+      ]
+    },
+    {
+      "hash": "2aa7f43d1c7739ab57fe50669f84588daf1602d7",
+      "short": "2aa7f43",
+      "time": 1650656172,
+      "subject": "Added|Changed|Fixed: Refactor local socket server implementation and make client handling abstract",
+      "files": [
+        "termux-shared/src/main/cpp/Android.mk",
+        "termux-shared/src/main/cpp/Application.mk",
+        "termux-shared/src/main/cpp/local-filesystem-socket.cpp",
+        "termux-shared/src/main/cpp/local-socket.cpp",
+        "termux-shared/src/main/java/com/termux/shared/jni/models/JniResult.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/ILocalSocketManager.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalClientSocket.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalServerSocket.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketErrno.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketManager.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketManagerClientBase.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/LocalSocketRunConfig.java",
+        "termux-shared/src/main/java/com/termux/shared/net/socket/local/PeerCred.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalFilesystemSocket.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalSocketListener.java"
+      ]
+    },
+    {
+      "hash": "5f8a9222014f2731b09b77208fa4d2632846221b",
+      "short": "5f8a922",
+      "time": 1650656172,
+      "subject": "Added: Allow users to disable `termux-am` server",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxPropertyConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/settings/properties/TermuxSharedProperties.java"
+      ]
+    },
+    {
+      "hash": "9a71074c7dcf800e36d86f4e2656ad919d5b61df",
+      "short": "9a71074",
+      "time": 1650656172,
+      "subject": "Added: Add function to `ProcessUtils` to get app process name for a pid from `ActivityManager`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/ProcessUtils.java"
+      ]
+    },
+    {
+      "hash": "69cc65c3acc523f6ff1e437b1bd26e1fdcb0abce",
+      "short": "69cc65c",
+      "time": 1650656172,
+      "subject": "Added: Add functions to `UserUtils` to get user name for user id from `PackageManager` and `Libcore`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/android/UserUtils.java"
+      ]
+    },
+    {
+      "hash": "bcd8f4c419872d51f0ff67891110abb1844fd7c2",
+      "short": "bcd8f4c",
+      "time": 1650656172,
+      "subject": "Added: Add `TERMUX_APPS_DIR_PATH` and `TERMUX_APP.APPS_DIR_PATH` and create them at application startup.",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/file/TermuxFileUtils.java"
+      ]
+    },
+    {
+      "hash": "6bda7c4fc4d996e15998a70476cbcab5fa26d97b",
+      "short": "6bda7c4",
+      "time": 1650656172,
+      "subject": "Added|Changed: Add `Logger.logErrorPrivate*()` functions which do not log errors that may contain potentially private info unless log level is debug or higher",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "termux-shared/src/main/java/com/termux/shared/logger/Logger.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java"
+      ]
+    },
+    {
+      "hash": "89a08ff01a0397c5b025ec4ee9c350ec81c9c621",
+      "short": "89a08ff",
+      "time": 1650656172,
+      "subject": "Fixed: Allow `Object` class object to be passed to `ReflectionUtils.invokeField()`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/reflection/ReflectionUtils.java"
+      ]
+    },
+    {
+      "hash": "c81d9c33463e2d8b0b23f3c1522414b2ac3d6315",
+      "short": "c81d9c3",
+      "time": 1650656172,
+      "subject": "Added: Add `FileType.SOCKET` support and add `FileUtils.deleteSocketFile()` function",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/file/filesystem/FileAttributes.java",
+        "termux-shared/src/main/java/com/termux/shared/file/filesystem/FileType.java",
+        "termux-shared/src/main/java/com/termux/shared/file/filesystem/FileTypes.java",
+        "termux-shared/src/main/java/com/termux/shared/file/filesystem/UnixConstants.java"
+      ]
+    },
+    {
+      "hash": "58c3d427e8153abd511b6e0ff167c614a491400e",
+      "short": "58c3d42",
+      "time": 1650656172,
+      "subject": "Fixed: Log and add to Error the current file type in `FileUtils.deleteFile()` in addition to allowed file types",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtils.java",
+        "termux-shared/src/main/java/com/termux/shared/file/FileUtilsErrno.java"
+      ]
+    },
+    {
+      "hash": "1b9ca91da5c454fdcfe0b6b706331ad4f750d255",
+      "short": "1b9ca91",
+      "time": 1650656172,
+      "subject": "Added: Add functions to `DataUtils` to get generic, space and tab indented strings",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/data/DataUtils.java"
+      ]
+    },
+    {
+      "hash": "9c7ec0cebdbfca985ba2f5d920f13268db4789b0",
+      "short": "9c7ec0c",
+      "time": 1650656172,
+      "subject": "Added: Add functions that can be used by non main threads to set `CrashHandler` as the `UncaughtExceptionHandler`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/crash/CrashHandler.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java"
+      ]
+    },
+    {
+      "hash": "6b60adc079f2cdf05c94df72299a1df41e4422c6",
+      "short": "6b60adc",
+      "time": 1650656172,
+      "subject": "Fixed: Do not stop the app if `UncaughtExceptionHandler` implemented by `CrashHandler` receives an exception on a non main thread",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/src/main/java/com/termux/shared/crash/CrashHandler.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java"
+      ]
+    },
+    {
+      "hash": "5116d886c382f01b48e366b0430af76149ba7821",
+      "short": "5116d88",
+      "time": 1650656172,
+      "subject": "Changed: Add label parameter to `ExecutionCommand` `getArgumentsLogString()` and `getArgumentsMarkdownString()` functions for external usage",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java"
+      ]
+    },
+    {
+      "hash": "02ab8324e986c933992162c5b9a87ca3e0f9d860",
+      "short": "02ab832",
+      "time": 1650656172,
+      "subject": "Changed|Fixed: Do not add empty stacktraces entry to Error log and markdown String",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/errors/Error.java"
+      ]
+    },
+    {
+      "hash": "c095a6184bebc030e3deef9b20bff1ade2f14088",
+      "short": "c095a61",
+      "time": 1650656172,
+      "subject": "Changed: Rename `TermuxCrashUtils` `sendPluginCrashReportNotification() to `sendCrashReportNotification()`",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/termux/crash/TermuxCrashUtils.java"
+      ]
+    },
+    {
+      "hash": "cc981d8a0395e5b357f69cac94c049426f9b9364",
+      "short": "cc981d8",
+      "time": 1650656172,
+      "subject": "Changed: Move `com.termux.app.utils.PluginUtils` to `com.termux.shared.termux.plugins.TermuxPluginUtils`",
+      "files": [
+        "app/src/main/java/com/termux/app/RunCommandService.java",
+        "app/src/main/java/com/termux/app/TermuxOpenReceiver.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/models/UserAction.java",
+        "app/src/main/res/values/strings.xml",
+        "termux-shared/src/main/java/com/termux/shared/termux/models/UserAction.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/plugins/TermuxPluginUtils.java",
+        "termux-shared/src/main/res/values/strings.xml"
+      ]
+    },
+    {
+      "hash": "007f9cd7f176f1e2d1ff64f533037777bbf1b760",
+      "short": "007f9cd",
+      "time": 1650656172,
+      "subject": "Changed: Set socket dir to /data/data/com.termux/files/api/",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java"
+      ]
+    },
+    {
+      "hash": "b025872029d1848c9288cfddcf64a71e18f24efa",
+      "short": "b025872",
+      "time": 1650656172,
+      "subject": "Changed: Updated the termux-am-library dependency, because the repo is now part of the Termux github organization.",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "2851175d8b980c3464f3adb4d06bf5a32768fcdd",
+      "short": "2851175",
+      "time": 1650656172,
+      "subject": "Changed: Moved the am socket to PREFIX/var/run/am-socket",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java"
+      ]
+    },
+    {
+      "hash": "3dee2eb486c7205222453adf2eb90a4147b732c5",
+      "short": "3dee2eb",
+      "time": 1650656172,
+      "subject": "Changed: Allow connections from root o sockets.",
+      "files": [
+        "termux-shared/src/main/cpp/local-filesystem-socket.cpp",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalFilesystemSocket.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalSocketListener.java"
+      ]
+    },
+    {
+      "hash": "33b88b5d4b9f671934f1aab07fe1543c61ab5319",
+      "short": "33b88b5",
+      "time": 1650656172,
+      "subject": "Changed: Set termux-am-library to a tag instead of following the main branch.",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "f366db0cb328ce969d70301f5a98978a29302754",
+      "short": "f366db0",
+      "time": 1650656172,
+      "subject": "Added: LocalFilesystemSocket as an Interface to UNIX sockets in the filesystem. The UID of connecting programs is automatically checked against the processes UID and connections where the UID doesn't match are automatically rejected and logged. Changed: LocalSocketListener now uses sockets in the filesystem.",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/build.gradle",
+        "termux-shared/src/main/cpp/Android.mk",
+        "termux-shared/src/main/cpp/local-filesystem-socket.cpp",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalFilesystemSocket.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalSocketListener.java"
+      ]
+    },
+    {
+      "hash": "4aca16326c573ce1cd38700131c7f09ec9b77d00",
+      "short": "4aca163",
+      "time": 1650656172,
+      "subject": "Added: termux-am-library to integrate am with Termux.",
+      "files": [
+        "app/build.gradle",
+        "app/src/main/java/com/termux/app/TermuxApplication.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/LocalSocketListener.java"
+      ]
+    },
+    {
+      "hash": "e597ece75fd55075ed0b265202d4a9d8c41396cf",
+      "short": "e597ece",
+      "time": 1650656172,
+      "subject": "Added: ArgumentTokenizer to com.termux.shared.shell",
+      "files": [
+        "termux-shared/src/main/java/com/termux/shared/shell/ArgumentTokenizer.java"
+      ]
+    },
+    {
+      "hash": "9e06bfce1ff8f48c8fb16d4b0ce00674faf39471",
+      "short": "9e06bfc",
+      "time": 1650570909,
+      "subject": "Changed: Bump bootstrap to v2022.04.21-r1",
+      "files": [
+        "app/build.gradle"
+      ]
+    },
+    {
+      "hash": "5794ab9a56f5a509f2c90ec2d96601254b680b8a",
+      "short": "5794ab9",
+      "time": 1649367774,
+      "subject": "Added|Changed: Add support to switch to existing session instead of creating duplicate session for `RUN_COMMAND` intent",
+      "files": [
+        "app/src/main/java/com/termux/app/RunCommandService.java",
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/res/values/strings.xml",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/TermuxConstants.java"
+      ]
+    },
+    {
+      "hash": "ee32ef0c7e74fd630d63876d9e422ba2a4502bb0",
+      "short": "ee32ef0",
+      "time": 1649367774,
+      "subject": "Changed: Maintain terminal session name in `ExecutionCommand.sessionName` in addition to `TerminalSession.mSessionName`",
+      "files": [
+        "app/src/main/java/com/termux/app/TermuxService.java",
+        "app/src/main/java/com/termux/app/terminal/TermuxTerminalSessionClient.java",
+        "termux-shared/src/main/java/com/termux/shared/shell/command/ExecutionCommand.java",
+        "termux-shared/src/main/java/com/termux/shared/termux/shell/command/runner/terminal/TermuxSession.java"
+      ]
+    },
+    {
+      "hash": "8746db0d22e178a805531e03d6d1ddc884c6e434",
+      "short": "8746db0",
+      "time": 1648904203,
+      "subject": "chore(gitignore): Remove unused ignore rules for crashlytics (#2683)",
+      "files": [
+        ".gitignore"
+      ]
+    }
+  ]
+}

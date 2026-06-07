@@ -101,6 +101,28 @@
       "generated_at": "2026-06-07T04:56:34",
       "refined": true,
       "description": "The open source coding agent."
+    },
+    {
+      "slug": "termux-app",
+      "name": "termux-app",
+      "languages": [
+        "c",
+        "cpp",
+        "java"
+      ],
+      "files": 177,
+      "declarations": 202,
+      "layers": 7,
+      "flows": 9,
+      "edges": 657,
+      "git": {
+        "branch": "master",
+        "short": "401bbe5",
+        "commit": "401bbe54b8f4e68302b1ff70678015a24628fb1d"
+      },
+      "generated_at": "2026-06-07T08:08:44",
+      "refined": true,
+      "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages."
     }
   ]
 }
