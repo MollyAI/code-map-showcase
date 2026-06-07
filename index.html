@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>code map · gallery</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- design tokens, fonts, light/dark theme — reused verbatim from the synced viewer -->
+<link rel="stylesheet" href="./viewer/style.css" />
+<link rel="stylesheet" href="./landing.css" />
+</head>
+<body class="landing">
+
+<header class="topbar">
+  <div class="brand">
+    <div class="project" id="site-title">code map</div>
+    <div class="build-info" id="site-sub">gallery</div>
+  </div>
+  <div class="controls">
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="toggle theme">
+      <svg class="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M6 1.5a6.5 6.5 0 1 0 8.5 8.5A5.5 5.5 0 0 1 6 1.5z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="8" cy="8" r="3"/>
+        <path d="M8 1.5v1.8 M8 12.7v1.8 M1.5 8h1.8 M12.7 8h1.8 M3.4 3.4l1.27 1.27 M11.33 11.33l1.27 1.27 M3.4 12.6l1.27-1.27 M11.33 4.67l1.27-1.27"/>
+      </svg>
+    </button>
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="switch language">EN</button>
+  </div>
+</header>
+
+<main class="landing-main">
+  <section class="hero">
+    <h1 class="hero-title" id="hero-title">code map</h1>
+    <p class="hero-tagline" id="hero-tagline"></p>
+    <div class="search" role="search">
+      <svg class="search-icon" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="7" cy="7" r="4.5"/>
+        <path d="M10.5 10.5 14 14"/>
+      </svg>
+      <input id="search" type="search" autocomplete="off" spellcheck="false" />
+    </div>
+  </section>
+
+  <section class="gallery" id="gallery" aria-live="polite"></section>
+  <p class="gallery-note" id="gallery-note" hidden></p>
+</main>
+
+<script type="module" src="./landing.js"></script>
+</body>
+</html>

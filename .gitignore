@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# CI scratch (cross-repo viewer checkout)
+.plugin-src/
+
+# pipeline by-products that must never be published — only code-map.json,
+# git-history.json, and meta.json belong under data/<slug>/
+data/**/raw_structure.json
+data/**/unresolved.json
+data/**/server.json
+data/**/server.log

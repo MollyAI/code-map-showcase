@@ -1,0 +1,774 @@
+:root {
+  --bg-0:        #0a0e13;
+  --bg-1:        #0f141b;
+  --bg-2:        #161c25;
+  --bg-3:        #1d2530;
+  --line-faint:  rgba(140, 180, 220, 0.045);
+  --line:        rgba(140, 180, 220, 0.10);
+  --line-strong: rgba(140, 180, 220, 0.22);
+
+  --text-0:      #e8ecf2;
+  --text-1:      #b7bfcc;
+  --text-2:      #7c8696;
+  --text-3:      #525c6b;
+
+  --accent:      #e9a771;          /* copper */
+  --accent-dim:  rgba(233, 167, 113, 0.22);
+  --accent-glow: rgba(233, 167, 113, 0.55);
+  --cyan:        #7ad3e6;           /* edge cyan */
+  --cyan-dim:    rgba(122, 211, 230, 0.32);
+  --warn:        #d68b8b;
+
+  --header-bg:      rgba(10, 14, 19, 0.86);
+  --shadow-panel:   rgba(0, 0, 0, 0.22);
+  --shadow-tooltip: rgba(0, 0, 0, 0.50);
+  --shadow-zoom:    rgba(0, 0, 0, 0.32);
+  --scroll-hover:   #2a3340;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-ui:      "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* type scale — driven by body.fs-{small,medium,large}. 14 / 16 / 18 ratio.
+     NOTE: derived values like calc(380px * var(--fs-scale)) must be written at
+     the point of use, not declared here — a custom property defined on :root
+     locks in the var() at :root, ignoring body-level overrides. */
+  --fs-scale: 1;
+}
+
+body.fs-small  { --fs-scale: 0.875; }
+body.fs-large  { --fs-scale: 1.125; }
+
+/* light theme — warm cream / coral, inspired by claude.com */
+body.light {
+  --bg-0:        #faf9f6;          /* page */
+  --bg-1:        #ffffff;          /* panels */
+  --bg-2:        #f3f0ea;          /* subtle hover */
+  --bg-3:        #e8e4d8;          /* emphasis */
+  --line-faint:  rgba(60, 50, 40, 0.045);
+  --line:        rgba(60, 50, 40, 0.11);
+  --line-strong: rgba(60, 50, 40, 0.24);
+
+  --text-0:      #2d2a26;
+  --text-1:      #4a463f;
+  --text-2:      #7a756c;
+  --text-3:      #a8a39a;
+
+  --accent:      #c96442;          /* claude warm orange */
+  --accent-dim:  rgba(201, 100, 66, 0.16);
+  --accent-glow: rgba(201, 100, 66, 0.38);
+  --cyan:        #5c8bc9;
+  --cyan-dim:    rgba(92, 139, 201, 0.30);
+  --warn:        #c25555;
+
+  --header-bg:      rgba(250, 249, 246, 0.88);
+  --shadow-panel:   rgba(60, 50, 40, 0.10);
+  --shadow-tooltip: rgba(60, 50, 40, 0.18);
+  --shadow-zoom:    rgba(60, 50, 40, 0.12);
+  --scroll-hover:   #c0b8aa;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: var(--bg-0); color: var(--text-0); font-family: var(--font-ui); }
+
+/* Theme cross-fade: only active for the brief window right after a manual theme
+   toggle (body.theme-switching, added/removed in JS). Applying it to every
+   element makes the whole UI — panels, SVG nodes, borders, text — ease between
+   palettes together instead of snapping, which is what felt jarring before.
+   It's temporary so it never interferes with hover/layout transitions. */
+body.theme-switching,
+body.theme-switching *,
+body.theme-switching *::before,
+body.theme-switching *::after {
+  transition:
+    background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    background-image 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    color            0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color     0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    fill             0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    stroke           0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+@media (prefers-reduced-motion: reduce) {
+  body.theme-switching, body.theme-switching *,
+  body.theme-switching *::before, body.theme-switching *::after { transition: none !important; }
+}
+body {
+  /* full-height flex column: topbar (auto) + .layout (fills the rest). This
+     replaces the old `.layout { height: calc(100vh - 57px) }` magic number, so
+     the topbar can grow/shrink without re-deriving a hardcoded offset. */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  /* blueprint grid background */
+  background-image:
+    linear-gradient(var(--line-faint) 1px, transparent 1px),
+    linear-gradient(90deg, var(--line-faint) 1px, transparent 1px);
+  background-size: 24px 24px;
+  background-position: -1px -1px;
+}
+
+a { color: inherit; }
+button { font-family: inherit; }
+
+/* ---------- header ---------- */
+header.topbar {
+  position: sticky; top: 0; z-index: 50;
+  flex: 0 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 28px;
+  padding: 17px 34px;
+  border-bottom: 1px solid var(--line);
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+}
+
+.brand {
+  display: flex; align-items: baseline; gap: 14px;
+}
+.brand .project {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  color: var(--text-0);
+}
+.brand .build-info {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  line-height: 1.4;
+  color: var(--text-2);
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+}
+
+.controls { display: flex; gap: 12px; align-items: center; }
+
+.toggle {
+  display: flex; gap: 1px; border: 1px solid var(--line); border-radius: 5px; padding: 2px;
+  background: var(--bg-1);
+}
+.toggle[hidden] { display: none; }   /* core/all toggle is hidden in flow mode */
+.toggle button {
+  background: transparent; border: 0; color: var(--text-2);
+  font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
+  padding: 6px 13px; cursor: pointer; border-radius: 3px;
+  text-transform: uppercase;
+}
+.toggle button.active { background: var(--bg-3); color: var(--text-0); }
+.toggle button:hover:not(.active) { color: var(--text-1); }
+
+.theme-toggle, .lang-toggle, .export-toggle {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  width: 38px; height: 36px;
+  padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--text-2);
+  cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.theme-toggle:hover, .lang-toggle:hover, .export-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
+.theme-toggle svg, .lang-toggle svg, .export-toggle svg { width: 17px; height: 17px; display: block; }
+.export-toggle[aria-busy="true"] { opacity: 0.5; pointer-events: none; }
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+body.light .theme-toggle .icon-sun  { display: block; }
+body.light .theme-toggle .icon-moon { display: none; }
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  width: auto;
+  padding: 0 11px;
+}
+
+/* ---------- main layout ---------- */
+.layout {
+  position: relative;
+  display: flex;
+  flex: 1 1 auto;
+  min-height: 0;          /* let the flex child own its height and scroll internally */
+  overflow: hidden;       /* clip the panels during the slide-out so their shadows don't leak */
+}
+
+.canvas-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 0;           /* let the flex item shrink below its content's intrinsic width */
+  overflow: auto;
+  /* Reserve scrollbar space so its appearance/disappearance can't change clientWidth.
+     Without this, applyZoom can fall into a ResizeObserver feedback loop where the
+     SVG height crosses the scrollbar threshold each frame and the page visibly shakes. */
+  scrollbar-gutter: stable;
+  padding: 32px 28px 80px;
+  cursor: grab;
+  /* margin-right ← right detail panel; margin-left ← left flow sidebar. */
+  transition: margin 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.canvas-wrap.panning { cursor: grabbing; }
+.canvas-wrap.panning * { cursor: grabbing !important; }   /* keep cursor consistent over nodes during a pan */
+.layout.has-selection .canvas-wrap { margin-right: calc(380px * var(--fs-scale)); }
+.layout.flow-active.flow-open .canvas-wrap { margin-left: calc(380px * var(--fs-scale)); }
+.layout.commit-active.commit-open .canvas-wrap { margin-left: calc(380px * var(--fs-scale)); }
+
+#map { display: block; }
+
+/* ---------- right panel (overlay, slides in from the right) ---------- */
+.detail {
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: calc(380px * var(--fs-scale));
+  background: var(--bg-1);
+  display: flex; flex-direction: column;
+  border-left: 1px solid var(--line);
+  box-shadow: -16px 0 32px var(--shadow-panel);
+  transform: translateX(100%);
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+}
+.layout.has-selection .detail { transform: translateX(0); }
+
+.detail-body {
+  flex: 1 1 auto;
+  min-height: 0; min-width: 0;
+  padding: 28px 28px 24px;
+  overflow-y: auto;
+  overflow-x: hidden;      /* never scroll the panel sideways — long tokens wrap/clip instead */
+  display: flex; flex-direction: column; gap: 22px;
+}
+
+/* language counts pinned to the bottom of the detail panel */
+.lang-stats {
+  flex: 0 0 auto;
+  padding: 20px 28px 24px;
+  border-top: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 10px;
+}
+.lang-stat {
+  display: flex; align-items: center; gap: 12px;
+  font-family: var(--font-mono);
+  font-size: calc(14px * var(--fs-scale));
+  color: var(--text-1);
+}
+.lang-stat::before {
+  content: "";
+  display: block;
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  background: var(--lang-color, var(--lang-default));
+  flex-shrink: 0;
+}
+.lang-stat b {
+  margin-left: auto;
+  color: var(--text-0);
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+.detail .empty {
+  margin-top: 80px;
+  color: var(--text-3);
+  font-family: var(--font-mono);
+  font-size: calc(12px * var(--fs-scale));
+  line-height: 1.7;
+  text-align: center;
+}
+.detail .empty .hint {
+  margin-top: 18px;
+  display: inline-block;
+  padding: 8px 14px;
+  border: 1px dashed var(--line);
+  border-radius: 4px;
+  color: var(--text-2);
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: calc(10.5px * var(--fs-scale));
+  color: var(--text-3);
+  overflow-wrap: anywhere;
+}
+
+.class-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: calc(24px * var(--fs-scale));
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  margin: 6px 0 0;
+  overflow-wrap: anywhere;
+  color: var(--text-0);
+}
+.class-title em {
+  font-style: italic;
+  color: var(--accent);
+}
+/* When the title holds a full function signature, use mono + a calmer size so
+   long signatures stay readable instead of dominating the panel. */
+.class-title.is-signature {
+  font-family: var(--font-mono);
+  font-weight: 500;
+  font-size: calc(15px * var(--fs-scale));
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.class-kind {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 2px 8px;
+  border: 1px solid var(--line);
+  border-radius: 3px;
+  font-family: var(--font-mono);
+  font-size: calc(10.5px * var(--fs-scale));
+  color: var(--text-2);
+  max-width: 100%;
+  word-break: break-all;
+}
+
+.tag-row {
+  display: flex; flex-wrap: wrap; gap: 6px;
+  margin-top: 8px;
+}
+.tag-chip {
+  font-family: var(--font-mono);
+  font-size: calc(10px * var(--fs-scale));
+  padding: 2px 7px;
+  border-radius: 3px;
+  background: var(--accent-dim);
+  color: var(--accent);
+  border: 1px solid var(--accent-dim);
+}
+.tag-chip.muted {
+  background: transparent;
+  color: var(--text-2);
+  border-color: var(--line);
+}
+
+.path-row {
+  display: flex; align-items: stretch; gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  background: var(--bg-2);
+  font-family: var(--font-mono);
+  font-size: calc(11.5px * var(--fs-scale));
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.path-row .path-at { padding: 8px 8px 8px 10px; color: var(--accent); }
+.path-row .path-text {
+  flex: 1; padding: 8px 4px 8px 0;
+  color: var(--text-1);
+  word-break: break-all;
+  line-height: 1.5;
+  cursor: text;
+}
+.path-row .copy {
+  border: 0; border-left: 1px solid var(--line);
+  background: transparent; color: var(--text-2);
+  padding: 0 12px; cursor: pointer; font-family: var(--font-mono); font-size: calc(11px * var(--fs-scale));
+  min-width: 72px;            /* sized for the longest label ("copied"/"failed") so the row doesn't reflow */
+  text-align: center;
+  transition: color 0.15s, background 0.15s;
+}
+.path-row .copy:hover { color: var(--text-0); background: var(--bg-3); }
+.path-row .copy.ok { color: var(--accent); }
+
+.description {
+  font-family: var(--font-display);
+  font-size: calc(16px * var(--fs-scale)); line-height: 1.55;
+  color: var(--text-1);
+  font-weight: 400;
+  /* break inside unspaced slash-runs like "OpenAI/Anthropic/Qwen/Kimi" so the
+     paragraph wraps within the panel instead of forcing a sideways scroll. */
+  overflow-wrap: anywhere;
+}
+.description em { font-style: italic; color: var(--text-0); }
+.description.muted { color: var(--text-3); font-style: italic; font-size: calc(13px * var(--fs-scale)); }
+
+.meta-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.meta-grid .cell {
+  background: var(--bg-1);
+  padding: 12px 14px;
+  display: flex; flex-direction: column; gap: 4px;
+  min-width: 0;            /* let the 1fr columns shrink so a long value can't break the grid */
+}
+.meta-grid .cell .label {
+  font-family: var(--font-mono); font-size: calc(10px * var(--fs-scale));
+  color: var(--text-3);
+}
+.meta-grid .cell .value {
+  font-family: var(--font-mono); font-size: calc(15px * var(--fs-scale)); color: var(--text-0);
+  font-weight: 500;
+  /* numbers fit; a long value (e.g. a file name) truncates with … (full text on
+     hover via the cell's title) rather than blowing out the table layout. */
+  overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+}
+
+.section-h {
+  font-family: var(--font-mono); font-size: calc(10.5px * var(--fs-scale));
+  color: var(--text-3);
+  margin: 4px 0 0;
+  padding-bottom: 8px; border-bottom: 1px solid var(--line);
+}
+
+.edge-list { display: flex; flex-direction: column; gap: 4px; margin-top: 8px; }
+.edge-row {
+  display: flex; flex-direction: column;
+  padding: 6px 10px;
+  border-radius: 3px;
+  font-family: var(--font-mono); font-size: calc(11.5px * var(--fs-scale));
+  color: var(--text-1);
+  cursor: pointer;
+  transition: background 0.12s, color 0.12s;
+}
+.edge-row:hover { background: var(--bg-2); color: var(--text-0); }
+.edge-row-main {
+  display: flex; align-items: center; gap: 8px;
+  min-width: 0;       /* allow children to shrink below intrinsic width */
+}
+.edge-row .arrow { color: var(--cyan); flex: 0 0 auto; }
+.edge-row .edge-name {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.edge-row .kind {
+  flex: 0 0 auto;
+  font-size: calc(9.5px * var(--fs-scale)); color: var(--text-3);
+}
+.edge-row .edge-pkg {
+  margin-top: 2px;
+  padding-left: 16px;      /* aligns with name (arrow ~10px + gap 8) */
+  font-size: calc(10px * var(--fs-scale));
+  color: var(--text-3);
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+.edge-row.is-out .arrow::before { content: "→"; }
+.edge-row.is-in  .arrow::before { content: "←"; }
+.edge-row.is-in .edge-name { color: var(--text-2); }
+
+.subhint { font-family: var(--font-mono); font-size: calc(11px * var(--fs-scale)); color: var(--text-3); margin-top: 6px; }
+
+/* ---------- SVG node styles ---------- */
+.layer-band rect.bg { fill: var(--bg-1); stroke: var(--line); stroke-width: 1; }
+.layer-band .label {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: calc(22px * var(--fs-scale));
+  fill: var(--text-1);
+  letter-spacing: -0.01em;
+}
+.layer-band .summary {
+  font-family: var(--font-mono);
+  font-size: calc(10.5px * var(--fs-scale));
+  fill: var(--text-3);
+}
+.layer-band .count {
+  font-family: var(--font-mono);
+  font-size: calc(10.5px * var(--fs-scale));
+  fill: var(--text-2);
+  text-anchor: end;
+}
+
+.node.flow-hub rect { stroke-dasharray: 4 3; opacity: 0.55; }
+.node.flow-core rect { stroke: var(--accent); stroke-width: 1.8; }
+
+/* ---------- left flow / commit sidebars (slide in from the left, mirror .detail) ---------- */
+.flow-sidebar, .commit-sidebar {
+  position: absolute;
+  top: 0; left: 0; bottom: 0;
+  width: calc(380px * var(--fs-scale));   /* match the right detail panel width */
+  background: var(--bg-1);
+  display: flex; flex-direction: column;
+  border-right: 1px solid var(--line);
+  box-shadow: 16px 0 32px var(--shadow-panel);
+  transform: translateX(-100%);
+  transition: transform 280ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 5;
+}
+.layout.flow-active.flow-open .flow-sidebar { transform: translateX(0); }
+.layout.commit-active.commit-open .commit-sidebar { transform: translateX(0); }
+
+.flow-sidebar-head, .commit-sidebar-head {
+  flex: 0 0 auto;
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 10px;
+  padding: 18px 14px 14px 22px;
+  border-bottom: 1px solid var(--line);
+}
+.flow-sidebar-title, .commit-sidebar-title {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 500;
+  font-size: calc(18px * var(--fs-scale));
+  color: var(--text-1);
+}
+.flow-collapse, .flow-expand, .commit-collapse, .commit-expand {
+  background: var(--bg-1);
+  border: 1px solid var(--line);
+  border-radius: 5px;
+  width: 28px; height: 28px;
+  padding: 0;
+  display: inline-flex; align-items: center; justify-content: center;
+  color: var(--text-2); cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.flow-collapse:hover, .flow-expand:hover, .commit-collapse:hover, .commit-expand:hover { color: var(--text-0); border-color: var(--line-strong); }
+.flow-collapse svg, .flow-expand svg, .commit-collapse svg, .commit-expand svg { width: 15px; height: 15px; display: block; }
+
+.flow-list, .commit-list {
+  flex: 1 1 auto;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;      /* names/descriptions wrap; never scroll sideways */
+  padding: 12px 12px 20px;
+  display: flex; flex-direction: column; gap: 4px;
+}
+.flow-item, .commit-item {
+  display: flex; flex-direction: column; gap: 3px;
+  width: 100%;
+  text-align: left;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  padding: 9px 12px;
+  cursor: pointer;
+  color: var(--text-1);
+  transition: background 0.12s, border-color 0.12s, color 0.12s;
+}
+.flow-item:hover, .commit-item:hover { background: var(--bg-2); color: var(--text-0); }
+.flow-item.active, .commit-item.active { background: var(--accent-dim); border-color: var(--accent-dim); }
+/* active item: accent color only — NOT font-weight. Bolding a name that contains
+   CJK falls back to synthetic bold (no real 600 in many CJK fonts), which widens
+   glyphs, shifts the wrap point, and makes the item's height jump on selection. */
+.flow-item.active .flow-item-name, .commit-item.active .commit-item-name { color: var(--accent); }
+.flow-item-name, .commit-item-name {
+  font-family: var(--font-mono);
+  font-size: calc(12.5px * var(--fs-scale));
+  letter-spacing: 0.01em;
+  overflow-wrap: anywhere;
+  line-height: 1.35;
+}
+.flow-item-desc, .commit-item-desc {
+  font-family: var(--font-ui);
+  font-size: calc(11px * var(--fs-scale));
+  color: var(--text-3);
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+.flow-item.active .flow-item-desc, .commit-item.active .commit-item-desc { color: var(--text-2); }
+
+/* commit items whose changed files map to no class in the graph (dimmed name + note) */
+.commit-item.no-match .commit-item-name { color: var(--text-3); }
+.commit-note { font-family: var(--font-ui); font-size: calc(10.5px * var(--fs-scale)); color: var(--text-3); padding: 2px 0 0; }
+
+/* collapsed-state expand handle — a thin tab on the left edge (flow / commit) */
+.flow-expand, .commit-expand {
+  position: absolute;
+  top: 50%; left: 0;
+  transform: translateY(-50%);
+  width: 22px; height: 64px;
+  border-left: 0;
+  border-top-left-radius: 0; border-bottom-left-radius: 0;
+  box-shadow: 6px 0 16px var(--shadow-zoom);
+  z-index: 4;
+  display: none;
+}
+.layout.flow-active:not(.flow-open) .flow-expand { display: inline-flex; }
+.layout.commit-active:not(.commit-open) .commit-expand { display: inline-flex; }
+
+.node { cursor: pointer; }
+.node rect {
+  fill: var(--bg-2);
+  stroke: var(--line-strong);
+  stroke-width: 1;
+  transition: fill 0.18s, stroke 0.18s, stroke-width 0.18s;
+}
+.node rect.lang-stripe {
+  /* a thin left-edge stripe colored by language */
+  stroke: none;
+  pointer-events: none;
+}
+.node .nlabel {
+  font-family: var(--font-mono);
+  font-size: calc(11px * var(--fs-scale));
+  fill: var(--text-1);
+  pointer-events: none;
+  dominant-baseline: middle;
+}
+.node:hover rect:not(.lang-stripe) {
+  fill: var(--bg-3);
+  stroke: var(--text-2);
+}
+.node:hover .nlabel { fill: var(--text-0); }
+
+.node.selected rect:not(.lang-stripe) {
+  fill: var(--accent-dim);
+  stroke: var(--accent);
+  stroke-width: 1.5;
+  filter: drop-shadow(0 0 6px var(--accent-glow));
+}
+.node.selected .nlabel { fill: var(--accent); font-weight: 600; }
+
+.node.dimmed { opacity: 0.18; }
+.node.peer rect:not(.lang-stripe) { stroke: var(--cyan); stroke-width: 1.5; }
+.node.peer .nlabel { fill: var(--cyan); }
+
+/* language palette — each gets a distinct hue for the stripe + header chip */
+:root {
+  --lang-kotlin:     #b08bff;
+  --lang-java:       #f4a261;
+  --lang-python:     #7ad3e6;
+  --lang-go:         #5dcfd6;
+  --lang-rust:       #e6826b;
+  --lang-typescript: #5d8fe6;
+  --lang-javascript: #e6c25d;
+  --lang-default:    #8b8b8b;
+}
+
+.lang-tag {
+  font-family: var(--font-mono);
+  color: var(--text-1);
+  font-size: calc(10.5px * var(--fs-scale));
+  letter-spacing: 0.02em;
+}
+
+.edge {
+  fill: none;
+  stroke: var(--line);
+  stroke-width: 1;
+  pointer-events: none;
+  transition: stroke 0.2s, stroke-width 0.2s, opacity 0.2s;
+}
+.edge.active {
+  stroke: var(--cyan-dim);
+  stroke-width: 1.4;
+}
+.edge.active.out { stroke: var(--accent); }
+.edge.dimmed { opacity: 0.04; }
+
+/* flow-mode edges: a calm resting orange that selection brings into focus.
+   When a node is selected, the edges on its flow slice go `.active` (lit) and
+   every other edge goes `.dimmed` — so a disabled (dimmed) node's connectors
+   read as disabled too, instead of the whole flow staying fully highlighted. */
+.edge.flow { stroke: var(--accent); opacity: 0.5; stroke-width: 1.4; }
+.edge.flow.active { opacity: 1; stroke-width: 1.7; }
+.edge.flow.dimmed { opacity: 0.05; }
+
+/* tooltip */
+.tooltip {
+  position: fixed;
+  pointer-events: none;
+  background: var(--bg-3);
+  border: 1px solid var(--line-strong);
+  border-radius: 4px;
+  padding: 6px 10px;
+  font-family: var(--font-mono);
+  font-size: calc(11px * var(--fs-scale));
+  color: var(--text-0);
+  z-index: 100;
+  white-space: nowrap;
+  opacity: 0;
+  transition: opacity 0.1s;
+  box-shadow: 0 6px 22px var(--shadow-tooltip);
+}
+.tooltip.visible { opacity: 1; }
+.tooltip .pkg { color: var(--text-3); }
+
+/* zoom controls (bottom-left overlay) */
+.zoom-controls {
+  position: absolute;
+  bottom: 24px;
+  left: 24px;
+  display: flex;
+  gap: 1px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 2px;
+  z-index: 4;
+  font-family: var(--font-mono);
+  box-shadow: 0 4px 16px var(--shadow-zoom);
+  user-select: none;
+  /* slide clear of the flow sidebar when it opens (matches the panel transition) */
+  transition: left 280ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.layout.flow-active.flow-open .zoom-controls { left: calc(380px * var(--fs-scale) + 24px); }
+.layout.commit-active.commit-open .zoom-controls { left: calc(380px * var(--fs-scale) + 24px); }
+.zoom-controls button {
+  background: transparent;
+  border: 0;
+  color: var(--text-1);
+  cursor: pointer;
+  font-size: 14px;
+  padding: 6px 10px;
+  min-width: 32px;
+  border-radius: 4px;
+  font-family: inherit;
+  transition: background 0.15s, color 0.15s;
+}
+.zoom-controls button:hover { background: var(--bg-3); color: var(--text-0); }
+.zoom-controls button:active { background: var(--accent-dim); }
+.zoom-controls .zoom-pct {
+  font-size: 11px;
+  letter-spacing: 0.04em;
+  min-width: 58px;
+}
+
+/* error state */
+.error-state {
+  padding: 60px 28px;
+  text-align: center;
+  color: var(--text-2);
+  font-family: var(--font-mono);
+  font-size: calc(13px * var(--fs-scale));
+  line-height: 1.7;
+}
+.error-state code {
+  display: block;
+  margin-top: 18px;
+  padding: 14px 18px;
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 4px;
+  color: var(--accent);
+  text-align: left;
+  white-space: pre;
+}
+
+/* scrollbars */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-0); }
+::-webkit-scrollbar-thumb { background: var(--bg-3); border-radius: 5px; border: 2px solid var(--bg-0); }
+::-webkit-scrollbar-thumb:hover { background: var(--scroll-hover); }
+/* the corner where horizontal + vertical scrollbars meet — without this it
+   falls back to the browser default (white), which shows as a stray light
+   square in dark mode. Match the track so it disappears into the canvas. */
+::-webkit-scrollbar-corner { background: var(--bg-0); }
+
+/* responsive: side panels take the full viewport width on narrow screens */
+@media (max-width: 900px) {
+  .detail { width: 100%; }
+  .flow-sidebar { width: 100%; }
+}
+
+/* dispatch (interface → implementor) flow edges: dashed, slightly muted */
+.edge.flow.dispatch { stroke-dasharray: 5 4; stroke-opacity: 0.85; }
+.dispatch-more { font: 500 11px var(--font-mono); fill: var(--text-2); }

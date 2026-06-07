@@ -1,0 +1,24 @@
+{
+  "projects": [
+    {
+      "slug": "code-map",
+      "name": "code-map",
+      "languages": [
+        "typescript"
+      ],
+      "files": 61,
+      "declarations": 274,
+      "layers": 7,
+      "flows": 14,
+      "edges": 451,
+      "git": {
+        "branch": "dev",
+        "short": "f1510ac",
+        "commit": "f1510ac5f3db9c29193f1ab382e17b17e3a08e08"
+      },
+      "generated_at": "2026-06-07T02:44:01",
+      "refined": true,
+      "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
+    }
+  ]
+}

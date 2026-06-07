@@ -1,0 +1,76 @@
+name: Sync viewer from plugin
+
+# Pulls the canonical viewer/ from MollyAI/code-map into this gallery so the
+# UI always matches the plugin. The viewer is single-source over there; this
+# repo never hand-edits viewer/ — let this workflow own it.
+#
+# Manual by design: click "Run workflow" after the plugin ships a viewer
+# change. Make sure the change is on the plugin's `main` (the ref below) first
+# — e.g. the ?project= data-source support landed in plugin v1.5.2.
+# (Uncomment the schedule for an automatic weekly pull.)
+
+on:
+  workflow_dispatch:
+    inputs:
+      ref:
+        description: 'Plugin git ref to sync from'
+        required: false
+        default: 'main'
+  # schedule:
+  #   - cron: '0 6 * * 1'   # Mondays 06:00 UTC
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-viewer
+  cancel-in-progress: false   # a triggered sync should finish its commit/push, not be pre-empted
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout gallery
+        uses: actions/checkout@v4
+
+      - name: Checkout plugin viewer
+        uses: actions/checkout@v4
+        with:
+          repository: MollyAI/code-map
+          ref: ${{ github.event.inputs.ref || 'main' }}
+          path: .plugin-src
+
+      - name: Copy viewer (exclude dev-only files)
+        run: |
+          rsync -a --delete \
+            --exclude 'src/test/' \
+            --exclude 'jsconfig.json' \
+            .plugin-src/viewer/ viewer/
+          rm -rf .plugin-src
+
+      - name: Guard — synced viewer must support ?project=
+        # The gallery hard-depends on the multi-project data source (plugin v1.5.2+).
+        # If the synced ref predates it, refuse to commit rather than silently break
+        # every project page by reverting to the single-project /code-map.json fetch.
+        run: |
+          if [ ! -f viewer/src/data/source.js ]; then
+            echo "::error::synced viewer is missing src/data/source.js — the ?project= support (plugin v1.5.2+) is not on the synced ref. Merge it to the plugin first."
+            exit 1
+          fi
+
+      - name: Commit if changed
+        # ref is passed as an env var (data), never interpolated into the shell, to
+        # avoid script injection through the workflow_dispatch input.
+        env:
+          SYNC_REF: ${{ github.event.inputs.ref || 'main' }}
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain viewer)" ]; then
+            git add viewer
+            git commit -m "chore: sync viewer from MollyAI/code-map@${SYNC_REF}"
+            git push
+            echo "viewer updated."
+          else
+            echo "viewer already up to date."
+          fi

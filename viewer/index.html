@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>code map</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Geist:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <div class="project" id="project-name">…</div>
+    <div class="build-info" id="build-info" hidden></div>
+  </div>
+  <div class="controls">
+    <div class="toggle" id="view-toggle">
+      <button data-mode="core" class="active" data-i18n="core">core</button>
+      <button data-mode="all" data-i18n="all">all</button>
+    </div>
+    <div class="toggle" id="group-toggle" role="group" aria-label="grouping">
+      <button data-group="layer" class="active" data-i18n="group_layers">layers</button>
+      <button data-group="flow" data-i18n="group_flows">flows</button>
+    </div>
+    <div class="toggle" id="font-size-toggle" role="group" aria-label="font size">
+      <button data-size="small" data-i18n-title="font_small">S</button>
+      <button data-size="medium" class="active" data-i18n-title="font_medium">M</button>
+      <button data-size="large" data-i18n-title="font_large">L</button>
+    </div>
+    <button class="export-toggle" id="export-toggle" type="button" aria-label="export image" data-i18n-title="export_image">
+      <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M8 2v7.5"/>
+        <path d="M5 6.5 8 9.5 11 6.5"/>
+        <path d="M2.75 11.5v1.25c0 .55.45 1 1 1h8.5c.55 0 1-.45 1-1V11.5"/>
+      </svg>
+    </button>
+    <button class="theme-toggle" id="theme-toggle" type="button" aria-label="toggle theme" data-i18n-title="toggle_theme">
+      <svg class="icon-moon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true">
+        <path d="M6 1.5a6.5 6.5 0 1 0 8.5 8.5A5.5 5.5 0 0 1 6 1.5z"/>
+      </svg>
+      <svg class="icon-sun" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" aria-hidden="true">
+        <circle cx="8" cy="8" r="3"/>
+        <path d="M8 1.5v1.8 M8 12.7v1.8 M1.5 8h1.8 M12.7 8h1.8 M3.4 3.4l1.27 1.27 M11.33 11.33l1.27 1.27 M3.4 12.6l1.27-1.27 M11.33 4.67l1.27-1.27"/>
+      </svg>
+    </button>
+    <button class="lang-toggle" id="lang-toggle" type="button" aria-label="switch language">EN</button>
+  </div>
+</header>
+
+<div class="layout">
+  <aside class="flow-sidebar" id="flow-sidebar">
+    <div class="flow-sidebar-head">
+      <span class="flow-sidebar-title" data-i18n="group_flows">flows</span>
+      <button class="flow-collapse" id="flow-collapse" type="button" aria-label="collapse flow list" data-i18n-title="collapse_flows">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3.5 5.5 8 10 12.5"/>
+        </svg>
+      </button>
+    </div>
+    <div class="flow-list" id="flow-list"></div>
+  </aside>
+  <aside class="commit-sidebar" id="commit-sidebar">
+    <div class="commit-sidebar-head">
+      <span class="commit-sidebar-title" data-i18n="commit_history">Commit History</span>
+      <button class="commit-collapse" id="commit-collapse" type="button" aria-label="collapse commit list" data-i18n-title="collapse_commits">
+        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M10 3.5 5.5 8 10 12.5"/>
+        </svg>
+      </button>
+    </div>
+    <div class="commit-list" id="commit-list"></div>
+  </aside>
+  <button class="commit-expand" id="commit-expand" type="button" aria-label="show commit history" data-i18n-title="expand_commits">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 3.5 10.5 8 6 12.5"/>
+    </svg>
+  </button>
+  <button class="flow-expand" id="flow-expand" type="button" aria-label="show flow list" data-i18n-title="expand_flows">
+    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M6 3.5 10.5 8 6 12.5"/>
+    </svg>
+  </button>
+  <div class="canvas-wrap" id="canvas-wrap">
+    <svg id="map" xmlns="http://www.w3.org/2000/svg"></svg>
+  </div>
+  <aside class="detail" id="detail">
+    <div class="detail-body" id="detail-body">
+      <div class="empty">
+        <div data-i18n="nothing_selected">nothing selected.</div>
+        <div class="hint" data-i18n="click_node">click a node in the map</div>
+      </div>
+    </div>
+    <div class="lang-stats" id="lang-stats"></div>
+  </aside>
+  <div class="zoom-controls" id="zoom-controls">
+    <button type="button" data-zoom="out" data-i18n-title="zoom_out">−</button>
+    <button type="button" data-zoom="reset" class="zoom-pct" id="zoom-pct" data-i18n-title="zoom_reset">100%</button>
+    <button type="button" data-zoom="in" data-i18n-title="zoom_in">+</button>
+  </div>
+</div>
+
+<div class="tooltip" id="tooltip"></div>
+
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,4 @@
+{
+  "name": "code-map",
+  "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
+}
