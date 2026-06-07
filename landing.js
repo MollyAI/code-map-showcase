@@ -25,6 +25,9 @@ const STR = {
     empty: 'No projects yet. Publish one with <code>node scripts/publish.mjs --from &lt;path&gt;/.code-map</code>',
     none: (q) => `No projects match “${escapeHtml(q)}”.`,
     failed: 'Could not load projects.json.',
+    cta_title: 'Build a code map for your project',
+    cta_desc: 'code map is a free, open-source plugin — turn any codebase into an interactive architectural map.',
+    cta_btn: 'View on GitHub',
   },
   zh: {
     tagline: '真实代码库的交互式架构地图 —— 点击穿梭于分层、流程与依赖之间。',
@@ -34,6 +37,9 @@ const STR = {
     empty: '还没有项目。用 <code>node scripts/publish.mjs --from &lt;路径&gt;/.code-map</code> 发布一个。',
     none: (q) => `没有匹配 “${escapeHtml(q)}” 的项目。`,
     failed: '无法加载 projects.json。',
+    cta_title: '为你的项目构建 code map',
+    cta_desc: 'code map 是免费、开源的插件 —— 把任意代码库变成可交互的架构地图。',
+    cta_btn: '在 GitHub 查看',
   },
 };
 
@@ -61,6 +67,9 @@ function applyLang() {
   document.getElementById('html-root').lang = lang === 'zh' ? 'zh-CN' : 'en';
   $('hero-tagline').textContent = s.tagline;
   $('search').placeholder = s.search;
+  $('cta-title').textContent = s.cta_title;
+  $('cta-desc').textContent = s.cta_desc;
+  $('cta-btn-label').textContent = s.cta_btn;
   $('lang-toggle').textContent = lang === 'zh' ? '中' : 'EN';   // current language glyph, matching the viewer
   render();
 }
