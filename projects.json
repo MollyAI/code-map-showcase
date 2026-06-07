@@ -60,6 +60,26 @@
       "generated_at": "2026-06-07T04:56:34",
       "refined": true,
       "description": "The open source coding agent."
+    },
+    {
+      "slug": "superpowers",
+      "name": "superpowers",
+      "languages": [
+        "typescript"
+      ],
+      "files": 5,
+      "declarations": 25,
+      "layers": 3,
+      "flows": 3,
+      "edges": 16,
+      "git": {
+        "branch": "main",
+        "short": "6fd4507",
+        "commit": "6fd4507659784c351abbd2bc264c7162cfd386dc"
+      },
+      "generated_at": "2026-06-07T05:12:26",
+      "refined": true,
+      "description": "An agentic skills framework & software development methodology that works."
     }
   ]
 }

@@ -1,0 +1,3557 @@
+{
+  "anchor": "6fd4507659784c351abbd2bc264c7162cfd386dc",
+  "limit": 200,
+  "truncated": true,
+  "commits": [
+    {
+      "hash": "6fd4507659784c351abbd2bc264c7162cfd386dc",
+      "short": "6fd4507",
+      "time": 1780085125,
+      "subject": "Require contributors to disclose authoring environment and target dev",
+      "files": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/ISSUE_TEMPLATE/platform_support.md",
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "f2cbfbefebbfef77321e4c9abc9e949826bea9d7",
+      "short": "f2cbfbe",
+      "time": 1777932301,
+      "subject": "Release v5.1.0 (#1468)",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        ".codex-plugin/plugin.json",
+        ".codex/INSTALL.md",
+        ".cursor-plugin/plugin.json",
+        ".opencode/INSTALL.md",
+        ".opencode/plugins/superpowers.js",
+        "README.md",
+        "RELEASE-NOTES.md",
+        "agents/code-reviewer.md",
+        "commands/brainstorm.md",
+        "commands/execute-plan.md",
+        "commands/write-plan.md",
+        "docs/README.codex.md",
+        "docs/README.opencode.md",
+        "docs/superpowers/plans/2026-04-06-worktree-rototill.md",
+        "docs/superpowers/specs/2026-04-06-worktree-rototill-design.md",
+        "docs/testing.md",
+        "gemini-extension.json",
+        "hooks/hooks-cursor.json",
+        "package.json",
+        "scripts/sync-to-codex-plugin.sh",
+        "skills/executing-plans/SKILL.md",
+        "skills/finishing-a-development-branch/SKILL.md",
+        "skills/requesting-code-review/SKILL.md",
+        "skills/requesting-code-review/code-reviewer.md",
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/code-quality-reviewer-prompt.md",
+        "skills/systematic-debugging/CREATION-LOG.md",
+        "skills/systematic-debugging/root-cause-tracing.md",
+        "skills/using-git-worktrees/SKILL.md",
+        "skills/using-superpowers/references/codex-tools.md",
+        "skills/using-superpowers/references/copilot-tools.md",
+        "skills/using-superpowers/references/gemini-tools.md",
+        "skills/writing-plans/SKILL.md",
+        "tests/claude-code/README.md",
+        "tests/claude-code/run-skill-tests.sh",
+        "tests/claude-code/test-requesting-code-review.sh",
+        "tests/claude-code/test-subagent-driven-development-integration.sh",
+        "tests/claude-code/test-worktree-native-preference.sh",
+        "tests/codex-plugin-sync/test-sync-to-codex-plugin.sh",
+        "tests/opencode/run-tests.sh",
+        "tests/opencode/test-bootstrap-caching.mjs",
+        "tests/opencode/test-bootstrap-caching.sh",
+        "tests/opencode/test-priority.sh",
+        "tests/opencode/test-tools.sh"
+      ]
+    },
+    {
+      "hash": "e7a2d16476bf042e9add4699c9d018a90f86e4a6",
+      "short": "e7a2d16",
+      "time": 1777583321,
+      "subject": "Require session transcript for new-harness PRs",
+      "files": [
+        ".github/PULL_REQUEST_TEMPLATE.md",
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "6efe32c9e2dd002d0c394e861e0529675d1ab32e",
+      "short": "6efe32c",
+      "time": 1776996157,
+      "subject": "Use committed Codex plugin files in sync script",
+      "files": [
+        ".codex-plugin/plugin.json",
+        ".version-bump.json",
+        "assets/app-icon.png",
+        "assets/superpowers-small.svg",
+        "scripts/sync-to-codex-plugin.sh",
+        "tests/codex-plugin-sync/test-sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "b55764852ac78870e65c6565fb585b6cd8b3c5c9",
+      "short": "b557648",
+      "time": 1776369046,
+      "subject": "formatting",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "9f42444ab1b76d015fd554c2fa9a425174b1af0f",
+      "short": "9f42444",
+      "time": 1776369046,
+      "subject": "formatting",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "99e4c656bf359eb1dae5e8bc0fbb095955d4ad83",
+      "short": "99e4c65",
+      "time": 1776369046,
+      "subject": "reorder installs",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "a5dd364e42d90d05703605422dfba408db713af1",
+      "short": "a5dd364",
+      "time": 1776369046,
+      "subject": "README updates for Codex, other  cleanup",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "c4bbe651cb1bc5e7bec6f7effae2b946571f3258",
+      "short": "c4bbe65",
+      "time": 1776282100,
+      "subject": "Some terminology cleanups",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "34c17aefb23c43960580b4a7f0ed5cb45c270cbe",
+      "short": "34c17ae",
+      "time": 1776275979,
+      "subject": "sync-to-codex-plugin: seed interface.defaultPrompt (#1180)",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "bc25777c6a144f6b2f595cf0de12b20d2d97ffc0",
+      "short": "bc25777",
+      "time": 1776200636,
+      "subject": "sync-to-codex-plugin: anchor EXCLUDES patterns to source root",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "bcdd7fa24cc0729897462179e073afccf888f7c9",
+      "short": "bcdd7fa",
+      "time": 1776200366,
+      "subject": "sync-to-codex-plugin: exclude assets/, add --bootstrap flag",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "6149f3635ada80182895d586d803c48124524d7d",
+      "short": "6149f36",
+      "time": 1776199685,
+      "subject": "sync-to-codex-plugin: align plugin.json heredoc with current live shape",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "777a9770d8c70cb1eab51f3a64dfa4d7fadbe951",
+      "short": "777a977",
+      "time": 1776198479,
+      "subject": "sync-to-codex-plugin: mirror CODE_OF_CONDUCT.md, drop agents/openai.yaml overlay",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "da283df0582dcf55257b93340c3e432e3c88769f",
+      "short": "da283df",
+      "time": 1776198197,
+      "subject": "remove things we dont need",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "ac1c715ffb1563de58760d815ad10f52fcda0d6b",
+      "short": "ac1c715",
+      "time": 1776197916,
+      "subject": "rewrites sync tool to clone the fork, open a PR, and regenerate overlays inline",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "8c8c5e87ce7baa85ad59d5bffc6b901c32b7badc",
+      "short": "8c8c5e8",
+      "time": 1776193439,
+      "subject": "adds tooling to mirror superpowers as a codex plugin with the appropriate metadata changes",
+      "files": [
+        "scripts/sync-to-codex-plugin.sh"
+      ]
+    },
+    {
+      "hash": "a5d36b130055ebfbaea48b685a43cc40fccf72a2",
+      "short": "a5d36b1",
+      "time": 1776188167,
+      "subject": "chore: remove vestigial CHANGELOG.md",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "917e5f53b16b115b70a3a355ed5f4993b9f8b73d",
+      "short": "917e5f5",
+      "time": 1775515738,
+      "subject": "Fix Discord invite link",
+      "files": [
+        ".github/ISSUE_TEMPLATE/config.yml",
+        "README.md"
+      ]
+    },
+    {
+      "hash": "a6b1a1fa0c367a7cf3d373e1bdb0dbc84d50ccde",
+      "short": "a6b1a1f",
+      "time": 1775515612,
+      "subject": "Update Discord invite link",
+      "files": [
+        ".github/ISSUE_TEMPLATE/config.yml",
+        "README.md"
+      ]
+    },
+    {
+      "hash": "4b1b20f69fd526895082eb97e657ff103d0bd35a",
+      "short": "4b1b20f",
+      "time": 1775097270,
+      "subject": "Add detailed Discord description to Community section",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "eeaf2ad15b5bc3b52ae9dda98c42418bf9a667b1",
+      "short": "eeaf2ad",
+      "time": 1775095762,
+      "subject": "Add release announcements link, consolidate Community section",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "dd237283dbfe466e11bd4be55acf14ecb8f6636e",
+      "short": "dd23728",
+      "time": 1774993033,
+      "subject": "Add agent-facing guardrails to contributor guidelines",
+      "files": [
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "c0b417e40959a72899d46863a024dcb7baad7b76",
+      "short": "c0b417e",
+      "time": 1774991659,
+      "subject": "Add contributor guidelines to reduce agentic slop PRs",
+      "files": [
+        "AGENTS.md",
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "1f20bef3f59b85ad7b52718f822e37c4478a3ff5",
+      "short": "1f20bef",
+      "time": 1774985005,
+      "subject": "Release v5.0.7: Copilot CLI support, OpenCode fixes",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        ".cursor-plugin/plugin.json",
+        ".version-bump.json",
+        "RELEASE-NOTES.md",
+        "gemini-extension.json",
+        "package.json",
+        "scripts/bump-version.sh"
+      ]
+    },
+    {
+      "hash": "f0df5eca3059feea3b92b49335ae264c3b3170a3",
+      "short": "f0df5ec",
+      "time": 1774983082,
+      "subject": "docs: update release notes with OpenCode bootstrap change",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "0a1124ba5368e830969fc1a1f30f84265711b8cd",
+      "short": "0a1124b",
+      "time": 1774983082,
+      "subject": "fix(opencode): inject bootstrap as user message instead of system message",
+      "files": [
+        ".opencode/plugins/superpowers.js"
+      ]
+    },
+    {
+      "hash": "65d760f9c28b87c07b4748d2649189de85a79d36",
+      "short": "65d760f",
+      "time": 1774983082,
+      "subject": "docs: add OpenCode path fix to release notes",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "2d942f3b01cc636e2ef9ebfc50f05925df8ed3f6",
+      "short": "2d942f3",
+      "time": 1774983082,
+      "subject": "fix(opencode): align skills path across bootstrap, runtime, and tests",
+      "files": [
+        ".opencode/plugins/superpowers.js",
+        "tests/opencode/setup.sh",
+        "tests/opencode/test-plugin-loading.sh",
+        "tests/opencode/test-priority.sh"
+      ]
+    },
+    {
+      "hash": "8b1669269c51835168c98fd435a7af1e5f15ec12",
+      "short": "8b16692",
+      "time": 1774983082,
+      "subject": "feat: add Copilot CLI tool mapping, docs, and install instructions",
+      "files": [
+        "README.md",
+        "RELEASE-NOTES.md",
+        "skills/using-superpowers/SKILL.md",
+        "skills/using-superpowers/references/copilot-tools.md"
+      ]
+    },
+    {
+      "hash": "a2964d7a20b8d9fefafc14ded4b5416dd1d4246e",
+      "short": "a2964d7",
+      "time": 1774983082,
+      "subject": "fix: add Copilot CLI platform detection for sessionStart context injection",
+      "files": [
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "eafe962b18f6c5dc70fb7c8cc7e83e61f4cdde06",
+      "short": "eafe962",
+      "time": 1774462089,
+      "subject": "Release v5.0.6: inline self-review, brainstorm server restructure, owner-PID fixes",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        ".cursor-plugin/plugin.json",
+        "gemini-extension.json",
+        "package.json"
+      ]
+    },
+    {
+      "hash": "9f04f0635114d09ca054778e2dd44942efd1c008",
+      "short": "9f04f06",
+      "time": 1774461833,
+      "subject": "Fix owner-PID lifecycle monitoring for cross-platform reliability",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/scripts/server.cjs",
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "f076bd3431dd2826402bb91be7a8b95350a34515",
+      "short": "f076bd3",
+      "time": 1774461833,
+      "subject": "Fix owner-PID false positive when owner runs as different user",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/scripts/server.cjs"
+      ]
+    },
+    {
+      "hash": "9e3ed213a04315e57055d98ef8dd78bff6b63683",
+      "short": "9e3ed21",
+      "time": 1774461833,
+      "subject": "Separate brainstorm server content and state into peer directories",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/scripts/server.cjs",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/scripts/stop-server.sh",
+        "skills/brainstorming/visual-companion.md",
+        "tests/brainstorm-server/server.test.js"
+      ]
+    },
+    {
+      "hash": "9e6e077d33f2c0985e662e8d9239b51e9fb1cbf2",
+      "short": "9e6e077",
+      "time": 1774461833,
+      "subject": "Revert \"Move brainstorm server metadata to .meta/ subdirectory\"",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/scripts/server.cjs",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/scripts/stop-server.sh",
+        "skills/brainstorming/visual-companion.md",
+        "tests/brainstorm-server/server.test.js"
+      ]
+    },
+    {
+      "hash": "151cfb16a0901275e493b46fe591f391e91924ea",
+      "short": "151cfb1",
+      "time": 1774461833,
+      "subject": "Move brainstorm server metadata to .meta/ subdirectory",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/scripts/server.cjs",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/scripts/stop-server.sh",
+        "skills/brainstorming/visual-companion.md",
+        "tests/brainstorm-server/server.test.js"
+      ]
+    },
+    {
+      "hash": "a1155f623fbf9ff321a064fe7a2714ffa68b97fc",
+      "short": "a1155f6",
+      "time": 1774461833,
+      "subject": "Add v5.0.6 release notes",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "3f80f1c769d8a172ee9803d049253f15fbe4895b",
+      "short": "3f80f1c",
+      "time": 1774461833,
+      "subject": "Reapply \"Replace subagent review loops with lightweight inline self-review\"",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "4ae1a3d6a6e1e2171ae9de0eb7daf3e192c2b792",
+      "short": "4ae1a3d",
+      "time": 1774461833,
+      "subject": "Revert \"Replace subagent review loops with lightweight inline self-review\"",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "e6221a48c54141e0ef04adaea4895a8150fc57a1",
+      "short": "e6221a4",
+      "time": 1774461833,
+      "subject": "Replace subagent review loops with lightweight inline self-review",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "4fd9aa2dd5b602a102a1ff4743849642b73655c1",
+      "short": "4fd9aa2",
+      "time": 1774461833,
+      "subject": "fix(writing-skills): correct false 'only two fields' frontmatter claim (#882)",
+      "files": [
+        "skills/writing-skills/SKILL.md",
+        "skills/writing-skills/anthropic-best-practices.md"
+      ]
+    },
+    {
+      "hash": "2b1bfe5db62e0b9bf1566a3c79e87608ea4cc5f5",
+      "short": "2b1bfe5",
+      "time": 1774461833,
+      "subject": "docs(codex-tools): add named agent dispatch mapping for Codex (#647)",
+      "files": [
+        "skills/using-superpowers/references/codex-tools.md"
+      ]
+    },
+    {
+      "hash": "bd080e3cc87a17f78fc53a2347510e410d147ab6",
+      "short": "bd080e3",
+      "time": 1774461833,
+      "subject": "docs: add implementation plan for Codex App compatibility (PRI-823)",
+      "files": [
+        "docs/superpowers/plans/2026-03-23-codex-app-compatibility.md"
+      ]
+    },
+    {
+      "hash": "eb2b44b23f90ebc14d9773332fa6f8663f8fe6e9",
+      "short": "eb2b44b",
+      "time": 1774461833,
+      "subject": "docs: add cleanup guard test (#5) and sandbox fallback test (#10) to spec",
+      "files": [
+        "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md"
+      ]
+    },
+    {
+      "hash": "80c0a45fcce85e0f1d6851b0d94a7638bdfdc5e9",
+      "short": "80c0a45",
+      "time": 1774461833,
+      "subject": "docs: clarify executing-plans in What Does NOT Change section",
+      "files": [
+        "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md"
+      ]
+    },
+    {
+      "hash": "c28b28ffbd8adc1725e3e25a022d1421e15cab80",
+      "short": "c28b28f",
+      "time": 1774461833,
+      "subject": "docs: address team review feedback for PRI-823 spec",
+      "files": [
+        "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md"
+      ]
+    },
+    {
+      "hash": "33e9bea3cce015dceaf56d1449e46dfca6e3b00a",
+      "short": "33e9bea",
+      "time": 1774461833,
+      "subject": "docs: address spec review feedback for PRI-823",
+      "files": [
+        "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md"
+      ]
+    },
+    {
+      "hash": "74a0c004eb2b0b2bb9c4e71aba4f3f6319b9d2aa",
+      "short": "74a0c00",
+      "time": 1774461833,
+      "subject": "docs: add Codex App compatibility design spec (PRI-823)",
+      "files": [
+        "docs/superpowers/specs/2026-03-23-codex-app-compatibility-design.md"
+      ]
+    },
+    {
+      "hash": "8ea39819eed74fe2a0338e71789f06b30e953041",
+      "short": "8ea3981",
+      "time": 1773951977,
+      "subject": "Add issue templates and disable blank issues",
+      "files": [
+        ".github/ISSUE_TEMPLATE/bug_report.md",
+        ".github/ISSUE_TEMPLATE/config.yml",
+        ".github/ISSUE_TEMPLATE/feature_request.md",
+        ".github/ISSUE_TEMPLATE/platform_support.md"
+      ]
+    },
+    {
+      "hash": "764215331d88f61bd7436e39b134d34da566e581",
+      "short": "7642153",
+      "time": 1773950672,
+      "subject": "Add PR template to filter low-quality submissions",
+      "files": [
+        ".github/PULL_REQUEST_TEMPLATE.md"
+      ]
+    },
+    {
+      "hash": "eccd45305a06aacccbd1d96f384b30e626a25ca0",
+      "short": "eccd453",
+      "time": 1773947510,
+      "subject": "Add Contributor Covenant Code of Conduct",
+      "files": [
+        "CODE_OF_CONDUCT.md"
+      ]
+    },
+    {
+      "hash": "fb4adab518c7e722ade428300dc54da786ceac8f",
+      "short": "fb4adab",
+      "time": 1773947058,
+      "subject": "Bump cursor plugin version to match release",
+      "files": [
+        ".cursor-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "8a0a5ca6a3d98b8ab2e58a1612774b4b456b6552",
+      "short": "8a0a5ca",
+      "time": 1773784917,
+      "subject": "Release v5.0.5: brainstorm server ESM fix, Windows PID fix, stop-server reliability",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "CHANGELOG.md",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "2d46da1b37924f78cff837bc99ee12a0a52dbb81",
+      "short": "2d46da1",
+      "time": 1773784262,
+      "subject": "Credit @lucasyhzhu-debug for Windows brainstorm docs (PR #768)",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "00029480418050a896d8b41e9f10cae8bb4320ab",
+      "short": "0002948",
+      "time": 1773783303,
+      "subject": "Update RELEASE-NOTES.md with brainstorm server ESM fix",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "3128a2c3cda2a24af458afb918ba4f8e58063d9e",
+      "short": "3128a2c",
+      "time": 1773783256,
+      "subject": "fix : resolve ESM/CommonJS module confict in brainstorming server",
+      "files": [
+        "skills/brainstorming/scripts/server.cjs",
+        "skills/brainstorming/scripts/start-server.sh",
+        "tests/brainstorm-server/server.test.js",
+        "tests/brainstorm-server/ws-protocol.test.js"
+      ]
+    },
+    {
+      "hash": "f34ee479b7145ba4fcbca9b8f9e38edf9eb076ca",
+      "short": "f34ee47",
+      "time": 1773720576,
+      "subject": "fix: Windows brainstorm server lifecycle, restore execution choice",
+      "files": [
+        "CHANGELOG.md",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/visual-companion.md",
+        "skills/writing-plans/SKILL.md",
+        "tests/brainstorm-server/windows-lifecycle.test.sh"
+      ]
+    },
+    {
+      "hash": "3cee13e516e91d44b957c1336c3d08c8a8392702",
+      "short": "3cee13e",
+      "time": 1773717015,
+      "subject": "Add Community section with Discord link and Prime Radiant attribution",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "d1b5f578b00371fb5330810134562758c67f581a",
+      "short": "d1b5f57",
+      "time": 1773708949,
+      "subject": "Release v5.0.4: review loop refinements, OpenCode one-line install, bug fixes",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md",
+        "package.json"
+      ]
+    },
+    {
+      "hash": "61a64d7098365951492cb0276393343117d2c848",
+      "short": "61a64d7",
+      "time": 1773707041,
+      "subject": "fix: verify server actually stopped in stop-server.sh",
+      "files": [
+        "skills/brainstorming/scripts/stop-server.sh"
+      ]
+    },
+    {
+      "hash": "825a142aa32af84a8f276b7d7ee38c5bcaee64b1",
+      "short": "825a142",
+      "time": 1773707034,
+      "subject": "Revert \"Merge pull request #751 from savvyinsight/fix/stop-server-verify\"",
+      "files": [
+        "skills/brainstorming/scripts/stop-server.sh"
+      ]
+    },
+    {
+      "hash": "a4c48714bc33e0c86eb8efc4fa08e7abf3b0c54f",
+      "short": "a4c4871",
+      "time": 1773701847,
+      "subject": "Use generic \"the agent\" instead of \"Claude\" in brainstorm server",
+      "files": [
+        "skills/brainstorming/scripts/server.js"
+      ]
+    },
+    {
+      "hash": "2c6a8a352d1a8b8a9db463231d8f3131c9c8167e",
+      "short": "2c6a8a3",
+      "time": 1773701843,
+      "subject": "Tone down review loops: single-pass plan review, raise issue bar",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/brainstorming/SKILL.md",
+        "skills/brainstorming/spec-document-reviewer-prompt.md",
+        "skills/writing-plans/SKILL.md",
+        "skills/writing-plans/plan-document-reviewer-prompt.md"
+      ]
+    },
+    {
+      "hash": "2b25774f313ba22c54ed3bbe5f46201efdbf44d4",
+      "short": "2b25774",
+      "time": 1773610935,
+      "subject": "Update changelog with Cursor hooks support (#709)",
+      "files": [
+        "CHANGELOG.md",
+        "hooks/hooks-cursor.json"
+      ]
+    },
+    {
+      "hash": "f4b54a17171e4cf90601db6b6fc4ba3ab1c1f206",
+      "short": "f4b54a1",
+      "time": 1773610165,
+      "subject": "Auto-register skills from plugin, simplify OpenCode install to one line",
+      "files": [
+        ".opencode/INSTALL.md",
+        ".opencode/plugins/superpowers.js",
+        "docs/README.opencode.md"
+      ]
+    },
+    {
+      "hash": "911fa1d6c535c4e68be852f2ee153421a161aa5c",
+      "short": "911fa1d",
+      "time": 1773605331,
+      "subject": "test: add package.json for opencode npm plugin test",
+      "files": [
+        "package.json"
+      ]
+    },
+    {
+      "hash": "4e7c0842f899e6a9b7f04c78b34068008dbffc39",
+      "short": "4e7c084",
+      "time": 1773603318,
+      "subject": "feat: add Cursor-compatible hooks and fix platform detection",
+      "files": [
+        ".cursor-plugin/plugin.json",
+        "hooks/hooks-cursor.json",
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "689f27c96810892cb851c28a75528fea053b106c",
+      "short": "689f27c",
+      "time": 1773602094,
+      "subject": "Update changelog: add bash 5.3+ fix, link all issues/PRs",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "537ec640fd8fd47fc0ff596abeb445d1515bd2bd",
+      "short": "537ec64",
+      "time": 1773602074,
+      "subject": "fix(hooks): replace heredoc with printf to fix bash 5.3+ hang",
+      "files": [
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "c5e953831186a59c26f3e200aba0f8099e160a76",
+      "short": "c5e9538",
+      "time": 1773600054,
+      "subject": "Update changelog with POSIX hook fix (#553)",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "fd318b1b79caeac758f35b2653a4805790bbc39e",
+      "short": "fd318b1",
+      "time": 1773600038,
+      "subject": "fix(hooks): replace BASH_SOURCE with POSIX-safe $0",
+      "files": [
+        "docs/windows/polyglot-hooks.md",
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "ea472dedf070b15b2cbde1b63d7c1cac59681600",
+      "short": "ea472de",
+      "time": 1773599896,
+      "subject": "Update changelog with portable shebang fix (#700)",
+      "files": [
+        "CHANGELOG.md"
+      ]
+    },
+    {
+      "hash": "addfe8511a0543d04b30ff50b7e5f6c88e998368",
+      "short": "addfe85",
+      "time": 1773599884,
+      "subject": "fix: use portable shebang #!/usr/bin/env bash in all shell scripts",
+      "files": [
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/scripts/stop-server.sh",
+        "tests/explicit-skill-requests/run-all.sh",
+        "tests/explicit-skill-requests/run-claude-describes-sdd.sh",
+        "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-haiku-test.sh",
+        "tests/explicit-skill-requests/run-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-test.sh",
+        "tests/skill-triggering/run-all.sh",
+        "tests/skill-triggering/run-test.sh",
+        "tests/subagent-driven-dev/go-fractals/scaffold.sh",
+        "tests/subagent-driven-dev/run-test.sh",
+        "tests/subagent-driven-dev/svelte-todo/scaffold.sh"
+      ]
+    },
+    {
+      "hash": "c6a2b1b5763325b47c583a2d3d7f384dfab3ba0b",
+      "short": "c6a2b1b",
+      "time": 1773599435,
+      "subject": "fix: auto-foreground brainstorm server on Windows/Git Bash",
+      "files": [
+        "CHANGELOG.md",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/visual-companion.md"
+      ]
+    },
+    {
+      "hash": "d19703b0a19608df0261fdc5e24bc6891ec2dac9",
+      "short": "d19703b",
+      "time": 1773599335,
+      "subject": "fix: stop firing SessionStart hook on --resume",
+      "files": [
+        "RELEASE-NOTES.md",
+        "hooks/hooks.json"
+      ]
+    },
+    {
+      "hash": "6d21e9cc07fbad8678fe8230a1e65f6cbe27255c",
+      "short": "6d21e9c",
+      "time": 1773595412,
+      "subject": "fix: verify server actually stopped in stop-server.sh",
+      "files": [
+        "skills/brainstorming/scripts/stop-server.sh"
+      ]
+    },
+    {
+      "hash": "687a66183de877676c935360c81eb48ef11d29e8",
+      "short": "687a661",
+      "time": 1773594872,
+      "subject": "Fix deprecated collab flag in Codex docs",
+      "files": [
+        "docs/README.codex.md",
+        "skills/using-superpowers/references/codex-tools.md"
+      ]
+    },
+    {
+      "hash": "363923f74aa9cd7b470c0aaa73dee629a8bfdc90",
+      "short": "363923f",
+      "time": 1773290824,
+      "subject": "Release v5.0.2: add release notes and bump marketplace version",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "3188953b0c94f76716d862632ee9737a97204f1a",
+      "short": "3188953",
+      "time": 1773290518,
+      "subject": "Release v5.0.2: Subagent context isolation, zero-dep brainstorm server",
+      "files": [
+        ".claude-plugin/plugin.json",
+        ".cursor-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "9ccce3bf07a40e45259004a330409ba00970eff7",
+      "short": "9ccce3b",
+      "time": 1773280076,
+      "subject": "Add context isolation principle to all delegation skills",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/dispatching-parallel-agents/SKILL.md",
+        "skills/requesting-code-review/SKILL.md",
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "b484bae134cd66e191c367f18b316b06bbb8316a",
+      "short": "b484bae",
+      "time": 1773280067,
+      "subject": "Fix owner PID tracking: resolve grandparent to get actual harness PID",
+      "files": [
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "ec99b7c4a461ed246f6562f8959cbed6ffee92c9",
+      "short": "ec99b7c",
+      "time": 1773279544,
+      "subject": "Exit server when owner process dies (harness-agnostic cleanup)",
+      "files": [
+        "skills/brainstorming/scripts/server.js",
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "263e3268f45fdd7e6087f3fed8439e0f3031e247",
+      "short": "263e326",
+      "time": 1773279129,
+      "subject": "Auto-exit server after 30 minutes idle, add liveness check to skill",
+      "files": [
+        "skills/brainstorming/scripts/server.js",
+        "skills/brainstorming/visual-companion.md"
+      ]
+    },
+    {
+      "hash": "85cab6eff01e35c7043198a462a9f8e2810b39f5",
+      "short": "85cab6e",
+      "time": 1773271349,
+      "subject": "(fix): declare encoding meta on viz brainstorm server pages",
+      "files": [
+        "skills/brainstorming/scripts/frame-template.html",
+        "skills/brainstorming/scripts/server.js"
+      ]
+    },
+    {
+      "hash": "7619570679c7bd3ecc747cc4e607886fe214d968",
+      "short": "7619570",
+      "time": 1773260272,
+      "subject": "Remove vendored node_modules, swap to zero-dep server.js",
+      "files": [
+        ".gitignore",
+        "skills/brainstorming/scripts/index.js",
+        "skills/brainstorming/scripts/node_modules/.bin/mime",
+        "skills/brainstorming/scripts/node_modules/.package-lock.json",
+        "skills/brainstorming/scripts/node_modules/accepts/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/accepts/LICENSE",
+        "skills/brainstorming/scripts/node_modules/accepts/README.md",
+        "skills/brainstorming/scripts/node_modules/accepts/index.js",
+        "skills/brainstorming/scripts/node_modules/accepts/package.json",
+        "skills/brainstorming/scripts/node_modules/anymatch/LICENSE",
+        "skills/brainstorming/scripts/node_modules/anymatch/README.md",
+        "skills/brainstorming/scripts/node_modules/anymatch/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/anymatch/index.js",
+        "skills/brainstorming/scripts/node_modules/anymatch/package.json",
+        "skills/brainstorming/scripts/node_modules/array-flatten/LICENSE",
+        "skills/brainstorming/scripts/node_modules/array-flatten/README.md",
+        "skills/brainstorming/scripts/node_modules/array-flatten/array-flatten.js",
+        "skills/brainstorming/scripts/node_modules/array-flatten/package.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/binary-extensions.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/binary-extensions.json.d.ts",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/index.js",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/license",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/package.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/readme.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/LICENSE",
+        "skills/brainstorming/scripts/node_modules/body-parser/README.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/index.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/read.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/json.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/raw.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/text.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/urlencoded.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/package.json",
+        "skills/brainstorming/scripts/node_modules/braces/LICENSE",
+        "skills/brainstorming/scripts/node_modules/braces/README.md",
+        "skills/brainstorming/scripts/node_modules/braces/index.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/compile.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/expand.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/stringify.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/braces/package.json",
+        "skills/brainstorming/scripts/node_modules/bytes/History.md",
+        "skills/brainstorming/scripts/node_modules/bytes/LICENSE",
+        "skills/brainstorming/scripts/node_modules/bytes/Readme.md",
+        "skills/brainstorming/scripts/node_modules/bytes/index.js",
+        "skills/brainstorming/scripts/node_modules/bytes/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.nycrc",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/LICENSE",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/README.md",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/actualApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/actualApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/applyBind.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/applyBind.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionCall.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionCall.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/reflectApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/reflectApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/test/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/call-bound/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/call-bound/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/call-bound/.nycrc",
+        "skills/brainstorming/scripts/node_modules/call-bound/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/call-bound/LICENSE",
+        "skills/brainstorming/scripts/node_modules/call-bound/README.md",
+        "skills/brainstorming/scripts/node_modules/call-bound/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bound/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bound/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bound/test/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bound/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/chokidar/LICENSE",
+        "skills/brainstorming/scripts/node_modules/chokidar/README.md",
+        "skills/brainstorming/scripts/node_modules/chokidar/index.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/fsevents-handler.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/nodefs-handler.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/package.json",
+        "skills/brainstorming/scripts/node_modules/chokidar/types/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/content-disposition/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/content-disposition/LICENSE",
+        "skills/brainstorming/scripts/node_modules/content-disposition/README.md",
+        "skills/brainstorming/scripts/node_modules/content-disposition/index.js",
+        "skills/brainstorming/scripts/node_modules/content-disposition/package.json",
+        "skills/brainstorming/scripts/node_modules/content-type/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/content-type/LICENSE",
+        "skills/brainstorming/scripts/node_modules/content-type/README.md",
+        "skills/brainstorming/scripts/node_modules/content-type/index.js",
+        "skills/brainstorming/scripts/node_modules/content-type/package.json",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/History.md",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/Readme.md",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/index.js",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/package.json",
+        "skills/brainstorming/scripts/node_modules/cookie/LICENSE",
+        "skills/brainstorming/scripts/node_modules/cookie/README.md",
+        "skills/brainstorming/scripts/node_modules/cookie/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/cookie/index.js",
+        "skills/brainstorming/scripts/node_modules/cookie/package.json",
+        "skills/brainstorming/scripts/node_modules/debug/.coveralls.yml",
+        "skills/brainstorming/scripts/node_modules/debug/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/debug/.npmignore",
+        "skills/brainstorming/scripts/node_modules/debug/.travis.yml",
+        "skills/brainstorming/scripts/node_modules/debug/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/debug/LICENSE",
+        "skills/brainstorming/scripts/node_modules/debug/Makefile",
+        "skills/brainstorming/scripts/node_modules/debug/README.md",
+        "skills/brainstorming/scripts/node_modules/debug/component.json",
+        "skills/brainstorming/scripts/node_modules/debug/karma.conf.js",
+        "skills/brainstorming/scripts/node_modules/debug/node.js",
+        "skills/brainstorming/scripts/node_modules/debug/package.json",
+        "skills/brainstorming/scripts/node_modules/debug/src/browser.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/debug.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/index.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/inspector-log.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/node.js",
+        "skills/brainstorming/scripts/node_modules/depd/History.md",
+        "skills/brainstorming/scripts/node_modules/depd/LICENSE",
+        "skills/brainstorming/scripts/node_modules/depd/Readme.md",
+        "skills/brainstorming/scripts/node_modules/depd/index.js",
+        "skills/brainstorming/scripts/node_modules/depd/lib/browser/index.js",
+        "skills/brainstorming/scripts/node_modules/depd/package.json",
+        "skills/brainstorming/scripts/node_modules/destroy/LICENSE",
+        "skills/brainstorming/scripts/node_modules/destroy/README.md",
+        "skills/brainstorming/scripts/node_modules/destroy/index.js",
+        "skills/brainstorming/scripts/node_modules/destroy/package.json",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.nycrc",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/LICENSE",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/README.md",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/get.d.ts",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/get.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/package.json",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/set.d.ts",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/set.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/get.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/index.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/set.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/ee-first/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ee-first/README.md",
+        "skills/brainstorming/scripts/node_modules/ee-first/index.js",
+        "skills/brainstorming/scripts/node_modules/ee-first/package.json",
+        "skills/brainstorming/scripts/node_modules/encodeurl/LICENSE",
+        "skills/brainstorming/scripts/node_modules/encodeurl/README.md",
+        "skills/brainstorming/scripts/node_modules/encodeurl/index.js",
+        "skills/brainstorming/scripts/node_modules/encodeurl/package.json",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.nycrc",
+        "skills/brainstorming/scripts/node_modules/es-define-property/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-define-property/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-define-property/README.md",
+        "skills/brainstorming/scripts/node_modules/es-define-property/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-define-property/index.js",
+        "skills/brainstorming/scripts/node_modules/es-define-property/package.json",
+        "skills/brainstorming/scripts/node_modules/es-define-property/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-define-property/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-errors/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-errors/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-errors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-errors/README.md",
+        "skills/brainstorming/scripts/node_modules/es-errors/eval.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/eval.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/index.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/package.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/range.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/range.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/ref.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/ref.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/syntax.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/syntax.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/type.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/type.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/uri.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/uri.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/README.md",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/RequireObjectCoercible.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/RequireObjectCoercible.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/ToObject.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/ToObject.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/index.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/isObject.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/isObject.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/package.json",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/escape-html/LICENSE",
+        "skills/brainstorming/scripts/node_modules/escape-html/Readme.md",
+        "skills/brainstorming/scripts/node_modules/escape-html/index.js",
+        "skills/brainstorming/scripts/node_modules/escape-html/package.json",
+        "skills/brainstorming/scripts/node_modules/etag/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/etag/LICENSE",
+        "skills/brainstorming/scripts/node_modules/etag/README.md",
+        "skills/brainstorming/scripts/node_modules/etag/index.js",
+        "skills/brainstorming/scripts/node_modules/etag/package.json",
+        "skills/brainstorming/scripts/node_modules/express/History.md",
+        "skills/brainstorming/scripts/node_modules/express/LICENSE",
+        "skills/brainstorming/scripts/node_modules/express/Readme.md",
+        "skills/brainstorming/scripts/node_modules/express/index.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/application.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/express.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/middleware/init.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/middleware/query.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/request.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/response.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/index.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/layer.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/route.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/view.js",
+        "skills/brainstorming/scripts/node_modules/express/package.json",
+        "skills/brainstorming/scripts/node_modules/fill-range/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fill-range/README.md",
+        "skills/brainstorming/scripts/node_modules/fill-range/index.js",
+        "skills/brainstorming/scripts/node_modules/fill-range/package.json",
+        "skills/brainstorming/scripts/node_modules/finalhandler/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/LICENSE",
+        "skills/brainstorming/scripts/node_modules/finalhandler/README.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/index.js",
+        "skills/brainstorming/scripts/node_modules/finalhandler/package.json",
+        "skills/brainstorming/scripts/node_modules/forwarded/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/forwarded/LICENSE",
+        "skills/brainstorming/scripts/node_modules/forwarded/README.md",
+        "skills/brainstorming/scripts/node_modules/forwarded/index.js",
+        "skills/brainstorming/scripts/node_modules/forwarded/package.json",
+        "skills/brainstorming/scripts/node_modules/fresh/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/fresh/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fresh/README.md",
+        "skills/brainstorming/scripts/node_modules/fresh/index.js",
+        "skills/brainstorming/scripts/node_modules/fresh/package.json",
+        "skills/brainstorming/scripts/node_modules/function-bind/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/function-bind/.github/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/.nycrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/LICENSE",
+        "skills/brainstorming/scripts/node_modules/function-bind/README.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/implementation.js",
+        "skills/brainstorming/scripts/node_modules/function-bind/index.js",
+        "skills/brainstorming/scripts/node_modules/function-bind/package.json",
+        "skills/brainstorming/scripts/node_modules/function-bind/test/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/test/index.js",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.nycrc",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/LICENSE",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/README.md",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/index.js",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/package.json",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/test/GetIntrinsic.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/get-proto/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/get-proto/.nycrc",
+        "skills/brainstorming/scripts/node_modules/get-proto/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/get-proto/LICENSE",
+        "skills/brainstorming/scripts/node_modules/get-proto/Object.getPrototypeOf.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/Object.getPrototypeOf.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/README.md",
+        "skills/brainstorming/scripts/node_modules/get-proto/Reflect.getPrototypeOf.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/Reflect.getPrototypeOf.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/index.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/package.json",
+        "skills/brainstorming/scripts/node_modules/get-proto/test/index.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/glob-parent/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/glob-parent/LICENSE",
+        "skills/brainstorming/scripts/node_modules/glob-parent/README.md",
+        "skills/brainstorming/scripts/node_modules/glob-parent/index.js",
+        "skills/brainstorming/scripts/node_modules/glob-parent/package.json",
+        "skills/brainstorming/scripts/node_modules/gopd/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/gopd/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/gopd/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/gopd/LICENSE",
+        "skills/brainstorming/scripts/node_modules/gopd/README.md",
+        "skills/brainstorming/scripts/node_modules/gopd/gOPD.d.ts",
+        "skills/brainstorming/scripts/node_modules/gopd/gOPD.js",
+        "skills/brainstorming/scripts/node_modules/gopd/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/gopd/index.js",
+        "skills/brainstorming/scripts/node_modules/gopd/package.json",
+        "skills/brainstorming/scripts/node_modules/gopd/test/index.js",
+        "skills/brainstorming/scripts/node_modules/gopd/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.nycrc",
+        "skills/brainstorming/scripts/node_modules/has-symbols/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/has-symbols/LICENSE",
+        "skills/brainstorming/scripts/node_modules/has-symbols/README.md",
+        "skills/brainstorming/scripts/node_modules/has-symbols/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/has-symbols/index.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/package.json",
+        "skills/brainstorming/scripts/node_modules/has-symbols/shams.d.ts",
+        "skills/brainstorming/scripts/node_modules/has-symbols/shams.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/index.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/shams/core-js.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/shams/get-own-property-symbols.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/tests.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/hasown/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/hasown/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/hasown/.nycrc",
+        "skills/brainstorming/scripts/node_modules/hasown/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/hasown/LICENSE",
+        "skills/brainstorming/scripts/node_modules/hasown/README.md",
+        "skills/brainstorming/scripts/node_modules/hasown/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/hasown/index.js",
+        "skills/brainstorming/scripts/node_modules/hasown/package.json",
+        "skills/brainstorming/scripts/node_modules/hasown/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/http-errors/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/http-errors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/http-errors/README.md",
+        "skills/brainstorming/scripts/node_modules/http-errors/index.js",
+        "skills/brainstorming/scripts/node_modules/http-errors/package.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/Changelog.md",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/LICENSE",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/README.md",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/dbcs-codec.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/dbcs-data.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/index.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/internal.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-codec.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-data-generated.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-data.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/big5-added.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp936.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp949.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp950.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/eucjp.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/gbk-added.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/shiftjis.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/utf16.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/utf7.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/bom-handling.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/extend-node.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/index.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/streams.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/package.json",
+        "skills/brainstorming/scripts/node_modules/inherits/LICENSE",
+        "skills/brainstorming/scripts/node_modules/inherits/README.md",
+        "skills/brainstorming/scripts/node_modules/inherits/inherits.js",
+        "skills/brainstorming/scripts/node_modules/inherits/inherits_browser.js",
+        "skills/brainstorming/scripts/node_modules/inherits/package.json",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/README.md",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/ipaddr.min.js",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/lib/ipaddr.js",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/lib/ipaddr.js.d.ts",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/package.json",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/index.js",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/license",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/package.json",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/readme.md",
+        "skills/brainstorming/scripts/node_modules/is-extglob/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-extglob/README.md",
+        "skills/brainstorming/scripts/node_modules/is-extglob/index.js",
+        "skills/brainstorming/scripts/node_modules/is-extglob/package.json",
+        "skills/brainstorming/scripts/node_modules/is-glob/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-glob/README.md",
+        "skills/brainstorming/scripts/node_modules/is-glob/index.js",
+        "skills/brainstorming/scripts/node_modules/is-glob/package.json",
+        "skills/brainstorming/scripts/node_modules/is-number/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-number/README.md",
+        "skills/brainstorming/scripts/node_modules/is-number/index.js",
+        "skills/brainstorming/scripts/node_modules/is-number/package.json",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/LICENSE",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/README.md",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/abs.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/abs.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxArrayLength.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxArrayLength.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxSafeInteger.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxSafeInteger.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxValue.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxValue.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/floor.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/floor.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isFinite.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isFinite.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isInteger.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isInteger.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNaN.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNaN.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNegativeZero.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNegativeZero.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/max.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/max.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/min.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/min.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/mod.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/mod.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/package.json",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/pow.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/pow.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/round.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/round.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/sign.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/sign.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/test/index.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/media-typer/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/media-typer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/media-typer/README.md",
+        "skills/brainstorming/scripts/node_modules/media-typer/index.js",
+        "skills/brainstorming/scripts/node_modules/media-typer/package.json",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/README.md",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/index.js",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/package.json",
+        "skills/brainstorming/scripts/node_modules/methods/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/methods/LICENSE",
+        "skills/brainstorming/scripts/node_modules/methods/README.md",
+        "skills/brainstorming/scripts/node_modules/methods/index.js",
+        "skills/brainstorming/scripts/node_modules/methods/package.json",
+        "skills/brainstorming/scripts/node_modules/mime-db/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/mime-db/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime-db/README.md",
+        "skills/brainstorming/scripts/node_modules/mime-db/db.json",
+        "skills/brainstorming/scripts/node_modules/mime-db/index.js",
+        "skills/brainstorming/scripts/node_modules/mime-db/package.json",
+        "skills/brainstorming/scripts/node_modules/mime-types/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/mime-types/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime-types/README.md",
+        "skills/brainstorming/scripts/node_modules/mime-types/index.js",
+        "skills/brainstorming/scripts/node_modules/mime-types/package.json",
+        "skills/brainstorming/scripts/node_modules/mime/.npmignore",
+        "skills/brainstorming/scripts/node_modules/mime/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/mime/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime/README.md",
+        "skills/brainstorming/scripts/node_modules/mime/cli.js",
+        "skills/brainstorming/scripts/node_modules/mime/mime.js",
+        "skills/brainstorming/scripts/node_modules/mime/package.json",
+        "skills/brainstorming/scripts/node_modules/mime/src/build.js",
+        "skills/brainstorming/scripts/node_modules/mime/src/test.js",
+        "skills/brainstorming/scripts/node_modules/mime/types.json",
+        "skills/brainstorming/scripts/node_modules/ms/index.js",
+        "skills/brainstorming/scripts/node_modules/ms/license.md",
+        "skills/brainstorming/scripts/node_modules/ms/package.json",
+        "skills/brainstorming/scripts/node_modules/ms/readme.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/LICENSE",
+        "skills/brainstorming/scripts/node_modules/negotiator/README.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/index.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/charset.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/encoding.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/language.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/mediaType.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/package.json",
+        "skills/brainstorming/scripts/node_modules/normalize-path/LICENSE",
+        "skills/brainstorming/scripts/node_modules/normalize-path/README.md",
+        "skills/brainstorming/scripts/node_modules/normalize-path/index.js",
+        "skills/brainstorming/scripts/node_modules/normalize-path/package.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.nycrc",
+        "skills/brainstorming/scripts/node_modules/object-inspect/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/object-inspect/LICENSE",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/all.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/circular.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/fn.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/inspect.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/index.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/package-support.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/package.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/readme.markdown",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test-core-js.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/bigint.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/browser/dom.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/circular.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/deep.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/element.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/err.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/fakes.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/fn.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/global.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/has.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/holes.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/indent-option.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/inspect.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/lowbyte.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/number.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/quoteStyle.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/toStringTag.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/undef.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/values.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/util.inspect.js",
+        "skills/brainstorming/scripts/node_modules/on-finished/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/on-finished/LICENSE",
+        "skills/brainstorming/scripts/node_modules/on-finished/README.md",
+        "skills/brainstorming/scripts/node_modules/on-finished/index.js",
+        "skills/brainstorming/scripts/node_modules/on-finished/package.json",
+        "skills/brainstorming/scripts/node_modules/parseurl/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/parseurl/LICENSE",
+        "skills/brainstorming/scripts/node_modules/parseurl/README.md",
+        "skills/brainstorming/scripts/node_modules/parseurl/index.js",
+        "skills/brainstorming/scripts/node_modules/parseurl/package.json",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/LICENSE",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/Readme.md",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/index.js",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/package.json",
+        "skills/brainstorming/scripts/node_modules/picomatch/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/picomatch/LICENSE",
+        "skills/brainstorming/scripts/node_modules/picomatch/README.md",
+        "skills/brainstorming/scripts/node_modules/picomatch/index.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/picomatch.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/scan.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/package.json",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/LICENSE",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/README.md",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/index.js",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/package.json",
+        "skills/brainstorming/scripts/node_modules/qs/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/qs/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/qs/.github/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/qs/.github/THREAT_MODEL.md",
+        "skills/brainstorming/scripts/node_modules/qs/.nycrc",
+        "skills/brainstorming/scripts/node_modules/qs/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/qs/LICENSE.md",
+        "skills/brainstorming/scripts/node_modules/qs/README.md",
+        "skills/brainstorming/scripts/node_modules/qs/dist/qs.js",
+        "skills/brainstorming/scripts/node_modules/qs/eslint.config.mjs",
+        "skills/brainstorming/scripts/node_modules/qs/lib/formats.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/index.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/stringify.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/qs/package.json",
+        "skills/brainstorming/scripts/node_modules/qs/test/empty-keys-cases.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/parse.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/stringify.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/utils.js",
+        "skills/brainstorming/scripts/node_modules/range-parser/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/range-parser/LICENSE",
+        "skills/brainstorming/scripts/node_modules/range-parser/README.md",
+        "skills/brainstorming/scripts/node_modules/range-parser/index.js",
+        "skills/brainstorming/scripts/node_modules/range-parser/package.json",
+        "skills/brainstorming/scripts/node_modules/raw-body/LICENSE",
+        "skills/brainstorming/scripts/node_modules/raw-body/README.md",
+        "skills/brainstorming/scripts/node_modules/raw-body/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/raw-body/index.js",
+        "skills/brainstorming/scripts/node_modules/raw-body/package.json",
+        "skills/brainstorming/scripts/node_modules/readdirp/LICENSE",
+        "skills/brainstorming/scripts/node_modules/readdirp/README.md",
+        "skills/brainstorming/scripts/node_modules/readdirp/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/readdirp/index.js",
+        "skills/brainstorming/scripts/node_modules/readdirp/package.json",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/README.md",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/index.js",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/package.json",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/Porting-Buffer.md",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/Readme.md",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/dangerous.js",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/package.json",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/safer.js",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/tests.js",
+        "skills/brainstorming/scripts/node_modules/send/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/send/LICENSE",
+        "skills/brainstorming/scripts/node_modules/send/README.md",
+        "skills/brainstorming/scripts/node_modules/send/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/send/index.js",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/index.js",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/license.md",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/package.json",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/readme.md",
+        "skills/brainstorming/scripts/node_modules/send/package.json",
+        "skills/brainstorming/scripts/node_modules/serve-static/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/serve-static/LICENSE",
+        "skills/brainstorming/scripts/node_modules/serve-static/README.md",
+        "skills/brainstorming/scripts/node_modules/serve-static/index.js",
+        "skills/brainstorming/scripts/node_modules/serve-static/package.json",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/LICENSE",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/README.md",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/index.js",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/package.json",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/list.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/statuses/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/statuses/LICENSE",
+        "skills/brainstorming/scripts/node_modules/statuses/README.md",
+        "skills/brainstorming/scripts/node_modules/statuses/codes.json",
+        "skills/brainstorming/scripts/node_modules/statuses/index.js",
+        "skills/brainstorming/scripts/node_modules/statuses/package.json",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/LICENSE",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/README.md",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/index.js",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/package.json",
+        "skills/brainstorming/scripts/node_modules/toidentifier/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/toidentifier/LICENSE",
+        "skills/brainstorming/scripts/node_modules/toidentifier/README.md",
+        "skills/brainstorming/scripts/node_modules/toidentifier/index.js",
+        "skills/brainstorming/scripts/node_modules/toidentifier/package.json",
+        "skills/brainstorming/scripts/node_modules/type-is/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/type-is/LICENSE",
+        "skills/brainstorming/scripts/node_modules/type-is/README.md",
+        "skills/brainstorming/scripts/node_modules/type-is/index.js",
+        "skills/brainstorming/scripts/node_modules/type-is/package.json",
+        "skills/brainstorming/scripts/node_modules/unpipe/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/unpipe/LICENSE",
+        "skills/brainstorming/scripts/node_modules/unpipe/README.md",
+        "skills/brainstorming/scripts/node_modules/unpipe/index.js",
+        "skills/brainstorming/scripts/node_modules/unpipe/package.json",
+        "skills/brainstorming/scripts/node_modules/utils-merge/.npmignore",
+        "skills/brainstorming/scripts/node_modules/utils-merge/LICENSE",
+        "skills/brainstorming/scripts/node_modules/utils-merge/README.md",
+        "skills/brainstorming/scripts/node_modules/utils-merge/index.js",
+        "skills/brainstorming/scripts/node_modules/utils-merge/package.json",
+        "skills/brainstorming/scripts/node_modules/vary/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/vary/LICENSE",
+        "skills/brainstorming/scripts/node_modules/vary/README.md",
+        "skills/brainstorming/scripts/node_modules/vary/index.js",
+        "skills/brainstorming/scripts/node_modules/vary/package.json",
+        "skills/brainstorming/scripts/node_modules/ws/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ws/README.md",
+        "skills/brainstorming/scripts/node_modules/ws/browser.js",
+        "skills/brainstorming/scripts/node_modules/ws/index.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/buffer-util.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/event-target.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/extension.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/limiter.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/permessage-deflate.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/receiver.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/sender.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/stream.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/subprotocol.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/validation.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/websocket-server.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/websocket.js",
+        "skills/brainstorming/scripts/node_modules/ws/package.json",
+        "skills/brainstorming/scripts/node_modules/ws/wrapper.mjs",
+        "skills/brainstorming/scripts/package-lock.json",
+        "skills/brainstorming/scripts/package.json",
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "8d9b94eb8d07b65d23137e034fcd9bfabd49a21c",
+      "short": "8d9b94e",
+      "time": 1773260234,
+      "subject": "Add HTTP server, WebSocket handling, and file watching to server.js",
+      "files": [
+        "skills/brainstorming/scripts/server.js"
+      ]
+    },
+    {
+      "hash": "7f6380dd91533fbfab7275a9c35b09638728fd76",
+      "short": "7f6380d",
+      "time": 1773260119,
+      "subject": "Add WebSocket protocol layer for zero-dep brainstorm server",
+      "files": [
+        "skills/brainstorming/scripts/server.js"
+      ]
+    },
+    {
+      "hash": "8d6d87642462b36536f2ff561ccb23ac059b9fba",
+      "short": "8d6d876",
+      "time": 1773260082,
+      "subject": "Add implementation plan for zero-dep brainstorm server",
+      "files": [
+        "docs/superpowers/plans/2026-03-11-zero-dep-brainstorm-server.md"
+      ]
+    },
+    {
+      "hash": "9c98e018732f4dcdddb7f12d6066503960544f0e",
+      "short": "9c98e01",
+      "time": 1773259889,
+      "subject": "Add design spec and tests for zero-dep brainstorm server",
+      "files": [
+        "docs/superpowers/specs/2026-03-11-zero-dep-brainstorm-server-design.md",
+        "tests/brainstorm-server/server.test.js",
+        "tests/brainstorm-server/ws-protocol.test.js"
+      ]
+    },
+    {
+      "hash": "5ef73d25b71e69e63a74eae359fb26c7a6ac8fc0",
+      "short": "5ef73d2",
+      "time": 1773196405,
+      "subject": "Release v5.0.1: Windows/Linux hooks fix, Gemini CLI, spec review loop",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "9d2b88621105e75b89d9db12712767913c76c7ad",
+      "short": "9d2b886",
+      "time": 1773193249,
+      "subject": "Fix brainstorming skill: add spec review loop to checklist and flow diagram",
+      "files": [
+        "skills/brainstorming/SKILL.md"
+      ]
+    },
+    {
+      "hash": "f0a4538b31ca70404c4f419ce948afd5710382a5",
+      "short": "f0a4538",
+      "time": 1773168140,
+      "subject": "Add Gemini CLI install instructions to README",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "f7b61075768fac53c4ccd882603b58f54dd7fc31",
+      "short": "f7b6107",
+      "time": 1773166770,
+      "subject": "fix: update install cursor command",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "e02842e024d2b5cf988c70e408bf0a5caf486abf",
+      "short": "e02842e",
+      "time": 1773117424,
+      "subject": "Remove fsevents from bundled deps (macOS-only native binary)",
+      "files": [
+        "skills/brainstorming/scripts/node_modules/fsevents/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fsevents/README.md",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.d.ts",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.js",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.node",
+        "skills/brainstorming/scripts/node_modules/fsevents/package.json"
+      ]
+    },
+    {
+      "hash": "7446c842d8754a9ce54dd82a9258443d08c490c3",
+      "short": "7446c84",
+      "time": 1773117397,
+      "subject": "Bundle brainstorm server dependencies instead of requiring npm install",
+      "files": [
+        ".gitignore",
+        "skills/brainstorming/scripts/node_modules/.bin/mime",
+        "skills/brainstorming/scripts/node_modules/.package-lock.json",
+        "skills/brainstorming/scripts/node_modules/accepts/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/accepts/LICENSE",
+        "skills/brainstorming/scripts/node_modules/accepts/README.md",
+        "skills/brainstorming/scripts/node_modules/accepts/index.js",
+        "skills/brainstorming/scripts/node_modules/accepts/package.json",
+        "skills/brainstorming/scripts/node_modules/anymatch/LICENSE",
+        "skills/brainstorming/scripts/node_modules/anymatch/README.md",
+        "skills/brainstorming/scripts/node_modules/anymatch/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/anymatch/index.js",
+        "skills/brainstorming/scripts/node_modules/anymatch/package.json",
+        "skills/brainstorming/scripts/node_modules/array-flatten/LICENSE",
+        "skills/brainstorming/scripts/node_modules/array-flatten/README.md",
+        "skills/brainstorming/scripts/node_modules/array-flatten/array-flatten.js",
+        "skills/brainstorming/scripts/node_modules/array-flatten/package.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/binary-extensions.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/binary-extensions.json.d.ts",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/index.js",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/license",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/package.json",
+        "skills/brainstorming/scripts/node_modules/binary-extensions/readme.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/LICENSE",
+        "skills/brainstorming/scripts/node_modules/body-parser/README.md",
+        "skills/brainstorming/scripts/node_modules/body-parser/index.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/read.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/json.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/raw.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/text.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/lib/types/urlencoded.js",
+        "skills/brainstorming/scripts/node_modules/body-parser/package.json",
+        "skills/brainstorming/scripts/node_modules/braces/LICENSE",
+        "skills/brainstorming/scripts/node_modules/braces/README.md",
+        "skills/brainstorming/scripts/node_modules/braces/index.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/compile.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/expand.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/stringify.js",
+        "skills/brainstorming/scripts/node_modules/braces/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/braces/package.json",
+        "skills/brainstorming/scripts/node_modules/bytes/History.md",
+        "skills/brainstorming/scripts/node_modules/bytes/LICENSE",
+        "skills/brainstorming/scripts/node_modules/bytes/Readme.md",
+        "skills/brainstorming/scripts/node_modules/bytes/index.js",
+        "skills/brainstorming/scripts/node_modules/bytes/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/.nycrc",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/LICENSE",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/README.md",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/actualApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/actualApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/applyBind.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/applyBind.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionCall.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/functionCall.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/reflectApply.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/reflectApply.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/test/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bind-apply-helpers/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/call-bound/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/call-bound/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/call-bound/.nycrc",
+        "skills/brainstorming/scripts/node_modules/call-bound/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/call-bound/LICENSE",
+        "skills/brainstorming/scripts/node_modules/call-bound/README.md",
+        "skills/brainstorming/scripts/node_modules/call-bound/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/call-bound/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bound/package.json",
+        "skills/brainstorming/scripts/node_modules/call-bound/test/index.js",
+        "skills/brainstorming/scripts/node_modules/call-bound/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/chokidar/LICENSE",
+        "skills/brainstorming/scripts/node_modules/chokidar/README.md",
+        "skills/brainstorming/scripts/node_modules/chokidar/index.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/fsevents-handler.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/lib/nodefs-handler.js",
+        "skills/brainstorming/scripts/node_modules/chokidar/package.json",
+        "skills/brainstorming/scripts/node_modules/chokidar/types/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/content-disposition/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/content-disposition/LICENSE",
+        "skills/brainstorming/scripts/node_modules/content-disposition/README.md",
+        "skills/brainstorming/scripts/node_modules/content-disposition/index.js",
+        "skills/brainstorming/scripts/node_modules/content-disposition/package.json",
+        "skills/brainstorming/scripts/node_modules/content-type/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/content-type/LICENSE",
+        "skills/brainstorming/scripts/node_modules/content-type/README.md",
+        "skills/brainstorming/scripts/node_modules/content-type/index.js",
+        "skills/brainstorming/scripts/node_modules/content-type/package.json",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/History.md",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/Readme.md",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/index.js",
+        "skills/brainstorming/scripts/node_modules/cookie-signature/package.json",
+        "skills/brainstorming/scripts/node_modules/cookie/LICENSE",
+        "skills/brainstorming/scripts/node_modules/cookie/README.md",
+        "skills/brainstorming/scripts/node_modules/cookie/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/cookie/index.js",
+        "skills/brainstorming/scripts/node_modules/cookie/package.json",
+        "skills/brainstorming/scripts/node_modules/debug/.coveralls.yml",
+        "skills/brainstorming/scripts/node_modules/debug/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/debug/.npmignore",
+        "skills/brainstorming/scripts/node_modules/debug/.travis.yml",
+        "skills/brainstorming/scripts/node_modules/debug/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/debug/LICENSE",
+        "skills/brainstorming/scripts/node_modules/debug/Makefile",
+        "skills/brainstorming/scripts/node_modules/debug/README.md",
+        "skills/brainstorming/scripts/node_modules/debug/component.json",
+        "skills/brainstorming/scripts/node_modules/debug/karma.conf.js",
+        "skills/brainstorming/scripts/node_modules/debug/node.js",
+        "skills/brainstorming/scripts/node_modules/debug/package.json",
+        "skills/brainstorming/scripts/node_modules/debug/src/browser.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/debug.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/index.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/inspector-log.js",
+        "skills/brainstorming/scripts/node_modules/debug/src/node.js",
+        "skills/brainstorming/scripts/node_modules/depd/History.md",
+        "skills/brainstorming/scripts/node_modules/depd/LICENSE",
+        "skills/brainstorming/scripts/node_modules/depd/Readme.md",
+        "skills/brainstorming/scripts/node_modules/depd/index.js",
+        "skills/brainstorming/scripts/node_modules/depd/lib/browser/index.js",
+        "skills/brainstorming/scripts/node_modules/depd/package.json",
+        "skills/brainstorming/scripts/node_modules/destroy/LICENSE",
+        "skills/brainstorming/scripts/node_modules/destroy/README.md",
+        "skills/brainstorming/scripts/node_modules/destroy/index.js",
+        "skills/brainstorming/scripts/node_modules/destroy/package.json",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/.nycrc",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/LICENSE",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/README.md",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/get.d.ts",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/get.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/package.json",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/set.d.ts",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/set.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/get.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/index.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/test/set.js",
+        "skills/brainstorming/scripts/node_modules/dunder-proto/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/ee-first/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ee-first/README.md",
+        "skills/brainstorming/scripts/node_modules/ee-first/index.js",
+        "skills/brainstorming/scripts/node_modules/ee-first/package.json",
+        "skills/brainstorming/scripts/node_modules/encodeurl/LICENSE",
+        "skills/brainstorming/scripts/node_modules/encodeurl/README.md",
+        "skills/brainstorming/scripts/node_modules/encodeurl/index.js",
+        "skills/brainstorming/scripts/node_modules/encodeurl/package.json",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-define-property/.nycrc",
+        "skills/brainstorming/scripts/node_modules/es-define-property/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-define-property/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-define-property/README.md",
+        "skills/brainstorming/scripts/node_modules/es-define-property/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-define-property/index.js",
+        "skills/brainstorming/scripts/node_modules/es-define-property/package.json",
+        "skills/brainstorming/scripts/node_modules/es-define-property/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-define-property/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-errors/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-errors/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-errors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-errors/README.md",
+        "skills/brainstorming/scripts/node_modules/es-errors/eval.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/eval.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/index.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/package.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/range.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/range.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/ref.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/ref.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/syntax.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/syntax.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/es-errors/type.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/type.js",
+        "skills/brainstorming/scripts/node_modules/es-errors/uri.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-errors/uri.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/LICENSE",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/README.md",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/RequireObjectCoercible.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/RequireObjectCoercible.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/ToObject.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/ToObject.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/index.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/isObject.d.ts",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/isObject.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/package.json",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/test/index.js",
+        "skills/brainstorming/scripts/node_modules/es-object-atoms/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/escape-html/LICENSE",
+        "skills/brainstorming/scripts/node_modules/escape-html/Readme.md",
+        "skills/brainstorming/scripts/node_modules/escape-html/index.js",
+        "skills/brainstorming/scripts/node_modules/escape-html/package.json",
+        "skills/brainstorming/scripts/node_modules/etag/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/etag/LICENSE",
+        "skills/brainstorming/scripts/node_modules/etag/README.md",
+        "skills/brainstorming/scripts/node_modules/etag/index.js",
+        "skills/brainstorming/scripts/node_modules/etag/package.json",
+        "skills/brainstorming/scripts/node_modules/express/History.md",
+        "skills/brainstorming/scripts/node_modules/express/LICENSE",
+        "skills/brainstorming/scripts/node_modules/express/Readme.md",
+        "skills/brainstorming/scripts/node_modules/express/index.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/application.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/express.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/middleware/init.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/middleware/query.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/request.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/response.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/index.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/layer.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/router/route.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/express/lib/view.js",
+        "skills/brainstorming/scripts/node_modules/express/package.json",
+        "skills/brainstorming/scripts/node_modules/fill-range/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fill-range/README.md",
+        "skills/brainstorming/scripts/node_modules/fill-range/index.js",
+        "skills/brainstorming/scripts/node_modules/fill-range/package.json",
+        "skills/brainstorming/scripts/node_modules/finalhandler/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/LICENSE",
+        "skills/brainstorming/scripts/node_modules/finalhandler/README.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/finalhandler/index.js",
+        "skills/brainstorming/scripts/node_modules/finalhandler/package.json",
+        "skills/brainstorming/scripts/node_modules/forwarded/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/forwarded/LICENSE",
+        "skills/brainstorming/scripts/node_modules/forwarded/README.md",
+        "skills/brainstorming/scripts/node_modules/forwarded/index.js",
+        "skills/brainstorming/scripts/node_modules/forwarded/package.json",
+        "skills/brainstorming/scripts/node_modules/fresh/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/fresh/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fresh/README.md",
+        "skills/brainstorming/scripts/node_modules/fresh/index.js",
+        "skills/brainstorming/scripts/node_modules/fresh/package.json",
+        "skills/brainstorming/scripts/node_modules/fsevents/LICENSE",
+        "skills/brainstorming/scripts/node_modules/fsevents/README.md",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.d.ts",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.js",
+        "skills/brainstorming/scripts/node_modules/fsevents/fsevents.node",
+        "skills/brainstorming/scripts/node_modules/fsevents/package.json",
+        "skills/brainstorming/scripts/node_modules/function-bind/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/function-bind/.github/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/.nycrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/LICENSE",
+        "skills/brainstorming/scripts/node_modules/function-bind/README.md",
+        "skills/brainstorming/scripts/node_modules/function-bind/implementation.js",
+        "skills/brainstorming/scripts/node_modules/function-bind/index.js",
+        "skills/brainstorming/scripts/node_modules/function-bind/package.json",
+        "skills/brainstorming/scripts/node_modules/function-bind/test/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/function-bind/test/index.js",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/.nycrc",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/LICENSE",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/README.md",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/index.js",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/package.json",
+        "skills/brainstorming/scripts/node_modules/get-intrinsic/test/GetIntrinsic.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/get-proto/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/get-proto/.nycrc",
+        "skills/brainstorming/scripts/node_modules/get-proto/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/get-proto/LICENSE",
+        "skills/brainstorming/scripts/node_modules/get-proto/Object.getPrototypeOf.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/Object.getPrototypeOf.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/README.md",
+        "skills/brainstorming/scripts/node_modules/get-proto/Reflect.getPrototypeOf.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/Reflect.getPrototypeOf.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/get-proto/index.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/package.json",
+        "skills/brainstorming/scripts/node_modules/get-proto/test/index.js",
+        "skills/brainstorming/scripts/node_modules/get-proto/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/glob-parent/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/glob-parent/LICENSE",
+        "skills/brainstorming/scripts/node_modules/glob-parent/README.md",
+        "skills/brainstorming/scripts/node_modules/glob-parent/index.js",
+        "skills/brainstorming/scripts/node_modules/glob-parent/package.json",
+        "skills/brainstorming/scripts/node_modules/gopd/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/gopd/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/gopd/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/gopd/LICENSE",
+        "skills/brainstorming/scripts/node_modules/gopd/README.md",
+        "skills/brainstorming/scripts/node_modules/gopd/gOPD.d.ts",
+        "skills/brainstorming/scripts/node_modules/gopd/gOPD.js",
+        "skills/brainstorming/scripts/node_modules/gopd/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/gopd/index.js",
+        "skills/brainstorming/scripts/node_modules/gopd/package.json",
+        "skills/brainstorming/scripts/node_modules/gopd/test/index.js",
+        "skills/brainstorming/scripts/node_modules/gopd/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/has-symbols/.nycrc",
+        "skills/brainstorming/scripts/node_modules/has-symbols/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/has-symbols/LICENSE",
+        "skills/brainstorming/scripts/node_modules/has-symbols/README.md",
+        "skills/brainstorming/scripts/node_modules/has-symbols/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/has-symbols/index.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/package.json",
+        "skills/brainstorming/scripts/node_modules/has-symbols/shams.d.ts",
+        "skills/brainstorming/scripts/node_modules/has-symbols/shams.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/index.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/shams/core-js.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/shams/get-own-property-symbols.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/test/tests.js",
+        "skills/brainstorming/scripts/node_modules/has-symbols/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/hasown/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/hasown/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/hasown/.nycrc",
+        "skills/brainstorming/scripts/node_modules/hasown/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/hasown/LICENSE",
+        "skills/brainstorming/scripts/node_modules/hasown/README.md",
+        "skills/brainstorming/scripts/node_modules/hasown/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/hasown/index.js",
+        "skills/brainstorming/scripts/node_modules/hasown/package.json",
+        "skills/brainstorming/scripts/node_modules/hasown/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/http-errors/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/http-errors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/http-errors/README.md",
+        "skills/brainstorming/scripts/node_modules/http-errors/index.js",
+        "skills/brainstorming/scripts/node_modules/http-errors/package.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/Changelog.md",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/LICENSE",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/README.md",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/dbcs-codec.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/dbcs-data.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/index.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/internal.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-codec.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-data-generated.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/sbcs-data.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/big5-added.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp936.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp949.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/cp950.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/eucjp.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/gb18030-ranges.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/gbk-added.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/tables/shiftjis.json",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/utf16.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/encodings/utf7.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/bom-handling.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/extend-node.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/index.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/lib/streams.js",
+        "skills/brainstorming/scripts/node_modules/iconv-lite/package.json",
+        "skills/brainstorming/scripts/node_modules/inherits/LICENSE",
+        "skills/brainstorming/scripts/node_modules/inherits/README.md",
+        "skills/brainstorming/scripts/node_modules/inherits/inherits.js",
+        "skills/brainstorming/scripts/node_modules/inherits/inherits_browser.js",
+        "skills/brainstorming/scripts/node_modules/inherits/package.json",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/README.md",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/ipaddr.min.js",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/lib/ipaddr.js",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/lib/ipaddr.js.d.ts",
+        "skills/brainstorming/scripts/node_modules/ipaddr.js/package.json",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/index.js",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/license",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/package.json",
+        "skills/brainstorming/scripts/node_modules/is-binary-path/readme.md",
+        "skills/brainstorming/scripts/node_modules/is-extglob/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-extglob/README.md",
+        "skills/brainstorming/scripts/node_modules/is-extglob/index.js",
+        "skills/brainstorming/scripts/node_modules/is-extglob/package.json",
+        "skills/brainstorming/scripts/node_modules/is-glob/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-glob/README.md",
+        "skills/brainstorming/scripts/node_modules/is-glob/index.js",
+        "skills/brainstorming/scripts/node_modules/is-glob/package.json",
+        "skills/brainstorming/scripts/node_modules/is-number/LICENSE",
+        "skills/brainstorming/scripts/node_modules/is-number/README.md",
+        "skills/brainstorming/scripts/node_modules/is-number/index.js",
+        "skills/brainstorming/scripts/node_modules/is-number/package.json",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/LICENSE",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/README.md",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/abs.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/abs.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxArrayLength.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxArrayLength.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxSafeInteger.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxSafeInteger.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxValue.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/constants/maxValue.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/floor.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/floor.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isFinite.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isFinite.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isInteger.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isInteger.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNaN.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNaN.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNegativeZero.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/isNegativeZero.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/max.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/max.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/min.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/min.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/mod.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/mod.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/package.json",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/pow.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/pow.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/round.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/round.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/sign.d.ts",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/sign.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/test/index.js",
+        "skills/brainstorming/scripts/node_modules/math-intrinsics/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/media-typer/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/media-typer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/media-typer/README.md",
+        "skills/brainstorming/scripts/node_modules/media-typer/index.js",
+        "skills/brainstorming/scripts/node_modules/media-typer/package.json",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/LICENSE",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/README.md",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/index.js",
+        "skills/brainstorming/scripts/node_modules/merge-descriptors/package.json",
+        "skills/brainstorming/scripts/node_modules/methods/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/methods/LICENSE",
+        "skills/brainstorming/scripts/node_modules/methods/README.md",
+        "skills/brainstorming/scripts/node_modules/methods/index.js",
+        "skills/brainstorming/scripts/node_modules/methods/package.json",
+        "skills/brainstorming/scripts/node_modules/mime-db/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/mime-db/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime-db/README.md",
+        "skills/brainstorming/scripts/node_modules/mime-db/db.json",
+        "skills/brainstorming/scripts/node_modules/mime-db/index.js",
+        "skills/brainstorming/scripts/node_modules/mime-db/package.json",
+        "skills/brainstorming/scripts/node_modules/mime-types/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/mime-types/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime-types/README.md",
+        "skills/brainstorming/scripts/node_modules/mime-types/index.js",
+        "skills/brainstorming/scripts/node_modules/mime-types/package.json",
+        "skills/brainstorming/scripts/node_modules/mime/.npmignore",
+        "skills/brainstorming/scripts/node_modules/mime/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/mime/LICENSE",
+        "skills/brainstorming/scripts/node_modules/mime/README.md",
+        "skills/brainstorming/scripts/node_modules/mime/cli.js",
+        "skills/brainstorming/scripts/node_modules/mime/mime.js",
+        "skills/brainstorming/scripts/node_modules/mime/package.json",
+        "skills/brainstorming/scripts/node_modules/mime/src/build.js",
+        "skills/brainstorming/scripts/node_modules/mime/src/test.js",
+        "skills/brainstorming/scripts/node_modules/mime/types.json",
+        "skills/brainstorming/scripts/node_modules/ms/index.js",
+        "skills/brainstorming/scripts/node_modules/ms/license.md",
+        "skills/brainstorming/scripts/node_modules/ms/package.json",
+        "skills/brainstorming/scripts/node_modules/ms/readme.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/LICENSE",
+        "skills/brainstorming/scripts/node_modules/negotiator/README.md",
+        "skills/brainstorming/scripts/node_modules/negotiator/index.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/charset.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/encoding.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/language.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/lib/mediaType.js",
+        "skills/brainstorming/scripts/node_modules/negotiator/package.json",
+        "skills/brainstorming/scripts/node_modules/normalize-path/LICENSE",
+        "skills/brainstorming/scripts/node_modules/normalize-path/README.md",
+        "skills/brainstorming/scripts/node_modules/normalize-path/index.js",
+        "skills/brainstorming/scripts/node_modules/normalize-path/package.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/object-inspect/.nycrc",
+        "skills/brainstorming/scripts/node_modules/object-inspect/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/object-inspect/LICENSE",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/all.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/circular.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/fn.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/example/inspect.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/index.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/package-support.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/package.json",
+        "skills/brainstorming/scripts/node_modules/object-inspect/readme.markdown",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test-core-js.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/bigint.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/browser/dom.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/circular.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/deep.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/element.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/err.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/fakes.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/fn.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/global.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/has.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/holes.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/indent-option.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/inspect.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/lowbyte.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/number.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/quoteStyle.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/toStringTag.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/undef.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/test/values.js",
+        "skills/brainstorming/scripts/node_modules/object-inspect/util.inspect.js",
+        "skills/brainstorming/scripts/node_modules/on-finished/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/on-finished/LICENSE",
+        "skills/brainstorming/scripts/node_modules/on-finished/README.md",
+        "skills/brainstorming/scripts/node_modules/on-finished/index.js",
+        "skills/brainstorming/scripts/node_modules/on-finished/package.json",
+        "skills/brainstorming/scripts/node_modules/parseurl/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/parseurl/LICENSE",
+        "skills/brainstorming/scripts/node_modules/parseurl/README.md",
+        "skills/brainstorming/scripts/node_modules/parseurl/index.js",
+        "skills/brainstorming/scripts/node_modules/parseurl/package.json",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/LICENSE",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/Readme.md",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/index.js",
+        "skills/brainstorming/scripts/node_modules/path-to-regexp/package.json",
+        "skills/brainstorming/scripts/node_modules/picomatch/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/picomatch/LICENSE",
+        "skills/brainstorming/scripts/node_modules/picomatch/README.md",
+        "skills/brainstorming/scripts/node_modules/picomatch/index.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/picomatch.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/scan.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/picomatch/package.json",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/LICENSE",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/README.md",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/index.js",
+        "skills/brainstorming/scripts/node_modules/proxy-addr/package.json",
+        "skills/brainstorming/scripts/node_modules/qs/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/qs/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/qs/.github/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/qs/.github/THREAT_MODEL.md",
+        "skills/brainstorming/scripts/node_modules/qs/.nycrc",
+        "skills/brainstorming/scripts/node_modules/qs/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/qs/LICENSE.md",
+        "skills/brainstorming/scripts/node_modules/qs/README.md",
+        "skills/brainstorming/scripts/node_modules/qs/dist/qs.js",
+        "skills/brainstorming/scripts/node_modules/qs/eslint.config.mjs",
+        "skills/brainstorming/scripts/node_modules/qs/lib/formats.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/index.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/parse.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/stringify.js",
+        "skills/brainstorming/scripts/node_modules/qs/lib/utils.js",
+        "skills/brainstorming/scripts/node_modules/qs/package.json",
+        "skills/brainstorming/scripts/node_modules/qs/test/empty-keys-cases.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/parse.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/stringify.js",
+        "skills/brainstorming/scripts/node_modules/qs/test/utils.js",
+        "skills/brainstorming/scripts/node_modules/range-parser/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/range-parser/LICENSE",
+        "skills/brainstorming/scripts/node_modules/range-parser/README.md",
+        "skills/brainstorming/scripts/node_modules/range-parser/index.js",
+        "skills/brainstorming/scripts/node_modules/range-parser/package.json",
+        "skills/brainstorming/scripts/node_modules/raw-body/LICENSE",
+        "skills/brainstorming/scripts/node_modules/raw-body/README.md",
+        "skills/brainstorming/scripts/node_modules/raw-body/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/raw-body/index.js",
+        "skills/brainstorming/scripts/node_modules/raw-body/package.json",
+        "skills/brainstorming/scripts/node_modules/readdirp/LICENSE",
+        "skills/brainstorming/scripts/node_modules/readdirp/README.md",
+        "skills/brainstorming/scripts/node_modules/readdirp/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/readdirp/index.js",
+        "skills/brainstorming/scripts/node_modules/readdirp/package.json",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/README.md",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/index.js",
+        "skills/brainstorming/scripts/node_modules/safe-buffer/package.json",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/LICENSE",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/Porting-Buffer.md",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/Readme.md",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/dangerous.js",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/package.json",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/safer.js",
+        "skills/brainstorming/scripts/node_modules/safer-buffer/tests.js",
+        "skills/brainstorming/scripts/node_modules/send/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/send/LICENSE",
+        "skills/brainstorming/scripts/node_modules/send/README.md",
+        "skills/brainstorming/scripts/node_modules/send/SECURITY.md",
+        "skills/brainstorming/scripts/node_modules/send/index.js",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/index.js",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/license.md",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/package.json",
+        "skills/brainstorming/scripts/node_modules/send/node_modules/ms/readme.md",
+        "skills/brainstorming/scripts/node_modules/send/package.json",
+        "skills/brainstorming/scripts/node_modules/serve-static/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/serve-static/LICENSE",
+        "skills/brainstorming/scripts/node_modules/serve-static/README.md",
+        "skills/brainstorming/scripts/node_modules/serve-static/index.js",
+        "skills/brainstorming/scripts/node_modules/serve-static/package.json",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/LICENSE",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/README.md",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/index.js",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/package.json",
+        "skills/brainstorming/scripts/node_modules/setprototypeof/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/list.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-list/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-map/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel-weakmap/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/side-channel/.editorconfig",
+        "skills/brainstorming/scripts/node_modules/side-channel/.eslintrc",
+        "skills/brainstorming/scripts/node_modules/side-channel/.github/FUNDING.yml",
+        "skills/brainstorming/scripts/node_modules/side-channel/.nycrc",
+        "skills/brainstorming/scripts/node_modules/side-channel/CHANGELOG.md",
+        "skills/brainstorming/scripts/node_modules/side-channel/LICENSE",
+        "skills/brainstorming/scripts/node_modules/side-channel/README.md",
+        "skills/brainstorming/scripts/node_modules/side-channel/index.d.ts",
+        "skills/brainstorming/scripts/node_modules/side-channel/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel/package.json",
+        "skills/brainstorming/scripts/node_modules/side-channel/test/index.js",
+        "skills/brainstorming/scripts/node_modules/side-channel/tsconfig.json",
+        "skills/brainstorming/scripts/node_modules/statuses/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/statuses/LICENSE",
+        "skills/brainstorming/scripts/node_modules/statuses/README.md",
+        "skills/brainstorming/scripts/node_modules/statuses/codes.json",
+        "skills/brainstorming/scripts/node_modules/statuses/index.js",
+        "skills/brainstorming/scripts/node_modules/statuses/package.json",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/LICENSE",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/README.md",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/index.js",
+        "skills/brainstorming/scripts/node_modules/to-regex-range/package.json",
+        "skills/brainstorming/scripts/node_modules/toidentifier/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/toidentifier/LICENSE",
+        "skills/brainstorming/scripts/node_modules/toidentifier/README.md",
+        "skills/brainstorming/scripts/node_modules/toidentifier/index.js",
+        "skills/brainstorming/scripts/node_modules/toidentifier/package.json",
+        "skills/brainstorming/scripts/node_modules/type-is/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/type-is/LICENSE",
+        "skills/brainstorming/scripts/node_modules/type-is/README.md",
+        "skills/brainstorming/scripts/node_modules/type-is/index.js",
+        "skills/brainstorming/scripts/node_modules/type-is/package.json",
+        "skills/brainstorming/scripts/node_modules/unpipe/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/unpipe/LICENSE",
+        "skills/brainstorming/scripts/node_modules/unpipe/README.md",
+        "skills/brainstorming/scripts/node_modules/unpipe/index.js",
+        "skills/brainstorming/scripts/node_modules/unpipe/package.json",
+        "skills/brainstorming/scripts/node_modules/utils-merge/.npmignore",
+        "skills/brainstorming/scripts/node_modules/utils-merge/LICENSE",
+        "skills/brainstorming/scripts/node_modules/utils-merge/README.md",
+        "skills/brainstorming/scripts/node_modules/utils-merge/index.js",
+        "skills/brainstorming/scripts/node_modules/utils-merge/package.json",
+        "skills/brainstorming/scripts/node_modules/vary/HISTORY.md",
+        "skills/brainstorming/scripts/node_modules/vary/LICENSE",
+        "skills/brainstorming/scripts/node_modules/vary/README.md",
+        "skills/brainstorming/scripts/node_modules/vary/index.js",
+        "skills/brainstorming/scripts/node_modules/vary/package.json",
+        "skills/brainstorming/scripts/node_modules/ws/LICENSE",
+        "skills/brainstorming/scripts/node_modules/ws/README.md",
+        "skills/brainstorming/scripts/node_modules/ws/browser.js",
+        "skills/brainstorming/scripts/node_modules/ws/index.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/buffer-util.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/constants.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/event-target.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/extension.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/limiter.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/permessage-deflate.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/receiver.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/sender.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/stream.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/subprotocol.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/validation.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/websocket-server.js",
+        "skills/brainstorming/scripts/node_modules/ws/lib/websocket.js",
+        "skills/brainstorming/scripts/node_modules/ws/package.json",
+        "skills/brainstorming/scripts/node_modules/ws/wrapper.mjs",
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "5e2a89e985eb3c3f5ea2bccc2fa6f19ac5d26797",
+      "short": "5e2a89e",
+      "time": 1773117333,
+      "subject": "Auto-install brainstorm server dependencies on first run",
+      "files": [
+        "skills/brainstorming/scripts/start-server.sh"
+      ]
+    },
+    {
+      "hash": "d3c028e280043d8583833d9e51f27d1d9de1db2d",
+      "short": "d3c028e",
+      "time": 1773116420,
+      "subject": "Update changelog with server-info, platform launch, and OpenCode fix",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "7f8edd9c121ecbf090064fdc1853f7e70115c318",
+      "short": "7f8edd9",
+      "time": 1773114394,
+      "subject": "Write server-info to file so agents can find URL after background launch",
+      "files": [
+        "skills/brainstorming/scripts/index.js",
+        "skills/brainstorming/visual-companion.md"
+      ]
+    },
+    {
+      "hash": "81acbcd51e813e89aecd11292e3ed205a0b2db56",
+      "short": "81acbcd",
+      "time": 1773113561,
+      "subject": "Replace Codex-specific server guidance with per-platform launch instructions",
+      "files": [
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/visual-companion.md"
+      ]
+    },
+    {
+      "hash": "c070e6bd45e244a61538ab97cd2ccac42010c5ff",
+      "short": "c070e6b",
+      "time": 1773113113,
+      "subject": "fix(opencode): correct TodoWrite tool mapping to todowrite",
+      "files": [
+        ".opencode/INSTALL.md",
+        ".opencode/plugins/superpowers.js",
+        "docs/README.opencode.md"
+      ]
+    },
+    {
+      "hash": "bdbad07f02e7787834cdd739e7e15e4175461c9e",
+      "short": "bdbad07",
+      "time": 1773112428,
+      "subject": "Update release notes with all changes since v5.0.0",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "419889b0d325668a2c07e07dd56bbe851a855ff4",
+      "short": "419889b",
+      "time": 1773110628,
+      "subject": "Move brainstorm-server into skill directory per agentskills spec",
+      "files": [
+        "skills/brainstorming/scripts/frame-template.html",
+        "skills/brainstorming/scripts/helper.js",
+        "skills/brainstorming/scripts/index.js",
+        "skills/brainstorming/scripts/package-lock.json",
+        "skills/brainstorming/scripts/package.json",
+        "skills/brainstorming/scripts/start-server.sh",
+        "skills/brainstorming/scripts/stop-server.sh",
+        "skills/brainstorming/visual-companion.md",
+        "tests/brainstorm-server/server.test.js"
+      ]
+    },
+    {
+      "hash": "715e18e4488afe2b54909647385644efe48abb04",
+      "short": "715e18e",
+      "time": 1773110238,
+      "subject": "Load Gemini tool mapping via GEMINI.md @import instead of skill reference",
+      "files": [
+        "GEMINI.md",
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "21a774e95c06bdc194ec1e10ca34b6b4bf26afd9",
+      "short": "21a774e",
+      "time": 1773110043,
+      "subject": "Add Gemini CLI tool mapping and update using-superpowers references",
+      "files": [
+        "skills/using-superpowers/SKILL.md",
+        "skills/using-superpowers/references/gemini-tools.md"
+      ]
+    },
+    {
+      "hash": "9df7269d738e94334997fa9bc544cf56563e7b02",
+      "short": "9df7269",
+      "time": 1773109578,
+      "subject": "Move Gemini extension to repo root for cross-platform support",
+      "files": [
+        ".gemini/GEMINI.md",
+        ".gemini/skills",
+        "GEMINI.md",
+        "gemini-extension.json"
+      ]
+    },
+    {
+      "hash": "5e5d3539164328e16a719ed6e1ce59ef70e2cc2f",
+      "short": "5e5d353",
+      "time": 1773109418,
+      "subject": "Add skills symlink to Gemini CLI extension",
+      "files": [
+        ".gemini/skills"
+      ]
+    },
+    {
+      "hash": "c5e6eaf4119252c92977af997c6691b780726acb",
+      "short": "c5e6eaf",
+      "time": 1773107625,
+      "subject": "refactor: replace MCP server with native Gemini CLI extension",
+      "files": [
+        ".gemini/.gitignore",
+        ".gemini/GEMINI.md",
+        ".gemini/INSTALL.md",
+        ".gemini/gemini-extension.json",
+        ".gemini/mcp-server/package-lock.json",
+        ".gemini/mcp-server/package.json",
+        ".gemini/mcp-server/src/superpowers.ts",
+        ".gemini/mcp-server/tsconfig.json"
+      ]
+    },
+    {
+      "hash": "bdd45c70abb55e885851be042a6b3b33e0b382ac",
+      "short": "bdd45c7",
+      "time": 1773105995,
+      "subject": "WIP: Gemini CLI extension infrastructure",
+      "files": [
+        ".gemini/.gitignore",
+        ".gemini/GEMINI.md",
+        ".gemini/INSTALL.md",
+        ".gemini/gemini-extension.json",
+        ".gemini/mcp-server/package-lock.json",
+        ".gemini/mcp-server/package.json",
+        ".gemini/mcp-server/src/superpowers.ts",
+        ".gemini/mcp-server/tsconfig.json"
+      ]
+    },
+    {
+      "hash": "ec3f7f1027a61629fc67270a9a5ccb21a432a194",
+      "short": "ec3f7f1",
+      "time": 1773105382,
+      "subject": "fix(brainstorming): add user review gate between spec and writing-plans",
+      "files": [
+        "skills/brainstorming/SKILL.md"
+      ]
+    },
+    {
+      "hash": "edbb62e50f878391db6638cc7d4081cc7d0b81c3",
+      "short": "edbb62e",
+      "time": 1773103252,
+      "subject": "chore: remove dead lib/skills-core.js and its tests",
+      "files": [
+        "lib/skills-core.js",
+        "tests/opencode/run-tests.sh",
+        "tests/opencode/test-plugin-loading.sh",
+        "tests/opencode/test-skills-core.sh"
+      ]
+    },
+    {
+      "hash": "74f2b1c96e4eeef4169ad80c91de9d05f6d2a95a",
+      "short": "74f2b1c",
+      "time": 1773102031,
+      "subject": "fix(hooks): emit session-start context only once per platform",
+      "files": [
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "991e9d4de93b17ee08646a8115e3f9f88dad2208",
+      "short": "991e9d4",
+      "time": 1773101407,
+      "subject": "fix: replace bare except with except Exception",
+      "files": [
+        "tests/claude-code/analyze-token-usage.py"
+      ]
+    },
+    {
+      "hash": "57b346ddbcd338334e7598089f93f7340ac42d58",
+      "short": "57b346d",
+      "time": 1773095699,
+      "subject": "Release v5.0.0: Visual brainstorming, document review loops, architecture guidance",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "8c01ac80513fffa2ed49e6983b8587772a2c3d19",
+      "short": "8c01ac8",
+      "time": 1773007031,
+      "subject": "Fix stale docs/plans path in brainstorming checklist",
+      "files": [
+        "skills/brainstorming/SKILL.md"
+      ]
+    },
+    {
+      "hash": "245d50ec379dd44f339e60de1fee81814582f934",
+      "short": "245d50e",
+      "time": 1772999633,
+      "subject": "Add v5.0.0 release notes and include AGENTS.md in instruction priority",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "aba2542f5e77c0e5e067d9478a1d6f06d5a523f1",
+      "short": "aba2542",
+      "time": 1772997944,
+      "subject": "Broaden visual companion offer language beyond design-specific use cases",
+      "files": [
+        "skills/brainstorming/SKILL.md"
+      ]
+    },
+    {
+      "hash": "3bdd66eaa5d74faee2d11c933b7a4bbe604c222e",
+      "short": "3bdd66e",
+      "time": 1772997615,
+      "subject": "Remove batch-and-stop pattern from executing-plans skill",
+      "files": [
+        "skills/executing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "c3ecc1b9badd529956e49491313bcda891c002b2",
+      "short": "c3ecc1b",
+      "time": 1772996764,
+      "subject": "Deprecate slash commands in favor of skills",
+      "files": [
+        "commands/brainstorm.md",
+        "commands/execute-plan.md",
+        "commands/write-plan.md"
+      ]
+    },
+    {
+      "hash": "f3083e55b01bf39733d48094cefe3ef428885f70",
+      "short": "f3083e5",
+      "time": 1772854410,
+      "subject": "Replace 'For Claude' with 'For agentic workers' in plan headers",
+      "files": [
+        "docs/plans/2025-11-22-opencode-support-implementation.md",
+        "docs/plans/2026-01-17-visual-brainstorming.md",
+        "docs/superpowers/plans/2026-01-22-document-review-system.md",
+        "docs/superpowers/plans/2026-02-19-visual-brainstorming-refactor.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "70244011d4a99df44165dc75a2eeb4b32a093634",
+      "short": "7024401",
+      "time": 1772843345,
+      "subject": "Rename brainstorm companion to Superpowers Brainstorming with GitHub link",
+      "files": [
+        "lib/brainstorm-server/frame-template.html"
+      ]
+    },
+    {
+      "hash": "d48b14e5ac0da77c9c87538000c29b32a266f250",
+      "short": "d48b14e",
+      "time": 1772837328,
+      "subject": "Add project-level scope assessment to brainstorming pipeline",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/brainstorming/spec-document-reviewer-prompt.md",
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "daa3fb2322de3b077cb3ef846cd714b23ba85cfe",
+      "short": "daa3fb2",
+      "time": 1772837328,
+      "subject": "Add architecture guidance and capability-aware escalation to skills",
+      "files": [
+        "skills/brainstorming/spec-document-reviewer-prompt.md",
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/subagent-driven-development/code-quality-reviewer-prompt.md",
+        "skills/subagent-driven-development/implementer-prompt.md",
+        "skills/writing-plans/SKILL.md",
+        "skills/writing-plans/plan-document-reviewer-prompt.md"
+      ]
+    },
+    {
+      "hash": "69eaf3cf34ae5e75a544d35400c3062d435a8e45",
+      "short": "69eaf3c",
+      "time": 1772837326,
+      "subject": "Add end-to-end tests for document review system",
+      "files": [
+        "tests/claude-code/test-document-review-system.sh"
+      ]
+    },
+    {
+      "hash": "582264a54abc35c15b03bba2a9b1143bc47de1a4",
+      "short": "582264a",
+      "time": 1772837322,
+      "subject": "docs: add document review system spec and plan",
+      "files": [
+        "docs/superpowers/plans/2026-01-22-document-review-system.md",
+        "docs/superpowers/specs/2026-01-22-document-review-system-design.md"
+      ]
+    },
+    {
+      "hash": "7b99c39c08cd4de28f153f87ef25011b9cd08a4b",
+      "short": "7b99c39",
+      "time": 1772835987,
+      "subject": "Add plan review loop and checkbox syntax to writing-plans skill",
+      "files": [
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "6c274dcc2a1e3340cfd2ed0240b9b72a5f48570c",
+      "short": "6c274dc",
+      "time": 1772835981,
+      "subject": "feat: add plan document reviewer prompt template",
+      "files": [
+        "skills/writing-plans/plan-document-reviewer-prompt.md"
+      ]
+    },
+    {
+      "hash": "ee14caeadd7fc5b9fab60439bfde6fef8487bd7c",
+      "short": "ee14cae",
+      "time": 1772835969,
+      "subject": "feat: add spec document reviewer prompt template",
+      "files": [
+        "skills/brainstorming/spec-document-reviewer-prompt.md"
+      ]
+    },
+    {
+      "hash": "5e51c3ee5a73fad0e9141bd2bf623f2a77a15fe8",
+      "short": "5e51c3e",
+      "time": 1772830891,
+      "subject": "feat: enforce subagent-driven-development on capable harnesses",
+      "files": [
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "f57638a74759376871509ccf080e606f62052f1b",
+      "short": "f57638a",
+      "time": 1772830891,
+      "subject": "refactor: restructure specs and plans directories",
+      "files": [
+        "skills/requesting-code-review/SKILL.md",
+        "skills/subagent-driven-development/SKILL.md",
+        "skills/writing-plans/SKILL.md",
+        "tests/claude-code/test-helpers.sh",
+        "tests/claude-code/test-subagent-driven-development-integration.sh",
+        "tests/explicit-skill-requests/prompts/action-oriented.txt",
+        "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+        "tests/explicit-skill-requests/prompts/claude-suggested-it.txt",
+        "tests/explicit-skill-requests/prompts/i-know-what-sdd-means.txt",
+        "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+        "tests/explicit-skill-requests/prompts/skip-formalities.txt",
+        "tests/explicit-skill-requests/run-claude-describes-sdd.sh",
+        "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-haiku-test.sh",
+        "tests/explicit-skill-requests/run-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-test.sh",
+        "tests/skill-triggering/prompts/executing-plans.txt"
+      ]
+    },
+    {
+      "hash": "4180afb7bd90c2dc5f37c827f323d397f8d16214",
+      "short": "4180afb",
+      "time": 1772830891,
+      "subject": "Add visual brainstorming companion to release notes",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "e4226df22e4a3800dacdcbda9f7c5adea8533138",
+      "short": "e4226df",
+      "time": 1772830891,
+      "subject": "Add visual brainstorming implementation plan and refactor docs",
+      "files": [
+        "docs/plans/2026-01-17-visual-brainstorming.md",
+        "docs/superpowers/plans/2026-02-19-visual-brainstorming-refactor.md",
+        "docs/superpowers/specs/2026-02-19-visual-brainstorming-refactor-design.md"
+      ]
+    },
+    {
+      "hash": "866f2bdb4748ad934cd73ded4dc1176902130478",
+      "short": "866f2bd",
+      "time": 1772830891,
+      "subject": "Add visual companion integration to brainstorming skill",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/brainstorming/visual-companion.md"
+      ]
+    },
+    {
+      "hash": "3c220d0cc148e2df4f3b12bf4401373d0dc03164",
+      "short": "3c220d0",
+      "time": 1772830891,
+      "subject": "Add brainstorm visual companion frame template",
+      "files": [
+        "lib/brainstorm-server/frame-template.html"
+      ]
+    },
+    {
+      "hash": "02b3d7c96d5f02c1726dfcb300142c5de2f2817d",
+      "short": "02b3d7c",
+      "time": 1772830891,
+      "subject": "Add brainstorm server with WebSocket support, helpers, and tests",
+      "files": [
+        "lib/brainstorm-server/helper.js",
+        "lib/brainstorm-server/index.js",
+        "lib/brainstorm-server/package-lock.json",
+        "lib/brainstorm-server/package.json",
+        "lib/brainstorm-server/start-server.sh",
+        "lib/brainstorm-server/stop-server.sh",
+        "tests/brainstorm-server/package-lock.json",
+        "tests/brainstorm-server/package.json",
+        "tests/brainstorm-server/server.test.js"
+      ]
+    },
+    {
+      "hash": "1c53f5deb62efeadaf1e9c924662b8f01c342692",
+      "short": "1c53f5d",
+      "time": 1772830887,
+      "subject": "Add SUBAGENT-STOP gate to prevent subagent skill leakage",
+      "files": [
+        "docs/README.codex.md",
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "a26cbaab2efefd4c84d37f7ceb1df1f4e08cf317",
+      "short": "a26cbaa",
+      "time": 1772830887,
+      "subject": "Move Codex tool mapping to progressive disclosure reference file",
+      "files": [
+        "skills/using-superpowers/SKILL.md",
+        "skills/using-superpowers/references/codex-tools.md"
+      ]
+    },
+    {
+      "hash": "b23c084070bb3e7825eefc75e3eb67f8d707dddc",
+      "short": "b23c084",
+      "time": 1772830883,
+      "subject": "Add instruction priority hierarchy to using-superpowers skill",
+      "files": [
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "aa3bb5fe16f932be447b258b93171c155e246a1b",
+      "short": "aa3bb5f",
+      "time": 1772830717,
+      "subject": "chore: gitignore triage directory",
+      "files": [
+        ".gitignore"
+      ]
+    },
+    {
+      "hash": "3d245777f02951c144419267ffcc318fee6cb0ea",
+      "short": "3d24577",
+      "time": 1772623420,
+      "subject": "Correct capitalization and link for Superpowers plugin",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "26d7cca61b6210f83ca8cafb5a2c9aadf0a83cb0",
+      "short": "26d7cca",
+      "time": 1772622813,
+      "subject": "Add Superpowers installation instructions for Claude Code official marketplace",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "ad716b8d1b07117202e1ce5cca92a3c12cff2529",
+      "short": "ad716b8",
+      "time": 1772345135,
+      "subject": "fix: use double quotes for CLAUDE_PLUGIN_ROOT in SessionStart hook",
+      "files": [
+        "hooks/hooks.json"
+      ]
+    },
+    {
+      "hash": "d2d6cf485286ca9af69b84557e4da4c1d83a58e0",
+      "short": "d2d6cf4",
+      "time": 1771700825,
+      "subject": "Release v4.3.1: Cursor support, Windows hook fix",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        ".cursor-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "54d9133d7a02ea7f0dbbbb829835f6999126355a",
+      "short": "54d9133",
+      "time": 1771700070,
+      "subject": "chore: ignore .DS_Store",
+      "files": [
+        ".gitignore"
+      ]
+    },
+    {
+      "hash": "31bbbe2dbb6ea718c410f1d858c7fdffb12ea678",
+      "short": "31bbbe2",
+      "time": 1771699230,
+      "subject": "fix: quote CLAUDE_PLUGIN_ROOT for spaces, use POSIX-safe path resolution",
+      "files": [
+        "hooks/hooks.json",
+        "hooks/run-hook.cmd"
+      ]
+    },
+    {
+      "hash": "5fbefbd0a96074f871ec465f0c54f913c1e4919f",
+      "short": "5fbefbd",
+      "time": 1771698566,
+      "subject": "fix: restore polyglot wrapper to fix Windows hook window spawning",
+      "files": [
+        ".gitattributes",
+        "hooks/hooks.json",
+        "hooks/run-hook.cmd",
+        "hooks/session-start"
+      ]
+    },
+    {
+      "hash": "a0b9ecce2b25aa7d703138f17650540c2e8b2cde",
+      "short": "a0b9ecc",
+      "time": 1771357588,
+      "subject": "update 'Verify Installation' section",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "772ec9f8342ea8f356ff99e469e6b11dd803edb4",
+      "short": "772ec9f",
+      "time": 1771357354,
+      "subject": "Add Cursor plugin manifest and hook response compatibility",
+      "files": [
+        ".cursor-plugin/plugin.json",
+        "README.md",
+        "hooks/session-start.sh"
+      ]
+    },
+    {
+      "hash": "e16d611eee14ac4c3253b4bf4c55a98d905c2e64",
+      "short": "e16d611",
+      "time": 1770923012,
+      "subject": "Release v4.3.0: Enforce brainstorming workflow, prevent unintended plan mode",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "4c836817da6fe630802180956dd234f2817083b0",
+      "short": "4c83681",
+      "time": 1770922661,
+      "subject": "Make SessionStart hook synchronous so using-superpowers loads before first turn",
+      "files": [
+        "hooks/hooks.json"
+      ]
+    },
+    {
+      "hash": "7f2ee614b6d65af34bd6b689f48f79f742a9d43c",
+      "short": "7f2ee61",
+      "time": 1770922272,
+      "subject": "Enforce brainstorming workflow with hard gates and process flow",
+      "files": [
+        "skills/brainstorming/SKILL.md",
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "19df3db59b6527d2ef4312dd7370c1d17c10137f",
+      "short": "19df3db",
+      "time": 1770867635,
+      "subject": "fix(writing-plans): use 4-backtick fence for nested code blocks in Task Structure template",
+      "files": [
+        "skills/writing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "f8cf545bc560b5f0dee535c0e6251e96cf704ba1",
+      "short": "f8cf545",
+      "time": 1770795275,
+      "subject": "Fix stream-json output requiring --verbose flag",
+      "files": [
+        "tests/subagent-driven-dev/run-test.sh"
+      ]
+    },
+    {
+      "hash": "a98c5dfc9de0df5318f4980d91d24780a566ee60",
+      "short": "a98c5df",
+      "time": 1770341676,
+      "subject": "Release v4.2.0: Windows fixes, Codex native skill discovery, worktree requirements",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "a72e416979b76d9fe30f926138a3de058c964738",
+      "short": "a72e416",
+      "time": 1770340885,
+      "subject": "Fix stale Codex skills path in writing-skills SKILL.md",
+      "files": [
+        "skills/writing-skills/SKILL.md"
+      ]
+    },
+    {
+      "hash": "8dd31c3da575d1eb069debbcad8e5eeb8e4c1f05",
+      "short": "8dd31c3",
+      "time": 1770340885,
+      "subject": "Add Windows uninstall instructions and expand migration steps",
+      "files": [
+        ".codex/INSTALL.md",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "6a07692da15cce771c6ed4e18e69a89fd76f3f45",
+      "short": "6a07692",
+      "time": 1770340885,
+      "subject": "Drop installer script and AGENTS.md gatekeeper",
+      "files": [
+        ".codex/INSTALL.md",
+        ".codex/install-codex.mjs",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "0771fd7cd1fd73b8e8da2d3374d4f3797b2ad1bd",
+      "short": "0771fd7",
+      "time": 1770340885,
+      "subject": "Fix path resolution and symlink removal in Codex installer",
+      "files": [
+        ".codex/install-codex.mjs"
+      ]
+    },
+    {
+      "hash": "bcccc692717f52be444b451e02e9e24760bd34be",
+      "short": "bcccc69",
+      "time": 1770340885,
+      "subject": "Polish docs from 5-agent review",
+      "files": [
+        ".codex/INSTALL.md",
+        ".codex/install-codex.mjs",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "3626ccc53ea1bd5503e2d7a057c77d51e63b5962",
+      "short": "3626ccc",
+      "time": 1770340885,
+      "subject": "Rewrite Codex docs for native skill discovery",
+      "files": [
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "47d3df7accac48daa668d26d1a2c06f282c9b372",
+      "short": "47d3df7",
+      "time": 1770340885,
+      "subject": "Rewrite INSTALL.md for native skill discovery",
+      "files": [
+        ".codex/INSTALL.md"
+      ]
+    },
+    {
+      "hash": "d41f951c4a3400d96982a49dcf5a214e21ecec48",
+      "short": "d41f951",
+      "time": 1770340885,
+      "subject": "Add minimal Codex installer for native skill discovery",
+      "files": [
+        ".codex/install-codex.mjs"
+      ]
+    },
+    {
+      "hash": "b4f56fec1bb1febc75847aa3fcaa25fe6086f4b0",
+      "short": "b4f56fe",
+      "time": 1770340885,
+      "subject": "Remove bootstrap CLI and related files",
+      "files": [
+        ".codex/superpowers-bootstrap.md",
+        ".codex/superpowers-codex",
+        ".codex/superpowers-codex.cmd"
+      ]
+    },
+    {
+      "hash": "1143f9be3d19f26a5318be3a13b4d11939ebcedb",
+      "short": "1143f9b",
+      "time": 1770322271,
+      "subject": "Fix ~/ path expansion on Windows — use $HOME instead",
+      "files": [
+        ".codex/INSTALL.md",
+        ".codex/superpowers-bootstrap.md",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "6cc2d8c9208a1e659f9a7ca22087c7edad208310",
+      "short": "6cc2d8c",
+      "time": 1770321297,
+      "subject": "Fix Windows/PowerShell invocation of superpowers-codex",
+      "files": [
+        ".codex/INSTALL.md",
+        ".codex/superpowers-bootstrap.md",
+        ".codex/superpowers-codex.cmd",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "038abed0261784d8232712cb329774fda1d4ed29",
+      "short": "038abed",
+      "time": 1770320286,
+      "subject": "fix: replace O(n^2) escape_for_json with parameter substitution",
+      "files": [
+        "hooks/session-start.sh"
+      ]
+    },
+    {
+      "hash": "961052e0f9e5528a2f30a4c1086fdf36e835db9b",
+      "short": "961052e",
+      "time": 1770320038,
+      "subject": "fix: run SessionStart hook async to prevent Windows terminal freeze",
+      "files": [
+        "RELEASE-NOTES.md",
+        "hooks/hooks.json"
+      ]
+    },
+    {
+      "hash": "689e2a77fc8e0f81bf2985d882a64bd9ce56cc52",
+      "short": "689e2a7",
+      "time": 1770320005,
+      "subject": "fix: Windows hook execution for Claude Code 2.1.x (#331)",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "5e0d2f8175ccd8f5378e41399dde3c88d5718d90",
+      "short": "5e0d2f8",
+      "time": 1770319966,
+      "subject": "Simplify installation verification instructions",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "c7816ee2a6ee81f8cdfb1b43fcf2f70612ea0f90",
+      "short": "c7816ee",
+      "time": 1769728370,
+      "subject": "docs: change main branch red flag to require explicit user consent",
+      "files": [
+        "skills/executing-plans/SKILL.md",
+        "skills/subagent-driven-development/SKILL.md",
+        "tests/claude-code/test-subagent-driven-development.sh"
+      ]
+    },
+    {
+      "hash": "b323e3580535c969eb97c923fb1acddf8a7a2b35",
+      "short": "b323e35",
+      "time": 1769726904,
+      "subject": "docs(executing-plans): add worktree requirement before executing plans",
+      "files": [
+        "skills/executing-plans/SKILL.md"
+      ]
+    },
+    {
+      "hash": "bb2ff5d309e5da6e021eb517c5012eb53c50a969",
+      "short": "bb2ff5d",
+      "time": 1769726805,
+      "subject": "docs(using-git-worktrees): add subagent/executing-plans as callers",
+      "files": [
+        "skills/using-git-worktrees/SKILL.md"
+      ]
+    },
+    {
+      "hash": "b63d4859553dc09ee71ff50f80336eab9fe28e5a",
+      "short": "b63d485",
+      "time": 1769726704,
+      "subject": "docs(subagent-driven-development): add main branch red flag to Never list",
+      "files": [
+        "skills/subagent-driven-development/SKILL.md"
+      ]
+    },
+    {
+      "hash": "fa3f46d4e952dd52a450d3a8d588414dc4a49b59",
+      "short": "fa3f46d",
+      "time": 1769726613,
+      "subject": "docs(subagent-driven-development): add using-git-worktrees as required skill",
+      "files": [
+        "skills/subagent-driven-development/SKILL.md"
+      ]
+    },
+    {
+      "hash": "f8dbe7b196c7821583b206f9a92f955612ed02f5",
+      "short": "f8dbe7b",
+      "time": 1769726499,
+      "subject": "test: add Test 9 - main branch red flag warning",
+      "files": [
+        "tests/claude-code/test-subagent-driven-development.sh"
+      ]
+    },
+    {
+      "hash": "93cf2ee84f9ba8a8ac8229eb927170dd7cb76b3b",
+      "short": "93cf2ee",
+      "time": 1769726390,
+      "subject": "test: add worktree requirement test for subagent-driven-development",
+      "files": [
+        "tests/claude-code/test-subagent-driven-development.sh"
+      ]
+    },
+    {
+      "hash": "1872f50b6416dd964f36014435ea121c54a4cc35",
+      "short": "1872f50",
+      "time": 1769726078,
+      "subject": "fix(tests): handle case variations in skill recognition test",
+      "files": [
+        "tests/claude-code/test-subagent-driven-development.sh"
+      ]
+    },
+    {
+      "hash": "8904b7d9dc74603c2d78428c5017c2d8abf78576",
+      "short": "8904b7d",
+      "time": 1769384542,
+      "subject": "codex: clarify subagent tool mapping in bootstrap",
+      "files": [
+        ".codex/superpowers-bootstrap.md",
+        "docs/README.codex.md"
+      ]
+    },
+    {
+      "hash": "4b6cef98ac3ef1edfe4fae3db19522c6e5cd48f7",
+      "short": "4b6cef9",
+      "time": 1769198927,
+      "subject": "chore: bump version to 4.1.1",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "03087b13b87a5813bdc96afa8c5468ed2f63d596",
+      "short": "03087b1",
+      "time": 1769193105,
+      "subject": "fix(opencode): standardize on plugins/ directory per official docs",
+      "files": [
+        ".opencode/INSTALL.md",
+        ".opencode/plugins/superpowers.js",
+        "docs/README.opencode.md",
+        "tests/opencode/setup.sh",
+        "tests/opencode/test-plugin-loading.sh"
+      ]
+    },
+    {
+      "hash": "493ac18dfe2d30e34c05277d9e130988ed290f67",
+      "short": "493ac18",
+      "time": 1769189603,
+      "subject": "fix(opencode): update docs for native skills, fix symlink instructions",
+      "files": [
+        ".opencode/INSTALL.md",
+        "docs/README.opencode.md"
+      ]
+    },
+    {
+      "hash": "35d4fbcd0b31485d9a55f0ba96a51ae7fe78d382",
+      "short": "35d4fbc",
+      "time": 1769141423,
+      "subject": "chore: bump plugin version to 4.1.0",
+      "files": [
+        ".claude-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "19c70afc993ef7f3054ea4f91918e47093bb907b",
+      "short": "19c70af",
+      "time": 1769141255,
+      "subject": "chore: release v4.1.0",
+      "files": [
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "36fcd576265b93d3a0048ad928c986a4b9bf1af8",
+      "short": "36fcd57",
+      "time": 1769140612,
+      "subject": "fix: Windows hook execution for Claude Code 2.1.x (#331)",
+      "files": [
+        ".gitattributes",
+        "RELEASE-NOTES.md",
+        "hooks/hooks.json",
+        "hooks/run-hook.cmd"
+      ]
+    },
+    {
+      "hash": "3964d1867060013e609eae63cd1b91dbfdd0e4c2",
+      "short": "3964d18",
+      "time": 1769140572,
+      "subject": "feat(opencode): use native skills and fix agent reset bug (#226) (#330)",
+      "files": [
+        ".opencode/plugin/superpowers.js",
+        "RELEASE-NOTES.md",
+        "docs/README.opencode.md"
+      ]
+    },
+    {
+      "hash": "a01a135fe185559ff9dc84dd70d6e9bb57d92bdf",
+      "short": "a01a135",
+      "time": 1768859690,
+      "subject": "fix: respect OPENCODE_CONFIG_DIR for personal skills lookup (#297)",
+      "files": [
+        ".opencode/plugin/superpowers.js"
+      ]
+    },
+    {
+      "hash": "ac471e69c2a672f50e491a45f6ff56b104d0e562",
+      "short": "ac471e6",
+      "time": 1768784568,
+      "subject": "fix use_skill agent context (#290)",
+      "files": [
+        ".opencode/plugin/superpowers.js"
+      ]
+    },
+    {
+      "hash": "a08f088968d0789a44a4f5f5f7d8d6bbe46a0b44",
+      "short": "a08f088",
+      "time": 1768429282,
+      "subject": "docs: fix documentation accuracy issues in skills (#157)",
+      "files": [
+        "skills/writing-skills/testing-skills-with-subagents.md"
+      ]
+    },
+    {
+      "hash": "f6d50c74b29bc66ff8fe6c79798025f0f9ccbb73",
+      "short": "f6d50c7",
+      "time": 1766811238,
+      "subject": "Bump version to 4.0.3",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "3dac35e0b35c2fbe4222ba825381eb764d65f085",
+      "short": "3dac35e",
+      "time": 1766810482,
+      "subject": "Strengthen using-superpowers for explicit skill requests",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/using-superpowers/SKILL.md",
+        "tests/explicit-skill-requests/prompts/action-oriented.txt",
+        "tests/explicit-skill-requests/prompts/after-planning-flow.txt",
+        "tests/explicit-skill-requests/prompts/claude-suggested-it.txt",
+        "tests/explicit-skill-requests/prompts/i-know-what-sdd-means.txt",
+        "tests/explicit-skill-requests/prompts/mid-conversation-execute-plan.txt",
+        "tests/explicit-skill-requests/prompts/please-use-brainstorming.txt",
+        "tests/explicit-skill-requests/prompts/skip-formalities.txt",
+        "tests/explicit-skill-requests/prompts/subagent-driven-development-please.txt",
+        "tests/explicit-skill-requests/prompts/use-systematic-debugging.txt",
+        "tests/explicit-skill-requests/run-all.sh",
+        "tests/explicit-skill-requests/run-claude-describes-sdd.sh",
+        "tests/explicit-skill-requests/run-extended-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-haiku-test.sh",
+        "tests/explicit-skill-requests/run-multiturn-test.sh",
+        "tests/explicit-skill-requests/run-test.sh"
+      ]
+    },
+    {
+      "hash": "131c1f189f75a14faad4227089841d1deee73e2a",
+      "short": "131c1f1",
+      "time": 1766559811,
+      "subject": "Release v4.0.2: Make slash commands user-only",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "9baedaa1171bfa487ed87f3ce12933b615be290f",
+      "short": "9baedaa",
+      "time": 1766559799,
+      "subject": "Make slash commands user-only with disable-model-invocation",
+      "files": [
+        "RELEASE-NOTES.md",
+        "commands/brainstorm.md",
+        "commands/execute-plan.md",
+        "commands/write-plan.md"
+      ]
+    },
+    {
+      "hash": "66a2dbd80a48f1c4038840423415eeb639aeda89",
+      "short": "66a2dbd",
+      "time": 1766559799,
+      "subject": "Add automation-over-documentation guidance to writing-skills",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/writing-skills/SKILL.md"
+      ]
+    },
+    {
+      "hash": "1455ac0631e2f3824229f6a31a1877dc6b96952f",
+      "short": "1455ac0",
+      "time": 1766559799,
+      "subject": "Add GitHub thread reply guidance to receiving-code-review",
+      "files": [
+        "RELEASE-NOTES.md",
+        "skills/receiving-code-review/SKILL.md"
+      ]
+    },
+    {
+      "hash": "e64ad670df2c8e86ed3ad6607445ea7db5504b27",
+      "short": "e64ad67",
+      "time": 1766555175,
+      "subject": "fix: inherit agent model (#144)",
+      "files": [
+        "agents/code-reviewer.md"
+      ]
+    },
+    {
+      "hash": "c037dcbf4ba74a3e7a63f7f2910baf1f13513d05",
+      "short": "c037dcb",
+      "time": 1766517993,
+      "subject": "fix: use git check-ignore for worktree gitignore verification (#160)",
+      "files": [
+        "skills/using-git-worktrees/SKILL.md"
+      ]
+    },
+    {
+      "hash": "a7a8c08c02d1f20409048ceafc49ed309d570ebf",
+      "short": "a7a8c08",
+      "time": 1766442455,
+      "subject": "Clarify that Skill tool loads skill content directly",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        "RELEASE-NOTES.md",
+        "commands/brainstorm.md",
+        "commands/execute-plan.md",
+        "commands/write-plan.md",
+        "skills/using-superpowers/SKILL.md"
+      ]
+    },
+    {
+      "hash": "80643c26040437740d4a185ed5693d365ca3aeec",
+      "short": "80643c2",
+      "time": 1766023660,
+      "subject": "Update README for v4.0.0 skill consolidations and two-stage review",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "95c6e1633630a1462679cf1284b95ec458a27a8e",
+      "short": "95c6e16",
+      "time": 1766018735,
+      "subject": "Prepare v4.0.0 release",
+      "files": [
+        ".claude-plugin/marketplace.json",
+        ".claude-plugin/plugin.json",
+        ".gitignore",
+        "RELEASE-NOTES.md"
+      ]
+    },
+    {
+      "hash": "612fbcdd01be93b7e3432f04fc8a864e2c3b8a88",
+      "short": "612fbcd",
+      "time": 1766018692,
+      "subject": "Tweak the brainstorming skill to try to improve triggering",
+      "files": [
+        "skills/brainstorming/SKILL.md"
+      ]
+    }
+  ]
+}

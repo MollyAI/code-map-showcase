@@ -1,0 +1,923 @@
+{
+  "project": {
+    "name": "superpowers",
+    "root": "/Users/skykai/.cache/code-map-showcase/superpowers",
+    "languages": [
+      "typescript"
+    ],
+    "files_scanned": 5,
+    "files_by_language": {
+      "typescript": 5
+    },
+    "declarations_by_language": {
+      "typescript": 20
+    },
+    "parse_failures": 0,
+    "generated_at": "2026-06-07T05:12:26",
+    "template_detection": {
+      "chosen": "microkernel",
+      "scores": {
+        "clean-architecture": 0,
+        "cli-tool": 0,
+        "cqrs": 0,
+        "ecs": 0,
+        "frontend-spa": 2,
+        "hexagonal": 0,
+        "layered": 0,
+        "microkernel": 13,
+        "mvc": 0,
+        "mvi": 0,
+        "mvp": 0,
+        "mvvm": 0,
+        "pipeline": 0
+      },
+      "evidence": [
+        {
+          "template": "frontend-spa",
+          "kind": "file",
+          "match": "package.json",
+          "weight": 2
+        },
+        {
+          "template": "microkernel",
+          "kind": "file",
+          "match": ".claude-plugin/plugin.json",
+          "weight": 3
+        },
+        {
+          "template": "microkernel",
+          "kind": "file",
+          "match": ".codex-plugin/plugin.json",
+          "weight": 3
+        },
+        {
+          "template": "microkernel",
+          "kind": "file",
+          "match": ".cursor-plugin/plugin.json",
+          "weight": 3
+        },
+        {
+          "template": "microkernel",
+          "kind": "path",
+          "match": "plugins",
+          "count": 1,
+          "weight": 4
+        }
+      ],
+      "reason": "ai-phase0",
+      "fit": {
+        "fits": false,
+        "uncategorized_pct": 0,
+        "largest_layer_pct": 0.6,
+        "empty_layers": [
+          "core",
+          "tests"
+        ],
+        "populated_layers": 2,
+        "total_layers": 4,
+        "warning": "chosen template fits poorly: 2/4 layers are empty while one holds 60% — re-architect from the package structure"
+      }
+    },
+    "git": {
+      "branch": "main",
+      "short": "6fd4507",
+      "commit": "6fd4507659784c351abbd2bc264c7162cfd386dc"
+    },
+    "architecture": {
+      "template": "microkernel",
+      "customized": true
+    }
+  },
+  "layers": [
+    {
+      "id": "host",
+      "name": "Core / Host",
+      "order": 0,
+      "summary": "把 skills 加载进编码 agent 的极简内核：各宿主的 SessionStart hook 与插件 bootstrap，注入 using-superpowers 契约 / The minimal kernel that loads skills into a coding agent — per-harness SessionStart hooks and plugin bootstraps that inject the using-superpowers contract",
+      "classes": [
+        {
+          "id": "opencode.plugins.superpowers.SuperpowersPlugin",
+          "name": "SuperpowersPlugin",
+          "path": ".opencode/plugins/superpowers.js",
+          "line": 55,
+          "namespace": "opencode.plugins.superpowers",
+          "package": "opencode.plugins.superpowers",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 0,
+          "signature": "const SuperpowersPlugin = async ({ client, directory }) => {…}",
+          "method_count": 0,
+          "importance": 0,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "ai-inferred",
+          "tags": [
+            "ai-inferred",
+            "entry-point"
+          ],
+          "description_zh": "OpenCode 宿主插件入口：把 using-superpowers bootstrap 注入会话首条用户消息，并将 skills 目录注册进 OpenCode 配置，使技能自动加载。",
+          "description_en": "The OpenCode host plugin entry point — injects the using-superpowers bootstrap into the session's first user message and registers the skills directory into OpenCode's config so skills auto-load."
+        },
+        {
+          "id": "opencode.plugins.superpowers.extractAndStripFrontmatter",
+          "name": "extractAndStripFrontmatter",
+          "path": ".opencode/plugins/superpowers.js",
+          "line": 16,
+          "namespace": "opencode.plugins.superpowers",
+          "package": "opencode.plugins.superpowers",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 0,
+          "signature": "const extractAndStripFrontmatter = (content) => {…}",
+          "method_count": 0,
+          "importance": 0,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "ai-inferred",
+          "tags": [
+            "ai-inferred"
+          ]
+        },
+        {
+          "id": "opencode.plugins.superpowers.normalizePath",
+          "name": "normalizePath",
+          "path": ".opencode/plugins/superpowers.js",
+          "line": 37,
+          "namespace": "opencode.plugins.superpowers",
+          "package": "opencode.plugins.superpowers",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 0,
+          "signature": "const normalizePath = (p, homeDir) => {…}",
+          "method_count": 0,
+          "importance": 0,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "ai-inferred",
+          "tags": [
+            "ai-inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "brainstorm-server",
+      "name": "Brainstorming Server",
+      "order": 1,
+      "summary": "brainstorming 技能的实时设计预览后端：HTTP + WebSocket 服务与浏览器端事件回传客户端 / The live design-preview backend for the brainstorming skill — an HTTP + WebSocket server plus the browser client that relays user choices back to the CLI",
+      "classes": [
+        {
+          "id": "skills.brainstorming.scripts.server.computeAcceptKey",
+          "name": "computeAcceptKey",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 11,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 3,
+          "signature": "function computeAcceptKey(clientKey)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.encodeFrame",
+          "name": "encodeFrame",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 15,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 23,
+          "signature": "function encodeFrame(opcode, payload)",
+          "method_count": 0,
+          "importance": 0.436,
+          "core": true,
+          "hub": false,
+          "in_degree": 2,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "按 RFC 6455 把消息负载编码为可发送的 WebSocket 数据帧。",
+          "description_en": "Encodes a message payload into a sendable RFC 6455 WebSocket frame."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.decodeFrame",
+          "name": "decodeFrame",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 39,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 34,
+          "signature": "function decodeFrame(buffer)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.isFullDocument",
+          "name": "isFullDocument",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 107,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 4,
+          "signature": "function isFullDocument(html)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.wrapInFrame",
+          "name": "wrapInFrame",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 112,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 3,
+          "signature": "function wrapInFrame(content)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.getNewestScreen",
+          "name": "getNewestScreen",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 116,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 10,
+          "signature": "function getNewestScreen()",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.handleRequest",
+          "name": "handleRequest",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 129,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 33,
+          "signature": "function handleRequest(req, res)",
+          "method_count": 0,
+          "importance": 0.35,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 4,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "处理 HTTP 请求，把最新的设计预览屏包成完整 HTML 文档返回给浏览器。",
+          "description_en": "Handles HTTP requests, wrapping the newest design-preview screen into a full HTML document for the browser."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.handleUpgrade",
+          "name": "handleUpgrade",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 167,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 56,
+          "signature": "function handleUpgrade(req, socket)",
+          "method_count": 0,
+          "importance": 0.35,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 4,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "处理 WebSocket 握手升级，校验 Sec-WebSocket-Key 并把连接接入消息循环与广播集合。",
+          "description_en": "Handles the WebSocket upgrade handshake, validating the Sec-WebSocket-Key and wiring the socket into the message loop and broadcast set."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.handleMessage",
+          "name": "handleMessage",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 224,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 15,
+          "signature": "function handleMessage(text)",
+          "method_count": 0,
+          "importance": 0.426,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "解码并分发浏览器端发来的 WebSocket 消息（如用户的选择/点击），并刷新活动计时器。",
+          "description_en": "Decodes and dispatches incoming WebSocket messages from the browser (e.g. the user's choices/clicks) and refreshes the activity timer."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.broadcast",
+          "name": "broadcast",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 240,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 6,
+          "signature": "function broadcast(msg)",
+          "method_count": 0,
+          "importance": 0.426,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "向所有已连接的预览客户端广播一帧（通常为 reload 信号）以触发实时刷新。",
+          "description_en": "Broadcasts a frame (typically a reload signal) to every connected preview client to trigger a live refresh."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.touchActivity",
+          "name": "touchActivity",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 252,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 3,
+          "signature": "function touchActivity()",
+          "method_count": 0,
+          "importance": 0.55,
+          "core": true,
+          "hub": false,
+          "in_degree": 3,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "刷新空闲计时器，在长时间无活动后自动关停预览服务，避免常驻进程。",
+          "description_en": "Refreshes the idle timer so the preview server auto-shuts-down after a period of inactivity, avoiding a lingering process."
+        },
+        {
+          "id": "skills.brainstorming.scripts.server.startServer",
+          "name": "startServer",
+          "path": "skills/brainstorming/scripts/server.cjs",
+          "line": 262,
+          "namespace": "skills.brainstorming.scripts.server",
+          "package": "skills.brainstorming.scripts.server",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 87,
+          "signature": "function startServer()",
+          "method_count": 0,
+          "importance": 0.239,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 2,
+          "confidence": "high",
+          "tags": [
+            "entry-point"
+          ],
+          "description_zh": "启动 brainstorming 技能的本地 HTTP + WebSocket 服务，托管设计预览页并在内容变更时推送实时刷新。",
+          "description_en": "Starts the brainstorming skill's local HTTP + WebSocket server that hosts the design-preview page and pushes live reloads when content changes."
+        },
+        {
+          "id": "skills.brainstorming.scripts.helper.sendEvent",
+          "name": "sendEvent",
+          "path": "skills/brainstorming/scripts/helper.js",
+          "line": 26,
+          "namespace": "skills.brainstorming.scripts.helper",
+          "package": "skills.brainstorming.scripts.helper",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 0,
+          "signature": "function sendEvent(event)",
+          "method_count": 0,
+          "importance": 0,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "ai-inferred",
+          "tags": [
+            "ai-inferred"
+          ],
+          "description_zh": "浏览器端把用户在预览页的选择/点击通过 WebSocket 回传给 CLI，连接断开时入队、重连后重发。",
+          "description_en": "The browser-side bridge that sends the user's preview-page choices/clicks back to the CLI over WebSocket, queueing events while disconnected and replaying them on reconnect."
+        },
+        {
+          "id": "skills.brainstorming.scripts.helper.connect",
+          "name": "connect",
+          "path": "skills/brainstorming/scripts/helper.js",
+          "line": 6,
+          "namespace": "skills.brainstorming.scripts.helper",
+          "package": "skills.brainstorming.scripts.helper",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 0,
+          "signature": "function connect()",
+          "method_count": 0,
+          "importance": 0,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "ai-inferred",
+          "tags": [
+            "ai-inferred"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "skill-tooling",
+      "name": "Skill Tooling",
+      "order": 2,
+      "summary": "各技能附带的独立辅助程序：writing-skills 的 DOT→SVG 渲染、systematic-debugging 的条件等待参考实现 / Standalone helper programs shipped with individual skills — writing-skills graph rendering and the systematic-debugging condition-based-waiting reference",
+      "classes": [
+        {
+          "id": "skills.systematic-debugging.condition-based-waiting-example.waitForEvent",
+          "name": "waitForEvent",
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "line": 20,
+          "namespace": "skills.systematic-debugging.condition-based-waiting-example",
+          "package": "skills.systematic-debugging.condition-based-waiting-example",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 25,
+          "signature": "function waitForEvent( threadManager: ThreadManager, threadId: string, eventType: LaceEventType, timeoutMs = 5000 ): Promise<LaceEvent>",
+          "method_count": 0,
+          "importance": 0,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "systematic-debugging 技能附带的参考实现：轮询某个条件直到满足或超时，用以替代脆弱的固定 sleep 等待。",
+          "description_en": "A reference implementation shipped with the systematic-debugging skill — polls a condition until it holds or times out, replacing flaky fixed-sleep waits."
+        },
+        {
+          "id": "skills.systematic-debugging.condition-based-waiting-example.waitForEventCount",
+          "name": "waitForEventCount",
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "line": 60,
+          "namespace": "skills.systematic-debugging.condition-based-waiting-example",
+          "package": "skills.systematic-debugging.condition-based-waiting-example",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 30,
+          "signature": "function waitForEventCount( threadManager: ThreadManager, threadId: string, eventType: LaceEventType, count: number, timeoutMs = 5000 ): Promise<LaceEvent[]>",
+          "method_count": 0,
+          "importance": 0,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.systematic-debugging.condition-based-waiting-example.waitForEventMatch",
+          "name": "waitForEventMatch",
+          "path": "skills/systematic-debugging/condition-based-waiting-example.ts",
+          "line": 111,
+          "namespace": "skills.systematic-debugging.condition-based-waiting-example",
+          "package": "skills.systematic-debugging.condition-based-waiting-example",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 26,
+          "signature": "function waitForEventMatch( threadManager: ThreadManager, threadId: string, predicate: (event: LaceEvent) => boolean, description: string, timeoutMs = 5000 ): Promise<LaceEvent>",
+          "method_count": 0,
+          "importance": 0,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.writing-skills.render-graphs.extractDotBlocks",
+          "name": "extractDotBlocks",
+          "path": "skills/writing-skills/render-graphs.js",
+          "line": 20,
+          "namespace": "skills.writing-skills.render-graphs",
+          "package": "skills.writing-skills.render-graphs",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 17,
+          "signature": "function extractDotBlocks(markdown)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "从 markdown 文本中提取出所有 DOT/graphviz 代码块。",
+          "description_en": "Extracts all DOT/graphviz code blocks from markdown text."
+        },
+        {
+          "id": "skills.writing-skills.render-graphs.extractGraphBody",
+          "name": "extractGraphBody",
+          "path": "skills/writing-skills/render-graphs.js",
+          "line": 38,
+          "namespace": "skills.writing-skills.render-graphs",
+          "package": "skills.writing-skills.render-graphs",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 12,
+          "signature": "function extractGraphBody(dotContent)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "skills.writing-skills.render-graphs.combineGraphs",
+          "name": "combineGraphs",
+          "path": "skills/writing-skills/render-graphs.js",
+          "line": 51,
+          "namespace": "skills.writing-skills.render-graphs",
+          "package": "skills.writing-skills.render-graphs",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 18,
+          "signature": "function combineGraphs(blocks, skillName)",
+          "method_count": 0,
+          "importance": 0.426,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "把 markdown 中的多个 DOT 代码块合并成一张可一次性渲染的图。",
+          "description_en": "Combines multiple DOT code blocks found in markdown into a single graph rendered in one pass."
+        },
+        {
+          "id": "skills.writing-skills.render-graphs.renderToSvg",
+          "name": "renderToSvg",
+          "path": "skills/writing-skills/render-graphs.js",
+          "line": 70,
+          "namespace": "skills.writing-skills.render-graphs",
+          "package": "skills.writing-skills.render-graphs",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 13,
+          "signature": "function renderToSvg(dotContent)",
+          "method_count": 0,
+          "importance": 0.275,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "调用 graphviz 把合并后的图渲染成 SVG 字符串。",
+          "description_en": "Renders the combined graph into an SVG string via graphviz."
+        },
+        {
+          "id": "skills.writing-skills.render-graphs.main",
+          "name": "main",
+          "path": "skills/writing-skills/render-graphs.js",
+          "line": 84,
+          "namespace": "skills.writing-skills.render-graphs",
+          "package": "skills.writing-skills.render-graphs",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 83,
+          "signature": "function main()",
+          "method_count": 0,
+          "importance": 0.401,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 3,
+          "confidence": "high",
+          "tags": [
+            "entry-point"
+          ],
+          "description_zh": "render-graphs 命令行入口：从 markdown 抽取 DOT 图、合并后用 graphviz 渲染为 SVG，供 writing-skills 技能在文档中插图。",
+          "description_en": "The render-graphs CLI entry point — extracts DOT graphs from markdown, combines them, and renders SVG via graphviz for the writing-skills skill docs."
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "from": "skills.brainstorming.scripts.server.handleRequest",
+      "to": "skills.brainstorming.scripts.server.getNewestScreen",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleRequest",
+      "to": "skills.brainstorming.scripts.server.isFullDocument",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleRequest",
+      "to": "skills.brainstorming.scripts.server.touchActivity",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleRequest",
+      "to": "skills.brainstorming.scripts.server.wrapInFrame",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleUpgrade",
+      "to": "skills.brainstorming.scripts.server.computeAcceptKey",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleUpgrade",
+      "to": "skills.brainstorming.scripts.server.decodeFrame",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleUpgrade",
+      "to": "skills.brainstorming.scripts.server.encodeFrame",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleUpgrade",
+      "to": "skills.brainstorming.scripts.server.handleMessage",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.handleMessage",
+      "to": "skills.brainstorming.scripts.server.touchActivity",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.broadcast",
+      "to": "skills.brainstorming.scripts.server.encodeFrame",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.startServer",
+      "to": "skills.brainstorming.scripts.server.broadcast",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.brainstorming.scripts.server.startServer",
+      "to": "skills.brainstorming.scripts.server.touchActivity",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.writing-skills.render-graphs.combineGraphs",
+      "to": "skills.writing-skills.render-graphs.extractGraphBody",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.writing-skills.render-graphs.main",
+      "to": "skills.writing-skills.render-graphs.combineGraphs",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.writing-skills.render-graphs.main",
+      "to": "skills.writing-skills.render-graphs.extractDotBlocks",
+      "kind": "uses"
+    },
+    {
+      "from": "skills.writing-skills.render-graphs.main",
+      "to": "skills.writing-skills.render-graphs.renderToSvg",
+      "kind": "uses"
+    }
+  ],
+  "flows": [
+    {
+      "id": "flow:skills.writing-skills.render-graphs.main",
+      "name": "图渲染流水线 / Graph Rendering Pipeline",
+      "description": "从 markdown 抽取 DOT 图块、合并后渲染为 SVG，供 writing-skills 在技能文档里插图 / Extract DOT blocks from markdown, combine them, and render SVG for writing-skills docs.",
+      "seed": "skills.writing-skills.render-graphs.main",
+      "seed_kind": "entry-point",
+      "nodes": [
+        "skills.writing-skills.render-graphs.main",
+        "skills.writing-skills.render-graphs.extractDotBlocks",
+        "skills.writing-skills.render-graphs.combineGraphs",
+        "skills.writing-skills.render-graphs.renderToSvg",
+        "skills.writing-skills.render-graphs.extractGraphBody"
+      ],
+      "edges": [
+        {
+          "from": "skills.writing-skills.render-graphs.main",
+          "to": "skills.writing-skills.render-graphs.extractDotBlocks",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.writing-skills.render-graphs.main",
+          "to": "skills.writing-skills.render-graphs.combineGraphs",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.writing-skills.render-graphs.main",
+          "to": "skills.writing-skills.render-graphs.renderToSvg",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.writing-skills.render-graphs.combineGraphs",
+          "to": "skills.writing-skills.render-graphs.extractGraphBody",
+          "kind": "uses"
+        }
+      ],
+      "confidence": "ai-inferred"
+    },
+    {
+      "id": "flow:skills.brainstorming.scripts.server.serve-preview",
+      "name": "设计预览页服务 / Serve Design Preview",
+      "description": "处理 HTTP 请求，取最新设计屏、包成完整 HTML 文档返回浏览器，并刷新空闲计时器 / Serve the newest design screen as a full HTML page over HTTP and bump the idle timer.",
+      "seed": "skills.brainstorming.scripts.server.handleRequest",
+      "seed_kind": "public-orchestrator",
+      "nodes": [
+        "skills.brainstorming.scripts.server.handleRequest",
+        "skills.brainstorming.scripts.server.getNewestScreen",
+        "skills.brainstorming.scripts.server.isFullDocument",
+        "skills.brainstorming.scripts.server.wrapInFrame",
+        "skills.brainstorming.scripts.server.touchActivity"
+      ],
+      "edges": [
+        {
+          "from": "skills.brainstorming.scripts.server.handleRequest",
+          "to": "skills.brainstorming.scripts.server.getNewestScreen",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleRequest",
+          "to": "skills.brainstorming.scripts.server.isFullDocument",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleRequest",
+          "to": "skills.brainstorming.scripts.server.wrapInFrame",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleRequest",
+          "to": "skills.brainstorming.scripts.server.touchActivity",
+          "kind": "uses"
+        }
+      ],
+      "confidence": "ai-inferred"
+    },
+    {
+      "id": "flow:skills.brainstorming.scripts.server.live-reload",
+      "name": "WebSocket 实时刷新 / WebSocket Live-Reload",
+      "description": "WebSocket 握手、帧编解码、消息分发与广播，内容变更时推送 reload 让预览页自动刷新 / WebSocket handshake, frame codec, message routing and broadcast that push reloads to the preview page on change.",
+      "seed": "skills.brainstorming.scripts.server.handleUpgrade",
+      "seed_kind": "public-orchestrator",
+      "nodes": [
+        "skills.brainstorming.scripts.server.handleUpgrade",
+        "skills.brainstorming.scripts.server.computeAcceptKey",
+        "skills.brainstorming.scripts.server.decodeFrame",
+        "skills.brainstorming.scripts.server.encodeFrame",
+        "skills.brainstorming.scripts.server.handleMessage",
+        "skills.brainstorming.scripts.server.touchActivity",
+        "skills.brainstorming.scripts.server.startServer",
+        "skills.brainstorming.scripts.server.broadcast"
+      ],
+      "edges": [
+        {
+          "from": "skills.brainstorming.scripts.server.handleUpgrade",
+          "to": "skills.brainstorming.scripts.server.computeAcceptKey",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleUpgrade",
+          "to": "skills.brainstorming.scripts.server.decodeFrame",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleUpgrade",
+          "to": "skills.brainstorming.scripts.server.encodeFrame",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleUpgrade",
+          "to": "skills.brainstorming.scripts.server.handleMessage",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.handleMessage",
+          "to": "skills.brainstorming.scripts.server.touchActivity",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.startServer",
+          "to": "skills.brainstorming.scripts.server.broadcast",
+          "kind": "uses"
+        },
+        {
+          "from": "skills.brainstorming.scripts.server.broadcast",
+          "to": "skills.brainstorming.scripts.server.encodeFrame",
+          "kind": "uses"
+        }
+      ],
+      "confidence": "ai-inferred"
+    }
+  ]
+}
