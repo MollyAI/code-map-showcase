@@ -73,47 +73,60 @@ description. Try in order, taking the first that works:
 `--name` / `--desc` always override whatever was fetched. Call the results
 `NAME` and `DESC`.
 
-## 4. Build the code-map against the clone (Phase 1 + Phase 2)
+## 4. Build the code-map against the clone (Phase 0 + 1 + 2)
 
-The `/code-map:build` skill can't be reused directly — it runs `python … --root .`
-in separate Bash calls, and `.` would resolve to *this* repo, not the clone. So
-drive the plugin's Phase-1 scripts with an explicit absolute `--root`, then do
-Phase 2 yourself.
+The `/code-map:build` skill can't be reused directly — it runs `bin/code-map … --root .`
+and does its Phase 0 / Phase 2 against `.code-map/` relative to the cwd, which would
+resolve to *this* repo, not the clone. So drive the plugin's launcher with an explicit
+absolute `--root "$CACHE"`, and do the agent-owned Phase 0 / Phase 2 yourself against
+the clone.
 
-**Locate the installed code-map plugin** (paths/version vary by machine):
-
-```bash
-ANALYZE="$(find "$HOME/.claude/plugins" -name analyze.py -path '*code-map*scripts*' 2>/dev/null | head -1)"
-[ -n "$ANALYZE" ] || { echo "code-map plugin not found — is it installed?"; exit 1; }
-PLUGIN_ROOT="$(cd "$(dirname "$ANALYZE")/.." && pwd)"
-```
-
-**Phase 1 (mechanical):** the scripts auto-resolve their own plugin root and the
-grammar-wheel cache from their location, so no env vars are needed.
+**Locate the installed code-map plugin.** The current plugin is a **JS/Node pipeline**
+— a `bin/code-map` launcher (web-tree-sitter, bundled WASM grammars), *not* the older
+Python `bootstrap.py` / `analyze.py`. Pick the newest installed launcher:
 
 ```bash
+CODEMAP_BIN="$(find "$HOME/.claude/plugins/cache/code-map" -type f -path '*/bin/code-map' 2>/dev/null | sort -V | tail -1)"
+[ -n "$CODEMAP_BIN" ] || CODEMAP_BIN="$(find "$HOME/.claude/plugins" -type f -path '*/code-map/bin/code-map' 2>/dev/null | sort -V | tail -1)"
+[ -x "$CODEMAP_BIN" ] || { echo "code-map plugin (bin/code-map, ≥ v1.5) not found — is it installed?"; exit 1; }
+PLUGIN_ROOT="$(cd "$(dirname "$CODEMAP_BIN")/.." && pwd)"
 mkdir -p "$CACHE/.code-map"
-python3 "$PLUGIN_ROOT/scripts/bootstrap.py" --root "$CACHE"
-python3 "$PLUGIN_ROOT/scripts/analyze.py" --root "$CACHE" --out "$CACHE/.code-map/raw_structure.json"
 ```
 
-This writes `$CACHE/.code-map/raw_structure.json` and `…/unresolved.json`.
+The launcher needs only a JS runtime (Node ≥18 / Bun) — no Python, no `pip`, no
+tree-sitter install. The pipeline has three phases: **Phase 0** (you design the
+architecture → `architecture.yml`), **Phase 1** (the launcher extracts), **Phase 2**
+(you write bilingual descriptions + flows). `Read` `$PLUGIN_ROOT/commands/build.md`
+and follow its **Path A — full build** (steps **A1–A5**) plus the **`## Phase 2:
+semantic refinement`** section *exactly*, writing the final
+`$CACHE/.code-map/code-map.json`, with these substitutions:
 
-**Phase 2 (semantic — your job):** `Read` `$PLUGIN_ROOT/commands/build.md` and follow
-its **`## Phase 2: semantic refinement`** section *exactly*, with these path
-substitutions, writing the final `$CACHE/.code-map/code-map.json`:
+- every `.code-map/<file>` in build.md → `$CACHE/.code-map/<file>` (covers
+  `architecture.yml`, `raw_structure.json`, `unresolved.json`, `skip-dirs.txt`,
+  `detection.json`, `code-map.json`). The launcher reads `architecture.yml` /
+  `skip-dirs.txt` from `<root>/.code-map/`, so `--root "$CACHE"` lands them in the clone.
+- every `${CLAUDE_PLUGIN_ROOT}` in build.md → `$PLUGIN_ROOT` (launcher at
+  `$PLUGIN_ROOT/bin/code-map`, templates at `$PLUGIN_ROOT/templates/<name>.yml`).
+- every `--root .` → `--root "$CACHE"`. The launcher runs from anywhere — `--root`
+  and `--out` are absolute.
+- any file you `Read` during **Phase 0** (`README.md`, `ARCHITECTURE.md`, the
+  top-level dir listing) lives under `$CACHE/` — e.g. `$CACHE/README.md` — **not**
+  this repo.
+- **Skip the Pre-flight `plan` step and Path B.** A gallery publish always does a
+  clean **full** build (Path A) for reproducibility; A1 wipes any intermediates a
+  prior run left in `$CACHE/.code-map/`.
+- there is normally no focus hint; if the user passed a focus-like hint, treat it as
+  build.md's `$1`.
 
-- every `.code-map/<file>` in build.md → `$CACHE/.code-map/<file>`
-- every `${CLAUDE_PLUGIN_ROOT}` in build.md → `$PLUGIN_ROOT` (e.g. templates at
-  `$PLUGIN_ROOT/templates/<name>.yml`)
-- if `--branch`/a focus hint was relevant, treat it as build.md's `$1` focus hint;
-  otherwise there is no focus hint.
+That covers: detector advisory, **Phase 0** architecture design (reject an app
+template on a library — okhttp-style functional-subsystem layers), extraction, the
+vendored-flooding advisory (A4b), then **Phase 2** — bilingual `description_zh` /
+`description_en` for **core** declarations, unresolved triage, layer re-routing,
+entry-point marking, and business-flow curation.
 
-That covers: architecture detection/swap, bilingual `description_zh`/`description_en`
-for core declarations, unresolved triage, layer re-routing, and entry-point marking.
-
-**Also stamp `project.git`** in the code-map.json you write, so the gallery card
-shows the source commit (the analyzer may leave it unset):
+**Confirm `project.git`.** The launcher stamps `project.git` from the clone's HEAD
+(it reads `--root`'s git), so the gallery card shows the source commit. Verify it's
+present in the code-map.json; if it's missing, stamp it yourself:
 
 ```bash
 git -C "$CACHE" rev-parse --abbrev-ref HEAD   # branch
@@ -121,7 +134,8 @@ git -C "$CACHE" rev-parse --short HEAD         # short
 git -C "$CACHE" rev-parse HEAD                 # commit
 ```
 
-Set `model.project.git = { "branch": <branch>, "short": <short>, "commit": <commit> }`.
+Set `project.git = { "branch": <branch>, "short": <short>, "commit": <commit> }` in
+`$CACHE/.code-map/code-map.json`.
 
 ## 5. Generate the commit-history sidecar
 
