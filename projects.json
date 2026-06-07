@@ -83,26 +83,6 @@
       "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back"
     },
     {
-      "slug": "opencode",
-      "name": "opencode",
-      "languages": [
-        "typescript"
-      ],
-      "files": 902,
-      "declarations": 4492,
-      "layers": 8,
-      "flows": 0,
-      "edges": 4335,
-      "git": {
-        "branch": "dev",
-        "short": "31c099b",
-        "commit": "31c099be435d59bd6749ace7a9f2bb2245e6d3fa"
-      },
-      "generated_at": "2026-06-07T04:56:34",
-      "refined": true,
-      "description": "The open source coding agent."
-    },
-    {
       "slug": "rxswift",
       "name": "RxSwift",
       "languages": [
