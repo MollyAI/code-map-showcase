@@ -21,27 +21,6 @@
       "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
     },
     {
-      "slug": "okhttp",
-      "name": "okhttp",
-      "languages": [
-        "java",
-        "kotlin"
-      ],
-      "files": 561,
-      "declarations": 485,
-      "layers": 8,
-      "flows": 0,
-      "edges": 1470,
-      "git": {
-        "branch": "master",
-        "short": "7a350986e",
-        "commit": "7a350986e3231a7b81cbfcc6e3c185327033422b"
-      },
-      "generated_at": "2026-06-07T11:36:00",
-      "refined": true,
-      "description": "Square's meticulous HTTP client for the JVM, Android, and GraalVM."
-    },
-    {
       "slug": "opencode",
       "name": "opencode",
       "languages": [
@@ -60,26 +39,6 @@
       "generated_at": "2026-06-07T04:56:34",
       "refined": true,
       "description": "The open source coding agent."
-    },
-    {
-      "slug": "superpowers",
-      "name": "superpowers",
-      "languages": [
-        "typescript"
-      ],
-      "files": 5,
-      "declarations": 25,
-      "layers": 3,
-      "flows": 3,
-      "edges": 16,
-      "git": {
-        "branch": "main",
-        "short": "6fd4507",
-        "commit": "6fd4507659784c351abbd2bc264c7162cfd386dc"
-      },
-      "generated_at": "2026-06-07T05:12:26",
-      "refined": true,
-      "description": "An agentic skills framework & software development methodology that works."
     }
   ]
 }
