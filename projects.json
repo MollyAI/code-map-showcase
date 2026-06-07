@@ -21,6 +21,26 @@
       "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
     },
     {
+      "slug": "freertos-kernel",
+      "name": "FreeRTOS-Kernel",
+      "languages": [
+        "c"
+      ],
+      "files": 38,
+      "declarations": 421,
+      "layers": 10,
+      "flows": 9,
+      "edges": 382,
+      "git": {
+        "branch": "main",
+        "short": "d877cd5",
+        "commit": "d877cd53989eba16c5092761056e31e1dcddba2f"
+      },
+      "generated_at": "2026-06-07T06:02:35",
+      "refined": true,
+      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos."
+    },
+    {
       "slug": "opencode",
       "name": "opencode",
       "languages": [
