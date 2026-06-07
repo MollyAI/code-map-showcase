@@ -41,6 +41,28 @@
       "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos."
     },
     {
+      "slug": "genericagent",
+      "name": "GenericAgent",
+      "languages": [
+        "python",
+        "rust",
+        "typescript"
+      ],
+      "files": 74,
+      "declarations": 895,
+      "layers": 9,
+      "flows": 9,
+      "edges": 1466,
+      "git": {
+        "branch": "main",
+        "short": "de0a3f8",
+        "commit": "de0a3f82a8b65b010eaa61f69c7d7afea1c14d3b"
+      },
+      "generated_at": "2026-06-07T07:38:31",
+      "refined": true,
+      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption"
+    },
+    {
       "slug": "gson",
       "name": "gson",
       "languages": [
