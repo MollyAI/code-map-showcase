@@ -11,7 +11,9 @@
 
 <!-- design tokens, fonts, light/dark theme — reused verbatim from the synced viewer -->
 <link rel="stylesheet" href="./viewer/style.css" />
-<link rel="stylesheet" href="./landing.css" />
+<!-- ?v= cache-busts the gallery's own CSS: GitHub Pages caches assets, so bump
+     this whenever landing.css changes or browsers keep serving a stale copy. -->
+<link rel="stylesheet" href="./landing.css?v=20260607" />
 </head>
 <body class="landing">
 
@@ -68,6 +70,6 @@
   </section>
 </main>
 
-<script type="module" src="./landing.js"></script>
+<script type="module" src="./landing.js?v=20260607"></script>
 </body>
 </html>
