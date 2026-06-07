@@ -103,6 +103,28 @@
       "description": "The open source coding agent."
     },
     {
+      "slug": "rxswift",
+      "name": "RxSwift",
+      "languages": [
+        "c",
+        "objc",
+        "swift"
+      ],
+      "files": 305,
+      "declarations": 870,
+      "layers": 11,
+      "flows": 7,
+      "edges": 933,
+      "git": {
+        "branch": "main",
+        "short": "132aea4f",
+        "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
+      },
+      "generated_at": "2026-06-07T10:23:04",
+      "refined": true,
+      "description": "Reactive Programming in Swift"
+    },
+    {
       "slug": "termux-app",
       "name": "termux-app",
       "languages": [
