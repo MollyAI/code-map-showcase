@@ -13,13 +13,17 @@ body.landing {
   overflow-y: auto;
   height: auto;
   min-height: 100%;
+  /* reserve the scrollbar gutter so a language switch that changes content
+     height (and toggles the scrollbar) never shifts the layout sideways */
+  scrollbar-gutter: stable;
 }
 
 /* ---------- main ---------- */
 .landing-main {
   max-width: 1140px;
   margin: 0 auto;
-  padding: 0 28px 96px;
+  /* generous bottom padding so the last row of cards clears the fixed CTA strip */
+  padding: 0 28px 100px;
 }
 
 /* ---------- hero + search ---------- */
@@ -44,9 +48,13 @@ body.landing {
   font-family: var(--font-ui);
   font-size: 16px;
   font-weight: 300;
+  line-height: 1.5;
   color: var(--text-2);
   margin: 16px 0 0;
   max-width: 540px;
+  /* reserve two lines: EN wraps to 2, ZH to 1 — fixing the height keeps the
+     search box and the grid below from jumping when the language is switched */
+  min-height: 48px;
 }
 
 .search {
@@ -192,43 +200,58 @@ body.landing {
   padding: 2px 7px;
 }
 
-/* ---------- CTA banner ---------- */
+/* ---------- CTA banner — fixed floating strip at the bottom ----------
+   A full-width bar pinned to the viewport bottom, mirroring the sticky
+   .topbar (same --header-bg + blur) so the page is bracketed top & bottom.
+   Title/desc are kept to a single line each (ellipsis) so the bar's height
+   is constant across EN↔ZH — it never scrolls, never jumps. */
 .cta {
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  z-index: 40;
+  background: var(--header-bg);
+  backdrop-filter: blur(8px);
+  border-top: 1px solid var(--line);
+}
+.cta-inner {
+  max-width: 1140px;
+  margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 40px;
-  padding: 26px 28px;
-  background: var(--bg-1);
-  border: 1px solid var(--line);
-  border-radius: 12px;
+  gap: 24px;
+  padding: 11px 28px;   /* short strip — was a 26px-tall card */
 }
-.cta-text { min-width: 260px; flex: 1 1 340px; }
+.cta-text { flex: 1 1 auto; min-width: 0; }   /* min-width:0 lets the desc ellipsis instead of forcing the bar taller */
 .cta-title {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: 22px;
+  font-size: 20px;       /* one notch smaller (was 22) */
+  line-height: 1.3;      /* fixed line box so the CJK title isn't taller than the Latin one */
   letter-spacing: -0.01em;
   color: var(--text-0);
   margin: 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cta-desc {
   font-family: var(--font-ui);
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 300;
-  line-height: 1.5;
+  line-height: 1.4;
   color: var(--text-2);
-  margin: 8px 0 0;
-  max-width: 560px;
+  margin: 3px 0 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .cta-btn {
   flex: 0 0 auto;
   display: inline-flex;
   align-items: center;
   gap: 9px;
-  padding: 11px 18px;
+  padding: 9px 16px;
   font-family: var(--font-mono);
   font-size: 13px;
   letter-spacing: 0.01em;
