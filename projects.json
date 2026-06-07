@@ -41,6 +41,26 @@
       "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos."
     },
     {
+      "slug": "gson",
+      "name": "gson",
+      "languages": [
+        "java"
+      ],
+      "files": 87,
+      "declarations": 80,
+      "layers": 8,
+      "flows": 5,
+      "edges": 316,
+      "git": {
+        "branch": "main",
+        "short": "004e7a4",
+        "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
+      },
+      "generated_at": "2026-06-07T06:46:06",
+      "refined": true,
+      "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back"
+    },
+    {
       "slug": "opencode",
       "name": "opencode",
       "languages": [
