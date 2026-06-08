@@ -18,7 +18,7 @@ const $ = (id) => document.getElementById(id);
 
 const STR = {
   en: {
-    tagline: 'Interactive architectural maps of real codebases.',
+    tagline: 'Codebase architecture maps, built for humans.',
     search: 'Search projects by name or language…',
     files: 'files', decls: 'decls', layers: 'layers', flows: 'flows',
     raw: 'phase 1',
@@ -30,7 +30,7 @@ const STR = {
     cta_btn: 'View on GitHub',
   },
   zh: {
-    tagline: '真实代码库的交互式架构地图。',
+    tagline: '为人类构建的代码库架构地图。',
     search: '按名称或语言搜索项目…',
     files: '文件', decls: '声明', layers: '层', flows: '流程',
     raw: '未精炼',
