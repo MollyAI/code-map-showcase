@@ -1,4 +1,4 @@
 {
   "name": "code-map",
-  "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
+  "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。"
 }

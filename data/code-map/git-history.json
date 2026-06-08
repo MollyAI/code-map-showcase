@@ -1,8 +1,191 @@
 {
-  "anchor": "f1510ac5f3db9c29193f1ab382e17b17e3a08e08",
+  "anchor": "f24fe6e4f7ce90f799328bf3782d3de27e658f3a",
   "limit": 200,
   "truncated": false,
   "commits": [
+    {
+      "hash": "aa9f837b092e05432be7f146bf8e71c9226510b3",
+      "short": "aa9f837",
+      "time": 1780840598,
+      "subject": "fix(viewer): size node box and tooltip by display_name (R3 final review)",
+      "files": [
+        "viewer/src/layout/metrics.js",
+        "viewer/src/test/metrics.test.js",
+        "viewer/src/ui/tooltip.js"
+      ]
+    },
+    {
+      "hash": "b3507e67e51e7994c6cdd3b4828b24cf4cf0020a",
+      "short": "b3507e6",
+      "time": 1780839946,
+      "subject": "chore(release): v1.8.0 — node identity normalization (R2/R3/R6)",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "commands/build.md"
+      ]
+    },
+    {
+      "hash": "4a52f0e99a95f8eb4dca77a44dce1780e182305a",
+      "short": "4a52f0e",
+      "time": 1780839722,
+      "subject": "feat(ts): infer module-private visibility from missing export (R2)",
+      "files": [
+        "scripts/lib/extractors/typescript.mjs",
+        "tests/extractor_typescript.test.mjs"
+      ]
+    },
+    {
+      "hash": "9fd0271da8d164c56d121853dbe6fbefdbdf0cab",
+      "short": "9fd0271",
+      "time": 1780839630,
+      "subject": "test(core): lock PRIVATE_PENALTY magnitude in downweight test",
+      "files": [
+        "tests/core.test.mjs"
+      ]
+    },
+    {
+      "hash": "f52d4e4fa0d210d15c01994a7f2aa6a1a572c159",
+      "short": "f52d4e4",
+      "time": 1780839415,
+      "subject": "feat(core): downweight private declarations out of core (R2)",
+      "files": [
+        "scripts/lib/core.mjs",
+        "tests/core.test.mjs"
+      ]
+    },
+    {
+      "hash": "b5a890fbc8305441e98bee449c440f418158ba9f",
+      "short": "b5a890f",
+      "time": 1780839138,
+      "subject": "feat(python): infer module-private visibility from leading underscore (R2)",
+      "files": [
+        "scripts/lib/extractors/python.mjs",
+        "tests/extractor_python.test.mjs"
+      ]
+    },
+    {
+      "hash": "d896c6ce2fb6b0f811967e00c69267521a8364a8",
+      "short": "d896c6c",
+      "time": 1780838870,
+      "subject": "feat(go): receiver-qualified method namespace + case-based visibility (R1/R2)",
+      "files": [
+        "scripts/lib/extractors/go.mjs",
+        "tests/extractor_go.test.mjs"
+      ]
+    },
+    {
+      "hash": "43ca33f20ec1999ec374381433f709cfd00bc9ca",
+      "short": "43ca33f",
+      "time": 1780838748,
+      "subject": "test(viewer): direct countLabel coverage for R6 label strings",
+      "files": [
+        "viewer/src/test/counts.test.js"
+      ]
+    },
+    {
+      "hash": "dcbb320b3bd0eb759197c1db0593c7f2cc4d6f02",
+      "short": "dcbb320",
+      "time": 1780838529,
+      "subject": "feat(viewer): honest layer counts — classes vs functions (R6)",
+      "files": [
+        "viewer/src/data/counts.js",
+        "viewer/src/i18n.js",
+        "viewer/src/render/registry.js",
+        "viewer/src/test/counts.test.js"
+      ]
+    },
+    {
+      "hash": "753dd8cd66775651dc7dd17274cece01673478ae",
+      "short": "753dd8c",
+      "time": 1780838376,
+      "subject": "fix(viewer): detail panel uses display_name; clarify labels comments (R3 review)",
+      "files": [
+        "scripts/lib/labels.mjs",
+        "viewer/src/render/node.js",
+        "viewer/src/ui/detail.js"
+      ]
+    },
+    {
+      "hash": "44ccd34cf58a20a82b515924fe54771bcc83cb49",
+      "short": "44ccd34",
+      "time": 1780837795,
+      "subject": "feat(viewer): node label prefers display_name over name (R3)",
+      "files": [
+        "viewer/src/render/node.js"
+      ]
+    },
+    {
+      "hash": "1a0dd28c2be5f830c3bdf2f33364cf915c16086f",
+      "short": "1a0dd28",
+      "time": 1780837780,
+      "subject": "feat(analyze): emit per-decl display_name from labels.mjs (R3)",
+      "files": [
+        "scripts/analyze.mjs",
+        "scripts/lib/core.mjs"
+      ]
+    },
+    {
+      "hash": "561cf2d0ca14738b3a76087dc3c7ace2a18e5338",
+      "short": "561cf2d",
+      "time": 1780837672,
+      "subject": "feat(labels): deterministic display_name disambiguation (R3)",
+      "files": [
+        "scripts/lib/labels.mjs",
+        "tests/labels.test.mjs"
+      ]
+    },
+    {
+      "hash": "d931f5bec909c35b094612af4f2bbbc610da75d3",
+      "short": "d931f5b",
+      "time": 1780835464,
+      "subject": "fix(extractors): Swift extensions surface members, not type-named nodes; walker realpath-dedups symlinks; v1.7.0",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "scripts/analyze.mjs",
+        "scripts/lib/extractors/swift.mjs",
+        "tests/extractor_swift.test.mjs",
+        "tests/walker_symlink.test.mjs"
+      ]
+    },
+    {
+      "hash": "bb8bf07cf98f7cef6aa1556f430cfba5e9c8e317",
+      "short": "bb8bf07",
+      "time": 1780825495,
+      "subject": "feat(extractors): C/C++ recover preproc/ERROR-buried + macro-defined functions; v1.6.0",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "scripts/lib/extractors/_common.mjs",
+        "scripts/lib/extractors/c.mjs",
+        "scripts/lib/extractors/cpp.mjs",
+        "tests/extractor_c.test.mjs",
+        "tests/extractor_cpp.test.mjs"
+      ]
+    },
+    {
+      "hash": "5aaa0f530decf4bc6743c3aaa0ddd91fdbe1b64d",
+      "short": "5aaa0f5",
+      "time": 1780801464,
+      "subject": "docs(readme): add Live Demo / 在线体验 link before Features",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "efee6a517f59c3d6956db2e760a50d6c22b20420",
+      "short": "efee6a5",
+      "time": 1780800615,
+      "subject": "feat(viewer): ?project= data-source for multi-project galleries; v1.5.2",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "viewer/src/data/githistory.js",
+        "viewer/src/data/load.js",
+        "viewer/src/data/source.js",
+        "viewer/src/test/source.test.js"
+      ]
+    },
     {
       "hash": "f1510ac5f3db9c29193f1ab382e17b17e3a08e08",
       "short": "f1510ac",

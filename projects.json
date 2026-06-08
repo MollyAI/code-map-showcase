@@ -6,19 +6,19 @@
       "languages": [
         "typescript"
       ],
-      "files": 61,
-      "declarations": 274,
-      "layers": 7,
-      "flows": 14,
-      "edges": 451,
+      "files": 64,
+      "declarations": 311,
+      "layers": 8,
+      "flows": 4,
+      "edges": 479,
       "git": {
-        "branch": "dev",
-        "short": "f1510ac",
-        "commit": "f1510ac5f3db9c29193f1ab382e17b17e3a08e08"
+        "branch": "main",
+        "short": "f24fe6e",
+        "commit": "f24fe6e4f7ce90f799328bf3782d3de27e658f3a"
       },
-      "generated_at": "2026-06-07T02:44:01",
+      "generated_at": "2026-06-08T13:26:32",
       "refined": true,
-      "description": "code-map mapping itself — a Node + web-tree-sitter extraction pipeline feeding a static SVG viewer."
+      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。"
     },
     {
       "slug": "freertos-kernel",
