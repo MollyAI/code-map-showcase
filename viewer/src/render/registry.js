@@ -8,6 +8,7 @@
 
 import { state } from '../store.js';
 import { t } from '../i18n.js';
+import { countLabel } from '../data/counts.js';
 import { layoutLayers } from '../layout/layers.js';
 import { layoutFlow } from '../layout/flow.js';
 import { makeNodeEl } from './node.js';
@@ -113,8 +114,7 @@ const layerView = {
       count.setAttribute('class', 'count');
       count.setAttribute('x', String(b.width - 16));
       count.setAttribute('y', String(b.y + 26));
-      const n = b.layer.classes.length;
-      count.textContent = `${n} ${n === 1 ? t('class_one', st.lang) : t('class_other', st.lang)}`;
+      count.textContent = countLabel(b.layer.classes, st.lang);
       gBand.appendChild(count);
 
       for (const node of b.nodes) appendNode(st, gBand, node, ctx, NO_DECOR);

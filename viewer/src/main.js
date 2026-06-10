@@ -126,6 +126,16 @@ ${escapeHtml(t('error_hint', state.lang))}</code>
   </div>`;
 }
 
+// Badge text/tooltip are language-dependent (arch score, branch/built labels),
+// so this re-runs on every render — the language toggle re-renders via setState.
+function renderBuildInfo() {
+  if (!state.model) return;
+  const bi = formatBuildInfo(state.model.project, state.lang);
+  els.buildInfo.textContent = bi.text;
+  els.buildInfo.title = bi.title;
+  els.buildInfo.hidden = bi.hidden;
+}
+
 /** @param {any} json */
 function onModel(json) {
   const model = /** @type {any} */ (loadModel(json));
@@ -133,10 +143,7 @@ function onModel(json) {
   state.model = model;
   els.projectName.textContent = model.project?.name || '—';
   document.title = model.project?.name || 'code map';
-  const bi = formatBuildInfo(model.project, state.lang);
-  els.buildInfo.textContent = bi.text;
-  els.buildInfo.title = bi.title;
-  els.buildInfo.hidden = bi.hidden;
+  renderBuildInfo();
   renderLangStats(model, els.langStats);
 
   const { edgesFromIdx, edgesToIdx } = buildEdgeIndex(model.edges || []);
@@ -163,7 +170,7 @@ function onModel(json) {
 // --- boot, in explicit order ---
 registerBuiltinViews();
 initControls(els);                       // applies persisted settings + sets state.LAYOUT (before first render)
-subscribe(() => renderApp(backend, ctx)); // register the renderer
+subscribe(() => { renderBuildInfo(); renderApp(backend, ctx); }); // register the renderer
 initZoom(backend, els.canvasWrap);
 initPan(els.canvasWrap, backend.getSvg(), deselect);
 initKeyboard(deselect);

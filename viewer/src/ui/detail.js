@@ -45,7 +45,7 @@ export function createDetail({ detailBody, canvasWrap, onSelectTarget }) {
   /** @param {string} targetId @param {string} dir @param {string} [kind] */
   function edgeRow(targetId, dir, kind) {
     const node = state.nodeById.get(targetId);
-    const name = node ? node.datum.name : simpleNameOf(targetId);
+    const name = node ? (node.datum.display_name || node.datum.name) : simpleNameOf(targetId);
     const pkg = node ? node.datum.package : packageOf(targetId);
     const cls = 'edge-row ' + (dir === 'out' ? 'is-out' : 'is-in');
     return `<div class="${cls}" data-target="${escapeAttr(targetId)}" title="${escapeAttr(targetId)}">
@@ -85,7 +85,7 @@ export function createDetail({ detailBody, canvasWrap, onSelectTarget }) {
 
     const isMethod = ['function', 'method', 'composable_function'].includes(c.kind);
     const desc = pickDescription(c);
-    const titleText = (isMethod && c.signature) ? c.signature : c.name;
+    const titleText = (isMethod && c.signature) ? c.signature : (c.display_name || c.name);
     const fileName = (c.path || '').split('/').pop();
     const lineSuffix = c.line ? `:${c.line}` : '';
 

@@ -70,13 +70,15 @@ export function makeLayout(fontScale) {
 
 /**
  * Width of a node box given its declaration and the active layout.
- * Driven by the (clamped) name length; clamped to [minNodeW, maxNodeW].
- * @param {{ name: string }} decl
+ * Driven by the (clamped) label length; clamped to [minNodeW, maxNodeW].
+ * Uses `display_name` when present (matches what the node renderer shows).
+ * @param {{ name: string, display_name?: string }} decl
  * @param {Layout} LAYOUT
  * @returns {number}
  */
 export function nodeWidth(decl, LAYOUT) {
-  const baseChars = Math.min(decl.name.length, 22);
+  const label = decl.display_name || decl.name;
+  const baseChars = Math.min(label.length, 22);
   const w = LAYOUT.minNodeW + (baseChars - 6) * LAYOUT.charW;
   return Math.min(LAYOUT.maxNodeW, Math.max(LAYOUT.minNodeW, Math.round(w)));
 }

@@ -8,9 +8,9 @@ import { escapeHtml } from '../util.js';
 
 /** @param {HTMLElement} tooltipEl */
 export function createTooltip(tooltipEl) {
-  /** @param {{ name: string, package?: string }} c */
+  /** @param {{ name: string, display_name?: string, package?: string }} c */
   function show(c) {
-    tooltipEl.innerHTML = `${escapeHtml(c.name)} <span class="pkg">${escapeHtml(c.package || '')}</span>`;
+    tooltipEl.innerHTML = `${escapeHtml(c.display_name || c.name)} <span class="pkg">${escapeHtml(c.package || '')}</span>`;
     tooltipEl.classList.add('visible');
   }
   function hide() { tooltipEl.classList.remove('visible'); }
