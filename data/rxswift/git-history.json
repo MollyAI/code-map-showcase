@@ -5,7 +5,7 @@
   "commits": [
     {
       "hash": "132aea4f236ccadc51590b38af0357a331d51fa2",
-      "short": "132aea4",
+      "short": "132aea4f",
       "time": 1772482252,
       "subject": "Fix flatMap key path type inference for Package@swift-5.9.swift (#2689)",
       "files": [
@@ -14,7 +14,7 @@
     },
     {
       "hash": "ed671427991cb6869d3e83fc10fafab5117511b0",
-      "short": "ed67142",
+      "short": "ed671427",
       "time": 1772481023,
       "subject": "Fix macCatalyst compilation & add regression testing on CI (#2691)",
       "files": [
@@ -26,7 +26,7 @@
     },
     {
       "hash": "5734ad2b6d7d4c0656df3d09ca4ce54fa3c09913",
-      "short": "5734ad2",
+      "short": "5734ad2b",
       "time": 1769460797,
       "subject": "Fix compilation for < Swift 6.2, add CI for Xcode 16  (#2688)",
       "files": [
@@ -296,7 +296,7 @@
     },
     {
       "hash": "34e2c2575a9d202caef84246bb1bb3cb7c4cf778",
-      "short": "34e2c25",
+      "short": "34e2c257",
       "time": 1769452762,
       "subject": "Swift 5.9 manifest, remove trailing commas from function calls (#2685)",
       "files": [
@@ -305,7 +305,7 @@
     },
     {
       "hash": "d65747c74ea0d6c07c6c03a17a9fa0e29a45117b",
-      "short": "d65747c",
+      "short": "d65747c7",
       "time": 1769069656,
       "subject": "Update Gemfile to address dependabot warnings",
       "files": [
@@ -314,7 +314,7 @@
     },
     {
       "hash": "b529ef9b7fa3ba2b38d299df23fc2165f21abbb9",
-      "short": "b529ef9",
+      "short": "b529ef9b",
       "time": 1769066954,
       "subject": "Fix recursive lock test",
       "files": [
@@ -323,7 +323,7 @@
     },
     {
       "hash": "719613a9f69abb1ee174ed3355c659bc529b7338",
-      "short": "719613a",
+      "short": "719613a9",
       "time": 1769065944,
       "subject": "Bump to 6.10",
       "files": [
@@ -406,7 +406,7 @@
     },
     {
       "hash": "eb5a47ea2a3540053d6a9b003e128e1eae957c13",
-      "short": "eb5a47e",
+      "short": "eb5a47ea",
       "time": 1769062990,
       "subject": "Fix resource leak in AsyncSequence.asObservable() tests",
       "files": [
@@ -415,7 +415,7 @@
     },
     {
       "hash": "68bdf8efe90ee39b3a2951b8ca81ae935d4cd59d",
-      "short": "68bdf8e",
+      "short": "68bdf8ef",
       "time": 1769018835,
       "subject": "Cleanup, remove CHANGELOG.md",
       "files": [
@@ -431,7 +431,7 @@
     },
     {
       "hash": "a0d98e3d9f6cb86af923b7cfbd35b90094e88fd8",
-      "short": "a0d98e3",
+      "short": "a0d98e3d",
       "time": 1769017923,
       "subject": "Fix AsyncSequence.asObservable() to always use Task.detached",
       "files": [
@@ -442,7 +442,7 @@
     },
     {
       "hash": "6e1ad1a8f2adbcbc32a390d960483d4c38402287",
-      "short": "6e1ad1a",
+      "short": "6e1ad1a8",
       "time": 1769014641,
       "subject": "Fix deadlock in share(replay:) with concurrent subscriptions",
       "files": [
@@ -454,7 +454,7 @@
     },
     {
       "hash": "4fed05e8fa09d011795a2f183137a033a5f39596",
-      "short": "4fed05e",
+      "short": "4fed05e8",
       "time": 1769012059,
       "subject": "Remove legacy canImport(_Concurrency) checks",
       "files": [
@@ -470,7 +470,7 @@
     },
     {
       "hash": "da79ceea96aae03f73cd1e3871fc47c49c0b27e0",
-      "short": "da79cee",
+      "short": "da79ceea",
       "time": 1769011956,
       "subject": "feat: Enable Swift Concurrency for Linux (#2660)",
       "files": [
@@ -485,7 +485,7 @@
     },
     {
       "hash": "4a35f630e9cf5a3ecac08588f2c1c8cb83df0238",
-      "short": "4a35f63",
+      "short": "4a35f630",
       "time": 1769009998,
       "subject": "Android support in Package.swift and CI testing (#2663)",
       "files": [
@@ -505,7 +505,7 @@
     },
     {
       "hash": "87f3e77f4b9aa8cc64b5500298b72900b7ce926b",
-      "short": "87f3e77",
+      "short": "87f3e77f",
       "time": 1768996538,
       "subject": "VirtualTimeScheduler - fix typo (#2671)",
       "files": [
@@ -514,7 +514,7 @@
     },
     {
       "hash": "9d65b1f7805507e71ec031984da8e56e829f8667",
-      "short": "9d65b1f",
+      "short": "9d65b1f7",
       "time": 1768996431,
       "subject": "Fix typo: `MutlicastType` -> `MulticastType` (#2669)",
       "files": [
@@ -523,7 +523,7 @@
     },
     {
       "hash": "d560d3e27add2d90d89432af72185145b8414eac",
-      "short": "d560d3e",
+      "short": "d560d3e2",
       "time": 1768996307,
       "subject": "Fix Swift 6.2 weak mutability warning in Binder (#2677)",
       "files": [
@@ -536,7 +536,7 @@
     },
     {
       "hash": "d92fcc02085c65cf1712a434361bb3bf3bec4127",
-      "short": "d92fcc0",
+      "short": "d92fcc02",
       "time": 1768994804,
       "subject": "Update README.md (#2675)",
       "files": [
@@ -545,7 +545,7 @@
     },
     {
       "hash": "9bc18dc815e4eb057e90236b520e4c68d725ecad",
-      "short": "9bc18dc",
+      "short": "9bc18dc8",
       "time": 1768993191,
       "subject": "Unify version to xcconfig",
       "files": [
@@ -563,7 +563,7 @@
     },
     {
       "hash": "eae57edfba260a39feda1fa2f11673e359186de9",
-      "short": "eae57ed",
+      "short": "eae57edf",
       "time": 1768993191,
       "subject": "Update docs",
       "files": [
@@ -647,7 +647,7 @@
     },
     {
       "hash": "c756ecdd9f41b6bf14703d7e2abba339b08212ec",
-      "short": "c756ecd",
+      "short": "c756ecdd",
       "time": 1768993191,
       "subject": "Deprecate CocoaPods",
       "files": [
@@ -666,7 +666,7 @@
     },
     {
       "hash": "f49d86d30cd4e0f40ec1a9e918dc1e8cf4951244",
-      "short": "f49d86d",
+      "short": "f49d86d3",
       "time": 1768993191,
       "subject": "Fix tests",
       "files": [
@@ -864,7 +864,7 @@
     },
     {
       "hash": "ab712dbc0d466d7935143c0daa4f44a6df6d30a3",
-      "short": "ab712db",
+      "short": "ab712dbc",
       "time": 1768993191,
       "subject": "Format cleanup",
       "files": [
@@ -1253,7 +1253,7 @@
     },
     {
       "hash": "ac0db94a1072903c34019a270e38cdb24d76d2d9",
-      "short": "ac0db94",
+      "short": "ac0db94a",
       "time": 1768993191,
       "subject": "Update tooling",
       "files": [
@@ -1269,7 +1269,7 @@
     },
     {
       "hash": "d414ffe761c7f6d82f8050dc7983ecf9952bd2b5",
-      "short": "d414ffe",
+      "short": "d414ffe7",
       "time": 1768993191,
       "subject": "Upgrade Xcode 26",
       "files": [
@@ -1280,7 +1280,7 @@
     },
     {
       "hash": "5004a18539bd68905c5939aa893075f578f4f03d",
-      "short": "5004a18",
+      "short": "5004a185",
       "time": 1757400612,
       "subject": "Fix race conditions in PrimitiveSequence+Concurrency (#2641)",
       "files": [
@@ -1291,7 +1291,7 @@
     },
     {
       "hash": "7157523a367b254f0fc1be5170cd5f3c29d51092",
-      "short": "7157523",
+      "short": "7157523a",
       "time": 1750210112,
       "subject": "Signing updates",
       "files": [
@@ -1302,7 +1302,7 @@
     },
     {
       "hash": "5dd1907d64f0d36f158f61a466bab75067224893",
-      "short": "5dd1907",
+      "short": "5dd1907d",
       "time": 1739801597,
       "subject": "6.9.0",
       "files": [
@@ -1391,7 +1391,7 @@
     },
     {
       "hash": "67ff32cc1340743a12c13ff37344b4dbcf2e9196",
-      "short": "67ff32c",
+      "short": "67ff32cc",
       "time": 1739784108,
       "subject": "Include PrivacyInfo.xcprivacy in Xcode project (#2652)",
       "files": [
@@ -1400,7 +1400,7 @@
     },
     {
       "hash": "d2332a4861be4c88d455b451ab60995b7d6aebdc",
-      "short": "d2332a4",
+      "short": "d2332a48",
       "time": 1739645428,
       "subject": "Set to Light Appearance in Info.plist. The navigationBar was configured programmatically for iOS > 13. (#2612)",
       "files": [
@@ -1412,7 +1412,7 @@
     },
     {
       "hash": "47cb262d875abb1d582c4be933dfadd6de9d9479",
-      "short": "47cb262",
+      "short": "47cb262d",
       "time": 1739645321,
       "subject": "Bump rexml from 3.3.6 to 3.3.9 (#2640)",
       "files": [
@@ -1421,7 +1421,7 @@
     },
     {
       "hash": "0953ad474e6d9e69746191eb1802c71c027ef8a3",
-      "short": "0953ad4",
+      "short": "0953ad47",
       "time": 1739645259,
       "subject": "fix: NSLock subclassing issue (#2643)",
       "files": [
@@ -1430,7 +1430,7 @@
     },
     {
       "hash": "baf816f75ade95f561b890f4ea2434dcafd154d1",
-      "short": "baf816f",
+      "short": "baf816f7",
       "time": 1739645084,
       "subject": "fixes stack overflow possibility with merge operators (#2616)",
       "files": [
@@ -1439,7 +1439,7 @@
     },
     {
       "hash": "68647dbe4d90d54e772ecba80656a04c38fb9bdb",
-      "short": "68647db",
+      "short": "68647dbe",
       "time": 1733594829,
       "subject": "Fix typo in SwiftConcurrency.md (#2644)",
       "files": [
@@ -1448,7 +1448,7 @@
     },
     {
       "hash": "89325988e4d9caddcff62f201cc16888cb1c4bed",
-      "short": "8932598",
+      "short": "89325988",
       "time": 1731569766,
       "subject": "Allow VirtualTimeScheduler to run on any thread  (#2610)",
       "files": [
@@ -1457,7 +1457,7 @@
     },
     {
       "hash": "7570d44ac74e0c25a7a99bd22ff094f64314a805",
-      "short": "7570d44",
+      "short": "7570d44a",
       "time": 1728286118,
       "subject": "Remove privacy manifest from RxTest",
       "files": [
@@ -1466,7 +1466,7 @@
     },
     {
       "hash": "c7c7d2cf50a3211fe2843f76869c698e4e417930",
-      "short": "c7c7d2c",
+      "short": "c7c7d2cf",
       "time": 1728243621,
       "subject": "6.8.0 🎗️",
       "files": [
@@ -1552,7 +1552,7 @@
     },
     {
       "hash": "43423f8fbf6151c0956ea8e5815c7c4ff33ba996",
-      "short": "43423f8",
+      "short": "43423f8f",
       "time": 1728157211,
       "subject": "Added some documentations to AsyncLock file (#2627)",
       "files": [
@@ -1562,7 +1562,7 @@
     },
     {
       "hash": "ef1d4dea3ee6ed337ab2e14211b981223f7ccd30",
-      "short": "ef1d4de",
+      "short": "ef1d4dea",
       "time": 1728074197,
       "subject": "Complete async Observable on CancellationError",
       "files": [
@@ -1572,7 +1572,7 @@
     },
     {
       "hash": "662d91bd0d3ab6f283e16056ae153acee2c62a89",
-      "short": "662d91b",
+      "short": "662d91bd",
       "time": 1728073233,
       "subject": "Allow creating a Single from async closure",
       "files": [
@@ -1584,7 +1584,7 @@
     },
     {
       "hash": "3c68f223d588973f6a2fc46b70ba583b2848db0a",
-      "short": "3c68f22",
+      "short": "3c68f223",
       "time": 1728066077,
       "subject": "Bump rexml from 3.3.3 to 3.3.6 (#2630)",
       "files": [
@@ -1593,7 +1593,7 @@
     },
     {
       "hash": "24985cfcebaa177f467413900bd4db1ea85051e9",
-      "short": "24985cf",
+      "short": "24985cfc",
       "time": 1728065750,
       "subject": "Bump rexml from 3.2.5 to 3.3.3 (#2618)",
       "files": [
@@ -1602,7 +1602,7 @@
     },
     {
       "hash": "98f63d123cc8c6017db1eec48a608af2cf9f568d",
-      "short": "98f63d1",
+      "short": "98f63d12",
       "time": 1728065290,
       "subject": "Don't retain receiver of Completable.andThen beyond its completion (#2604)",
       "files": [
@@ -1613,7 +1613,7 @@
     },
     {
       "hash": "11c2d30b8203f9c85af0cab2542143ff946c7e8e",
-      "short": "11c2d30",
+      "short": "11c2d30b",
       "time": 1727959540,
       "subject": "Add the deployment_target for visionOS in Podspec (#2603)",
       "files": [
@@ -1625,7 +1625,7 @@
     },
     {
       "hash": "58a005434f92da113ece98bc0de79cbd41c6c864",
-      "short": "58a0054",
+      "short": "58a00543",
       "time": 1727959156,
       "subject": "Fix a typo from SwiftConcurrency.md (#2623)",
       "files": [
@@ -1634,7 +1634,7 @@
     },
     {
       "hash": "239d81e04ca587e8eb80027b4085ead660d7b33f",
-      "short": "239d81e",
+      "short": "239d81e0",
       "time": 1727959114,
       "subject": "Tidied up some code using optional map (#2549)",
       "files": [
@@ -1645,7 +1645,7 @@
     },
     {
       "hash": "724b11a9ab671c8989a92dc9e90868bb95875d06",
-      "short": "724b11a",
+      "short": "724b11a9",
       "time": 1727958753,
       "subject": "Xcode 15.4 in CI",
       "files": [
@@ -1725,7 +1725,7 @@
     },
     {
       "hash": "0e547684c6428112393fe40a5dbd4bb2ef922b4e",
-      "short": "0e54768",
+      "short": "0e547684",
       "time": 1727957835,
       "subject": "Privacy Manifest, Skip CI, Bump to 6.8.0",
       "files": [
@@ -1751,7 +1751,7 @@
     },
     {
       "hash": "35d121ab9e1d93af0d21f1c397a279e9ad4cf54c",
-      "short": "35d121a",
+      "short": "35d121ab",
       "time": 1725346382,
       "subject": "Support .editorConfig for consistent code formatting (#2626)",
       "files": [
@@ -1760,7 +1760,7 @@
     },
     {
       "hash": "5c3222c37a5c6064d66762aca140a8748c56d2ac",
-      "short": "5c3222c",
+      "short": "5c3222c3",
       "time": 1724743930,
       "subject": "Add Sendable conformance to AtomicInt (#2624)",
       "files": [
@@ -1769,7 +1769,7 @@
     },
     {
       "hash": "853087cfb1e47cbb88a36f929eb0dbaaa9cad29e",
-      "short": "853087c",
+      "short": "853087cf",
       "time": 1724665520,
       "subject": "Update README.md (#2614)",
       "files": [
@@ -1778,7 +1778,7 @@
     },
     {
       "hash": "6491a16da8b7dfa5d33e317b7c6af889a3b297da",
-      "short": "6491a16",
+      "short": "6491a16d",
       "time": 1720629390,
       "subject": "Bump up swift-tools-version to 5.5 (#2608)",
       "files": [
@@ -1787,7 +1787,7 @@
     },
     {
       "hash": "e2b0aa8dbbafe1552d3cfbc9b8c8087615762f0c",
-      "short": "e2b0aa8",
+      "short": "e2b0aa8d",
       "time": 1715073424,
       "subject": "xcframework visionOS Simulator",
       "files": [
@@ -1797,7 +1797,7 @@
     },
     {
       "hash": "0cb5d08175aef06bc3a25b225202c7cf6abe6ab2",
-      "short": "0cb5d08",
+      "short": "0cb5d081",
       "time": 1715068777,
       "subject": "Support visionOS binaries & Package.swift",
       "files": [
@@ -1808,7 +1808,7 @@
     },
     {
       "hash": "9b952d7ac9f56b187e852e11231dc8b8e70491c3",
-      "short": "9b952d7",
+      "short": "9b952d7a",
       "time": 1714562666,
       "subject": "RxSwift 6.7.1",
       "files": [
@@ -1897,7 +1897,7 @@
     },
     {
       "hash": "b06a8c8596e4c3e8e7788e08e720e3248563ce6a",
-      "short": "b06a8c8",
+      "short": "b06a8c85",
       "time": 1714556409,
       "subject": "Apply visionOS condition to Platform.Darwin.swift",
       "files": [
@@ -1906,7 +1906,7 @@
     },
     {
       "hash": "bfe5015ba3539ae6040db059f976650ed117aa13",
-      "short": "bfe5015",
+      "short": "bfe5015b",
       "time": 1713829135,
       "subject": "Add self-signed signing to xcframework(s)",
       "files": [
@@ -1917,7 +1917,7 @@
     },
     {
       "hash": "f06fa46346603fc2f2c2d1c2bfaf77f6bf574611",
-      "short": "f06fa46",
+      "short": "f06fa463",
       "time": 1713695732,
       "subject": "Absolute URLs in README.md",
       "files": [
@@ -1927,7 +1927,7 @@
     },
     {
       "hash": "6b837a29b4ba0dfe3b766689367ec896f976476e",
-      "short": "6b837a2",
+      "short": "6b837a29",
       "time": 1713695198,
       "subject": "Update docs",
       "files": [
@@ -2009,7 +2009,7 @@
     },
     {
       "hash": "c3c7c58011805138bae2676c5e0ad597536dfcbf",
-      "short": "c3c7c58",
+      "short": "c3c7c580",
       "time": 1713694654,
       "subject": "Logo path & beautify xcframework scripts",
       "files": [
@@ -2020,7 +2020,7 @@
     },
     {
       "hash": "5949cbd3d4f3f97968bb40b6cd232f8315c6341c",
-      "short": "5949cbd",
+      "short": "5949cbd3",
       "time": 1713683350,
       "subject": "Fix CI for Xcode 15.3 & iOS 17",
       "files": [
@@ -2039,7 +2039,7 @@
     },
     {
       "hash": "de14b867cd28261aafd2330ef39b8dc042f720bd",
-      "short": "de14b86",
+      "short": "de14b867",
       "time": 1713649143,
       "subject": "6.7.0 Spec Fixes",
       "files": [
@@ -2058,7 +2058,7 @@
     },
     {
       "hash": "c10823534f42ffe5759041e86f6d559243906dd4",
-      "short": "c108235",
+      "short": "c1082353",
       "time": 1713645471,
       "subject": "Minor Code formatting has been fixed. (#2527)",
       "files": [
@@ -2067,7 +2067,7 @@
     },
     {
       "hash": "34e361cc3c763996f2cbf30e6756b8426670a4d1",
-      "short": "34e361c",
+      "short": "34e361cc",
       "time": 1713645207,
       "subject": "Resolves issue 2554 (https://github.com/ReactiveX/RxSwift/issues/2554), \"Missing imports warn 'this is an error in Swift 6'\". (#2555)",
       "files": [
@@ -2085,7 +2085,7 @@
     },
     {
       "hash": "8f0f0a4ca115229cceea16f7348ef14129de78c9",
-      "short": "8f0f0a4",
+      "short": "8f0f0a4c",
       "time": 1713644785,
       "subject": "Fix a typo in comments in Recorded+Event.swift (#2568)",
       "files": [
@@ -2094,7 +2094,7 @@
     },
     {
       "hash": "a590473730a374774f13b87025cca9a2d91f58e5",
-      "short": "a590473",
+      "short": "a5904737",
       "time": 1713644754,
       "subject": "chore: fix some comments (#2588)",
       "files": [
@@ -2105,7 +2105,7 @@
     },
     {
       "hash": "b0811e8d70bdf7bab26fd3ce5c5c98f707dc3495",
-      "short": "b0811e8",
+      "short": "b0811e8d",
       "time": 1713643658,
       "subject": "Align CocoaPods macOS deployment to 10.10, like SPM",
       "files": [
@@ -2118,7 +2118,7 @@
     },
     {
       "hash": "0c6605f5a1d86909232daed2d4e3912c2d4dfe93",
-      "short": "0c6605f",
+      "short": "0c6605f5",
       "time": 1712811178,
       "subject": "Fix typo whiteSpace between line comment (#2570)",
       "files": [
@@ -2127,7 +2127,7 @@
     },
     {
       "hash": "aaa67fe5e466d21b5056de23c9e6ee0535e52563",
-      "short": "aaa67fe",
+      "short": "aaa67fe5",
       "time": 1712811152,
       "subject": "Fixed Issue #2569 - Deprecated code warnings in playground Filtering_and_Conditional_Operators.xcplaygroundpage (#2573)",
       "files": [
@@ -2136,7 +2136,7 @@
     },
     {
       "hash": "e20224e2edf5613b941ce24207be11f6a11c28ad",
-      "short": "e20224e",
+      "short": "e20224e2",
       "time": 1712810950,
       "subject": "Fix documentation comments (#2584)",
       "files": [
@@ -2146,7 +2146,7 @@
     },
     {
       "hash": "cf08cdcf12adc4263958dd6925e7dcf706b4c4fe",
-      "short": "cf08cdc",
+      "short": "cf08cdcf",
       "time": 1712810930,
       "subject": "VisionOS Support (#2564)",
       "files": [
@@ -2202,7 +2202,7 @@
     },
     {
       "hash": "92c47541ac02ae32c88dbaebd412063caace6f45",
-      "short": "92c4754",
+      "short": "92c47541",
       "time": 1711535942,
       "subject": "Link XCTest weakly to enable static linking (#2587)",
       "files": [
@@ -2211,7 +2211,7 @@
     },
     {
       "hash": "551639293147e54fddced6f967a60d115818e18e",
-      "short": "5516392",
+      "short": "55163929",
       "time": 1701700275,
       "subject": "Update README.md (#2562)",
       "files": [
@@ -2220,7 +2220,7 @@
     },
     {
       "hash": "65bec4c253418c46ddc136424f46f333f086be1a",
-      "short": "65bec4c",
+      "short": "65bec4c2",
       "time": 1700323959,
       "subject": "Remove unused/unneeded method. (#2560)",
       "files": [
@@ -2229,7 +2229,7 @@
     },
     {
       "hash": "214f7ffced20dc780bf38f192a26a890c1b9045e",
-      "short": "214f7ff",
+      "short": "214f7ffc",
       "time": 1698524237,
       "subject": "Fix: Factory closure lifetime differs between .create and .deferred, subscriptions to the latter keep its factory closure alive #2533 (#2534)",
       "files": [
@@ -2239,7 +2239,7 @@
     },
     {
       "hash": "473b7a7180df6ff58925a5bd1ed039bccdc35250",
-      "short": "473b7a7",
+      "short": "473b7a71",
       "time": 1696397856,
       "subject": "Fix DelegateProxy crash by implementing methodSignatureForSelector (#2546)",
       "files": [
@@ -2251,7 +2251,7 @@
     },
     {
       "hash": "2ff073fc1b9c600ac9b54734aff3348110437c19",
-      "short": "2ff073f",
+      "short": "2ff073fc",
       "time": 1688750261,
       "subject": "Introduce a RxObservable typealias to workaround SE-0395 conflict",
       "files": [
@@ -2260,7 +2260,7 @@
     },
     {
       "hash": "95917a57a58734cd7b747361add398906e8b255c",
-      "short": "95917a5",
+      "short": "95917a57",
       "time": 1683973484,
       "subject": "Update version of Info plist to 6.6.0 for CI failure resolution (#2521)",
       "files": [
@@ -2274,7 +2274,7 @@
     },
     {
       "hash": "9dcaa4b333db437b0fbfaf453fad29069044a8b4",
-      "short": "9dcaa4b",
+      "short": "9dcaa4b3",
       "time": 1683867748,
       "subject": "Fix Infallible CombineLatest arity helpers (#2520)",
       "files": [
@@ -2286,7 +2286,7 @@
     },
     {
       "hash": "565cc5f0eef32033e630f852e37d5d71c29d81f3",
-      "short": "565cc5f",
+      "short": "565cc5f0",
       "time": 1683826936,
       "subject": "6.6.0",
       "files": [
@@ -2370,7 +2370,7 @@
     },
     {
       "hash": "08dcda2c1ec48f97e64a4878956fd03db0ff33a6",
-      "short": "08dcda2",
+      "short": "08dcda2c",
       "time": 1683825183,
       "subject": "Remove podspec lint",
       "files": [
@@ -2380,7 +2380,7 @@
     },
     {
       "hash": "6ae754821a68f55e7f6fe4e78f5492fd0e55612f",
-      "short": "6ae7548",
+      "short": "6ae75482",
       "time": 1683823932,
       "subject": "Re-enable thread sanitizer for all framework test schemes. (#2519)",
       "files": [
@@ -2391,7 +2391,7 @@
     },
     {
       "hash": "c004f6cfe056121c831147117bb9014c4663d6fd",
-      "short": "c004f6c",
+      "short": "c004f6cf",
       "time": 1683811417,
       "subject": "SPM",
       "files": [
@@ -2400,7 +2400,7 @@
     },
     {
       "hash": "3f407ee9b4bd509cad9fb86df4b864836af6de26",
-      "short": "3f407ee",
+      "short": "3f407ee9",
       "time": 1683811005,
       "subject": "Allow any copyright header",
       "files": [
@@ -2409,7 +2409,7 @@
     },
     {
       "hash": "3636939fe9985ef0e04f1b13dccb88a3a79f258d",
-      "short": "3636939",
+      "short": "3636939f",
       "time": 1683810859,
       "subject": "Infallible header",
       "files": [
@@ -2418,7 +2418,7 @@
     },
     {
       "hash": "f19f9c7939f1b30e46a860cdc20ff30225c4eb09",
-      "short": "f19f9c7",
+      "short": "f19f9c79",
       "time": 1683810688,
       "subject": "Update docs",
       "files": [
@@ -2501,7 +2501,7 @@
     },
     {
       "hash": "2227668f4d62b717e2b5e28def0ce7c530fb2232",
-      "short": "2227668",
+      "short": "2227668f",
       "time": 1683809695,
       "subject": "Add .debug() for InfallibleType (#2456)",
       "files": [
@@ -2510,7 +2510,7 @@
     },
     {
       "hash": "26cb532d7e1a0809d4cb6dac473596bda42ef5ab",
-      "short": "26cb532",
+      "short": "26cb532d",
       "time": 1683809656,
       "subject": "Remove print(\"Subscription\") not supposed to exist (#2471)",
       "files": [
@@ -2519,7 +2519,7 @@
     },
     {
       "hash": "d6b70c03ed181f0182cb8a0bebe3d01ccf848f6e",
-      "short": "d6b70c0",
+      "short": "d6b70c03",
       "time": 1683809591,
       "subject": "Update TestSchedulerVirtualTimeConverter.swift (#2482)",
       "files": [
@@ -2535,7 +2535,7 @@
     },
     {
       "hash": "ce3e53450ebb4d9ae13e1d2f27a66f6303fb3ee1",
-      "short": "ce3e534",
+      "short": "ce3e5345",
       "time": 1683809458,
       "subject": "Fix SwiftLint build phase warning (#2490)",
       "files": [
@@ -2544,7 +2544,7 @@
     },
     {
       "hash": "2123e73f1c299eb550b5dd41352b8bf0883510e0",
-      "short": "2123e73",
+      "short": "2123e73f",
       "time": 1683809419,
       "subject": "Add support for mac catalyst in xcframework (#2437)",
       "files": [
@@ -2554,7 +2554,7 @@
     },
     {
       "hash": "7b8a00483da3151a92cd5e586e97e3c3c142c612",
-      "short": "7b8a004",
+      "short": "7b8a0048",
       "time": 1683809028,
       "subject": "RxTest: Comparing failure case in XCTAssertEqual for SingleEvent (#2486)",
       "files": [
@@ -2563,7 +2563,7 @@
     },
     {
       "hash": "a26b1b7a9edaf7a71e026f67fe5b9c67a0fc501e",
-      "short": "a26b1b7",
+      "short": "a26b1b7a",
       "time": 1683808970,
       "subject": "Fixes issues of AsyncStream wrapper of Observables and related tests. (#2420)",
       "files": [
@@ -2579,7 +2579,7 @@
     },
     {
       "hash": "c47e3e6105a4e80580802f982e42e3e4d75b8631",
-      "short": "c47e3e6",
+      "short": "c47e3e61",
       "time": 1683808854,
       "subject": "Modify the closure argument of subscribe to InfallibleEvent (#2440)",
       "files": [
@@ -2590,7 +2590,7 @@
     },
     {
       "hash": "c899d1670226869fccbf07e1091fe5f2b8fd9542",
-      "short": "c899d16",
+      "short": "c899d167",
       "time": 1683808802,
       "subject": "Bump tzinfo from 1.2.9 to 1.2.10 (#2436)",
       "files": [
@@ -2599,7 +2599,7 @@
     },
     {
       "hash": "47b355a9af03c131c0970746777bfb814c2db9a0",
-      "short": "47b355a",
+      "short": "47b355a9",
       "time": 1683808728,
       "subject": "Bump git from 1.11.0 to 1.13.1 (#2481)",
       "files": [
@@ -2608,7 +2608,7 @@
     },
     {
       "hash": "95490d3a65220fabae7bf30a6833d842312223ee",
-      "short": "95490d3",
+      "short": "95490d3a",
       "time": 1683808711,
       "subject": "Explicitly declare `APPLICATION_EXTENSION_API_ONLY` for CocoaPods (#2475)",
       "files": [
@@ -2622,7 +2622,7 @@
     },
     {
       "hash": "d8e8a7f18583c48731896bbfe43ce5ba2c634266",
-      "short": "d8e8a7f",
+      "short": "d8e8a7f1",
       "time": 1683808528,
       "subject": "Fix CI (#2518)",
       "files": [
@@ -2632,7 +2632,7 @@
     },
     {
       "hash": "85932e1755e7497154ce6ae4cfe0479e1467b481",
-      "short": "85932e1",
+      "short": "85932e17",
       "time": 1683808461,
       "subject": "Updated deprecated methods (#2477)",
       "files": [
@@ -2642,7 +2642,7 @@
     },
     {
       "hash": "9e182e6bec58fe662978e7e934ab1bd0fd2c758f",
-      "short": "9e182e6",
+      "short": "9e182e6b",
       "time": 1683808180,
       "subject": "Provide Infallible versions of combineLatest without resultSelector (#2508)",
       "files": [
@@ -2652,7 +2652,7 @@
     },
     {
       "hash": "e57a3cf0d4bb251ebfbd6234723974253f2dbaef",
-      "short": "e57a3cf",
+      "short": "e57a3cf0",
       "time": 1683808092,
       "subject": "Provide Infallible versions of CombineLatest+Collection helpers (#2509)",
       "files": [
@@ -2666,7 +2666,7 @@
     },
     {
       "hash": "0e4343b1ca7a52dfb926db58a53570b079c4ae74",
-      "short": "0e4343b",
+      "short": "0e4343b1",
       "time": 1682877429,
       "subject": "OSX -> macOS, OSXApplicationExtension -> macOSApplicationExtension (#2478)",
       "files": [
@@ -2680,7 +2680,7 @@
     },
     {
       "hash": "cd275c135d5785956a916b8555b64bf3e49d3afe",
-      "short": "cd275c1",
+      "short": "cd275c13",
       "time": 1682877127,
       "subject": "Fixed GestureTarget defining the wrong selector (#2514)",
       "files": [
@@ -2689,7 +2689,7 @@
     },
     {
       "hash": "5caad526c0803d3cd4023c9d52b203a4c777c6d4",
-      "short": "5caad52",
+      "short": "5caad526",
       "time": 1682877056,
       "subject": "Fix deployment target warnings in Xcode 14 (#2489)",
       "files": [
@@ -2700,7 +2700,7 @@
     },
     {
       "hash": "773ae6810bad90bfe44b8e6412e773d03e65c9a0",
-      "short": "773ae68",
+      "short": "773ae681",
       "time": 1682582138,
       "subject": "Rename operator (#2512)",
       "files": [
@@ -2709,7 +2709,7 @@
     },
     {
       "hash": "04c8d2b491b54e46a3534254bed8807b4a954fad",
-      "short": "04c8d2b",
+      "short": "04c8d2b4",
       "time": 1678603174,
       "subject": "fix debugging when using xcframework (#2487)",
       "files": [
@@ -2718,7 +2718,7 @@
     },
     {
       "hash": "91a36920b1ec069004fef9dc41b7c5dbcaa5fffe",
-      "short": "91a3692",
+      "short": "91a36920",
       "time": 1669531373,
       "subject": "Update CI for Xcode 14 and 13 (#2455)",
       "files": [
@@ -2732,7 +2732,7 @@
     },
     {
       "hash": "8ec08deca8271516f673706e78fb954797cd6627",
-      "short": "8ec08de",
+      "short": "8ec08dec",
       "time": 1666603865,
       "subject": "Update documentation comments for example code (#2460)",
       "files": [
@@ -2741,7 +2741,7 @@
     },
     {
       "hash": "ab09f6966d5a14ffe6a7b960cc414ac85468b60b",
-      "short": "ab09f69",
+      "short": "ab09f696",
       "time": 1664360520,
       "subject": "Table/CollectionViewDelegateProxy crash workaround",
       "files": [
@@ -2751,7 +2751,7 @@
     },
     {
       "hash": "3b2fe19de57720f4a6505a5f9982c5b801f753a1",
-      "short": "3b2fe19",
+      "short": "3b2fe19d",
       "time": 1664301665,
       "subject": "Fix grammar in README.md",
       "files": [
@@ -2760,7 +2760,7 @@
     },
     {
       "hash": "e0ab8c4e18baf6679a65b325155923276b832687",
-      "short": "e0ab8c4",
+      "short": "e0ab8c4e",
       "time": 1654284986,
       "subject": "Concurrency: Make minimum Swift version 5.6",
       "files": [
@@ -2776,7 +2776,7 @@
     },
     {
       "hash": "0b73456e29b1cec2ab4bd032a6a98779bbd57d61",
-      "short": "0b73456",
+      "short": "0b73456e",
       "time": 1654284755,
       "subject": "Use AtomicInt for BooleanDisposable to prevent potential rase condition. (#2419)",
       "files": [
@@ -2786,7 +2786,7 @@
     },
     {
       "hash": "d2ca6aba8aceb3b88af1a81c33e7bde72d2405d7",
-      "short": "d2ca6ab",
+      "short": "d2ca6aba",
       "time": 1654284728,
       "subject": "Fix for value leaks its continuation (#2427)",
       "files": [
@@ -2796,7 +2796,7 @@
     },
     {
       "hash": "a5fb5808e2bcd2cab1bf663d4a4738c842eab5c8",
-      "short": "a5fb580",
+      "short": "a5fb5808",
       "time": 1653368036,
       "subject": "Bump cocoapods-downloader from 1.4.0 to 1.6.3",
       "files": [
@@ -2805,7 +2805,7 @@
     },
     {
       "hash": "a9cf4550d5b57c9bc0f04a8c54a33e041a378fb4",
-      "short": "a9cf455",
+      "short": "a9cf4550",
       "time": 1653367365,
       "subject": "Fix: Class Unavailable on Main.storyboard (#2412)",
       "files": [
@@ -2814,7 +2814,7 @@
     },
     {
       "hash": "37cc3c1b1575ce3f1f43ca1ffa84ca8bcd41c057",
-      "short": "37cc3c1",
+      "short": "37cc3c1b",
       "time": 1653367343,
       "subject": "Bump git from 1.8.1 to 1.11.0 (#2418)",
       "files": [
@@ -2823,7 +2823,7 @@
     },
     {
       "hash": "52324728cd02a2466b70a5b7c35bff9033cc81b1",
-      "short": "5232472",
+      "short": "52324728",
       "time": 1653367333,
       "subject": "Relax constraint for convenient distinctUntilChanged operator on InfallibleType (#2425)",
       "files": [
@@ -2832,7 +2832,7 @@
     },
     {
       "hash": "3d3ed05bed71f19999db2207c714dab0028d37be",
-      "short": "3d3ed05",
+      "short": "3d3ed05b",
       "time": 1652335529,
       "subject": "Fix xcframeworks script",
       "files": [
@@ -2841,7 +2841,7 @@
     },
     {
       "hash": "f544ca528c40e7a6d6fce3f85acf9625a3cc8ee9",
-      "short": "f544ca5",
+      "short": "f544ca52",
       "time": 1652333462,
       "subject": "Some minor document corrections (#2423)",
       "files": [
@@ -2855,7 +2855,7 @@
     },
     {
       "hash": "ed563453197ddc0f5aa01a4c6b658feca92592a1",
-      "short": "ed56345",
+      "short": "ed563453",
       "time": 1651851536,
       "subject": "Change SingleEvent to Result<Element, Swift.Error> (#2422)",
       "files": [
@@ -2864,7 +2864,7 @@
     },
     {
       "hash": "416180ae6eb5473332e5e0581aeb1c20e95874b8",
-      "short": "416180a",
+      "short": "416180ae",
       "time": 1649707749,
       "subject": "Update make-xcframeworks to create a single Zip",
       "files": [
@@ -2873,7 +2873,7 @@
     },
     {
       "hash": "2d728df855393234f85c15b2201eb9d2efac3018",
-      "short": "2d728df",
+      "short": "2d728df8",
       "time": 1648628641,
       "subject": "Convenient transforms to Infallible and back (#2401)",
       "files": [
@@ -2893,7 +2893,7 @@
     },
     {
       "hash": "693a6218e0800753cb54e55f278d050ae9a15938",
-      "short": "693a621",
+      "short": "693a6218",
       "time": 1648331973,
       "subject": "Delete unused code in Map.swift",
       "files": [
@@ -2902,7 +2902,7 @@
     },
     {
       "hash": "050c10ba32b735cc350b72b4a0e7da0496ab0c05",
-      "short": "050c10b",
+      "short": "050c10ba",
       "time": 1648331480,
       "subject": "Update GettingStarted.md",
       "files": [
@@ -2911,7 +2911,7 @@
     },
     {
       "hash": "7741a11cb4252c379c8e034508cb1b92b8b40427",
-      "short": "7741a11",
+      "short": "7741a11c",
       "time": 1643039325,
       "subject": "Update RxBlocking.podspec",
       "files": [
@@ -2920,7 +2920,7 @@
     },
     {
       "hash": "b4307ba0b6425c0ba4178e138799946c3da594f8",
-      "short": "b4307ba",
+      "short": "b4307ba0",
       "time": 1642187629,
       "subject": "RxSwift 6.5.0",
       "files": [
@@ -2931,7 +2931,7 @@
     },
     {
       "hash": "d632db1972ee292cfdaa0283f2bf51455292d1d8",
-      "short": "d632db1",
+      "short": "d632db19",
       "time": 1641759884,
       "subject": "Bump to 6.5.0, Add xcframework consutrction script, update docs",
       "files": [
@@ -3024,7 +3024,7 @@
     },
     {
       "hash": "c05747496ee4bdac74903199e7144e63f3def117",
-      "short": "c057474",
+      "short": "c0574749",
       "time": 1641669504,
       "subject": "Missing iOS 13 bridges",
       "files": [
@@ -3037,7 +3037,7 @@
     },
     {
       "hash": "fc828d9f892c35e62d16a04bcf79779f41de4c63",
-      "short": "fc828d9",
+      "short": "fc828d9f",
       "time": 1641641205,
       "subject": "minor issue in async/await bridging",
       "files": [
@@ -3046,7 +3046,7 @@
     },
     {
       "hash": "5740d313d0c08c6ecaf47da34262e512a6cd3101",
-      "short": "5740d31",
+      "short": "5740d313",
       "time": 1641638465,
       "subject": "[Fix] Fix parameter names in method Documentation Comments",
       "files": [
@@ -3069,7 +3069,7 @@
     },
     {
       "hash": "c03353aee4b8ba811dcb28468be90ef99cf7ef46",
-      "short": "c03353a",
+      "short": "c03353ae",
       "time": 1641638437,
       "subject": "Support iOS 13 (Swift 5.5.2) backport",
       "files": [
@@ -3084,7 +3084,7 @@
     },
     {
       "hash": "0799b83540d58948ee27e4e779db57cae639a20f",
-      "short": "0799b83",
+      "short": "0799b835",
       "time": 1641638437,
       "subject": "Update GitHub Actions",
       "files": [
@@ -3094,7 +3094,7 @@
     },
     {
       "hash": "41a9f27245fa5777833cef874ffa44a5c5adab3e",
-      "short": "41a9f27",
+      "short": "41a9f272",
       "time": 1641638437,
       "subject": "Disposal fixes and AsyncSequence bridging",
       "files": [
@@ -3107,7 +3107,7 @@
     },
     {
       "hash": "d1d659aeeef6c9f9fe12f764f873b8f5592174c9",
-      "short": "d1d659a",
+      "short": "d1d659ae",
       "time": 1641638437,
       "subject": "Basic docs",
       "files": [
@@ -3116,7 +3116,7 @@
     },
     {
       "hash": "23fe3fa469f59f168841964bcfe70f5871f6bd25",
-      "short": "23fe3fa",
+      "short": "23fe3fa4",
       "time": 1641638437,
       "subject": "Concurrency Import incantation 🧙‍♀️",
       "files": [
@@ -3136,7 +3136,7 @@
     },
     {
       "hash": "d8719a5609bd61c87d89ba9fce9cda6c645dea97",
-      "short": "d8719a5",
+      "short": "d8719a56",
       "time": 1641638437,
       "subject": "[Concurrency] Docs",
       "files": [
@@ -3238,7 +3238,7 @@
     },
     {
       "hash": "900f8eca0653aa776cc039c4df8f1e8004760466",
-      "short": "900f8ec",
+      "short": "900f8eca",
       "time": 1641638437,
       "subject": "[Concurrency] Tests",
       "files": [
@@ -3254,7 +3254,7 @@
     },
     {
       "hash": "7aab9c7913044c6efcf372eb72624f7c0ef8abde",
-      "short": "7aab9c7",
+      "short": "7aab9c79",
       "time": 1641638437,
       "subject": "[Concurrency] Reorg",
       "files": [
@@ -3267,7 +3267,7 @@
     },
     {
       "hash": "c7c9dcb12daac5daec002506ff2f824777801225",
-      "short": "c7c9dcb",
+      "short": "c7c9dcb1",
       "time": 1641638437,
       "subject": "[Concurrency] Shared sequences",
       "files": [
@@ -3276,7 +3276,7 @@
     },
     {
       "hash": "31c96e7a373834954cc17ddd24add2aff5dc1597",
-      "short": "31c96e7",
+      "short": "31c96e7a",
       "time": 1641638437,
       "subject": "[Concurrency] Primitive Sequences",
       "files": [
@@ -3285,7 +3285,7 @@
     },
     {
       "hash": "e9ac699757e92889fbc0a8ead74cb23876c5b3ae",
-      "short": "e9ac699",
+      "short": "e9ac6997",
       "time": 1641638437,
       "subject": "[Concurrency] Infallible",
       "files": [
@@ -3294,7 +3294,7 @@
     },
     {
       "hash": "fe2063e5d71c39a868b50b73d533000e8f13f8a8",
-      "short": "fe2063e",
+      "short": "fe2063e5",
       "time": 1641638437,
       "subject": "[Concurrency] Observable",
       "files": [
@@ -3303,7 +3303,7 @@
     },
     {
       "hash": "25d35f564b95ff4610b78f622c77ec3317aff31c",
-      "short": "25d35f5",
+      "short": "25d35f56",
       "time": 1641635284,
       "subject": "fix: type method from class to static in final class",
       "files": [
@@ -3312,7 +3312,7 @@
     },
     {
       "hash": "53afbd6d3f379b4ec442ebc51304ec81d8564673",
-      "short": "53afbd6",
+      "short": "53afbd6d",
       "time": 1641630342,
       "subject": "chore: add dynamic support to libraries",
       "files": [
@@ -3321,7 +3321,7 @@
     },
     {
       "hash": "98cfa1f9fd213d7c14238bd3ff4be5e516753b63",
-      "short": "98cfa1f",
+      "short": "98cfa1f9",
       "time": 1641630266,
       "subject": "configure scrollEdgeAppearance of the navigation bar.",
       "files": [
@@ -3330,7 +3330,7 @@
     },
     {
       "hash": "b48f2e9536cd985d912126709b97bd743e58c8fc",
-      "short": "b48f2e9",
+      "short": "b48f2e95",
       "time": 1632950167,
       "subject": "fix: set supported versions in Package.swift",
       "files": [
@@ -3339,7 +3339,7 @@
     },
     {
       "hash": "dcc4795e2146c9207924f19592390b88354889ba",
-      "short": "dcc4795",
+      "short": "dcc4795e",
       "time": 1631134104,
       "subject": "Revert some non-typos",
       "files": [
@@ -3349,7 +3349,7 @@
     },
     {
       "hash": "5b37cac1e8d3274f4d0e8c27ca05a5113b1c82ed",
-      "short": "5b37cac",
+      "short": "5b37cac1",
       "time": 1631134104,
       "subject": "Proofreading in comments by AppCode 'Typo' inspection",
       "files": [
@@ -3376,7 +3376,7 @@
     },
     {
       "hash": "61058f7bd45cf9ff9d4e80d846ab83633f5c0e66",
-      "short": "61058f7",
+      "short": "61058f7b",
       "time": 1631033387,
       "subject": "Fix swiftlint.sh permission",
       "files": [
@@ -3385,7 +3385,7 @@
     },
     {
       "hash": "7582655ac433302890273a75d96e43adb919aabc",
-      "short": "7582655",
+      "short": "7582655a",
       "time": 1631013233,
       "subject": "Update build phases about SwiftLint",
       "files": [
@@ -3394,7 +3394,7 @@
     },
     {
       "hash": "22611fcabbb383dd3adb67206d46f03b7f2c9990",
-      "short": "22611fc",
+      "short": "22611fca",
       "time": 1631013233,
       "subject": "Add swiftlint.sh",
       "files": [
@@ -3403,7 +3403,7 @@
     },
     {
       "hash": "529845e178d333b56437d0e504e28bfcfd9cb089",
-      "short": "529845e",
+      "short": "529845e1",
       "time": 1631013122,
       "subject": "Update all proxies",
       "files": [
@@ -3427,7 +3427,7 @@
     },
     {
       "hash": "56e500a7e65c9938ffa3f94b67784678209fb2cd",
-      "short": "56e500a",
+      "short": "56e500a7",
       "time": 1631013122,
       "subject": "Opt-out from RxNavigationControllerDelegateProxy being a @MainActor",
       "files": [
@@ -3436,7 +3436,7 @@
     },
     {
       "hash": "fe8f41d9a1c4225e0c2d4a0fd47572d426d8a903",
-      "short": "fe8f41d",
+      "short": "fe8f41d9",
       "time": 1630621191,
       "subject": "Correct misspelled words",
       "files": [
@@ -3447,7 +3447,7 @@
     },
     {
       "hash": "63a1af5893bd9d53db5301e83ee42ee3a7deeae0",
-      "short": "63a1af5",
+      "short": "63a1af58",
       "time": 1630149584,
       "subject": "using OptionSet instead of  enum for DisposeState (#2336)",
       "files": [
@@ -3456,7 +3456,7 @@
     },
     {
       "hash": "686b5e74f9a475245463cb6edfd79d1dcf2c438a",
-      "short": "686b5e7",
+      "short": "686b5e74",
       "time": 1630149493,
       "subject": "Check that aSelector is not nil before passing it on... (#2349)",
       "files": [
@@ -3465,7 +3465,7 @@
     },
     {
       "hash": "d0e5be62ddee4150d8d074be48902e22adca5d0a",
-      "short": "d0e5be6",
+      "short": "d0e5be62",
       "time": 1630131777,
       "subject": "Fix typo",
       "files": [
@@ -3474,7 +3474,7 @@
     },
     {
       "hash": "a9e79d9bb8bc4d022191c68a23f8585928ec8f39",
-      "short": "a9e79d9",
+      "short": "a9e79d9b",
       "time": 1626989989,
       "subject": "fix: missing UIApplication+Rx.swift reference (#2321)",
       "files": [
@@ -3483,7 +3483,7 @@
     },
     {
       "hash": "8e87990c6fa671451a58f471bf338364d0a8743a",
-      "short": "8e87990",
+      "short": "8e87990c",
       "time": 1626989942,
       "subject": "The develop branch should not be used anymore (#2320)",
       "files": [
@@ -3492,7 +3492,7 @@
     },
     {
       "hash": "35f518e5b582de96fb53107a24f867016e559594",
-      "short": "35f518e",
+      "short": "35f518e5",
       "time": 1626989622,
       "subject": "Fix typo in CONTRIBUTING.md (#2338)",
       "files": [
@@ -3501,7 +3501,7 @@
     },
     {
       "hash": "3338a40fd3f6039792c838d9f4c1bbf6f0be04ba",
-      "short": "3338a40",
+      "short": "3338a40f",
       "time": 1626989503,
       "subject": "Bump addressable from 2.7.0 to 2.8.0 (#2339)",
       "files": [
@@ -3510,7 +3510,7 @@
     },
     {
       "hash": "b1552e94b9baabd8c4f1068d575a01ee70db7fd7",
-      "short": "b1552e9",
+      "short": "b1552e94",
       "time": 1626989478,
       "subject": "Remove new line (#2340)",
       "files": [
@@ -3519,7 +3519,7 @@
     },
     {
       "hash": "177ab4272f06ee8c14f23cff55021d0468ff2812",
-      "short": "177ab42",
+      "short": "177ab427",
       "time": 1624687784,
       "subject": "Update GettingStarted.md (#2332)",
       "files": [
@@ -3528,7 +3528,7 @@
     },
     {
       "hash": "a95714491ab7ccba07d032cdc11fd50ac63f5f15",
-      "short": "a957144",
+      "short": "a9571449",
       "time": 1620676654,
       "subject": "Self-hosted runner for Big Sur / Xcode 12.5",
       "files": [
@@ -3538,7 +3538,7 @@
     },
     {
       "hash": "7c17a6ccca06b5c107cfa4284e634562ddaf5951",
-      "short": "7c17a6c",
+      "short": "7c17a6cc",
       "time": 1620487249,
       "subject": "RxSwift 6.2.0",
       "files": [
@@ -3560,7 +3560,7 @@
     },
     {
       "hash": "7219024cd02502e9faa6528a655709257f28a105",
-      "short": "7219024",
+      "short": "7219024c",
       "time": 1619327434,
       "subject": "Fix: Pass as a parenthesized argument to remove confusion with trailing closure",
       "files": [
@@ -3569,7 +3569,7 @@
     },
     {
       "hash": "f75cbd49649ffa4a2c716fd019ba6eba59ef42ac",
-      "short": "f75cbd4",
+      "short": "f75cbd49",
       "time": 1619116995,
       "subject": "fix: restore Xcode 12.4 functionality due to resultBuilder rename (#2308)",
       "files": [
@@ -3579,7 +3579,7 @@
     },
     {
       "hash": "d6de06e310f1a6510cf580c3bb7f0ed8073df513",
-      "short": "d6de06e",
+      "short": "d6de06e3",
       "time": 1619015251,
       "subject": "Docs",
       "files": [
@@ -3656,7 +3656,7 @@
     },
     {
       "hash": "d952fc86b6eb48562d879c45de7822961590ec44",
-      "short": "d952fc8",
+      "short": "d952fc86",
       "time": 1619014501,
       "subject": "Xcode 12.5",
       "files": [
@@ -3696,7 +3696,7 @@
     },
     {
       "hash": "1a1fa37b0d08e0f99ffa41f98f340e8bc60c35c4",
-      "short": "1a1fa37",
+      "short": "1a1fa37b",
       "time": 1617984563,
       "subject": "fix: adjust method signatures for Xcode 12.5 compatibility (#2305)",
       "files": [
@@ -3706,7 +3706,7 @@
     },
     {
       "hash": "b4e4ea9b238a868b40b4951434f38a25c6c1b8ab",
-      "short": "b4e4ea9",
+      "short": "b4e4ea9b",
       "time": 1617217531,
       "subject": "Bump kramdown from 2.3.0 to 2.3.1 (#2304)",
       "files": [
@@ -3715,7 +3715,7 @@
     },
     {
       "hash": "745c290e0235478d6294e76c4a28f280dc29a14b",
-      "short": "745c290",
+      "short": "745c290e",
       "time": 1614100714,
       "subject": "Update README.md",
       "files": [
@@ -3724,7 +3724,7 @@
     },
     {
       "hash": "7e01c05f25c025143073eaa3be3532f9375c614b",
-      "short": "7e01c05",
+      "short": "7e01c05f",
       "time": 1612991398,
       "subject": "6.1.0",
       "files": [
@@ -3744,7 +3744,7 @@
     },
     {
       "hash": "0e6254077be0ac5dd21ad4478b38ebc07868210c",
-      "short": "0e62540",
+      "short": "0e625407",
       "time": 1612988248,
       "subject": "Docs update",
       "files": [
@@ -3826,7 +3826,7 @@
     },
     {
       "hash": "85e3caf35319b70b4665676bd271e213c703dfba",
-      "short": "85e3caf",
+      "short": "85e3caf3",
       "time": 1612982082,
       "subject": "Test",
       "files": [
@@ -3836,7 +3836,7 @@
     },
     {
       "hash": "b1150db426ece43245dbe08ebaaff4dc30c0c880",
-      "short": "b1150db",
+      "short": "b1150db4",
       "time": 1612980694,
       "subject": "More thorough tests for Reactive structs and protocols",
       "files": [
@@ -3847,7 +3847,7 @@
     },
     {
       "hash": "d71f6ea7e2e5e70607454b6efdc4db09826c0e51",
-      "short": "d71f6ea",
+      "short": "d71f6ea7",
       "time": 1612979481,
       "subject": "Workflow fix-ups for Big Sur",
       "files": [
@@ -3858,7 +3858,7 @@
     },
     {
       "hash": "c4e4c1bd1c098ab942f0dc42b4fd66ab62e1bf9e",
-      "short": "c4e4c1b",
+      "short": "c4e4c1bd",
       "time": 1612978100,
       "subject": "Cleaning",
       "files": [
@@ -3867,7 +3867,7 @@
     },
     {
       "hash": "f2990d5d9f209c56578065e71e75093af6f0b539",
-      "short": "f2990d5",
+      "short": "f2990d5d",
       "time": 1612978100,
       "subject": "Changed Mutability tests as on RxSwift < 6.0",
       "files": [
@@ -3876,7 +3876,7 @@
     },
     {
       "hash": "55b9afeeb4c6356d74b887642d6a17a136d746ec",
-      "short": "55b9afe",
+      "short": "55b9afee",
       "time": 1612978100,
       "subject": "Removed ReactiveCompatible & Reactive conformance to objects",
       "files": [
@@ -3885,7 +3885,7 @@
     },
     {
       "hash": "09655d09450304d0246c87d03a52bf8374f9987a",
-      "short": "09655d0",
+      "short": "09655d09",
       "time": 1612978046,
       "subject": "Flaky",
       "files": [
@@ -3897,7 +3897,7 @@
     },
     {
       "hash": "8bb0aa02601e12e6868c139cb4c078b969f03516",
-      "short": "8bb0aa0",
+      "short": "8bb0aa02",
       "time": 1612978046,
       "subject": "iOS 14.4 / watchOS 7.2",
       "files": [
@@ -3906,7 +3906,7 @@
     },
     {
       "hash": "c5f964eddacbf46432bbff617f7ba6599ee1749f",
-      "short": "c5f964e",
+      "short": "c5f964ed",
       "time": 1612978046,
       "subject": "Xcode 12.4 CI",
       "files": [
@@ -3916,7 +3916,7 @@
     },
     {
       "hash": "d845ca979cb1876fcb4674f2ed69a1844af6e2ee",
-      "short": "d845ca9",
+      "short": "d845ca97",
       "time": 1612978046,
       "subject": "Tests for Observable/Infallible",
       "files": [
@@ -3928,7 +3928,7 @@
     },
     {
       "hash": "35a74aaa8a7de3d072ae24db68c4407a149de0ea",
-      "short": "35a74aa",
+      "short": "35a74aaa",
       "time": 1612978046,
       "subject": "Tests for Driver/Signal",
       "files": [
@@ -3939,7 +3939,7 @@
     },
     {
       "hash": "a2efb34d6694c8e7971782c702295e32c26429b9",
-      "short": "a2efb34",
+      "short": "a2efb34d",
       "time": 1612978046,
       "subject": "doc fix",
       "files": [
@@ -3948,7 +3948,7 @@
     },
     {
       "hash": "4c9877e2e21d5c95b030e8935917b1fe3835d80d",
-      "short": "4c9877e",
+      "short": "4c9877e2",
       "time": 1612978046,
       "subject": "subscribe/bind with object for Infallible/Observable",
       "files": [
@@ -3958,7 +3958,7 @@
     },
     {
       "hash": "83f32e3d7e51a1d457a257a1af6b91103e1d19f6",
-      "short": "83f32e3",
+      "short": "83f32e3d",
       "time": 1612978046,
       "subject": "subscribe with object for Primitive Sequences",
       "files": [
@@ -3969,7 +3969,7 @@
     },
     {
       "hash": "9bc9726eeb5bfea91a95d5c987a157376bb5d033",
-      "short": "9bc9726",
+      "short": "9bc9726e",
       "time": 1612978046,
       "subject": "subscribe with object for Driver/Signal",
       "files": [
@@ -3979,7 +3979,7 @@
     },
     {
       "hash": "67f74cbdb5c5ff8a3749fb9ce24942c0b185fd9d",
-      "short": "67f74cb",
+      "short": "67f74cbd",
       "time": 1612978046,
       "subject": "subscribe with object for Observable",
       "files": [
@@ -3988,7 +3988,7 @@
     },
     {
       "hash": "80fee1e7a4e1eb4b3f1b01dd6afc22a5bc5e3c5d",
-      "short": "80fee1e",
+      "short": "80fee1e7",
       "time": 1612978046,
       "subject": "Deprecate withUnretained for Driver",
       "files": [
@@ -3999,7 +3999,7 @@
     },
     {
       "hash": "dea653c187f670b558ae94d98db2f3587a20286e",
-      "short": "dea653c",
+      "short": "dea653c1",
       "time": 1612720293,
       "subject": "If URLRequest has httpBody, ensure that it's show in the curl text.",
       "files": [
@@ -4008,7 +4008,7 @@
     },
     {
       "hash": "b56f7a426e0c4bf4a5a2caec5dfd80fd347f9686",
-      "short": "b56f7a4",
+      "short": "b56f7a42",
       "time": 1612696950,
       "subject": "remove link with libswiftXCTest.dylib deprecated and now removed on iOS 14.5Beta, instead use its replacement, libXCTestSwiftSupport.dylib using ENABLE_TESTING_SEARCH_PATHS = YES.",
       "files": [
@@ -4017,7 +4017,7 @@
     },
     {
       "hash": "9b5f05d5f19383f83beaf5e7727050629082f0ba",
-      "short": "9b5f05d",
+      "short": "9b5f05d5",
       "time": 1612252458,
       "subject": "@frozen MaterializedSequenceResult",
       "files": [
@@ -4026,7 +4026,7 @@
     },
     {
       "hash": "a980c179d0bc7a668b43dc14ab007cbd4bbc6186",
-      "short": "a980c17",
+      "short": "a980c179",
       "time": 1612034384,
       "subject": "fix \"'RxCocoaRuntime.h' file not found\" error",
       "files": [
@@ -4035,7 +4035,7 @@
     },
     {
       "hash": "978765880025d5f0b215890bc140f9f489fbe8ee",
-      "short": "9787658",
+      "short": "97876588",
       "time": 1611689362,
       "subject": "Remove (null) references",
       "files": [
@@ -4044,7 +4044,7 @@
     },
     {
       "hash": "502c905ddbbba144ecca48ad4081a88aa95306a6",
-      "short": "502c905",
+      "short": "502c905d",
       "time": 1609753724,
       "subject": "@frozen CompletableEvent",
       "files": [
@@ -4053,7 +4053,7 @@
     },
     {
       "hash": "c5e09ec0ec69a8a1d601f15436433e93e8dbcf77",
-      "short": "c5e09ec",
+      "short": "c5e09ec0",
       "time": 1609753711,
       "subject": "@frozen MaybeEvent ☃️",
       "files": [
@@ -4062,7 +4062,7 @@
     },
     {
       "hash": "47219b721c44f36da500cf799bcda2322876b30d",
-      "short": "47219b7",
+      "short": "47219b72",
       "time": 1609527594,
       "subject": "Fix drive() parameter documents",
       "files": [
@@ -4071,7 +4071,7 @@
     },
     {
       "hash": "c8742ed97fc2f0c015a5ea5eddefb064cd7532d2",
-      "short": "c8742ed",
+      "short": "c8742ed9",
       "time": 1609509598,
       "subject": "6.0.0",
       "files": [

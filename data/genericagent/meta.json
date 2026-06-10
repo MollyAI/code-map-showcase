@@ -1,4 +1,5 @@
 {
   "name": "GenericAgent",
-  "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption"
+  "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
+  "repo": "https://github.com/lsdefine/GenericAgent.git"
 }

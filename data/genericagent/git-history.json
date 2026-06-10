@@ -1,8 +1,238 @@
 {
-  "anchor": "de0a3f82a8b65b010eaa61f69c7d7afea1c14d3b",
+  "anchor": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112",
   "limit": 200,
   "truncated": true,
   "commits": [
+    {
+      "hash": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112",
+      "short": "5e42bf3",
+      "time": 1781094351,
+      "subject": "goal_mode: strengthen continuation prompt (mandatory substantive improvement, standard-upgrade report)",
+      "files": [
+        "reflect/goal_mode.py"
+      ]
+    },
+    {
+      "hash": "34d9895538c5af20205986e779e3db54f1326add",
+      "short": "34d9895",
+      "time": 1781094351,
+      "subject": "llmcore: fix empty-response not triggering mixin failover; distinct default UA for NativeOAISession",
+      "files": [
+        "llmcore.py"
+      ]
+    },
+    {
+      "hash": "70533341d03d3cb066d8d1e5c0057cead30138fe",
+      "short": "7053334",
+      "time": 1781080271,
+      "subject": "configure: generic protocol entries (OAI chat/responses, Claude messages) with custom apibase; neutral descs",
+      "files": [
+        "assets/configure_mykey.py"
+      ]
+    },
+    {
+      "hash": "eae6d1f3f3b3aa41545c9544685db77eedd5f841",
+      "short": "eae6d1f",
+      "time": 1781074668,
+      "subject": "feat(project-mode): pid-keyed anchor — auto-deactivate on GA exit, multi-instance isolation (#592)",
+      "files": [
+        "memory/project_mode_sop.md",
+        "plugins/project_mode.py"
+      ]
+    },
+    {
+      "hash": "5771a91abe8e825776e3533f2d111bc9ea84141d",
+      "short": "5771a91",
+      "time": 1781074444,
+      "subject": "README: drop trivial chat-commands sections (EN/CN) - ask the agent instead",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "e7027833278dfae9768c5c093fd036ee77f7df29",
+      "short": "e702783",
+      "time": 1781074153,
+      "subject": "README: platform-aware launch steps, hCaptcha real-browser demo, EN/CN section polish",
+      "files": [
+        "README.md",
+        "assets/demo/discord_hcaptcha_real_browser.gif"
+      ]
+    },
+    {
+      "hash": "19875716d45815f4b608b03a24f5cfb47d93647c",
+      "short": "1987571",
+      "time": 1781068718,
+      "subject": "feat: project mode plugin — cross-session project memory via two-layer injection (#591)",
+      "files": [
+        ".gitignore",
+        "memory/project_mode_sop.md",
+        "plugins/project_mode.py"
+      ]
+    },
+    {
+      "hash": "3284222725c9ea7fedae12b63fc90c1aba43cea5",
+      "short": "3284222",
+      "time": 1781061271,
+      "subject": "memory: subagent.md 更新fork/cwd共享约定",
+      "files": [
+        "memory/subagent.md"
+      ]
+    },
+    {
+      "hash": "d941f7cfa04665ab910ad04e47ce96104d1ed487",
+      "short": "d941f7c",
+      "time": 1781061271,
+      "subject": "reflect: goal_mode prompt v2 — 创造/检验/改进交替循环+及格线/升级链 (INTERVAL 3→5)",
+      "files": [
+        "reflect/goal_mode.py"
+      ]
+    },
+    {
+      "hash": "f1c8faba66679c797dc0a7ae07eee5a5029fad1c",
+      "short": "f1c8fab",
+      "time": 1781013650,
+      "subject": "fix: chat bottom padding 7->10rem; disable forced max_tokens=64000 in NativeClaudeSession",
+      "files": [
+        "frontends/stapp.py",
+        "llmcore.py"
+      ]
+    },
+    {
+      "hash": "a742e7d96fc31ffac35678847251849eba806259",
+      "short": "a742e7d",
+      "time": 1781013650,
+      "subject": "fix(llm): stream read_timeout 30s->40s, avoid reasoning-model long-thinking false timeout fix(frontend): force chat_input pinned to bottom (iframe wrapper fallback); drop details scroll-fix JS",
+      "files": [
+        "frontends/stapp.py",
+        "llmcore.py"
+      ]
+    },
+    {
+      "hash": "cdf199834c7ce4bad9092eb6ed485dafc8d9efbb",
+      "short": "cdf1998",
+      "time": 1780998052,
+      "subject": "docs: add GenericAgent-Admin to community GUIs (#589)",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "afd2d796bb0b7de787b2a6cfe0e46687d8b23a10",
+      "short": "afd2d79",
+      "time": 1780994585,
+      "subject": "fix: widen window & collapse sidebar to work around streamlit narrow-viewport bug",
+      "files": [
+        "frontends/stapp.py",
+        "launch.pyw"
+      ]
+    },
+    {
+      "hash": "e4a12dde2be45a9220230702d9ed99209b2d90d2",
+      "short": "e4a12dd",
+      "time": 1780986229,
+      "subject": "refactor: simplify driver init wait; clarify TMWebDriver master error msg",
+      "files": [
+        "TMWebDriver.py",
+        "ga.py"
+      ]
+    },
+    {
+      "hash": "afcb6a47af5fd9a40c5159e9a1f770bcce4949c3",
+      "short": "afcb6a4",
+      "time": 1780970760,
+      "subject": "docs: tighten official notice and browser realness table",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "7c7f960df39ac15a1ce805b9813b79a345d61267",
+      "short": "7c7f960",
+      "time": 1780970514,
+      "subject": "docs: remove WeChat group from English README section",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "8061a68ee01017719adf7499402f47e96c26e641",
+      "short": "8061a68",
+      "time": 1780970405,
+      "subject": "docs: add web tool browser realness results",
+      "files": [
+        "README.md",
+        "assets/tmwd_cdp_bridge/disable_dialogs.js"
+      ]
+    },
+    {
+      "hash": "ba19018a6d84df7f530275fa4b9b0858843e932a",
+      "short": "ba19018",
+      "time": 1780965553,
+      "subject": "Merge pull request #586 from nianyucatfish/fix/tui-v3-cmd-expand",
+      "files": []
+    },
+    {
+      "hash": "0970bd3180bbd37a257716d34575f59f34c22e74",
+      "short": "0970bd3",
+      "time": 1780934032,
+      "subject": "fix(tui-v3): expand pasted placeholders before slash-command dispatch",
+      "files": [
+        "frontends/tui_v3.py"
+      ]
+    },
+    {
+      "hash": "edee6e88218e874f1b5809461592229361881f70",
+      "short": "edee6e8",
+      "time": 1780921345,
+      "subject": "chore: update WeChat group QR code (group 20 → group 21) (#585)",
+      "files": [
+        "README.md",
+        "assets/images/wechat_group21.jpg"
+      ]
+    },
+    {
+      "hash": "dd43f23cfd0057f5988c848657e22f6dab255092",
+      "short": "dd43f23",
+      "time": 1780918751,
+      "subject": "docs: update mobile computer use notes",
+      "files": [
+        "memory/adb_ui.py",
+        "memory/computer_use.md",
+        "memory/ui_detect.py"
+      ]
+    },
+    {
+      "hash": "4001c43f0a58ad2d0b9f993300c5a2dcf74ecaa0",
+      "short": "4001c43",
+      "time": 1780902347,
+      "subject": "Update LLM user agent handling and incubator notes",
+      "files": [
+        "agentmain.py",
+        "llmcore.py",
+        "memory/incubator_sop.md"
+      ]
+    },
+    {
+      "hash": "bb16cd0f21363806f8ac0d2452a4c3aeb931c9c7",
+      "short": "bb16cd0",
+      "time": 1780886849,
+      "subject": "fix(tui-v2): copy via native clipboard, OSC 52 only over SSH (#581)",
+      "files": [
+        "frontends/tuiapp_v2.py"
+      ]
+    },
+    {
+      "hash": "cfb577e27c512008e40641cae4c3900c6004c87d",
+      "short": "cfb577e",
+      "time": 1780882085,
+      "subject": "Update agent hints and UI SOP note",
+      "files": [
+        "agentmain.py",
+        "ga.py",
+        "memory/ljqCtrl_sop.md"
+      ]
+    },
     {
       "hash": "de0a3f82a8b65b010eaa61f69c7d7afea1c14d3b",
       "short": "de0a3f8",
@@ -119,6 +349,13 @@
       ]
     },
     {
+      "hash": "b27406f34cb7b9062f57224090b53edfd654f0fc",
+      "short": "b27406f",
+      "time": 1780400343,
+      "subject": "Merge pull request #559 from nianyucatfish/fix/continue-preview-garbage",
+      "files": []
+    },
+    {
       "hash": "6f7121242b4daf2be810974b7d16614ac98bd7db",
       "short": "6f71212",
       "time": 1780399195,
@@ -136,6 +373,13 @@
         "TMWebDriver.py",
         "memory/goal_hive_master_duty.md"
       ]
+    },
+    {
+      "hash": "5f46b43816d6298f5e1d34c7076ea31f875b7810",
+      "short": "5f46b43",
+      "time": 1780366220,
+      "subject": "Merge pull request #550 from desmonna/fix/plugin-hooks-init",
+      "files": []
     },
     {
       "hash": "e73596cc612c0348e7aa494249588907f4982191",
@@ -191,6 +435,13 @@
         "memory/vision_sop.md",
         "reflect/agent_team_worker.py"
       ]
+    },
+    {
+      "hash": "071fb6e7904d78fc1f8a6b40c34f5414000c89f7",
+      "short": "071fb6e",
+      "time": 1780112161,
+      "subject": "Merge PR #534: Update WeChat group QR code (group 19 → group 20)",
+      "files": []
     },
     {
       "hash": "a46aa8b7ae8e69f1f3cdd3e984de7e62c02bb059",
@@ -251,6 +502,13 @@
       ]
     },
     {
+      "hash": "a61cfcf5aaf885547cb677e34c8d88af5e02354d",
+      "short": "a61cfcf",
+      "time": 1779978505,
+      "subject": "Merge PR #526: fix(tui-v3): skip ask card when ask_user has no candidates",
+      "files": []
+    },
+    {
       "hash": "dfab2998a7850b00eeb2bf5d5b72233646834301",
       "short": "dfab299",
       "time": 1779977907,
@@ -260,6 +518,13 @@
       ]
     },
     {
+      "hash": "6733aec2c810183701f930008f7414040da46b60",
+      "short": "6733aec",
+      "time": 1779975853,
+      "subject": "Merge PR #525:  fix(tui): v2 theme/clipboard/Shift+Enter, v3 arrow-nav/Shift+EnterFeat/tui v3 improvements",
+      "files": []
+    },
+    {
       "hash": "d4777633ca599015f3b87e38f0c21ac9a435e122",
       "short": "d477763",
       "time": 1779974088,
@@ -267,6 +532,13 @@
       "files": [
         "frontends/tui_v3.py"
       ]
+    },
+    {
+      "hash": "b8b40880d7286b6bbb0d4a8d5616ea6fd3b714fe",
+      "short": "b8b4088",
+      "time": 1779974087,
+      "subject": "Merge remote-tracking branch 'upstream/main' into feat/tui-v3-improvements",
+      "files": []
     },
     {
       "hash": "468f7e519dcd586d16456dff79f003e10faeb36b",
@@ -285,6 +557,27 @@
       "files": [
         "frontends/tuiapp_v2.py"
       ]
+    },
+    {
+      "hash": "316d1397bb081c72a659ece5d042c30db0acca14",
+      "short": "316d139",
+      "time": 1779969822,
+      "subject": "Merge PR #521",
+      "files": []
+    },
+    {
+      "hash": "3a9e90bbba5a3484509ef455afa133c44dfc070c",
+      "short": "3a9e90b",
+      "time": 1779969822,
+      "subject": "Merge PR #520",
+      "files": []
+    },
+    {
+      "hash": "95781b4bc1b6020f3792d618dd8bf3c23759d1f8",
+      "short": "95781b4",
+      "time": 1779969821,
+      "subject": "Merge PR #515",
+      "files": []
     },
     {
       "hash": "24255c1236dc3059274d9f314fb63fba50f63f0c",
@@ -338,6 +631,13 @@
         "frontends/tui_v3.py",
         "frontends/tuiapp_v2.py"
       ]
+    },
+    {
+      "hash": "a93373947b3025b910dd8e6828d126713148300d",
+      "short": "a933739",
+      "time": 1779953129,
+      "subject": "Merge upstream/main (prefer upstream on conflict)",
+      "files": []
     },
     {
       "hash": "fe78bca4621c84517eb0000476eefb2e404cf60b",
@@ -398,6 +698,20 @@
       ]
     },
     {
+      "hash": "2a2a8e43eced943fef574db3f2c1b0eb5d0b8289",
+      "short": "2a2a8e4",
+      "time": 1779934994,
+      "subject": "Merge remote-tracking branch 'upstream/main' into feat/tui-v3-improvements",
+      "files": []
+    },
+    {
+      "hash": "f1a0a89c07220522fb44bfa61bc33f014f57cd86",
+      "short": "f1a0a89",
+      "time": 1779934694,
+      "subject": "Merge PR #514: fix(tui-v2): add missing keysym.py — tuiapp_v2 ImportError on fresh clone",
+      "files": []
+    },
+    {
       "hash": "0e63b05507839e5ce980596fe5e7370b1fe73219",
       "short": "0e63b05",
       "time": 1779934401,
@@ -405,6 +719,27 @@
       "files": [
         "frontends/keysym.py"
       ]
+    },
+    {
+      "hash": "c50149b62943aa135ddcd6297c6f42e50c1259ce",
+      "short": "c50149b",
+      "time": 1779934398,
+      "subject": "Merge remote-tracking branch 'upstream/main' into feat/tui-v3-improvements",
+      "files": []
+    },
+    {
+      "hash": "2f0b603b4f71241cf4acc8fd3d1b018f4202309a",
+      "short": "2f0b603",
+      "time": 1779930107,
+      "subject": "Merge PR #513: fix(tui): v2+v3 bug fixes, pending input queue, ! shell magic, /resume",
+      "files": []
+    },
+    {
+      "hash": "d51f30f096345ef57f1330e582e1de63c4c1090c",
+      "short": "d51f30f",
+      "time": 1779930099,
+      "subject": "Merge PR #511: Update README with installation, configuration, and GUI links",
+      "files": []
     },
     {
       "hash": "e8162b82b60f22f02a615bf5670ca2a2086ee930",
@@ -461,6 +796,13 @@
       "files": [
         "README.md"
       ]
+    },
+    {
+      "hash": "382241679e24014cb774065aa5df88a6e620892c",
+      "short": "3822416",
+      "time": 1779892983,
+      "subject": "Merge remote-tracking branch 'upstream/main' into feat/tui-v3-improvements",
+      "files": []
     },
     {
       "hash": "8230fcf1232c07b57a87a60081ed9278e038c3f3",
@@ -530,6 +872,20 @@
         "memory/ljqCtrl_sop.md",
         "memory/ui_detect.py"
       ]
+    },
+    {
+      "hash": "0a2f96348d059878cabdcca61fdb2ee28d6ee34f",
+      "short": "0a2f963",
+      "time": 1779878826,
+      "subject": "Merge PR #504: fix(tui): /scheduler UX polish — hide cron advisory, ask_user-style confirm, running-state + untick-to-stop",
+      "files": []
+    },
+    {
+      "hash": "1571daf9c28b6a9f0f2c8c01a7dccf6c0ff3363d",
+      "short": "1571daf",
+      "time": 1779878819,
+      "subject": "Merge PR #503: feat(slash/update): rework /update into a dual-branch upstream sync",
+      "files": []
     },
     {
       "hash": "a024cd81b238707a92770908d7606c2044ce3898",
@@ -615,6 +971,27 @@
       "files": [
         "llmcore.py"
       ]
+    },
+    {
+      "hash": "65e77e0422b452413a340f7e3278034c17f5a94f",
+      "short": "65e77e0",
+      "time": 1779849380,
+      "subject": "Merge pull request #496 from shenhao-stu:fix/tui-frontend-polish",
+      "files": []
+    },
+    {
+      "hash": "7c5c62d48afa485f4a4d7841b62bf505f51b2e08",
+      "short": "7c5c62d",
+      "time": 1779849373,
+      "subject": "Merge pull request #495 from shenhao-stu:feat/slash-command-bundle",
+      "files": []
+    },
+    {
+      "hash": "9530e26665c7b8137d004bc19a521515170f7190",
+      "short": "9530e26",
+      "time": 1779849363,
+      "subject": "Merge pull request #493 from shenhao-stu:main",
+      "files": []
     },
     {
       "hash": "50eff8e4a12a2f325b9745030e7dfa3f262047b1",
@@ -823,6 +1200,13 @@
       ]
     },
     {
+      "hash": "a33b225967ba6b4474e3ca9f3e46f2f5faea7a74",
+      "short": "a33b225",
+      "time": 1779672504,
+      "subject": "Merge pull request #475 from skydog221/main",
+      "files": []
+    },
+    {
       "hash": "96f73d2c606d36acd01aa98d72a60e83ca5e5852",
       "short": "96f73d2",
       "time": 1779628565,
@@ -830,6 +1214,13 @@
       "files": [
         "frontends/qqapp.py"
       ]
+    },
+    {
+      "hash": "27db2f6bbfda7988c09185f3040dce3f7bbcc80f",
+      "short": "27db2f6",
+      "time": 1779610460,
+      "subject": "Merge pull request #473 from Jeason00011/fix/cost-tracker-py39-compat",
+      "files": []
     },
     {
       "hash": "22762f18cefd36dc6adca19acdaea48b8d7c275a",
@@ -841,6 +1232,13 @@
       ]
     },
     {
+      "hash": "a941a6d394fb4a6e0ccd9a99c8b635a28b5e61c1",
+      "short": "a941a6d",
+      "time": 1779520701,
+      "subject": "Merge pull request #468 from FroStorM/main",
+      "files": []
+    },
+    {
       "hash": "060b96251ee80c4fe68226ab9c053ec7354f0d3d",
       "short": "060b962",
       "time": 1779520137,
@@ -848,6 +1246,13 @@
       "files": [
         "README.md"
       ]
+    },
+    {
+      "hash": "a28eb9ffd8577233fbf1379f627d276df0b68a20",
+      "short": "a28eb9f",
+      "time": 1779505432,
+      "subject": "Merge pull request #462 from nianyucatfish/feat/tui-v3-improvements",
+      "files": []
     },
     {
       "hash": "2ad51d76f7beaac86fc2ce4d06509b624e5f5349",
@@ -902,6 +1307,13 @@
       ]
     },
     {
+      "hash": "17d24f681e84e435f3f91275badf7f6076f046e4",
+      "short": "17d24f6",
+      "time": 1779356147,
+      "subject": "Merge pull request #455 from FroStorM/feishu-interface-fix",
+      "files": []
+    },
+    {
       "hash": "41863429a78154c1b979616779886000023aebae",
       "short": "4186342",
       "time": 1779355619,
@@ -920,6 +1332,13 @@
       ]
     },
     {
+      "hash": "421236fc8de532c0ad5b47f93fcc3560ee49a484",
+      "short": "421236f",
+      "time": 1779346543,
+      "subject": "Merge pull request #451 from cv70/feat/hook",
+      "files": []
+    },
+    {
       "hash": "3b7e6ab414c6d899c1083a52f963fa350f8d23cd",
       "short": "3b7e6ab",
       "time": 1779345236,
@@ -931,6 +1350,13 @@
         "plugins/hooks.py",
         "plugins/langfuse_tracing.py"
       ]
+    },
+    {
+      "hash": "9b713ed1dd5155eccba0ac962c63017892b5bec2",
+      "short": "9b713ed",
+      "time": 1779343787,
+      "subject": "Merge pull request #447 from traderlife8/fix-installation-link",
+      "files": []
     },
     {
       "hash": "4348492795b0b9c2af1cb431058a6824d1870645",
@@ -949,6 +1375,20 @@
       "files": [
         "frontends/stapp.py"
       ]
+    },
+    {
+      "hash": "b48065b19662f138fb56a52337e03418560d2c49",
+      "short": "b48065b",
+      "time": 1779281472,
+      "subject": "Merge pull request #441 from YinZT1/feat/tui-scrollback",
+      "files": []
+    },
+    {
+      "hash": "293dffa8f23d5caee11730af992c2b566cba2463",
+      "short": "293dffa",
+      "time": 1779281308,
+      "subject": "Merge pull request #444 from FroStorM/feat/update-feishu-interface-v2",
+      "files": []
     },
     {
       "hash": "4a6bd2664b18fc98fb40a61e45f9c16e4e58a478",
@@ -985,6 +1425,20 @@
       "files": [
         "frontends/fsapp.py"
       ]
+    },
+    {
+      "hash": "b990cf3588556dbc0d6b54690bac2cf5391ce694",
+      "short": "b990cf3",
+      "time": 1779257614,
+      "subject": "Merge pull request #431 from szdtzpj/codex/issue-428-429-tg-inline-selection",
+      "files": []
+    },
+    {
+      "hash": "4891deff23086929c0704989b0111f3ba39f3df6",
+      "short": "4891def",
+      "time": 1779256471,
+      "subject": "Merge pull request #434 from windcat2333/fix/wechat-stop-and-auth-396-416",
+      "files": []
     },
     {
       "hash": "a5d0005a1b34a074c9af5dc68443e307d889dc1d",
@@ -1217,6 +1671,13 @@
       ]
     },
     {
+      "hash": "730d50618cc77a269cd5424df695752473ed101f",
+      "short": "730d506",
+      "time": 1778980007,
+      "subject": "feat(tui v2): theme system + Markdown/streaming/continue fixes (#403)",
+      "files": []
+    },
+    {
       "hash": "1bc67499ef5892af42381302db811f3099f3dcc4",
       "short": "1bc6749",
       "time": 1778959399,
@@ -1390,618 +1851,11 @@
       ]
     },
     {
-      "hash": "46029f1d89351f939e8ac322261798a0d4ce7d28",
-      "short": "46029f1",
-      "time": 1778930675,
-      "subject": "feat(tui): /rename, /cost, /continue <name>, ask_user picker, runtime tips",
-      "files": [
-        "frontends/cost_tracker.py",
-        "frontends/session_names.py",
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "915dad9ff47a2dfafeb1b86b3efb7092b883bf79",
-      "short": "915dad9",
-      "time": 1778929072,
-      "subject": "fix(bridge): stop/cancel now works - add timeout to queue.get + cancel check in loop",
-      "files": [
-        "frontends/desktop_bridge.py"
-      ]
-    },
-    {
-      "hash": "413e48bbad26ab9ff9b87b4023f88ee968bc0c6e",
-      "short": "413e48b",
-      "time": 1778925831,
-      "subject": "fix: cancel→abort, cancel_requested guard, wechatapp use turn/outputs instead of _turn_parts",
-      "files": [
-        "agentmain.py",
-        "frontends/desktop_bridge.py",
-        "frontends/wechatapp.py"
-      ]
-    },
-    {
-      "hash": "0efd4bd173a38a87613c0b4f270298f0d5cd43e5",
-      "short": "0efd4bd",
-      "time": 1778922822,
-      "subject": "agentloop yield turn dict marker; agentmain intercepts and tracks per-turn outputs",
-      "files": [
-        "agent_loop.py",
-        "agentmain.py",
-        "frontends/stapp.py",
-        "ga.py"
-      ]
-    },
-    {
-      "hash": "4f8f81e0163d44c30815ab5ec45fbc8989038244",
-      "short": "4f8f81e",
-      "time": 1778921173,
-      "subject": "desktop: add --no-autostart/--dev flags, auto-start bridge, disable devtools by default",
-      "files": [
-        "frontends/desktop/src-tauri/Cargo.toml",
-        "frontends/desktop/src-tauri/capabilities/default.json",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/src-tauri/tauri.conf.json",
-        "frontends/desktop/static/fallback.html"
-      ]
-    },
-    {
-      "hash": "6ddf60a023b600b56d62b39c118241a991016481",
-      "short": "6ddf60a",
-      "time": 1778918940,
-      "subject": "feat(desktop): auto-discover python/project paths, add fallback.html, merge PR #395",
-      "files": [
-        "frontends/desktop/src-tauri/Cargo.lock",
-        "frontends/desktop/src-tauri/Cargo.toml",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/static/fallback.html"
-      ]
-    },
-    {
-      "hash": "13bbd4a5ed434b249f0e039d7494c9499af5aa0e",
-      "short": "13bbd4a",
-      "time": 1778905693,
-      "subject": "fix(desktop): IME composition fix, single-instance guard, macOS bundle support",
-      "files": [
-        "frontends/desktop/src-tauri/Cargo.lock",
-        "frontends/desktop/src-tauri/Cargo.toml",
-        "frontends/desktop/src-tauri/icons/128x128.png",
-        "frontends/desktop/src-tauri/icons/128x128@2x.png",
-        "frontends/desktop/src-tauri/icons/32x32.png",
-        "frontends/desktop/src-tauri/icons/icon.icns",
-        "frontends/desktop/src-tauri/icons/icon.ico",
-        "frontends/desktop/src-tauri/icons/icon.png",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/src-tauri/tauri.conf.json",
-        "frontends/desktop/static/app.js"
-      ]
-    },
-    {
-      "hash": "8f6dbf09c301cc87255011f6f1fa67b825136470",
-      "short": "8f6dbf0",
-      "time": 1778904845,
-      "subject": "feat(desktop): rename crate to ga-desktop, add single-instance plugin",
-      "files": [
-        "frontends/desktop/src-tauri/Cargo.lock",
-        "frontends/desktop/src-tauri/Cargo.toml",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/src-tauri/src/main.rs"
-      ]
-    },
-    {
-      "hash": "ef8d86a3caca55e0c99d9118caf1911914af4a71",
-      "short": "ef8d86a",
-      "time": 1778903085,
-      "subject": "deps: add aiohttp for desktop bridge",
-      "files": [
-        "pyproject.toml"
-      ]
-    },
-    {
-      "hash": "fa2f2cd8098268c2e9372365f6baddbb05ab3310",
-      "short": "fa2f2cd",
-      "time": 1778902028,
-      "subject": "style: tidy desktop bridge imports",
-      "files": [
-        "frontends/desktop_bridge.py"
-      ]
-    },
-    {
-      "hash": "352c0ed19434ea3122b9f9b32d6bebe15fa09732",
-      "short": "352c0ed",
-      "time": 1778901670,
-      "subject": "docs: move installation guides into docs directory",
-      "files": [
-        "README.md",
-        "docs/GETTING_STARTED.md",
-        "docs/installation.md",
-        "docs/installation_zh.md"
-      ]
-    },
-    {
-      "hash": "b95175d87eeb7e2f8d5321f0fc707c109104e08f",
-      "short": "b95175d",
-      "time": 1778901172,
-      "subject": "update README and add installation docs (#393)",
-      "files": [
-        "README.md",
-        "installation.md",
-        "installation_zh.md"
-      ]
-    },
-    {
-      "hash": "76614ee38de1957789997d0a5e0e1b7d44e41f15",
-      "short": "76614ee",
-      "time": 1778890209,
-      "subject": "feat(tui): improve message scrolling and rewind picker (#392)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "794d96936922935e26ed6c47b6ccd68f79a6d375",
-      "short": "794d969",
-      "time": 1778847111,
-      "subject": "bridge: reuse existing instance; smart scroll; remove /continue command",
-      "files": [
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/static/app.js"
-      ]
-    },
-    {
-      "hash": "80918f3d973f6437227844e8e86a536e86a864c6",
-      "short": "80918f3",
-      "time": 1778843966,
-      "subject": "feat: preserve scroll position on session switch + remove redundant Done prefix from fold headers",
-      "files": [
-        "frontends/desktop/static/app.js",
-        "frontends/desktop/static/styles.css"
-      ]
-    },
-    {
-      "hash": "675a5a1873798cbf6001d1d024bfb0f52c3bbb53",
-      "short": "675a5a1",
-      "time": 1778842989,
-      "subject": "refactor: i18n-free UI text, portable python lookup, README rewrite",
-      "files": [
-        "README.md",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/static/app.js"
-      ]
-    },
-    {
-      "hash": "3be6ed35ba814c43c0ac14aa44095c1342d2ebfc",
-      "short": "3be6ed3",
-      "time": 1778840940,
-      "subject": "feat: add Tauri desktop shell + desktop_bridge (url mode, no-console)",
-      "files": [
-        ".gitignore",
-        "frontends/desktop/.gitignore",
-        "frontends/desktop/package.json",
-        "frontends/desktop/src-tauri/Cargo.lock",
-        "frontends/desktop/src-tauri/Cargo.toml",
-        "frontends/desktop/src-tauri/build.rs",
-        "frontends/desktop/src-tauri/icons/icon.ico",
-        "frontends/desktop/src-tauri/src/lib.rs",
-        "frontends/desktop/src-tauri/src/main.rs",
-        "frontends/desktop/src-tauri/tauri.conf.json",
-        "frontends/desktop/static/app.js",
-        "frontends/desktop/static/ga-web.js",
-        "frontends/desktop/static/index.html",
-        "frontends/desktop/static/styles.css",
-        "frontends/desktop/static/vendor/marked.min.js",
-        "frontends/desktop_bridge.py"
-      ]
-    },
-    {
-      "hash": "fe47bb29cb388f81c2012621af8412ab16a678c1",
-      "short": "fe47bb2",
-      "time": 1778840369,
-      "subject": "feat(tui): click-to-expand folds, streaming spinner, layout polish (#390)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "c7edd749a9fcdb0c97a38a3a1edc84eb744b6fa2",
-      "short": "c7edd74",
-      "time": 1778839163,
-      "subject": "chore: remove unused tgapp stream segment tests",
-      "files": [
-        "tests/test_tgapp_stream_segments.py"
-      ]
-    },
-    {
-      "hash": "90a3dff557578f49ba23a7ef0613805818e14aff",
-      "short": "90a3dff",
-      "time": 1778830733,
-      "subject": "fix(tui): file paste, block-delete, ctrl+c copy, per-session input (#389)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "fc6b5ad309fc2b8f4158eba56ad5f9ab6fc33ca0",
-      "short": "fc6b5ad",
-      "time": 1778818713,
-      "subject": "refactor: parameterize compress/trim intervals, add stop/kill subagent actions, remove web/pet CLI commands",
-      "files": [
-        "frontends/conductor.py",
-        "ga_cli/cli.py",
-        "llmcore.py"
-      ]
-    },
-    {
-      "hash": "1d30b98280975f283a2f65c58bd71ecfd6de2548",
-      "short": "1d30b98",
-      "time": 1778770550,
-      "subject": "conductor: cleanup style, filter aborted agents, add auto-cleanup thread; llmcore: conditional _drop_unsigned_thinking for non-claude models; task_planning: minor edit",
-      "files": [
-        "frontends/conductor.py",
-        "llmcore.py",
-        "memory/autonomous_operation_sop/task_planning.md"
-      ]
-    },
-    {
-      "hash": "dce09f8fdd90eca8cfd3247fec75d2f15c61671b",
-      "short": "dce09f8",
-      "time": 1778770090,
-      "subject": "feat&fix(tui): paste/scroll polish, /continue & /export pickers, mac aliases (#379)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "ce11952daf4173e0e86338d77e875ab673ac89e7",
-      "short": "ce11952",
-      "time": 1778769966,
-      "subject": "refactor(langfuse/chatapp): - Fix 1: _patched_log function signature mismatch   - Location: plugins-langfuse_tracing.py   - Problem: monkey-patch function only accepts 2 parameters, but the original function has 3 parameters (including the default parameter log_path)   - Fix: add log_path=None parameter and pass it to the original function - Fix 2: Agentmain module import failure   - Location: frontends-chatapp_common.py   - Problem: frontends directory cannot be imported into the agentmain of the upper directory   - Fix: Add the parent directory to sys.path at the beginning of the file",
-      "files": [
-        "frontends/chatapp_common.py",
-        "plugins/langfuse_tracing.py"
-      ]
-    },
-    {
-      "hash": "2cb1314b6b966adc0521a7f5339bef46598473d0",
-      "short": "2cb1314",
-      "time": 1778732023,
-      "subject": "docs: update WeChat group 18 QR code (#370)",
-      "files": [
-        "README.md",
-        "assets/images/wechat_group18.jpg"
-      ]
-    },
-    {
-      "hash": "a60c938e893ab7c0abaebfc4b3963cf7e23ad495",
-      "short": "a60c938",
-      "time": 1778685028,
-      "subject": "refactor(configure): 重构配置向导 — 16 家厂商、启动流程优化、粘贴修复、新增微信平台 (#364)",
-      "files": [
-        "assets/configure_mykey.py"
-      ]
-    },
-    {
-      "hash": "508d5692c5898e9be5033c68edc1a90418fcd990",
-      "short": "508d569",
-      "time": 1778684663,
-      "subject": "Feat/v2 keybindings (#365)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "05c6b427c6705a64e49c3d28e266b6573eb55ddf",
-      "short": "05c6b42",
-      "time": 1778684572,
-      "subject": "feat: add conductor system, code_review_principles; update llmcore, supervisor_sop, goal_mode constraints, gitignore whitelist",
-      "files": [
-        ".gitignore",
-        "frontends/conductor.html",
-        "frontends/conductor.py",
-        "llmcore.py",
-        "memory/code_review_principles.md",
-        "memory/supervisor_sop.md",
-        "reflect/goal_mode.py"
-      ]
-    },
-    {
-      "hash": "a06a9ad20a4678af457c0a8f401c486f484b4984",
-      "short": "a06a9ad",
-      "time": 1778684572,
-      "subject": "feat: tighten context budget - maxlen 15k, trim refactor with staged compress",
-      "files": [
-        "ga.py",
-        "llmcore.py"
-      ]
-    },
-    {
-      "hash": "006d44c4f4d4c29860ebef2d36b770878b821f58",
-      "short": "006d44c",
-      "time": 1778671587,
-      "subject": "fix(tui): 仅在输入框真正边界时触发历史回溯 (#362)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "0accd0e319c6682a2df35a03e9c800c193c51953",
-      "short": "0accd0e",
-      "time": 1778669938,
-      "subject": "fix(tui): restore wheel scroll on macOS in tuiapp_v2 (#361)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "95d858ade8c675361746ac64a59f3a19520c748f",
-      "short": "95d858a",
-      "time": 1778659498,
-      "subject": "feat(tui): v2 image paste folding, history nav, /llm & /export choice (#360)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "6bb31046cc29981f3fd0ce0b22a6af8c9741e850",
-      "short": "6bb3104",
-      "time": 1778640986,
-      "subject": "fix(tui): keep v2 output scrolled during stream updates (#356)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "09cd8577e042c4020b17c9fc5c0860119fdf974c",
-      "short": "09cd857",
-      "time": 1778639672,
-      "subject": "fix(tui): avoid duplicate paste in tuiapp_v2 (#352)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "3205f4a017656ab6a417a4501bbaa0a16017f41c",
-      "short": "3205f4a",
-      "time": 1778638873,
-      "subject": "feat: dynamic tool_result maxlen based on parallel tool count",
-      "files": [
-        "agent_loop.py",
-        "frontends/tuiapp.py",
-        "ga.py"
-      ]
-    },
-    {
-      "hash": "d2840ae0b3036b472cdf673ba2b7c755cb796a15",
-      "short": "d2840ae",
-      "time": 1778633225,
-      "subject": "docs: add Evaluation — Five Dimensions section (EN & CN) (#339)",
-      "files": [
-        "README.md",
-        "assets/images/result_convergence.png",
-        "assets/images/result_radar.png"
-      ]
-    },
-    {
-      "hash": "24688010504803da05c146456b80d1a740f05f2d",
-      "short": "2468801",
-      "time": 1778595995,
-      "subject": "feat(tui): add tuiapp_v2.py — refined Textual frontend (#350)",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "cf6551516fcc836f21dcdad592b07c703d09e1d8",
-      "short": "cf65515",
-      "time": 1778561970,
-      "subject": "feat(reflect): add init() for runtime args with fallback to env/config",
-      "files": [
-        "agentmain.py",
-        "reflect/agent_team_worker.py",
-        "reflect/goal_mode.py"
-      ]
-    },
-    {
-      "hash": "736f88a00ae7722ee67a19c45930b3c404975680",
-      "short": "736f88a",
-      "time": 1778505148,
-      "subject": "feat(tui): multi-line input with Enter submit, Ctrl+Enter newline, paste-safe",
-      "files": [
-        "frontends/tuiapp.py"
-      ]
-    },
-    {
-      "hash": "c247abb78a8853b375eb8c4bd16fdd2881a4e4a2",
-      "short": "c247abb",
-      "time": 1778503118,
-      "subject": "docs: update WeChat group 17 QR code (#338)",
-      "files": [
-        "README.md",
-        "assets/images/wechat_group17.jpg"
-      ]
-    },
-    {
-      "hash": "f3f5b76d68eb10c93ec4ebdf8a959156f47c9073",
-      "short": "f3f5b76",
-      "time": 1778502446,
-      "subject": "fix(launch): skip paste interception when clipboard contains text",
-      "files": [
-        "launch.pyw"
-      ]
-    },
-    {
-      "hash": "1b9fe1f539fb89adbd50e3c50382534603b47a5c",
-      "short": "1b9fe1f",
-      "time": 1778501164,
-      "subject": "feat(tgapp): add /btw command handling (#335)",
-      "files": [
-        "frontends/chatapp_common.py",
-        "frontends/tgapp.py"
-      ]
-    },
-    {
-      "hash": "2381d48a569418852eb039d5d421114be97fd4bc",
-      "short": "2381d48",
-      "time": 1778464863,
-      "subject": "refactor: rename command/ to ga_cli/ to avoid namespace collision",
-      "files": [
-        "command/__main__.py",
-        "ga",
-        "ga.cmd",
-        "ga_cli/__init__.py",
-        "ga_cli/__main__.py",
-        "ga_cli/cli.py",
-        "ga_cli/ga-cli-install.cmd",
-        "ga_cli/ga_cli.cmd",
-        "pyproject.toml"
-      ]
-    },
-    {
-      "hash": "e248aa8c029204c16a76a7902260b3b1ce9c9c95",
-      "short": "e248aa8",
-      "time": 1778464671,
-      "subject": "feat: 添加跨平台 GA 命令行入口系统 (#329)",
-      "files": [
-        "command/__init__.py",
-        "command/__main__.py",
-        "command/cli.py",
-        "command/command-install.cmd",
-        "command/command.cmd",
-        "ga",
-        "ga.cmd",
-        "pyproject.toml"
-      ]
-    },
-    {
-      "hash": "ee02e7eba5bf53b61af0439d04c79938c87af3c5",
-      "short": "ee02e7e",
-      "time": 1778463618,
-      "subject": "fix(tgapp): preserve streaming overflow segments (#330)",
-      "files": [
-        "frontends/tgapp.py",
-        "tests/test_tgapp_stream_segments.py"
-      ]
-    },
-    {
-      "hash": "dd2f96ba6577b60f408eab413d621b1fe07c67ed",
-      "short": "dd2f96b",
-      "time": 1778463592,
-      "subject": "fix: hide code runner console window",
-      "files": [
-        "ga.py"
-      ]
-    },
-    {
-      "hash": "9024af7499a04dbb4c2bab01584ce170ec9ba439",
-      "short": "9024af7",
-      "time": 1778339300,
-      "subject": "feat(stapp): add /export command (clip/file/all) (#322)",
-      "files": [
-        "frontends/export_cmd.py",
-        "frontends/stapp.py"
-      ]
-    },
-    {
-      "hash": "3c5c99fd6d37830033a2531ecb888d9994127f8a",
-      "short": "3c5c99f",
-      "time": 1778327495,
-      "subject": "chore: replace alarming warning with neutral \"(无文本输出)\" in feishu display",
-      "files": [
-        "frontends/fsapp.py"
-      ]
-    },
-    {
-      "hash": "321ad8ad4fdbec878e41d734dead4982a76d5878",
-      "short": "321ad8a",
-      "time": 1778323068,
-      "subject": "docs: update WeChat group 16 QR code (#318)",
-      "files": [
-        "README.md",
-        "assets/images/wechat_group16.jpg"
-      ]
-    },
-    {
-      "hash": "a2f0f0d46a49620114a733d0c824e5c0b9b2f1b5",
-      "short": "a2f0f0d",
-      "time": 1778321529,
-      "subject": "fix(stapp): restore finally abort guard in agent_backend_stream",
-      "files": [
-        "frontends/stapp.py"
-      ]
-    },
-    {
-      "hash": "a6c010d25ad920552a98e8d7de0e11f44588536a",
-      "short": "a6c010d",
-      "time": 1778318891,
-      "subject": "fix: prevent empty response from corrupting history & add _fix_messages to non-native paths",
-      "files": [
-        "llmcore.py"
-      ]
-    },
-    {
-      "hash": "67d135ab4ddc4f38b5f21b22109ab69f3030e8ca",
-      "short": "67d135a",
-      "time": 1778315324,
-      "subject": "fix: avoid empty content messages in native tool flow",
-      "files": [
-        "llmcore.py"
-      ]
-    },
-    {
-      "hash": "4af02c5f98d5bce0d0e10e5f8c2d96abd583d0c3",
-      "short": "4af02c5",
-      "time": 1778312439,
-      "subject": "fix: unify retry logic in do_no_tool with shared counter to prevent infinite loop (#312)",
-      "files": [
-        "ga.py"
-      ]
-    },
-    {
-      "hash": "03d19c982122ad7594ac30f8a960d506e6ce2893",
-      "short": "03d19c9",
-      "time": 1778311565,
-      "subject": "feat: add /btw side-question subagent (#317)",
-      "files": [
-        "frontends/btw_cmd.py",
-        "frontends/chatapp_common.py",
-        "frontends/stapp.py"
-      ]
-    },
-    {
-      "hash": "2a80e1e931927f18085665369f0877ccb7e21154",
-      "short": "2a80e1e",
-      "time": 1778310039,
-      "subject": "修复：清理 TMWebDriver 未使用的导入，修正裸 except 语法 (#311)",
-      "files": [
-        "TMWebDriver.py"
-      ]
-    },
-    {
-      "hash": "ca796994929e093ff71f8c538d7334f0e058c540",
-      "short": "ca79699",
-      "time": 1778309812,
-      "subject": "feat(tui): add /clear and /close commands",
-      "files": [
-        "frontends/tuiapp.py"
-      ]
-    },
-    {
-      "hash": "268ceab40810c4c2f4f3d9b86e4e0883257f723d",
-      "short": "268ceab",
-      "time": 1778301088,
-      "subject": "fix: disable Streamlit dev shortcuts to prevent Ctrl+C triggering Clear Caches on Windows (#309)",
-      "files": [
-        "launch.pyw"
-      ]
-    },
-    {
-      "hash": "cde1620710c51c8c9aad95df3c6c0afea1b26212",
-      "short": "cde1620",
-      "time": 1778294489,
-      "subject": "fix: filter whitespace-only text blocks in NativeToolClient.chat() (#307)",
-      "files": [
-        "llmcore.py"
-      ]
+      "hash": "2566bb82d41ee321565cb61dfbabe1adb9df18e8",
+      "short": "2566bb8",
+      "time": 1778931565,
+      "subject": "feat(tui): /rename, /cost, /continue, ask_user picker, runtime (#397)",
+      "files": []
     }
   ]
 }

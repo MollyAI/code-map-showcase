@@ -1,4 +1,5 @@
 {
   "name": "termux-app",
-  "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages."
+  "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
+  "repo": "https://github.com/termux/termux-app.git"
 }

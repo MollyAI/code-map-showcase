@@ -1,44 +1,28 @@
 {
   "projects": [
     {
-      "slug": "code-map",
-      "name": "code-map",
+      "slug": "rxswift",
+      "name": "RxSwift",
       "languages": [
-        "typescript"
+        "c",
+        "objc",
+        "swift"
       ],
-      "files": 64,
-      "declarations": 311,
-      "layers": 8,
-      "flows": 4,
-      "edges": 479,
+      "files": 290,
+      "declarations": 743,
+      "layers": 11,
+      "flows": 7,
+      "edges": 1330,
       "git": {
         "branch": "main",
-        "short": "f24fe6e",
-        "commit": "f24fe6e4f7ce90f799328bf3782d3de27e658f3a"
+        "short": "132aea4f",
+        "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
       },
-      "generated_at": "2026-06-08T13:26:32",
+      "generated_at": "2026-06-10T13:43:42",
       "refined": true,
-      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。"
-    },
-    {
-      "slug": "freertos-kernel",
-      "name": "FreeRTOS-Kernel",
-      "languages": [
-        "c"
-      ],
-      "files": 38,
-      "declarations": 421,
-      "layers": 10,
-      "flows": 9,
-      "edges": 382,
-      "git": {
-        "branch": "main",
-        "short": "d877cd5",
-        "commit": "d877cd53989eba16c5092761056e31e1dcddba2f"
-      },
-      "generated_at": "2026-06-07T06:02:35",
-      "refined": true,
-      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos."
+      "score": 203,
+      "description": "Reactive Programming in Swift",
+      "repo": "https://github.com/ReactiveX/RxSwift.git"
     },
     {
       "slug": "genericagent",
@@ -48,61 +32,21 @@
         "rust",
         "typescript"
       ],
-      "files": 74,
-      "declarations": 895,
+      "files": 75,
+      "declarations": 902,
       "layers": 9,
-      "flows": 9,
-      "edges": 1466,
+      "flows": 10,
+      "edges": 1451,
       "git": {
         "branch": "main",
-        "short": "de0a3f8",
-        "commit": "de0a3f82a8b65b010eaa61f69c7d7afea1c14d3b"
+        "short": "5e42bf3",
+        "commit": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112"
       },
-      "generated_at": "2026-06-07T07:38:31",
+      "generated_at": "2026-06-10T13:43:04",
       "refined": true,
-      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption"
-    },
-    {
-      "slug": "gson",
-      "name": "gson",
-      "languages": [
-        "java"
-      ],
-      "files": 87,
-      "declarations": 80,
-      "layers": 8,
-      "flows": 5,
-      "edges": 316,
-      "git": {
-        "branch": "main",
-        "short": "004e7a4",
-        "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
-      },
-      "generated_at": "2026-06-07T06:46:06",
-      "refined": true,
-      "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back"
-    },
-    {
-      "slug": "rxswift",
-      "name": "RxSwift",
-      "languages": [
-        "c",
-        "objc",
-        "swift"
-      ],
-      "files": 305,
-      "declarations": 870,
-      "layers": 11,
-      "flows": 7,
-      "edges": 933,
-      "git": {
-        "branch": "main",
-        "short": "132aea4f",
-        "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
-      },
-      "generated_at": "2026-06-07T10:23:04",
-      "refined": true,
-      "description": "Reactive Programming in Swift"
+      "score": 186,
+      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
+      "repo": "https://github.com/lsdefine/GenericAgent.git"
     },
     {
       "slug": "termux-app",
@@ -122,9 +66,77 @@
         "short": "401bbe5",
         "commit": "401bbe54b8f4e68302b1ff70678015a24628fb1d"
       },
-      "generated_at": "2026-06-07T08:08:44",
+      "generated_at": "2026-06-10T13:42:05",
       "refined": true,
-      "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages."
+      "score": 169,
+      "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
+      "repo": "https://github.com/termux/termux-app.git"
+    },
+    {
+      "slug": "code-map",
+      "name": "code-map",
+      "languages": [
+        "typescript"
+      ],
+      "files": 71,
+      "declarations": 341,
+      "layers": 8,
+      "flows": 5,
+      "edges": 497,
+      "git": {
+        "branch": "main",
+        "short": "f23174c",
+        "commit": "f23174c637e42328231115a5519cab2edaf4eb53"
+      },
+      "generated_at": "2026-06-10T13:41:37",
+      "refined": true,
+      "score": 162,
+      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
+      "repo": "https://github.com/MollyAI/code-map.git"
+    },
+    {
+      "slug": "freertos-kernel",
+      "name": "FreeRTOS-Kernel",
+      "languages": [
+        "c"
+      ],
+      "files": 38,
+      "declarations": 430,
+      "layers": 10,
+      "flows": 11,
+      "edges": 376,
+      "git": {
+        "branch": "main",
+        "short": "d877cd5",
+        "commit": "d877cd53989eba16c5092761056e31e1dcddba2f"
+      },
+      "generated_at": "2026-06-10T13:56:24",
+      "refined": true,
+      "score": 158,
+      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
+      "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
+    },
+    {
+      "slug": "gson",
+      "name": "gson",
+      "languages": [
+        "java"
+      ],
+      "files": 87,
+      "declarations": 80,
+      "layers": 8,
+      "flows": 5,
+      "edges": 316,
+      "git": {
+        "branch": "main",
+        "short": "004e7a4",
+        "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
+      },
+      "generated_at": "2026-06-10T13:41:44",
+      "refined": true,
+      "score": 120,
+      "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back",
+      "repo": "https://github.com/google/gson.git"
     }
   ]
 }

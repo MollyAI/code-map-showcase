@@ -19,7 +19,7 @@
       "cpp": 32
     },
     "parse_failures": 0,
-    "generated_at": "2026-06-07T08:08:44",
+    "generated_at": "2026-06-10T13:42:05",
     "template_detection": {
       "chosen": "clean-architecture",
       "scores": {
@@ -192,6 +192,14 @@
         "total_layers": 7
       }
     },
+    "resolution": {
+      "files_ts": 0,
+      "edges_resolved": 0,
+      "edges_unresolved": 0,
+      "barrels_expanded": 0,
+      "aliases_resolved": 0,
+      "coverage": 1
+    },
     "dispatch": {
       "AppCompatActivity": [
         "com.termux.app.TermuxActivity",
@@ -289,9 +297,64 @@
       "short": "401bbe5",
       "dirty": false
     },
+    "code_map_version": "1.11.0",
     "architecture": {
       "template": "layered",
       "customized": true
+    },
+    "score": {
+      "rubric": "arch-score-v1",
+      "total": 169,
+      "base": 169,
+      "difficulty": 122.8,
+      "execution": 1.378,
+      "dimensions": {
+        "layering": {
+          "score": 92,
+          "penalties": [
+            {
+              "id": "layer_violations",
+              "points": 8.4,
+              "value": 0.14,
+              "detail": "51/363 cross-layer uses edges point upward"
+            }
+          ]
+        },
+        "dependencies": {
+          "score": 81,
+          "penalties": [
+            {
+              "id": "cycles",
+              "points": 19,
+              "value": 0.158,
+              "detail": "32/202 declarations sit in dependency cycles"
+            }
+          ]
+        },
+        "hygiene": {
+          "score": 93,
+          "penalties": [
+            {
+              "id": "isolated",
+              "points": 5.1,
+              "value": 0.064,
+              "detail": "6% of declarations have no edges"
+            },
+            {
+              "id": "oversized",
+              "points": 2.1,
+              "value": 0.035,
+              "detail": "3% of declarations are oversized units"
+            }
+          ]
+        }
+      },
+      "inputs": {
+        "decls": 202,
+        "edges": 657,
+        "files": 177,
+        "languages": 3
+      }
     }
   },
   "layers": [
@@ -1084,6 +1147,7 @@
         {
           "id": "com.termux.terminal.Logger",
           "name": "Logger",
+          "display_name": "terminal:Logger",
           "path": "terminal-emulator/src/main/java/com/termux/terminal/Logger.java",
           "line": 9,
           "namespace": "com.termux.terminal",
@@ -1345,7 +1409,7 @@
           "loc": 91,
           "signature": "static int create_subprocess(JNIEnv* env, char const* cmd, char const* cwd, char* const argv[], char** envp, int* pProcessId, jint rows, jint columns, jint cell_width, jint cell_height)",
           "method_count": 0,
-          "importance": 0.158,
+          "importance": 0.047,
           "core": true,
           "hub": false,
           "in_degree": 1,
@@ -2353,6 +2417,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux.DebuggingPreferencesFragment",
           "name": "DebuggingPreferencesFragment",
+          "display_name": "termux:DebuggingPreferencesFragment",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux/DebuggingPreferencesFragment.java",
           "line": 19,
           "namespace": "com.termux.app.fragments.settings.termux",
@@ -2377,6 +2442,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux.DebuggingPreferencesDataStore",
           "name": "DebuggingPreferencesDataStore",
+          "display_name": "termux:DebuggingPreferencesDataStore",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux/DebuggingPreferencesFragment.java",
           "line": 67,
           "namespace": "com.termux.app.fragments.settings.termux",
@@ -2497,6 +2563,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_api.DebuggingPreferencesFragment",
           "name": "DebuggingPreferencesFragment",
+          "display_name": "termux_api:DebuggingPreferencesFragment",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_api/DebuggingPreferencesFragment.java",
           "line": 18,
           "namespace": "com.termux.app.fragments.settings.termux_api",
@@ -2521,6 +2588,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_api.DebuggingPreferencesDataStore",
           "name": "DebuggingPreferencesDataStore",
+          "display_name": "termux_api:DebuggingPreferencesDataStore",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_api/DebuggingPreferencesFragment.java",
           "line": 50,
           "namespace": "com.termux.app.fragments.settings.termux_api",
@@ -2545,6 +2613,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_float.DebuggingPreferencesFragment",
           "name": "DebuggingPreferencesFragment",
+          "display_name": "termux_float:DebuggingPreferencesFragment",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_float/DebuggingPreferencesFragment.java",
           "line": 18,
           "namespace": "com.termux.app.fragments.settings.termux_float",
@@ -2569,6 +2638,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_float.DebuggingPreferencesDataStore",
           "name": "DebuggingPreferencesDataStore",
+          "display_name": "termux_float:DebuggingPreferencesDataStore",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_float/DebuggingPreferencesFragment.java",
           "line": 50,
           "namespace": "com.termux.app.fragments.settings.termux_float",
@@ -2593,6 +2663,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_tasker.DebuggingPreferencesFragment",
           "name": "DebuggingPreferencesFragment",
+          "display_name": "termux_tasker:DebuggingPreferencesFragment",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_tasker/DebuggingPreferencesFragment.java",
           "line": 18,
           "namespace": "com.termux.app.fragments.settings.termux_tasker",
@@ -2617,6 +2688,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_tasker.DebuggingPreferencesDataStore",
           "name": "DebuggingPreferencesDataStore",
+          "display_name": "termux_tasker:DebuggingPreferencesDataStore",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_tasker/DebuggingPreferencesFragment.java",
           "line": 50,
           "namespace": "com.termux.app.fragments.settings.termux_tasker",
@@ -2641,6 +2713,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_widget.DebuggingPreferencesFragment",
           "name": "DebuggingPreferencesFragment",
+          "display_name": "termux_widget:DebuggingPreferencesFragment",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_widget/DebuggingPreferencesFragment.java",
           "line": 18,
           "namespace": "com.termux.app.fragments.settings.termux_widget",
@@ -2665,6 +2738,7 @@
         {
           "id": "com.termux.app.fragments.settings.termux_widget.DebuggingPreferencesDataStore",
           "name": "DebuggingPreferencesDataStore",
+          "display_name": "termux_widget:DebuggingPreferencesDataStore",
           "path": "app/src/main/java/com/termux/app/fragments/settings/termux_widget/DebuggingPreferencesFragment.java",
           "line": 50,
           "namespace": "com.termux.app.fragments.settings.termux_widget",
@@ -3363,6 +3437,7 @@
         {
           "id": "com.termux.app.models.UserAction",
           "name": "UserAction",
+          "display_name": "app:UserAction",
           "path": "app/src/main/java/com/termux/app/models/UserAction.java",
           "line": 3,
           "namespace": "com.termux.app.models",
@@ -3943,6 +4018,7 @@
         {
           "id": "com.termux.shared.logger.Logger",
           "name": "Logger",
+          "display_name": "shared/logger:Logger",
           "path": "termux-shared/src/main/java/com/termux/shared/logger/Logger.java",
           "line": 21,
           "namespace": "com.termux.shared.logger",
@@ -4617,6 +4693,7 @@
         {
           "id": "com.termux.shared.termux.models.UserAction",
           "name": "UserAction",
+          "display_name": "shared/termux:UserAction",
           "path": "termux-shared/src/main/java/com/termux/shared/termux/models/UserAction.java",
           "line": 3,
           "namespace": "com.termux.shared.termux.models",

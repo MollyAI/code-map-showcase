@@ -1,4 +1,5 @@
 {
   "name": "FreeRTOS-Kernel",
-  "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos."
+  "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
+  "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
 }

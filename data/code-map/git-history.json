@@ -1,8 +1,290 @@
 {
-  "anchor": "f24fe6e4f7ce90f799328bf3782d3de27e658f3a",
+  "anchor": "f23174c637e42328231115a5519cab2edaf4eb53",
   "limit": 200,
   "truncated": false,
   "commits": [
+    {
+      "hash": "f23174c637e42328231115a5519cab2edaf4eb53",
+      "short": "f23174c",
+      "time": 1781098023,
+      "subject": "Merge pull request #7 from MollyAI/dev",
+      "files": []
+    },
+    {
+      "hash": "af622bb5ba26c66a5b9fa87fc60b9f4fcae7a7f3",
+      "short": "af622bb",
+      "time": 1781097957,
+      "subject": "fix(viewer): re-render build-info badge on language toggle",
+      "files": [
+        "viewer/src/main.js"
+      ]
+    },
+    {
+      "hash": "8c61aa5bb802d65246d4e2531ea38c4e6824ed00",
+      "short": "8c61aa5",
+      "time": 1781097436,
+      "subject": "chore(release): v1.11.0 — arch-score: deterministic D×E architecture scoring",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "README.md"
+      ]
+    },
+    {
+      "hash": "968594e4ec1ce467d8ba2d817eec095d31ddfafb",
+      "short": "968594e",
+      "time": 1781097362,
+      "subject": "feat(build): Phase 2 step 8 — stamp arch-score on both full and incremental paths",
+      "files": [
+        "commands/build.md"
+      ]
+    },
+    {
+      "hash": "9ede6e4d7e9265bb9398dd85fb616b251b5b863c",
+      "short": "9ede6e4",
+      "time": 1781097319,
+      "subject": "feat(skill): arch-score rubric v1 — scoring rules, workflow, adjustment whitelist",
+      "files": [
+        "skills/arch-score/SKILL.md"
+      ]
+    },
+    {
+      "hash": "d29e4dea226f87334d342964482d2f10d45c46c6",
+      "short": "d29e4de",
+      "time": 1781097285,
+      "subject": "feat(viewer): arch-score badge after build time + bilingual tooltip breakdown",
+      "files": [
+        "viewer/src/i18n.js",
+        "viewer/src/test/buildinfo.test.js",
+        "viewer/src/ui/buildinfo.js"
+      ]
+    },
+    {
+      "hash": "61554d9308a32ea175ce590ab64f61027416c6a8",
+      "short": "61554d9",
+      "time": 1781097178,
+      "subject": "test(incremental): lock in that merge drops prior project.score",
+      "files": [
+        "tests/incremental.test.mjs"
+      ]
+    },
+    {
+      "hash": "f6f91139203c7148d37a902c417dd78875ef0184",
+      "short": "f6f9113",
+      "time": 1781097164,
+      "subject": "feat(score): code-map score subcommand — print/stamp project.score, clamp --adjust",
+      "files": [
+        "scripts/cli.mjs",
+        "scripts/score.mjs"
+      ]
+    },
+    {
+      "hash": "dba564dcb47983a908f506799c1524010859e1c3",
+      "short": "dba564d",
+      "time": 1781097114,
+      "subject": "feat(score): computeScore D×E assembly + CLI-enforced bounded AI adjustment",
+      "files": [
+        "scripts/lib/score.mjs",
+        "tests/score.test.mjs"
+      ]
+    },
+    {
+      "hash": "9a57210fa995c1b3ddd0e79556fd4961ae767c1c",
+      "short": "9a57210",
+      "time": 1781097072,
+      "subject": "feat(score): layering / dependency / hygiene dimension scorers (rubric v1)",
+      "files": [
+        "scripts/lib/score.mjs",
+        "tests/score.test.mjs"
+      ]
+    },
+    {
+      "hash": "212d5056093ddd329e0a0158359188c56bfb5bfe",
+      "short": "212d505",
+      "time": 1781096992,
+      "subject": "feat(score): graph helpers — iterative Tarjan SCC + deterministic reach density",
+      "files": [
+        "scripts/lib/score.mjs",
+        "tests/score.test.mjs"
+      ]
+    },
+    {
+      "hash": "90603d947de2cbb75117b0d7681bd5fd5ea53324",
+      "short": "90603d9",
+      "time": 1781045646,
+      "subject": "Merge pull request #6 from MollyAI/dev",
+      "files": []
+    },
+    {
+      "hash": "f221598b929054cefff812b4420a6c853e098785",
+      "short": "f221598",
+      "time": 1781015331,
+      "subject": "chore(release): v1.10.0 — TS/JS import resolution sub-phase",
+      "files": [
+        ".claude-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "37392187b781ea9c6040943d639989e686c5b7ef",
+      "short": "3739218",
+      "time": 1781015211,
+      "subject": "feat(analyze): run resolution sub-phase, write resolution.json, stamp stats",
+      "files": [
+        "scripts/analyze.mjs",
+        "tests/resolve_integration.test.mjs"
+      ]
+    },
+    {
+      "hash": "f1ebb6b8668454d75e24d9fb0505a84261b5bd13",
+      "short": "f1ebb6b",
+      "time": 1781014793,
+      "subject": "feat(resolve): language-agnostic resolveProject orchestrator",
+      "files": [
+        "scripts/lib/resolve/index.mjs",
+        "tests/resolve_index.test.mjs"
+      ]
+    },
+    {
+      "hash": "ce572663f87715672527acf3956b90b5ac694942",
+      "short": "ce57266",
+      "time": 1781014731,
+      "subject": "feat(resolve): TS ref resolution via import scope + tiered-confidence audit",
+      "files": [
+        "scripts/lib/resolve/typescript.mjs",
+        "tests/resolve_ts_refs.test.mjs"
+      ]
+    },
+    {
+      "hash": "e03c6bd603b2b1002158ec325f5e413fce9708ec",
+      "short": "e03c6bd",
+      "time": 1781014185,
+      "subject": "feat(resolve): TS per-file export maps with transitive barrel expansion",
+      "files": [
+        "scripts/lib/resolve/typescript.mjs",
+        "tests/resolve_ts_exportmap.test.mjs"
+      ]
+    },
+    {
+      "hash": "ead2ef878830438948f6078bd85198d5aa810a86",
+      "short": "ead2ef8",
+      "time": 1781013971,
+      "subject": "feat(resolve): module specifier resolution (relative/alias/baseUrl/external)",
+      "files": [
+        "scripts/lib/resolve/modres.mjs",
+        "tests/resolve_modres.test.mjs"
+      ]
+    },
+    {
+      "hash": "9a69b7975226030a06013cf778e8bffcd9c2b611",
+      "short": "9a69b79",
+      "time": 1781013887,
+      "subject": "feat(resolve): tsconfig reader (paths/baseUrl/extends, JSONC-tolerant)",
+      "files": [
+        "scripts/lib/resolve/tsconfig.mjs",
+        "tests/resolve_tsconfig.test.mjs"
+      ]
+    },
+    {
+      "hash": "4ce9a34437bef1e0c67c8a89b44f2062eabb8aae",
+      "short": "4ce9a34",
+      "time": 1781013523,
+      "subject": "fix(ts): imports are scope, not edges — drop import strings from refs",
+      "files": [
+        "scripts/lib/extractors/typescript.mjs",
+        "tests/extractor_typescript.test.mjs"
+      ]
+    },
+    {
+      "hash": "cc98d405b307ce8041575dfd2528e13eb2267160",
+      "short": "cc98d40",
+      "time": 1781013246,
+      "subject": "feat(ts): capture re-export statements (export * / export {x as y} from)",
+      "files": [
+        "scripts/lib/extractors/typescript.mjs",
+        "tests/extractor_typescript.test.mjs"
+      ]
+    },
+    {
+      "hash": "30cca2551570e07ed9d64bfe7e1e8dd03e0e3658",
+      "short": "30cca25",
+      "time": 1781012941,
+      "subject": "feat(ts): capture import clause bindings (named/default/namespace)",
+      "files": [
+        "scripts/lib/extractors/typescript.mjs",
+        "tests/extractor_typescript.test.mjs"
+      ]
+    },
+    {
+      "hash": "ee79c654ff1c4770c20c8a1fb9c0d448a98959f7",
+      "short": "ee79c65",
+      "time": 1781012838,
+      "subject": "feat(extractors): ImportSpec.bindings + ReexportSpec + ParseResult.reexports",
+      "files": [
+        "scripts/lib/extractors/base.mjs",
+        "tests/base_shapes.test.mjs"
+      ]
+    },
+    {
+      "hash": "955b70fa42d45ffe3d4acd30a92573bd9d4c3133",
+      "short": "955b70f",
+      "time": 1781010576,
+      "subject": "docs(build)+chore(release): document version-triggered full; v1.9.0",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "commands/build.md"
+      ]
+    },
+    {
+      "hash": "c724d8c12cc484ac3010a16b40f37701a1f78c91",
+      "short": "c724d8c",
+      "time": 1781010417,
+      "subject": "feat(analyze): stamp project.code_map_version from plugin.json",
+      "files": [
+        "scripts/analyze.mjs"
+      ]
+    },
+    {
+      "hash": "ea76dbabf43451c300b2379b094d9179610c38fa",
+      "short": "ea76dba",
+      "time": 1781010208,
+      "subject": "feat(incremental): force full rebuild when plugin version changes",
+      "files": [
+        "scripts/incremental.mjs",
+        "tests/incremental.test.mjs"
+      ]
+    },
+    {
+      "hash": "83cd05acb43f500a1237bd6b88be5cd9ab107206",
+      "short": "83cd05a",
+      "time": 1781010027,
+      "subject": "feat(core): add pluginVersion() helper reading plugin.json",
+      "files": [
+        "scripts/lib/version.mjs",
+        "tests/version.test.mjs"
+      ]
+    },
+    {
+      "hash": "1487fb75f62325ea9f20aa4cf4ce279d355d1e2c",
+      "short": "1487fb7",
+      "time": 1781009067,
+      "subject": "fix(commands): resolve launcher without CLAUDE_PLUGIN_ROOT in shell",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "bin/code-map",
+        "commands/build.md",
+        "commands/run.md",
+        "commands/stop.md",
+        "scripts/mapctl.mjs"
+      ]
+    },
+    {
+      "hash": "f24fe6e4f7ce90f799328bf3782d3de27e658f3a",
+      "short": "f24fe6e",
+      "time": 1780841591,
+      "subject": "Merge pull request #5 from MollyAI/dev",
+      "files": []
+    },
     {
       "hash": "aa9f837b092e05432be7f146bf8e71c9226510b3",
       "short": "aa9f837",
@@ -165,6 +447,13 @@
       ]
     },
     {
+      "hash": "349b7d37f956050aa63a2f7d508a8a8a9b7825f7",
+      "short": "349b7d3",
+      "time": 1780801740,
+      "subject": "Merge pull request #4 from MollyAI/dev",
+      "files": []
+    },
+    {
       "hash": "5aaa0f530decf4bc6743c3aaa0ddd91fdbe1b64d",
       "short": "5aaa0f5",
       "time": 1780801464,
@@ -172,6 +461,13 @@
       "files": [
         "README.md"
       ]
+    },
+    {
+      "hash": "58692fce1019849d4f15e0d39ca01da27096dbab",
+      "short": "58692fc",
+      "time": 1780801164,
+      "subject": "Merge dev: viewer ?project= data-source for multi-project galleries (v1.5.2)",
+      "files": []
     },
     {
       "hash": "efee6a517f59c3d6956db2e760a50d6c22b20420",
@@ -185,6 +481,13 @@
         "viewer/src/data/source.js",
         "viewer/src/test/source.test.js"
       ]
+    },
+    {
+      "hash": "1ca513b8d4f50bdf0c012ef077c0b1cdb41f595c",
+      "short": "1ca513b",
+      "time": 1780797581,
+      "subject": "Merge pull request #3 from MollyAI/dev",
+      "files": []
     },
     {
       "hash": "f1510ac5f3db9c29193f1ab382e17b17e3a08e08",
@@ -205,6 +508,13 @@
         "viewer/src/ui/controls.js",
         "viewer/style.css"
       ]
+    },
+    {
+      "hash": "38608955a547fad5c1ca392b4395eba2f3b98c86",
+      "short": "3860895",
+      "time": 1780752764,
+      "subject": "Merge pull request #2 from MollyAI/dev",
+      "files": []
     },
     {
       "hash": "77f56251c67fcfa7f5b90eae111db8385d59618a",
@@ -327,6 +637,13 @@
         "tests/test_external_harness.py",
         "viewer/src/data/schema.js"
       ]
+    },
+    {
+      "hash": "95958abe419c2fa534254c648a237ec13f74d56c",
+      "short": "95958ab",
+      "time": 1780737684,
+      "subject": "Merge pull request #1 from MollyAI/dev",
+      "files": []
     },
     {
       "hash": "7a721532d94094eed4161793c411aebefba8d0ca",

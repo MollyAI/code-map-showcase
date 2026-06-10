@@ -1,4 +1,5 @@
 {
   "name": "RxSwift",
-  "description": "Reactive Programming in Swift"
+  "description": "Reactive Programming in Swift",
+  "repo": "https://github.com/ReactiveX/RxSwift.git"
 }

@@ -58,6 +58,8 @@ function metaFor(slug, model) {
     git: p.git ? { branch: p.git.branch ?? null, short: p.git.short ?? null, commit: p.git.commit ?? null } : null,
     generated_at: p.generated_at ?? null,
     refined: !!p.architecture,   // Phase 2 (/code-map:build) stamps project.architecture
+    // arch-score rubric v1 (plugin ≥1.11): `code-map score --write` stamps project.score
+    score: Number.isFinite(p.score?.total) ? p.score.total : null,
   };
 }
 
@@ -71,6 +73,7 @@ function readSidecar(slug) {
     if (typeof s.name === 'string' && s.name.trim()) out.name = s.name.trim();
     if (typeof s.description === 'string') out.description = s.description;
     if (Array.isArray(s.tags)) out.tags = s.tags;
+    if (typeof s.repo === 'string' && s.repo.trim()) out.repo = s.repo.trim();  // source URL — /update-all-maps reads this
     return out;
   } catch { return {}; }
 }
@@ -89,19 +92,22 @@ function reindex() {
       projects.push({ ...metaFor(name, model), ...readSidecar(name) });
     }
   }
-  projects.sort((a, b) => String(a.name).localeCompare(String(b.name)));
+  // arch score (desc) decides the gallery order; unscored maps sink to the end, name breaks ties
+  projects.sort((a, b) =>
+    ((b.score ?? -Infinity) - (a.score ?? -Infinity)) || String(a.name).localeCompare(String(b.name)));
   writeFileSync(INDEX, JSON.stringify({ projects }, null, 2) + '\n', 'utf8');
   console.log(`[publish] reindexed ${projects.length} project(s) → projects.json`);
 }
 
 function parseArgs(argv) {
-  const a = { from: null, slug: null, name: null, desc: null, history: true };
+  const a = { from: null, slug: null, name: null, desc: null, repo: null, history: true };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
     if (k === '--from') a.from = argv[++i];
     else if (k === '--slug') a.slug = argv[++i];
     else if (k === '--name') a.name = argv[++i];
     else if (k === '--desc') a.desc = argv[++i];
+    else if (k === '--repo') a.repo = argv[++i];
     else if (k === '--no-history') a.history = false;
     else die(`unknown flag: ${k}`);
   }
@@ -136,10 +142,11 @@ function publish(argv) {
     if (existsSync(dh)) rmSync(dh);
   }
 
-  if (a.name || a.desc != null) {
+  if (a.name || a.desc != null || a.repo) {
     const side = { ...readSidecar(slug) };
     if (a.name) side.name = a.name;
     if (a.desc != null) side.description = a.desc;
+    if (a.repo) side.repo = a.repo;
     writeFileSync(join(destDir, 'meta.json'), JSON.stringify(side, null, 2) + '\n', 'utf8');
   }
 

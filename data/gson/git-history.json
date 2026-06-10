@@ -5,7 +5,7 @@
   "commits": [
     {
       "hash": "004e7a4949e08b430e3c8996998ee5a17ff9423a",
-      "short": "004e7a4",
+      "short": "004e7a49",
       "time": 1780594918,
       "subject": "Fix: peekNumber rejects some numerals like 2^64 + \"0\" (#3034)",
       "files": [
@@ -15,7 +15,7 @@
     },
     {
       "hash": "ed2397502708ebaba53643e5c3d60e0974d7045f",
-      "short": "ed23975",
+      "short": "ed239750",
       "time": 1780345761,
       "subject": "Remove obsolete native-maven-plugin JUnit workaround (#3026)",
       "files": [
@@ -24,7 +24,7 @@
     },
     {
       "hash": "c2a1e189d26b9b5bbf0310da214d34a8b0847851",
-      "short": "c2a1e18",
+      "short": "c2a1e189",
       "time": 1780327264,
       "subject": "Bump the maven group across 1 directory with 12 updates (#3032)",
       "files": [
@@ -38,7 +38,7 @@
     },
     {
       "hash": "9eb61b30acdfd1c8497eee7de9bec3a7448ff41e",
-      "short": "9eb61b3",
+      "short": "9eb61b30",
       "time": 1780323438,
       "subject": "Bump Error Prone to 2.49.0 and fix new warnings (#3030)",
       "files": [
@@ -68,7 +68,7 @@
     },
     {
       "hash": "681c01f1e2e5064ced8cdeb6b5c2c88bbd980d4e",
-      "short": "681c01f",
+      "short": "681c01f1",
       "time": 1780322953,
       "subject": "Bump the github-actions group across 1 directory with 3 updates (#3033)",
       "files": [
@@ -81,7 +81,7 @@
     },
     {
       "hash": "df53d2f1f50b1c3abb2937e7675867e3f284eb1a",
-      "short": "df53d2f",
+      "short": "df53d2f1",
       "time": 1779995243,
       "subject": "fix(proto): cap bitFieldXXX_ index to prevent OOM in LegacyProtoTypeAdapterFactory (#3027)",
       "files": [
@@ -91,7 +91,7 @@
     },
     {
       "hash": "abfef5e8455483b878a8dea14dd42fa55832a56c",
-      "short": "abfef5e",
+      "short": "abfef5e8",
       "time": 1778099450,
       "subject": "docs: update Gson jar download link in README (#3025)",
       "files": [
@@ -100,7 +100,7 @@
     },
     {
       "hash": "8260eddffe413c132b3a38e68446da6bd083220d",
-      "short": "8260edd",
+      "short": "8260eddf",
       "time": 1777482212,
       "subject": "docs: Correct @return tag in JsonArray.getAsCharacter javadoc (#3021)",
       "files": [
@@ -109,7 +109,7 @@
     },
     {
       "hash": "6bf8bf6cbf4d4f5f72f69262be890a5a5e28259d",
-      "short": "6bf8bf6",
+      "short": "6bf8bf6c",
       "time": 1776978500,
       "subject": "fix: Include location info in NumberFormatException from JsonReader (#3000)",
       "files": [
@@ -119,7 +119,7 @@
     },
     {
       "hash": "e9a0f401b6dfca67e5ed225ca0aa5e5fe99b88e2",
-      "short": "e9a0f40",
+      "short": "e9a0f401",
       "time": 1776970838,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -135,7 +135,7 @@
     },
     {
       "hash": "3ff35d6269894901ab8006258395aafc4b9765cd",
-      "short": "3ff35d6",
+      "short": "3ff35d62",
       "time": 1776970831,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.14.0",
       "files": [
@@ -153,7 +153,7 @@
     },
     {
       "hash": "a3024fde2a5c12b9a9a0b6b914ae4899aa574d81",
-      "short": "a3024fd",
+      "short": "a3024fde",
       "time": 1776966801,
       "subject": "Bump the maven group with 13 updates (#3002)",
       "files": [
@@ -167,7 +167,7 @@
     },
     {
       "hash": "5689ffe44952ca6ed44c595886b9043286311b23",
-      "short": "5689ffe",
+      "short": "5689ffe4",
       "time": 1776961931,
       "subject": "Bump the github-actions group across 1 directory with 3 updates (#3018)",
       "files": [
@@ -180,7 +180,7 @@
     },
     {
       "hash": "48db33cbf93af6b2f5b117dfdfd826de47f7229c",
-      "short": "48db33c",
+      "short": "48db33cb",
       "time": 1776456853,
       "subject": "Add `LegacyProtoTypeAdapterFactory`. (#3014)",
       "files": [
@@ -195,7 +195,7 @@
     },
     {
       "hash": "53d703ee76ca3e951fa4a727307c1f28dbcaf3aa",
-      "short": "53d703e",
+      "short": "53d703ee",
       "time": 1775857706,
       "subject": "Update outdated comment regarding serializable types (#3012)",
       "files": [
@@ -204,7 +204,7 @@
     },
     {
       "hash": "0189b727761f31596d1a27b7c60b42478dc9f331",
-      "short": "0189b72",
+      "short": "0189b727",
       "time": 1775846716,
       "subject": "Remove `Serializable` from internal `Type` implementation classes. (#3011)",
       "files": [
@@ -213,7 +213,7 @@
     },
     {
       "hash": "f4d371d29c04066dbe7fdb31f642831f9c7f40cd",
-      "short": "f4d371d",
+      "short": "f4d371d2",
       "time": 1775410059,
       "subject": "Fix duplicate key detection when first value is null (#3006)",
       "files": [
@@ -224,7 +224,7 @@
     },
     {
       "hash": "27d9ba1eeeeb156540cf5397504a4f9f256e911f",
-      "short": "27d9ba1",
+      "short": "27d9ba1e",
       "time": 1775157232,
       "subject": "Fix typo in README (JPMS dependencies section) (#3005)",
       "files": [
@@ -233,7 +233,7 @@
     },
     {
       "hash": "1fa9b7a0a994b006b3be00e2df9de778e71e6807",
-      "short": "1fa9b7a",
+      "short": "1fa9b7a0",
       "time": 1773948970,
       "subject": "Validate that strings being parsed as integers consist of ASCII characters (#2995)",
       "files": [
@@ -243,7 +243,7 @@
     },
     {
       "hash": "b7d59549188867deb42e46073fb38735a5beda1c",
-      "short": "b7d5954",
+      "short": "b7d59549",
       "time": 1773155535,
       "subject": "Add iterator fail-fast tests for LinkedTreeMap.clear() (#2992)",
       "files": [
@@ -252,7 +252,7 @@
     },
     {
       "hash": "36cacf31b7ee0cc3ccaa68c1560d3dec0e15ced2",
-      "short": "36cacf3",
+      "short": "36cacf31",
       "time": 1773065154,
       "subject": "Add boundary tests for JsonTreeWriter.endArray() error handling (#2988)",
       "files": [
@@ -261,7 +261,7 @@
     },
     {
       "hash": "dbf0f0416596add88c9d38b3e80b4e44059863ca",
-      "short": "dbf0f04",
+      "short": "dbf0f041",
       "time": 1772827549,
       "subject": "Remove `com.google.gson.graph`. (#2990)",
       "files": [
@@ -272,7 +272,7 @@
     },
     {
       "hash": "552b4135c87f8d52bfd9ffcee6e7098e37f7a217",
-      "short": "552b413",
+      "short": "552b4135",
       "time": 1772565279,
       "subject": "Avoid a potential CheckReturnValue issue. (#2987)",
       "files": [
@@ -281,7 +281,7 @@
     },
     {
       "hash": "04091faee8e510b0252874978aea965cdf91e6a0",
-      "short": "04091fa",
+      "short": "04091fae",
       "time": 1772380163,
       "subject": "Bump the maven group across 1 directory with 5 updates (#2986)",
       "files": [
@@ -294,7 +294,7 @@
     },
     {
       "hash": "dfe9524edb23a1c8004fcb22266ef71a8848531a",
-      "short": "dfe9524",
+      "short": "dfe9524e",
       "time": 1772378393,
       "subject": "Bump actions/setup-java from 5.1.0 to 5.2.0 in the github-actions group (#2985)",
       "files": [
@@ -306,7 +306,7 @@
     },
     {
       "hash": "a8e6c962ea4f0eed90a3e81f406fb27ed2f4298d",
-      "short": "a8e6c96",
+      "short": "a8e6c962",
       "time": 1771205511,
       "subject": "Improve `JsonArrayAsListTest#testContains` (#2982)",
       "files": [
@@ -315,7 +315,7 @@
     },
     {
       "hash": "ecfda126ef81fe58a59f5355ad58efaf0fe62d01",
-      "short": "ecfda12",
+      "short": "ecfda126",
       "time": 1771013829,
       "subject": "Bump the maven group across 1 directory with 16 updates (#2979)",
       "files": [
@@ -329,7 +329,7 @@
     },
     {
       "hash": "6fd6a95c732371a7e5a1cb4007fd650eef0b0d10",
-      "short": "6fd6a95",
+      "short": "6fd6a95c",
       "time": 1771013161,
       "subject": "Fix some assertions that trigger nullness static analysis. (#2981)",
       "files": [
@@ -340,7 +340,7 @@
     },
     {
       "hash": "11daec5fe1229d4c2204e2931f8b78959a755640",
-      "short": "11daec5",
+      "short": "11daec5f",
       "time": 1771012098,
       "subject": "Remove a duplicate test assertion that triggers Error Prone. (#2980)",
       "files": [
@@ -349,7 +349,7 @@
     },
     {
       "hash": "f50fcb2bd6604d2d6d56ee802b62dc603259341c",
-      "short": "f50fcb2",
+      "short": "f50fcb2b",
       "time": 1771010825,
       "subject": "Add a newly-required Error Prone option. (#2978)",
       "files": [
@@ -358,7 +358,7 @@
     },
     {
       "hash": "5aece58d3f287f52e9df55937c0e08216663c342",
-      "short": "5aece58",
+      "short": "5aece58d",
       "time": 1769965590,
       "subject": "Bump the github-actions group with 2 updates (#2976)",
       "files": [
@@ -371,7 +371,7 @@
     },
     {
       "hash": "8526dbd2f0a7e61d5fbcc5caa163f2352fb0ddc0",
-      "short": "8526dbd",
+      "short": "8526dbd2",
       "time": 1769618794,
       "subject": "Optimize `new Gson()` (#2864)",
       "files": [
@@ -382,7 +382,7 @@
     },
     {
       "hash": "286843d4a90a4690e5e1f438c944569b3fbfb1d2",
-      "short": "286843d",
+      "short": "286843d4",
       "time": 1768229155,
       "subject": "refactor: move derived adapters from Gson to TypeAdapters (#2951)",
       "files": [
@@ -395,7 +395,7 @@
     },
     {
       "hash": "ae9604c201b3ba44babc48e982e012b1d23b69c8",
-      "short": "ae9604c",
+      "short": "ae9604c2",
       "time": 1768224685,
       "subject": "Add default capacity to EnumTypeAdapter maps (#2959)",
       "files": [
@@ -404,7 +404,7 @@
     },
     {
       "hash": "b72dbc40f0fd8aac3c40eebceffb4b6af7474b83",
-      "short": "b72dbc4",
+      "short": "b72dbc40",
       "time": 1767285976,
       "subject": "Bump the github-actions group with 5 updates (#2971)",
       "files": [
@@ -418,7 +418,7 @@
     },
     {
       "hash": "bf5d3d66e106cc8376c45e52c7cb46278fc63857",
-      "short": "bf5d3d6",
+      "short": "bf5d3d66",
       "time": 1766680716,
       "subject": "Update `test-graal-native-image`. (#2969)",
       "files": [
@@ -427,7 +427,7 @@
     },
     {
       "hash": "c97cad3b59a3d215623b757e7c38eeb2364a79a3",
-      "short": "c97cad3",
+      "short": "c97cad3b",
       "time": 1766608705,
       "subject": "Bump the maven group across 1 directory with several updates (#2967)",
       "files": [
@@ -441,7 +441,7 @@
     },
     {
       "hash": "7878ee2b3c7d71278e94e01b5896b5179df3a29a",
-      "short": "7878ee2",
+      "short": "7878ee2b",
       "time": 1766607970,
       "subject": "Don't rely on Android desugaring. (#2966)",
       "files": [
@@ -451,7 +451,7 @@
     },
     {
       "hash": "c47db7bc13875db690bcfb76e02b1e1bbb3a3353",
-      "short": "c47db7b",
+      "short": "c47db7bc",
       "time": 1766529499,
       "subject": "Add type adapters for `java.time` classes (#2948)",
       "files": [
@@ -465,7 +465,7 @@
     },
     {
       "hash": "dfc1ce001b46cb1c022012aa08152852b67dbdc9",
-      "short": "dfc1ce0",
+      "short": "dfc1ce00",
       "time": 1766528676,
       "subject": "Update `OSGiManifestIT` not to depend on order. (#2965)",
       "files": [
@@ -475,7 +475,7 @@
     },
     {
       "hash": "d437954171858e0efd53f7720acf480f11176535",
-      "short": "d437954",
+      "short": "d4379541",
       "time": 1766005434,
       "subject": "Fix outdated comment (#2954)",
       "files": [
@@ -484,7 +484,7 @@
     },
     {
       "hash": "e28fdb9303846b8c46fd5b8776f694149d0389d0",
-      "short": "e28fdb9",
+      "short": "e28fdb93",
       "time": 1764178238,
       "subject": "refactor: slightly optimize ConstructorConstructor (#2950)",
       "files": [
@@ -493,7 +493,7 @@
     },
     {
       "hash": "a271f487b5969601308ed438b2da9c8fc1a8e927",
-      "short": "a271f48",
+      "short": "a271f487",
       "time": 1764016933,
       "subject": "Add build config for Gson subset (#2947)",
       "files": [
@@ -504,7 +504,7 @@
     },
     {
       "hash": "2a213c5cdd47234efe4799232958d17b42a37889",
-      "short": "2a213c5",
+      "short": "2a213c5c",
       "time": 1763843793,
       "subject": "style: unify interface methods by removing redundant 'public' (#2944)",
       "files": [
@@ -522,7 +522,7 @@
     },
     {
       "hash": "1471917391b2cebaab70bbe68cd1dd50eb3d0b5d",
-      "short": "1471917",
+      "short": "14719173",
       "time": 1763669791,
       "subject": "Small modifications to make building a subset possible. (#2946)",
       "files": [
@@ -537,7 +537,7 @@
     },
     {
       "hash": "50a93686df9e49dd20fecff222bb9ca169a29754",
-      "short": "50a9368",
+      "short": "50a93686",
       "time": 1762286367,
       "subject": "Bump io.github.ascopes:protobuf-maven-plugin (#2941)",
       "files": [
@@ -546,7 +546,7 @@
     },
     {
       "hash": "8af86711f0d75ee8d501c38093e0c7cb4092d055",
-      "short": "8af8671",
+      "short": "8af86711",
       "time": 1762268097,
       "subject": "Bump the maven group across 1 directory with 4 updates (#2940)",
       "files": [
@@ -557,7 +557,7 @@
     },
     {
       "hash": "18bf23f9f7746c62f0f2bb478c16d17f460e875d",
-      "short": "18bf23f",
+      "short": "18bf23f9",
       "time": 1762227733,
       "subject": "Bump protobuf-maven-plugin to 4.0.1 (#2935)",
       "files": [
@@ -567,7 +567,7 @@
     },
     {
       "hash": "ac67cf95798100a7a52623b11882a6e32672fbe3",
-      "short": "ac67cf9",
+      "short": "ac67cf95",
       "time": 1762227663,
       "subject": "Add cooldown to Dependabot config (#2937)",
       "files": [
@@ -576,7 +576,7 @@
     },
     {
       "hash": "ddc55e44e754965c97a6271ec3d7cff4c33b75f2",
-      "short": "ddc55e4",
+      "short": "ddc55e44",
       "time": 1762227623,
       "subject": "Simplify common Maven args for GitHub workflows (#2936)",
       "files": [
@@ -588,7 +588,7 @@
     },
     {
       "hash": "12e048fb4f5da6093db3f3b28e1d8ebdfc12aea5",
-      "short": "12e048f",
+      "short": "12e048fb",
       "time": 1762210861,
       "subject": "Remove outdated comment in pom.xml (#2938)",
       "files": [
@@ -597,7 +597,7 @@
     },
     {
       "hash": "e25a39c65661d1c7279f1a19ac9b5ca150e5893e",
-      "short": "e25a39c",
+      "short": "e25a39c6",
       "time": 1762196476,
       "subject": "Apply the unproblematic parts of #2932. (#2933)",
       "files": [
@@ -608,7 +608,7 @@
     },
     {
       "hash": "09fcaffcd4752728e76b5baa97d357c9f993a31f",
-      "short": "09fcaff",
+      "short": "09fcaffc",
       "time": 1762183451,
       "subject": "Update to latest Error Prone, and limit its use to Java 21+. (#2931)",
       "files": [
@@ -618,7 +618,7 @@
     },
     {
       "hash": "3f3b231705798cadfcbdfc8c73e5d89937655ba2",
-      "short": "3f3b231",
+      "short": "3f3b2317",
       "time": 1762005752,
       "subject": "Bump the github-actions group with 3 updates (#2930)",
       "files": [
@@ -631,7 +631,7 @@
     },
     {
       "hash": "72537db9a6095720aca3a67abe77ec5a16200081",
-      "short": "72537db",
+      "short": "72537db9",
       "time": 1761501458,
       "subject": "Make AppendableWriter do flush and close if delegation object supports (#2925)",
       "files": [
@@ -641,7 +641,7 @@
     },
     {
       "hash": "569279fada1f623732ca4836404954d8cf8ca89c",
-      "short": "569279f",
+      "short": "569279fa",
       "time": 1759788000,
       "subject": "Bump the github-actions group with 3 updates (#2915)",
       "files": [
@@ -653,7 +653,7 @@
     },
     {
       "hash": "44ccfd03b9138d3d3f50a887268819b5bbc83b31",
-      "short": "44ccfd0",
+      "short": "44ccfd03",
       "time": 1759785675,
       "subject": "Add CI build using JDK 25 (#2921)",
       "files": [
@@ -663,7 +663,7 @@
     },
     {
       "hash": "111e5d71d075380b0805bb6a8d8d7581bab72fdf",
-      "short": "111e5d7",
+      "short": "111e5d71",
       "time": 1759775570,
       "subject": "Migrate to `io.github.ascopes:protobuf-maven-plugin` (#2920)",
       "files": [
@@ -674,7 +674,7 @@
     },
     {
       "hash": "5945989a3ba4476e84a73943d1c9f2382961f28a",
-      "short": "5945989",
+      "short": "5945989a",
       "time": 1759772911,
       "subject": "Bump the maven group with 16 updates (#2914)",
       "files": [
@@ -686,7 +686,7 @@
     },
     {
       "hash": "5ce889e2a4b7be5d342d5b94bb86f210a12e5ea9",
-      "short": "5ce889e",
+      "short": "5ce889e2",
       "time": 1759770711,
       "subject": "Improve skipping of tests (#2919)",
       "files": [
@@ -699,7 +699,7 @@
     },
     {
       "hash": "32d5feabfb3867f4d3946dfa5ef037067ef21b34",
-      "short": "32d5fea",
+      "short": "32d5feab",
       "time": 1759725422,
       "subject": "Require JDK 17 for building & update plugins and dependencies (#2918)",
       "files": [
@@ -715,7 +715,7 @@
     },
     {
       "hash": "72d3702919e11e6e6a9bb529dd842bec510ca2d9",
-      "short": "72d3702",
+      "short": "72d37029",
       "time": 1759590262,
       "subject": "Fix outdated version comment for `github/codeql-action` (#2916)",
       "files": [
@@ -726,7 +726,7 @@
     },
     {
       "hash": "ff724a9860dec652a3eaefdb9d4c2772134b7159",
-      "short": "ff724a9",
+      "short": "ff724a98",
       "time": 1757623002,
       "subject": "Simplify Central deployment & update Release Process guide (#2902)",
       "files": [
@@ -743,7 +743,7 @@
     },
     {
       "hash": "d139ba9df925b5e4acd9f017fe55d510c2f559f2",
-      "short": "d139ba9",
+      "short": "d139ba9d",
       "time": 1757536754,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -759,7 +759,7 @@
     },
     {
       "hash": "686fad782d969d8f15c7581a5435a208b810caa7",
-      "short": "686fad7",
+      "short": "686fad78",
       "time": 1757536747,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.13.2",
       "files": [
@@ -777,7 +777,7 @@
     },
     {
       "hash": "c2d252a7e93d45b224a72b4ba8148a438cc1d59b",
-      "short": "c2d252a",
+      "short": "c2d252a7",
       "time": 1757536604,
       "subject": "Switch to using central-publishing-maven-plugin. (#2900)",
       "files": [
@@ -792,7 +792,7 @@
     },
     {
       "hash": "69cb755e5209b719b57f3b6f1a864b080cdca314",
-      "short": "69cb755",
+      "short": "69cb755e",
       "time": 1757004310,
       "subject": "Bump the github-actions group with 5 updates (#2894)",
       "files": [
@@ -806,7 +806,7 @@
     },
     {
       "hash": "ea552c2278784e12094c8daea06b18679b2da2c9",
-      "short": "ea552c2",
+      "short": "ea552c22",
       "time": 1756997916,
       "subject": "Bump the maven group across 1 directory with 3 updates (#2898)",
       "files": [
@@ -817,7 +817,7 @@
     },
     {
       "hash": "fdc616d0da2fea0b28828386a38396eac66d85fd",
-      "short": "fdc616d",
+      "short": "fdc616d0",
       "time": 1755126342,
       "subject": "Set top-level permissions for CodeQL workflow (#2889)",
       "files": [
@@ -826,7 +826,7 @@
     },
     {
       "hash": "9334715a48aaf11c9f80f89f8242ba7d1c2d0c27",
-      "short": "9334715",
+      "short": "9334715a",
       "time": 1755112039,
       "subject": "Create scorecard.yml (#2888)",
       "files": [
@@ -835,7 +835,7 @@
     },
     {
       "hash": "f7de5c2c22dae98f2f98eefcb70c920ff71e437b",
-      "short": "f7de5c2",
+      "short": "f7de5c2c",
       "time": 1754068306,
       "subject": "Bump the maven group with 8 updates (#2885)",
       "files": [
@@ -848,7 +848,7 @@
     },
     {
       "hash": "8c23cd363daec806d2e9b69665520043914782ac",
-      "short": "8c23cd3",
+      "short": "8c23cd36",
       "time": 1754063950,
       "subject": "Update sources to satisfy a new Error Prone check. (#2887)",
       "files": [
@@ -897,7 +897,7 @@
     },
     {
       "hash": "5eab3eda9fff9db77b82eae621c26f1d7263386f",
-      "short": "5eab3ed",
+      "short": "5eab3eda",
       "time": 1754057263,
       "subject": "Bump the github-actions group with 2 updates (#2886)",
       "files": [
@@ -908,7 +908,7 @@
     },
     {
       "hash": "5f5c20026009010608de17a9e5312849230b3b0b",
-      "short": "5f5c200",
+      "short": "5f5c2002",
       "time": 1753986970,
       "subject": "Bump the maven group across 1 directory with 10 updates (#2872)",
       "files": [
@@ -917,7 +917,7 @@
     },
     {
       "hash": "06976131c7340d00fe5fc5c76d29f812852c6fb2",
-      "short": "0697613",
+      "short": "06976131",
       "time": 1753986060,
       "subject": "Update to `org.graalvm.buildtools:native-maven-plugin:0.11.0`. (#2884)",
       "files": [
@@ -926,7 +926,7 @@
     },
     {
       "hash": "3488c30c65afb7bc3715c68b2a4f10ca2500c821",
-      "short": "3488c30",
+      "short": "3488c30c",
       "time": 1752792034,
       "subject": "Remove redundant warning suppression (#2876)",
       "files": [
@@ -935,7 +935,7 @@
     },
     {
       "hash": "f05f70db5a4860081a30edf6408ff18aec278bac",
-      "short": "f05f70d",
+      "short": "f05f70db",
       "time": 1752704538,
       "subject": "Run CodeQL for GitHub Actions & improve workflows (#2853)",
       "files": [
@@ -946,7 +946,7 @@
     },
     {
       "hash": "676b005ace2a44fbf821157b6211197ddbcb614c",
-      "short": "676b005",
+      "short": "676b005a",
       "time": 1752702862,
       "subject": "Remove internal class `GsonPreconditions` and improve exception messages (#2879)",
       "files": [
@@ -960,7 +960,7 @@
     },
     {
       "hash": "164ac9dfe1e9b056faf5e37ec1a2baaf4681dc4f",
-      "short": "164ac9d",
+      "short": "164ac9df",
       "time": 1752615694,
       "subject": "Remove `GsonPreconditions#checkNotNull` (#2878)",
       "files": [
@@ -969,7 +969,7 @@
     },
     {
       "hash": "81d15f545d98e902ff1ebdb9c239f1719b3bc3aa",
-      "short": "81d15f5",
+      "short": "81d15f54",
       "time": 1752518933,
       "subject": "Address some minor Error Prone warnings. (#2842)",
       "files": [
@@ -979,7 +979,7 @@
     },
     {
       "hash": "e0dadb55f8bff55ffb232f1c6e3b8b0d83e9ecf8",
-      "short": "e0dadb5",
+      "short": "e0dadb55",
       "time": 1751733784,
       "subject": "Update most dependencies found by Dependabot. (#2875)",
       "files": [
@@ -991,7 +991,7 @@
     },
     {
       "hash": "0c39897447a2e01137d66de0d153cf7a3dcab63a",
-      "short": "0c39897",
+      "short": "0c398974",
       "time": 1751731331,
       "subject": "Update `com.google.errorprone` and fix issues it flags. (#2874)",
       "files": [
@@ -1004,7 +1004,7 @@
     },
     {
       "hash": "9a492d7b55080b60f8aa26ace0c91362ea65b962",
-      "short": "9a492d7",
+      "short": "9a492d7b",
       "time": 1751730368,
       "subject": "More Error Prone BooleanLiteral fixes. (#2873)",
       "files": [
@@ -1013,7 +1013,7 @@
     },
     {
       "hash": "1b0140cd823cc65cae4b612e19852bd4d51e38d4",
-      "short": "1b0140c",
+      "short": "1b0140cd",
       "time": 1751729442,
       "subject": "Use boxed `true` to satisfy Error Prone (#2871)",
       "files": [
@@ -1022,7 +1022,7 @@
     },
     {
       "hash": "68255a414afdfc619785a287f715e9861b2917a1",
-      "short": "68255a4",
+      "short": "68255a41",
       "time": 1751728992,
       "subject": "Bump the github-actions group with 2 updates (#2867)",
       "files": [
@@ -1032,7 +1032,7 @@
     },
     {
       "hash": "dd2fe59c0d3390b2ad3dd365ed6938a5c15844cb",
-      "short": "dd2fe59",
+      "short": "dd2fe59c",
       "time": 1748804339,
       "subject": "Bump the github-actions group with 2 updates (#2854)",
       "files": [
@@ -1044,7 +1044,7 @@
     },
     {
       "hash": "330c613e7596e801df055bb60c1f6e41b22fbdcd",
-      "short": "330c613",
+      "short": "330c613e",
       "time": 1748563358,
       "subject": "Remove User Guide links to non-existent Gson website (#2861)",
       "files": [
@@ -1053,7 +1053,7 @@
     },
     {
       "hash": "de140ed74fcf9894709286d6cec5c405034d9234",
-      "short": "de140ed",
+      "short": "de140ed7",
       "time": 1747930464,
       "subject": "Document using Kotlin Serialization or Moshi instead (#2857)",
       "files": [
@@ -1062,7 +1062,7 @@
     },
     {
       "hash": "f75118e27c65409365ec8c8f32b49dfddfaf4186",
-      "short": "f75118e",
+      "short": "f75118e2",
       "time": 1747766009,
       "subject": "Tweak R8 / ProGuard Troubleshooting Guide entry (#2858)",
       "files": [
@@ -1071,7 +1071,7 @@
     },
     {
       "hash": "3c9abdeea9afd3a3d7a7f99658455ceb4a994029",
-      "short": "3c9abde",
+      "short": "3c9abdee",
       "time": 1747262095,
       "subject": "Add warning about usage of Gson on Android (#2856)",
       "files": [
@@ -1081,7 +1081,7 @@
     },
     {
       "hash": "259c477cecaea8e73cd19e5207ba63edc04157da",
-      "short": "259c477",
+      "short": "259c477c",
       "time": 1745506153,
       "subject": "refactor: replace local StringWriter with StringBuilder (#2852)",
       "files": [
@@ -1092,7 +1092,7 @@
     },
     {
       "hash": "5206d803dab1655472d655a0b6710b4622039a22",
-      "short": "5206d80",
+      "short": "5206d803",
       "time": 1745456626,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -1108,7 +1108,7 @@
     },
     {
       "hash": "257bee9eff81889893ca02a6925aa1b620378e9e",
-      "short": "257bee9",
+      "short": "257bee9e",
       "time": 1745456618,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.13.1",
       "files": [
@@ -1127,7 +1127,7 @@
     },
     {
       "hash": "63d74b39400be6e2a244a227820fa9d984a493e9",
-      "short": "63d74b3",
+      "short": "63d74b39",
       "time": 1745009461,
       "subject": "Bump the maven group with 5 updates (#2851)",
       "files": [
@@ -1139,7 +1139,7 @@
     },
     {
       "hash": "810e3560590bb807ed7113ccfff716aac21a3f33",
-      "short": "810e356",
+      "short": "810e3560",
       "time": 1744841091,
       "subject": "Add shrinker test for interface implementation being deserialized (#2845)",
       "files": [
@@ -1150,7 +1150,7 @@
     },
     {
       "hash": "00ae39775708147e115512be5d4f92bee02e9b89",
-      "short": "00ae397",
+      "short": "00ae3977",
       "time": 1744666225,
       "subject": "Adjust Troubleshooting Guide ProGuard / R8 section (#2844)",
       "files": [
@@ -1160,7 +1160,7 @@
     },
     {
       "hash": "0eec6f35c59f164ee49ef175e38896db20296b44",
-      "short": "0eec6f3",
+      "short": "0eec6f35",
       "time": 1744660961,
       "subject": "Remove outdated android-proguard-example (#2843)",
       "files": [
@@ -1181,7 +1181,7 @@
     },
     {
       "hash": "4e65e6ab368d92638b4ca04521958dbf1d3753e7",
-      "short": "4e65e6a",
+      "short": "4e65e6ab",
       "time": 1744585456,
       "subject": "Give FieldNamingStrategy the ability to return multiple String names (#2776)",
       "files": [
@@ -1192,7 +1192,7 @@
     },
     {
       "hash": "6010131366fa3f72c3f07151bff6d1c4e1a7f6e0",
-      "short": "6010131",
+      "short": "60101313",
       "time": 1744381738,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -1208,7 +1208,7 @@
     },
     {
       "hash": "bfe0fd58e3efc9f54938a87b955bbfc42dfd45e1",
-      "short": "bfe0fd5",
+      "short": "bfe0fd58",
       "time": 1744381731,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.13.0",
       "files": [
@@ -1226,7 +1226,7 @@
     },
     {
       "hash": "6ed64ca3a8990c60b758d838e16713b2a1e0f461",
-      "short": "6ed64ca",
+      "short": "6ed64ca3",
       "time": 1744145527,
       "subject": "add multi-catch support to the code base (#2841)",
       "files": [
@@ -1237,7 +1237,7 @@
     },
     {
       "hash": "0074376f7e605700f218ff7362dd45a690926074",
-      "short": "0074376",
+      "short": "0074376f",
       "time": 1744124485,
       "subject": "Bump the maven group with 3 updates (#2840)",
       "files": [
@@ -1248,7 +1248,7 @@
     },
     {
       "hash": "45e5e141b1a39926e6b43c6eacd3dc0280321f71",
-      "short": "45e5e14",
+      "short": "45e5e141",
       "time": 1743955517,
       "subject": "Rename `$Gson$Preconditions` and `$Gson$Types`. (#2838)",
       "files": [
@@ -1273,7 +1273,7 @@
     },
     {
       "hash": "c6d44259b53a9b2756b5767b843d15e8acacaa31",
-      "short": "c6d4425",
+      "short": "c6d44259",
       "time": 1743709374,
       "subject": "Remove obsolete comment in pom.xml (#2835)",
       "files": [
@@ -1282,7 +1282,7 @@
     },
     {
       "hash": "9afd6f8e6c2d71ba0b3b7e77d56198793b9f3bcc",
-      "short": "9afd6f8",
+      "short": "9afd6f8e",
       "time": 1743704301,
       "subject": "Bump the maven group with 10 updates (#2831)",
       "files": [
@@ -1294,7 +1294,7 @@
     },
     {
       "hash": "ad5371eaa4af3555a6277c85a8ba27c09804b712",
-      "short": "ad5371e",
+      "short": "ad5371ea",
       "time": 1743703608,
       "subject": "Fix findings that are new with the latest Error Prone. (#2834)",
       "files": [
@@ -1309,7 +1309,7 @@
     },
     {
       "hash": "de190d7ef5feb4950d5daca819a625b39f3fd2f5",
-      "short": "de190d7",
+      "short": "de190d7e",
       "time": 1743526727,
       "subject": "Restructure code to avoid assignment expression warning. (#2833)",
       "files": [
@@ -1318,7 +1318,7 @@
     },
     {
       "hash": "3d6684741e1086e589783e78a356293c6ea9f8d6",
-      "short": "3d66847",
+      "short": "3d668474",
       "time": 1743522591,
       "subject": "Bump the github-actions group with 3 updates (#2832)",
       "files": [
@@ -1330,7 +1330,7 @@
     },
     {
       "hash": "2549ba93fc48f4c29f1a5c82553ce666712f183a",
-      "short": "2549ba9",
+      "short": "2549ba93",
       "time": 1742395061,
       "subject": "Fix ConstructorConstructor creating mismatching Collection and Map instances (#2068)",
       "files": [
@@ -1349,7 +1349,7 @@
     },
     {
       "hash": "f3232407812bca18ba54f7b8b41de9028ce64aba",
-      "short": "f323240",
+      "short": "f3232407",
       "time": 1742247680,
       "subject": "Add `@CanIgnoreReturnValue` to `GraphAdapterBuilder` methods. (#2828)",
       "files": [
@@ -1358,7 +1358,7 @@
     },
     {
       "hash": "38f4b62e79d0d6ec73c85fe31688a30aa4629bb1",
-      "short": "38f4b62",
+      "short": "38f4b62e",
       "time": 1742220246,
       "subject": "Bump the maven group across 1 directory with 9 updates (#2826)",
       "files": [
@@ -1372,7 +1372,7 @@
     },
     {
       "hash": "fe6ca7b82fce1ecdb1295e5b24aefc92d59868bb",
-      "short": "fe6ca7b",
+      "short": "fe6ca7b8",
       "time": 1742140394,
       "subject": "Don't run GitHub workflows twice for Dependabot PRs (#2824)",
       "files": [
@@ -1382,7 +1382,7 @@
     },
     {
       "hash": "ed1ed5896670be65fcb7120373349864e6327855",
-      "short": "ed1ed58",
+      "short": "ed1ed589",
       "time": 1740839795,
       "subject": "Bump the github-actions group with 3 updates (#2819)",
       "files": [
@@ -1394,7 +1394,7 @@
     },
     {
       "hash": "0e591c207121fdef26a795096adc8c0076caae21",
-      "short": "0e591c2",
+      "short": "0e591c20",
       "time": 1740331005,
       "subject": "Don't assert exact exception type when StackOverflowError is thrown (#2815)",
       "files": [
@@ -1403,7 +1403,7 @@
     },
     {
       "hash": "c395dd1fdf2590c575965208f1b479dd76a6c926",
-      "short": "c395dd1",
+      "short": "c395dd1f",
       "time": 1740186483,
       "subject": "Fix `GraphAdapterBuilder#addType(Type)` delegating to previous creator (#2811)",
       "files": [
@@ -1413,7 +1413,7 @@
     },
     {
       "hash": "016315c2bc1c37306e46f1cfa5ebd6cf4f0cc495",
-      "short": "016315c",
+      "short": "016315c2",
       "time": 1740186306,
       "subject": "Fix duplicate resource warning for shrinker test (#2812)",
       "files": [
@@ -1422,7 +1422,7 @@
     },
     {
       "hash": "87d30c0686822426ad2711a85bced1b5bc582572",
-      "short": "87d30c0",
+      "short": "87d30c06",
       "time": 1740096905,
       "subject": "Remove redundant generic type arguments from method calls (#2810)",
       "files": [
@@ -1433,7 +1433,7 @@
     },
     {
       "hash": "528fd3195bad9c6c816e77c96750b3188a514365",
-      "short": "528fd31",
+      "short": "528fd319",
       "time": 1738716066,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -1442,7 +1442,7 @@
     },
     {
       "hash": "4b5820d992c975c3efb2307062f893455c70369f",
-      "short": "4b5820d",
+      "short": "4b5820d9",
       "time": 1738716064,
       "subject": "[maven-release-plugin] prepare release gson-extras-2.12.1",
       "files": [
@@ -1451,7 +1451,7 @@
     },
     {
       "hash": "6422adf6e5c73ecc5fda7a0cb00b100aca9892fa",
-      "short": "6422adf",
+      "short": "6422adf6",
       "time": 1738513402,
       "subject": "Fix TODO and add proper documentation for GraphAdapterBuilder (#2800)",
       "files": [
@@ -1460,7 +1460,7 @@
     },
     {
       "hash": "a85c2a1d353e65956a1042d706b35af82010487f",
-      "short": "a85c2a1",
+      "short": "a85c2a1d",
       "time": 1738442795,
       "subject": "Bump the maven group across 1 directory with 4 updates",
       "files": [
@@ -1471,7 +1471,7 @@
     },
     {
       "hash": "f44cd2b6bda2a0c0d7d27be226a792b5e3f39512",
-      "short": "f44cd2b",
+      "short": "f44cd2b6",
       "time": 1738441908,
       "subject": "Update spotless-maven-plugin. (#2801)",
       "files": [
@@ -1482,7 +1482,7 @@
     },
     {
       "hash": "9fed377be8a7003b237ebc93f7cfa94de7c78990",
-      "short": "9fed377",
+      "short": "9fed377b",
       "time": 1738440775,
       "subject": "Bump the github-actions group with 4 updates (#2798)",
       "files": [
@@ -1495,7 +1495,7 @@
     },
     {
       "hash": "28aff4703315527fcf3f673f89f8ea93530dc8d9",
-      "short": "28aff47",
+      "short": "28aff470",
       "time": 1738278426,
       "subject": "Reduce dependencies of test helper classes. (#2796)",
       "files": [
@@ -1506,7 +1506,7 @@
     },
     {
       "hash": "5ccd7fbb764f8eba830280da3a54e5453011ddd6",
-      "short": "5ccd7fb",
+      "short": "5ccd7fbb",
       "time": 1738277439,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -1522,7 +1522,7 @@
     },
     {
       "hash": "29e3d1d2cc0ce4175378e511a87f538561625515",
-      "short": "29e3d1d",
+      "short": "29e3d1d2",
       "time": 1738277434,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.12.1",
       "files": [
@@ -1540,7 +1540,7 @@
     },
     {
       "hash": "be456cf0f7f7b9070eaae26fe1d3130e07e0d385",
-      "short": "be456cf",
+      "short": "be456cf0",
       "time": 1738260917,
       "subject": "Make the import of com.google.errorprone optional (#2795)",
       "files": [
@@ -1550,7 +1550,7 @@
     },
     {
       "hash": "b2e26fa97b7ccba080a082a9bf9741e24d5c523d",
-      "short": "b2e26fa",
+      "short": "b2e26fa9",
       "time": 1738168225,
       "subject": "Bump the github-actions group with 3 updates (#2785)",
       "files": [
@@ -1563,7 +1563,7 @@
     },
     {
       "hash": "10bdd6dc6a2f86151762e9c18d155970e90d14a9",
-      "short": "10bdd6d",
+      "short": "10bdd6dc",
       "time": 1738084141,
       "subject": "Simplify collection type adapters slightly. (#2791)",
       "files": [
@@ -1573,7 +1573,7 @@
     },
     {
       "hash": "ab9c54f40bc36abc4af670fff187a8b7436b8089",
-      "short": "ab9c54f",
+      "short": "ab9c54f4",
       "time": 1738017620,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -1589,7 +1589,7 @@
     },
     {
       "hash": "aaf7a12d8004a8b6e51a713ce5b0a42c3e78809c",
-      "short": "aaf7a12",
+      "short": "aaf7a12d",
       "time": 1738017614,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.12.0",
       "files": [
@@ -1609,7 +1609,7 @@
     },
     {
       "hash": "a2b1c3c88276697578a961de8286752e772c55db",
-      "short": "a2b1c3c",
+      "short": "a2b1c3c8",
       "time": 1738015474,
       "subject": "Allow registering adapters for `JsonElement` again (#2789)",
       "files": [
@@ -1619,7 +1619,7 @@
     },
     {
       "hash": "e5dce841f73382cb7acdfe32250767ddb2c86b49",
-      "short": "e5dce84",
+      "short": "e5dce841",
       "time": 1735831749,
       "subject": "Bump the maven group with 8 updates (#2784)",
       "files": [
@@ -1635,7 +1635,7 @@
     },
     {
       "hash": "84e5f16acafaa7c55d80a3621a37c7884ca928b6",
-      "short": "84e5f16",
+      "short": "84e5f16a",
       "time": 1733072247,
       "subject": "Bump the maven group with 7 updates (#2777)",
       "files": [
@@ -1647,7 +1647,7 @@
     },
     {
       "hash": "9f3e577d8286aef3793b7e867f6e00eee68f15fd",
-      "short": "9f3e577",
+      "short": "9f3e577d",
       "time": 1733072181,
       "subject": "Bump the github-actions group with 2 updates (#2778)",
       "files": [
@@ -1657,7 +1657,7 @@
     },
     {
       "hash": "78caa5e69ec1c914bd0edbe888d0c10681cb8e91",
-      "short": "78caa5e",
+      "short": "78caa5e6",
       "time": 1731020074,
       "subject": "Improve Maven plugin configuration (#2775)",
       "files": [
@@ -1668,7 +1668,7 @@
     },
     {
       "hash": "04f66f993cc650be48ab472bbf41f5e9b568ff38",
-      "short": "04f66f9",
+      "short": "04f66f99",
       "time": 1730484573,
       "subject": "Bump the maven group with 10 updates (#2773)",
       "files": [
@@ -1682,7 +1682,7 @@
     },
     {
       "hash": "9fbd2f076f1c13cb4a676fa33b3d041e35f6f80f",
-      "short": "9fbd2f0",
+      "short": "9fbd2f07",
       "time": 1730483514,
       "subject": "Bump the github-actions group with 5 updates (#2774)",
       "files": [
@@ -1695,7 +1695,7 @@
     },
     {
       "hash": "44c93364c9347404e93cd6a3323201ceae6b2a43",
-      "short": "44c9336",
+      "short": "44c93364",
       "time": 1729517832,
       "subject": "Simplify equality checks using Objects.equals in PostConstructAdapterFactoryTest (#2767)",
       "files": [
@@ -1704,7 +1704,7 @@
     },
     {
       "hash": "3e5ccb171a56b3278f7123638631b945ec52e5cb",
-      "short": "3e5ccb1",
+      "short": "3e5ccb17",
       "time": 1729442889,
       "subject": "Change the use of == operator to isEmpty() in JsonObject (#2768)",
       "files": [
@@ -1713,7 +1713,7 @@
     },
     {
       "hash": "e430a3d181e63d1efac05164bf52ec0466af12b7",
-      "short": "e430a3d",
+      "short": "e430a3d1",
       "time": 1729442494,
       "subject": "Use better names for lambda parameters in tests (#2770)",
       "files": [
@@ -1722,7 +1722,7 @@
     },
     {
       "hash": "2dc29f7a15f6c2b6de384e8e1e545f20b1c8d5df",
-      "short": "2dc29f7",
+      "short": "2dc29f7a",
       "time": 1729262027,
       "subject": "Replace anonymous class creation with lambdas in ConstructorConstructor (#2763)",
       "files": [
@@ -1731,7 +1731,7 @@
     },
     {
       "hash": "73768be112357ec7358c15de8b7f72285732571e",
-      "short": "73768be",
+      "short": "73768be1",
       "time": 1729261970,
       "subject": "Replace anonymous classes with lambdas in tests (#2766)",
       "files": [
@@ -1753,7 +1753,7 @@
     },
     {
       "hash": "8757b0c0483924c4ff892e6443e970f9c123a46d",
-      "short": "8757b0c",
+      "short": "8757b0c0",
       "time": 1729261797,
       "subject": "Use GraalVM for JDK 21 in GitHub workflow (#2765)",
       "files": [
@@ -1763,7 +1763,7 @@
     },
     {
       "hash": "5ec834f46bb0a8e7b8110595b0061dff9f759f84",
-      "short": "5ec834f",
+      "short": "5ec834f4",
       "time": 1729111959,
       "subject": "Update graalvm/setup-graalvm to 1.2.4, fixing workflow failure (#2764)",
       "files": [
@@ -1772,7 +1772,7 @@
     },
     {
       "hash": "23bf512e3581966e6bce5b92078c72619aa7ead8",
-      "short": "23bf512",
+      "short": "23bf512e",
       "time": 1728922708,
       "subject": "Refactor switch-case to if-else in UtcDateTypeAdapter (#2760)",
       "files": [
@@ -1781,7 +1781,7 @@
     },
     {
       "hash": "6c2e3db7d25ceceabe056aeb8b65477fdd509214",
-      "short": "6c2e3db",
+      "short": "6c2e3db7",
       "time": 1728851386,
       "subject": "Enforce rawType to be a Class in ParameterizedTypeImpl (#2759)",
       "files": [
@@ -1791,7 +1791,7 @@
     },
     {
       "hash": "7e98ebd3e53d7767e338b446dedc3996b2082257",
-      "short": "7e98ebd",
+      "short": "7e98ebd3",
       "time": 1728742724,
       "subject": "Support Properties subclasses in GsonTypes.getMapKeyAndValueTypes (#2758)",
       "files": [
@@ -1801,7 +1801,7 @@
     },
     {
       "hash": "ec5a5e4e1b4680c747fdbc6ddbc1f4488ddcf3ed",
-      "short": "ec5a5e4",
+      "short": "ec5a5e4e",
       "time": 1728569764,
       "subject": "Split out the `java.awt.Point` check into its own test method. (#2757)",
       "files": [
@@ -1810,7 +1810,7 @@
     },
     {
       "hash": "2aff513c5a0582036ede4aea7a2bc8aefb126e55",
-      "short": "2aff513",
+      "short": "2aff513c",
       "time": 1728438552,
       "subject": "Change the use of try to try-with-resources in ParseBenchmark resourceToString() (#2755)",
       "files": [
@@ -1819,7 +1819,7 @@
     },
     {
       "hash": "48894530f1094f76b6cc0ea7c6b7e3df644578ac",
-      "short": "4889453",
+      "short": "48894530",
       "time": 1728437015,
       "subject": "Refactor if-else chains to switch in benchmark methods (#2756)",
       "files": [
@@ -1829,7 +1829,7 @@
     },
     {
       "hash": "3741287b3bb6103cccf86a1bae84a11d1362f21d",
-      "short": "3741287",
+      "short": "3741287b",
       "time": 1728436675,
       "subject": "Use Guava testlib for collection tests (#2746)",
       "files": [
@@ -1840,7 +1840,7 @@
     },
     {
       "hash": "e028e89109c01fb241da7904153a777f2f1bdb03",
-      "short": "e028e89",
+      "short": "e028e891",
       "time": 1728436410,
       "subject": "Bump the maven group across 1 directory with 9 updates (#2752)",
       "files": [
@@ -1853,7 +1853,7 @@
     },
     {
       "hash": "9471163df1f972975878784d9fd3c646c8d0b840",
-      "short": "9471163",
+      "short": "9471163d",
       "time": 1728434909,
       "subject": "Fix some new Error Prone warnings. (#2753)",
       "files": [
@@ -1871,7 +1871,7 @@
     },
     {
       "hash": "afed86beaddf0812f4cdd038d99f461295e67a8a",
-      "short": "afed86b",
+      "short": "afed86be",
       "time": 1727800898,
       "subject": "Only run Error Prone with JDK >= 17. (#2751)",
       "files": [
@@ -1880,7 +1880,7 @@
     },
     {
       "hash": "e7185cf8eaa8e3e937b9e99b04b8e57fe6f6c3b0",
-      "short": "e7185cf",
+      "short": "e7185cf8",
       "time": 1727789618,
       "subject": "Bump the github-actions group with 3 updates (#2750)",
       "files": [
@@ -1892,7 +1892,7 @@
     },
     {
       "hash": "0eb681b1a3ed8e2241f926446abc9b62c5986bbf",
-      "short": "0eb681b",
+      "short": "0eb681b1",
       "time": 1727138104,
       "subject": "Java 8 follow-up changes (#2747)",
       "files": [
@@ -1944,7 +1944,7 @@
     },
     {
       "hash": "58eaac338786f449335e389a7f3c73ed40252ea4",
-      "short": "58eaac3",
+      "short": "58eaac33",
       "time": 1727064058,
       "subject": "Build for Java 8 rather than Java 7. (#2744)",
       "files": [
@@ -1956,7 +1956,7 @@
     },
     {
       "hash": "3ce6eb87983dd71bf6b47ff64645398e9caf8d14",
-      "short": "3ce6eb8",
+      "short": "3ce6eb87",
       "time": 1726763367,
       "subject": "Bump com.google.protobuf:protobuf-java (#2745)",
       "files": [
@@ -1965,7 +1965,7 @@
     },
     {
       "hash": "61609323da441e057e711362f93bc748f340f6cc",
-      "short": "6160932",
+      "short": "61609323",
       "time": 1726526581,
       "subject": "Fix a class loading deadlock involving `TypeAdapters`. (#2740)",
       "files": [
@@ -1978,7 +1978,7 @@
     },
     {
       "hash": "48889dba12f20c7e828469f2617e1bb49b6cfe30",
-      "short": "48889db",
+      "short": "48889dba",
       "time": 1725759932,
       "subject": "Extend test for OSGi manifest attributes (#2738)",
       "files": [
@@ -1990,7 +1990,7 @@
     },
     {
       "hash": "6af67052e5e088701d65addd0d40ef7498adb5ac",
-      "short": "6af6705",
+      "short": "6af67052",
       "time": 1725554489,
       "subject": "remove the self-Import of gson.annotations (#2735)",
       "files": [
@@ -2000,7 +2000,7 @@
     },
     {
       "hash": "4e4c2fd6279536a6da84f42ca5adf0b7b208d786",
-      "short": "4e4c2fd",
+      "short": "4e4c2fd6",
       "time": 1725401074,
       "subject": "EnumTypeAdapter constructor optimization (#2734)",
       "files": [
@@ -2009,7 +2009,7 @@
     },
     {
       "hash": "7c55d8babe0ac9b21b3d3e9db655afa3f1b3bbf2",
-      "short": "7c55d8b",
+      "short": "7c55d8ba",
       "time": 1725401001,
       "subject": "Add NullSafeTypeAdapter to prevent TypeAdapter.nullSafe() (#2731)",
       "files": [
@@ -2019,7 +2019,7 @@
     },
     {
       "hash": "3feae551847b530bba2e327266e4be042dedf1cc",
-      "short": "3feae55",
+      "short": "3feae551",
       "time": 1725215133,
       "subject": "Bump the maven group with 16 updates (#2732)",
       "files": [
@@ -2032,7 +2032,7 @@
     },
     {
       "hash": "eb43194b49bc9ddf4822dca985f23011d3f3ea51",
-      "short": "eb43194",
+      "short": "eb43194b",
       "time": 1725208985,
       "subject": "Bump the github-actions group with 4 updates (#2733)",
       "files": [
@@ -2045,7 +2045,7 @@
     },
     {
       "hash": "93596dac5a33d991618aad18ce980788373bfe1d",
-      "short": "93596da",
+      "short": "93596dac",
       "time": 1723907352,
       "subject": "Move enum and `JsonElement` adapter classes to separate class files (#2727)",
       "files": [
@@ -2059,7 +2059,7 @@
     },
     {
       "hash": "9615c8d7c895797872d7e601702e690e5ed7a2e8",
-      "short": "9615c8d",
+      "short": "9615c8d7",
       "time": 1722537506,
       "subject": "Bump the maven group with 12 updates (#2723)",
       "files": [
@@ -2072,7 +2072,7 @@
     },
     {
       "hash": "c4b6c814aa35444220c176f43dcf4249e7c2259d",
-      "short": "c4b6c81",
+      "short": "c4b6c814",
       "time": 1722536026,
       "subject": "Suppress a warning from Error Prone. (#2724)",
       "files": [
@@ -2081,7 +2081,7 @@
     },
     {
       "hash": "17c74ebb2866d1a5f9701824d48d5b7be0271b45",
-      "short": "17c74eb",
+      "short": "17c74ebb",
       "time": 1722533043,
       "subject": "Bump the github-actions group with 2 updates (#2722)",
       "files": [
@@ -2092,7 +2092,7 @@
     },
     {
       "hash": "b7e268ff19f405faf3d61dab13ed21933c0bf5aa",
-      "short": "b7e268f",
+      "short": "b7e268ff",
       "time": 1722007525,
       "subject": "Fix the test properly. (#2720)",
       "files": [
@@ -2101,7 +2101,7 @@
     },
     {
       "hash": "d1badbae65cccdc4e772bcf295c640af97b5674a",
-      "short": "d1badba",
+      "short": "d1badbae",
       "time": 1722005760,
       "subject": "Reference the default nesting limit by name rather than as a constant. (#2719)",
       "files": [
@@ -2111,7 +2111,7 @@
     },
     {
       "hash": "b6912c2763fe8c4e9501acff282aee472c616029",
-      "short": "b6912c2",
+      "short": "b6912c27",
       "time": 1721779396,
       "subject": "Remove old code style configs (#2717)",
       "files": [
@@ -2121,7 +2121,7 @@
     },
     {
       "hash": "1039427ff0100293dd3cf967a53a55282c0fef6b",
-      "short": "1039427",
+      "short": "1039427f",
       "time": 1721411238,
       "subject": "Add nesting limit for `JsonReader` (#2588)",
       "files": [
@@ -2136,7 +2136,7 @@
     },
     {
       "hash": "18cf79aad1474c82bf2b775af2f7ed1023a6a76b",
-      "short": "18cf79a",
+      "short": "18cf79aa",
       "time": 1720357232,
       "subject": "Move bnd.bnd file configuration into 'bnd' element of bnd-maven-plugin (#2712)",
       "files": [
@@ -2146,7 +2146,7 @@
     },
     {
       "hash": "73b7781a936605578b1633b42a582809fbf3994e",
-      "short": "73b7781",
+      "short": "73b7781a",
       "time": 1720191981,
       "subject": "Remove duplicated declaration of required OSGi execution environment (#2711)",
       "files": [
@@ -2155,7 +2155,7 @@
     },
     {
       "hash": "c597156659c3485a8f920297755670f6a08c5469",
-      "short": "c597156",
+      "short": "c5971566",
       "time": 1719844465,
       "subject": "Bump the github-actions group with 3 updates (#2708)",
       "files": [
@@ -2167,7 +2167,7 @@
     },
     {
       "hash": "1c93dd9e1a35d2417b6faa09676b13157a3f0a7a",
-      "short": "1c93dd9",
+      "short": "1c93dd9e",
       "time": 1719843974,
       "subject": "Bump the maven group with 8 updates (#2709)",
       "files": [
@@ -2180,7 +2180,7 @@
     },
     {
       "hash": "e8cdabf296cd4c2c1550ed76cf27a1a8e0c4ec59",
-      "short": "e8cdabf",
+      "short": "e8cdabf2",
       "time": 1719509190,
       "subject": "Fix typeArguments array not being cloned when resolving ParameterizedType with changed owner (#2706)",
       "files": [
@@ -2189,7 +2189,7 @@
     },
     {
       "hash": "3621e51e0390d48062f80bb5677a46bc06bb0af8",
-      "short": "3621e51",
+      "short": "3621e51e",
       "time": 1719088323,
       "subject": "Allow reading `json_name` field option for proto serialization (#2701)",
       "files": [
@@ -2200,7 +2200,7 @@
     },
     {
       "hash": "00028fb5a7f3fc9b72d77b2d028a58e3155dadec",
-      "short": "00028fb",
+      "short": "00028fb5",
       "time": 1718751749,
       "subject": "Remove `AccessController` usage for enum adapter (#2704)",
       "files": [
@@ -2210,7 +2210,7 @@
     },
     {
       "hash": "d4d6744f8c225709e1adcc38eaae4e968c476125",
-      "short": "d4d6744",
+      "short": "d4d6744f",
       "time": 1718751634,
       "subject": "Improve `JsonWriter#value(Number)` performance (#2702)",
       "files": [
@@ -2219,7 +2219,7 @@
     },
     {
       "hash": "99cc4cb11f73a6d672aa6381013d651b7921e00f",
-      "short": "99cc4cb",
+      "short": "99cc4cb1",
       "time": 1717802919,
       "subject": "Migrate all tests to Truth & use `assertThrows` (#2687)",
       "files": [
@@ -2292,7 +2292,7 @@
     },
     {
       "hash": "7573bf512c57518bc74caa18c8b484c45560d9c6",
-      "short": "7573bf5",
+      "short": "7573bf51",
       "time": 1717461185,
       "subject": "Bump the maven group with 14 updates (#2696)",
       "files": [
@@ -2306,7 +2306,7 @@
     },
     {
       "hash": "1fee1e288709d9b2bf1145109c5d01d28fbb2cda",
-      "short": "1fee1e2",
+      "short": "1fee1e28",
       "time": 1717267259,
       "subject": "Bump the github-actions group with 2 updates (#2695)",
       "files": [
@@ -2318,7 +2318,7 @@
     },
     {
       "hash": "3e599c8fdbbd82472ad6dcedb735ea25237e7f5d",
-      "short": "3e599c8",
+      "short": "3e599c8f",
       "time": 1717203639,
       "subject": "Rename Maven integration test modules (#2691)",
       "files": [
@@ -2365,7 +2365,7 @@
     },
     {
       "hash": "ce2129ea2a7bbed30111717417e7fe4b4227eb92",
-      "short": "ce2129e",
+      "short": "ce2129ea",
       "time": 1717203555,
       "subject": "Add `@CheckReturnValue` to our packages. (#2693)",
       "files": [
@@ -2388,7 +2388,7 @@
     },
     {
       "hash": "3b296cc0c75e8757cec964dc7e805806c689f0ed",
-      "short": "3b296cc",
+      "short": "3b296cc0",
       "time": 1717202214,
       "subject": "Fix API compatibility workflow failing when building previous version (#2694)",
       "files": [
@@ -2398,7 +2398,7 @@
     },
     {
       "hash": "6ebbc9d9b3c568308e163836278c7122cb1d83ca",
-      "short": "6ebbc9d",
+      "short": "6ebbc9d9",
       "time": 1716946170,
       "subject": "Add JPMS module test (#2685)",
       "files": [
@@ -2422,7 +2422,7 @@
     },
     {
       "hash": "91d22b33e267b0fd699bdc3e830b7dc5561a88e4",
-      "short": "91d22b3",
+      "short": "91d22b33",
       "time": 1716247667,
       "subject": "Add more Javadoc cross-links between methods (#2678)",
       "files": [
@@ -2433,7 +2433,7 @@
     },
     {
       "hash": "4f12c00e41893cba2cc6b007e5b192a104c44a48",
-      "short": "4f12c00",
+      "short": "4f12c00e",
       "time": 1716144850,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -2448,7 +2448,7 @@
     },
     {
       "hash": "828a97be0f8d58108b140b77df8dc76b657f4a87",
-      "short": "828a97b",
+      "short": "828a97be",
       "time": 1716144848,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.11.0",
       "files": [
@@ -2463,7 +2463,7 @@
     },
     {
       "hash": "93bc0f23a13f9e9df3bf71894d479dbd5d952ba6",
-      "short": "93bc0f2",
+      "short": "93bc0f23",
       "time": 1716144748,
       "subject": "Skip signing graal-native-test module. (#2675)",
       "files": [
@@ -2472,7 +2472,7 @@
     },
     {
       "hash": "b153ca18bfef611edff4dbea85de79e153ea4809",
-      "short": "b153ca1",
+      "short": "b153ca18",
       "time": 1716144264,
       "subject": "[maven-release-plugin] rollback the release of gson-parent-2.11.0",
       "files": [
@@ -2487,7 +2487,7 @@
     },
     {
       "hash": "0e3d2aab622fb50addb98b10b0a661cadda0f989",
-      "short": "0e3d2aa",
+      "short": "0e3d2aab",
       "time": 1716139420,
       "subject": "[maven-release-plugin] prepare for next development iteration",
       "files": [
@@ -2502,7 +2502,7 @@
     },
     {
       "hash": "545b802d639917c50928ec96bcab49b0c70dbb7a",
-      "short": "545b802",
+      "short": "545b802d",
       "time": 1716139418,
       "subject": "[maven-release-plugin] prepare release gson-parent-2.11.0",
       "files": [
@@ -2524,7 +2524,7 @@
     },
     {
       "hash": "8bfdbb4e14172b013c3d1f56c3a36812075e2886",
-      "short": "8bfdbb4",
+      "short": "8bfdbb4e",
       "time": 1716054199,
       "subject": "Guarantee that `JsonElement.toString()` produces JSON (#2659)",
       "files": [
@@ -2541,7 +2541,7 @@
     },
     {
       "hash": "9008b093ac40f226643df17c767357aa1947984a",
-      "short": "9008b09",
+      "short": "9008b093",
       "time": 1716054172,
       "subject": "Extend Troubleshooting Guide with some ProGuard / R8 information (#2656)",
       "files": [
@@ -2550,7 +2550,7 @@
     },
     {
       "hash": "05652c3b7dea68a9ffc781b2cdf89076fce56b12",
-      "short": "05652c3",
+      "short": "05652c3b",
       "time": 1716054049,
       "subject": "Document that other JVM languages are not fully supported (#2666)",
       "files": [
@@ -2559,7 +2559,7 @@
     },
     {
       "hash": "454a49127f9416f45221eecf311eefdca50e4cdc",
-      "short": "454a491",
+      "short": "454a4912",
       "time": 1716053999,
       "subject": "Improved Long-Double Number Policy (#2674)",
       "files": [
