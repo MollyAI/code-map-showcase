@@ -1,8 +1,103 @@
 {
-  "anchor": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112",
+  "anchor": "49528d32db45f784ec127879cb10043f5a56e5d5",
   "limit": 200,
   "truncated": true,
   "commits": [
+    {
+      "hash": "49528d32db45f784ec127879cb10043f5a56e5d5",
+      "short": "49528d3",
+      "time": 1781245983,
+      "subject": "Fix truncation warning placement and untrack skill_search",
+      "files": [
+        ".gitignore",
+        "assets/global_mem_insight_template.txt",
+        "assets/global_mem_insight_template_en.txt",
+        "llmcore.py",
+        "memory/skill_search/SKILL.md",
+        "memory/skill_search/skill_search/__init__.py",
+        "memory/skill_search/skill_search/__main__.py",
+        "memory/skill_search/skill_search/engine.py"
+      ]
+    },
+    {
+      "hash": "d59b64550fe26a0ca45e3af83ffcffe361697ad4",
+      "short": "d59b645",
+      "time": 1781241383,
+      "subject": "fix: os.startfile is Windows-only, use webbrowser.open to wake the browser (#598)",
+      "files": [
+        "ga.py"
+      ]
+    },
+    {
+      "hash": "aa93782a6d136be5b5124b5a0d7f544c53c7b766",
+      "short": "aa93782",
+      "time": 1781241334,
+      "subject": "fix(tui-v2): restore CJK table copy alignment (#600)",
+      "files": [
+        "frontends/tuiapp_v2.py"
+      ]
+    },
+    {
+      "hash": "0def744157916f0c88da69f710941e4c408b3768",
+      "short": "0def744",
+      "time": 1781186338,
+      "subject": "fix responses codex client metadata",
+      "files": [
+        "llmcore.py"
+      ]
+    },
+    {
+      "hash": "e38f2331af8c75d087c970b23e4258e3171fd2e2",
+      "short": "e38f233",
+      "time": 1781183485,
+      "subject": "feat(tui): plan 卡片 /continue 恢复 + 可滚动 4 行窗口 + Ctrl+S/Ctrl+C 修复 (#599)",
+      "files": [
+        "frontends/continue_cmd.py",
+        "frontends/plan_state.py",
+        "frontends/tuiapp_v2.py"
+      ]
+    },
+    {
+      "hash": "260027c946be2234e7bc4d15fe0c969f82167a52",
+      "short": "260027c",
+      "time": 1781147132,
+      "subject": "Update Codex native user agent",
+      "files": [
+        "llmcore.py"
+      ]
+    },
+    {
+      "hash": "a6c712b1a6034ba627bdfdbf3753f146e20df2e4",
+      "short": "a6c712b",
+      "time": 1781140749,
+      "subject": "feat(tui): 工具显示卡片 + /model 与 /effort 运行时切换 (#593)",
+      "files": [
+        "frontends/continue_cmd.py",
+        "frontends/model_cmd.py",
+        "frontends/tuiapp_v2.py"
+      ]
+    },
+    {
+      "hash": "f39622c9601edb01dfa947076913b31cfbc3e503",
+      "short": "f39622c",
+      "time": 1781104926,
+      "subject": "docs: clarify tiered dependencies (core vs [ui] extra)",
+      "files": [
+        "README.md"
+      ]
+    },
+    {
+      "hash": "bdc8e6bdcb03da4af653ed8f6d08af12ea50f778",
+      "short": "bdc8e6b",
+      "time": 1781104690,
+      "subject": "docs+fix: README install overhaul, self-hosted install scripts, TMWebDriver logging fix",
+      "files": [
+        "README.md",
+        "TMWebDriver.py",
+        "assets/ga_install.ps1",
+        "assets/ga_install.sh"
+      ]
+    },
     {
       "hash": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112",
       "short": "5e42bf3",
@@ -1775,87 +1870,6 @@
       "files": [
         "frontends/tuiapp_v2.py"
       ]
-    },
-    {
-      "hash": "cd9764719c91fd9343e2002dbafdb8846c3f7e1a",
-      "short": "cd97647",
-      "time": 1778943554,
-      "subject": "fix: multi-session tab switch live rendering + move SETUP_FEISHU to docs/",
-      "files": [
-        "docs/SETUP_FEISHU.md",
-        "frontends/desktop/static/app.js",
-        "frontends/desktop/static/index.html"
-      ]
-    },
-    {
-      "hash": "2ce3e6120b8bcf8d39f229310806a85bfa2c23a5",
-      "short": "2ce3e61",
-      "time": 1778942192,
-      "subject": "fix(tui): CJK-aware wrap for Rich Markdown and Textual content",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "a32c71157081dd082bc9b3f602ca5ff3e80c3fc2",
-      "short": "a32c711",
-      "time": 1778938879,
-      "subject": "fix(tui): strip <summary>/<thinking> tags before Markdown render",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "67b07b38150b31e6350e872d24383b6b92d922d1",
-      "short": "67b07b3",
-      "time": 1778936065,
-      "subject": "style(tui): align ga-default chip_time with sidebar active-session green",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "95de1cef139ee740b1c6da7077be66c161dfda55",
-      "short": "95de1ce",
-      "time": 1778935705,
-      "subject": "feat(tui): hook topbar chip colors into theme + move fold indicator",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "d0e44d23072735e2bb1e348d918ff3b9d3fa6139",
-      "short": "d0e44d2",
-      "time": 1778934649,
-      "subject": "feat(cli): one-line startup banner showing model name (#400)",
-      "files": [
-        "agentmain.py"
-      ]
-    },
-    {
-      "hash": "7dc240412c81472bb87d30c50d5c60b578817360",
-      "short": "7dc2404",
-      "time": 1778934646,
-      "subject": "docs(tui): rephrase cost_tracker docstring to use API-mode wording (#399)",
-      "files": [
-        "frontends/cost_tracker.py"
-      ]
-    },
-    {
-      "hash": "86d5170e08bfbe3a04827dfc3c6183f6b380e664",
-      "short": "86d5170",
-      "time": 1778934140,
-      "subject": "feat(tui): themable color system via Textual theme system",
-      "files": [
-        "frontends/tuiapp_v2.py"
-      ]
-    },
-    {
-      "hash": "2566bb82d41ee321565cb61dfbabe1adb9df18e8",
-      "short": "2566bb8",
-      "time": 1778931565,
-      "subject": "feat(tui): /rename, /cost, /continue, ask_user picker, runtime (#397)",
-      "files": []
     }
   ]
 }

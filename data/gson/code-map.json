@@ -13,7 +13,7 @@
       "java": 75
     },
     "parse_failures": 0,
-    "generated_at": "2026-06-10T13:41:44",
+    "generated_at": "2026-06-12T13:36:00",
     "template_detection": {
       "chosen": "clean-architecture",
       "scores": {
@@ -198,43 +198,38 @@
       "short": "004e7a4",
       "dirty": true
     },
-    "code_map_version": "1.11.0",
+    "code_map_version": "1.15.0",
     "architecture": {
       "template": "layered",
       "customized": true
     },
     "score": {
-      "rubric": "arch-score-v1",
-      "total": 120,
-      "base": 112,
-      "difficulty": 96.4,
-      "execution": 1.16,
+      "rubric": "arch-score-v2",
+      "total": 128,
+      "base": 122,
+      "difficulty": 90,
+      "difficulty_raw": 96.4,
+      "execution": 1.356,
       "dimensions": {
         "layering": {
-          "score": 67,
+          "score": 99,
           "penalties": [
             {
-              "id": "empty_layers",
-              "points": 5,
-              "value": 1,
-              "detail": "1 empty layer(s)"
-            },
-            {
               "id": "layer_violations",
-              "points": 27.8,
-              "value": 0.463,
-              "detail": "126/272 cross-layer uses edges point upward"
+              "points": 0.8,
+              "value": 0.013,
+              "detail": "2/159 cross-layer uses edges point upward"
             }
           ]
         },
         "dependencies": {
-          "score": 53,
+          "score": 70,
           "penalties": [
             {
               "id": "cycles",
-              "points": 40,
-              "value": 0.4,
-              "detail": "32/80 declarations sit in dependency cycles"
+              "points": 23.2,
+              "value": 0.375,
+              "detail": "largest cycle holds 16/80 declarations (+14 in smaller cycles)"
             },
             {
               "id": "propagation",
@@ -251,7 +246,7 @@
               "id": "isolated",
               "points": 7,
               "value": 0.088,
-              "detail": "9% of declarations have no edges"
+              "detail": "9% of declaration weight has no edges"
             },
             {
               "id": "oversized",
@@ -266,12 +261,14 @@
         "decls": 80,
         "edges": 316,
         "files": 87,
-        "languages": 1
+        "languages": 1,
+        "weighted_decls": 80,
+        "effective_languages": 1
       },
       "adjustment": {
-        "delta": 8,
-        "reason_zh": "cycles 扣分命中的两大强连通分量经核对均为领域常态：JsonElement 树模型与其子类的互递归（双向领域模型），以及 TypeAdapterFactory SPI 按契约回引 Gson 上下文，非失控耦合",
-        "reason_en": "Both large SCCs behind the cycles penalty are domain-normal on inspection: the mutually recursive JsonElement tree model (bidirectional domain model) and the TypeAdapterFactory SPI whose factories reference the Gson context by contract — not runaway coupling"
+        "delta": 6,
+        "reason_zh": "cycles 命中的两大强连通分量核实为领域常态环:TypeAdapterFactory.create(Gson,TypeToken) SPI 契约强制工厂回引 Gson 以递归解析嵌套适配器(同递归下降),JsonElement 树模型经 JsonTreeReader/Writer 与流式层互通乃双向领域模型,非失控耦合;v2 规则已减扣,故仅部分豁免",
+        "reason_en": "Both large SCCs behind the cycles penalty are verified domain-normal: the TypeAdapterFactory.create(Gson, TypeToken) SPI contract forces factories to reference Gson for recursive adapter resolution (recursive-descent analogue), and the JsonElement tree model bridges to streaming via JsonTreeReader/Writer as a bidirectional domain model — not runaway coupling; partial exemption only since rubric v2 already discounts"
       }
     }
   },
@@ -280,7 +277,8 @@
       "id": "public-api",
       "name": "Public API",
       "order": 1,
-      "summary": "The Gson facade, GsonBuilder, the TypeAdapter/TypeAdapterFactory SPI, and configuration policies (naming, exclusion, number, strictness) that form the library's public surface.",
+      "summary": "User-facing entry points: Gson, GsonBuilder, TypeAdapter contract, serializer/deserializer SPI, exceptions and strictness controls",
+      "api": true,
       "classes": [
         {
           "id": "com.google.gson.ExclusionStrategy",
@@ -292,6 +290,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 18,
           "signature": "",
           "method_count": 2,
@@ -313,6 +312,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 115,
           "signature": "",
           "method_count": 8,
@@ -336,6 +336,7 @@
           "supertypes": [
             "FieldNamingStrategy"
           ],
+          "description": "",
           "loc": 183,
           "signature": "",
           "method_count": 0,
@@ -357,6 +358,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 23,
           "signature": "",
           "method_count": 2,
@@ -378,6 +380,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 118,
           "signature": "",
           "method_count": 6,
@@ -399,6 +402,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 1131,
           "signature": "",
           "method_count": 33,
@@ -422,16 +426,19 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 985,
           "signature": "",
           "method_count": 38,
           "importance": 0.44,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 17,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "以流式 API 配置并构建 Gson 实例——注册适配器/工厂、命名策略、排除规则、严格度与格式化选项。",
+          "description_en": "Fluent builder for configuring and creating Gson instances — registering adapters/factories, naming policies, exclusion rules, strictness and formatting options."
         },
         {
           "id": "com.google.gson.InstanceCreator",
@@ -443,6 +450,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 14,
           "signature": "",
           "method_count": 1,
@@ -464,6 +472,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 17,
           "signature": "",
           "method_count": 1,
@@ -485,6 +494,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 20,
           "signature": "",
           "method_count": 1,
@@ -508,6 +518,7 @@
           "supertypes": [
             "JsonParseException"
           ],
+          "description": "",
           "loc": 22,
           "signature": "",
           "method_count": 0,
@@ -533,6 +544,7 @@
           "supertypes": [
             "RuntimeException"
           ],
+          "description": "",
           "loc": 33,
           "signature": "",
           "method_count": 0,
@@ -554,6 +566,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 22,
           "signature": "",
           "method_count": 2,
@@ -575,6 +588,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 18,
           "signature": "",
           "method_count": 1,
@@ -598,6 +612,7 @@
           "supertypes": [
             "JsonParseException"
           ],
+          "description": "",
           "loc": 22,
           "signature": "",
           "method_count": 0,
@@ -621,6 +636,7 @@
           "kind": "enum",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 56,
           "signature": "",
           "method_count": 0,
@@ -642,6 +658,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 184,
           "signature": "",
           "method_count": 1,
@@ -663,6 +680,7 @@
           "kind": "enum",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 10,
           "signature": "",
           "method_count": 0,
@@ -686,6 +704,7 @@
           "supertypes": [
             "ToNumberStrategy"
           ],
+          "description": "",
           "loc": 80,
           "signature": "",
           "method_count": 0,
@@ -707,6 +726,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 11,
           "signature": "",
           "method_count": 1,
@@ -728,6 +748,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 202,
           "signature": "",
           "method_count": 9,
@@ -751,6 +772,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 7,
           "signature": "",
           "method_count": 1,
@@ -770,7 +792,8 @@
       "id": "json-model",
       "name": "JSON Tree Model",
       "order": 2,
-      "summary": "The in-memory JSON DOM — JsonElement and its JsonObject/JsonArray/JsonPrimitive/JsonNull subtypes — plus the parsers that build it.",
+      "summary": "The JsonElement DOM tree (JsonObject/JsonArray/JsonPrimitive/JsonNull) and its parsers",
+      "api": true,
       "classes": [
         {
           "id": "com.google.gson.JsonArray",
@@ -785,6 +808,7 @@
             "JsonElement",
             "Iterable<JsonElement>"
           ],
+          "description": "",
           "loc": 395,
           "signature": "",
           "method_count": 31,
@@ -806,6 +830,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 339,
           "signature": "",
           "method_count": 22,
@@ -831,6 +856,7 @@
           "supertypes": [
             "JsonElement"
           ],
+          "description": "",
           "loc": 40,
           "signature": "",
           "method_count": 3,
@@ -854,6 +880,7 @@
           "supertypes": [
             "JsonElement"
           ],
+          "description": "",
           "loc": 220,
           "signature": "",
           "method_count": 19,
@@ -875,6 +902,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 106,
           "signature": "",
           "method_count": 6,
@@ -898,6 +926,7 @@
           "supertypes": [
             "JsonElement"
           ],
+          "description": "",
           "loc": 294,
           "signature": "",
           "method_count": 19,
@@ -923,6 +952,7 @@
           "supertypes": [
             "Iterator<JsonElement>"
           ],
+          "description": "",
           "loc": 75,
           "signature": "",
           "method_count": 3,
@@ -940,7 +970,7 @@
       "id": "binding",
       "name": "Type Adapters (Binding)",
       "order": 3,
-      "summary": "The serialization/deserialization engine: built-in and reflective TypeAdapters that bind Java objects to and from JSON tokens, including the @JsonAdapter and tree adapters.",
+      "summary": "internal.bind — the bundled TypeAdapter implementations and factories that map Java types to JSON (reflective, collection, map, date, SQL types)",
       "classes": [
         {
           "id": "com.google.gson.internal.bind.ArrayTypeAdapter",
@@ -954,6 +984,7 @@
           "supertypes": [
             "TypeAdapter<Object>"
           ],
+          "description": "",
           "loc": 79,
           "signature": "",
           "method_count": 2,
@@ -977,6 +1008,7 @@
           "supertypes": [
             "TypeAdapterFactory"
           ],
+          "description": "",
           "loc": 72,
           "signature": "",
           "method_count": 1,
@@ -1000,6 +1032,7 @@
           "supertypes": [
             "TypeAdapter<T>"
           ],
+          "description": "",
           "loc": 144,
           "signature": "",
           "method_count": 4,
@@ -1023,6 +1056,7 @@
           "supertypes": [
             "TypeAdapter<T>"
           ],
+          "description": "",
           "loc": 95,
           "signature": "",
           "method_count": 3,
@@ -1048,6 +1082,7 @@
             "FactorySupplier",
             "TypeAdapters"
           ],
+          "description": "",
           "loc": 407,
           "signature": "",
           "method_count": 6,
@@ -1071,6 +1106,7 @@
           "supertypes": [
             "TypeAdapterFactory"
           ],
+          "description": "",
           "loc": 168,
           "signature": "",
           "method_count": 6,
@@ -1094,6 +1130,7 @@
           "supertypes": [
             "TypeAdapter<JsonElement>"
           ],
+          "description": "",
           "loc": 137,
           "signature": "",
           "method_count": 4,
@@ -1117,6 +1154,7 @@
           "supertypes": [
             "JsonReader"
           ],
+          "description": "",
           "loc": 353,
           "signature": "",
           "method_count": 27,
@@ -1142,6 +1180,7 @@
           "supertypes": [
             "JsonWriter"
           ],
+          "description": "",
           "loc": 222,
           "signature": "",
           "method_count": 19,
@@ -1165,16 +1204,19 @@
           "supertypes": [
             "TypeAdapterFactory"
           ],
+          "description": "",
           "loc": 167,
           "signature": "",
           "method_count": 2,
           "importance": 0.434,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 16,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "为 Map 类型创建适配器,将映射写成 JSON 对象,或在启用复杂键支持时写成键值对数组。",
+          "description_en": "Creates adapters for Map types, writing them as JSON objects or — with complex-key support enabled — as arrays of key/value pairs."
         },
         {
           "id": "com.google.gson.internal.bind.NumberTypeAdapter",
@@ -1188,6 +1230,7 @@
           "supertypes": [
             "TypeAdapter<Number>"
           ],
+          "description": "",
           "loc": 51,
           "signature": "",
           "method_count": 4,
@@ -1211,6 +1254,7 @@
           "supertypes": [
             "TypeAdapter<Object>"
           ],
+          "description": "",
           "loc": 147,
           "signature": "",
           "method_count": 6,
@@ -1234,16 +1278,19 @@
           "supertypes": [
             "TypeAdapterFactory"
           ],
+          "description": "",
           "loc": 611,
           "signature": "",
           "method_count": 7,
           "importance": 0.463,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 21,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "兜底的反射式工厂:枚举类的字段(经 Excluder 与命名策略过滤)生成逐字段读写的适配器,record 支持也在这里。",
+          "description_en": "The fallback reflective factory — enumerates a class's fields (filtered by Excluder and naming policy) into a field-by-field adapter, including record support."
         },
         {
           "id": "com.google.gson.internal.bind.SerializationDelegatingTypeAdapter",
@@ -1257,6 +1304,7 @@
           "supertypes": [
             "TypeAdapter<T>"
           ],
+          "description": "",
           "loc": 7,
           "signature": "",
           "method_count": 1,
@@ -1280,6 +1328,7 @@
           "supertypes": [
             "SerializationDelegatingTypeAdapter<T>"
           ],
+          "description": "",
           "loc": 169,
           "signature": "",
           "method_count": 7,
@@ -1305,6 +1354,7 @@
           "supertypes": [
             "TypeAdapter<T>"
           ],
+          "description": "",
           "loc": 77,
           "signature": "",
           "method_count": 4,
@@ -1328,6 +1378,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 1022,
           "signature": "",
           "method_count": 10,
@@ -1351,6 +1402,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 349,
           "signature": "",
           "method_count": 8,
@@ -1361,6 +1413,100 @@
           "out_degree": 0,
           "confidence": "high",
           "tags": []
+        },
+        {
+          "id": "com.google.gson.internal.sql.SqlDateTypeAdapter",
+          "name": "SqlDateTypeAdapter",
+          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlDateTypeAdapter.java",
+          "line": 39,
+          "namespace": "com.google.gson.internal.sql",
+          "package": "com.google.gson.internal.sql",
+          "kind": "class",
+          "language": "java",
+          "supertypes": [
+            "TypeAdapter<java.sql.Date>"
+          ],
+          "description": "",
+          "loc": 51,
+          "signature": "",
+          "method_count": 2,
+          "importance": 0.249,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 8,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "com.google.gson.internal.sql.SqlTimeTypeAdapter",
+          "name": "SqlTimeTypeAdapter",
+          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTimeTypeAdapter.java",
+          "line": 40,
+          "namespace": "com.google.gson.internal.sql",
+          "package": "com.google.gson.internal.sql",
+          "kind": "class",
+          "language": "java",
+          "supertypes": [
+            "TypeAdapter<Time>"
+          ],
+          "description": "",
+          "loc": 51,
+          "signature": "",
+          "method_count": 2,
+          "importance": 0.249,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 8,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "com.google.gson.internal.sql.SqlTimestampTypeAdapter",
+          "name": "SqlTimestampTypeAdapter",
+          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTimestampTypeAdapter.java",
+          "line": 29,
+          "namespace": "com.google.gson.internal.sql",
+          "package": "com.google.gson.internal.sql",
+          "kind": "class",
+          "language": "java",
+          "supertypes": [
+            "TypeAdapter<Timestamp>"
+          ],
+          "description": "",
+          "loc": 33,
+          "signature": "",
+          "method_count": 2,
+          "importance": 0.22,
+          "core": false,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 6,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "com.google.gson.internal.sql.SqlTypesSupport",
+          "name": "SqlTypesSupport",
+          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTypesSupport.java",
+          "line": 38,
+          "namespace": "com.google.gson.internal.sql",
+          "package": "com.google.gson.internal.sql",
+          "kind": "class",
+          "language": "java",
+          "supertypes": [],
+          "description": "",
+          "loc": 61,
+          "signature": "",
+          "method_count": 0,
+          "importance": 0.192,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": []
         }
       ]
     },
@@ -1368,7 +1514,8 @@
       "id": "streaming",
       "name": "Streaming I/O",
       "order": 4,
-      "summary": "The low-level pull-based token layer: JsonReader parses and JsonWriter emits JSON one token at a time, with scope tracking and lenient/strict modes.",
+      "summary": "com.google.gson.stream — the pull-parser JsonReader and JsonWriter token streams every adapter reads/writes through",
+      "api": true,
       "classes": [
         {
           "id": "com.google.gson.stream.JsonReader",
@@ -1382,6 +1529,7 @@
           "supertypes": [
             "Closeable"
           ],
+          "description": "",
           "loc": 1705,
           "signature": "",
           "method_count": 45,
@@ -1405,6 +1553,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 27,
           "signature": "",
           "method_count": 0,
@@ -1426,16 +1575,19 @@
           "kind": "enum",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 52,
           "signature": "",
           "method_count": 0,
           "importance": 0.489,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 19,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "JSON 流中结构/名称/值的 token 类型枚举,是 JsonReader 拉取解析的词汇表。",
+          "description_en": "Enum of structure/name/value token types in a JSON stream — the vocabulary of JsonReader's pull parsing."
         },
         {
           "id": "com.google.gson.stream.JsonWriter",
@@ -1450,16 +1602,19 @@
             "Flushable",
             "Closeable"
           ],
+          "description": "",
           "loc": 675,
           "signature": "",
           "method_count": 38,
           "importance": 0.657,
-          "core": false,
+          "core": true,
           "hub": true,
           "in_degree": 25,
           "out_degree": 2,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "流式 JSON 写出器:逐 token 写出 JSON,并执行严格度与 FormattingStyle 格式化策略。",
+          "description_en": "Streaming writer that emits JSON one token at a time, enforcing strictness and FormattingStyle formatting."
         },
         {
           "id": "com.google.gson.stream.MalformedJsonException",
@@ -1473,16 +1628,19 @@
           "supertypes": [
             "IOException"
           ],
+          "description": "",
           "loc": 15,
           "signature": "",
           "method_count": 0,
           "importance": 0.418,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 7,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "JsonReader 遇到格式损坏的 JSON 时抛出;部分语法错误可通过 LENIENT 严格度放宽。",
+          "description_en": "Thrown when JsonReader encounters malformed JSON; some syntax errors can be relaxed via LENIENT strictness."
         }
       ]
     },
@@ -1490,7 +1648,8 @@
       "id": "reflection",
       "name": "Reflection & Type Tokens",
       "order": 5,
-      "summary": "Generic type capture via TypeToken and reflective field/constructor access used to map Java types onto JSON.",
+      "summary": "TypeToken generic-type capture (com.google.gson.reflect), the key for adapter lookup",
+      "api": true,
       "classes": [
         {
           "id": "com.google.gson.internal.reflect.ReflectionHelper",
@@ -1502,16 +1661,19 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 298,
           "signature": "",
           "method_count": 15,
           "importance": 0.383,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 3,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "反射辅助工具:封装 setAccessible 调用与失败提示,并为字段/构造器/record 组件生成可读描述。",
+          "description_en": "Reflection utility wrapping setAccessible calls with helpful failure messages and readable descriptions of fields, constructors and record components."
         },
         {
           "id": "com.google.gson.reflect.TypeToken",
@@ -1523,6 +1685,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 399,
           "signature": "",
           "method_count": 20,
@@ -1542,7 +1705,8 @@
       "id": "annotations",
       "name": "Annotations",
       "order": 6,
-      "summary": "Declarative annotations (@SerializedName, @Expose, @JsonAdapter, @Since/@Until) that customize how fields are bound.",
+      "summary": "Declarative customization annotations: @SerializedName, @Expose, @JsonAdapter, @Since, @Until",
+      "api": true,
       "classes": [
         {
           "id": "com.google.gson.annotations.SerializedName",
@@ -1626,7 +1790,7 @@
       "id": "internal",
       "name": "Internal Runtime",
       "order": 7,
-      "summary": "Internal support — object construction, field exclusion, generic-type utilities, the LinkedTreeMap, primitive/number helpers, and SQL date/time adapters.",
+      "summary": "com.google.gson.internal — support runtime: ConstructorConstructor, Excluder, $Gson$Types, LinkedTreeMap, Streams",
       "classes": [
         {
           "id": "com.google.gson.internal.ConstructorConstructor",
@@ -1638,6 +1802,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 421,
           "signature": "",
           "method_count": 11,
@@ -1664,6 +1829,7 @@
             "Cloneable",
             "TypeAdapterFactory"
           ],
+          "description": "",
           "loc": 209,
           "signature": "",
           "method_count": 13,
@@ -1687,6 +1853,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 637,
           "signature": "",
           "method_count": 21,
@@ -1710,6 +1877,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 78,
           "signature": "",
           "method_count": 6,
@@ -1731,6 +1899,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 9,
           "signature": "",
           "method_count": 1,
@@ -1754,6 +1923,7 @@
           "supertypes": [
             "Number"
           ],
+          "description": "",
           "loc": 83,
           "signature": "",
           "method_count": 10,
@@ -1778,6 +1948,7 @@
             "AbstractMap<K, V>",
             "Serializable"
           ],
+          "description": "",
           "loc": 635,
           "signature": "",
           "method_count": 20,
@@ -1802,6 +1973,7 @@
             "AbstractList<E>",
             "RandomAccess"
           ],
+          "description": "",
           "loc": 102,
           "signature": "",
           "method_count": 17,
@@ -1823,6 +1995,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 27,
           "signature": "",
           "method_count": 3,
@@ -1844,6 +2017,7 @@
           "kind": "interface",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 5,
           "signature": "",
           "method_count": 1,
@@ -1865,6 +2039,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 42,
           "signature": "",
           "method_count": 3,
@@ -1886,6 +2061,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 74,
           "signature": "",
           "method_count": 4,
@@ -1907,6 +2083,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 97,
           "signature": "",
           "method_count": 7,
@@ -1928,6 +2105,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 133,
           "signature": "",
           "method_count": 3,
@@ -1951,6 +2129,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 8,
           "signature": "",
           "method_count": 1,
@@ -1974,6 +2153,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 100,
           "signature": "",
           "method_count": 3,
@@ -1982,96 +2162,6 @@
           "hub": false,
           "in_degree": 0,
           "out_degree": 0,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "com.google.gson.internal.sql.SqlDateTypeAdapter",
-          "name": "SqlDateTypeAdapter",
-          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlDateTypeAdapter.java",
-          "line": 39,
-          "namespace": "com.google.gson.internal.sql",
-          "package": "com.google.gson.internal.sql",
-          "kind": "class",
-          "language": "java",
-          "supertypes": [
-            "TypeAdapter<java.sql.Date>"
-          ],
-          "loc": 51,
-          "signature": "",
-          "method_count": 2,
-          "importance": 0.249,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 8,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "com.google.gson.internal.sql.SqlTimeTypeAdapter",
-          "name": "SqlTimeTypeAdapter",
-          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTimeTypeAdapter.java",
-          "line": 40,
-          "namespace": "com.google.gson.internal.sql",
-          "package": "com.google.gson.internal.sql",
-          "kind": "class",
-          "language": "java",
-          "supertypes": [
-            "TypeAdapter<Time>"
-          ],
-          "loc": 51,
-          "signature": "",
-          "method_count": 2,
-          "importance": 0.249,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 8,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "com.google.gson.internal.sql.SqlTimestampTypeAdapter",
-          "name": "SqlTimestampTypeAdapter",
-          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTimestampTypeAdapter.java",
-          "line": 29,
-          "namespace": "com.google.gson.internal.sql",
-          "package": "com.google.gson.internal.sql",
-          "kind": "class",
-          "language": "java",
-          "supertypes": [
-            "TypeAdapter<Timestamp>"
-          ],
-          "loc": 33,
-          "signature": "",
-          "method_count": 2,
-          "importance": 0.22,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 6,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "com.google.gson.internal.sql.SqlTypesSupport",
-          "name": "SqlTypesSupport",
-          "path": "gson/src/main/java/com/google/gson/internal/sql/SqlTypesSupport.java",
-          "line": 38,
-          "namespace": "com.google.gson.internal.sql",
-          "package": "com.google.gson.internal.sql",
-          "kind": "class",
-          "language": "java",
-          "supertypes": [],
-          "loc": 61,
-          "signature": "",
-          "method_count": 0,
-          "importance": 0.192,
-          "core": false,
-          "hub": false,
-          "in_degree": 1,
-          "out_degree": 1,
           "confidence": "high",
           "tags": []
         },
@@ -2085,6 +2175,7 @@
           "kind": "class",
           "language": "java",
           "supertypes": [],
+          "description": "",
           "loc": 8,
           "signature": "",
           "method_count": 0,
@@ -2097,13 +2188,6 @@
           "tags": []
         }
       ]
-    },
-    {
-      "id": "uncategorized",
-      "name": "Uncategorized",
-      "order": 99,
-      "summary": "Could not be assigned automatically",
-      "classes": []
     }
   ],
   "edges": [
@@ -3755,7 +3839,109 @@
           "to": "com.google.gson.stream.JsonWriter",
           "kind": "uses"
         }
-      ]
+      ],
+      "diagram": {
+        "type": "sequence",
+        "participants": [
+          {
+            "id": "p:caller",
+            "kind": "actor",
+            "name_zh": "调用方",
+            "name_en": "Caller"
+          },
+          {
+            "id": "p:gson",
+            "kind": "code",
+            "name_zh": "Gson 门面",
+            "name_en": "Gson facade",
+            "nodes": [
+              "com.google.gson.Gson",
+              "com.google.gson.reflect.TypeToken"
+            ]
+          },
+          {
+            "id": "p:factory",
+            "kind": "code",
+            "name_zh": "适配器工厂",
+            "name_en": "Adapter factory",
+            "nodes": [
+              "com.google.gson.internal.bind.ReflectiveTypeAdapterFactory"
+            ]
+          },
+          {
+            "id": "p:adapter",
+            "kind": "code",
+            "name_zh": "类型适配器",
+            "name_en": "Type adapter",
+            "nodes": [
+              "com.google.gson.TypeAdapter",
+              "com.google.gson.internal.bind.TypeAdapterRuntimeTypeWrapper"
+            ]
+          },
+          {
+            "id": "p:writer",
+            "kind": "code",
+            "name_zh": "JSON 写出",
+            "name_en": "JSON writer",
+            "nodes": [
+              "com.google.gson.stream.JsonWriter",
+              "com.google.gson.internal.bind.JsonTreeWriter",
+              "com.google.gson.internal.Streams"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "from": "p:caller",
+            "to": "p:gson",
+            "kind": "call",
+            "label_zh": "调用 toJson(obj)",
+            "label_en": "toJson(obj)"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:gson",
+            "kind": "self",
+            "label_zh": "按 TypeToken 查适配器缓存",
+            "label_en": "look up adapter cache by TypeToken"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:factory",
+            "kind": "call",
+            "label_zh": "未命中:沿工厂链 create()",
+            "label_en": "cache miss: factory chain create()"
+          },
+          {
+            "from": "p:factory",
+            "to": "p:gson",
+            "kind": "return",
+            "label_zh": "返回反射式 TypeAdapter",
+            "label_en": "reflective TypeAdapter"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:adapter",
+            "kind": "call",
+            "label_zh": "adapter.write(writer, obj)",
+            "label_en": "adapter.write(writer, obj)"
+          },
+          {
+            "from": "p:adapter",
+            "to": "p:writer",
+            "kind": "call",
+            "label_zh": "逐字段写出 JSON token",
+            "label_en": "stream JSON tokens field by field"
+          },
+          {
+            "from": "p:writer",
+            "to": "p:caller",
+            "kind": "return",
+            "label_zh": "生成 JSON 文本",
+            "label_en": "JSON text"
+          }
+        ]
+      }
     },
     {
       "id": "flow:deserialize",
@@ -3817,7 +4003,114 @@
           "to": "com.google.gson.JsonIOException",
           "kind": "uses"
         }
-      ]
+      ],
+      "diagram": {
+        "type": "sequence",
+        "participants": [
+          {
+            "id": "p:caller",
+            "kind": "actor",
+            "name_zh": "调用方",
+            "name_en": "Caller"
+          },
+          {
+            "id": "p:gson",
+            "kind": "code",
+            "name_zh": "Gson 门面",
+            "name_en": "Gson facade",
+            "nodes": [
+              "com.google.gson.Gson",
+              "com.google.gson.reflect.TypeToken"
+            ]
+          },
+          {
+            "id": "p:reader",
+            "kind": "code",
+            "name_zh": "流式读取",
+            "name_en": "JSON reader",
+            "nodes": [
+              "com.google.gson.stream.JsonReader",
+              "com.google.gson.internal.bind.JsonTreeReader"
+            ]
+          },
+          {
+            "id": "p:adapter",
+            "kind": "code",
+            "name_zh": "类型适配器",
+            "name_en": "Type adapter",
+            "nodes": [
+              "com.google.gson.TypeAdapter"
+            ]
+          },
+          {
+            "id": "p:ctor",
+            "kind": "code",
+            "name_zh": "实例构造",
+            "name_en": "Instance construction",
+            "nodes": [
+              "com.google.gson.internal.ConstructorConstructor"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "from": "p:caller",
+            "to": "p:gson",
+            "kind": "call",
+            "label_zh": "调用 fromJson(json, type)",
+            "label_en": "fromJson(json, type)"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:reader",
+            "kind": "call",
+            "label_zh": "包装为 JsonReader 拉取解析器",
+            "label_en": "wrap input in JsonReader pull-parser"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:adapter",
+            "kind": "call",
+            "label_zh": "getAdapter(TypeToken).read(reader)",
+            "label_en": "getAdapter(TypeToken).read(reader)"
+          },
+          {
+            "from": "p:adapter",
+            "to": "p:reader",
+            "kind": "call",
+            "label_zh": "逐 token 读取",
+            "label_en": "consume tokens one by one"
+          },
+          {
+            "from": "p:adapter",
+            "to": "p:ctor",
+            "kind": "call",
+            "label_zh": "构造目标实例",
+            "label_en": "construct target instance"
+          },
+          {
+            "from": "p:ctor",
+            "to": "p:adapter",
+            "kind": "return",
+            "label_zh": "ObjectConstructor 产出实例",
+            "label_en": "instance from ObjectConstructor"
+          },
+          {
+            "from": "p:adapter",
+            "to": "p:gson",
+            "kind": "return",
+            "label_zh": "填充完成的对象",
+            "label_en": "populated object"
+          },
+          {
+            "from": "p:gson",
+            "to": "p:caller",
+            "kind": "return",
+            "label_zh": "返回对象(语法错误抛 JsonSyntaxException)",
+            "label_en": "object returned (JsonSyntaxException on bad syntax)"
+          }
+        ]
+      }
     },
     {
       "id": "flow:factory-chain",
@@ -3879,7 +4172,87 @@
           "kind": "dispatch",
           "via": "TypeAdapterFactory"
         }
-      ]
+      ],
+      "diagram": {
+        "type": "pipeline",
+        "stages": [
+          {
+            "id": "s:config",
+            "name_zh": "配置",
+            "name_en": "Configure",
+            "nodes": [
+              "com.google.gson.GsonBuilder"
+            ]
+          },
+          {
+            "id": "s:facade",
+            "name_zh": "查找入口",
+            "name_en": "Adapter lookup",
+            "nodes": [
+              "com.google.gson.Gson"
+            ]
+          },
+          {
+            "id": "s:chain",
+            "name_zh": "工厂链匹配",
+            "name_en": "Factory chain",
+            "nodes": [
+              "com.google.gson.internal.Excluder",
+              "com.google.gson.internal.bind.TypeAdapters",
+              "com.google.gson.internal.bind.JsonAdapterAnnotationTypeAdapterFactory"
+            ]
+          },
+          {
+            "id": "s:fallback",
+            "name_zh": "容器与反射兜底",
+            "name_en": "Container & reflective fallback",
+            "nodes": [
+              "com.google.gson.internal.bind.CollectionTypeAdapterFactory",
+              "com.google.gson.internal.bind.MapTypeAdapterFactory",
+              "com.google.gson.internal.bind.ReflectiveTypeAdapterFactory"
+            ]
+          }
+        ],
+        "extra_nodes": [
+          {
+            "id": "x:adapter",
+            "kind": "artifact",
+            "name": "TypeAdapter<T>",
+            "description_zh": "命中后缓存于 Gson 的 typeTokenCache",
+            "description_en": "Cached in Gson's typeTokenCache once created"
+          }
+        ],
+        "links": [
+          {
+            "from": "s:config",
+            "to": "s:facade",
+            "kind": "data",
+            "label_zh": "有序 TypeAdapterFactory 列表",
+            "label_en": "ordered TypeAdapterFactory list"
+          },
+          {
+            "from": "s:facade",
+            "to": "s:chain",
+            "kind": "dispatch",
+            "label_zh": "getAdapter(TypeToken) 依次询问",
+            "label_en": "getAdapter(TypeToken) asks each factory"
+          },
+          {
+            "from": "s:chain",
+            "to": "s:fallback",
+            "kind": "control",
+            "label_zh": "未命中 → 下一个工厂",
+            "label_en": "miss → next factory"
+          },
+          {
+            "from": "s:fallback",
+            "to": "x:adapter",
+            "kind": "data",
+            "label_zh": "首个非空 create() 结果",
+            "label_en": "first non-null create() result"
+          }
+        ]
+      }
     },
     {
       "id": "flow:typeadapter-dispatch",

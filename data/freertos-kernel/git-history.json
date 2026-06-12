@@ -1,8 +1,55 @@
 {
-  "anchor": "d877cd53989eba16c5092761056e31e1dcddba2f",
+  "anchor": "543558ba7761df03fa1506de62e42a53416dca1e",
   "limit": 200,
   "truncated": true,
   "commits": [
+    {
+      "hash": "543558ba7761df03fa1506de62e42a53416dca1e",
+      "short": "543558ba7",
+      "time": 1781295999,
+      "subject": "stream_buffer: require batching buffers to exceed trigger level",
+      "files": [
+        "stream_buffer.c"
+      ]
+    },
+    {
+      "hash": "6f23624451daf895ca6e58c0639a795a787b93b1",
+      "short": "6f2362445",
+      "time": 1781291340,
+      "subject": "Switch to 32-bit tick width to avoid windows compile warnings (#1422)",
+      "files": [
+        "examples/template_configuration/FreeRTOSConfig.h"
+      ]
+    },
+    {
+      "hash": "d5d752a9b6a79c2b5cf2f7953c4bf80e3f35433b",
+      "short": "d5d752a9b",
+      "time": 1781290513,
+      "subject": "Fix spurious heap_5 assert when allocation search reaches end marker (#1425)",
+      "files": [
+        "portable/MemMang/heap_5.c"
+      ]
+    },
+    {
+      "hash": "97328600dbe369be3e4dfd92dea082f577d35a62",
+      "short": "97328600d",
+      "time": 1781289782,
+      "subject": "Fix MISRA C 2012 Rule 20.4: Replace `#define static` with STATIC macro (#1410)",
+      "files": [
+        "croutine.c",
+        "tasks.c"
+      ]
+    },
+    {
+      "hash": "950ab4ff916fe37998ca8453e32a62f3d4e3c59f",
+      "short": "950ab4ff9",
+      "time": 1781288598,
+      "subject": "Fix incorrect #endif preprocessor comments in croutine.c and queue.c",
+      "files": [
+        "croutine.c",
+        "queue.c"
+      ]
+    },
     {
       "hash": "d877cd53989eba16c5092761056e31e1dcddba2f",
       "short": "d877cd539",
@@ -2887,55 +2934,6 @@
       "subject": "Fix race in prvProcessSimulatedInterrupts (#1055)",
       "files": [
         "portable/MSVC-MingW/port.c"
-      ]
-    },
-    {
-      "hash": "29b202a41e0e2810272b5765805d9fa4af247736",
-      "short": "29b202a41",
-      "time": 1715599190,
-      "subject": "list.c: improve code comments to point to official documentation about problems which may cause code to get stuck inside of list.c (#1051)",
-      "files": [
-        "list.c"
-      ]
-    },
-    {
-      "hash": "55eceb2203742042714a8dfedd3a8e48908d10c0",
-      "short": "55eceb220",
-      "time": 1715168272,
-      "subject": "Add configUSE_TASK_FPU_SUPPORT to AARCH64 port (#1048)",
-      "files": [
-        "portable/GCC/ARM_AARCH64/port.c",
-        "portable/GCC/ARM_AARCH64/portmacro.h"
-      ]
-    },
-    {
-      "hash": "067d04e44e00f9970f43a44d3325f0c4e035523e",
-      "short": "067d04e44",
-      "time": 1715149991,
-      "subject": "Add vPortGenerateSimulatedInterruptFromWindowsThread in MSVC port (#1044)",
-      "files": [
-        "portable/MSVC-MingW/port.c",
-        "portable/MSVC-MingW/portmacro.h"
-      ]
-    },
-    {
-      "hash": "78c8bbde0e7cbcca40ba3ed97ea1fd2b34e255be",
-      "short": "78c8bbde0",
-      "time": 1715095034,
-      "subject": "Update xPortRunning before resuming first task (#1049)",
-      "files": [
-        "portable/MSVC-MingW/port.c"
-      ]
-    },
-    {
-      "hash": "2eb2d653bff44addcc03ee8f72b2d3bdc33a787f",
-      "short": "2eb2d653b",
-      "time": 1715041445,
-      "subject": "Move header includes before extern c (#1047)",
-      "files": [
-        "include/FreeRTOS.h",
-        "include/portable.h",
-        "include/queue.h"
       ]
     }
   ]

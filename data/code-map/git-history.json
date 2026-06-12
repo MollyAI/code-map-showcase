@@ -1,8 +1,274 @@
 {
-  "anchor": "f23174c637e42328231115a5519cab2edaf4eb53",
+  "anchor": "d480ffa9d31c4a90e0639c60c398bca70ce313a3",
   "limit": 200,
   "truncated": false,
   "commits": [
+    {
+      "hash": "d480ffa9d31c4a90e0639c60c398bca70ce313a3",
+      "short": "d480ffa",
+      "time": 1781270794,
+      "subject": "Merge pull request #10 from MollyAI/dev",
+      "files": []
+    },
+    {
+      "hash": "f434eb3a596217c4870fb092dbeba866ab21ed51",
+      "short": "f434eb3",
+      "time": 1781270563,
+      "subject": "feat(score): D 改难度门槛(封顶90) + test 层计分免疫 + opacity 上限语义",
+      "files": [
+        "CLAUDE.md",
+        "README.md",
+        "scripts/lib/score.mjs",
+        "skills/arch-score/SKILL.md",
+        "tests/score.test.mjs"
+      ]
+    },
+    {
+      "hash": "d5d752542367ed2e23ddcafa5e1e24b5401afab3",
+      "short": "d5d7525",
+      "time": 1781269826,
+      "subject": "feat(score): arch-score rubric v2 — 跨语言粒度归一 + 依赖检测去偏 (v1.15.0)",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "commands/build.md",
+        "eval/config.yml",
+        "scripts/analyze.mjs",
+        "scripts/lib/score.mjs",
+        "scripts/score.mjs",
+        "skills/arch-score/SKILL.md",
+        "tests/score.test.mjs"
+      ]
+    },
+    {
+      "hash": "d77cc1c344ca70806b1ef2b086c542966767d54f",
+      "short": "d77cc1c",
+      "time": 1781267710,
+      "subject": "docs: 精简 CLAUDE.md — 只保留核心规则与命令",
+      "files": [
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "7639265dbade0a4b63d0ae21d29df5bf10413131",
+      "short": "7639265",
+      "time": 1781267497,
+      "subject": "feat: core-only viewer + 架构图 UI 升级 (v1.14.0)",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md",
+        "commands/build.md",
+        "scripts/analyze.mjs",
+        "scripts/lib/core.mjs",
+        "scripts/lib/gitmeta.mjs",
+        "scripts/lib/skipdirs.mjs",
+        "scripts/serve.mjs",
+        "tests/core.test.mjs",
+        "tests/gitmeta.test.mjs",
+        "tests/resolve_integration.test.mjs",
+        "viewer/index.html",
+        "viewer/src/data/githistory.js",
+        "viewer/src/data/source.js",
+        "viewer/src/i18n.js",
+        "viewer/src/interact/selection.js",
+        "viewer/src/interact/zoom.js",
+        "viewer/src/layout/flow.js",
+        "viewer/src/layout/metrics.js",
+        "viewer/src/layout/pipeline.js",
+        "viewer/src/layout/sequence.js",
+        "viewer/src/main.js",
+        "viewer/src/render/backend.js",
+        "viewer/src/render/diagrams.js",
+        "viewer/src/render/node.js",
+        "viewer/src/render/registry.js",
+        "viewer/src/render/scene.js",
+        "viewer/src/store.js",
+        "viewer/src/test/githistory.test.js",
+        "viewer/src/test/layout.test.js",
+        "viewer/src/test/metrics.test.js",
+        "viewer/src/test/settings.test.js",
+        "viewer/src/test/source.test.js",
+        "viewer/src/test/store.test.js",
+        "viewer/src/ui/controls.js",
+        "viewer/style.css"
+      ]
+    },
+    {
+      "hash": "bb1b53771a1d593da75c285b6bcfb0ed9961a712",
+      "short": "bb1b537",
+      "time": 1781186387,
+      "subject": "Merge pull request #9 from MollyAI/dev",
+      "files": []
+    },
+    {
+      "hash": "4de6bd8693d414e91ccbffef661fcabb2dadc31d",
+      "short": "4de6bd8",
+      "time": 1781186311,
+      "subject": "feat: update README.md",
+      "files": [
+        "README.md",
+        "screenshot/vibe_app_code_map.png"
+      ]
+    },
+    {
+      "hash": "a882cf3bcd5cadce834cb7ac94e147b50901a659",
+      "short": "a882cf3",
+      "time": 1781186120,
+      "subject": "Merge pull request #8 from MollyAI/dev",
+      "files": []
+    },
+    {
+      "hash": "dde17717171ecfeabe76a8e7de5c754183e2eb3d",
+      "short": "dde1771",
+      "time": 1781185873,
+      "subject": "feat(viewer): 时序图可读性升级 — return 青色虚线、边加重、参与者标题卡",
+      "files": [
+        "viewer/src/layout/sequence.js",
+        "viewer/src/render/diagrams.js",
+        "viewer/style.css"
+      ]
+    },
+    {
+      "hash": "1b8daa5edc940f9a0a066f344578909c9c33ba58",
+      "short": "1b8daa5",
+      "time": 1781185621,
+      "subject": "fix(viewer): diagram 标签防截断/防覆盖 + 阶段四色配色",
+      "files": [
+        "viewer/src/layout/metrics.js",
+        "viewer/src/layout/pipeline.js",
+        "viewer/src/layout/sequence.js",
+        "viewer/src/render/diagrams.js",
+        "viewer/src/render/registry.js",
+        "viewer/src/test/pipeline-layout.test.js",
+        "viewer/src/test/sequence-layout.test.js",
+        "viewer/style.css"
+      ]
+    },
+    {
+      "hash": "63b69e4e8acc95bdbd493c9fc17cd14ecc6708b4",
+      "short": "63b69e4",
+      "time": 1781184460,
+      "subject": "docs: CLAUDE.md flow diagram 注解层说明; bump v1.13.0",
+      "files": [
+        ".claude-plugin/plugin.json",
+        "CLAUDE.md"
+      ]
+    },
+    {
+      "hash": "4c5d714d559b40c21ea457d77898df7d91327998",
+      "short": "4c5d714",
+      "time": 1781184405,
+      "subject": "docs(build): Phase 2 契约新增 6c 流程图绘制规范 + Path B diagram 说明",
+      "files": [
+        "commands/build.md"
+      ]
+    },
+    {
+      "hash": "e6dc1cfb39a30ab52015b3dabfdb97039fc728a9",
+      "short": "e6dc1cf",
+      "time": 1781184363,
+      "subject": "feat(eval): invariants 增加 flow.diagram 结构检查（hard）",
+      "files": [
+        "eval/harness.py",
+        "tests/test_external_harness.py"
+      ]
+    },
+    {
+      "hash": "7ac21d238a38de4d056c77444b6d945f0ec64980",
+      "short": "7ac21d2",
+      "time": 1781184268,
+      "subject": "feat(incremental): merge 校验 flow.diagram 引用，失效则剥离并标 needs_review",
+      "files": [
+        "scripts/incremental.mjs",
+        "tests/incremental.test.mjs"
+      ]
+    },
+    {
+      "hash": "c1e8d01b0e73f43f7eabf64ce6816f9c47f5f720",
+      "short": "c1e8d01",
+      "time": 1781184214,
+      "subject": "feat(viewer): diagram 选中联动 + synthetic 详情 + 边栏图型标记 + i18n/CSS",
+      "files": [
+        "viewer/src/i18n.js",
+        "viewer/src/interact/selection.js",
+        "viewer/src/ui/controls.js",
+        "viewer/src/ui/detail.js",
+        "viewer/style.css"
+      ]
+    },
+    {
+      "hash": "016b8447acc371ca52b691718bc6396c29fcf82b",
+      "short": "016b844",
+      "time": 1781184093,
+      "subject": "feat(viewer): pipeline/sequence 渲染器 + flowView 按 diagram 分发（无 diagram 走 DAG 回退）",
+      "files": [
+        "viewer/src/render/diagrams.js",
+        "viewer/src/render/registry.js"
+      ]
+    },
+    {
+      "hash": "9b48bbdef46c85e0e01213e35f7edc8a322cb69c",
+      "short": "9b48bbd",
+      "time": 1781184020,
+      "subject": "feat(viewer): 时序图纯几何布局 layout/sequence.js",
+      "files": [
+        "viewer/src/layout/sequence.js",
+        "viewer/src/test/sequence-layout.test.js"
+      ]
+    },
+    {
+      "hash": "7aa9e2dd8ff567864d1676240424141a72ac95c6",
+      "short": "7aa9e2d",
+      "time": 1781183969,
+      "subject": "feat(viewer): 阶段流水线纯几何布局 layout/pipeline.js",
+      "files": [
+        "viewer/src/layout/pipeline.js",
+        "viewer/src/test/pipeline-layout.test.js"
+      ]
+    },
+    {
+      "hash": "8ac771fe59295a327818194c0afd6098b195f89f",
+      "short": "8ac771f",
+      "time": 1781183900,
+      "subject": "feat(viewer): flowEdgeClass kind 透传（k-*）+ 反向链路路径 buildLinkPath",
+      "files": [
+        "viewer/src/render/edges.js",
+        "viewer/src/test/edges.test.js"
+      ]
+    },
+    {
+      "hash": "a5d4e810ebf8d57db227e64ca163ddfa0644b1c0",
+      "short": "a5d4e81",
+      "time": 1781183842,
+      "subject": "feat(viewer): flow.diagram 校验器 + 双语取值 + 选中集助手（DOM-free）",
+      "files": [
+        "viewer/src/data/diagram.js",
+        "viewer/src/test/diagram.test.js"
+      ]
+    },
+    {
+      "hash": "cc15fc27f57102a7ea3bfbc4e867a349500c52a8",
+      "short": "cc15fc2",
+      "time": 1781180920,
+      "subject": "chore(release): v1.12.0 — viewer: copyable build-info popover",
+      "files": [
+        ".claude-plugin/plugin.json"
+      ]
+    },
+    {
+      "hash": "88702252e40ffabe0da2486236058c743607c002",
+      "short": "8870225",
+      "time": 1781180915,
+      "subject": "feat(viewer): build-info popover — click badge for selectable, copyable details",
+      "files": [
+        "viewer/index.html",
+        "viewer/src/main.js",
+        "viewer/src/test/buildinfo.test.js",
+        "viewer/src/ui/buildinfo.js",
+        "viewer/src/ui/buildpopover.js",
+        "viewer/style.css"
+      ]
+    },
     {
       "hash": "f23174c637e42328231115a5519cab2edaf4eb53",
       "short": "f23174c",

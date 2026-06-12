@@ -18,35 +18,55 @@
         "short": "132aea4f",
         "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
       },
-      "generated_at": "2026-06-10T13:43:42",
+      "generated_at": "2026-06-12T13:37:13",
       "refined": true,
-      "score": 203,
+      "score": 132,
       "description": "Reactive Programming in Swift",
       "repo": "https://github.com/ReactiveX/RxSwift.git"
     },
     {
-      "slug": "genericagent",
-      "name": "GenericAgent",
+      "slug": "code-map",
+      "name": "code-map",
       "languages": [
-        "python",
-        "rust",
         "typescript"
       ],
       "files": 75,
-      "declarations": 902,
-      "layers": 9,
-      "flows": 10,
-      "edges": 1451,
+      "declarations": 352,
+      "layers": 7,
+      "flows": 5,
+      "edges": 514,
       "git": {
         "branch": "main",
-        "short": "5e42bf3",
-        "commit": "5e42bf3ce957c395062b4ce5b85d24fd61fe7112"
+        "short": "d480ffa",
+        "commit": "d480ffa9d31c4a90e0639c60c398bca70ce313a3"
       },
-      "generated_at": "2026-06-10T13:43:04",
+      "generated_at": "2026-06-12T13:36:27",
       "refined": true,
-      "score": 186,
-      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
-      "repo": "https://github.com/lsdefine/GenericAgent.git"
+      "score": 130,
+      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
+      "repo": "https://github.com/MollyAI/code-map.git"
+    },
+    {
+      "slug": "freertos-kernel",
+      "name": "FreeRTOS-Kernel",
+      "languages": [
+        "c"
+      ],
+      "files": 35,
+      "declarations": 428,
+      "layers": 9,
+      "flows": 10,
+      "edges": 375,
+      "git": {
+        "branch": "main",
+        "short": "543558b",
+        "commit": "543558ba7761df03fa1506de62e42a53416dca1e"
+      },
+      "generated_at": "2026-06-12T23:33:55",
+      "refined": true,
+      "score": 129,
+      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
+      "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
     },
     {
       "slug": "termux-app",
@@ -66,55 +86,11 @@
         "short": "401bbe5",
         "commit": "401bbe54b8f4e68302b1ff70678015a24628fb1d"
       },
-      "generated_at": "2026-06-10T13:42:05",
+      "generated_at": "2026-06-12T13:35:39",
       "refined": true,
-      "score": 169,
+      "score": 129,
       "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
       "repo": "https://github.com/termux/termux-app.git"
-    },
-    {
-      "slug": "code-map",
-      "name": "code-map",
-      "languages": [
-        "typescript"
-      ],
-      "files": 71,
-      "declarations": 341,
-      "layers": 8,
-      "flows": 5,
-      "edges": 497,
-      "git": {
-        "branch": "main",
-        "short": "f23174c",
-        "commit": "f23174c637e42328231115a5519cab2edaf4eb53"
-      },
-      "generated_at": "2026-06-10T13:41:37",
-      "refined": true,
-      "score": 162,
-      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
-      "repo": "https://github.com/MollyAI/code-map.git"
-    },
-    {
-      "slug": "freertos-kernel",
-      "name": "FreeRTOS-Kernel",
-      "languages": [
-        "c"
-      ],
-      "files": 38,
-      "declarations": 430,
-      "layers": 10,
-      "flows": 11,
-      "edges": 376,
-      "git": {
-        "branch": "main",
-        "short": "d877cd5",
-        "commit": "d877cd53989eba16c5092761056e31e1dcddba2f"
-      },
-      "generated_at": "2026-06-10T13:56:24",
-      "refined": true,
-      "score": 158,
-      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
-      "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
     },
     {
       "slug": "gson",
@@ -124,7 +100,7 @@
       ],
       "files": 87,
       "declarations": 80,
-      "layers": 8,
+      "layers": 7,
       "flows": 5,
       "edges": 316,
       "git": {
@@ -132,11 +108,35 @@
         "short": "004e7a4",
         "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
       },
-      "generated_at": "2026-06-10T13:41:44",
+      "generated_at": "2026-06-12T13:36:00",
       "refined": true,
-      "score": 120,
+      "score": 128,
       "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back",
       "repo": "https://github.com/google/gson.git"
+    },
+    {
+      "slug": "genericagent",
+      "name": "GenericAgent",
+      "languages": [
+        "python",
+        "rust",
+        "typescript"
+      ],
+      "files": 73,
+      "declarations": 913,
+      "layers": 8,
+      "flows": 11,
+      "edges": 1258,
+      "git": {
+        "branch": "main",
+        "short": "49528d3",
+        "commit": "49528d32db45f784ec127879cb10043f5a56e5d5"
+      },
+      "generated_at": "2026-06-12T13:35:12",
+      "refined": true,
+      "score": 119,
+      "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
+      "repo": "https://github.com/lsdefine/GenericAgent.git"
     }
   ]
 }

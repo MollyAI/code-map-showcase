@@ -5,15 +5,15 @@
     "languages": [
       "typescript"
     ],
-    "files_scanned": 71,
+    "files_scanned": 75,
     "files_by_language": {
-      "typescript": 71
+      "typescript": 75
     },
     "declarations_by_language": {
-      "typescript": 341
+      "typescript": 352
     },
     "parse_failures": 0,
-    "generated_at": "2026-06-10T13:41:37",
+    "generated_at": "2026-06-12T13:36:27",
     "template_detection": {
       "chosen": "microkernel",
       "scores": {
@@ -70,19 +70,19 @@
       "fit": {
         "fits": true,
         "uncategorized_pct": 0,
-        "largest_layer_pct": 0.446,
+        "largest_layer_pct": 0.432,
         "empty_layers": [],
         "populated_layers": 7,
         "total_layers": 7
       }
     },
     "resolution": {
-      "files_ts": 69,
-      "edges_resolved": 497,
-      "edges_unresolved": 151,
+      "files_ts": 73,
+      "edges_resolved": 514,
+      "edges_unresolved": 150,
       "barrels_expanded": 0,
       "aliases_resolved": 0,
-      "coverage": 0.767
+      "coverage": 0.774
     },
     "advisories": [
       {
@@ -95,46 +95,40 @@
     ],
     "git": {
       "branch": "main",
-      "commit": "f23174c637e42328231115a5519cab2edaf4eb53",
-      "short": "f23174c",
+      "commit": "d480ffa9d31c4a90e0639c60c398bca70ce313a3",
+      "short": "d480ffa",
       "dirty": false
     },
-    "code_map_version": "1.11.0",
+    "code_map_version": "1.15.0",
     "architecture": {
       "template": "pipeline",
       "customized": true
     },
     "score": {
-      "rubric": "arch-score-v1",
-      "total": 162,
-      "base": 160,
-      "difficulty": 112.7,
-      "execution": 1.416,
+      "rubric": "arch-score-v2",
+      "total": 130,
+      "base": 130,
+      "difficulty": 90,
+      "difficulty_raw": 96,
+      "execution": 1.44,
       "dimensions": {
         "layering": {
-          "score": 95,
-          "penalties": [
-            {
-              "id": "empty_layers",
-              "points": 5,
-              "value": 1,
-              "detail": "1 empty layer(s)"
-            }
-          ]
+          "score": 100,
+          "penalties": []
         },
         "dependencies": {
-          "score": 91,
+          "score": 92,
           "penalties": [
             {
               "id": "cycles",
-              "points": 2.1,
-              "value": 0.018,
-              "detail": "6/341 declarations sit in dependency cycles"
+              "points": 1,
+              "value": 0.017,
+              "detail": "largest cycle holds 3/352 declarations (+3 in smaller cycles)"
             },
             {
               "id": "resolution",
-              "points": 7,
-              "value": 0.767,
+              "points": 6.8,
+              "value": 0.774,
               "detail": "import resolution coverage 77%"
             }
           ]
@@ -152,21 +146,18 @@
               "id": "isolated",
               "points": 6.1,
               "value": 0.076,
-              "detail": "8% of declarations have no edges"
+              "detail": "8% of declaration weight has no edges"
             }
           ]
         }
       },
       "inputs": {
-        "decls": 341,
-        "edges": 497,
-        "files": 71,
-        "languages": 1
-      },
-      "adjustment": {
-        "delta": 2,
-        "reason_zh": "cycles 扣分命中的两个强连通分量均为 scripts/lib/yaml.mjs 递归下降解析器的互递归（parseBlock↔parseMapping↔parseSequence、parseScalar↔parseFlowMap↔parseFlowSeq），属领域固有结构而非失控耦合",
-        "reason_en": "Both SCCs behind the cycles penalty are mutual recursion in the scripts/lib/yaml.mjs recursive-descent parser (parseBlock/parseMapping/parseSequence and parseScalar/parseFlowMap/parseFlowSeq) — domain-normal structure, not runaway coupling"
+        "decls": 352,
+        "edges": 514,
+        "files": 75,
+        "languages": 1,
+        "weighted_decls": 118,
+        "effective_languages": 1
       }
     }
   },
@@ -189,7 +180,7 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 27,
+          "loc": 25,
           "signature": "function parseArgs(argv)",
           "method_count": 0,
           "importance": 0.031,
@@ -205,7 +196,7 @@
           "name": "isDir",
           "display_name": "analyze:isDir",
           "path": "scripts/analyze.mjs",
-          "line": 52,
+          "line": 50,
           "namespace": "scripts.analyze",
           "package": "scripts.analyze",
           "kind": "function",
@@ -228,7 +219,7 @@
           "name": "isFile",
           "display_name": "analyze:isFile",
           "path": "scripts/analyze.mjs",
-          "line": 53,
+          "line": 51,
           "namespace": "scripts.analyze",
           "package": "scripts.analyze",
           "kind": "function",
@@ -250,7 +241,7 @@
           "id": "scripts.analyze.extOf",
           "name": "extOf",
           "path": "scripts/analyze.mjs",
-          "line": 84,
+          "line": 82,
           "namespace": "scripts.analyze",
           "package": "scripts.analyze",
           "kind": "function",
@@ -272,7 +263,7 @@
           "id": "scripts.analyze.rel",
           "name": "rel",
           "path": "scripts/analyze.mjs",
-          "line": 85,
+          "line": 83,
           "namespace": "scripts.analyze",
           "package": "scripts.analyze",
           "kind": "function",
@@ -295,14 +286,14 @@
           "name": "main",
           "display_name": "analyze:main",
           "path": "scripts/analyze.mjs",
-          "line": 87,
+          "line": 85,
           "namespace": "scripts.analyze",
           "package": "scripts.analyze",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 174,
+          "loc": 163,
           "signature": "async function main(argv)",
           "method_count": 0,
           "importance": 0.407,
@@ -354,12 +345,14 @@
           "signature": "function plan(root, prev, architectureExists, currentVersion = null, maxChangeRatio = DEFAULT_MAX_CHANGE_RATIO)",
           "method_count": 0,
           "importance": 0.105,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "增量构建决策器：对比上次构建的锚点提交与当前 git 状态，任何不确定（插件升级、基提交不可达、改动过多）都回退全量，产出模式与变更文件清单。",
+          "description_en": "The incremental-build decision function: compares the prior build’s anchor commit against current git state, falling back to full on any uncertainty (plugin upgrade, unreachable base, too many changes), and emits the mode plus changed-file list."
         },
         {
           "id": "scripts.incremental.indexPrev",
@@ -384,35 +377,57 @@
           "tags": []
         },
         {
-          "id": "scripts.incremental.merge",
-          "name": "merge",
+          "id": "scripts.incremental.diagramRefsAlive",
+          "name": "diagramRefsAlive",
           "path": "scripts/incremental.mjs",
-          "line": 54,
+          "line": 56,
           "namespace": "scripts.incremental",
           "package": "scripts.incremental",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 55,
+          "loc": 15,
+          "signature": "function diagramRefsAlive(dg, liveIds)",
+          "method_count": 0,
+          "importance": 0.031,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "scripts.incremental.merge",
+          "name": "merge",
+          "path": "scripts/incremental.mjs",
+          "line": 72,
+          "namespace": "scripts.incremental",
+          "package": "scripts.incremental",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 67,
           "signature": "function merge(raw, prev, changedFiles)",
           "method_count": 0,
-          "importance": 0.19,
+          "importance": 0.241,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 1,
+          "out_degree": 2,
           "confidence": "high",
           "tags": [],
-          "description_zh": "将上一次 Phase 2 的标注（描述、标签、分层）合并到新鲜的 Phase 1 结构上，仅标记需重新描述的陈旧声明。",
-          "description_en": "Merges prior Phase-2 annotations (descriptions, tags, layer placement) onto a fresh Phase-1 structure, flagging only the stale declarations that need re-describing."
+          "description_zh": "把上次 Phase 2 的注解（描述、标签、层归属）合并到新的 Phase 1 结构上：仅把真正变化的声明标记为 stale，并剥离引用了已消失声明的流程图示、把该流程标记为待复审。",
+          "description_en": "Merges prior Phase-2 annotations (descriptions, tags, layer placement) onto a fresh Phase-1 structure: flags only genuinely changed declarations as stale, and strips a flow diagram whose referenced declarations vanished, marking that flow needs_review."
         },
         {
           "id": "scripts.incremental.flag",
           "name": "flag",
           "display_name": "incremental:flag",
           "path": "scripts/incremental.mjs",
-          "line": 111,
+          "line": 141,
           "namespace": "scripts.incremental",
           "package": "scripts.incremental",
           "kind": "function",
@@ -434,7 +449,7 @@
           "id": "scripts.incremental.loadJson",
           "name": "loadJson",
           "path": "scripts/incremental.mjs",
-          "line": 115,
+          "line": 145,
           "namespace": "scripts.incremental",
           "package": "scripts.incremental",
           "kind": "function",
@@ -456,7 +471,7 @@
           "id": "scripts.incremental.planMain",
           "name": "planMain",
           "path": "scripts/incremental.mjs",
-          "line": 117,
+          "line": 147,
           "namespace": "scripts.incremental",
           "package": "scripts.incremental",
           "kind": "function",
@@ -480,7 +495,7 @@
           "id": "scripts.incremental.mergeMain",
           "name": "mergeMain",
           "path": "scripts/incremental.mjs",
-          "line": 129,
+          "line": 159,
           "namespace": "scripts.incremental",
           "package": "scripts.incremental",
           "kind": "function",
@@ -803,7 +818,7 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 84,
+          "loc": 78,
           "signature": "function runServer(argv)",
           "method_count": 0,
           "importance": 0.221,
@@ -1070,12 +1085,14 @@
           "signature": "function buildDispatchFlows(declarations, dispatchIndex, edges, hubIds, opts = {})",
           "method_count": 0,
           "importance": 0.171,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "为每个重要的多态分发接口生成一条聚焦的\"分发流程\"：以接口的规范分发者为根，扇出到全部实现及其直接协作者（策略/责任链/观察者形态）。",
+          "description_en": "Builds one focused dispatch flow per significant polymorphic interface: rooted at the interface’s canonical dispatcher and fanning out to all implementors plus their direct collaborators (strategy / chain-of-responsibility shapes)."
         }
       ]
     },
@@ -1100,12 +1117,14 @@
           "signature": "function isEntryPoint(d)",
           "method_count": 0,
           "importance": 0.21,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 3,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "按命名与路径启发式（main、*Application、/cmd/ 等）判定一个声明是否为入口点。",
+          "description_en": "Heuristic entry-point test for a declaration by name and path hints (main, *Application, /cmd/, …)."
         },
         {
           "id": "scripts.lib.core.round3",
@@ -1146,12 +1165,14 @@
           "signature": "function buildGraph(declarations)",
           "method_count": 0,
           "importance": 0.199,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 4,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "把各语言提取器产出的声明解析为确定有序的 extends/uses 依赖边并统计出入度——整张依赖图在此构成。",
+          "description_en": "Resolves extractor declarations into deterministic, ordered extends/uses edges with in/out degrees — the whole dependency graph is built here."
         },
         {
           "id": "scripts.lib.core.resolve",
@@ -1186,8 +1207,8 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 23,
-          "signature": "function markCore(declarations, percentile = 0.25, maxPerLayer = 40)",
+          "loc": 28,
+          "signature": "function markCore(declarations, percentile = 0.3, maxPerLayer = 40, minPerLayer = 4)",
           "method_count": 0,
           "importance": 0.136,
           "core": false,
@@ -1201,7 +1222,7 @@
           "id": "scripts.lib.core.toJsonShape",
           "name": "toJsonShape",
           "path": "scripts/lib/core.mjs",
-          "line": 144,
+          "line": 149,
           "namespace": "scripts.lib.core",
           "package": "scripts.lib.core",
           "kind": "function",
@@ -1233,10 +1254,10 @@
           "loc": 13,
           "signature": "function run(args, root)",
           "method_count": 0,
-          "importance": 0.088,
+          "importance": 0.081,
           "core": false,
           "hub": false,
-          "in_degree": 6,
+          "in_degree": 5,
           "out_degree": 0,
           "confidence": "high",
           "tags": []
@@ -1255,10 +1276,10 @@
           "loc": 4,
           "signature": "function isGitRepo(root)",
           "method_count": 0,
-          "importance": 0.252,
-          "core": true,
+          "importance": 0.19,
+          "core": false,
           "hub": false,
-          "in_degree": 2,
+          "in_degree": 1,
           "out_degree": 1,
           "confidence": "high",
           "tags": [],
@@ -1350,50 +1371,6 @@
           "hub": false,
           "in_degree": 0,
           "out_degree": 1,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "scripts.lib.gitmeta.parseGitLog",
-          "name": "parseGitLog",
-          "path": "scripts/lib/gitmeta.mjs",
-          "line": 69,
-          "namespace": "scripts.lib.gitmeta",
-          "package": "scripts.lib.gitmeta",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 20,
-          "signature": "function parseGitLog(raw)",
-          "method_count": 0,
-          "importance": 0.105,
-          "core": false,
-          "hub": false,
-          "in_degree": 1,
-          "out_degree": 0,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "scripts.lib.gitmeta.commitHistory",
-          "name": "commitHistory",
-          "path": "scripts/lib/gitmeta.mjs",
-          "line": 92,
-          "namespace": "scripts.lib.gitmeta",
-          "package": "scripts.lib.gitmeta",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 10,
-          "signature": "function commitHistory(root, opts = {})",
-          "method_count": 0,
-          "importance": 0.171,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 3,
           "confidence": "high",
           "tags": []
         },
@@ -1535,7 +1512,7 @@
           "id": "scripts.lib.score.tarjanSCC",
           "name": "tarjanSCC",
           "path": "scripts/lib/score.mjs",
-          "line": 19,
+          "line": 23,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1557,7 +1534,7 @@
           "id": "scripts.lib.score.dim",
           "name": "dim",
           "path": "scripts/lib/score.mjs",
-          "line": 65,
+          "line": 76,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1576,10 +1553,32 @@
           "tags": []
         },
         {
+          "id": "scripts.lib.score.scoringView",
+          "name": "scoringView",
+          "path": "scripts/lib/score.mjs",
+          "line": 88,
+          "namespace": "scripts.lib.score",
+          "package": "scripts.lib.score",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 8,
+          "signature": "function scoringView(model)",
+          "method_count": 0,
+          "importance": 0.073,
+          "core": false,
+          "hub": false,
+          "in_degree": 4,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
           "id": "scripts.lib.score.declsOf",
           "name": "declsOf",
           "path": "scripts/lib/score.mjs",
-          "line": 70,
+          "line": 97,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1601,7 +1600,7 @@
           "id": "scripts.lib.score.adjacencyOf",
           "name": "adjacencyOf",
           "path": "scripts/lib/score.mjs",
-          "line": 74,
+          "line": 101,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1623,79 +1622,79 @@
           "id": "scripts.lib.score.scoreLayering",
           "name": "scoreLayering",
           "path": "scripts/lib/score.mjs",
-          "line": 88,
+          "line": 117,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 39,
+          "loc": 41,
           "signature": "function scoreLayering(model)",
           "method_count": 0,
-          "importance": 0.241,
+          "importance": 0.276,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 2,
+          "out_degree": 3,
           "confidence": "high",
           "tags": [],
-          "description_zh": "分层维度评分：惩罚未分类声明、巨层、空层与向上的跨层 uses 依赖。",
-          "description_en": "Scores the layering dimension: penalizes uncategorized declarations, monolayers, empty layers, and upward cross-layer uses edges."
+          "description_zh": "分层维度评分：惩罚未分类声明、巨层、空层与向上的跨层 uses 依赖；指向 api:true 层的向上边整体豁免（库的公开 API 即其领域中心）。",
+          "description_en": "Scores the layering dimension: uncategorized share, monolayers, empty layers, and upward cross-layer uses edges — with upward edges into api:true layers exempt (a library’s published API is its domain center)."
         },
         {
           "id": "scripts.lib.score.scoreDependencies",
           "name": "scoreDependencies",
           "path": "scripts/lib/score.mjs",
-          "line": 131,
+          "line": 165,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 39,
+          "loc": 57,
           "signature": "function scoreDependencies(model)",
           "method_count": 0,
-          "importance": 0.326,
+          "importance": 0.345,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 5,
+          "out_degree": 6,
           "confidence": "high",
           "tags": [],
-          "description_zh": "依赖维度评分：Tarjan SCC 找环、传递可达密度、度集中度与导入解析覆盖率。",
-          "description_en": "Scores the dependency dimension: Tarjan-SCC cycles, transitive reach density, degree concentration, and import-resolution coverage."
+          "description_zh": "依赖维度评分：Tarjan SCC 环缠结（最大环按\"架构核心\"重加权，2 节点互引豁免）、传递可达密度、度集中度、导入解析覆盖率与动态语言不透明度。",
+          "description_en": "Scores the dependency dimension: Tarjan-SCC cycle tangles (largest SCC weighted as the architectural core; 2-node mutual pairs exempt), reach density, degree concentration, import-resolution coverage, and dynamic-language opacity."
         },
         {
           "id": "scripts.lib.score.scoreHygiene",
           "name": "scoreHygiene",
           "path": "scripts/lib/score.mjs",
-          "line": 174,
+          "line": 226,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 27,
+          "loc": 32,
           "signature": "function scoreHygiene(model)",
           "method_count": 0,
-          "importance": 0.241,
+          "importance": 0.276,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 2,
+          "out_degree": 3,
           "confidence": "high",
           "tags": [],
-          "description_zh": "卫生维度评分：惩罚解析失败、vendored 泛滥告警、孤立声明与超大单元。",
-          "description_en": "Scores the hygiene dimension: parse failures, vendored-flooding advisories, isolated declarations, and oversized units."
+          "description_zh": "卫生维度评分：惩罚解析失败、vendored 泛滥告警、孤立声明（按声明粒度加权）与超大单元。",
+          "description_en": "Scores the hygiene dimension: parse failures, vendored-flooding advisories, kind-weighted isolated declarations, and oversized units."
         },
         {
           "id": "scripts.lib.score.reachDensity",
           "name": "reachDensity",
           "path": "scripts/lib/score.mjs",
-          "line": 207,
+          "line": 264,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1717,31 +1716,31 @@
           "id": "scripts.lib.score.computeScore",
           "name": "computeScore",
           "path": "scripts/lib/score.mjs",
-          "line": 241,
+          "line": 304,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 27,
+          "loc": 38,
           "signature": "function computeScore(model)",
           "method_count": 0,
-          "importance": 0.326,
+          "importance": 0.345,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 5,
+          "out_degree": 6,
           "confidence": "high",
           "tags": [],
-          "description_zh": "架构评分的确定性基线：total = round(难度 D × 执行质量 E)，输出逐字节稳定的评分对象。",
-          "description_en": "The deterministic arch-score baseline: total = round(difficulty D × execution E), yielding a byte-stable score object."
+          "description_zh": "架构评分 v2 的确定性基线：total = round(难度门槛 D × 执行质量 E)，D 经声明粒度加权并封顶 90——规模只过滤玩具仓库，过门槛后只比执行质量。",
+          "description_en": "The deterministic arch-score v2 baseline: total = round(D × E) with a granularity-weighted difficulty D capped at 90 — scale only gates out toy repos; past the gate, execution quality ranks."
         },
         {
           "id": "scripts.lib.score.applyAdjustment",
           "name": "applyAdjustment",
           "path": "scripts/lib/score.mjs",
-          "line": 274,
+          "line": 348,
           "namespace": "scripts.lib.score",
           "package": "scripts.lib.score",
           "kind": "function",
@@ -1973,7 +1972,7 @@
           "id": "scripts.lib.skipdirs.pruneDirnames",
           "name": "pruneDirnames",
           "path": "scripts/lib/skipdirs.mjs",
-          "line": 38,
+          "line": 45,
           "namespace": "scripts.lib.skipdirs",
           "package": "scripts.lib.skipdirs",
           "kind": "function",
@@ -1984,18 +1983,20 @@
           "signature": "function pruneDirnames(dirnames, skipDirs, parentFilenames = [])",
           "method_count": 0,
           "importance": 0.105,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "目录遍历过滤：跳过命中集合的目录，但 build/dist 这类输出目录名仅在父目录含构建清单时才跳过。",
+          "description_en": "Walk-time directory filter: drops skip-set names, but output-style dirs like build/dist are skipped only when the parent holds a build manifest."
         },
         {
           "id": "scripts.lib.skipdirs.loadSkipDirs",
           "name": "loadSkipDirs",
           "path": "scripts/lib/skipdirs.mjs",
-          "line": 49,
+          "line": 56,
           "namespace": "scripts.lib.skipdirs",
           "package": "scripts.lib.skipdirs",
           "kind": "function",
@@ -2278,12 +2279,14 @@
           "signature": "function packageRoot(namespace, segments = 2)",
           "method_count": 0,
           "importance": 0.105,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "取命名空间的前 N 段作为包根，用于第一方/第三方包归属判定。",
+          "description_en": "Takes the first N namespace segments as the package root, for first- vs third-party attribution."
         },
         {
           "id": "scripts.lib.vendoring.extractOwnRoots",
@@ -3406,7 +3409,7 @@
           "method_count": 0,
           "importance": 0.294,
           "core": true,
-          "hub": false,
+          "hub": true,
           "in_degree": 6,
           "out_degree": 0,
           "confidence": "high",
@@ -4573,12 +4576,14 @@
           "signature": "function extractorPathFor(ext)",
           "method_count": 0,
           "importance": 0.105,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "按文件扩展名在注册表中查到对应语言提取器的模块路径。",
+          "description_en": "Looks up the extractor module path for a file extension in the registry."
         },
         {
           "id": "scripts.lib.extractors.loadExtractor",
@@ -4595,12 +4600,14 @@
           "signature": "async function loadExtractor(modPath)",
           "method_count": 0,
           "importance": 0.105,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "按需懒加载语言提取器模块并缓存；模块缺失或语法不可用时返回 null，文件转入 unresolved 而非让框架崩溃。",
+          "description_en": "Lazily imports and caches a language extractor module; a missing module or grammar yields null so the file goes to unresolved instead of crashing the framework."
         },
         {
           "id": "scripts.lib.extractors.extractorFor",
@@ -6247,49 +6254,27 @@
       "id": "viewer-view",
       "name": "Viewer Rendering & UI",
       "order": 5,
-      "summary": "Canvas/SVG rendering, layer & flow layout, pan/zoom/selection, UI controls, and PNG export.",
+      "summary": "Canvas/SVG rendering, layer & flow & diagram layout, pan/zoom/selection, UI controls, and PNG export.",
       "classes": [
-        {
-          "id": "viewer.src.main.selectFromMap",
-          "name": "selectFromMap",
-          "path": "viewer/src/main.js",
-          "line": 80,
-          "namespace": "viewer.src.main",
-          "package": "viewer.src.main",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 9,
-          "signature": "function selectFromMap(id)",
-          "method_count": 0,
-          "importance": 0.041,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 2,
-          "confidence": "high",
-          "tags": []
-        },
         {
           "id": "viewer.src.main.deselect",
           "name": "deselect",
           "path": "viewer/src/main.js",
-          "line": 91,
+          "line": 77,
           "namespace": "viewer.src.main",
           "package": "viewer.src.main",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 10,
+          "loc": 3,
           "signature": "function deselect()",
           "method_count": 0,
-          "importance": 0.041,
+          "importance": 0,
           "core": false,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 2,
+          "out_degree": 0,
           "confidence": "high",
           "tags": []
         },
@@ -6297,7 +6282,7 @@
           "id": "viewer.src.main.showError",
           "name": "showError",
           "path": "viewer/src/main.js",
-          "line": 120,
+          "line": 98,
           "namespace": "viewer.src.main",
           "package": "viewer.src.main",
           "kind": "function",
@@ -6319,7 +6304,7 @@
           "id": "viewer.src.main.renderBuildInfo",
           "name": "renderBuildInfo",
           "path": "viewer/src/main.js",
-          "line": 131,
+          "line": 110,
           "namespace": "viewer.src.main",
           "package": "viewer.src.main",
           "kind": "function",
@@ -6341,21 +6326,21 @@
           "id": "viewer.src.main.onModel",
           "name": "onModel",
           "path": "viewer/src/main.js",
-          "line": 140,
+          "line": 119,
           "namespace": "viewer.src.main",
           "package": "viewer.src.main",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 29,
+          "loc": 25,
           "signature": "function onModel(json)",
           "method_count": 0,
-          "importance": 0.085,
+          "importance": 0.077,
           "core": false,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 9,
+          "out_degree": 7,
           "confidence": "high",
           "tags": []
         },
@@ -6495,25 +6480,25 @@
           "id": "viewer.src.interact.selection.createSelection",
           "name": "createSelection",
           "path": "viewer/src/interact/selection.js",
-          "line": 19,
+          "line": 20,
           "namespace": "viewer.src.interact.selection",
           "package": "viewer.src.interact.selection",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 161,
+          "loc": 111,
           "signature": "function createSelection({ backend, renderDetail, layoutEl })",
           "method_count": 0,
-          "importance": 0.136,
+          "importance": 0.221,
           "core": true,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 2,
+          "out_degree": 5,
           "confidence": "high",
           "tags": [],
-          "description_zh": "轻量选中通路：不走全量重渲染，只切换高亮类并重绘选中节点的边（流程视图高亮贯穿整条链）。",
-          "description_en": "The lightweight selection path: skips full re-render, toggling highlight classes and redrawing only the selected node's edges (the whole chain in flow view)."
+          "description_zh": "轻量选中通路：不走全量重渲染，只切换高亮类并重绘相关边；流程视图按图示语义高亮（时序=步骤端点，流水线=点亮所在阶段）。",
+          "description_en": "The lightweight selection path: toggles highlight classes without a full re-render; flow view highlights diagram-aware (sequence → step endpoints, pipeline → lit stages)."
         },
         {
           "id": "viewer.src.interact.zoom.initZoom",
@@ -6526,7 +6511,7 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 75,
+          "loc": 81,
           "signature": "function initZoom(backend, canvasWrap)",
           "method_count": 0,
           "importance": 0,
@@ -6541,7 +6526,7 @@
           "id": "viewer.src.layout.flow.layoutFlow",
           "name": "layoutFlow",
           "path": "viewer/src/layout/flow.js",
-          "line": 42,
+          "line": 43,
           "namespace": "viewer.src.layout.flow",
           "package": "viewer.src.layout.flow",
           "kind": "function",
@@ -6563,14 +6548,14 @@
           "id": "viewer.src.layout.metrics.makeLayout",
           "name": "makeLayout",
           "path": "viewer/src/layout/metrics.js",
-          "line": 58,
+          "line": 56,
           "namespace": "viewer.src.layout.metrics",
           "package": "viewer.src.layout.metrics",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 12,
+          "loc": 11,
           "signature": "function makeLayout(fontScale)",
           "method_count": 0,
           "importance": 0.105,
@@ -6582,28 +6567,144 @@
           "tags": []
         },
         {
-          "id": "viewer.src.layout.metrics.nodeWidth",
-          "name": "nodeWidth",
+          "id": "viewer.src.layout.metrics.labelWidth",
+          "name": "labelWidth",
           "path": "viewer/src/layout/metrics.js",
-          "line": 79,
+          "line": 76,
           "namespace": "viewer.src.layout.metrics",
           "package": "viewer.src.layout.metrics",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 6,
-          "signature": "function nodeWidth(decl, LAYOUT)",
+          "loc": 7,
+          "signature": "function labelWidth(text, LAYOUT)",
           "method_count": 0,
-          "importance": 0.166,
+          "importance": 0.243,
           "core": true,
           "hub": false,
-          "in_degree": 2,
+          "in_degree": 4,
           "out_degree": 0,
           "confidence": "high",
           "tags": [],
-          "description_zh": "由标签长度（优先 display_name）计算节点盒宽度，并夹在布局的最小/最大宽之间。",
-          "description_en": "Computes a node box's width from its label length (display_name first), clamped to the layout's min/max width."
+          "description_zh": "估算标签在等宽字体下的渲染宽度（CJK 字形按 2 个单位计），供图示布局精确留白避让。",
+          "description_en": "Approximates a label’s rendered width in the mono font (CJK glyphs count as 2 units) so the diagram layouts can size gaps precisely."
+        },
+        {
+          "id": "viewer.src.layout.metrics.nodeWidth",
+          "name": "nodeWidth",
+          "path": "viewer/src/layout/metrics.js",
+          "line": 93,
+          "namespace": "viewer.src.layout.metrics",
+          "package": "viewer.src.layout.metrics",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 5,
+          "signature": "function nodeWidth(decl, LAYOUT)",
+          "method_count": 0,
+          "importance": 0.295,
+          "core": true,
+          "hub": false,
+          "in_degree": 3,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "按完整标签（CJK 感知）自适应计算节点盒宽，仅保最小宽度——渲染器从此无需截断标签。",
+          "description_en": "Adaptive node width sized to the full (CJK-aware) label plus padding, with only a minimum enforced — the renderer never truncates labels."
+        },
+        {
+          "id": "viewer.src.layout.pipeline.extraDatum",
+          "name": "extraDatum",
+          "path": "viewer/src/layout/pipeline.js",
+          "line": 21,
+          "namespace": "viewer.src.layout.pipeline",
+          "package": "viewer.src.layout.pipeline",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 3,
+          "signature": "function extraDatum(spec)",
+          "method_count": 0,
+          "importance": 0.031,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.layout.pipeline.layoutPipeline",
+          "name": "layoutPipeline",
+          "path": "viewer/src/layout/pipeline.js",
+          "line": 37,
+          "namespace": "viewer.src.layout.pipeline",
+          "package": "viewer.src.layout.pipeline",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 113,
+          "signature": "function layoutPipeline(flow, classById, LAYOUT)",
+          "method_count": 0,
+          "importance": 0.171,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 3,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "流水线图的纯几何布局：阶段列左→右排布、成员盒在容器内纵向堆叠、全阶段等高，并为连线标签留出列间距。",
+          "description_en": "Pure geometry for the stage-pipeline diagram: left-to-right stage columns, member boxes stacked inside containers, equal stage heights, and column gaps sized for link labels."
+        },
+        {
+          "id": "viewer.src.layout.sequence.participantWidth",
+          "name": "participantWidth",
+          "path": "viewer/src/layout/sequence.js",
+          "line": 26,
+          "namespace": "viewer.src.layout.sequence",
+          "package": "viewer.src.layout.sequence",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 4,
+          "signature": "function participantWidth(p, LAYOUT)",
+          "method_count": 0,
+          "importance": 0.057,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.layout.sequence.layoutSequence",
+          "name": "layoutSequence",
+          "path": "viewer/src/layout/sequence.js",
+          "line": 41,
+          "namespace": "viewer.src.layout.sequence",
+          "package": "viewer.src.layout.sequence",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 68,
+          "signature": "function layoutSequence(flow, LAYOUT)",
+          "method_count": 0,
+          "importance": 0.136,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 2,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "时序图的纯几何布局：参与者盒一行排开、虚线生命线下垂、步骤按数组（时间）顺序自上而下；间距取双语标签较宽者，切换语言不回流。",
+          "description_en": "Pure geometry for the sequence diagram: one row of participant boxes, dashed lifelines, steps top-down in array (temporal) order; spacing fits the wider of the zh/en labels so language toggles never reflow."
         },
         {
           "id": "viewer.src.render.backend.createSvgBackend",
@@ -6616,7 +6717,7 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 89,
+          "loc": 92,
           "signature": "function createSvgBackend(svg, canvasWrap)",
           "method_count": 0,
           "importance": 0,
@@ -6626,6 +6727,120 @@
           "out_degree": 0,
           "confidence": "high",
           "tags": []
+        },
+        {
+          "id": "viewer.src.render.diagrams.el",
+          "name": "el",
+          "path": "viewer/src/render/diagrams.js",
+          "line": 25,
+          "namespace": "viewer.src.render.diagrams",
+          "package": "viewer.src.render.diagrams",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 5,
+          "signature": "function el(tag, attrs)",
+          "method_count": 0,
+          "importance": 0.073,
+          "core": false,
+          "hub": false,
+          "in_degree": 4,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.render.diagrams.appendSynthetic",
+          "name": "appendSynthetic",
+          "path": "viewer/src/render/diagrams.js",
+          "line": 36,
+          "namespace": "viewer.src.render.diagrams",
+          "package": "viewer.src.render.diagrams",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 30,
+          "signature": "function appendSynthetic(st, group, n, ctx)",
+          "method_count": 0,
+          "importance": 0.076,
+          "core": false,
+          "hub": false,
+          "in_degree": 2,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.render.diagrams.labelEl",
+          "name": "labelEl",
+          "path": "viewer/src/render/diagrams.js",
+          "line": 68,
+          "namespace": "viewer.src.render.diagrams",
+          "package": "viewer.src.render.diagrams",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 5,
+          "signature": "function labelEl(x, y, text)",
+          "method_count": 0,
+          "importance": 0.076,
+          "core": false,
+          "hub": false,
+          "in_degree": 2,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.render.diagrams.buildPipelineContent",
+          "name": "buildPipelineContent",
+          "path": "viewer/src/render/diagrams.js",
+          "line": 79,
+          "namespace": "viewer.src.render.diagrams",
+          "package": "viewer.src.render.diagrams",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 39,
+          "signature": "function buildPipelineContent(backend, lay, ctx, { appendNode, flowDecorate })",
+          "method_count": 0,
+          "importance": 0.24,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 6,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "流水线图的 DOM 构建：阶段容器、带双语标签的连线与节点按层叠放，合成节点照常注册以复用点击/提示交互。",
+          "description_en": "DOM builder for the pipeline diagram: stage containers, bilingual-labelled links, and nodes layered in order, with synthetic nodes registered so click/tooltip interaction works unchanged."
+        },
+        {
+          "id": "viewer.src.render.diagrams.buildSequenceContent",
+          "name": "buildSequenceContent",
+          "path": "viewer/src/render/diagrams.js",
+          "line": 124,
+          "namespace": "viewer.src.render.diagrams",
+          "package": "viewer.src.render.diagrams",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 65,
+          "signature": "function buildSequenceContent(backend, lay, ctx, _helpers)",
+          "method_count": 0,
+          "importance": 0.221,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 5,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "时序图的 DOM 构建：生命线、带箭头与双语标签的步骤路径、顶部参与者盒；箭头用显式三角形而非 marker 以兼容 PNG 导出。",
+          "description_en": "DOM builder for the sequence diagram: lifelines, arrowed bilingual step paths, and the participant row, drawing explicit triangle arrowheads (no markers) to survive PNG export."
         },
         {
           "id": "viewer.src.render.edges.buildEdgePath",
@@ -6663,28 +6878,6 @@
           "loc": 6,
           "signature": "function buildFlowEdgePath(from, to)",
           "method_count": 0,
-          "importance": 0,
-          "core": false,
-          "hub": false,
-          "in_degree": 0,
-          "out_degree": 0,
-          "confidence": "high",
-          "tags": []
-        },
-        {
-          "id": "viewer.src.render.edges.flowEdgeClass",
-          "name": "flowEdgeClass",
-          "path": "viewer/src/render/edges.js",
-          "line": 98,
-          "namespace": "viewer.src.render.edges",
-          "package": "viewer.src.render.edges",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 7,
-          "signature": "function flowEdgeClass(kind, { active = false, dimmed = false } = {})",
-          "method_count": 0,
           "importance": 0.105,
           "core": false,
           "hub": false,
@@ -6694,10 +6887,58 @@
           "tags": []
         },
         {
+          "id": "viewer.src.render.edges.buildLinkPath",
+          "name": "buildLinkPath",
+          "path": "viewer/src/render/edges.js",
+          "line": 97,
+          "namespace": "viewer.src.render.edges",
+          "package": "viewer.src.render.edges",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 7,
+          "signature": "function buildLinkPath(from, to)",
+          "method_count": 0,
+          "importance": 0.19,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "在前向贝塞尔边的基础上支持反向连线（目标在源左侧时镜像绘制），服务流水线图任意指向的链接。",
+          "description_en": "Extends the forward bezier edge with mirrored backward links (target left of source) for the pipeline diagram’s anywhere-to-anywhere links."
+        },
+        {
+          "id": "viewer.src.render.edges.flowEdgeClass",
+          "name": "flowEdgeClass",
+          "path": "viewer/src/render/edges.js",
+          "line": 114,
+          "namespace": "viewer.src.render.edges",
+          "package": "viewer.src.render.edges",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 8,
+          "signature": "function flowEdgeClass(kind, { active = false, dimmed = false } = {})",
+          "method_count": 0,
+          "importance": 0.21,
+          "core": true,
+          "hub": false,
+          "in_degree": 3,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "流程边 <path> class 的单一事实来源：渲染器与选中重染共用，保证 dispatch 虚线样式贯穿高亮状态。",
+          "description_en": "Single source of truth for a flow edge path’s class string, shared by the renderer and the selection re-styler so dispatch dashes survive highlighting."
+        },
+        {
           "id": "viewer.src.render.node.langColor",
           "name": "langColor",
           "path": "viewer/src/render/node.js",
-          "line": 35,
+          "line": 33,
           "namespace": "viewer.src.render.node",
           "package": "viewer.src.render.node",
           "kind": "function",
@@ -6721,31 +6962,31 @@
           "id": "viewer.src.render.node.makeNodeEl",
           "name": "makeNodeEl",
           "path": "viewer/src/render/node.js",
-          "line": 90,
+          "line": 88,
           "namespace": "viewer.src.render.node",
           "package": "viewer.src.render.node",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 44,
+          "loc": 45,
           "signature": "function makeNodeEl(n, ctx)",
           "method_count": 0,
-          "importance": 0.241,
+          "importance": 0.19,
           "core": true,
           "hub": false,
           "in_degree": 1,
-          "out_degree": 2,
+          "out_degree": 1,
           "confidence": "high",
           "tags": [],
-          "description_zh": "构建分层与流程两种视图共用的单个 SVG 节点元素（双矩形 + 语言色条 + 截断标签 + 交互监听）。",
-          "description_en": "Builds the shared SVG node element used by both the layer and flow renderers (double-rect + language stripe + truncated label + interaction listeners)."
+          "description_zh": "构建分层/流程/图示三种渲染共用的 SVG 节点元素（双矩形 + 语言色条 + 完整标签 + 交互监听）。",
+          "description_en": "Builds the shared SVG node element (double-rect + language stripe + full label + interaction listeners) used by the layer, flow, and diagram renderers."
         },
         {
           "id": "viewer.src.render.registry.registerView",
           "name": "registerView",
           "path": "viewer/src/render/registry.js",
-          "line": 23,
+          "line": 27,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6767,7 +7008,7 @@
           "id": "viewer.src.render.registry.getView",
           "name": "getView",
           "path": "viewer/src/render/registry.js",
-          "line": 25,
+          "line": 29,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6789,7 +7030,7 @@
           "id": "viewer.src.render.registry.listViews",
           "name": "listViews",
           "path": "viewer/src/render/registry.js",
-          "line": 26,
+          "line": 30,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6811,14 +7052,14 @@
           "id": "viewer.src.render.registry.visibleLayers",
           "name": "visibleLayers",
           "path": "viewer/src/render/registry.js",
-          "line": 30,
+          "line": 36,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 9,
+          "loc": 8,
           "signature": "function visibleLayers(st)",
           "method_count": 0,
           "importance": 0,
@@ -6833,7 +7074,7 @@
           "id": "viewer.src.render.registry.resolveActiveFlow",
           "name": "resolveActiveFlow",
           "path": "viewer/src/render/registry.js",
-          "line": 42,
+          "line": 47,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6855,7 +7096,7 @@
           "id": "viewer.src.render.registry.appendNode",
           "name": "appendNode",
           "path": "viewer/src/render/registry.js",
-          "line": 50,
+          "line": 55,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6865,7 +7106,7 @@
           "loc": 11,
           "signature": "function appendNode(st, group, n, ctx, decorateNode)",
           "method_count": 0,
-          "importance": 0.026,
+          "importance": 0.086,
           "core": false,
           "hub": false,
           "in_degree": 0,
@@ -6877,7 +7118,7 @@
           "id": "viewer.src.render.registry.flowDecorate",
           "name": "flowDecorate",
           "path": "viewer/src/render/registry.js",
-          "line": 64,
+          "line": 72,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6899,7 +7140,7 @@
           "id": "viewer.src.render.registry.registerBuiltinViews",
           "name": "registerBuiltinViews",
           "path": "viewer/src/render/registry.js",
-          "line": 187,
+          "line": 212,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6921,7 +7162,7 @@
           "id": "viewer.src.render.registry.renderApp",
           "name": "renderApp",
           "path": "viewer/src/render/registry.js",
-          "line": 197,
+          "line": 222,
           "namespace": "viewer.src.render.registry",
           "package": "viewer.src.render.registry",
           "kind": "function",
@@ -6940,8 +7181,8 @@
           "tags": [
             "entry-point"
           ],
-          "description_zh": "渲染生命周期的统一入口：查出当前激活的视图定义（分层带 / 流程图）并交由 renderScene 绘制。",
-          "description_en": "The unified render entry: looks up the active ViewDef (layer bands / flow DAG) and hands off to renderScene to draw it."
+          "description_zh": "渲染生命周期的统一入口：查出当前激活的视图定义（分层带 / 流程 DAG / 流水线图 / 时序图）并交由 renderScene 绘制。",
+          "description_en": "The unified render entry: looks up the active ViewDef (layer bands / flow DAG / pipeline / sequence diagram) and hands off to renderScene to draw it."
         },
         {
           "id": "viewer.src.render.scene.renderScene",
@@ -6954,7 +7195,7 @@
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 25,
+          "loc": 21,
           "signature": "function renderScene(backend, view, ctx)",
           "method_count": 0,
           "importance": 0.105,
@@ -6969,7 +7210,7 @@
           "id": "viewer.src.ui.buildinfo.fmtTime",
           "name": "fmtTime",
           "path": "viewer/src/ui/buildinfo.js",
-          "line": 17,
+          "line": 19,
           "namespace": "viewer.src.ui.buildinfo",
           "package": "viewer.src.ui.buildinfo",
           "kind": "function",
@@ -6991,7 +7232,7 @@
           "id": "viewer.src.ui.buildinfo.scoreSegment",
           "name": "scoreSegment",
           "path": "viewer/src/ui/buildinfo.js",
-          "line": 23,
+          "line": 25,
           "namespace": "viewer.src.ui.buildinfo",
           "package": "viewer.src.ui.buildinfo",
           "kind": "function",
@@ -7013,7 +7254,7 @@
           "id": "viewer.src.ui.buildinfo.scoreTitleLines",
           "name": "scoreTitleLines",
           "path": "viewer/src/ui/buildinfo.js",
-          "line": 30,
+          "line": 32,
           "namespace": "viewer.src.ui.buildinfo",
           "package": "viewer.src.ui.buildinfo",
           "kind": "function",
@@ -7035,7 +7276,7 @@
           "id": "viewer.src.ui.buildinfo.formatBuildInfo",
           "name": "formatBuildInfo",
           "path": "viewer/src/ui/buildinfo.js",
-          "line": 54,
+          "line": 56,
           "namespace": "viewer.src.ui.buildinfo",
           "package": "viewer.src.ui.buildinfo",
           "kind": "function",
@@ -7052,8 +7293,32 @@
           "out_degree": 4,
           "confidence": "high",
           "tags": [],
-          "description_zh": "把 project 元数据格式化为顶栏构建徽章（分支 · 短哈希 · 时间 · 架构评分）与含评分明细的双语悬浮提示。",
-          "description_en": "Formats project metadata into the topbar badge (branch · short-hash · time · arch score) and a tooltip with the bilingual score breakdown."
+          "description_zh": "把 project 元数据格式化为顶栏构建徽章（分支 · 短哈希 · 时间 · 架构评分）与可复制弹出层所需的结构化行。",
+          "description_en": "Formats project metadata into the topbar badge (branch · short-hash · time · arch score) plus the structured rows the copyable popover renders."
+        },
+        {
+          "id": "viewer.src.ui.buildpopover.createBuildPopover",
+          "name": "createBuildPopover",
+          "path": "viewer/src/ui/buildpopover.js",
+          "line": 17,
+          "namespace": "viewer.src.ui.buildpopover",
+          "package": "viewer.src.ui.buildpopover",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 67,
+          "signature": "function createBuildPopover({ badgeEl, popEl, getLang })",
+          "method_count": 0,
+          "importance": 0.171,
+          "core": true,
+          "hub": false,
+          "in_degree": 0,
+          "out_degree": 3,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "构建徽章的点击弹出层：以可选中文本展示完整提交/时间/评分明细，并提供一键复制。",
+          "description_en": "Click-to-open popover for the build badge: a selectable full commit / time / score breakdown with one-click copy-all."
         },
         {
           "id": "viewer.src.ui.controls.flowField",
@@ -7078,126 +7343,32 @@
           "tags": []
         },
         {
-          "id": "viewer.src.ui.controls.fmtCommitTime",
-          "name": "fmtCommitTime",
-          "path": "viewer/src/ui/controls.js",
-          "line": 33,
-          "namespace": "viewer.src.ui.controls",
-          "package": "viewer.src.ui.controls",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 6,
-          "signature": "function fmtCommitTime(sec)",
-          "method_count": 0,
-          "importance": 0.031,
-          "core": false,
-          "hub": false,
-          "in_degree": 1,
-          "out_degree": 0,
-          "confidence": "high",
-          "tags": []
-        },
-        {
           "id": "viewer.src.ui.controls.populateFlowList",
           "name": "populateFlowList",
           "path": "viewer/src/ui/controls.js",
-          "line": 44,
+          "line": 36,
           "namespace": "viewer.src.ui.controls",
           "package": "viewer.src.ui.controls",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 26,
+          "loc": 33,
           "signature": "function populateFlowList(els)",
           "method_count": 0,
-          "importance": 0.086,
+          "importance": 0.136,
           "core": false,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 1,
+          "out_degree": 2,
           "confidence": "high",
           "tags": []
-        },
-        {
-          "id": "viewer.src.ui.controls.applyCommitChrome",
-          "name": "applyCommitChrome",
-          "path": "viewer/src/ui/controls.js",
-          "line": 73,
-          "namespace": "viewer.src.ui.controls",
-          "package": "viewer.src.ui.controls",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 5,
-          "signature": "function applyCommitChrome(els)",
-          "method_count": 0,
-          "importance": 0.21,
-          "core": true,
-          "hub": false,
-          "in_degree": 3,
-          "out_degree": 0,
-          "confidence": "high",
-          "tags": [],
-          "description_zh": "在 layer 模式且存在 git 元数据时，显示提交历史侧栏的入口标签。",
-          "description_en": "Shows the commit-history sidebar entry tab when in layer mode and git metadata is present."
-        },
-        {
-          "id": "viewer.src.ui.controls.closeCommitSidebar",
-          "name": "closeCommitSidebar",
-          "path": "viewer/src/ui/controls.js",
-          "line": 82,
-          "namespace": "viewer.src.ui.controls",
-          "package": "viewer.src.ui.controls",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 6,
-          "signature": "function closeCommitSidebar(els)",
-          "method_count": 0,
-          "importance": 0.252,
-          "core": true,
-          "hub": false,
-          "in_degree": 2,
-          "out_degree": 1,
-          "confidence": "high",
-          "tags": [],
-          "description_zh": "收起提交历史侧栏、清除提交高亮并恢复画布宽度。",
-          "description_en": "Collapses the commit-history sidebar, clears the commit highlight, and restores the canvas width."
-        },
-        {
-          "id": "viewer.src.ui.controls.populateCommitList",
-          "name": "populateCommitList",
-          "path": "viewer/src/ui/controls.js",
-          "line": 92,
-          "namespace": "viewer.src.ui.controls",
-          "package": "viewer.src.ui.controls",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 43,
-          "signature": "function populateCommitList(els)",
-          "method_count": 0,
-          "importance": 0.337,
-          "core": true,
-          "hub": false,
-          "in_degree": 2,
-          "out_degree": 3,
-          "confidence": "high",
-          "tags": [],
-          "description_zh": "渲染左侧提交历史列表，并把选中的提交映射为应高亮的节点集合。",
-          "description_en": "Renders the left commit-history list and maps the selected commit to the set of nodes to highlight."
         },
         {
           "id": "viewer.src.ui.controls.closestButton",
           "name": "closestButton",
           "path": "viewer/src/ui/controls.js",
-          "line": 137,
+          "line": 71,
           "namespace": "viewer.src.ui.controls",
           "package": "viewer.src.ui.controls",
           "kind": "function",
@@ -7219,31 +7390,31 @@
           "id": "viewer.src.ui.controls.initControls",
           "name": "initControls",
           "path": "viewer/src/ui/controls.js",
-          "line": 142,
+          "line": 76,
           "namespace": "viewer.src.ui.controls",
           "package": "viewer.src.ui.controls",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 162,
+          "loc": 110,
           "signature": "function initControls(els)",
           "method_count": 0,
-          "importance": 0.296,
+          "importance": 0.221,
           "core": true,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 10,
+          "out_degree": 5,
           "confidence": "high",
           "tags": [],
-          "description_zh": "装配顶栏全部控件（core/all、分层/流程、主题、字号、语言）与流程侧栏，应用持久化设置并初始化布局。",
-          "description_en": "Wires every topbar control (core/all, layer/flow, theme, font, language) and the flow sidebar, applying persisted settings and initializing the layout."
+          "description_zh": "装配顶栏控件（分层/流程、主题、字号、语言）与流程侧栏，应用持久化设置并初始化布局。",
+          "description_en": "Wires the topbar controls (layer/flow grouping, theme, font, language) and the flow sidebar, applying persisted settings and initializing the layout."
         },
         {
           "id": "viewer.src.ui.detail.pickDescription",
           "name": "pickDescription",
           "path": "viewer/src/ui/detail.js",
-          "line": 22,
+          "line": 23,
           "namespace": "viewer.src.ui.detail",
           "package": "viewer.src.ui.detail",
           "kind": "function",
@@ -7265,7 +7436,7 @@
           "id": "viewer.src.ui.detail.simpleNameOf",
           "name": "simpleNameOf",
           "path": "viewer/src/ui/detail.js",
-          "line": 31,
+          "line": 32,
           "namespace": "viewer.src.ui.detail",
           "package": "viewer.src.ui.detail",
           "kind": "function",
@@ -7287,7 +7458,7 @@
           "id": "viewer.src.ui.detail.packageOf",
           "name": "packageOf",
           "path": "viewer/src/ui/detail.js",
-          "line": 33,
+          "line": 34,
           "namespace": "viewer.src.ui.detail",
           "package": "viewer.src.ui.detail",
           "kind": "function",
@@ -7309,25 +7480,25 @@
           "id": "viewer.src.ui.detail.createDetail",
           "name": "createDetail",
           "path": "viewer/src/ui/detail.js",
-          "line": 41,
+          "line": 42,
           "namespace": "viewer.src.ui.detail",
           "package": "viewer.src.ui.detail",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 133,
+          "loc": 171,
           "signature": "function createDetail({ detailBody, canvasWrap, onSelectTarget })",
           "method_count": 0,
-          "importance": 0.257,
+          "importance": 0.271,
           "core": true,
           "hub": false,
           "in_degree": 0,
-          "out_degree": 7,
+          "out_degree": 8,
           "confidence": "high",
           "tags": [],
-          "description_zh": "构建右侧详情面板：声明的标题/签名、标签、路径深链、双语描述与依赖/被依赖边列表。",
-          "description_en": "Builds the right-hand detail panel: a declaration's title/signature, tags, path deep-link, bilingual description, and depends-on / depended-by edge lists."
+          "description_zh": "构建右侧详情面板：声明的标题/签名、标签、路径深链、双语描述与依赖/被依赖边列表；图示的合成节点（工件/参与者）有专属详情。",
+          "description_en": "Builds the right-hand detail panel: title/signature, tags, path deep-link, bilingual description, and edge lists — with a dedicated view for synthetic diagram nodes (artifacts/participants)."
         },
         {
           "id": "viewer.src.ui.langstats.renderLangStats",
@@ -7409,7 +7580,7 @@
           "id": "viewer.src.i18n.t",
           "name": "t",
           "path": "viewer/src/i18n.js",
-          "line": 160,
+          "line": 152,
           "namespace": "viewer.src.i18n",
           "package": "viewer.src.i18n",
           "kind": "function",
@@ -7433,7 +7604,7 @@
           "id": "viewer.src.i18n.pickLangText",
           "name": "pickLangText",
           "path": "viewer/src/i18n.js",
-          "line": 179,
+          "line": 171,
           "namespace": "viewer.src.i18n",
           "package": "viewer.src.i18n",
           "kind": "function",
@@ -7455,7 +7626,7 @@
           "id": "viewer.src.i18n.applyI18nStatic",
           "name": "applyI18nStatic",
           "path": "viewer/src/i18n.js",
-          "line": 204,
+          "line": 196,
           "namespace": "viewer.src.i18n",
           "package": "viewer.src.i18n",
           "kind": "function",
@@ -7523,7 +7694,7 @@
           "id": "viewer.src.store.schedule",
           "name": "schedule",
           "path": "viewer/src/store.js",
-          "line": 32,
+          "line": 26,
           "namespace": "viewer.src.store",
           "package": "viewer.src.store",
           "kind": "function",
@@ -7545,7 +7716,7 @@
           "id": "viewer.src.store.setState",
           "name": "setState",
           "path": "viewer/src/store.js",
-          "line": 39,
+          "line": 33,
           "namespace": "viewer.src.store",
           "package": "viewer.src.store",
           "kind": "function",
@@ -7555,10 +7726,10 @@
           "loc": 1,
           "signature": "function setState(patch)",
           "method_count": 0,
-          "importance": 0.329,
+          "importance": 0.252,
           "core": true,
           "hub": false,
-          "in_degree": 4,
+          "in_degree": 2,
           "out_degree": 1,
           "confidence": "high",
           "tags": [],
@@ -7569,7 +7740,7 @@
           "id": "viewer.src.store.subscribe",
           "name": "subscribe",
           "path": "viewer/src/store.js",
-          "line": 42,
+          "line": 36,
           "namespace": "viewer.src.store",
           "package": "viewer.src.store",
           "kind": "function",
@@ -7623,10 +7794,10 @@
           "loc": 6,
           "signature": "function escapeHtml(s)",
           "method_count": 0,
-          "importance": 0.271,
+          "importance": 0.294,
           "core": true,
           "hub": false,
-          "in_degree": 5,
+          "in_degree": 6,
           "out_degree": 0,
           "confidence": "high",
           "tags": [],
@@ -7669,10 +7840,10 @@
           "loc": 5,
           "signature": "function truncate(s, max)",
           "method_count": 0,
-          "importance": 0.105,
+          "importance": 0,
           "core": false,
           "hub": false,
-          "in_degree": 1,
+          "in_degree": 0,
           "out_degree": 0,
           "confidence": "high",
           "tags": []
@@ -7691,10 +7862,10 @@
           "loc": 20,
           "signature": "async function copyToClipboard(text)",
           "method_count": 0,
-          "importance": 0.105,
+          "importance": 0.166,
           "core": false,
           "hub": false,
-          "in_degree": 1,
+          "in_degree": 2,
           "out_degree": 0,
           "confidence": "high",
           "tags": []
@@ -7744,18 +7915,134 @@
           "tags": []
         },
         {
-          "id": "viewer.src.data.githistory.buildNodesByPath",
-          "name": "buildNodesByPath",
-          "path": "viewer/src/data/githistory.js",
-          "line": 13,
-          "namespace": "viewer.src.data.githistory",
-          "package": "viewer.src.data.githistory",
+          "id": "viewer.src.data.diagram.pickL",
+          "name": "pickL",
+          "path": "viewer/src/data/diagram.js",
+          "line": 17,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 12,
-          "signature": "function buildNodesByPath(layers)",
+          "loc": 5,
+          "signature": "function pickL(obj, base, lang)",
+          "method_count": 0,
+          "importance": 0.21,
+          "core": true,
+          "hub": false,
+          "in_degree": 3,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "双语字段取值助手：优先当前语言，缺失时回退另一语言或无后缀字段。",
+          "description_en": "Bilingual field picker: prefers the active language, falling back to the other language or the bare field."
+        },
+        {
+          "id": "viewer.src.data.diagram.validateDiagram",
+          "name": "validateDiagram",
+          "path": "viewer/src/data/diagram.js",
+          "line": 33,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 10,
+          "signature": "function validateDiagram(flow, classById)",
+          "method_count": 0,
+          "importance": 0.241,
+          "core": true,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 2,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "对 Phase 2 撰写的 flow.diagram 做结构校验：只收集错误从不抛出，任何违例都让查看器静默回退到 DAG 渲染。",
+          "description_en": "Structural validation of the Phase-2-authored flow.diagram: collects errors and never throws; any violation makes the viewer silently fall back to the DAG renderer."
+        },
+        {
+          "id": "viewer.src.data.diagram.validatePipeline",
+          "name": "validatePipeline",
+          "path": "viewer/src/data/diagram.js",
+          "line": 45,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 40,
+          "signature": "function validatePipeline(flow, dg, classById, errors)",
+          "method_count": 0,
+          "importance": 0.031,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.data.diagram.validateSequence",
+          "name": "validateSequence",
+          "path": "viewer/src/data/diagram.js",
+          "line": 87,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 28,
+          "signature": "function validateSequence(dg, classById, errors)",
+          "method_count": 0,
+          "importance": 0.031,
+          "core": false,
+          "hub": false,
+          "in_degree": 1,
+          "out_degree": 0,
+          "confidence": "high",
+          "tags": []
+        },
+        {
+          "id": "viewer.src.data.diagram.diagramOf",
+          "name": "diagramOf",
+          "path": "viewer/src/data/diagram.js",
+          "line": 118,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 4,
+          "signature": "function diagramOf(flow, classById)",
+          "method_count": 0,
+          "importance": 0.252,
+          "core": true,
+          "hub": false,
+          "in_degree": 2,
+          "out_degree": 1,
+          "confidence": "high",
+          "tags": [],
+          "description_zh": "返回通过校验的图示对象、否则为 null（→ DAG 回退）——渲染与交互读取图示的唯一闸口。",
+          "description_en": "Returns the validated diagram or null (→ DAG fallback) — the single gate through which rendering and interaction read diagrams."
+        },
+        {
+          "id": "viewer.src.data.diagram.sequenceHighlight",
+          "name": "sequenceHighlight",
+          "path": "viewer/src/data/diagram.js",
+          "line": 125,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
+          "kind": "function",
+          "language": "typescript",
+          "supertypes": [],
+          "description": "",
+          "loc": 7,
+          "signature": "function sequenceHighlight(dg, id)",
           "method_count": 0,
           "importance": 0.105,
           "core": false,
@@ -7766,50 +8053,26 @@
           "tags": []
         },
         {
-          "id": "viewer.src.data.githistory.nodeIdsForCommit",
-          "name": "nodeIdsForCommit",
-          "path": "viewer/src/data/githistory.js",
-          "line": 29,
-          "namespace": "viewer.src.data.githistory",
-          "package": "viewer.src.data.githistory",
+          "id": "viewer.src.data.diagram.withLitStages",
+          "name": "withLitStages",
+          "path": "viewer/src/data/diagram.js",
+          "line": 136,
+          "namespace": "viewer.src.data.diagram",
+          "package": "viewer.src.data.diagram",
           "kind": "function",
           "language": "typescript",
           "supertypes": [],
           "description": "",
-          "loc": 8,
-          "signature": "function nodeIdsForCommit(commit, nodesByPath)",
+          "loc": 6,
+          "signature": "function withLitStages(dg, set)",
           "method_count": 0,
-          "importance": 0.166,
+          "importance": 0.105,
           "core": false,
           "hub": false,
-          "in_degree": 2,
+          "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
           "tags": []
-        },
-        {
-          "id": "viewer.src.data.githistory.loadGitHistory",
-          "name": "loadGitHistory",
-          "path": "viewer/src/data/githistory.js",
-          "line": 40,
-          "namespace": "viewer.src.data.githistory",
-          "package": "viewer.src.data.githistory",
-          "kind": "function",
-          "language": "typescript",
-          "supertypes": [],
-          "description": "",
-          "loc": 11,
-          "signature": "async function loadGitHistory()",
-          "method_count": 0,
-          "importance": 0.19,
-          "core": true,
-          "hub": false,
-          "in_degree": 1,
-          "out_degree": 1,
-          "confidence": "high",
-          "tags": [],
-          "description_zh": "懒加载构建时生成的 git-history.json 侧车一次并缓存到 state，供提交历史侧栏渲染。",
-          "description_en": "Lazily fetches the build-time git-history.json sidecar once and caches it on state for the commit-history sidebar."
         },
         {
           "id": "viewer.src.data.buildEdgeIndex",
@@ -7937,10 +8200,10 @@
           "loc": 5,
           "signature": "function dataUrl(name, search = (typeof location !== 'undefined' ? location.search : ''))",
           "method_count": 0,
-          "importance": 0.166,
+          "importance": 0.105,
           "core": false,
           "hub": false,
-          "in_degree": 2,
+          "in_degree": 1,
           "out_degree": 0,
           "confidence": "high",
           "tags": []
@@ -7983,21 +8246,16 @@
           "signature": "function synthesizeFlows(classes, ctx)",
           "method_count": 0,
           "importance": 0.19,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "旧版 JSON 缺少 flows[] 时的客户端回退：为每个入口点声明按相同的前向追踪规则合成一条流程。",
+          "description_en": "Client-side fallback for legacy JSON without flows[]: synthesizes one flow per entry-point declaration with the same forward-trace rules."
         }
       ]
-    },
-    {
-      "id": "uncategorized",
-      "name": "Uncategorized",
-      "order": 99,
-      "summary": "Could not be assigned automatically",
-      "classes": []
     }
   ],
   "edges": [
@@ -8099,6 +8357,11 @@
     {
       "from": "scripts.analyze.main",
       "to": "scripts.lib.version.pluginVersion",
+      "kind": "uses"
+    },
+    {
+      "from": "scripts.incremental.merge",
+      "to": "scripts.incremental.diagramRefsAlive",
       "kind": "uses"
     },
     {
@@ -8367,21 +8630,6 @@
       "kind": "uses"
     },
     {
-      "from": "scripts.lib.gitmeta.commitHistory",
-      "to": "scripts.lib.gitmeta.isGitRepo",
-      "kind": "uses"
-    },
-    {
-      "from": "scripts.lib.gitmeta.commitHistory",
-      "to": "scripts.lib.gitmeta.parseGitLog",
-      "kind": "uses"
-    },
-    {
-      "from": "scripts.lib.gitmeta.commitHistory",
-      "to": "scripts.lib.gitmeta.run",
-      "kind": "uses"
-    },
-    {
       "from": "scripts.lib.grammars.resolveGrammarWasm",
       "to": "scripts.lib.grammars.GrammarUnavailable",
       "kind": "uses"
@@ -8482,6 +8730,11 @@
       "kind": "uses"
     },
     {
+      "from": "scripts.lib.score.scoreLayering",
+      "to": "scripts.lib.score.scoringView",
+      "kind": "uses"
+    },
+    {
       "from": "scripts.lib.score.scoreDependencies",
       "to": "scripts.lib.core.round3",
       "kind": "uses"
@@ -8503,6 +8756,11 @@
     },
     {
       "from": "scripts.lib.score.scoreDependencies",
+      "to": "scripts.lib.score.scoringView",
+      "kind": "uses"
+    },
+    {
+      "from": "scripts.lib.score.scoreDependencies",
       "to": "scripts.lib.score.tarjanSCC",
       "kind": "uses"
     },
@@ -8514,6 +8772,11 @@
     {
       "from": "scripts.lib.score.scoreHygiene",
       "to": "scripts.lib.score.dim",
+      "kind": "uses"
+    },
+    {
+      "from": "scripts.lib.score.scoreHygiene",
+      "to": "scripts.lib.score.scoringView",
       "kind": "uses"
     },
     {
@@ -8539,6 +8802,11 @@
     {
       "from": "scripts.lib.score.computeScore",
       "to": "scripts.lib.score.scoreLayering",
+      "kind": "uses"
+    },
+    {
+      "from": "scripts.lib.score.computeScore",
+      "to": "scripts.lib.score.scoringView",
       "kind": "uses"
     },
     {
@@ -10137,26 +10405,6 @@
       "kind": "uses"
     },
     {
-      "from": "viewer.src.main.selectFromMap",
-      "to": "viewer.src.store.setState",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.main.selectFromMap",
-      "to": "viewer.src.ui.controls.closeCommitSidebar",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.main.deselect",
-      "to": "viewer.src.store.setState",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.main.deselect",
-      "to": "viewer.src.ui.controls.populateCommitList",
-      "kind": "uses"
-    },
-    {
       "from": "viewer.src.main.showError",
       "to": "viewer.src.i18n.t",
       "kind": "uses"
@@ -10188,11 +10436,6 @@
     },
     {
       "from": "viewer.src.main.onModel",
-      "to": "viewer.src.data.githistory.buildNodesByPath",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.main.onModel",
       "to": "viewer.src.data.schema.loadModel",
       "kind": "uses"
     },
@@ -10204,11 +10447,6 @@
     {
       "from": "viewer.src.main.onModel",
       "to": "viewer.src.store.setState",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.main.onModel",
-      "to": "viewer.src.ui.controls.applyCommitChrome",
       "kind": "uses"
     },
     {
@@ -10237,13 +10475,23 @@
       "kind": "uses"
     },
     {
-      "from": "viewer.src.data.flows.synthesizeFlows",
-      "to": "viewer.src.data.flows.traceFlow",
+      "from": "viewer.src.data.diagram.validateDiagram",
+      "to": "viewer.src.data.diagram.validatePipeline",
       "kind": "uses"
     },
     {
-      "from": "viewer.src.data.githistory.loadGitHistory",
-      "to": "viewer.src.data.source.dataUrl",
+      "from": "viewer.src.data.diagram.validateDiagram",
+      "to": "viewer.src.data.diagram.validateSequence",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.data.diagram.diagramOf",
+      "to": "viewer.src.data.diagram.validateDiagram",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.data.flows.synthesizeFlows",
+      "to": "viewer.src.data.flows.traceFlow",
       "kind": "uses"
     },
     {
@@ -10273,6 +10521,21 @@
     },
     {
       "from": "viewer.src.interact.selection.createSelection",
+      "to": "viewer.src.data.diagram.diagramOf",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.interact.selection.createSelection",
+      "to": "viewer.src.data.diagram.sequenceHighlight",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.interact.selection.createSelection",
+      "to": "viewer.src.data.diagram.withLitStages",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.interact.selection.createSelection",
       "to": "viewer.src.render.edges.buildEdgePath",
       "kind": "uses"
     },
@@ -10292,13 +10555,113 @@
       "kind": "uses"
     },
     {
-      "from": "viewer.src.render.node.makeNodeEl",
-      "to": "viewer.src.render.node.langColor",
+      "from": "viewer.src.layout.metrics.nodeWidth",
+      "to": "viewer.src.layout.metrics.labelWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.pipeline.layoutPipeline",
+      "to": "viewer.src.layout.metrics.labelWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.pipeline.layoutPipeline",
+      "to": "viewer.src.layout.metrics.nodeWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.pipeline.layoutPipeline",
+      "to": "viewer.src.layout.pipeline.extraDatum",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.sequence.participantWidth",
+      "to": "viewer.src.layout.metrics.labelWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.sequence.layoutSequence",
+      "to": "viewer.src.layout.metrics.labelWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.layout.sequence.layoutSequence",
+      "to": "viewer.src.layout.sequence.participantWidth",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.appendSynthetic",
+      "to": "viewer.src.render.diagrams.el",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.labelEl",
+      "to": "viewer.src.render.diagrams.el",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.data.diagram.pickL",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.render.diagrams.appendSynthetic",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.render.diagrams.el",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.render.diagrams.labelEl",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.render.edges.buildLinkPath",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildPipelineContent",
+      "to": "viewer.src.render.edges.flowEdgeClass",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildSequenceContent",
+      "to": "viewer.src.data.diagram.pickL",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildSequenceContent",
+      "to": "viewer.src.render.diagrams.appendSynthetic",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildSequenceContent",
+      "to": "viewer.src.render.diagrams.el",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildSequenceContent",
+      "to": "viewer.src.render.diagrams.labelEl",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.diagrams.buildSequenceContent",
+      "to": "viewer.src.render.edges.flowEdgeClass",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.render.edges.buildLinkPath",
+      "to": "viewer.src.render.edges.buildFlowEdgePath",
       "kind": "uses"
     },
     {
       "from": "viewer.src.render.node.makeNodeEl",
-      "to": "viewer.src.util.truncate",
+      "to": "viewer.src.render.node.langColor",
       "kind": "uses"
     },
     {
@@ -10357,43 +10720,33 @@
       "kind": "uses"
     },
     {
+      "from": "viewer.src.ui.buildpopover.createBuildPopover",
+      "to": "viewer.src.i18n.t",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.ui.buildpopover.createBuildPopover",
+      "to": "viewer.src.util.copyToClipboard",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.ui.buildpopover.createBuildPopover",
+      "to": "viewer.src.util.escapeHtml",
+      "kind": "uses"
+    },
+    {
       "from": "viewer.src.ui.controls.flowField",
       "to": "viewer.src.i18n.pickLangText",
       "kind": "uses"
     },
     {
       "from": "viewer.src.ui.controls.populateFlowList",
+      "to": "viewer.src.data.diagram.diagramOf",
+      "kind": "uses"
+    },
+    {
+      "from": "viewer.src.ui.controls.populateFlowList",
       "to": "viewer.src.ui.controls.flowField",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.closeCommitSidebar",
-      "to": "viewer.src.ui.controls.applyCommitChrome",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.populateCommitList",
-      "to": "viewer.src.data.githistory.nodeIdsForCommit",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.populateCommitList",
-      "to": "viewer.src.i18n.t",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.populateCommitList",
-      "to": "viewer.src.ui.controls.fmtCommitTime",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.initControls",
-      "to": "viewer.src.data.githistory.loadGitHistory",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.initControls",
-      "to": "viewer.src.data.githistory.nodeIdsForCommit",
       "kind": "uses"
     },
     {
@@ -10418,22 +10771,12 @@
     },
     {
       "from": "viewer.src.ui.controls.initControls",
-      "to": "viewer.src.ui.controls.applyCommitChrome",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.initControls",
-      "to": "viewer.src.ui.controls.closeCommitSidebar",
-      "kind": "uses"
-    },
-    {
-      "from": "viewer.src.ui.controls.initControls",
       "to": "viewer.src.ui.controls.closestButton",
       "kind": "uses"
     },
     {
-      "from": "viewer.src.ui.controls.initControls",
-      "to": "viewer.src.ui.controls.populateCommitList",
+      "from": "viewer.src.ui.detail.createDetail",
+      "to": "viewer.src.data.diagram.pickL",
       "kind": "uses"
     },
     {
@@ -10491,7 +10834,7 @@
     {
       "id": "flow:scripts.analyze.main",
       "name": "构建流水线 · Build Pipeline",
-      "description": "code-map 的端到端构建流程：扫描源码、逐语言提取声明、解析 TS/JS 导入，再建图、分层、流程发现并产出 raw_structure.json。 · code-map's end-to-end build: scan sources, extract declarations per language, resolve TS/JS imports, then build the graph, assign layers, discover flows, and emit raw_structure.json.",
+      "description": "code-map 的端到端构建流程：扫描源码、逐语言提取声明、解析 TS/JS 导入，再建图、分层、流程发现并产出 raw_structure.json。 · code-map’s end-to-end build: scan sources, extract declarations per language, resolve TS/JS imports, then build the graph, assign layers, discover flows, and emit raw_structure.json.",
       "seed": "scripts.analyze.main",
       "seed_kind": "entry-point",
       "nodes": [
@@ -10643,7 +10986,396 @@
           "kind": "uses"
         }
       ],
-      "confidence": "ai-inferred"
+      "confidence": "ai-inferred",
+      "diagram": {
+        "type": "pipeline",
+        "stages": [
+          {
+            "id": "s-scan",
+            "name_zh": "扫描与准备",
+            "name_en": "Scan & Prep",
+            "nodes": [
+              "scripts.analyze.main",
+              "scripts.analyze.parseArgs",
+              "scripts.lib.skipdirs.loadSkipDirs",
+              "scripts.analyze.extOf",
+              "scripts.analyze.isDir",
+              "scripts.analyze.isFile",
+              "scripts.analyze.rel"
+            ]
+          },
+          {
+            "id": "s-extract",
+            "name_zh": "提取器调度",
+            "name_en": "Extractor Dispatch",
+            "nodes": [
+              "scripts.lib.extractors.extractorFor",
+              "scripts.lib.extractors.extractorPathFor",
+              "scripts.lib.extractors.loadExtractor"
+            ]
+          },
+          {
+            "id": "s-resolve",
+            "name_zh": "TS/JS 导入解析",
+            "name_en": "Import Resolution",
+            "nodes": [
+              "scripts.lib.resolve.resolveProject",
+              "scripts.lib.resolve.tsconfig.loadTsconfig",
+              "scripts.lib.resolve.typescript.resolveTs",
+              "scripts.lib.resolve.typescript.buildExportMaps",
+              "scripts.lib.resolve.typescript.resolveOneRef"
+            ]
+          },
+          {
+            "id": "s-label",
+            "name_zh": "标注与产出",
+            "name_en": "Label & Emit",
+            "nodes": [
+              "scripts.lib.labels.assignDisplayNames",
+              "scripts.lib.labels.distinguishers",
+              "scripts.lib.extractors.base.qualifiedName",
+              "scripts.lib.version.pluginVersion"
+            ]
+          }
+        ],
+        "extra_nodes": [
+          {
+            "id": "x:raw",
+            "kind": "artifact",
+            "name": "raw_structure.json",
+            "description_zh": "Phase 1 的完整提取结构，Phase 2 在其上精炼出最终 code-map.json。",
+            "description_en": "Phase 1’s full extracted structure; Phase 2 refines it into the final code-map.json."
+          }
+        ],
+        "links": [
+          {
+            "from": "s-scan",
+            "to": "s-extract",
+            "label_zh": "源文件",
+            "label_en": "source files",
+            "kind": "data"
+          },
+          {
+            "from": "s-extract",
+            "to": "s-resolve",
+            "label_zh": "声明与导入",
+            "label_en": "Declaration[] + ImportSpec[]",
+            "kind": "data"
+          },
+          {
+            "from": "s-resolve",
+            "to": "s-label",
+            "label_zh": "已解析引用",
+            "label_en": "resolved refs",
+            "kind": "data"
+          },
+          {
+            "from": "s-label",
+            "to": "x:raw",
+            "label_zh": "写入磁盘",
+            "label_en": "write to disk",
+            "kind": "data"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow:scripts.score.main",
+      "name": "架构评分 · Architecture Scoring",
+      "description": "`code-map score` 的评分流程：对最终地图计算分层/依赖/卫生三维度的确定性罚分，合成 D×E 总分并施加有界的 AI 调整。 · The `code-map score` pass: computes deterministic layering/dependency/hygiene penalties over the final map, assembles the D×E total, and applies the bounded AI adjustment.",
+      "seed": "scripts.score.main",
+      "seed_kind": "entry-point",
+      "nodes": [
+        "scripts.score.main",
+        "scripts.lib.score.applyAdjustment",
+        "scripts.lib.score.computeScore",
+        "scripts.score.flag",
+        "scripts.lib.core.round3",
+        "scripts.lib.score.declsOf",
+        "scripts.lib.score.scoreDependencies",
+        "scripts.lib.score.scoreHygiene",
+        "scripts.lib.score.scoreLayering",
+        "scripts.lib.score.scoringView",
+        "scripts.lib.score.adjacencyOf",
+        "scripts.lib.score.dim",
+        "scripts.lib.score.reachDensity",
+        "scripts.lib.score.tarjanSCC"
+      ],
+      "edges": [
+        {
+          "from": "scripts.score.main",
+          "to": "scripts.lib.score.applyAdjustment",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.score.main",
+          "to": "scripts.lib.score.computeScore",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.score.main",
+          "to": "scripts.score.flag",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.core.round3",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.score.declsOf",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.score.scoreDependencies",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.score.scoreHygiene",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.score.scoreLayering",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.computeScore",
+          "to": "scripts.lib.score.scoringView",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.scoreDependencies",
+          "to": "scripts.lib.score.adjacencyOf",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.scoreDependencies",
+          "to": "scripts.lib.score.dim",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.scoreDependencies",
+          "to": "scripts.lib.score.reachDensity",
+          "kind": "uses"
+        },
+        {
+          "from": "scripts.lib.score.scoreDependencies",
+          "to": "scripts.lib.score.tarjanSCC",
+          "kind": "uses"
+        }
+      ],
+      "confidence": "ai-inferred",
+      "diagram": {
+        "type": "pipeline",
+        "stages": [
+          {
+            "id": "s-load",
+            "name_zh": "读取与参数",
+            "name_en": "Load & Flags",
+            "nodes": [
+              "scripts.score.main",
+              "scripts.score.flag"
+            ]
+          },
+          {
+            "id": "s-dims",
+            "name_zh": "三维度罚分",
+            "name_en": "Dimension Penalties",
+            "nodes": [
+              "scripts.lib.score.scoringView",
+              "scripts.lib.score.scoreLayering",
+              "scripts.lib.score.scoreDependencies",
+              "scripts.lib.score.scoreHygiene",
+              "scripts.lib.score.tarjanSCC",
+              "scripts.lib.score.reachDensity"
+            ]
+          },
+          {
+            "id": "s-compose",
+            "name_zh": "合成 D×E",
+            "name_en": "Compose D×E",
+            "nodes": [
+              "scripts.lib.score.computeScore",
+              "scripts.lib.core.round3"
+            ]
+          },
+          {
+            "id": "s-stamp",
+            "name_zh": "调整与写回",
+            "name_en": "Adjust & Stamp",
+            "nodes": [
+              "scripts.lib.score.applyAdjustment"
+            ]
+          }
+        ],
+        "extra_nodes": [
+          {
+            "id": "x:codemap",
+            "kind": "artifact",
+            "name": "code-map.json (project.score)",
+            "description_zh": "评分对象被盖回最终地图，查看器顶栏徽章与明细弹层据此展示。",
+            "description_en": "The score object is stamped back onto the final map, shown by the viewer’s topbar badge and breakdown popover."
+          }
+        ],
+        "links": [
+          {
+            "from": "s-load",
+            "to": "s-dims",
+            "label_zh": "代码地图模型",
+            "label_en": "code-map model",
+            "kind": "data"
+          },
+          {
+            "from": "s-dims",
+            "to": "s-compose",
+            "label_zh": "各维度罚分",
+            "label_en": "per-dimension penalties",
+            "kind": "data"
+          },
+          {
+            "from": "s-compose",
+            "to": "s-stamp",
+            "label_zh": "确定性基线",
+            "label_en": "deterministic baseline",
+            "kind": "data"
+          },
+          {
+            "from": "s-stamp",
+            "to": "x:codemap",
+            "label_zh": "写回 project.score",
+            "label_en": "stamp project.score",
+            "kind": "data"
+          }
+        ]
+      }
+    },
+    {
+      "id": "flow:viewer.src.render.registry.renderApp",
+      "name": "视图渲染 · Viewer Rendering",
+      "description": "viewer 的渲染回路：交互经 setState 合帧后通知视图注册表，按激活的视图定义（分层带 / 流程 DAG / 图示）重绘场景。 · The viewer’s render loop: interactions funnel through rAF-coalesced setState into the view registry, which redraws the scene for the active ViewDef (layer bands / flow DAG / diagrams).",
+      "seed": "viewer.src.render.registry.renderApp",
+      "seed_kind": "entry-point",
+      "nodes": [
+        "viewer.src.render.registry.renderApp",
+        "viewer.src.render.registry.getView",
+        "viewer.src.render.scene.renderScene"
+      ],
+      "edges": [
+        {
+          "from": "viewer.src.render.registry.renderApp",
+          "to": "viewer.src.render.registry.getView",
+          "kind": "uses"
+        },
+        {
+          "from": "viewer.src.render.registry.renderApp",
+          "to": "viewer.src.render.scene.renderScene",
+          "kind": "uses"
+        }
+      ],
+      "confidence": "ai-inferred",
+      "diagram": {
+        "type": "sequence",
+        "participants": [
+          {
+            "id": "p:user",
+            "name_zh": "用户",
+            "name_en": "User",
+            "kind": "actor"
+          },
+          {
+            "id": "p:controls",
+            "name_zh": "顶栏控件",
+            "name_en": "Topbar Controls",
+            "kind": "code",
+            "nodes": [
+              "viewer.src.ui.controls.initControls"
+            ]
+          },
+          {
+            "id": "p:store",
+            "name_zh": "全局状态",
+            "name_en": "Store",
+            "kind": "code",
+            "nodes": [
+              "viewer.src.store.setState"
+            ]
+          },
+          {
+            "id": "p:registry",
+            "name_zh": "视图注册表",
+            "name_en": "View Registry",
+            "kind": "code",
+            "nodes": [
+              "viewer.src.render.registry.renderApp",
+              "viewer.src.render.registry.getView"
+            ]
+          },
+          {
+            "id": "p:scene",
+            "name_zh": "场景渲染器",
+            "name_en": "Scene Renderer",
+            "kind": "code",
+            "nodes": [
+              "viewer.src.render.scene.renderScene"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "from": "p:user",
+            "to": "p:controls",
+            "label_zh": "切换视图 / 主题 / 语言",
+            "label_en": "toggle view / theme / lang",
+            "kind": "call"
+          },
+          {
+            "from": "p:controls",
+            "to": "p:store",
+            "label_zh": "setState(补丁)",
+            "label_en": "setState(patch)",
+            "kind": "call"
+          },
+          {
+            "from": "p:store",
+            "to": "p:store",
+            "label_zh": "rAF 合帧",
+            "label_en": "coalesce via rAF",
+            "kind": "self"
+          },
+          {
+            "from": "p:store",
+            "to": "p:registry",
+            "label_zh": "通知重渲染",
+            "label_en": "notify re-render",
+            "kind": "call"
+          },
+          {
+            "from": "p:registry",
+            "to": "p:registry",
+            "label_zh": "解析激活视图",
+            "label_en": "resolve active ViewDef",
+            "kind": "self"
+          },
+          {
+            "from": "p:registry",
+            "to": "p:scene",
+            "label_zh": "renderScene(布局)",
+            "label_en": "renderScene(layout)",
+            "kind": "call"
+          },
+          {
+            "from": "p:scene",
+            "to": "p:user",
+            "label_zh": "更新后的画布",
+            "label_en": "updated canvas",
+            "kind": "return"
+          }
+        ]
+      }
     },
     {
       "id": "flow:scripts.lib.extractors.typescript.parse",
@@ -10787,7 +11519,7 @@
     {
       "id": "flow:scripts.lib.extractors.c.parse",
       "name": "C 宏函数恢复 · C Macro-Function Recovery",
-      "description": "C 提取器的边界处理：除常规函数/结构体外，额外恢复被 tree-sitter 解析为宏调用的函数式宏定义（FreeRTOS 的 portTASK_FUNCTION 风格）。 · The C extractor's edge-case handling: beyond ordinary functions/structs, it recovers function-style macro definitions that tree-sitter parses as macro calls (FreeRTOS's portTASK_FUNCTION style).",
+      "description": "C 提取器的边界处理：除常规函数/结构体外，额外恢复被 tree-sitter 解析为宏调用的函数式宏定义（FreeRTOS 的 portTASK_FUNCTION 风格）。 · The C extractor’s edge-case handling: beyond ordinary functions/structs, it recovers function-style macro definitions that tree-sitter parses as macro calls (FreeRTOS’s portTASK_FUNCTION style).",
       "seed": "scripts.lib.extractors.c.parse",
       "seed_kind": "public-orchestrator",
       "nodes": [
@@ -10906,116 +11638,6 @@
         {
           "from": "scripts.lib.extractors.c.ensure",
           "to": "scripts.lib.ts.loadLanguage",
-          "kind": "uses"
-        }
-      ],
-      "confidence": "ai-inferred"
-    },
-    {
-      "id": "flow:scripts.score.main",
-      "name": "架构评分 · Architecture Scoring",
-      "description": "`code-map score` 的评分流程：对最终地图计算分层/依赖/卫生三维度的确定性罚分，合成 D×E 总分并施加有界的 AI 调整。 · The `code-map score` pass: computes deterministic layering/dependency/hygiene penalties over the final map, assembles the D×E total, and applies the bounded AI adjustment.",
-      "seed": "scripts.score.main",
-      "seed_kind": "entry-point",
-      "nodes": [
-        "scripts.score.main",
-        "scripts.lib.score.applyAdjustment",
-        "scripts.lib.score.computeScore",
-        "scripts.score.flag",
-        "scripts.lib.core.round3",
-        "scripts.lib.score.declsOf",
-        "scripts.lib.score.scoreDependencies",
-        "scripts.lib.score.scoreHygiene",
-        "scripts.lib.score.scoreLayering",
-        "scripts.lib.score.adjacencyOf",
-        "scripts.lib.score.dim",
-        "scripts.lib.score.reachDensity",
-        "scripts.lib.score.tarjanSCC"
-      ],
-      "edges": [
-        {
-          "from": "scripts.score.main",
-          "to": "scripts.lib.score.applyAdjustment",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.score.main",
-          "to": "scripts.lib.score.computeScore",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.score.main",
-          "to": "scripts.score.flag",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.computeScore",
-          "to": "scripts.lib.core.round3",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.computeScore",
-          "to": "scripts.lib.score.declsOf",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.computeScore",
-          "to": "scripts.lib.score.scoreDependencies",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.computeScore",
-          "to": "scripts.lib.score.scoreHygiene",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.computeScore",
-          "to": "scripts.lib.score.scoreLayering",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.scoreDependencies",
-          "to": "scripts.lib.score.adjacencyOf",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.scoreDependencies",
-          "to": "scripts.lib.score.dim",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.scoreDependencies",
-          "to": "scripts.lib.score.reachDensity",
-          "kind": "uses"
-        },
-        {
-          "from": "scripts.lib.score.scoreDependencies",
-          "to": "scripts.lib.score.tarjanSCC",
-          "kind": "uses"
-        }
-      ],
-      "confidence": "ai-inferred"
-    },
-    {
-      "id": "flow:viewer.src.render.registry.renderApp",
-      "name": "视图渲染 · Viewer Rendering",
-      "description": "viewer 的渲染入口：根据当前激活的视图定义（分层带或流程图）查表分发，交由 renderScene 绘制场景。 · The viewer's render entry: dispatches on the active ViewDef (layer bands or flow DAG) and hands off to renderScene to draw the scene.",
-      "seed": "viewer.src.render.registry.renderApp",
-      "seed_kind": "entry-point",
-      "nodes": [
-        "viewer.src.render.registry.renderApp",
-        "viewer.src.render.registry.getView",
-        "viewer.src.render.scene.renderScene"
-      ],
-      "edges": [
-        {
-          "from": "viewer.src.render.registry.renderApp",
-          "to": "viewer.src.render.registry.getView",
-          "kind": "uses"
-        },
-        {
-          "from": "viewer.src.render.registry.renderApp",
-          "to": "viewer.src.render.scene.renderScene",
           "kind": "uses"
         }
       ],

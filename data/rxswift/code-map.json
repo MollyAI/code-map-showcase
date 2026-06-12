@@ -19,7 +19,7 @@
       "objc": 2
     },
     "parse_failures": 0,
-    "generated_at": "2026-06-10T13:43:42",
+    "generated_at": "2026-06-12T13:37:13",
     "template_detection": {
       "chosen": "mvc",
       "scores": {
@@ -685,17 +685,18 @@
       "short": "132aea4f",
       "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
     },
-    "code_map_version": "1.11.0",
+    "code_map_version": "1.15.0",
     "architecture": {
       "template": "layered",
       "customized": true
     },
     "score": {
-      "rubric": "arch-score-v1",
-      "total": 203,
-      "base": 199,
-      "difficulty": 137,
-      "execution": 1.454,
+      "rubric": "arch-score-v2",
+      "total": 132,
+      "base": 132,
+      "difficulty": 90,
+      "difficulty_raw": 126.2,
+      "execution": 1.472,
       "dimensions": {
         "layering": {
           "score": 98,
@@ -709,24 +710,24 @@
           ]
         },
         "dependencies": {
-          "score": 96,
+          "score": 99,
           "penalties": [
             {
               "id": "cycles",
-              "points": 3.9,
-              "value": 0.032,
-              "detail": "24/743 declarations sit in dependency cycles"
+              "points": 1.2,
+              "value": 0.024,
+              "detail": "largest cycle holds 6/743 declarations (+12 in smaller cycles)"
             }
           ]
         },
         "hygiene": {
-          "score": 89,
+          "score": 92,
           "penalties": [
             {
               "id": "isolated",
-              "points": 11.1,
-              "value": 0.139,
-              "detail": "14% of declarations have no edges"
+              "points": 8.5,
+              "value": 0.106,
+              "detail": "11% of declaration weight has no edges"
             }
           ]
         }
@@ -735,12 +736,9 @@
         "decls": 743,
         "edges": 1330,
         "files": 290,
-        "languages": 2
-      },
-      "adjustment": {
-        "delta": 4,
-        "reason_zh": "cycles 命中的 8 个强连通分量(ObservableType↔Observable、操作符工厂↔Producer↔Sink、ReplaySubject 家族)经核对均为 Rx 协议-实现互引的领域固有结构,非失控耦合",
-        "reason_en": "All 8 SCCs flagged by cycles (ObservableType↔Observable, operator factory↔Producer↔Sink trios, the ReplaySubject family) are Rx's inherent protocol-implementation mutual references, not runaway coupling"
+        "languages": 2,
+        "weighted_decls": 517.7,
+        "effective_languages": 1
       }
     }
   },
@@ -908,12 +906,14 @@
           "signature": "func castOrThrow<T>(_ resultType: T.Type, _ object: Any) throws -> T",
           "method_count": 0,
           "importance": 0.175,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "RxCocoa 的类型断言辅助函数:把 Any 安全转换为目标类型,失败时抛出 castingError,供各委托代理与绑定代码统一做运行时类型检查。",
+          "description_en": "RxCocoa's type-assertion helper — casts an Any value to the expected type and throws castingError on failure, giving delegate proxies and binding code a uniform runtime type check."
         },
         {
           "id": "RxCocoa.RxCocoa.castOptionalOrThrow",
@@ -2053,14 +2053,16 @@
           "signature": "func notification(_ name: Notification.Name?, object: AnyObject? = nil) -> Observable<Notification>",
           "method_count": 0,
           "importance": 0.184,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "把 NotificationCenter 通知桥接为 Observable<Notification>:订阅时注册观察者、释放时移除,是 Foundation 通知进入 Rx 流的入口。",
+          "description_en": "Bridges NotificationCenter posts into an Observable<Notification> — registers an observer on subscribe and removes it on dispose, the entry point for Foundation notifications into Rx streams."
         },
         {
           "id": "RxCocoa.Foundation.URLSession+Rx.RxCocoaURLError",
@@ -2124,12 +2126,14 @@
           "signature": "private func convertURLRequestToCurlCommand(_ request: URLRequest) -> String",
           "method_count": 0,
           "importance": 0.175,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "调试辅助:把 URLRequest 转写成等价的 curl 命令字符串,供 URLSession+Rx 的响应日志输出请求详情。",
+          "description_en": "A debugging helper that renders a URLRequest as an equivalent curl command string, used by URLSession+Rx's response logging."
         },
         {
           "id": "RxCocoa.Foundation.URLSession+Rx.convertResponseToString",
@@ -3131,12 +3135,14 @@
           "signature": "",
           "method_count": 2,
           "importance": 0.184,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "把任意 Sequence 元素流适配进 RxCollectionViewReactiveArrayDataSource:通过 Binder 接收 observedEvent 并刷新集合视图的各 section。",
+          "description_en": "Adapts any Sequence-typed element stream onto RxCollectionViewReactiveArrayDataSource — receives observedEvent through a Binder and refreshes the collection view's sections."
         },
         {
           "id": "RxCocoa.iOS.DataSources.RxCollectionViewReactiveArrayDataSource.RxCollectionViewReactiveArrayDataSource",
@@ -3338,12 +3344,14 @@
           "signature": "",
           "method_count": 2,
           "importance": 0.184,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "RxTableViewReactiveArrayDataSource 的 Sequence 适配器:经 Binder 把序列事件落到表视图数据源并触发刷新。",
+          "description_en": "The Sequence adapter over RxTableViewReactiveArrayDataSource — lands sequence events on the table-view data source via a Binder and triggers a reload."
         },
         {
           "id": "RxCocoa.iOS.DataSources.RxTableViewReactiveArrayDataSource.RxTableViewReactiveArrayDataSource",
@@ -4063,12 +4071,14 @@
           "signature": "",
           "method_count": 5,
           "importance": 0.184,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "NSTextField 的委托代理:拦截 AppKit 文本变更回调并经内部 PublishSubject 暴露为控件的 text 属性流。",
+          "description_en": "The delegate proxy for NSTextField — intercepts AppKit text-change callbacks and surfaces them through an internal PublishSubject as the control's reactive text property."
         },
         {
           "id": "RxCocoa.macOS.NSTextView+Rx.RxTextViewDelegateProxy",
@@ -4090,20 +4100,22 @@
           "signature": "",
           "method_count": 5,
           "importance": 0.184,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 3,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "NSTextView 的委托代理:把文本视图的 delegate 回调转换为字符串事件流,供 macOS 端 rx.text 绑定使用。",
+          "description_en": "The delegate proxy for NSTextView — converts the text view's delegate callbacks into a string event stream backing the macOS rx.text binding."
         }
       ]
     },
     {
-      "id": "testing",
-      "name": "Testing Support",
+      "id": "rxtest",
+      "name": "RxTest & RxBlocking",
       "order": 1,
-      "summary": "RxTest + RxBlocking — the virtual-time TestScheduler, recorded/hot/cold observables and blocking operators for deterministic tests.",
+      "summary": "Shipped test-support products — the virtual-time TestScheduler, recorded/hot/cold observables and blocking operators for deterministic consumer tests.",
       "classes": [
         {
           "id": "RxBlocking.BlockingObservable+Operators.MaterializedSequenceResult",
@@ -4143,14 +4155,16 @@
           "signature": "func toArray() throws -> [Element]",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "RxBlocking 的阻塞收集操作:阻塞当前线程直到序列终止,返回全部元素,错误终止时抛出。",
+          "description_en": "RxBlocking's blocking collector — blocks the current thread until the sequence terminates and returns all elements, rethrowing a terminal error."
         },
         {
           "id": "RxBlocking.BlockingObservable+Operators.first",
@@ -4194,14 +4208,16 @@
           "signature": "func last() throws -> Element?",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "阻塞等待序列终止并返回最后一个元素(空序列返回 nil),错误终止时抛出。",
+          "description_en": "Blocks until the sequence terminates and returns its last element (nil for an empty sequence), throwing if it terminated with an error."
         },
         {
           "id": "RxBlocking.BlockingObservable+Operators.single",
@@ -5091,12 +5107,14 @@
           "signature": "",
           "method_count": 9,
           "importance": 0.258,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 6,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "虚拟时间测试调度器:以 tick 为单位创建冷/热可测序列、推进虚拟时钟并记录事件时序,是 RxTest 确定性测试的核心。",
+          "description_en": "The virtual-time test scheduler — creates cold/hot testable sequences at tick resolution, advances the virtual clock and records event timing, the heart of RxTest's deterministic testing."
         },
         {
           "id": "RxTest.Schedulers.TestSchedulerVirtualTimeConverter.TestSchedulerVirtualTimeConverter",
@@ -5779,14 +5797,16 @@
           "signature": "func `do`(onNext: ((Element) -> Void)? = nil, afterNext: ((Element) -> Void)? = nil, onCompleted: (() -> Void)? = nil, afterCompleted: (() -> Void)? = nil, onSubscribe: (() -> Void)? = nil, onSubscribed: (() -> Void)? = nil, onDispose: (() -> Void)? = nil) -> SharedSequence<SharingStrategy, Element>",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "SharedSequence 版的 do 操作符:为共享序列的各生命周期事件挂接副作用回调,再包回相同 SharingStrategy 的序列。",
+          "description_en": "The SharedSequence variant of do — attaches side-effect callbacks to the shared sequence's lifecycle events and rewraps the result under the same sharing strategy."
         },
         {
           "id": "RxCocoa.Traits.SharedSequence.SharedSequence+Operators.debug",
@@ -5804,14 +5824,16 @@
           "signature": "func debug(_ identifier: String? = nil, trimOutput: Bool = false, file: String = #file, line: UInt = #line, function: String = #function) -> SharedSequence<SharingStrategy, Element>",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "SharedSequence 版 debug:把序列收到的全部事件打印到标准输出,便于排查 Driver/Signal 链路。",
+          "description_en": "The SharedSequence debug operator — prints every event the sequence receives to standard output for diagnosing Driver/Signal chains."
         },
         {
           "id": "RxCocoa.Traits.SharedSequence.SharedSequence+Operators.distinctUntilChanged",
@@ -5829,14 +5851,16 @@
           "signature": "func distinctUntilChanged() -> SharedSequence<SharingStrategy, Element>",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "在共享序列上去除相邻重复元素:基于 Equatable 等值比较,只放行与前一个值不同的元素。",
+          "description_en": "Drops consecutive duplicate elements on a shared sequence, forwarding only values that differ from their predecessor by Equatable equality."
         },
         {
           "id": "RxCocoa.Traits.SharedSequence.SharedSequence+Operators.flatMap",
@@ -5929,14 +5953,16 @@
           "signature": "func debounce(_ dueTime: RxTimeInterval) -> SharedSequence<SharingStrategy, Element>",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "共享序列的防抖:在 SharingStrategy 自带的调度器上计时,仅放行静默期内未被新元素覆盖的值。",
+          "description_en": "Debounce for shared sequences — runs its timers on the sharing strategy's scheduler and emits an element only after the due time passes without a newer one."
         },
         {
           "id": "RxCocoa.Traits.SharedSequence.SharedSequence+Operators.scan",
@@ -6154,14 +6180,16 @@
           "signature": "func delay(_ dueTime: RxTimeInterval) -> SharedSequence<SharingStrategy, Element>",
           "method_count": 0,
           "importance": 0.146,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 0,
           "out_degree": 2,
           "confidence": "high",
           "tags": [
             "extension-method"
-          ]
+          ],
+          "description_zh": "共享序列的延迟:把元素投递整体后移指定时长(错误不延迟),调度在 SharingStrategy.scheduler 上。",
+          "description_en": "Delay for shared sequences — shifts element delivery forward by the given interval on the strategy's scheduler while passing errors through undelayed."
         },
         {
           "id": "RxCocoa.Traits.SharedSequence.SharedSequence.SharedSequence",
@@ -16103,12 +16131,14 @@
           "signature": "",
           "method_count": 2,
           "importance": 0.175,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "把闭包包装成观察者:onCore 直接调用传入的事件处理闭包,是 subscribe(onNext:…) 等便捷订阅的底层载体。",
+          "description_en": "Wraps a closure as an observer — onCore simply invokes the supplied event handler, the underpinning of the subscribe(onNext:…) convenience APIs."
         },
         {
           "id": "RxSwift.Observers.ObserverBase.ObserverBase",
@@ -16177,12 +16207,14 @@
           "signature": "",
           "method_count": 10,
           "importance": 0.403,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 3,
           "out_degree": 5,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "尾递归 Sink 基类:用 AsyncLock 串行化的命令队列依次订阅生成器产出的序列(concat/repeat 等),避免深度递归导致栈溢出。",
+          "description_en": "The tail-recursive sink base — drains generator-produced sequences (concat/repeat/…) through an AsyncLock-serialized command queue, subscribing one source at a time without growing the stack."
         }
       ]
     },
@@ -16446,12 +16478,14 @@
           "signature": "",
           "method_count": 12,
           "importance": 0.389,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 2,
           "out_degree": 6,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "ReplaySubject 的缓冲基类:定义 trim/addValueToBuffer/replayBuffer 抽象钩子,并在锁内同步处理事件、向新订阅者重放缓冲。",
+          "description_en": "The buffering base of ReplaySubject — defines the trim/addValueToBuffer/replayBuffer abstract hooks and synchronizes event handling and buffer replay under the subject's lock."
         },
         {
           "id": "RxSwift.Subjects.ReplaySubject.ReplayOne",
@@ -17171,12 +17205,14 @@
           "signature": "",
           "method_count": 1,
           "importance": 0.228,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 2,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "调度项协议:统一 Cancelable 与 InvocableType,使排入调度器的工作单元既可执行又可取消。",
+          "description_en": "The scheduled-item protocol — unifies Cancelable and InvocableType so every unit of work queued on a scheduler can be both invoked and cancelled."
         }
       ]
     },
@@ -17276,12 +17312,14 @@
           "signature": "",
           "method_count": 2,
           "importance": 0.443,
-          "core": false,
+          "core": true,
           "hub": true,
           "in_degree": 18,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "持锁者协议:暴露一把 RecursiveLock 并以默认实现把 lock/unlock 委托给它,是 Synchronized* 混入的基础。",
+          "description_en": "The lock-owner protocol — exposes a RecursiveLock and forwards lock/unlock to it by default, the foundation the Synchronized* mixins build on."
         },
         {
           "id": "RxSwift.Concurrency.SynchronizedDisposeType.SynchronizedDisposeType",
@@ -17302,12 +17340,14 @@
           "signature": "",
           "method_count": 2,
           "importance": 0.228,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 1,
           "out_degree": 2,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "同步释放混入:synchronizedDispose 在持锁状态下调用 synchronized_dispose,保证资源释放的线程安全。",
+          "description_en": "The synchronized-dispose mixin — synchronizedDispose takes the lock before calling synchronized_dispose, making resource teardown thread-safe."
         },
         {
           "id": "RxSwift.Concurrency.SynchronizedOnType.SynchronizedOnType",
@@ -17354,12 +17394,14 @@
           "signature": "",
           "method_count": 1,
           "importance": 0.232,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 6,
           "out_degree": 0,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "同步退订协议:以 DisposeKey 标识订阅者,要求实现者线程安全地把订阅者从自身集合移除。",
+          "description_en": "The synchronized-unsubscribe protocol — identifies a subscriber by DisposeKey and obliges implementors to remove it from their collections thread-safely."
         }
       ]
     },
@@ -17706,12 +17748,14 @@
           "signature": "",
           "method_count": 4,
           "importance": 0.389,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 2,
           "out_degree": 6,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "引用计数 Disposable:持有底层资源并发放依赖句柄,仅当主资源与全部依赖都释放后才真正 dispose。",
+          "description_en": "A reference-counting disposable — hands out dependent handles over an underlying resource and disposes it only after the primary and every retained handle are released."
         },
         {
           "id": "RxSwift.Disposables.RefCountDisposable.RefCountInnerDisposable",
@@ -17865,12 +17909,14 @@
           "signature": "",
           "method_count": 4,
           "importance": 0.324,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 6,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "类型擦除的观察者:把任意 ObserverType 或事件闭包包装成统一的 AnyObserver<Element>,隐藏底层观察者的具体类型。",
+          "description_en": "The type-erased observer — wraps any ObserverType or event closure into a uniform AnyObserver<Element>, hiding the concrete observer behind it."
         },
         {
           "id": "RxSwift.AnyObserver.asObserver",
@@ -18677,12 +18723,14 @@
           "signature": "@inline(__always) func dispatch<Element>(_ bag: Bag<(Event<Element>) -> Void>, _ event: Event<Element>)",
           "method_count": 0,
           "importance": 0.324,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 6,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "订阅者集合的多播原语:沿 Bag 的快路径/键值对/字典三段存储把事件依次派发给每个观察者闭包,是 Subject 广播的热路径。",
+          "description_en": "The multicast primitive over Bag — walks its fast-path/pairs/dictionary storage tiers to deliver an event to every observer closure, the hot path of subject broadcasting."
         },
         {
           "id": "RxSwift.Extensions.Bag+Rx.disposeAll",
@@ -18868,12 +18916,14 @@
           "signature": "@discardableResult @inline(__always) func increment(_ this: AtomicInt) -> Int32",
           "method_count": 0,
           "importance": 0.305,
-          "core": false,
+          "core": true,
           "hub": false,
           "in_degree": 5,
           "out_degree": 1,
           "confidence": "high",
-          "tags": []
+          "tags": [],
+          "description_zh": "原子自增辅助:基于带锁的 AtomicInt 实现 +1 并返回旧值,支撑资源计数与一次性标志等同步语义。",
+          "description_en": "The atomic increment helper — adds 1 to a lock-guarded AtomicInt and returns the prior value, backing resource counters and one-shot flags."
         },
         {
           "id": "Platform.AtomicInt.decrement",
@@ -26263,7 +26313,110 @@
       "name_zh": "订阅与事件分发",
       "name_en": "Subscription & Event Dispatch",
       "description_zh": "Rx 的订阅核心:ObservableType.subscribe 委托给具体的 Producer,后者创建对应 Sink 并经 SinkDisposer 串接上下游,把推送式事件沿订阅链分发(主题亦多播给各订阅者)。",
-      "description_en": "Rx's subscription core: ObservableType.subscribe dispatches to a concrete Producer, which builds the operator's Sink and wires up/downstream through a SinkDisposer to push events along the chain (subjects multicast to their subscribers)."
+      "description_en": "Rx's subscription core: ObservableType.subscribe dispatches to a concrete Producer, which builds the operator's Sink and wires up/downstream through a SinkDisposer to push events along the chain (subjects multicast to their subscribers).",
+      "diagram": {
+        "type": "sequence",
+        "participants": [
+          {
+            "id": "p:subscriber",
+            "name_zh": "订阅方(RxCocoa 绑定)",
+            "name_en": "Subscriber (RxCocoa binding)",
+            "kind": "code",
+            "nodes": [
+              "RxCocoa.Common.DelegateProxyType.subscribeProxyDataSource"
+            ]
+          },
+          {
+            "id": "p:producer",
+            "name_zh": "Producer(冷序列工厂)",
+            "name_en": "Producer (cold-sequence factory)",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Observables.Producer.Producer"
+            ]
+          },
+          {
+            "id": "p:sinkdisposer",
+            "name_zh": "SinkDisposer(订阅句柄)",
+            "name_en": "SinkDisposer (subscription handle)",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Observables.Producer.SinkDisposer"
+            ]
+          },
+          {
+            "id": "p:subject",
+            "name_zh": "Subject(热源)",
+            "name_en": "Subjects (hot sources)",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Subjects.PublishSubject.PublishSubject",
+              "RxSwift.Subjects.BehaviorSubject.BehaviorSubject",
+              "RxSwift.Subjects.ReplaySubject.ReplaySubject",
+              "RxSwift.Subjects.AsyncSubject.AsyncSubject"
+            ]
+          },
+          {
+            "id": "p:bag",
+            "name_zh": "Bag 多播",
+            "name_en": "Bag multicast",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Extensions.Bag+Rx.dispatch"
+            ]
+          },
+          {
+            "id": "p:downstream",
+            "name_zh": "下游观察者",
+            "name_en": "Downstream observers",
+            "kind": "actor"
+          }
+        ],
+        "steps": [
+          {
+            "from": "p:subscriber",
+            "to": "p:producer",
+            "kind": "call",
+            "label_zh": "subscribe(冷序列)",
+            "label_en": "subscribe (cold sequence)"
+          },
+          {
+            "from": "p:producer",
+            "to": "p:sinkdisposer",
+            "kind": "call",
+            "label_zh": "创建 Sink 并串接上下游",
+            "label_en": "build Sink, wire up/downstream"
+          },
+          {
+            "from": "p:sinkdisposer",
+            "to": "p:subscriber",
+            "kind": "return",
+            "label_zh": "返回 Disposable 订阅句柄",
+            "label_en": "return Disposable handle"
+          },
+          {
+            "from": "p:subscriber",
+            "to": "p:subject",
+            "kind": "call",
+            "label_zh": "subscribe(热主题)",
+            "label_en": "subscribe (hot subject)"
+          },
+          {
+            "from": "p:subject",
+            "to": "p:bag",
+            "kind": "call",
+            "label_zh": "事件到达时经 Bag 多播",
+            "label_en": "multicast arriving event via Bag"
+          },
+          {
+            "from": "p:bag",
+            "to": "p:downstream",
+            "kind": "call",
+            "label_zh": "observer.on(next/error/completed)",
+            "label_en": "observer.on(next/error/completed)"
+          }
+        ]
+      }
     },
     {
       "id": "flow:RxSwift.Subjects.PublishSubject.PublishSubject",
@@ -26352,7 +26505,113 @@
       "name_zh": "主题多播",
       "name_en": "Subject Multicasting",
       "description_zh": "主题(Publish/Behavior/Replay/Async)既是 Observer 又是 Observable:用内部 Bag 持有订阅者,把收到的事件多播出去,是命令式代码注入 Rx 流的桥梁。",
-      "description_en": "Subjects (Publish/Behavior/Replay/Async) are both Observer and Observable: they hold subscribers in an internal Bag and multicast received events outward — the bridge that injects imperative code into Rx streams."
+      "description_en": "Subjects (Publish/Behavior/Replay/Async) are both Observer and Observable: they hold subscribers in an internal Bag and multicast received events outward — the bridge that injects imperative code into Rx streams.",
+      "diagram": {
+        "type": "sequence",
+        "participants": [
+          {
+            "id": "p:caller",
+            "name_zh": "命令式代码",
+            "name_en": "Imperative code",
+            "kind": "actor"
+          },
+          {
+            "id": "p:subject",
+            "name_zh": "PublishSubject",
+            "name_en": "PublishSubject",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Subjects.PublishSubject.PublishSubject"
+            ]
+          },
+          {
+            "id": "p:sync",
+            "name_zh": "同步保护(锁/追踪)",
+            "name_en": "Synchronization (lock/tracker)",
+            "kind": "code",
+            "nodes": [
+              "Platform.RecursiveLock.RecursiveLock",
+              "RxSwift.Rx.SynchronizationTracker"
+            ]
+          },
+          {
+            "id": "p:bag",
+            "name_zh": "Bag.dispatch 多播",
+            "name_en": "Bag.dispatch multicast",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Extensions.Bag+Rx.dispatch"
+            ]
+          },
+          {
+            "id": "p:handle",
+            "name_zh": "订阅句柄",
+            "name_en": "Subscription handle",
+            "kind": "code",
+            "nodes": [
+              "RxSwift.Disposables.SubscriptionDisposable.SubscriptionDisposable"
+            ]
+          }
+        ],
+        "steps": [
+          {
+            "from": "p:caller",
+            "to": "p:subject",
+            "kind": "call",
+            "label_zh": "subscribe(observer) 注册订阅者",
+            "label_en": "subscribe(observer) — register subscriber"
+          },
+          {
+            "from": "p:subject",
+            "to": "p:handle",
+            "kind": "call",
+            "label_zh": "存入 Bag 并发放 SubscriptionDisposable",
+            "label_en": "store in Bag, hand out SubscriptionDisposable"
+          },
+          {
+            "from": "p:handle",
+            "to": "p:caller",
+            "kind": "return",
+            "label_zh": "返回退订句柄",
+            "label_en": "return unsubscribe handle"
+          },
+          {
+            "from": "p:caller",
+            "to": "p:subject",
+            "kind": "call",
+            "label_zh": "on(.next(element)) 注入事件",
+            "label_en": "on(.next(element)) — inject event"
+          },
+          {
+            "from": "p:subject",
+            "to": "p:sync",
+            "kind": "call",
+            "label_zh": "加锁并校验未终止",
+            "label_en": "lock & validate not terminated"
+          },
+          {
+            "from": "p:sync",
+            "to": "p:subject",
+            "kind": "return",
+            "label_zh": "同步后的观察者快照",
+            "label_en": "synchronized observer snapshot"
+          },
+          {
+            "from": "p:subject",
+            "to": "p:bag",
+            "kind": "call",
+            "label_zh": "dispatch(observers, event) 多播",
+            "label_en": "dispatch(observers, event) — multicast"
+          },
+          {
+            "from": "p:bag",
+            "to": "p:caller",
+            "kind": "return",
+            "label_zh": "事件送达全部订阅者",
+            "label_en": "event delivered to every subscriber"
+          }
+        ]
+      }
     },
     {
       "id": "flow:RxSwift.Observables.Merge.flatMap",
