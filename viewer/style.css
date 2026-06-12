@@ -25,6 +25,13 @@
   --shadow-zoom:    rgba(0, 0, 0, 0.32);
   --scroll-hover:   #2a3340;
 
+  /* flow-diagram stage palette (cycled c0..c3) + artifact tint (v1.13) */
+  --stage-0-bg: rgba(93, 143, 230, 0.08);  --stage-0-line: rgba(93, 143, 230, 0.32);  --stage-0-text: #8fb3ee;
+  --stage-1-bg: rgba(110, 200, 130, 0.08); --stage-1-line: rgba(110, 200, 130, 0.32); --stage-1-text: #8fd9a8;
+  --stage-2-bg: rgba(176, 139, 255, 0.08); --stage-2-line: rgba(176, 139, 255, 0.30); --stage-2-text: #c4a8ff;
+  --stage-3-bg: rgba(230, 194, 93, 0.08);  --stage-3-line: rgba(230, 194, 93, 0.32);  --stage-3-text: #e6cd8a;
+  --artifact-bg: rgba(230, 194, 93, 0.12); --artifact-line: rgba(230, 194, 93, 0.55); --artifact-text: #e6cd8a;
+
   --font-display: "Fraunces", Georgia, serif;
   --font-ui:      "Geist", ui-sans-serif, system-ui, sans-serif;
   --font-mono:    "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
@@ -66,6 +73,13 @@ body.light {
   --shadow-tooltip: rgba(60, 50, 40, 0.18);
   --shadow-zoom:    rgba(60, 50, 40, 0.12);
   --scroll-hover:   #c0b8aa;
+
+  /* flow-diagram stage palette — the mockup tints the design was approved on */
+  --stage-0-bg: #eef3fb; --stage-0-line: #c4d4ec; --stage-0-text: #33508a;
+  --stage-1-bg: #edf7ee; --stage-1-line: #c2ddc6; --stage-1-text: #2f6b3a;
+  --stage-2-bg: #f4effa; --stage-2-line: #d8c8ec; --stage-2-text: #5b3f87;
+  --stage-3-bg: #fdf3e7; --stage-3-line: #ecd0a8; --stage-3-text: #8a5a1c;
+  --artifact-bg: #fffbe8; --artifact-line: #d4b34a; --artifact-text: #7a5d12;
 }
 
 * { box-sizing: border-box; }
@@ -142,7 +156,10 @@ header.topbar {
   color: var(--text-2);
   white-space: nowrap;
   letter-spacing: 0.02em;
+  cursor: pointer;               /* opens the build-popover */
+  transition: color 0.15s;
 }
+.brand .build-info:hover { color: var(--text-1); }
 
 .controls { display: flex; gap: 12px; align-items: center; }
 
@@ -692,6 +709,41 @@ body.light .theme-toggle .icon-moon { display: none; }
 .tooltip.visible { opacity: 1; }
 .tooltip .pkg { color: var(--text-3); }
 
+/* build-info popover (click the topbar badge; body-level like .tooltip) */
+.build-popover {
+  position: fixed;
+  z-index: 110;
+  background: var(--bg-2);
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  padding: 10px 12px;
+  max-width: min(560px, calc(100vw - 16px));
+  font-family: var(--font-mono);
+  font-size: calc(12px * var(--fs-scale));
+  line-height: 1.65;
+  color: var(--text-1);
+  box-shadow: 0 10px 30px var(--shadow-tooltip);
+}
+.build-popover[hidden] { display: none; }
+.build-popover .rows {
+  user-select: text;
+  cursor: text;
+  padding-right: 78px;           /* clears the absolute copy button */
+}
+.build-popover .row { word-break: break-all; }
+.build-popover .copy {
+  position: absolute; top: 8px; right: 8px;
+  border: 1px solid var(--line); border-radius: 4px;
+  background: transparent; color: var(--text-2);
+  padding: 3px 10px; cursor: pointer;
+  font-family: var(--font-mono); font-size: calc(11px * var(--fs-scale));
+  min-width: 64px;               /* sized for "copied"/"failed" so it doesn't reflow */
+  text-align: center;
+  transition: color 0.15s, background 0.15s;
+}
+.build-popover .copy:hover { color: var(--text-0); background: var(--bg-3); }
+.build-popover .copy.ok { color: var(--accent); }
+
 /* zoom controls (bottom-left overlay) */
 .zoom-controls {
   position: absolute;
@@ -772,3 +824,44 @@ body.light .theme-toggle .icon-moon { display: none; }
 /* dispatch (interface → implementor) flow edges: dashed, slightly muted */
 .edge.flow.dispatch { stroke-dasharray: 5 4; stroke-opacity: 0.85; }
 .dispatch-more { font: 500 11px var(--font-mono); fill: var(--text-2); }
+
+/* ---- flow diagrams: pipeline stages + sequence lifelines (v1.13) ---- */
+.stage-band rect.bg { fill: var(--bg-1); stroke: var(--line); }
+.stage-band.stage-c0 rect.bg { fill: var(--stage-0-bg); stroke: var(--stage-0-line); }
+.stage-band.stage-c1 rect.bg { fill: var(--stage-1-bg); stroke: var(--stage-1-line); }
+.stage-band.stage-c2 rect.bg { fill: var(--stage-2-bg); stroke: var(--stage-2-line); }
+.stage-band.stage-c3 rect.bg { fill: var(--stage-3-bg); stroke: var(--stage-3-line); }
+.stage-title { font: 600 calc(12px * var(--fs-scale)) var(--font-mono); fill: var(--text-1); }
+.stage-band.stage-c0 .stage-title { fill: var(--stage-0-text); }
+.stage-band.stage-c1 .stage-title { fill: var(--stage-1-text); }
+.stage-band.stage-c2 .stage-title { fill: var(--stage-2-text); }
+.stage-band.stage-c3 .stage-title { fill: var(--stage-3-text); }
+/* decl nodes inside a tinted stage: clean uniform cards (panel tone) */
+.node.in-stage rect { fill: var(--bg-1); }
+.edge-label {
+  font: 500 calc(10.5px * var(--fs-scale)) var(--font-mono); fill: var(--text-1); text-anchor: middle;
+  paint-order: stroke; stroke: var(--bg-0); stroke-width: 3px; stroke-linejoin: round;
+}
+.edge-label.start { text-anchor: start; }   /* self-loop labels hang right of the loop */
+/* diagram edges are few and hand-authored — render them confident, not
+   hairball-faint. call/data solid accent; return = cyan dashed (the classic
+   sync-call vs return distinction); control stays muted. */
+.edge.flow.k-data, .edge.flow.k-call, .edge.flow.k-self { opacity: 0.85; stroke-width: 1.5; }
+.edge.flow.k-control { opacity: 0.45; }
+.edge.flow.k-return { stroke: var(--cyan); stroke-dasharray: 6 5; opacity: 0.95; stroke-width: 1.5; }
+/* re-assert selection states AFTER the k-* rules: equal specificity means
+   source order decides, and dimming/lighting must beat the per-kind opacity */
+.edge.flow.active { opacity: 1; stroke-width: 1.7; }
+.edge.flow.dimmed { opacity: 0.05; }
+.node.synthetic rect { fill: var(--bg-2); stroke: var(--line-strong); }
+.node.synthetic .fold { fill: none; stroke: var(--line-strong); }
+.node.synthetic.artifact rect { fill: var(--artifact-bg); stroke: var(--artifact-line); }
+.node.synthetic.artifact .fold { stroke: var(--artifact-line); }
+.node.synthetic.artifact .nlabel { fill: var(--artifact-text); }
+/* sequence participants are column headers — card-like, bolder label */
+.node.synthetic.participant rect { fill: var(--bg-1); stroke: var(--line-strong); stroke-width: 1.2; }
+.node.synthetic.participant .nlabel { font-weight: 600; fill: var(--text-0); }
+.lifeline { stroke: var(--line-strong); stroke-dasharray: 4 4; }
+.seq-arrowhead { fill: var(--accent); }
+.seq-arrowhead.return { fill: var(--cyan); }
+.flow-item-kind { margin-right: 6px; color: var(--text-3); font-size: 10px; }

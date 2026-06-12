@@ -14,6 +14,7 @@
 import { state } from '../store.js';
 import { t } from '../i18n.js';
 import { escapeHtml, escapeAttr, copyToClipboard } from '../util.js';
+import { pickL } from '../data/diagram.js';
 
 /** Bilingual descriptions live on description_zh / description_en (core only).
  *  Prefer the active language, fall back to the other, then the legacy field.
@@ -68,6 +69,43 @@ export function createDetail({ detailBody, canvasWrap, onSelectTarget }) {
     canvasWrap.scrollBy({ top: dy, behavior: 'smooth' });
   }
 
+  /** artifact / actor / participant 的简化详情：kicker=类型、双语描述、
+   *  成员清单（在画布上→选中滚动；不在→面板内直接展示该 decl 详情）。
+   * @param {any} c */
+  function renderSyntheticDetail(c) {
+    const title = pickL(c, 'name', state.lang) || c.name || c.id;
+    const desc = pickDescription(c);
+    const members = (c.members || []).filter((/** @type {string} */ id) => state.classById.has(id));
+    detailBody.innerHTML = `
+      <div>
+        <div class="kicker">${escapeHtml(tr('kind_' + c.kind))}</div>
+        <h2 class="class-title">${escapeHtml(title)}</h2>
+      </div>
+      ${desc ? `<p class="description">${escapeHtml(desc)}</p>` : ''}
+      ${members.length ? `
+        <div>
+          <div class="section-h">${escapeHtml(tr('label_members'))} (${members.length})</div>
+          <div class="edge-list">
+            ${members.map((/** @type {string} */ id) => {
+              const d = state.classById.get(id);
+              return `<div class="edge-row is-out" data-target="${escapeAttr(id)}" title="${escapeAttr(id)}">
+                <div class="edge-row-main"><span class="arrow"></span><span class="edge-name">${escapeHtml(d.display_name || d.name)}</span></div>
+                ${d.package ? `<div class="edge-pkg">${escapeHtml(d.package)}</div>` : ''}
+              </div>`;
+            }).join('')}
+          </div>
+        </div>` : ''}
+    `;
+    detailBody.querySelectorAll('.edge-row[data-target]').forEach((row) => {
+      row.addEventListener('click', () => {
+        const target = row.getAttribute('data-target');
+        if (!target) return;
+        if (state.nodeById.has(target)) { onSelectTarget(target); scrollNodeIntoView(target); }
+        else if (state.classById.has(target)) renderDetail(state.classById.get(target));
+      });
+    });
+  }
+
   /** @param {any} c */
   function renderDetail(c) {
     if (!c) {
@@ -77,6 +115,7 @@ export function createDetail({ detailBody, canvasWrap, onSelectTarget }) {
       </div>`;
       return;
     }
+    if (c.synthetic) { renderSyntheticDetail(c); return; }
 
     const outs = (state.edgesFromIdx.get(c.id) || []);
     const ins = (state.edgesToIdx.get(c.id) || []);

@@ -9,6 +9,7 @@
 import { state } from '../store.js';
 import { buildEdgePath, flowEdgeClass } from '../render/edges.js';
 import { NS } from '../render/backend.js';
+import { diagramOf, sequenceHighlight, withLitStages } from '../data/diagram.js';
 
 /**
  * @param {object} deps
@@ -33,27 +34,35 @@ export function createSelection({ backend, renderDetail, layoutEl }) {
   }
 
   /** Ancestors (single parent chain to the seed) + the subtree below `id`,
-   *  walked over the active flow's own edges. @param {string} id @returns {Set<string>} */
+   *  walked over the active flow's own edges. Diagram-annotated flows
+   *  override: sequence → the participant + its step endpoints; pipeline →
+   *  the DAG walk plus the stage ids containing lit decls (so stage↔stage
+   *  links can stay lit). @param {string} id @returns {Set<string>} */
   function flowHighlight(id) {
     const set = new Set([id]);
     const flow = state.flowsById.get(state.activeFlow);
-    if (!flow || !Array.isArray(flow.edges)) return set;
-    /** @type {Map<string, string>} */
-    const parent = new Map();
-    /** @type {Map<string, string[]>} */
-    const children = new Map();
-    for (const e of flow.edges) {
-      parent.set(e.to, e.from);
-      if (!children.has(e.from)) children.set(e.from, []);
-      /** @type {string[]} */ (children.get(e.from)).push(e.to);
+    if (!flow) return set;
+    const dg = diagramOf(flow, state.classById);
+    if (dg && dg.type === 'sequence') return sequenceHighlight(dg, id);
+    if (Array.isArray(flow.edges)) {
+      /** @type {Map<string, string>} */
+      const parent = new Map();
+      /** @type {Map<string, string[]>} */
+      const children = new Map();
+      for (const e of flow.edges) {
+        parent.set(e.to, e.from);
+        if (!children.has(e.from)) children.set(e.from, []);
+        /** @type {string[]} */ (children.get(e.from)).push(e.to);
+      }
+      let p = parent.get(id);
+      while (p && !set.has(p)) { set.add(p); p = parent.get(p); }
+      const stack = [id];
+      while (stack.length) {
+        const u = /** @type {string} */ (stack.pop());
+        for (const v of (children.get(u) || [])) if (!set.has(v)) { set.add(v); stack.push(v); }
+      }
     }
-    let p = parent.get(id);
-    while (p && !set.has(p)) { set.add(p); p = parent.get(p); }
-    const stack = [id];
-    while (stack.length) {
-      const u = /** @type {string} */ (stack.pop());
-      for (const v of (children.get(u) || [])) if (!set.has(v)) { set.add(v); stack.push(v); }
-    }
+    if (dg && dg.type === 'pipeline') return withLitStages(dg, set);
     return set;
   }
 

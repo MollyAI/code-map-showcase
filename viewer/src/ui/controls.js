@@ -14,6 +14,7 @@ import { createSettings, migrateGrouping } from '../settings.js';
 import { makeLayout } from '../layout/metrics.js';
 import { applyI18nStatic, pickLangText, t } from '../i18n.js';
 import { loadGitHistory, nodeIdsForCommit } from '../data/githistory.js';
+import { diagramOf } from '../data/diagram.js';
 
 const settings = createSettings();
 
@@ -52,6 +53,13 @@ export function populateFlowList(els) {
     item.type = 'button';
     item.className = 'flow-item' + (f.id === state.activeFlow ? ' active' : '');
     item.dataset.flow = f.id;
+    const dg = diagramOf(f, state.classById);
+    if (dg) {
+      const mark = document.createElement('span');
+      mark.className = 'flow-item-kind';
+      mark.textContent = dg.type === 'pipeline' ? '▤' : '⇅';
+      item.appendChild(mark);
+    }
     const name = document.createElement('span');
     name.className = 'flow-item-name';
     name.textContent = flowField(f, 'name', lang) || f.name || f.id;

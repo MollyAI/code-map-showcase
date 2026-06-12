@@ -69,6 +69,22 @@ export function makeLayout(fontScale) {
 }
 
 /**
+ * Approximate rendered width of a (possibly CJK) label in the mono font.
+ * CJK glyphs are ~2× the latin advance, so they count as 2 units. Used by
+ * the diagram layouts to size gaps so edge/step labels never overlap boxes.
+ * @param {string} text
+ * @param {Layout} LAYOUT
+ * @returns {number}
+ */
+export function labelWidth(text, LAYOUT) {
+  let units = 0;
+  for (const ch of String(text || '')) {
+    units += (/** @type {number} */ (ch.codePointAt(0)) > 0x2e7f) ? 2 : 1;
+  }
+  return Math.round(units * LAYOUT.charW);
+}
+
+/**
  * Width of a node box given its declaration and the active layout.
  * Driven by the (clamped) label length; clamped to [minNodeW, maxNodeW].
  * Uses `display_name` when present (matches what the node renderer shows).

@@ -18,6 +18,7 @@ import { initZoom } from './interact/zoom.js';
 import { initPan } from './interact/pan.js';
 import { initKeyboard } from './interact/keyboard.js';
 import { createTooltip } from './ui/tooltip.js';
+import { createBuildPopover } from './ui/buildpopover.js';
 import { createDetail } from './ui/detail.js';
 import { renderLangStats } from './ui/langstats.js';
 import { initControls, populateFlowList, populateCommitList, closeCommitSidebar, applyCommitChrome } from './ui/controls.js';
@@ -52,12 +53,18 @@ const els = {
   canvasWrap: $('canvas-wrap'),
   projectName: $('project-name'),
   buildInfo: $('build-info'),
+  buildPopover: $('build-popover'),
   langStats: $('lang-stats'),
   layout: /** @type {any} */ (document.querySelector('.layout')),
 };
 
 const backend = createSvgBackend(els.svg, els.canvasWrap);
 const tooltip = createTooltip(els.tooltip);
+const buildPopover = createBuildPopover({
+  badgeEl: els.buildInfo,
+  popEl: els.buildPopover,
+  getLang: () => state.lang,
+});
 
 // detail ⇆ selection are mutually referential; break the cycle with a holder
 // filled right after selection is created (the late-bound calls only fire on
@@ -126,14 +133,15 @@ ${escapeHtml(t('error_hint', state.lang))}</code>
   </div>`;
 }
 
-// Badge text/tooltip are language-dependent (arch score, branch/built labels),
-// so this re-runs on every render — the language toggle re-renders via setState.
+// Badge text/popover are language-dependent (arch score, branch/built labels),
+// so this re-runs on every render — the language toggle re-renders via setState,
+// and sync() refreshes an open popover in place.
 function renderBuildInfo() {
   if (!state.model) return;
   const bi = formatBuildInfo(state.model.project, state.lang);
   els.buildInfo.textContent = bi.text;
-  els.buildInfo.title = bi.title;
   els.buildInfo.hidden = bi.hidden;
+  buildPopover.sync(bi.lines);
 }
 
 /** @param {any} json */

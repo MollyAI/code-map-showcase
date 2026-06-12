@@ -11,8 +11,12 @@ import { t } from '../i18n.js';
 import { countLabel } from '../data/counts.js';
 import { layoutLayers } from '../layout/layers.js';
 import { layoutFlow } from '../layout/flow.js';
+import { layoutPipeline } from '../layout/pipeline.js';
+import { layoutSequence } from '../layout/sequence.js';
+import { diagramOf } from '../data/diagram.js';
 import { makeNodeEl } from './node.js';
 import { buildFlowEdgePath, flowEdgeClass } from './edges.js';
+import { buildPipelineContent, buildSequenceContent } from './diagrams.js';
 import { renderScene } from './scene.js';
 import { NS } from './backend.js';
 
@@ -47,7 +51,7 @@ export function resolveActiveFlow(st) {
 // geometry the layout produced — registerNode only sees id+el, so we build
 // the entry here where `n` is in scope).
 /** @param {any} st @param {Element} group @param {any} n @param {any} ctx @param {(d:any)=>string[]} decorateNode */
-function appendNode(st, group, n, ctx, decorateNode) {
+export function appendNode(st, group, n, ctx, decorateNode) {
   const el = makeNodeEl(n, {
     LAYOUT: st.LAYOUT, handlers: ctx.handlers, decorateNode,
     registerNode: () => {},
@@ -60,6 +64,9 @@ function appendNode(st, group, n, ctx, decorateNode) {
 }
 
 const NO_DECOR = () => [];
+// Pipeline-diagram decl nodes: uniform "card on tinted stage" look — the
+// flow-core/flow-hub accents read as noise inside stage containers.
+const IN_STAGE = () => ['in-stage'];
 /** @param {any} datum */
 function flowDecorate(datum) {
   const out = [];
@@ -133,6 +140,15 @@ const flowView = {
     const canvasWidth = ctx.canvasWidth();
     const flow = resolveActiveFlow(st);
     if (!flow) return { width: Math.max(canvasWidth, 200), height: 200, kind: 'empty' };
+    const dg = diagramOf(flow, st.classById);   // invalid/absent → null → DAG 回退
+    if (dg && dg.type === 'pipeline') {
+      const lay = layoutPipeline(flow, st.classById, st.LAYOUT);
+      return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'pipeline', lay };
+    }
+    if (dg && dg.type === 'sequence') {
+      const lay = layoutSequence(flow, st.LAYOUT);
+      return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'sequence', lay };
+    }
     const lay = layoutFlow(flow, st.classById, st.LAYOUT);
     return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'flow', lay };
   },
@@ -146,6 +162,14 @@ const flowView = {
       txt.setAttribute('text-anchor', 'middle');
       txt.textContent = t('flow_empty', st.lang);
       backend.add(txt);
+      return;
+    }
+    if (layout.kind === 'pipeline') {
+      buildPipelineContent(backend, layout.lay, ctx, { appendNode, flowDecorate: IN_STAGE });
+      return;
+    }
+    if (layout.kind === 'sequence') {
+      buildSequenceContent(backend, layout.lay, ctx, { appendNode, flowDecorate: NO_DECOR });
       return;
     }
     const lay = layout.lay;
