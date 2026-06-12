@@ -16,7 +16,6 @@
 //    applyVisualState dimming work unchanged.
 // --------------------------------------------------------------------
 
-import { truncate } from '../util.js';
 import { pickL } from '../data/diagram.js';
 import { buildLinkPath, flowEdgeClass } from './edges.js';
 import { SELF_LOOP } from '../layout/sequence.js';
@@ -28,9 +27,6 @@ function el(tag, attrs) {
   for (const [k, v] of Object.entries(attrs)) node.setAttribute(k, v);
   return node;
 }
-
-/** 截断到盒宽的标签字符数。@param {number} w @param {any} LAYOUT */
-const fitChars = (w, LAYOUT) => Math.max(5, Math.floor((w - LAYOUT.nodePadX * 2) / LAYOUT.charW));
 
 /** Build + register one synthetic node (artifact / actor / participant).
  *  Mirrors registry.appendNode's bookkeeping for non-decl data.
@@ -54,7 +50,8 @@ function appendSynthetic(st, group, n, ctx) {
     g.appendChild(el('path', { class: 'fold', d: `M ${n.w - s} 0 L ${n.w - s} ${s} L ${n.w} ${s}` }));
   }
   const txt = el('text', { class: 'nlabel', x: String(st.LAYOUT.nodePadX), y: String(n.h / 2 + 1) });
-  txt.textContent = truncate(d.name, fitChars(n.w, st.LAYOUT));
+  // No truncation: layout sizes the box for the full name in either language.
+  txt.textContent = d.name;
   g.appendChild(txt);
   g.addEventListener('click', (ev) => { ev.stopPropagation(); ctx.handlers.onSelect(d.id); });
   g.addEventListener('mouseenter', (ev) => ctx.handlers.onHover(d.id, ev));
@@ -91,7 +88,8 @@ export function buildPipelineContent(backend, lay, ctx, { appendNode, flowDecora
       width: String(s.w), height: String(s.h), rx: '8',
     }));
     const title = el('text', { class: 'stage-title', x: String(s.x + 12), y: String(s.y + 20) });
-    title.textContent = truncate(pickL(s.spec, 'name', lang), Math.max(4, Math.floor((s.w - 24) / st.LAYOUT.charW)));
+    // No truncation: layoutPipeline widens each stage to fit its full title.
+    title.textContent = pickL(s.spec, 'name', lang);
     g.appendChild(title);
     gStages.appendChild(g);
   });

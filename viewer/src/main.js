@@ -21,8 +21,7 @@ import { createTooltip } from './ui/tooltip.js';
 import { createBuildPopover } from './ui/buildpopover.js';
 import { createDetail } from './ui/detail.js';
 import { renderLangStats } from './ui/langstats.js';
-import { initControls, populateFlowList, populateCommitList, closeCommitSidebar, applyCommitChrome } from './ui/controls.js';
-import { buildNodesByPath } from './data/githistory.js';
+import { initControls, populateFlowList } from './ui/controls.js';
 import { formatBuildInfo } from './ui/buildinfo.js';
 import { initExport } from './export/png.js';
 import { t } from './i18n.js';
@@ -36,16 +35,11 @@ const els = {
   detail: $('detail'),
   detailBody: $('detail-body'),
   tooltip: $('tooltip'),
-  toggle: $('view-toggle'),
   groupToggle: $('group-toggle'),
   flowSidebar: $('flow-sidebar'),
   flowList: $('flow-list'),
   flowCollapse: $('flow-collapse'),
   flowExpand: $('flow-expand'),
-  commitSidebar: $('commit-sidebar'),
-  commitList: $('commit-list'),
-  commitCollapse: $('commit-collapse'),
-  commitExpand: $('commit-expand'),
   themeToggle: $('theme-toggle'),
   exportBtn: $('export-toggle'),
   langToggle: $('lang-toggle'),
@@ -79,44 +73,21 @@ const detail = createDetail({
 const selection = createSelection({ backend, renderDetail: detail.renderDetail, layoutEl: els.layout });
 wiring.select = selection.select;
 
-// Clicking a node while the commit sidebar is shown collapses it to its tab,
-// clears the set-highlight, and selects the node (right detail opens). The full
-// re-render re-fits the canvas to the recovered width and lets scene restore the
-// single-node selection.
-/** @param {string} id */
-function selectFromMap(id) {
-  if (state.commitSidebarOpen || state.highlightedNodeIds.size) {
-    closeCommitSidebar(els);
-    state.selected = (id === state.selected) ? null : id;
-    setState({});
-    return;
-  }
-  selection.select(id);
-}
-// Empty-canvas / Esc: clear an active commit highlight (keep the sidebar open so
-// the user can pick another), else fall to the normal node deselect.
+// Empty-canvas / Esc: deselect the active node.
 function deselect() {
-  if (state.selectedCommit || state.highlightedNodeIds.size) {
-    state.selectedCommit = null;
-    state.highlightedNodeIds = new Set();
-    populateCommitList(els);
-    setState({});
-    return;
-  }
   selection.select(null);
 }
 
 const ctx = {
   state,
   handlers: {
-    onSelect: selectFromMap,
+    onSelect: selection.select,
     /** @param {string} id */
     onHover: (id) => { const e = state.nodeById.get(id); if (e) tooltip.show(e.datum); },
     onHoverEnd: tooltip.hide,
     onHoverMove: tooltip.position,
   },
   applySelection: selection.applySelection,
-  applyHighlight: selection.applyHighlight,
   drawEdges: selection.drawEdges,
   renderDetail: detail.renderDetail,
   canvasWidth: () => els.canvasWrap.clientWidth - 2 * CANVAS_PAD_L,
@@ -157,10 +128,6 @@ function onModel(json) {
   const { edgesFromIdx, edgesToIdx } = buildEdgeIndex(model.edges || []);
   const { classById, hubIds } = buildClassIndex(model.layers || []);
   Object.assign(state, { edgesFromIdx, edgesToIdx, classById, hubIds });
-
-  state.hasGit = !!(model.project && model.project.git);
-  state.nodesByPath = buildNodesByPath(model.layers || []);
-  applyCommitChrome(els);   // show the edge tab when git + layer mode
 
   const { flowsById, defaultFlowId } = buildFlowIndex(model, {
     classById, edgesFromIdx, hubIds, maxDepth: state.flowMaxDepth, activeFlow: state.activeFlow,

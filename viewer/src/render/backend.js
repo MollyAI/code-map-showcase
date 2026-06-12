@@ -26,8 +26,8 @@ export const CANVAS_PAD_L = 28;
  * @property {() => void} applyZoom
  * @property {() => void} updateZoomLabel
  * @property {() => void} goHome
+ * @property {() => void} centerContent
  * @property {(nodeById: Map<string, any>, layoutEl: HTMLElement, peers?: Set<string>|null) => void} applyVisualState
- * @property {(nodeById: Map<string, any>, layoutEl: HTMLElement, idSet?: Set<string>|null) => void} applySetHighlight
  */
 
 /**
@@ -38,15 +38,16 @@ export const CANVAS_PAD_L = 28;
 export function createSvgBackend(svg, canvasWrap) {
   // Pan gutter — extra scrollable space around the SVG so the canvas can be
   // dragged freely even at 100% zoom (where the SVG exactly fits the content
-  // width and would otherwise have no horizontal scroll room). Half a viewport
-  // on each side: generous but bounded. Computed once from the initial viewport
-  // as fixed px (not vw/vh) so a mid-session window resize can't shift the
-  // content under the user. Applied as a margin on the SVG, which enlarges
-  // canvas-wrap's scrollable area WITHOUT touching applyZoom's width contract
-  // (that reads clientWidth, never scrollWidth) and WITHOUT affecting export
-  // (png.js sizes its clone from viewBox, ignoring this margin).
-  const gutterX = Math.round((window.innerWidth || 1200) * 0.5);
-  const gutterY = Math.round((window.innerHeight || 800) * 0.5);
+  // width and would otherwise have no horizontal scroll room). A quarter
+  // viewport on each side: enough overscroll room without letting the diagram
+  // wander far off-screen. Computed once from the initial viewport as fixed px
+  // (not vw/vh) so a mid-session window resize can't shift the content under
+  // the user. Applied as a margin on the SVG, which enlarges canvas-wrap's
+  // scrollable area WITHOUT touching applyZoom's width contract (that reads
+  // clientWidth, never scrollWidth) and WITHOUT affecting export (png.js sizes
+  // its clone from viewBox, ignoring this margin).
+  const gutterX = Math.round((window.innerWidth || 1200) * 0.25);
+  const gutterY = Math.round((window.innerHeight || 800) * 0.25);
   svg.style.margin = gutterY + 'px ' + gutterX + 'px';
 
   function clear() { while (svg.firstChild) svg.removeChild(svg.firstChild); }
@@ -89,6 +90,21 @@ export function createSvgBackend(svg, canvasWrap) {
     canvasWrap.scrollTop = gutterY;
   }
 
+  // Centre the diagram in the viewport (the "reset 100%" companion): align the
+  // SVG's centre with the canvas-wrap's centre on both axes. Content taller
+  // than the viewport is top-aligned instead (centring would hide the first
+  // layers above the fold).
+  function centerContent() {
+    const sr = svg.getBoundingClientRect();
+    const wr = canvasWrap.getBoundingClientRect();
+    canvasWrap.scrollLeft += (sr.left + sr.width / 2) - (wr.left + wr.width / 2);
+    if (sr.height <= wr.height) {
+      canvasWrap.scrollTop += (sr.top + sr.height / 2) - (wr.top + wr.height / 2);
+    } else {
+      canvasWrap.scrollTop = gutterY;
+    }
+  }
+
   // Toggle selected/peer/dimmed classes on the rendered node elements, and the
   // layout's has-selection class. The peer set is computed by the caller
   // (interact/selection) so it can be mode-aware — global graph neighbours in
@@ -109,18 +125,5 @@ export function createSvgBackend(svg, canvasWrap) {
     }
   }
 
-  // Set-highlight (commit sidebar): light every member as a peer, dim the rest,
-  // and NEVER open the right panel (no single "selected"). idSet falsy/empty
-  // clears all visual state (resting view — used when a commit touches no
-  // mapped class, so we don't dim the whole map). Mirrors applyVisualState's
-  // class bookkeeping but keyed on a set instead of state.selected.
-  /** @param {Map<string, any>} nodeById @param {HTMLElement} layoutEl @param {Set<string>|null} [idSet] */
-  function applySetHighlight(nodeById, layoutEl, idSet) {
-    layoutEl.classList.remove('has-selection');
-    for (const [, entry] of nodeById) entry.el.classList.remove('selected', 'peer', 'dimmed');
-    if (!idSet || !idSet.size) return;
-    for (const [nid, entry] of nodeById) entry.el.classList.add(idSet.has(nid) ? 'peer' : 'dimmed');
-  }
-
-  return { clear, setViewBox, add, getSvg, applyZoom, updateZoomLabel, goHome, applyVisualState, applySetHighlight };
+  return { clear, setViewBox, add, getSvg, applyZoom, updateZoomLabel, goHome, centerContent, applyVisualState };
 }

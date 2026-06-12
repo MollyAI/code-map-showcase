@@ -10,8 +10,9 @@
 //   - `state.fontScale` is recovered exactly from the layout, since
 //     `LAYOUT.charW === LAYOUT_BASE.charW * fontScale` is the one
 //     scale-proportional field the original left un-rounded.
-// All geometry (BFS depth columns, column widths/x, vertical centring) is
-// unchanged and the magic numbers (64, +6) keep their original values.
+// Geometry (BFS depth columns, vertical centring) keeps the original magic
+// numbers (64, +6); node width is uniform across the whole flow (widest
+// label wins) so the boxes line up per flow.
 // --------------------------------------------------------------------
 
 import { LAYOUT_BASE, nodeWidth } from './metrics.js';
@@ -80,12 +81,12 @@ export function layoutFlow(flow, classById, LAYOUT) {
   }
   const depths = [...cols.keys()].sort((a, b) => a - b);
 
-  // column widths + x positions
+  // One uniform node width for the whole flow (the widest label wins) — equal
+  // boxes per flow read much calmer than per-column sizing.
+  const uniformW = Math.max(...data.map(c => nodeWidth(c, LAYOUT)));
   /** @type {Map<number, number>} */
   const colW = new Map();
-  for (const dp of depths) {
-    colW.set(dp, Math.max(.../** @type {typeof data} */ (cols.get(dp)).map(c => nodeWidth(c, LAYOUT))));
-  }
+  for (const dp of depths) colW.set(dp, uniformW);
   /** @type {Map<number, number>} */
   const colX = new Map();
   let x = PAD_X;

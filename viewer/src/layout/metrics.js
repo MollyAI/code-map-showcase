@@ -23,7 +23,6 @@
  * @property {number} charW         approx width of a JetBrains Mono char at 11px
  * @property {number} nodePadX
  * @property {number} minNodeW
- * @property {number} maxNodeW
  */
 
 /**
@@ -45,7 +44,6 @@ export const LAYOUT_BASE = Object.freeze({
   charW: 7,         // approx width of a JetBrains Mono char at 11px
   nodePadX: 14,
   minNodeW: 80,
-  maxNodeW: 220,
 });
 
 /**
@@ -64,7 +62,6 @@ export function makeLayout(fontScale) {
     nodeGapY:   Math.round(LAYOUT_BASE.nodeGapY   * fontScale),
     charW:      LAYOUT_BASE.charW * fontScale,
     minNodeW:   Math.round(LAYOUT_BASE.minNodeW   * fontScale),
-    maxNodeW:   Math.round(LAYOUT_BASE.maxNodeW   * fontScale),
   };
 }
 
@@ -86,7 +83,8 @@ export function labelWidth(text, LAYOUT) {
 
 /**
  * Width of a node box given its declaration and the active layout.
- * Driven by the (clamped) label length; clamped to [minNodeW, maxNodeW].
+ * Adaptive: sized to fit the FULL label (CJK-aware) plus padding, so the
+ * renderer never needs to truncate. Only a minimum is enforced.
  * Uses `display_name` when present (matches what the node renderer shows).
  * @param {{ name: string, display_name?: string }} decl
  * @param {Layout} LAYOUT
@@ -94,7 +92,6 @@ export function labelWidth(text, LAYOUT) {
  */
 export function nodeWidth(decl, LAYOUT) {
   const label = decl.display_name || decl.name;
-  const baseChars = Math.min(label.length, 22);
-  const w = LAYOUT.minNodeW + (baseChars - 6) * LAYOUT.charW;
-  return Math.min(LAYOUT.maxNodeW, Math.max(LAYOUT.minNodeW, Math.round(w)));
+  const w = labelWidth(label, LAYOUT) + LAYOUT.nodePadX * 2;
+  return Math.max(LAYOUT.minNodeW, w);
 }

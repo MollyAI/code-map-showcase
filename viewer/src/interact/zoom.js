@@ -70,7 +70,13 @@ export function initZoom(backend, canvasWrap) {
     const wr = canvasWrap.getBoundingClientRect();
     const cx = wr.left + wr.width / 2;
     const cy = wr.top + wr.height / 2;
-    if (direction === 'reset') { zoomTo(1, cx, cy); return; }
+    if (direction === 'reset') {
+      // Reset restores 100% AND re-centres the diagram (centerContent works
+      // even when the zoom is already 1 and zoomTo early-returns).
+      zoomTo(1, cx, cy);
+      backend.centerContent();
+      return;
+    }
     zoomTo(state.zoom * (direction === 'in' ? 1.25 : 1 / 1.25), cx, cy);
   }
 

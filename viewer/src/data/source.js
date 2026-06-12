@@ -2,8 +2,8 @@
 // data/source — resolve where the viewer fetches its data from.
 //
 // Single-project mode (local `serve.mjs`, the default): no `?project=`
-// query param, so data lives at the server root — `/code-map.json`,
-// `/git-history.json` — exactly as before. Behaviour is unchanged.
+// query param, so data lives at the server root — `/code-map.json` —
+// exactly as before. Behaviour is unchanged.
 //
 // Multi-project mode (a static gallery such as GitHub Pages): the page is
 // opened as `viewer/index.html?project=<slug>`, and each project's data
@@ -17,7 +17,7 @@
 // --------------------------------------------------------------------
 
 /**
- * Resolve the fetch URL for a data file (`code-map.json` / `git-history.json`).
+ * Resolve the fetch URL for a data file (e.g. `code-map.json`).
  * @param {string} name basename of the data file
  * @param {string} [search] the query string, e.g. `location.search` ("?project=foo")
  * @returns {string} an absolute (`/name`) or viewer-relative (`../data/<slug>/name`) URL

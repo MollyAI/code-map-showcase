@@ -29,13 +29,14 @@ export function registerView(def) { views.set(def.id, def); }
 export function getView(id) { return views.get(id); }
 export function listViews() { return [...views.values()]; }
 
-// Core/all filter + layer grouping (was visibleClasses + groupedLayers).
+// Core-only filter + layer grouping. The viewer shows core declarations only
+// (the all-classes view was removed); Phase 1's lonely-layer floor keeps thin
+// layers from rendering with a single box.
 /** @param {any} st */
 function visibleLayers(st) {
   const layers = [];
   for (const L of st.raw.layers) {
-    let cls = L.classes;
-    if (st.view === 'core') cls = cls.filter((/** @type {any} */ c) => c.core);
+    const cls = L.classes.filter((/** @type {any} */ c) => c.core);
     if (cls.length) layers.push({ ...L, classes: cls });
   }
   return layers;

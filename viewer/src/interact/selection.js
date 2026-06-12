@@ -119,64 +119,6 @@ export function createSelection({ backend, renderDetail, layoutEl }) {
     renderDetail(has ? state.nodeById.get(id).datum : null);
   }
 
-  // Edges among the highlighted set: only those whose BOTH endpoints are in the
-  // set (the "connected → draw, otherwise nothing" rule). Layer mode rebuilds
-  // #edges (dedup by from→to). Flow mode (defensive — feature is layer-only)
-  // restyles existing paths.
-  /** @param {Set<string>} idSet */
-  function drawSetEdges(idSet) {
-    const svg = backend.getSvg();
-    const layer = svg.querySelector('#edges');
-    if (!layer) return;
-    if (state.activeView === 'flow') {
-      for (const path of layer.querySelectorAll('path.edge')) {
-        const from = path.getAttribute('data-from') || '';
-        const to = path.getAttribute('data-to') || '';
-        const kind = path.getAttribute('data-kind') || 'uses';
-        const lit = idSet.has(from) && idSet.has(to);
-        path.setAttribute('class', flowEdgeClass(kind, { active: lit, dimmed: !lit }));
-      }
-      return;
-    }
-    while (layer.firstChild) layer.removeChild(layer.firstChild);
-    if (!idSet || !idSet.size) return;
-    /** @type {Set<string>} */
-    const drawn = new Set();
-    for (const id of idSet) {
-      const src = state.nodeById.get(id);
-      if (!src) continue;
-      for (const e of (state.edgesFromIdx.get(id) || [])) {
-        if (!idSet.has(e.to) || !state.nodeById.has(e.to)) continue;
-        const key = e.from + ' ' + e.to;
-        if (drawn.has(key)) continue;
-        drawn.add(key);
-        const p = document.createElementNS(NS, 'path');
-        p.setAttribute('class', 'edge active out');
-        p.setAttribute('d', buildEdgePath(src, state.nodeById.get(e.to), state.LAYOUT.nodeH));
-        layer.appendChild(p);
-      }
-    }
-  }
-
-  // Re-apply the current set-highlight from state.highlightedNodeIds, filtered to
-  // nodes that survived the latest render (core/all toggle may hide some). If
-  // none survive, fall to the resting view rather than dimming everything.
-  function applyHighlight() {
-    const idSet = state.highlightedNodeIds;
-    const visible = idSet ? new Set([...idSet].filter((x) => state.nodeById.has(x))) : new Set();
-    backend.applySetHighlight(state.nodeById, layoutEl, visible.size ? visible : null);
-    drawSetEdges(visible);
-    renderDetail(null);
-  }
-
-  // Enter set-highlight for a commit's class set (clears any single selection).
-  /** @param {Set<string>} idSet */
-  function highlightNodes(idSet) {
-    state.selected = null;
-    state.highlightedNodeIds = idSet || new Set();
-    applyHighlight();
-  }
-
   // Clicking the selected node deselects it.
   /** @param {string|null} id */
   function select(id) {
@@ -184,5 +126,5 @@ export function createSelection({ backend, renderDetail, layoutEl }) {
     applySelection();
   }
 
-  return { applySelection, select, drawEdges, highlightNodes, applyHighlight };
+  return { applySelection, select, drawEdges };
 }

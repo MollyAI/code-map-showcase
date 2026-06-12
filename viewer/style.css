@@ -167,7 +167,6 @@ header.topbar {
   display: flex; gap: 1px; border: 1px solid var(--line); border-radius: 5px; padding: 2px;
   background: var(--bg-1);
 }
-.toggle[hidden] { display: none; }   /* core/all toggle is hidden in flow mode */
 .toggle button {
   background: transparent; border: 0; color: var(--text-2);
   font-family: var(--font-mono); font-size: 13px; letter-spacing: 0.04em;
@@ -231,7 +230,6 @@ body.light .theme-toggle .icon-moon { display: none; }
 .canvas-wrap.panning * { cursor: grabbing !important; }   /* keep cursor consistent over nodes during a pan */
 .layout.has-selection .canvas-wrap { margin-right: calc(380px * var(--fs-scale)); }
 .layout.flow-active.flow-open .canvas-wrap { margin-left: calc(380px * var(--fs-scale)); }
-.layout.commit-active.commit-open .canvas-wrap { margin-left: calc(380px * var(--fs-scale)); }
 
 #map { display: block; }
 
@@ -507,8 +505,8 @@ body.light .theme-toggle .icon-moon { display: none; }
 .node.flow-hub rect { stroke-dasharray: 4 3; opacity: 0.55; }
 .node.flow-core rect { stroke: var(--accent); stroke-width: 1.8; }
 
-/* ---------- left flow / commit sidebars (slide in from the left, mirror .detail) ---------- */
-.flow-sidebar, .commit-sidebar {
+/* ---------- left flow sidebar (slides in from the left, mirrors .detail) ---------- */
+.flow-sidebar {
   position: absolute;
   top: 0; left: 0; bottom: 0;
   width: calc(380px * var(--fs-scale));   /* match the right detail panel width */
@@ -521,23 +519,22 @@ body.light .theme-toggle .icon-moon { display: none; }
   z-index: 5;
 }
 .layout.flow-active.flow-open .flow-sidebar { transform: translateX(0); }
-.layout.commit-active.commit-open .commit-sidebar { transform: translateX(0); }
 
-.flow-sidebar-head, .commit-sidebar-head {
+.flow-sidebar-head {
   flex: 0 0 auto;
   display: flex; align-items: center; justify-content: space-between;
   gap: 10px;
   padding: 18px 14px 14px 22px;
   border-bottom: 1px solid var(--line);
 }
-.flow-sidebar-title, .commit-sidebar-title {
+.flow-sidebar-title {
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 500;
   font-size: calc(18px * var(--fs-scale));
   color: var(--text-1);
 }
-.flow-collapse, .flow-expand, .commit-collapse, .commit-expand {
+.flow-collapse, .flow-expand {
   background: var(--bg-1);
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -547,10 +544,10 @@ body.light .theme-toggle .icon-moon { display: none; }
   color: var(--text-2); cursor: pointer;
   transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
-.flow-collapse:hover, .flow-expand:hover, .commit-collapse:hover, .commit-expand:hover { color: var(--text-0); border-color: var(--line-strong); }
-.flow-collapse svg, .flow-expand svg, .commit-collapse svg, .commit-expand svg { width: 15px; height: 15px; display: block; }
+.flow-collapse:hover, .flow-expand:hover { color: var(--text-0); border-color: var(--line-strong); }
+.flow-collapse svg, .flow-expand svg { width: 15px; height: 15px; display: block; }
 
-.flow-list, .commit-list {
+.flow-list {
   flex: 1 1 auto;
   min-height: 0;
   overflow-y: auto;
@@ -558,7 +555,7 @@ body.light .theme-toggle .icon-moon { display: none; }
   padding: 12px 12px 20px;
   display: flex; flex-direction: column; gap: 4px;
 }
-.flow-item, .commit-item {
+.flow-item {
   display: flex; flex-direction: column; gap: 3px;
   width: 100%;
   text-align: left;
@@ -570,34 +567,30 @@ body.light .theme-toggle .icon-moon { display: none; }
   color: var(--text-1);
   transition: background 0.12s, border-color 0.12s, color 0.12s;
 }
-.flow-item:hover, .commit-item:hover { background: var(--bg-2); color: var(--text-0); }
-.flow-item.active, .commit-item.active { background: var(--accent-dim); border-color: var(--accent-dim); }
+.flow-item:hover { background: var(--bg-2); color: var(--text-0); }
+.flow-item.active { background: var(--accent-dim); border-color: var(--accent-dim); }
 /* active item: accent color only — NOT font-weight. Bolding a name that contains
    CJK falls back to synthetic bold (no real 600 in many CJK fonts), which widens
    glyphs, shifts the wrap point, and makes the item's height jump on selection. */
-.flow-item.active .flow-item-name, .commit-item.active .commit-item-name { color: var(--accent); }
-.flow-item-name, .commit-item-name {
+.flow-item.active .flow-item-name { color: var(--accent); }
+.flow-item-name {
   font-family: var(--font-mono);
   font-size: calc(12.5px * var(--fs-scale));
   letter-spacing: 0.01em;
   overflow-wrap: anywhere;
   line-height: 1.35;
 }
-.flow-item-desc, .commit-item-desc {
+.flow-item-desc {
   font-family: var(--font-ui);
   font-size: calc(11px * var(--fs-scale));
   color: var(--text-3);
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
-.flow-item.active .flow-item-desc, .commit-item.active .commit-item-desc { color: var(--text-2); }
+.flow-item.active .flow-item-desc { color: var(--text-2); }
 
-/* commit items whose changed files map to no class in the graph (dimmed name + note) */
-.commit-item.no-match .commit-item-name { color: var(--text-3); }
-.commit-note { font-family: var(--font-ui); font-size: calc(10.5px * var(--fs-scale)); color: var(--text-3); padding: 2px 0 0; }
-
-/* collapsed-state expand handle — a thin tab on the left edge (flow / commit) */
-.flow-expand, .commit-expand {
+/* collapsed-state expand handle — a thin tab on the left edge */
+.flow-expand {
   position: absolute;
   top: 50%; left: 0;
   transform: translateY(-50%);
@@ -609,7 +602,6 @@ body.light .theme-toggle .icon-moon { display: none; }
   display: none;
 }
 .layout.flow-active:not(.flow-open) .flow-expand { display: inline-flex; }
-.layout.commit-active:not(.commit-open) .commit-expand { display: inline-flex; }
 
 .node { cursor: pointer; }
 .node rect {
@@ -763,7 +755,6 @@ body.light .theme-toggle .icon-moon { display: none; }
   transition: left 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .layout.flow-active.flow-open .zoom-controls { left: calc(380px * var(--fs-scale) + 24px); }
-.layout.commit-active.commit-open .zoom-controls { left: calc(380px * var(--fs-scale) + 24px); }
 .zoom-controls button {
   background: transparent;
   border: 0;

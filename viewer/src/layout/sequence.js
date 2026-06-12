@@ -21,11 +21,11 @@ import { LAYOUT_BASE, labelWidth } from './metrics.js';
 /** Self-loop geometry shared with the renderer (render/diagrams.js). */
 export const SELF_LOOP = Object.freeze({ w: 34, h: 18 });
 
-/** @param {any} p @param {Layout} LAYOUT */
+/** Adaptive (no truncation): fits the longer of the _zh/_en names plus padding.
+ * @param {any} p @param {Layout} LAYOUT */
 function participantWidth(p, LAYOUT) {
-  const chars = Math.min(Math.max(String(p.name_zh || '').length, String(p.name_en || '').length, 4), 22);
-  const w = LAYOUT.minNodeW + (chars - 6) * LAYOUT.charW;
-  return Math.min(LAYOUT.maxNodeW, Math.max(LAYOUT.minNodeW, Math.round(w)));
+  const w = Math.max(labelWidth(p.name_zh, LAYOUT), labelWidth(p.name_en, LAYOUT)) + 28;
+  return Math.max(LAYOUT.minNodeW, w);
 }
 
 /**
@@ -47,7 +47,12 @@ export function layoutSequence(flow, LAYOUT) {
   const PAD_Y = Math.round(24 * fontScale);
 
   const parts = dg.participants || [];
-  const pw = parts.map((/** @type {any} */ p) => participantWidth(p, LAYOUT));
+  // One uniform participant width per diagram (widest name wins) — equal boxes
+  // per flow read much calmer than per-participant sizing.
+  const uniformW = parts.length
+    ? Math.max(...parts.map((/** @type {any} */ p) => participantWidth(p, LAYOUT)))
+    : LAYOUT.minNodeW;
+  const pw = parts.map(() => uniformW);
   /** @type {Map<string, number>} */
   const colOf = new Map(parts.map((/** @type {any} */ p, /** @type {number} */ i) => [p.id, i]));
 

@@ -19,10 +19,6 @@
     <div class="build-info" id="build-info" hidden></div>
   </div>
   <div class="controls">
-    <div class="toggle" id="view-toggle">
-      <button data-mode="core" class="active" data-i18n="core">core</button>
-      <button data-mode="all" data-i18n="all">all</button>
-    </div>
     <div class="toggle" id="group-toggle" role="group" aria-label="grouping">
       <button data-group="layer" class="active" data-i18n="group_layers">layers</button>
       <button data-group="flow" data-i18n="group_flows">flows</button>
@@ -64,22 +60,6 @@
     </div>
     <div class="flow-list" id="flow-list"></div>
   </aside>
-  <aside class="commit-sidebar" id="commit-sidebar">
-    <div class="commit-sidebar-head">
-      <span class="commit-sidebar-title" data-i18n="commit_history">Commit History</span>
-      <button class="commit-collapse" id="commit-collapse" type="button" aria-label="collapse commit list" data-i18n-title="collapse_commits">
-        <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M10 3.5 5.5 8 10 12.5"/>
-        </svg>
-      </button>
-    </div>
-    <div class="commit-list" id="commit-list"></div>
-  </aside>
-  <button class="commit-expand" id="commit-expand" type="button" aria-label="show commit history" data-i18n-title="expand_commits">
-    <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-      <path d="M6 3.5 10.5 8 6 12.5"/>
-    </svg>
-  </button>
   <button class="flow-expand" id="flow-expand" type="button" aria-label="show flow list" data-i18n-title="expand_flows">
     <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M6 3.5 10.5 8 6 12.5"/>

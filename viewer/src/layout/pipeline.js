@@ -45,15 +45,23 @@ export function layoutPipeline(flow, classById, LAYOUT) {
   const SPAD = 12;                                      // stage inner padding
   const MIN_STAGE_W = Math.round(140 * fontScale);
 
-  // column contents + widths
+  // One uniform node width across the whole diagram (widest label wins) —
+  // equal boxes per flow read much calmer than per-node sizing.
+  const allWidths = [
+    ...(dg.stages || []).flatMap((/** @type {any} */ s) =>
+      (s.nodes || []).map((/** @type {string} */ id) => classById.get(id)).filter(Boolean)
+        .map((/** @type {any} */ m) => nodeWidth(m, LAYOUT))),
+    ...(dg.extra_nodes || []).map((/** @type {any} */ e) => nodeWidth({ name: e.name || '' }, LAYOUT)),
+  ];
+  const uniformW = Math.max(LAYOUT.minNodeW, ...allWidths);
+
+  // column contents + widths — a stage is wide enough for its (uniform) member
+  // boxes AND its full title in either language, so titles never truncate.
   const cols = (dg.stages || []).map((/** @type {any} */ s) => {
     const members = (s.nodes || []).map((/** @type {string} */ id) => classById.get(id)).filter(Boolean);
     const extras = (dg.extra_nodes || []).filter((/** @type {any} */ e) => e.stage === s.id);
-    const widths = [
-      ...members.map((/** @type {any} */ m) => nodeWidth(m, LAYOUT)),
-      ...extras.map((/** @type {any} */ e) => nodeWidth({ name: e.name || '' }, LAYOUT)),
-    ];
-    const w = Math.max(MIN_STAGE_W, ...widths.map((/** @type {number} */ x) => x + 2 * SPAD));
+    const titleW = Math.max(labelWidth(s.name_zh, LAYOUT), labelWidth(s.name_en, LAYOUT)) + 24;
+    const w = Math.max(MIN_STAGE_W, uniformW + 2 * SPAD, titleW);
     return { s, members, extras, w };
   });
   const rows = (/** @type {any} */ c) => c.members.length + c.extras.length;
@@ -95,15 +103,13 @@ export function layoutPipeline(flow, classById, LAYOUT) {
     rectById.set(c.s.id, { x, y: PAD_Y, w: c.w, h: stageH });
     let y = PAD_Y + TITLE_H + (maxInner - innerH(c)) / 2;
     for (const m of c.members) {
-      const w = nodeWidth(m, LAYOUT);
-      const n = { datum: m, x: x + (c.w - w) / 2, y, w, h: LAYOUT.nodeH };
+      const n = { datum: m, x: x + (c.w - uniformW) / 2, y, w: uniformW, h: LAYOUT.nodeH };
       nodes.push(n);
       rectById.set(m.id, n);
       y += LAYOUT.nodeH + ROW_GAP;
     }
     for (const e of c.extras) {
-      const w = nodeWidth({ name: e.name || '' }, LAYOUT);
-      const n = { datum: extraDatum(e), x: x + (c.w - w) / 2, y, w, h: LAYOUT.nodeH };
+      const n = { datum: extraDatum(e), x: x + (c.w - uniformW) / 2, y, w: uniformW, h: LAYOUT.nodeH };
       extraNodes.push(n);
       rectById.set(e.id, n);
       y += LAYOUT.nodeH + ROW_GAP;
@@ -113,16 +119,15 @@ export function layoutPipeline(flow, classById, LAYOUT) {
 
   // unstaged extras: one trailing column, vertically centred against stages
   if (unstaged.length) {
-    const w = Math.max(...unstaged.map((/** @type {any} */ e) => nodeWidth({ name: e.name || '' }, LAYOUT)));
     const colH = unstaged.length * LAYOUT.nodeH + (unstaged.length - 1) * ROW_GAP;
     let y = PAD_Y + Math.max(0, (stageH - colH) / 2);
     for (const e of unstaged) {
-      const n = { datum: extraDatum(e), x, y, w, h: LAYOUT.nodeH };
+      const n = { datum: extraDatum(e), x, y, w: uniformW, h: LAYOUT.nodeH };
       extraNodes.push(n);
       rectById.set(e.id, n);
       y += LAYOUT.nodeH + ROW_GAP;
     }
-    x += w;
+    x += uniformW;
   }
 
   const width = x + PAD_X;

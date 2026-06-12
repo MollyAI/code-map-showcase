@@ -7,15 +7,9 @@
 
 /** @typedef {Object} AppState */
 export const state = /** @type {any} */ ({
-  raw: null, model: null, view: 'core', activeView: 'layer',
+  raw: null, model: null, activeView: 'layer',
   activeFlow: null, selected: null,
   flowSidebarCollapsed: false,  // left flow sidebar collapsed state (flow mode)
-  hasGit: false,                // project.git present → commit sidebar available (layer mode)
-  commitSidebarOpen: false,     // left commit-history sidebar open (default hidden)
-  selectedCommit: null,         // hash of the highlighted commit, or null
-  highlightedNodeIds: new Set(),// set-highlight: class ids changed by the selected commit
-  gitHistory: null,             // { loaded, commits, error } — lazily fetched
-  nodesByPath: new Map(),       // file path → [class id] (commit → nodes mapping)
   zoom: 1, fontScale: 1, fontSize: 'medium', lang: 'en',
   flowMaxDepth: 6,             // mirror of Python --flow-max-depth for client-side trace
   LAYOUT: null,                // current layout metrics (makeLayout(fontScale)); set in controls

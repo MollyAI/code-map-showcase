@@ -13,11 +13,9 @@
 //   - the inline handlers          -> ctx.handlers.*
 //   - LAYOUT                       -> ctx.LAYOUT
 // SVG structure (the double-rect `rect` + `.lang-stripe` + `.nlabel text`),
-// coordinates, sizes, label truncation, and listener wiring are otherwise
-// byte-for-byte identical to the original.
+// coordinates, sizes, and listener wiring are otherwise identical to the
+// original; labels render in full (boxes are sized to fit — no truncation).
 // --------------------------------------------------------------------
-
-import { truncate } from '../util.js';
 
 /**
  * @typedef {import('../layout/metrics.js').Layout} Layout
@@ -117,7 +115,8 @@ export function makeNodeEl(n, ctx) {
   txt.setAttribute('class', 'nlabel');
   txt.setAttribute('x', String(LAYOUT.nodePadX));
   txt.setAttribute('y', String(n.h / 2 + 1));
-  txt.textContent = truncate(n.datum.display_name || n.datum.name, Math.max(5, Math.floor((n.w - LAYOUT.nodePadX * 2) / LAYOUT.charW)));
+  // No truncation: nodeWidth() sizes the box to the full label, so it always fits.
+  txt.textContent = n.datum.display_name || n.datum.name;
   gNode.appendChild(txt);
 
   gNode.addEventListener('click', (ev) => { ev.stopPropagation(); handlers.onSelect(n.datum.id); });
