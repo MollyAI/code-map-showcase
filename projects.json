@@ -69,28 +69,6 @@
       "description": "A modern I/O library for Android, Java, and Kotlin Multiplatform."
     },
     {
-      "slug": "code-map",
-      "name": "code-map",
-      "languages": [
-        "typescript"
-      ],
-      "files": 75,
-      "declarations": 352,
-      "layers": 7,
-      "flows": 5,
-      "edges": 514,
-      "git": {
-        "branch": "main",
-        "short": "d480ffa",
-        "commit": "d480ffa9d31c4a90e0639c60c398bca70ce313a3"
-      },
-      "generated_at": "2026-06-12T13:36:27",
-      "refined": true,
-      "score": 130,
-      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
-      "repo": "https://github.com/MollyAI/code-map.git"
-    },
-    {
       "slug": "freertos-kernel",
       "name": "FreeRTOS-Kernel",
       "languages": [
@@ -157,6 +135,28 @@
       "score": 128,
       "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back",
       "repo": "https://github.com/google/gson.git"
+    },
+    {
+      "slug": "code-map",
+      "name": "code-map",
+      "languages": [
+        "typescript"
+      ],
+      "files": 79,
+      "declarations": 387,
+      "layers": 7,
+      "flows": 6,
+      "edges": 559,
+      "git": {
+        "branch": "main",
+        "short": "31575c2",
+        "commit": "31575c2215e2d16187f2dc01f1d96c3de900c9cd"
+      },
+      "generated_at": "2026-06-13T12:01:04",
+      "refined": true,
+      "score": 127,
+      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
+      "repo": "https://github.com/MollyAI/code-map.git"
     },
     {
       "slug": "genericagent",
