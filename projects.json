@@ -25,6 +25,27 @@
       "repo": "https://github.com/ReactiveX/RxSwift.git"
     },
     {
+      "slug": "okio",
+      "name": "okio",
+      "languages": [
+        "kotlin"
+      ],
+      "files": 171,
+      "declarations": 87,
+      "layers": 6,
+      "flows": 6,
+      "edges": 139,
+      "git": {
+        "branch": "master",
+        "short": "cad7ff1",
+        "commit": "cad7ff1057307142149b1a28dfcb49117e89b0d3"
+      },
+      "generated_at": "2026-06-13T06:03:50",
+      "refined": true,
+      "score": 131,
+      "description": "A modern I/O library for Android, Java, and Kotlin Multiplatform."
+    },
+    {
       "slug": "code-map",
       "name": "code-map",
       "languages": [
