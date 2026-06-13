@@ -1,0 +1,5 @@
+{
+  "name": "gastown",
+  "description": "Multi-agent workspace manager that coordinates many AI coding agents (Claude Code, Codex, Copilot, …) with git-backed persistent work tracking",
+  "repo": "https://github.com/gastownhall/gastown"
+}

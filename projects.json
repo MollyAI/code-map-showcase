@@ -46,6 +46,30 @@
       "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
     },
     {
+      "slug": "gastown",
+      "name": "gastown",
+      "languages": [
+        "go",
+        "python",
+        "typescript"
+      ],
+      "files": 1192,
+      "declarations": 1409,
+      "layers": 9,
+      "flows": 9,
+      "edges": 3566,
+      "git": {
+        "branch": "main",
+        "short": "407e109",
+        "commit": "407e109d1743dbeeb75e32910438f4c40783ad28"
+      },
+      "generated_at": "2026-06-13T13:15:22",
+      "refined": true,
+      "score": 132,
+      "description": "Multi-agent workspace manager that coordinates many AI coding agents (Claude Code, Codex, Copilot, …) with git-backed persistent work tracking",
+      "repo": "https://github.com/gastownhall/gastown"
+    },
+    {
       "slug": "rxswift",
       "name": "RxSwift",
       "languages": [
