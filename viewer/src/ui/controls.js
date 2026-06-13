@@ -103,7 +103,14 @@ export function initControls(els) {
       if (!item) return;
       const id = /** @type {HTMLElement} */ (item).dataset.flow;
       if (!id || id === state.activeFlow) return;
-      state.activeFlow = id; state.selected = null; setState({});
+      state.activeFlow = id; state.selected = null;
+      // On narrow screens the full-width flow list covers the diagram — collapse
+      // it so picking a flow reveals the diagram. Transient (not persisted, so a
+      // user's explicit collapse preference isn't overwritten). Desktop unchanged.
+      if (window.matchMedia('(max-width: 900px)').matches) {
+        state.flowSidebarCollapsed = true; applyFlowChrome();
+      }
+      setState({});
     });
     // collapse / expand the sidebar (slide mirrors the right detail panel); a
     // setState re-layouts the canvas for its new width.

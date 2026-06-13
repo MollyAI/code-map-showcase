@@ -222,6 +222,10 @@ body.light .theme-toggle .icon-moon { display: none; }
      SVG height crosses the scrollbar threshold each frame and the page visibly shakes. */
   scrollbar-gutter: stable;
   padding: 32px 28px 80px;
+  /* touch: one-finger pan = native scroll; two-finger pinch handled by
+     interact/touch.js. pan-x pan-y also disables the browser's whole-page
+     pinch-zoom gesture over the canvas. No effect on mouse/wheel. */
+  touch-action: pan-x pan-y;
   cursor: grab;
   /* margin-right ← right detail panel; margin-left ← left flow sidebar. */
   transition: margin 280ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -806,11 +810,6 @@ body.light .theme-toggle .icon-moon { display: none; }
    square in dark mode. Match the track so it disappears into the canvas. */
 ::-webkit-scrollbar-corner { background: var(--bg-0); }
 
-/* responsive: side panels take the full viewport width on narrow screens */
-@media (max-width: 900px) {
-  .detail { width: 100%; }
-  .flow-sidebar { width: 100%; }
-}
 
 /* dispatch (interface → implementor) flow edges: dashed, slightly muted */
 .edge.flow.dispatch { stroke-dasharray: 5 4; stroke-opacity: 0.85; }
@@ -856,3 +855,88 @@ body.light .theme-toggle .icon-moon { display: none; }
 .seq-arrowhead { fill: var(--accent); }
 .seq-arrowhead.return { fill: var(--cyan); }
 .flow-item-kind { margin-right: 6px; color: var(--text-3); font-size: 10px; }
+
+/* ======================================================================
+   mobile adaptation (v1.16) — desktop (mouse/wheel) paths are untouched.
+   New elements default to display:none here; the media queries reveal them.
+   Touch pinch-zoom lives in interact/touch.js + .canvas-wrap touch-action.
+   ====================================================================== */
+
+/* --- new topbar/panel elements: hidden on desktop, inline controls --- */
+.controls-overflow { display: flex; gap: 12px; align-items: center; }
+.menu-toggle {
+  display: none;       /* shown (inline-flex) only at ≤640px */
+  background: var(--bg-1); border: 1px solid var(--line); border-radius: 5px;
+  width: 38px; height: 36px; padding: 0;
+  align-items: center; justify-content: center;
+  color: var(--text-2); cursor: pointer;
+  transition: color 0.15s, background 0.15s, border-color 0.15s;
+}
+.menu-toggle svg { width: 17px; height: 17px; display: block; }
+.menu-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
+
+.panel-close {
+  display: none;       /* shown only when panels go full-width (≤900px) */
+  position: absolute; top: 12px; right: 12px; z-index: 6;
+  width: 40px; height: 40px; padding: 0;
+  background: var(--bg-2); border: 1px solid var(--line); border-radius: 8px;
+  color: var(--text-1); cursor: pointer;
+  align-items: center; justify-content: center;
+}
+.panel-close svg { width: 18px; height: 18px; display: block; }
+.panel-close:hover { color: var(--text-0); border-color: var(--line-strong); }
+
+/* --- ≤900px (tablet ↓): full-width overlay panels + close affordance --- */
+@media (max-width: 900px) {
+  .detail { width: 100%; }
+  .flow-sidebar { width: 100%; }
+  /* a full-width overlay shouldn't also push the canvas sideways */
+  .layout.has-selection .canvas-wrap { margin-right: 0; }
+  .layout.flow-active.flow-open .canvas-wrap { margin-left: 0; }
+  .layout.flow-active.flow-open .zoom-controls { left: 24px; }
+  .panel-close { display: inline-flex; }
+  .detail-body { padding-top: 56px; }       /* clear the floating ✕ */
+  .flow-collapse { width: 36px; height: 36px; }   /* bigger touch target */
+}
+@supports (height: 100dvh) {
+  @media (max-width: 900px) {
+    body { height: 100dvh; }                /* survive the mobile URL-bar resize */
+  }
+}
+
+/* --- ≤640px (phone): overflow menu + compact chrome --- */
+@media (max-width: 640px) {
+  header.topbar { padding: 12px 16px; gap: 12px; }
+  .brand { flex-direction: column; align-items: flex-start; gap: 2px; }
+  .brand .project {
+    font-size: 20px; max-width: 52vw;
+    overflow: hidden; text-overflow: ellipsis; white-space: nowrap;
+  }
+  .brand .build-info { font-size: 11px; max-width: 60vw; overflow: hidden; text-overflow: ellipsis; }
+
+  .controls { position: relative; gap: 8px; }
+  .menu-toggle { display: inline-flex; }
+  /* secondary controls drop into a dropdown anchored under the topbar */
+  .controls-overflow {
+    display: none;
+    position: absolute; top: 100%; right: 0; margin-top: 8px;
+    flex-direction: column; align-items: stretch; gap: 8px;
+    padding: 12px;
+    background: var(--bg-1); border: 1px solid var(--line-strong);
+    border-radius: 8px; box-shadow: 0 10px 30px var(--shadow-panel);
+    z-index: 60;
+  }
+  .controls-overflow.open { display: flex; }
+  .controls-overflow .toggle { justify-content: center; }
+  .controls-overflow .theme-toggle,
+  .controls-overflow .export-toggle,
+  .controls-overflow .lang-toggle { width: 100%; height: 40px; }
+
+  .canvas-wrap { padding: 16px 14px 64px; }
+  .detail-body { padding: 56px 18px 20px; }
+  .lang-stats { padding: 16px 18px 20px; }
+  .zoom-controls { bottom: 16px; left: 16px; }
+  .layout.flow-active.flow-open .zoom-controls { left: 16px; }
+  .flow-sidebar-head { padding: 16px 12px 12px 18px; }
+  .flow-list { padding: 10px 10px 18px; }
+}
