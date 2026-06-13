@@ -11,14 +11,14 @@
       "files": 290,
       "declarations": 743,
       "layers": 11,
-      "flows": 7,
-      "edges": 1330,
+      "flows": 6,
+      "edges": 1329,
       "git": {
         "branch": "main",
-        "short": "132aea4f",
+        "short": "132aea4",
         "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
       },
-      "generated_at": "2026-06-12T13:37:13",
+      "generated_at": "2026-06-13T05:24:22",
       "refined": true,
       "score": 132,
       "description": "Reactive Programming in Swift",
