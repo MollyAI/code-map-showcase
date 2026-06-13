@@ -10,12 +10,11 @@ import { state } from '../store.js';
 import { t } from '../i18n.js';
 import { countLabel } from '../data/counts.js';
 import { layoutLayers } from '../layout/layers.js';
-import { layoutFlow } from '../layout/flow.js';
+import { layoutGrouped } from '../layout/groups.js';
 import { layoutPipeline } from '../layout/pipeline.js';
 import { layoutSequence } from '../layout/sequence.js';
 import { diagramOf } from '../data/diagram.js';
 import { makeNodeEl } from './node.js';
-import { buildFlowEdgePath, flowEdgeClass } from './edges.js';
 import { buildPipelineContent, buildSequenceContent } from './diagrams.js';
 import { renderScene } from './scene.js';
 import { NS } from './backend.js';
@@ -68,13 +67,6 @@ const NO_DECOR = () => [];
 // Pipeline-diagram decl nodes: uniform "card on tinted stage" look — the
 // flow-core/flow-hub accents read as noise inside stage containers.
 const IN_STAGE = () => ['in-stage'];
-/** @param {any} datum */
-function flowDecorate(datum) {
-  const out = [];
-  if (datum.hub) out.push('flow-hub');
-  if (datum.core) out.push('flow-core');
-  return out;
-}
 
 /** @type {import('./scene.js').ViewDef} */
 const layerView = {
@@ -83,21 +75,62 @@ const layerView = {
   computeLayout(st, ctx) {
     const layers = visibleLayers(st);
     const canvasWidth = ctx.canvasWidth();
+    const groups = st.raw.layer_groups;
+    if (groups && groups.length) {
+      const { bands, frames, totalHeight } = layoutGrouped(layers, groups, canvasWidth, st.LAYOUT);
+      return { width: canvasWidth, height: Math.max(totalHeight, 200), bands, frames };
+    }
     const { bands, totalHeight } = layoutLayers(layers, canvasWidth, st.LAYOUT);
-    return { width: canvasWidth, height: Math.max(totalHeight, 200), bands };
+    return { width: canvasWidth, height: Math.max(totalHeight, 200), bands, frames: [] };
   },
   buildContent(backend, layout, ctx) {
     const st = ctx.state;
     // edges group is created here but appended LAST so it paints on top.
     const gEdges = document.createElementNS(NS, 'g');
     gEdges.setAttribute('id', 'edges');
+
+    // Group umbrella frames (2D layering) — drawn FIRST so bands paint on top.
+    // A frame whose group has no `name` (bare peer) renders no title text.
+    for (const f of layout.frames || []) {
+      const gGroup = document.createElementNS(NS, 'g');
+      gGroup.setAttribute('class', 'layer-group');
+
+      const rect = document.createElementNS(NS, 'rect');
+      rect.setAttribute('class', 'bg');
+      rect.setAttribute('x', String(f.x));
+      rect.setAttribute('y', String(f.y));
+      rect.setAttribute('width', String(f.width));
+      rect.setAttribute('height', String(f.height));
+      rect.setAttribute('rx', '4');
+      gGroup.appendChild(rect);
+
+      if (f.group.name) {
+        const glabel = document.createElementNS(NS, 'text');
+        glabel.setAttribute('class', 'glabel');
+        glabel.setAttribute('x', String(f.x + st.LAYOUT.bandLabelX));
+        glabel.setAttribute('y', String(f.y + 22));
+        glabel.textContent = f.group.name;
+        gGroup.appendChild(glabel);
+
+        if (f.group.summary) {
+          const gsum = document.createElementNS(NS, 'text');
+          gsum.setAttribute('class', 'gsummary');
+          gsum.setAttribute('x', String(f.x + st.LAYOUT.bandLabelX));
+          gsum.setAttribute('y', String(f.y + 38));
+          gsum.textContent = f.group.summary;
+          gGroup.appendChild(gsum);
+        }
+      }
+      backend.add(gGroup);
+    }
+
     for (const b of layout.bands) {
       const gBand = document.createElementNS(NS, 'g');
       gBand.setAttribute('class', 'layer-band');
 
       const rect = document.createElementNS(NS, 'rect');
       rect.setAttribute('class', 'bg');
-      rect.setAttribute('x', '0');
+      rect.setAttribute('x', String(b.x));
       rect.setAttribute('y', String(b.y));
       rect.setAttribute('width', String(b.width));
       rect.setAttribute('height', String(b.height));
@@ -106,21 +139,21 @@ const layerView = {
 
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('class', 'label');
-      label.setAttribute('x', String(st.LAYOUT.bandLabelX));
+      label.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
       label.setAttribute('y', String(b.y + 26));
       label.textContent = b.layer.name;
       gBand.appendChild(label);
 
       const summary = document.createElementNS(NS, 'text');
       summary.setAttribute('class', 'summary');
-      summary.setAttribute('x', String(st.LAYOUT.bandLabelX));
+      summary.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
       summary.setAttribute('y', String(b.y + 44));
       summary.textContent = b.layer.summary || '';
       gBand.appendChild(summary);
 
       const count = document.createElementNS(NS, 'text');
       count.setAttribute('class', 'count');
-      count.setAttribute('x', String(b.width - 16));
+      count.setAttribute('x', String(b.x + b.width - 16));
       count.setAttribute('y', String(b.y + 26));
       count.textContent = countLabel(b.layer.classes, st.lang);
       gBand.appendChild(count);
@@ -150,8 +183,8 @@ const flowView = {
       const lay = layoutSequence(flow, st.LAYOUT);
       return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'sequence', lay };
     }
-    const lay = layoutFlow(flow, st.classById, st.LAYOUT);
-    return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'flow', lay };
+    // No DAG fallback — flowsById only holds flows with a valid diagram.
+    return { width: Math.max(canvasWidth, 200), height: 200, kind: 'empty' };
   },
   buildContent(backend, layout, ctx) {
     const st = ctx.state;
@@ -173,39 +206,8 @@ const flowView = {
       buildSequenceContent(backend, layout.lay, ctx, { appendNode, flowDecorate: NO_DECOR });
       return;
     }
-    const lay = layout.lay;
-    const gEdges = document.createElementNS(NS, 'g');
-    gEdges.setAttribute('id', 'edges');
-    const pos = new Map(lay.nodes.map((/** @type {any} */ n) => [n.datum.id, n]));
-    for (const e of lay.edges) {
-      const a = pos.get(e.from), b = pos.get(e.to);
-      if (a && b) {
-        const path = document.createElementNS(NS, 'path');
-        // resting flow edge; selection re-styles it active/dimmed by endpoint
-        // (interact/selection drawEdges) via the data-from/data-to ids.
-        path.setAttribute('class', flowEdgeClass(e.kind));
-        path.setAttribute('data-from', e.from);
-        path.setAttribute('data-to', e.to);
-        path.setAttribute('data-kind', e.kind || 'uses');
-        if (e.via) path.setAttribute('data-via', e.via);
-        path.setAttribute('d', buildFlowEdgePath(a, b));
-        gEdges.appendChild(path);
-      }
-    }
-    const gNodes = document.createElementNS(NS, 'g');
-    for (const node of lay.nodes) appendNode(st, gNodes, node, ctx, flowDecorate);
-    for (const o of lay.omitted || []) {
-      const n = pos.get(o.from);
-      if (!n) continue;
-      const more = document.createElementNS(NS, 'text');
-      more.setAttribute('class', 'dispatch-more');
-      more.setAttribute('x', String(n.x + n.w + 6));
-      more.setAttribute('y', String(n.y + n.h - 2));
-      more.textContent = '+' + o.count + ' more';
-      gNodes.appendChild(more);
-    }
-    backend.add(gEdges);   // edges under nodes (flow)
-    backend.add(gNodes);
+    // No other kinds: computeLayout only emits 'empty' (handled above) /
+    // 'pipeline' / 'sequence'. The DAG ('flow') renderer was removed in v1.19.
   },
 };
 

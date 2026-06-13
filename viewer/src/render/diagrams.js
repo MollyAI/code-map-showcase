@@ -181,8 +181,14 @@ export function buildSequenceContent(backend, lay, ctx, _helpers) {
     appendSynthetic(st, gParts, { datum, x: p.x, y: p.y, w: p.w, h: p.h }, ctx);
   }
 
-  backend.add(gLife);
-  backend.add(gEdges);
-  backend.add(gParts);
-  backend.add(gLabels);
+  // Wrap in a scope so the `.seq-scope` CSS can render sequence labels one size
+  // up (SEQ_FONT_MULT) without touching pipeline. Paint order preserved:
+  // lifelines → edges → participant boxes → labels. `#edges` keeps its id, so
+  // interact/selection's getElementById/querySelectorAll still resolve it.
+  const scope = el('g', { class: 'seq-scope' });
+  scope.appendChild(gLife);
+  scope.appendChild(gEdges);
+  scope.appendChild(gParts);
+  scope.appendChild(gLabels);
+  backend.add(scope);
 }

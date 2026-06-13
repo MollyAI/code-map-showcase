@@ -11,7 +11,6 @@ export const state = /** @type {any} */ ({
   activeFlow: null, selected: null,
   flowSidebarCollapsed: false,  // left flow sidebar collapsed state (flow mode)
   zoom: 1, fontScale: 1, fontSize: 'medium', lang: 'en',
-  flowMaxDepth: 6,             // mirror of Python --flow-max-depth for client-side trace
   LAYOUT: null,                // current layout metrics (makeLayout(fontScale)); set in controls
   baseWidth: 0, baseHeight: 0, // SVG content dims at zoom=1
   classById: new Map(), flowsById: new Map(),

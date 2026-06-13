@@ -135,7 +135,7 @@ function onModel(json) {
   Object.assign(state, { edgesFromIdx, edgesToIdx, classById, hubIds });
 
   const { flowsById, defaultFlowId } = buildFlowIndex(model, {
-    classById, edgesFromIdx, hubIds, maxDepth: state.flowMaxDepth, activeFlow: state.activeFlow,
+    classById, activeFlow: state.activeFlow,
   });
   state.flowsById = flowsById;
   state.activeFlow = defaultFlowId;

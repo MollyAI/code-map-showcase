@@ -45,48 +45,63 @@ import { nodeWidth } from './metrics.js';
  * @param {Layout} LAYOUT
  * @returns {{ bands: Band[], totalHeight: number }}
  */
+/**
+ * Pack a layer's classes (caller pre-sorts by importance) into rows fitting
+ * `innerW`, returning positioned nodes relative to (innerLeft, contentTop) and
+ * the total content height. Extracted verbatim from layoutLayers' inner loop so
+ * the layer-band renderer and the grouped renderer (layout/groups.js) share one
+ * packing implementation. The geometry is byte-for-byte the original's.
+ * @param {Array<{ name: string, importance: number }>} sorted classes, importance-desc
+ * @param {number} innerLeft left x of the content area
+ * @param {number} innerW available content width
+ * @param {number} contentTop y of the first row
+ * @param {Layout} LAYOUT
+ * @returns {{ nodes: PositionedNode[], rows: number, contentHeight: number }}
+ */
+export function packRows(sorted, innerLeft, innerW, contentTop, LAYOUT) {
+  const rows = [];
+  let row = [];
+  let rowW = 0;
+  for (const c of sorted) {
+    const w = nodeWidth(c, LAYOUT);
+    const needed = (row.length ? LAYOUT.nodeGapX : 0) + w;
+    if (rowW + needed > innerW && row.length) {
+      rows.push(row);
+      row = [];
+      rowW = 0;
+    }
+    row.push({ datum: c, w });
+    rowW += needed;
+  }
+  if (row.length) rows.push(row);
+
+  const nodes = [];
+  for (let ri = 0; ri < rows.length; ri++) {
+    const r = rows[ri];
+    let x = innerLeft;
+    const ny = contentTop + ri * (LAYOUT.nodeH + LAYOUT.nodeGapY);
+    for (const it of r) {
+      nodes.push({ datum: it.datum, x, y: ny, w: it.w, h: LAYOUT.nodeH });
+      x += it.w + LAYOUT.nodeGapX;
+    }
+  }
+  const contentHeight = rows.length
+    ? rows.length * LAYOUT.nodeH + (rows.length - 1) * LAYOUT.nodeGapY
+    : 0;
+  return { nodes, rows: rows.length, contentHeight };
+}
+
 export function layoutLayers(layers, canvasWidth, LAYOUT) {
   const innerLeft = LAYOUT.bandPadX;
-  const innerRight = canvasWidth - LAYOUT.bandPadX;
-  const innerW = innerRight - innerLeft;
+  const innerW = canvasWidth - 2 * LAYOUT.bandPadX;
 
   let y = 0;
   const bands = [];
 
   for (const L of layers) {
     const sorted = [...L.classes].sort((a, b) => b.importance - a.importance);
-    // pack into rows
-    const rows = [];
-    let row = [];
-    let rowW = 0;
-    for (const c of sorted) {
-      const w = nodeWidth(c, LAYOUT);
-      const needed = (row.length ? LAYOUT.nodeGapX : 0) + w;
-      if (rowW + needed > innerW && row.length) {
-        rows.push(row);
-        row = [];
-        rowW = 0;
-      }
-      row.push({ datum: c, w });
-      rowW += needed;
-    }
-    if (row.length) rows.push(row);
-
-    // assign x,y to each node
-    const positioned = [];
-    for (let ri = 0; ri < rows.length; ri++) {
-      const r = rows[ri];
-      let x = innerLeft;
-      const ny = y + LAYOUT.bandPadTop + ri * (LAYOUT.nodeH + LAYOUT.nodeGapY);
-      for (const it of r) {
-        positioned.push({ datum: it.datum, x, y: ny, w: it.w, h: LAYOUT.nodeH });
-        x += it.w + LAYOUT.nodeGapX;
-      }
-    }
-
-    const bandH = LAYOUT.bandPadTop +
-                  rows.length * LAYOUT.nodeH + (rows.length - 1) * LAYOUT.nodeGapY +
-                  LAYOUT.bandPadBottom;
+    const { nodes, contentHeight } = packRows(sorted, innerLeft, innerW, y + LAYOUT.bandPadTop, LAYOUT);
+    const bandH = LAYOUT.bandPadTop + contentHeight + LAYOUT.bandPadBottom;
 
     bands.push({
       layer: L,
@@ -94,7 +109,7 @@ export function layoutLayers(layers, canvasWidth, LAYOUT) {
       x: 0,
       width: canvasWidth,
       height: bandH,
-      nodes: positioned,
+      nodes,
     });
     y += bandH + LAYOUT.bandGapY;
   }

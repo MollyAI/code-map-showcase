@@ -6,6 +6,7 @@
   --line-faint:  rgba(140, 180, 220, 0.045);
   --line:        rgba(140, 180, 220, 0.10);
   --line-strong: rgba(140, 180, 220, 0.22);
+  --lifeline:    rgba(140, 180, 220, 0.45);   /* sequence lifelines — darker than --line-strong */
 
   --text-0:      #e8ecf2;
   --text-1:      #b7bfcc;
@@ -55,6 +56,7 @@ body.light {
   --line-faint:  rgba(60, 50, 40, 0.045);
   --line:        rgba(60, 50, 40, 0.11);
   --line-strong: rgba(60, 50, 40, 0.24);
+  --lifeline:    rgba(60, 50, 40, 0.50);   /* sequence lifelines — darker than --line-strong */
 
   --text-0:      #2d2a26;
   --text-1:      #4a463f;
@@ -505,6 +507,20 @@ body.light .theme-toggle .icon-moon { display: none; }
   fill: var(--text-2);
   text-anchor: end;
 }
+/* ---------- group umbrella (2D layering) ---------- */
+.layer-group rect.bg { fill: rgba(184, 137, 58, 0.05); stroke: #b8893a; stroke-width: 1; stroke-dasharray: 2 3; }
+.layer-group .glabel {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: calc(15px * var(--fs-scale));
+  fill: #b8893a;
+}
+.layer-group .gsummary {
+  font-family: var(--font-mono);
+  font-size: calc(10px * var(--fs-scale));
+  fill: var(--text-3);
+}
 
 .node.flow-hub rect { stroke-dasharray: 4 3; opacity: 0.55; }
 .node.flow-core rect { stroke: var(--accent); stroke-width: 1.8; }
@@ -813,7 +829,6 @@ body.light .theme-toggle .icon-moon { display: none; }
 
 /* dispatch (interface → implementor) flow edges: dashed, slightly muted */
 .edge.flow.dispatch { stroke-dasharray: 5 4; stroke-opacity: 0.85; }
-.dispatch-more { font: 500 11px var(--font-mono); fill: var(--text-2); }
 
 /* ---- flow diagrams: pipeline stages + sequence lifelines (v1.13) ---- */
 .stage-band rect.bg { fill: var(--bg-1); stroke: var(--line); }
@@ -851,7 +866,11 @@ body.light .theme-toggle .icon-moon { display: none; }
 /* sequence participants are column headers — card-like, bolder label */
 .node.synthetic.participant rect { fill: var(--bg-1); stroke: var(--line-strong); stroke-width: 1.2; }
 .node.synthetic.participant .nlabel { font-weight: 600; fill: var(--text-0); }
-.lifeline { stroke: var(--line-strong); stroke-dasharray: 4 4; }
+.lifeline { stroke: var(--lifeline); stroke-width: 1.3; stroke-dasharray: 5 4; }
+/* Sequence diagrams render one size up — see SEQ_FONT_MULT in layout/sequence.js.
+   The layout sizes boxes for this exact multiplier; keep the two in sync. */
+.seq-scope .edge-label { font-size: calc(10.5px * var(--fs-scale) * 1.25); }
+.seq-scope .node .nlabel { font-size: calc(11px * var(--fs-scale) * 1.25); }
 .seq-arrowhead { fill: var(--accent); }
 .seq-arrowhead.return { fill: var(--cyan); }
 .flow-item-kind { margin-right: 6px; color: var(--text-3); font-size: 10px; }

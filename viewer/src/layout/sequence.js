@@ -21,6 +21,13 @@ import { LAYOUT_BASE, labelWidth } from './metrics.js';
 /** Self-loop geometry shared with the renderer (render/diagrams.js). */
 export const SELF_LOOP = Object.freeze({ w: 34, h: 18 });
 
+/** Sequence diagrams render one size larger than the rest of the viewer
+ *  (request/interaction stories need bigger, readable labels). This multiplies
+ *  the layout's char width / box height so boxes are sized for the enlarged
+ *  text. MUST match the `.seq-scope` font-size multiplier in viewer/style.css
+ *  — if they diverge, step/participant labels clip (INV-U1). */
+export const SEQ_FONT_MULT = 1.25;
+
 /** Adaptive (no truncation): fits the longer of the _zh/_en names plus padding.
  * @param {any} p @param {Layout} LAYOUT */
 function participantWidth(p, LAYOUT) {
@@ -38,8 +45,16 @@ function participantWidth(p, LAYOUT) {
  *   width: number, height: number,
  * }}
  */
-export function layoutSequence(flow, LAYOUT) {
+export function layoutSequence(flow, LAYOUT_IN) {
   const dg = flow.diagram;
+  // Scale char width + box height so the geometry matches the enlarged
+  // `.seq-scope` CSS (SEQ_FONT_MULT). Everything below already reads LAYOUT.
+  const LAYOUT = {
+    ...LAYOUT_IN,
+    charW: LAYOUT_IN.charW * SEQ_FONT_MULT,
+    nodeH: Math.round(LAYOUT_IN.nodeH * SEQ_FONT_MULT),
+    minNodeW: Math.round(LAYOUT_IN.minNodeW * SEQ_FONT_MULT),
+  };
   const fontScale = LAYOUT.charW / LAYOUT_BASE.charW;
   const P_GAP = Math.round(48 * fontScale);
   const STEP_GAP = Math.round(40 * fontScale);

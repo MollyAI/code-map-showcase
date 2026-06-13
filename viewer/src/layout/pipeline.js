@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 // layout/pipeline — pure geometry for the Phase-2-authored stage-pipeline
-// diagram (flow.diagram.type === 'pipeline'). DOM-free, mirrors
-// layout/flow.js conventions: fontScale is recovered from LAYOUT.charW,
+// diagram (flow.diagram.type === 'pipeline'). DOM-free. Convention shared
+// with layout/sequence.js: fontScale is recovered from LAYOUT.charW,
 // stage columns run left→right, members stack vertically inside their
 // stage container, all stages share the max height (spec §4 等高对齐).
 // Caller guarantees the diagram passed validateDiagram; this module is

@@ -11,15 +11,14 @@
 //                     write state.edgesFromIdx / state.edgesToIdx
 //   - buildClassIndex: read  state.raw.layers
 //                      write state.classById / state.hubIds
-//   - buildFlowIndex: read  state.raw.flows, state.classById,
-//                           state.hubIds, state.edgesFromIdx,
-//                           state.flowMaxDepth, state.activeFlow
+//   - buildFlowIndex: read  state.raw.flows, state.classById, state.activeFlow
 //                     write state.flowsById, state.activeFlow
-//                     (synthesizeFlows pulled its globals off `state` too —
-//                      they are now threaded through `ctx`.)
+//                     (keeps only flows with a valid pipeline/sequence
+//                      `diagram` — the DAG renderer + synthesize fallback were
+//                      removed; an undiagrammed flow has nothing to draw.)
 // --------------------------------------------------------------------
 
-import { synthesizeFlows } from './flows.js';
+import { diagramOf } from './diagram.js';
 
 /**
  * A top-level graph edge. `from`/`to` are class ids; `kind` is the edge
@@ -40,9 +39,9 @@ import { synthesizeFlows } from './flows.js';
  */
 
 /**
- * A fully-formed flow (see data/flows.js Flow). Re-declared loosely here so
- * this module does not depend on flows.js's typedef export.
- * @typedef {{ id: string }} FlowLike
+ * A stored flow as written by Phase 1/2 (`scripts/lib/flows.mjs`). Only the
+ * fields this module touches are typed; a valid `diagram` gates visibility.
+ * @typedef {{ id: string, diagram?: any }} FlowLike
  */
 
 /**
@@ -88,40 +87,29 @@ export function buildClassIndex(layers) {
 }
 
 /**
- * Context for buildFlowIndex — the globals the original `buildFlowIndex` and
- * its `synthesizeFlows` helper read off `state`, threaded through explicitly.
+ * Context for buildFlowIndex.
  * @typedef {object} FlowIndexContext
- * @property {Map<string, ClassDatum>} classById id → class datum
- * @property {Map<string, GraphEdge[]>} edgesFromIdx from-id → outgoing edges
- * @property {Set<string>} hubIds qualified_names flagged hub (flow leaves)
- * @property {number} maxDepth depth cap for synthesized traces (default 6)
+ * @property {Map<string, ClassDatum>} classById id → class datum (validates diagrams)
  * @property {string | null} [activeFlow] currently selected flow id, if any —
- *   preserved as `defaultFlowId` when it still resolves to a flow.
+ *   preserved as `defaultFlowId` when it still resolves to a (diagrammed) flow.
  */
 
 /**
- * Build the id→flow index. Uses `model.flows` when present and non-empty,
- * otherwise synthesizes flows client-side (one per entry-point class) via
- * `synthesizeFlows`. Mirrors the original `buildFlowIndex`.
+ * Build the id→flow index, keeping ONLY flows with a valid pipeline/sequence
+ * `diagram` (the DAG renderer was removed — an undiagrammed flow can't render).
  *
- * `defaultFlowId` selection (verbatim from the original's `activeFlow`
- * update): if `ctx.activeFlow` is non-null AND still present in the built
- * index, it is kept; otherwise it falls to the first flow's id, or `null`
- * when there are no flows.
+ * `defaultFlowId` selection: if `ctx.activeFlow` is non-null AND still present
+ * in the built index, it is kept; otherwise it falls to the first flow's id, or
+ * `null` when there are no diagrammed flows.
  *
  * @param {{ flows?: FlowLike[] }} model the loaded code-map model (provides `flows`)
- * @param {FlowIndexContext} ctx the globals the original closure read off `state`
+ * @param {FlowIndexContext} ctx classById (for diagram validation) + activeFlow
  * @returns {{ flowsById: Map<string, FlowLike>, defaultFlowId: string | null }}
  */
 export function buildFlowIndex(model, ctx) {
-  const flows = (model.flows && model.flows.length)
-    ? model.flows
-    : synthesizeFlows(ctx.classById.values(), {
-        edgesFromIdx: ctx.edgesFromIdx,
-        hubIds: ctx.hubIds,
-        classById: ctx.classById,
-        maxDepth: ctx.maxDepth,
-      });
+  // Only flows that carry a valid pipeline/sequence diagram are shown — the old
+  // DAG ("关系图") renderer was removed, so an undiagrammed flow has nothing to draw.
+  const flows = (model.flows || []).filter((/** @type {any} */ f) => diagramOf(f, ctx.classById));
   /** @type {Map<string, FlowLike>} */
   const flowsById = new Map();
   for (const f of flows) flowsById.set(f.id, f);
