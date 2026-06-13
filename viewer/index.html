@@ -12,6 +12,21 @@
 <link rel="stylesheet" href="./style.css" />
 </head>
 <body>
+<script>
+// Pre-paint theme: resolve light/dark BEFORE the first paint so the page never
+// flashes the default (dark) palette before the deferred ES module (ui/controls
+// initTheme) runs. Synchronous and render-blocking by position (first child of
+// <body>, after the render-blocking stylesheet), so document.body exists and the
+// .light class is set before any content paints. Mirrors initTheme's resolution
+// order exactly — localStorage 'code-map-theme' > system preference > dark — so
+// the later module apply() is a no-op (no flash). Wrapped in try/catch: a
+// throwing/blocked localStorage degrades to system/dark rather than a blank page.
+try {
+  var t = localStorage.getItem('code-map-theme')
+    || (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+  if (t === 'light') document.body.classList.add('light');
+} catch (e) { /* storage blocked — fall through to default dark */ }
+</script>
 
 <header class="topbar">
   <div class="brand">

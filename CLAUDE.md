@@ -20,19 +20,20 @@ Two roles live here, deliberately kept separate:
 ```
 index.html  landing.css  landing.js     gallery home: centered search + card grid
 projects.json                           generated index — array under { projects: [...] }
-data/<slug>/code-map.json               a project's map (Phase-1 raw or Phase-2 refined)
-data/<slug>/git-history.json            optional commit-history sidecar
+data/<slug>/code-map.json               a project's map — web-slimmed by publish.mjs (the only fetched payload)
 data/<slug>/meta.json                   optional { name, description, tags } overrides
 viewer/                                 synced code-map viewer (static; fetches data over relative paths)
-scripts/publish.mjs                     copy a build into data/<slug>/ + rebuild projects.json
+scripts/publish.mjs                     slim a build into data/<slug>/ + rebuild projects.json
 .github/workflows/sync-viewer.yml       manual: pull viewer/ from the plugin's main
 ```
 
 **Navigation:** a card links to `viewer/index.html?project=<slug>`. The viewer's
-`data/source.js` maps `?project=<slug>` → `../data/<slug>/code-map.json` (and
-`git-history.json`). With no `?project=` the viewer fetches `/code-map.json` —
-i.e. local `code-map serve` is unchanged. This `?project=` convention is the
-**entire** contract between the two repos (plugin ≥ v1.5.2).
+`data/source.js` maps `?project=<slug>` → `../data/<slug>/code-map.json`. With no
+`?project=` the viewer fetches `/code-map.json` — i.e. local `code-map serve` is
+unchanged. This `?project=` convention is the **entire** contract between the two
+repos (plugin ≥ v1.5.2). In gallery mode the viewer fetches `code-map.json`
+cache-respecting (static per-publish); local serve uses `no-store` to pick up
+rebuilds (`viewer/src/data/load.js`).
 
 ## The coupling contract (keep these stable, or update both sides)
 
@@ -54,10 +55,13 @@ by `cardHtml()` in `landing.js` — change them together.
 
 ```bash
 # Add / update a project (run /code-map:build in the target first):
-node scripts/publish.mjs --from /path/to/project/.code-map [--slug s] [--name "…"] [--desc "…"] [--no-history]
+node scripts/publish.mjs --from /path/to/project/.code-map [--slug s] [--name "…"] [--desc "…"]
 
 # Rebuild projects.json from data/ (safe anytime — projects.json is fully derived):
 node scripts/publish.mjs reindex
+
+# Re-slim every already-published code-map.json in place (idempotent):
+node scripts/publish.mjs slim
 
 # Remove a project:
 node scripts/publish.mjs remove <slug>
@@ -86,7 +90,9 @@ anything changed. Don't edit `viewer/` by hand — the next sync would overwrite
 - **No build step, no dependencies.** Keep `landing.*` as native ESM/CSS and
   `publish.mjs` as dependency-free Node (stdlib only), matching the plugin's
   "just need a JS runtime" philosophy.
-- **Only `code-map.json`, `git-history.json`, `meta.json` belong under `data/<slug>/`.**
+- **Only `code-map.json` and `meta.json` belong under `data/<slug>/`.**
   `raw_structure.json` / `unresolved.json` and server scratch are git-ignored.
-- **Publish only public-safe maps** (see README's warning about exposed paths,
-  symbols, and commit metadata).
+  (`git-history.json` is no longer shipped — the viewer dropped its consumer in
+  plugin v1.14; `publish.mjs slim` removes any stale ones.)
+- **Publish only public-safe maps** (see README's warning about exposed paths
+  and symbols).

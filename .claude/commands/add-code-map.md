@@ -1,5 +1,5 @@
 ---
-description: Clone a GitHub repo (full history), build its code-map, and publish it to this gallery — adds a new project or updates an existing one in one step.
+description: Clone a GitHub repo, build its code-map, and publish it to this gallery — adds a new project or updates an existing one in one step.
 argument-hint: "<github-url> [--name \"Display Name\"] [--desc \"one line\"] [--branch <branch>]"
 allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 ---
@@ -7,8 +7,7 @@ allowed-tools: Bash, Read, Write, Edit, Glob, Grep
 # /add-code-map
 
 You are publishing a GitHub project into this code-map gallery. Given a repo URL,
-you will: full-clone it (preserving all commit history), build its code-map,
-generate the commit-history sidecar, copy the result into `data/<slug>/`, and
+you will: clone it, build its code-map, publish the result into `data/<slug>/`, and
 commit + push so GitHub Pages redeploys. Re-running with the same repo **updates**
 it (pull + rebuild + republish) — there is no separate update command.
 
@@ -42,10 +41,10 @@ Set, for use in every later step:
 CACHE="$HOME/.cache/code-map-showcase/$SLUG"      # lives OUTSIDE this repo — never committed
 ```
 
-## 2. Full-clone or update the repo (preserve git history)
+## 2. Clone or update the repo
 
-A **full** clone (no `--depth`) is required so the whole commit history is present
-for the sidecar in step 5.
+A full clone (no `--depth`) is fine and keeps `project.git` metadata accurate; the
+gallery no longer ships a commit-history sidecar, so deep history is not required.
 
 - **First time** (`$CACHE` doesn't exist): `git clone "$CLONE_URL" "$CACHE"`. If
   `--branch` was given, add `--branch <b>`.
@@ -137,18 +136,7 @@ git -C "$CACHE" rev-parse HEAD                 # commit
 Set `project.git = { "branch": <branch>, "short": <short>, "commit": <commit> }` in
 `$CACHE/.code-map/code-map.json`.
 
-## 5. Generate the commit-history sidecar
-
-The code-map plugin does **not** emit `git-history.json`; the gallery viewer needs
-it to render the commit-history sidebar. Generate it from the full clone (skip if a
-build somehow already produced one):
-
-```bash
-[ -f "$CACHE/.code-map/git-history.json" ] || \
-  node scripts/git-history.mjs "$CACHE" > "$CACHE/.code-map/git-history.json"
-```
-
-## 6. Publish into the gallery
+## 5. Publish into the gallery
 
 From this repo's root:
 
@@ -156,11 +144,11 @@ From this repo's root:
 node scripts/publish.mjs --from "$CACHE/.code-map" --slug "$SLUG" --name "$NAME" --desc "$DESC"
 ```
 
-This copies `code-map.json` + `git-history.json` into `data/$SLUG/`, writes
+This writes a web-slimmed `code-map.json` into `data/$SLUG/`, writes
 `data/$SLUG/meta.json`, and rebuilds `projects.json`. (Omit `--name`/`--desc` flags
 whose values are empty.)
 
-## 7. Sanity-check the result
+## 6. Sanity-check the result
 
 Confirm the build landed on the clone, not on this repo:
 
@@ -171,7 +159,7 @@ node -e 'const m=require("./data/'"$SLUG"'/code-map.json");if(!m.project)process
 If this fails, stop and report — do **not** commit. (A failure here usually means
 Phase 1 ran against the wrong `--root`.)
 
-## 8. Commit and push (deploys to Pages)
+## 7. Commit and push (deploys to Pages)
 
 Stage only the gallery outputs — never the clone (it's outside the repo anyway):
 
@@ -184,14 +172,14 @@ git push
 Use this repo's current branch (`main`) — pushing to it is the intended trigger for
 the GitHub Pages redeploy, and is the whole point of this command.
 
-## 9. Summary
+## 8. Summary
 
 Print a short summary:
 
 ```
 [/add-code-map] <verb> $SLUG  ($NAME)
   Source:  $CLONE_URL @ <short> (<branch>)
-  Map:     data/$SLUG/code-map.json  ·  <N> commits in git-history.json
+  Map:     data/$SLUG/code-map.json
   Live:    https://mollyai.github.io/code-map-showcase/viewer/index.html?project=$SLUG
 ```
 
@@ -203,9 +191,8 @@ remain from Phase 2.
 ## Invariants (do not violate)
 
 - **Never `git add` the clone.** It lives in `~/.cache/...`, outside this repo, and
-  only `code-map.json` + `git-history.json` may enter `data/$SLUG/`.
+  only `code-map.json` (+ the `meta.json` sidecar) may enter `data/$SLUG/`.
 - **Never hand-edit `viewer/` or `projects.json`.** `projects.json` is regenerated
   by `publish.mjs`; the viewer is plugin-owned.
-- **Full clone only** (no `--depth`) — the commit history is the point.
 - **Publish only public-safe maps.** These come from public GitHub repos, so the
   source is already public; still, don't publish a repo the user can't share.

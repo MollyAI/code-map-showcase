@@ -7,13 +7,20 @@
 //   # publish a build (run /code-map:build in the target project first):
 //   node scripts/publish.mjs --from /path/to/project/.code-map
 //   node scripts/publish.mjs --from /path/to/project/.code-map --slug my-app --name "My App"
-//   node scripts/publish.mjs --from /path/to/project/.code-map/code-map.json --no-history
 //
 //   # just rescan data/ and rewrite projects.json (no copy):
 //   node scripts/publish.mjs reindex
 //
+//   # re-slim every already-published code-map.json + drop orphaned sidecars:
+//   node scripts/publish.mjs slim
+//
 //   # remove a project from the gallery:
 //   node scripts/publish.mjs remove my-app
+//
+// The published code-map.json is web-slimmed (slimModel) — it's the file the
+// static viewer fetches per page load, so it carries only what the viewer and
+// reindex read. git-history.json is no longer shipped (its viewer consumer was
+// removed in plugin v1.14).
 //
 // projects.json is ALWAYS fully derived from data/<slug>/code-map.json (plus an
 // optional data/<slug>/meta.json sidecar for human name/description/tags), so it
@@ -21,7 +28,7 @@
 // consumes exactly the entry shape produced by metaFor() below.
 // --------------------------------------------------------------------
 import {
-  readFileSync, writeFileSync, existsSync, mkdirSync, copyFileSync,
+  readFileSync, writeFileSync, existsSync, mkdirSync,
   readdirSync, statSync, rmSync,
 } from 'node:fs';
 import { join, dirname, resolve } from 'node:path';
@@ -39,6 +46,47 @@ function slugify(s) {
     .replace(/[^a-z0-9._-]+/g, '-')
     .replace(/-{2,}/g, '-')
     .replace(/^[-.]+|[-.]+$/g, '');
+}
+
+// --- web slimming -----------------------------------------------------
+// The published code-map.json is the file the static gallery viewer fetches
+// on every project page, so it should carry only what the viewer (or this
+// script's reindex) reads. slimModel drops build-time provenance and
+// per-node duplication that the viewer reconstructs anyway — ~7-11% smaller
+// raw (faster JSON.parse), and the dropped fields compress so well that the
+// real win is parse time + a cleaner repo, not transfer bytes.
+//
+// `project` keys kept: the viewer reads score/git/generated_at (buildinfo.js,
+// buildpopover.js); reindex/metaFor below reads name/languages/files_scanned/
+// architecture/score. Everything else (root, files_by_language,
+// declarations_by_language, parse_failures, template_detection, resolution,
+// dispatch, code_map_version) is unread by the static page.
+const KEEP_PROJECT = ['name', 'languages', 'files_scanned', 'git', 'generated_at', 'architecture', 'score'];
+
+/** Strip per-node duplication the viewer's normalizer (schema.js) restores. */
+function slimNode(c) {
+  const out = { ...c };
+  // `package` is always identical to `namespace`; schema.js mirrors it back
+  // from namespace when missing, so shipping it is pure duplication. Guard on
+  // equality so a (hypothetical) genuine divergence is preserved.
+  if (out.package != null && out.package === out.namespace) delete out.package;
+  // An empty `description` is a no-op fallback — real text lives on
+  // description_zh / description_en (detail.js prefers those). undefined and
+  // "" are equally falsy there, so dropping it changes nothing.
+  if (out.description === '') delete out.description;
+  return out;
+}
+
+/** Return a new, web-slimmed copy of a code-map model (never mutates input). */
+function slimModel(model) {
+  const p = model.project || {};
+  const project = {};
+  for (const k of KEEP_PROJECT) if (k in p) project[k] = p[k];
+  const layers = (Array.isArray(model.layers) ? model.layers : []).map((L) => ({
+    ...L,
+    classes: (Array.isArray(L.classes) ? L.classes : []).map(slimNode),
+  }));
+  return { ...model, project, layers };
 }
 
 /** Derive the projects.json entry for one project from its code-map model. */
@@ -100,7 +148,7 @@ function reindex() {
 }
 
 function parseArgs(argv) {
-  const a = { from: null, slug: null, name: null, desc: null, repo: null, history: true };
+  const a = { from: null, slug: null, name: null, desc: null, repo: null };
   for (let i = 0; i < argv.length; i++) {
     const k = argv[i];
     if (k === '--from') a.from = argv[++i];
@@ -108,10 +156,34 @@ function parseArgs(argv) {
     else if (k === '--name') a.name = argv[++i];
     else if (k === '--desc') a.desc = argv[++i];
     else if (k === '--repo') a.repo = argv[++i];
-    else if (k === '--no-history') a.history = false;
+    else if (k === '--no-history') { /* accepted for back-compat; history is never published now */ }
     else die(`unknown flag: ${k}`);
   }
   return a;
+}
+
+/**
+ * Re-slim every already-published data/<slug>/code-map.json in place and drop
+ * any orphaned git-history.json, then reindex. Idempotent — safe to re-run.
+ * Use after upgrading publish.mjs to retrofit the slimming onto existing data.
+ */
+function slim() {
+  if (!existsSync(DATA_DIR)) return reindex();
+  let slimmed = 0, dropped = 0;
+  for (const name of readdirSync(DATA_DIR)) {
+    const dir = join(DATA_DIR, name);
+    const f = join(dir, 'code-map.json');
+    if (!existsSync(f) || !statSync(dir).isDirectory()) continue;
+    try {
+      const model = JSON.parse(readFileSync(f, 'utf8'));
+      writeFileSync(f, JSON.stringify(slimModel(model)) + '\n', 'utf8');
+      slimmed++;
+    } catch (e) { console.warn(`[publish] skip ${name}: ${e.message}`); continue; }
+    const dh = join(dir, 'git-history.json');
+    if (existsSync(dh)) { rmSync(dh); dropped++; }
+  }
+  console.log(`[publish] slimmed ${slimmed} code-map.json, removed ${dropped} git-history.json`);
+  reindex();
 }
 
 function publish(argv) {
@@ -131,16 +203,14 @@ function publish(argv) {
 
   const destDir = join(DATA_DIR, slug);
   mkdirSync(destDir, { recursive: true });
-  copyFileSync(src, join(destDir, 'code-map.json'));
+  // Write the web-slimmed model, not a verbatim copy — the published file is
+  // what the static viewer fetches on every page load.
+  writeFileSync(join(destDir, 'code-map.json'), JSON.stringify(slimModel(model)) + '\n', 'utf8');
 
-  const hist = join(dirname(src), 'git-history.json');
-  if (a.history && existsSync(hist)) {
-    copyFileSync(hist, join(destDir, 'git-history.json'));
-    console.log('[publish] + git-history.json');
-  } else if (!a.history) {
-    const dh = join(destDir, 'git-history.json');
-    if (existsSync(dh)) rmSync(dh);
-  }
+  // git-history.json is no longer shipped: the viewer dropped its commit-history
+  // sidebar (plugin v1.14), so the sidecar has no consumer. Remove any stale one.
+  const dh = join(destDir, 'git-history.json');
+  if (existsSync(dh)) { rmSync(dh); console.log('[publish] - git-history.json (orphaned, removed)'); }
 
   if (a.name || a.desc != null || a.repo) {
     const side = { ...readSidecar(slug) };
@@ -166,5 +236,6 @@ function remove(slug) {
 
 const [cmd, ...rest] = process.argv.slice(2);
 if (cmd === 'reindex') reindex();
+else if (cmd === 'slim') slim();
 else if (cmd === 'remove') remove(rest[0]);
 else publish(process.argv.slice(2));

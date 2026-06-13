@@ -23,7 +23,30 @@
  * @returns {string} an absolute (`/name`) or viewer-relative (`../data/<slug>/name`) URL
  */
 export function dataUrl(name, search = (typeof location !== 'undefined' ? location.search : '')) {
-  let slug = null;
-  try { slug = new URLSearchParams(search).get('project'); } catch (_) { slug = null; }
+  const slug = gallerySlug(search);
   return slug ? `../data/${encodeURIComponent(slug)}/${name}` : `/${name}`;
+}
+
+/**
+ * The `?project=<slug>` value, or null when serving a single project locally.
+ * @param {string} [search]
+ * @returns {string | null}
+ */
+function gallerySlug(search = (typeof location !== 'undefined' ? location.search : '')) {
+  try {
+    const slug = new URLSearchParams(search).get('project');
+    return slug ? slug : null;
+  } catch (_) { return null; }
+}
+
+/**
+ * True in multi-project gallery mode (`?project=<slug>` present). The gallery's
+ * data is static per-publish, so it should be browser-cacheable; local
+ * single-project serving (`serve.mjs`, which re-reads the file every request)
+ * must bypass the cache to pick up rebuilds. Consumed by data/load.js.
+ * @param {string} [search]
+ * @returns {boolean}
+ */
+export function isGallery(search = (typeof location !== 'undefined' ? location.search : '')) {
+  return gallerySlug(search) !== null;
 }
