@@ -24,6 +24,28 @@
       "description": "VibeApp is an on-device Android app builder powered by a specialized harness for code generation, build validation, and crash-repair loops."
     },
     {
+      "slug": "pi",
+      "name": "pi",
+      "languages": [
+        "c",
+        "typescript"
+      ],
+      "files": 272,
+      "declarations": 2335,
+      "layers": 8,
+      "flows": 8,
+      "edges": 2197,
+      "git": {
+        "branch": "main",
+        "short": "6f29450",
+        "commit": "6f29450e1339b37582796775749de3957936cd8d"
+      },
+      "generated_at": "2026-06-13T12:44:18",
+      "refined": true,
+      "score": 134,
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
+    },
+    {
       "slug": "rxswift",
       "name": "RxSwift",
       "languages": [
