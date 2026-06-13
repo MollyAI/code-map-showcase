@@ -496,6 +496,10 @@ body.light .theme-toggle .icon-moon { display: none; }
   fill: var(--text-1);
   letter-spacing: -0.01em;
 }
+/* Nested child band inside a group umbrella — one level deeper than a
+   top-level band, so its title reads smaller (the group title is the peer
+   of top-level bands). Keep in sync with the sub-band labelY in registry.js. */
+.layer-band.sub-band .label { font-size: calc(16px * var(--fs-scale)); }
 .layer-band .summary {
   font-family: var(--font-mono);
   font-size: calc(10.5px * var(--fs-scale));
@@ -513,7 +517,10 @@ body.light .theme-toggle .icon-moon { display: none; }
   font-family: var(--font-display);
   font-style: italic;
   font-weight: 600;
-  font-size: calc(15px * var(--fs-scale));
+  /* A group is a top-level architectural division (peer of a full-width
+     band), so its title matches the band label size; the gold dashed frame
+     + warm color carry the "this contains sub-modules" signal. */
+  font-size: calc(22px * var(--fs-scale));
   fill: #b8893a;
 }
 .layer-group .gsummary {

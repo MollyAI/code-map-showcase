@@ -125,8 +125,15 @@ const layerView = {
     }
 
     for (const b of layout.bands) {
+      // A band with a `group` is a nested child sub-band (drawn inside a group
+      // umbrella). It sits one level deeper than a top-level band: smaller
+      // title (.sub-band CSS), tighter header (no room for a summary line), and
+      // its label baseline rides higher inside the compact CHILD_HEAD region.
+      const isSub = !!b.layer.group;
+      const labelY = b.y + (isSub ? 22 : 26);
+
       const gBand = document.createElementNS(NS, 'g');
-      gBand.setAttribute('class', 'layer-band');
+      gBand.setAttribute('class', isSub ? 'layer-band sub-band' : 'layer-band');
 
       const rect = document.createElementNS(NS, 'rect');
       rect.setAttribute('class', 'bg');
@@ -140,21 +147,26 @@ const layerView = {
       const label = document.createElementNS(NS, 'text');
       label.setAttribute('class', 'label');
       label.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
-      label.setAttribute('y', String(b.y + 26));
+      label.setAttribute('y', String(labelY));
       label.textContent = b.layer.name;
       gBand.appendChild(label);
 
-      const summary = document.createElementNS(NS, 'text');
-      summary.setAttribute('class', 'summary');
-      summary.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
-      summary.setAttribute('y', String(b.y + 44));
-      summary.textContent = b.layer.summary || '';
-      gBand.appendChild(summary);
+      // The summary line only fits under a top-level band; a nested sub-band
+      // would overlap its node row, and the group umbrella already carries the
+      // wider context.
+      if (!isSub) {
+        const summary = document.createElementNS(NS, 'text');
+        summary.setAttribute('class', 'summary');
+        summary.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
+        summary.setAttribute('y', String(b.y + 44));
+        summary.textContent = b.layer.summary || '';
+        gBand.appendChild(summary);
+      }
 
       const count = document.createElementNS(NS, 'text');
       count.setAttribute('class', 'count');
       count.setAttribute('x', String(b.x + b.width - 16));
-      count.setAttribute('y', String(b.y + 26));
+      count.setAttribute('y', String(labelY));
       count.textContent = countLabel(b.layer.classes, st.lang);
       gBand.appendChild(count);
 

@@ -19,9 +19,10 @@ import { packRows } from './layers.js';
  * @typedef {import('./metrics.js').Layout} Layout
  */
 
-// Header room inside a child sub-band (label + count) — smaller than a top
-// band's bandPadTop, which also reserves room for the layer summary line.
-const CHILD_HEAD = 30;
+// Header room inside a child sub-band (label + count only — no summary line,
+// so smaller than a top band's bandPadTop). Sized to clear the ~16px sub-band
+// title (registry.js labelY = y+22) with a small gap before the node row.
+const CHILD_HEAD = 34;
 
 /**
  * Lay out one leaf layer's nodes inside [x, x+width], content starting at
