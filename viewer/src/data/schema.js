@@ -49,7 +49,9 @@ export const SCHEMA_VERSION = 1;
  * @property {string} [id]
  * @property {string} name
  * @property {number} [order]
- * @property {string} [summary]
+ * @property {string} [summary_zh]
+ * @property {string} [summary_en]
+ * @property {string} [summary]  legacy 单语/拼接串 — 渲染层经 pickBilingual 兜底,INV-B1 判红
  * @property {ClassDatum[]} classes
  */
 

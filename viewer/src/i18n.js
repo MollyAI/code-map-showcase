@@ -191,6 +191,22 @@ export function pickLangText(combined, lang) {
 }
 
 /**
+ * 单一双语取值入口。配对字段(`<base>_zh`/`<base>_en`)优先,按 lang 挑、缺一半退另一半;
+ * 没有配对时退回 pickLangText 拆旧拼接串("中文 · English"),再退单语裸串。所有渲染处
+ * (detail / flow 列表 / layer band / group / 图内 label)统一走这里 —— 切换正确性的单一事实源。
+ * @param {any} obj
+ * @param {string} base
+ * @param {string} lang  'zh' | 'en'
+ * @returns {string}
+ */
+export function pickBilingual(obj, base, lang) {
+  if (!obj) return '';
+  const zh = obj[base + '_zh'], en = obj[base + '_en'];
+  if (zh || en) return lang === 'zh' ? (zh || en) : (en || zh);
+  return pickLangText(obj[base], lang);
+}
+
+/**
  * Translate all `[data-i18n]` text and `[data-i18n-title]` titles under
  * `root` into `lang`, and set the language on the `#html-root` element.
  * @param {ParentNode} root

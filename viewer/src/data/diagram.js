@@ -7,18 +7,16 @@
 // collects errors; diagramOf returns null unless fully valid.
 // --------------------------------------------------------------------
 
+import { pickBilingual } from '../i18n.js';
+
 const LINK_KINDS = new Set(['data', 'control', 'dispatch']);
 const STEP_KINDS = new Set(['call', 'return', 'self']);
 const EXTRA_KINDS = new Set(['artifact', 'actor']);
 const PART_KINDS = new Set(['code', 'actor', 'artifact']);
 
-/** 双语字段取值：优先当前语言，缺失退另一种，再退无后缀字段。
+/** 图内字段双语取值 —— 委托到统一入口 pickBilingual(配对优先 + 拼接串兜底)。
  * @param {any} obj @param {string} base @param {string} lang */
-export function pickL(obj, base, lang) {
-  const zh = obj[base + '_zh'], en = obj[base + '_en'];
-  if (zh || en) return lang === 'zh' ? (zh || en) : (en || zh);
-  return obj[base] || '';
-}
+export const pickL = pickBilingual;
 
 /** @param {any} o @param {string} base */
 const hasPair = (o, base) =>

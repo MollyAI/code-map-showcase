@@ -7,7 +7,7 @@
 // --------------------------------------------------------------------
 
 import { state } from '../store.js';
-import { t } from '../i18n.js';
+import { t, pickBilingual } from '../i18n.js';
 import { countLabel } from '../data/counts.js';
 import { layoutLayers } from '../layout/layers.js';
 import { layoutGrouped } from '../layout/groups.js';
@@ -112,12 +112,13 @@ const layerView = {
         glabel.textContent = f.group.name;
         gGroup.appendChild(glabel);
 
-        if (f.group.summary) {
+        const gsumText = pickBilingual(f.group, 'summary', st.lang);
+        if (gsumText) {
           const gsum = document.createElementNS(NS, 'text');
           gsum.setAttribute('class', 'gsummary');
           gsum.setAttribute('x', String(f.x + st.LAYOUT.bandLabelX));
           gsum.setAttribute('y', String(f.y + 38));
-          gsum.textContent = f.group.summary;
+          gsum.textContent = gsumText;
           gGroup.appendChild(gsum);
         }
       }
@@ -159,7 +160,7 @@ const layerView = {
         summary.setAttribute('class', 'summary');
         summary.setAttribute('x', String(b.x + st.LAYOUT.bandLabelX));
         summary.setAttribute('y', String(b.y + 44));
-        summary.textContent = b.layer.summary || '';
+        summary.textContent = pickBilingual(b.layer, 'summary', st.lang);
         gBand.appendChild(summary);
       }
 

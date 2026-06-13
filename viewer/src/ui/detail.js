@@ -12,20 +12,18 @@
 // --------------------------------------------------------------------
 
 import { state } from '../store.js';
-import { t } from '../i18n.js';
+import { t, pickBilingual } from '../i18n.js';
 import { escapeHtml, escapeAttr, copyToClipboard } from '../util.js';
-import { pickL } from '../data/diagram.js';
+
+// 合成节点(artifact/actor/participant)的双语 name 也走统一入口。
+const pickL = pickBilingual;
 
 /** Bilingual descriptions live on description_zh / description_en (core only).
- *  Prefer the active language, fall back to the other, then the legacy field.
+ *  Delegates to the single bilingual resolver (pair-first, legacy concat fallback).
  * @param {any} c
  */
 function pickDescription(c) {
-  const order = state.lang === 'zh'
-    ? [c.description_zh, c.description_en]
-    : [c.description_en, c.description_zh];
-  for (const d of order) if (d) return d;
-  return c.description || null;
+  return pickBilingual(c, 'description', state.lang) || null;
 }
 
 /** @param {string} fqn */

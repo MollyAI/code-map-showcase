@@ -12,7 +12,7 @@
 import { state, setState } from '../store.js';
 import { createSettings, migrateGrouping } from '../settings.js';
 import { makeLayout } from '../layout/metrics.js';
-import { applyI18nStatic, pickLangText } from '../i18n.js';
+import { applyI18nStatic, pickBilingual } from '../i18n.js';
 import { diagramOf } from '../data/diagram.js';
 
 const settings = createSettings();
@@ -23,10 +23,7 @@ const settings = createSettings();
  *  languages in one line (red line: show only the chosen language).
  * @param {any} f @param {string} base @param {string} lang */
 function flowField(f, base, lang) {
-  const zh = f[base + '_zh'];
-  const en = f[base + '_en'];
-  if (zh || en) return lang === 'zh' ? (zh || en) : (en || zh);
-  return pickLangText(f[base], lang);
+  return pickBilingual(f, base, lang);
 }
 
 /** Fill the left flow sidebar list from state.flowsById; highlight the active

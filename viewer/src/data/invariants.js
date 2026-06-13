@@ -80,9 +80,57 @@ export function assertInvU1(model, LAYOUT, deps = {}) {
   return out;
 }
 
-/** Run both assertions over the model; returns the merged violation list. */
+/**
+ * Bilingual completeness of a `<base>` field: a value present in ANY form
+ * (pair half or legacy bare key) must come as a complete _zh + _en pair.
+ * @param {any} obj @param {string} base
+ * @returns {'ok'|'incomplete'|'absent'}
+ */
+function bilingualState(obj, base) {
+  const zh = String((obj && obj[base + '_zh']) || '').trim();
+  const en = String((obj && obj[base + '_en']) || '').trim();
+  const legacy = String((obj && obj[base]) || '').trim();
+  if (zh && en) return 'ok';
+  if (!zh && !en && !legacy) return 'absent';
+  return 'incomplete';
+}
+
+/**
+ * INV-B1 — every rendered descriptive string carries a complete bilingual pair,
+ * so the EN/中 toggle can't degrade to one language.
+ *   - layer.summary / group.summary: present ⇒ must be a pair (absent is OK — optional).
+ *   - flow WITH a diagram (the only flows that render, v1.19): name MUST be a pair
+ *     (name always shows); description: present ⇒ pair. Diagram-less candidate flows
+ *     are exempt, so a Phase-1 raw_structure.json never trips this gate.
+ * @param {{ layers?: Array, flows?: Array, layer_groups?: Array }} model
+ * @returns {Array<object>} violations
+ */
+export function assertInvB1(model) {
+  const out = [];
+  const push = (subject, field, st) => out.push({
+    inv: 'INV-B1', subject, field,
+    reason: st === 'absent'
+      ? 'missing bilingual pair (name required)'
+      : 'only one language present (need both _zh and _en)',
+  });
+  for (const L of model.layers || []) {
+    if (bilingualState(L, 'summary') === 'incomplete') push(`layer "${L.name || L.id}"`, 'summary', 'incomplete');
+  }
+  for (const g of model.layer_groups || []) {
+    if (bilingualState(g, 'summary') === 'incomplete') push(`group "${g.name || g.id}"`, 'summary', 'incomplete');
+  }
+  for (const f of model.flows || []) {
+    if (!f.diagram) continue;                       // undiagrammed candidate flow → not rendered → exempt
+    const nameSt = bilingualState(f, 'name');
+    if (nameSt !== 'ok') push(`flow "${f.id}"`, 'name', nameSt);
+    if (bilingualState(f, 'description') === 'incomplete') push(`flow "${f.id}"`, 'description', 'incomplete');
+  }
+  return out;
+}
+
+/** Run all assertions over the model; returns the merged violation list. */
 export function collectViolations(model, LAYOUT, deps = {}) {
-  return [...assertInv1(model), ...assertInvU1(model, LAYOUT, deps)];
+  return [...assertInv1(model), ...assertInvU1(model, LAYOUT, deps), ...assertInvB1(model)];
 }
 
 /** Render violations in the actionable diagnostic format. */
@@ -94,6 +142,11 @@ export function formatDiagnostics(violations) {
         + `  duplicate rendered label: "${v.label}" ×${v.sources.length}\n`
         + `  sources:\n${srcs}\n`
         + `  fix: R3b 按签名消歧, 或合并(若真重复)`;
+    }
+    if (v.inv === 'INV-B1') {
+      return `INV-B1 FAIL — ${v.subject}\n`
+        + `  field "${v.field}": ${v.reason}\n`
+        + `  fix: 写齐 ${v.field}_zh 和 ${v.field}_en(删掉拼接串/单语)`;
     }
     // else: currently only INV-U1 reaches here
     return `INV-U1 FAIL — node "${v.node}"\n`
