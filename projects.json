@@ -22,6 +22,26 @@
       "repo": "https://github.com/MollyAI/code-map.git"
     },
     {
+      "slug": "flask",
+      "name": "flask",
+      "languages": [
+        "python"
+      ],
+      "files": 25,
+      "declarations": 118,
+      "layers": 9,
+      "flows": 10,
+      "edges": 87,
+      "git": {
+        "branch": "main",
+        "short": "36e4a82",
+        "commit": "36e4a824f340fdee7ed50937ba8e7f6bc7d17f81"
+      },
+      "generated_at": "2026-06-14T02:15:40",
+      "refined": true,
+      "description": "The Python micro framework for building web applications."
+    },
+    {
       "slug": "freertos-kernel",
       "name": "FreeRTOS-Kernel",
       "languages": [
