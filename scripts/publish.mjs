@@ -58,7 +58,7 @@ function slugify(s) {
 //
 // `project` keys kept: the viewer reads score/git/generated_at (buildinfo.js,
 // buildpopover.js); reindex/metaFor below reads name/languages/files_scanned/
-// architecture/score. Everything else (root, files_by_language,
+// architecture. Everything else (root, files_by_language,
 // declarations_by_language, parse_failures, template_detection, resolution,
 // dispatch, code_map_version) is unread by the static page.
 const KEEP_PROJECT = ['name', 'languages', 'files_scanned', 'git', 'generated_at', 'architecture', 'score'];
@@ -106,8 +106,6 @@ function metaFor(slug, model) {
     git: p.git ? { branch: p.git.branch ?? null, short: p.git.short ?? null, commit: p.git.commit ?? null } : null,
     generated_at: p.generated_at ?? null,
     refined: !!p.architecture,   // Phase 2 (/code-map:build) stamps project.architecture
-    // arch-score rubric v1 (plugin ≥1.11): `code-map score --write` stamps project.score
-    score: Number.isFinite(p.score?.total) ? p.score.total : null,
   };
 }
 
@@ -140,9 +138,9 @@ function reindex() {
       projects.push({ ...metaFor(name, model), ...readSidecar(name) });
     }
   }
-  // arch score (desc) decides the gallery order; unscored maps sink to the end, name breaks ties
+  // gallery order is alphabetical by name (case-insensitive)
   projects.sort((a, b) =>
-    ((b.score ?? -Infinity) - (a.score ?? -Infinity)) || String(a.name).localeCompare(String(b.name)));
+    String(a.name).localeCompare(String(b.name), undefined, { sensitivity: 'base' }));
   writeFileSync(INDEX, JSON.stringify({ projects }, null, 2) + '\n', 'utf8');
   console.log(`[publish] reindexed ${projects.length} project(s) → projects.json`);
 }

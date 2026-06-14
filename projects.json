@@ -1,49 +1,46 @@
 {
   "projects": [
     {
-      "slug": "vibeapp",
-      "name": "VibeApp",
+      "slug": "code-map",
+      "name": "code-map",
       "languages": [
-        "java",
-        "kotlin",
         "typescript"
       ],
-      "files": 256,
-      "declarations": 382,
+      "files": 79,
+      "declarations": 387,
       "layers": 7,
-      "flows": 8,
-      "edges": 1099,
+      "flows": 6,
+      "edges": 559,
       "git": {
         "branch": "main",
-        "short": "be1f944",
-        "commit": "be1f944709abf438f2cf87cb3e516ca67ea77fdb"
+        "short": "31575c2",
+        "commit": "31575c2215e2d16187f2dc01f1d96c3de900c9cd"
       },
-      "generated_at": "2026-06-13T07:02:22",
+      "generated_at": "2026-06-13T12:01:04",
       "refined": true,
-      "score": 137,
-      "description": "VibeApp is an on-device Android app builder powered by a specialized harness for code generation, build validation, and crash-repair loops."
+      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
+      "repo": "https://github.com/MollyAI/code-map.git"
     },
     {
-      "slug": "pi",
-      "name": "pi",
+      "slug": "freertos-kernel",
+      "name": "FreeRTOS-Kernel",
       "languages": [
-        "c",
-        "typescript"
+        "c"
       ],
-      "files": 272,
-      "declarations": 2335,
-      "layers": 8,
-      "flows": 8,
-      "edges": 2197,
+      "files": 35,
+      "declarations": 428,
+      "layers": 9,
+      "flows": 10,
+      "edges": 375,
       "git": {
         "branch": "main",
-        "short": "6f29450",
-        "commit": "6f29450e1339b37582796775749de3957936cd8d"
+        "short": "543558b",
+        "commit": "543558ba7761df03fa1506de62e42a53416dca1e"
       },
-      "generated_at": "2026-06-13T12:44:18",
+      "generated_at": "2026-06-12T23:33:55",
       "refined": true,
-      "score": 134,
-      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
+      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
+      "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
     },
     {
       "slug": "gastown",
@@ -65,144 +62,8 @@
       },
       "generated_at": "2026-06-13T13:15:22",
       "refined": true,
-      "score": 132,
       "description": "Multi-agent workspace manager that coordinates many AI coding agents (Claude Code, Codex, Copilot, …) with git-backed persistent work tracking",
       "repo": "https://github.com/gastownhall/gastown"
-    },
-    {
-      "slug": "rxswift",
-      "name": "RxSwift",
-      "languages": [
-        "c",
-        "objc",
-        "swift"
-      ],
-      "files": 290,
-      "declarations": 743,
-      "layers": 11,
-      "flows": 6,
-      "edges": 1329,
-      "git": {
-        "branch": "main",
-        "short": "132aea4",
-        "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
-      },
-      "generated_at": "2026-06-13T05:24:22",
-      "refined": true,
-      "score": 132,
-      "description": "Reactive Programming in Swift",
-      "repo": "https://github.com/ReactiveX/RxSwift.git"
-    },
-    {
-      "slug": "okio",
-      "name": "okio",
-      "languages": [
-        "kotlin"
-      ],
-      "files": 171,
-      "declarations": 87,
-      "layers": 6,
-      "flows": 6,
-      "edges": 139,
-      "git": {
-        "branch": "master",
-        "short": "cad7ff1",
-        "commit": "cad7ff1057307142149b1a28dfcb49117e89b0d3"
-      },
-      "generated_at": "2026-06-13T06:03:50",
-      "refined": true,
-      "score": 131,
-      "description": "A modern I/O library for Android, Java, and Kotlin Multiplatform."
-    },
-    {
-      "slug": "freertos-kernel",
-      "name": "FreeRTOS-Kernel",
-      "languages": [
-        "c"
-      ],
-      "files": 35,
-      "declarations": 428,
-      "layers": 9,
-      "flows": 10,
-      "edges": 375,
-      "git": {
-        "branch": "main",
-        "short": "543558b",
-        "commit": "543558ba7761df03fa1506de62e42a53416dca1e"
-      },
-      "generated_at": "2026-06-12T23:33:55",
-      "refined": true,
-      "score": 129,
-      "description": "FreeRTOS kernel files only, submoduled into https://github.com/FreeRTOS/FreeRTOS and various other repos.",
-      "repo": "https://github.com/FreeRTOS/FreeRTOS-Kernel.git"
-    },
-    {
-      "slug": "termux-app",
-      "name": "termux-app",
-      "languages": [
-        "c",
-        "cpp",
-        "java"
-      ],
-      "files": 177,
-      "declarations": 202,
-      "layers": 7,
-      "flows": 9,
-      "edges": 657,
-      "git": {
-        "branch": "master",
-        "short": "401bbe5",
-        "commit": "401bbe54b8f4e68302b1ff70678015a24628fb1d"
-      },
-      "generated_at": "2026-06-12T13:35:39",
-      "refined": true,
-      "score": 129,
-      "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
-      "repo": "https://github.com/termux/termux-app.git"
-    },
-    {
-      "slug": "gson",
-      "name": "gson",
-      "languages": [
-        "java"
-      ],
-      "files": 87,
-      "declarations": 80,
-      "layers": 7,
-      "flows": 5,
-      "edges": 316,
-      "git": {
-        "branch": "main",
-        "short": "004e7a4",
-        "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
-      },
-      "generated_at": "2026-06-12T13:36:00",
-      "refined": true,
-      "score": 128,
-      "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back",
-      "repo": "https://github.com/google/gson.git"
-    },
-    {
-      "slug": "code-map",
-      "name": "code-map",
-      "languages": [
-        "typescript"
-      ],
-      "files": 79,
-      "declarations": 387,
-      "layers": 7,
-      "flows": 6,
-      "edges": 559,
-      "git": {
-        "branch": "main",
-        "short": "31575c2",
-        "commit": "31575c2215e2d16187f2dc01f1d96c3de900c9cd"
-      },
-      "generated_at": "2026-06-13T12:01:04",
-      "refined": true,
-      "score": 127,
-      "description": "A Claude Code plugin that builds an interactive architectural map of any project. 一款可为任意项目构建交互式架构图的 Claude Code 插件。",
-      "repo": "https://github.com/MollyAI/code-map.git"
     },
     {
       "slug": "genericagent",
@@ -224,9 +85,137 @@
       },
       "generated_at": "2026-06-12T13:35:12",
       "refined": true,
-      "score": 119,
       "description": "Self-evolving agent: grows skill tree from 3.3K-line seed, achieving full system control with 6x less token consumption",
       "repo": "https://github.com/lsdefine/GenericAgent.git"
+    },
+    {
+      "slug": "gson",
+      "name": "gson",
+      "languages": [
+        "java"
+      ],
+      "files": 87,
+      "declarations": 80,
+      "layers": 7,
+      "flows": 5,
+      "edges": 316,
+      "git": {
+        "branch": "main",
+        "short": "004e7a4",
+        "commit": "004e7a4949e08b430e3c8996998ee5a17ff9423a"
+      },
+      "generated_at": "2026-06-12T13:36:00",
+      "refined": true,
+      "description": "A Java serialization/deserialization library to convert Java Objects into JSON and back",
+      "repo": "https://github.com/google/gson.git"
+    },
+    {
+      "slug": "okio",
+      "name": "okio",
+      "languages": [
+        "kotlin"
+      ],
+      "files": 171,
+      "declarations": 87,
+      "layers": 6,
+      "flows": 6,
+      "edges": 139,
+      "git": {
+        "branch": "master",
+        "short": "cad7ff1",
+        "commit": "cad7ff1057307142149b1a28dfcb49117e89b0d3"
+      },
+      "generated_at": "2026-06-13T06:03:50",
+      "refined": true,
+      "description": "A modern I/O library for Android, Java, and Kotlin Multiplatform."
+    },
+    {
+      "slug": "pi",
+      "name": "pi",
+      "languages": [
+        "c",
+        "typescript"
+      ],
+      "files": 272,
+      "declarations": 2335,
+      "layers": 8,
+      "flows": 8,
+      "edges": 2197,
+      "git": {
+        "branch": "main",
+        "short": "6f29450",
+        "commit": "6f29450e1339b37582796775749de3957936cd8d"
+      },
+      "generated_at": "2026-06-13T12:44:18",
+      "refined": true,
+      "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
+    },
+    {
+      "slug": "rxswift",
+      "name": "RxSwift",
+      "languages": [
+        "c",
+        "objc",
+        "swift"
+      ],
+      "files": 290,
+      "declarations": 743,
+      "layers": 11,
+      "flows": 6,
+      "edges": 1329,
+      "git": {
+        "branch": "main",
+        "short": "132aea4",
+        "commit": "132aea4f236ccadc51590b38af0357a331d51fa2"
+      },
+      "generated_at": "2026-06-13T05:24:22",
+      "refined": true,
+      "description": "Reactive Programming in Swift",
+      "repo": "https://github.com/ReactiveX/RxSwift.git"
+    },
+    {
+      "slug": "termux-app",
+      "name": "termux-app",
+      "languages": [
+        "c",
+        "cpp",
+        "java"
+      ],
+      "files": 177,
+      "declarations": 202,
+      "layers": 7,
+      "flows": 9,
+      "edges": 657,
+      "git": {
+        "branch": "master",
+        "short": "401bbe5",
+        "commit": "401bbe54b8f4e68302b1ff70678015a24628fb1d"
+      },
+      "generated_at": "2026-06-12T13:35:39",
+      "refined": true,
+      "description": "Termux - a terminal emulator application for Android OS extendible by variety of packages.",
+      "repo": "https://github.com/termux/termux-app.git"
+    },
+    {
+      "slug": "vibeapp",
+      "name": "VibeApp",
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "files": 256,
+      "declarations": 382,
+      "layers": 7,
+      "flows": 8,
+      "edges": 1099,
+      "git": {
+        "branch": "main",
+        "short": "be1f944",
+        "commit": "be1f944709abf438f2cf87cb3e516ca67ea77fdb"
+      },
+      "generated_at": "2026-06-13T07:02:22",
+      "refined": true,
+      "description": "VibeApp is an on-device Android app builder powered by a specialized harness for code generation, build validation, and crash-repair loops."
     }
   ]
 }

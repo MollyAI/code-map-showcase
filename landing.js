@@ -21,7 +21,6 @@ const STR = {
     tagline: 'Codebase architecture maps, built for humans.',
     search: 'Search projects by name or language…',
     files: 'files', decls: 'decls', layers: 'layers', flows: 'flows',
-    score: 'Arch Score',
     raw: 'phase 1',
     empty: 'No projects yet. Publish one with <code>node scripts/publish.mjs --from &lt;path&gt;/.code-map</code>',
     none: (q) => `No projects match “${escapeHtml(q)}”.`,
@@ -34,7 +33,6 @@ const STR = {
     tagline: '为人类构建的代码库架构地图。',
     search: '按名称或语言搜索项目…',
     files: '文件', decls: '声明', layers: '层', flows: '流程',
-    score: '架构评分',
     raw: '未精炼',
     empty: '还没有项目。用 <code>node scripts/publish.mjs --from &lt;路径&gt;/.code-map</code> 发布一个。',
     none: (q) => `没有匹配 “${escapeHtml(q)}” 的项目。`,
@@ -96,15 +94,11 @@ function cardHtml(p) {
     .join('<span class="dot">·</span>');
   const desc = p.description ? `<p class="card-desc">${escapeHtml(p.description)}</p>` : '';
   const tag = p.refined ? '' : `<span class="card-tag" title="Phase 1 only — run /code-map:build for a refined map">${s.raw}</span>`;
-  // arch-score badge (plugin ≥1.11 stamps project.score; older maps have none)
-  const score = p.score != null
-    ? `<span class="card-score" title="${s.score}">${Number(p.score)}</span>`
-    : '';
   const git = p.git && p.git.short
     ? `<div class="card-git">${escapeHtml(p.git.branch || '')} <span class="accent">${escapeHtml(p.git.short)}</span></div>`
     : '';
   return `<a class="card" href="${href}">
-    <div class="card-head"><span class="card-name">${escapeHtml(p.name)}</span><span class="card-head-side">${score}${tag}</span></div>
+    <div class="card-head"><span class="card-name">${escapeHtml(p.name)}</span><span class="card-head-side">${tag}</span></div>
     ${langs ? `<div class="card-langs">${langs}</div>` : ''}
     ${desc}
     <div class="card-stats">${stats}</div>
@@ -154,8 +148,8 @@ fetch('./projects.json', { cache: 'no-store' })
   .then((r) => { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
   .then((j) => {
     all = Array.isArray(j.projects) ? j.projects : [];
-    // publish.mjs already orders by score, but re-sort defensively (older projects.json)
-    all.sort((a, b) => ((b.score ?? -Infinity) - (a.score ?? -Infinity)) || String(a.name).localeCompare(String(b.name)));
+    // publish.mjs already orders alphabetically by name, but re-sort defensively (older projects.json)
+    all.sort((a, b) => String(a.name).localeCompare(String(b.name), undefined, { sensitivity: 'base' }));
     booted = true; render();
   })
   .catch(() => { loadError = true; booted = true; render(); });

@@ -122,18 +122,6 @@ body.landing {
 
 .card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; }
 .card-head-side { flex: 0 0 auto; display: inline-flex; align-items: center; gap: 6px; }
-/* arch-score badge — mirrors the viewer topbar's score chip (buildinfo.js) */
-.card-score {
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: var(--accent);
-  background: var(--accent-dim);
-  border: 1px solid var(--accent);
-  border-radius: 6px;
-  padding: 2px 8px;
-}
 .card-name {
   font-family: var(--font-display);
   font-weight: 500;
