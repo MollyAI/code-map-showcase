@@ -1,7 +1,7 @@
 // --------------------------------------------------------------------
 // ui/buildpopover — click-to-open popover for the build-info badge.
 // Replaces the native `title` tooltip so the content (full commit hash,
-// build time, score breakdown) is selectable, with a one-click copy-all
+// build time) is selectable, with a one-click copy-all
 // button. The popover element lives at body level (like #tooltip): the
 // topbar's backdrop-filter would otherwise become the containing block
 // for position:fixed and break viewport positioning.

@@ -71,13 +71,6 @@ export const I18N = {
     branch: "Branch",
     commit: "Commit",
     dirty_note: "Built with uncommitted changes",
-    arch_score_fmt: "Arch Score: {n}",
-    score_difficulty: "Difficulty D",
-    score_execution: "Execution E",
-    score_layering: "Layering",
-    score_dependencies: "Dependencies",
-    score_hygiene: "Hygiene",
-    score_adjustment: "AI adjustment",
   },
   zh: {
     group_layers: "分层",
@@ -133,13 +126,6 @@ export const I18N = {
     branch: "分支",
     commit: "提交",
     dirty_note: "构建时工作区有未提交改动",
-    arch_score_fmt: "架构评分：{n}",
-    score_difficulty: "难度分 D",
-    score_execution: "执行系数 E",
-    score_layering: "分层",
-    score_dependencies: "依赖",
-    score_hygiene: "整洁",
-    score_adjustment: "AI 修正",
   },
 };
 

@@ -109,7 +109,7 @@ ${escapeHtml(t('error_hint', state.lang))}</code>
   </div>`;
 }
 
-// Badge text/popover are language-dependent (arch score, branch/built labels),
+// Badge text/popover are language-dependent (branch/built labels),
 // so this re-runs on every render — the language toggle re-renders via setState,
 // and sync() refreshes an open popover in place.
 function renderBuildInfo() {

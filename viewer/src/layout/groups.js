@@ -90,10 +90,15 @@ export function layoutGrouped(leaves, groups, canvasWidth, LAYOUT) {
     const contentTop = frameTop + headTop;
 
     if (g.layout === 'column') {
+      // Inset the stacked sub-bands from the frame's left/right border by
+      // bandPadX (row groups already do this via their cx start + frameW pad);
+      // otherwise the sub-band background and node rows hug the umbrella border.
+      const childX = LAYOUT.bandPadX;
+      const childW = Math.max(LAYOUT.minNodeW, canvasWidth - 2 * LAYOUT.bandPadX);
       let cy = contentTop;
       for (const kid of kids) {
-        const { nodes, height } = layoutChild(kid, 0, canvasWidth, cy, LAYOUT);
-        bands.push({ layer: kid, x: 0, y: cy, width: canvasWidth, height, nodes });
+        const { nodes, height } = layoutChild(kid, childX, childW, cy, LAYOUT);
+        bands.push({ layer: kid, x: childX, y: cy, width: childW, height, nodes });
         cy += height + LAYOUT.nodeGapY;
       }
       const frameH = cy - frameTop + LAYOUT.bandPadBottom;
