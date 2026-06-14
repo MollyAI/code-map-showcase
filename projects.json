@@ -1,6 +1,26 @@
 {
   "projects": [
     {
+      "slug": "alamofire",
+      "name": "Alamofire",
+      "languages": [
+        "swift"
+      ],
+      "files": 47,
+      "declarations": 202,
+      "layers": 9,
+      "flows": 6,
+      "edges": 252,
+      "git": {
+        "branch": "master",
+        "short": "7595cbc",
+        "commit": "7595cbcf59809f9977c5f6378500de2ad73b7ddb"
+      },
+      "generated_at": "2026-06-14T06:32:08",
+      "refined": true,
+      "description": "Elegant HTTP Networking in Swift"
+    },
+    {
       "slug": "code-map",
       "name": "code-map",
       "languages": [
