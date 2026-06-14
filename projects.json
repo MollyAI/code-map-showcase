@@ -171,6 +171,27 @@
       "description": "AI agent toolkit: unified LLM API, agent loop, TUI, coding agent CLI"
     },
     {
+      "slug": "retrofit",
+      "name": "retrofit",
+      "languages": [
+        "java",
+        "kotlin"
+      ],
+      "files": 145,
+      "declarations": 111,
+      "layers": 8,
+      "flows": 6,
+      "edges": 199,
+      "git": {
+        "branch": "trunk",
+        "short": "8e83a24",
+        "commit": "8e83a242eac1afc22a13c52098eddb27421353ff"
+      },
+      "generated_at": "2026-06-14T05:07:07",
+      "refined": true,
+      "description": "A type-safe HTTP client for Android and the JVM"
+    },
+    {
       "slug": "rxswift",
       "name": "RxSwift",
       "languages": [
