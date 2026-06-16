@@ -42,6 +42,26 @@
       "repo": "https://github.com/MollyAI/code-map.git"
     },
     {
+      "slug": "dio",
+      "name": "dio",
+      "languages": [
+        "dart"
+      ],
+      "files": 63,
+      "declarations": 107,
+      "layers": 9,
+      "flows": 6,
+      "edges": 46,
+      "git": {
+        "branch": "main",
+        "short": "f9705fe",
+        "commit": "f9705feb36fec8fd8a362985b3cae9d04c028675"
+      },
+      "generated_at": "2026-06-16T13:45:11",
+      "refined": true,
+      "description": "A powerful HTTP client for Dart and Flutter, which supports global settings, Interceptors, FormData, aborting and canceling a request, files uploading and downloading, requests timeout, custom adapters, etc."
+    },
+    {
       "slug": "flask",
       "name": "flask",
       "languages": [
