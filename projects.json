@@ -264,17 +264,17 @@
         "java",
         "kotlin"
       ],
-      "files": 256,
+      "files": 248,
       "declarations": 382,
       "layers": 7,
       "flows": 8,
-      "edges": 1099,
+      "edges": 1072,
       "git": {
         "branch": "main",
         "short": "be1f944",
         "commit": "be1f944709abf438f2cf87cb3e516ca67ea77fdb"
       },
-      "generated_at": "2026-06-13T07:02:22",
+      "generated_at": "2026-06-16T13:23:04",
       "refined": true,
       "description": "VibeApp is an on-device Android app builder powered by a specialized harness for code generation, build validation, and crash-repair loops."
     }
