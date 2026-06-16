@@ -83,6 +83,26 @@ When the plugin ships a viewer change (and it's merged to the plugin's `main`):
 `MollyAI/code-map` (excluding `src/test/` and `jsconfig.json`) and commits if
 anything changed. Don't edit `viewer/` by hand — the next sync would overwrite it.
 
+## Recording build problems to memory
+
+When a build (`/add-code-map`, `/update-all-maps`, `/code-map:build`) surfaces a
+**code-map plugin problem** — an extractor gap, a mis-routing heuristic, a flooding
+advisory, a wrong template guess, a false edge, anything you had to work around — and
+you write it to your dedicated memory, **always include** so the user can later
+optimize the plugin:
+
+- **The exact plugin version you ran under** (e.g. `v1.25.0` — from the resolved
+  `CODEMAP_BIN` path or `project.code_map_version`). The same symptom can be fixed,
+  changed, or regressed across versions, so a finding is only actionable when pinned
+  to a version.
+- **Enough troubleshooting detail to act on it**: the symptom, the root cause (or your
+  best hypothesis), the plugin `scripts/…` file (+ line/function) where the behavior
+  lives if you found it, the reproducing command or advisory output, and the workaround
+  you applied. Note which language/extractor it affects.
+
+Keep one memory per distinct problem; when a later build under a newer version shows
+it fixed/changed, update that memory's version tag rather than starting a new note.
+
 ## Invariants
 
 - **Never hand-edit `viewer/`.** It's owned by the plugin.
