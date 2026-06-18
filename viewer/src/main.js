@@ -44,7 +44,7 @@ const els = {
   flowExpand: $('flow-expand'),
   themeToggle: $('theme-toggle'),
   exportBtn: $('export-toggle'),
-  copyMermaidBtn: $('copy-mermaid-toggle'),
+  copyBtn: $('copy-toggle'),
   langToggle: $('lang-toggle'),
   fontToggle: $('font-size-toggle'),
   canvasWrap: $('canvas-wrap'),
@@ -153,7 +153,7 @@ function onModel(json) {
 
 // --- boot, in explicit order ---
 registerBuiltinViews();
-initControls(els);                       // applies persisted settings + sets state.LAYOUT (before first render)
+initControls(els, backend);              // applies persisted settings + sets state.LAYOUT (before first render); backend → goHome on mode switch
 initMenu({ menuToggle: els.menuToggle, overflow: els.controlsOverflow });
 subscribe(() => { renderBuildInfo(); renderApp(backend, ctx); }); // register the renderer
 const zoom = initZoom(backend, els.canvasWrap);

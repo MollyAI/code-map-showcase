@@ -178,7 +178,7 @@ header.topbar {
 .toggle button.active { background: var(--bg-3); color: var(--text-0); }
 .toggle button:hover:not(.active) { color: var(--text-1); }
 
-.theme-toggle, .lang-toggle, .export-toggle, .copy-mermaid-toggle {
+.theme-toggle, .lang-toggle, .export-toggle, .copy-toggle {
   background: var(--bg-1);
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -189,12 +189,10 @@ header.topbar {
   cursor: pointer;
   transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
-.theme-toggle:hover, .lang-toggle:hover, .export-toggle:hover, .copy-mermaid-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
-.theme-toggle svg, .lang-toggle svg, .export-toggle svg, .copy-mermaid-toggle svg { width: 17px; height: 17px; display: block; }
-.export-toggle[aria-busy="true"] { opacity: 0.5; pointer-events: none; }
-/* the display:inline-flex above would otherwise defeat the `hidden` attribute */
-.copy-mermaid-toggle[hidden] { display: none; }
-.copy-mermaid-toggle.copied { color: var(--accent); border-color: var(--accent); }
+.theme-toggle:hover, .lang-toggle:hover, .export-toggle:hover, .copy-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
+.theme-toggle svg, .lang-toggle svg, .export-toggle svg, .copy-toggle svg { width: 17px; height: 17px; display: block; }
+.export-toggle[aria-busy="true"], .copy-toggle[aria-busy="true"] { opacity: 0.5; pointer-events: none; }
+.copy-toggle.copied { color: var(--accent); border-color: var(--accent); }
 .theme-toggle .icon-sun  { display: none; }
 .theme-toggle .icon-moon { display: block; }
 body.light .theme-toggle .icon-sun  { display: block; }
@@ -929,6 +927,7 @@ body.light .theme-toggle .icon-moon { display: none; }
   .controls-overflow .toggle { justify-content: center; }
   .controls-overflow .theme-toggle,
   .controls-overflow .export-toggle,
+  .controls-overflow .copy-toggle,
   .controls-overflow .lang-toggle { width: 100%; height: 40px; }
 
   .canvas-wrap { padding: 16px 14px 64px; }

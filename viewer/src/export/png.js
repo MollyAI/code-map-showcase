@@ -72,13 +72,46 @@ async function saveBlob(blob, suggestedName) {
 }
 
 /**
+ * Build the SVG clone + box to rasterize for the current mode. Returns null
+ * when nothing is rendered yet. Shared by both export-to-file and copy-to-
+ * clipboard so they capture the exact same WYSIWYG image.
+ * @param {SVGSVGElement} svg
+ * @returns {{ clone: SVGSVGElement, box: { width: number, height: number, viewBox: string } } | null}
+ */
+function buildClone(svg) {
+  // Flow mode: Mermaid's nested <svg> is self-contained — its own viewBox,
+  // an embedded <style>, and <marker> arrowheads referenced by url(#...).
+  // Clone it verbatim WITHOUT inlineStyles so ids survive (stripping them
+  // would break the marker refs and the id-scoped <style>).
+  const mermaidSvg = /** @type {SVGSVGElement | null} */ (svg.querySelector('svg.mermaid-flow'));
+  if (mermaidSvg) {
+    const mvb = mermaidSvg.viewBox.baseVal;
+    const w = mvb && mvb.width ? mvb.width : (parseFloat(mermaidSvg.getAttribute('width') || '') || 0);
+    const h = mvb && mvb.height ? mvb.height : (parseFloat(mermaidSvg.getAttribute('height') || '') || 0);
+    if (!w || !h) return null;
+    const viewBox = mermaidSvg.getAttribute('viewBox') || `0 0 ${w} ${h}`;
+    return { clone: /** @type {any} */ (mermaidSvg.cloneNode(true)), box: { width: w, height: h, viewBox } };
+  }
+
+  // Layer mode: WYSIWYG clone of the live SVG — selection highlight, dimmed
+  // peers and the selected node's #edges are carried through; inlineStyles
+  // bakes the computed paint of that exact state (external CSS is lost on
+  // serialization) and strips ids/classes.
+  const vb = svg.viewBox.baseVal;
+  if (!vb || !vb.width || !vb.height) return null; // nothing rendered yet
+  const clone = /** @type {SVGSVGElement} */ (svg.cloneNode(true));
+  inlineStyles(svg, clone);
+  return { clone, box: { width: vb.width, height: vb.height, viewBox: `0 0 ${vb.width} ${vb.height}` } };
+}
+
+/**
  * Shared rasterize tail: size the clone, serialize, draw onto a PADded 2x
- * canvas over the page background, save.
+ * canvas over the page background, return the PNG blob (null on failure).
  * @param {SVGSVGElement} clone
  * @param {{ width: number, height: number, viewBox: string }} box
- * @param {HTMLElement} projectNameEl
+ * @returns {Promise<Blob | null>}
  */
-async function rasterize(clone, box, projectNameEl) {
+async function rasterizeToBlob(clone, box) {
   const scale = 2;  // crisp on hi-dpi displays
   const pad = 64;   // breathing room around the diagram, in viewBox units
   clone.setAttribute('xmlns', NS);
@@ -108,62 +141,57 @@ async function rasterize(clone, box, projectNameEl) {
     ctx.setTransform(scale, 0, 0, scale, pad * scale, pad * scale);
     ctx.drawImage(img, 0, 0);
 
-    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
-    if (!blob) return;
-    const name = (projectNameEl.textContent || 'code-map').trim().replace(/[^\w.-]+/g, '-') || 'code-map';
-    await saveBlob(blob, `${name}-code-map.png`);
+    return await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
   } finally {
     URL.revokeObjectURL(svgUrl);
   }
 }
 
 /**
- * @param {object} deps
- * @param {SVGSVGElement} deps.svg
- * @param {HTMLElement} deps.projectNameEl
+ * Copy the current view (layer bands or Mermaid flow) to the clipboard as a
+ * PNG. Throws if nothing is rendered yet or the browser lacks clipboard-image
+ * support; callers surface that to the user. Shares the export rasterize path.
+ * @param {SVGSVGElement} svg
  */
-function makeExporter({ svg, projectNameEl }) {
-  return async function exportPng() {
-    // Flow mode: Mermaid's nested <svg> is self-contained — its own viewBox,
-    // an embedded <style>, and <marker> arrowheads referenced by url(#...).
-    // Export it verbatim: clone WITHOUT inlineStyles so ids survive (stripping
-    // them would break the marker refs and the id-scoped <style>).
-    const mermaidSvg = /** @type {SVGSVGElement | null} */ (svg.querySelector('svg.mermaid-flow'));
-    if (mermaidSvg) {
-      const mvb = mermaidSvg.viewBox.baseVal;
-      const w = mvb && mvb.width ? mvb.width : (parseFloat(mermaidSvg.getAttribute('width') || '') || 0);
-      const h = mvb && mvb.height ? mvb.height : (parseFloat(mermaidSvg.getAttribute('height') || '') || 0);
-      if (!w || !h) return;
-      const viewBox = mermaidSvg.getAttribute('viewBox') || `0 0 ${w} ${h}`;
-      return rasterize(/** @type {any} */ (mermaidSvg.cloneNode(true)), { width: w, height: h, viewBox }, projectNameEl);
-    }
-
-    // Layer mode: WYSIWYG clone of the live SVG — selection highlight, dimmed
-    // peers and the selected node's #edges are carried through; inlineStyles
-    // bakes the computed paint of that exact state (external CSS is lost on
-    // serialization) and strips ids/classes.
-    const vb = svg.viewBox.baseVal;
-    if (!vb || !vb.width || !vb.height) return; // nothing rendered yet
-    const clone = /** @type {SVGSVGElement} */ (svg.cloneNode(true));
-    inlineStyles(svg, clone);
-    return rasterize(clone, { width: vb.width, height: vb.height, viewBox: `0 0 ${vb.width} ${vb.height}` }, projectNameEl);
-  };
+export async function copyImageToClipboard(svg) {
+  const built = buildClone(svg);
+  if (!built) return;
+  const ClipItem = /** @type {any} */ (window).ClipboardItem;
+  if (!ClipItem || !navigator.clipboard || !navigator.clipboard.write) {
+    throw new Error('clipboard image write unsupported');
+  }
+  // Pass a Promise<Blob> to ClipboardItem rather than awaiting the blob first:
+  // Safari only allows clipboard.write under the click's transient activation,
+  // which an `await` before write would consume. The promise form lets the
+  // rasterize finish lazily while the gesture stays valid.
+  const blobPromise = rasterizeToBlob(built.clone, built.box).then((b) => {
+    if (!b) throw new Error('rasterize failed');
+    return b;
+  });
+  await navigator.clipboard.write([new ClipItem({ 'image/png': blobPromise })]);
 }
 
 /**
- * Wire the export button.
+ * Wire the export (download-to-file) button. Always present in both modes; it
+ * rasterizes the current view (layer bands or Mermaid flow) to a PNG file.
+ * The sibling copy-to-clipboard button is wired in ui/controls (it is
+ * mode-aware: Mermaid source in flow mode, copyImageToClipboard in layer mode).
  * @param {object} deps
  * @param {SVGSVGElement} deps.svg
  * @param {HTMLElement} deps.exportBtn
  * @param {HTMLElement} deps.projectNameEl
  */
 export function initExport({ svg, exportBtn, projectNameEl }) {
-  const exportPng = makeExporter({ svg, projectNameEl });
   exportBtn.addEventListener('click', async () => {
     if (exportBtn.getAttribute('aria-busy') === 'true') return;
     exportBtn.setAttribute('aria-busy', 'true');
     try {
-      await exportPng();
+      const built = buildClone(svg);
+      if (!built) return;
+      const blob = await rasterizeToBlob(built.clone, built.box);
+      if (!blob) return;
+      const name = (projectNameEl.textContent || 'code-map').trim().replace(/[^\w.-]+/g, '-') || 'code-map';
+      await saveBlob(blob, `${name}-code-map.png`);
     } catch (err) {
       console.error('[code-map] export failed:', err);
     } finally {

@@ -91,7 +91,10 @@ export function initZoom(backend, canvasWrap) {
   }
 
   // Re-apply zoom whenever the canvas-wrap resizes (panel-open transition).
-  new ResizeObserver(() => { if (state.baseWidth) backend.applyZoom(); }).observe(canvasWrap);
+  // Skipped during a mode-switch's margin transition (state.viewTransitioning):
+  // there the SVG must hold its size so the font doesn't rescale frame-by-frame —
+  // controls re-lays-out once at the settled width instead.
+  new ResizeObserver(() => { if (state.baseWidth && !state.viewTransitioning) backend.applyZoom(); }).observe(canvasWrap);
 
   return { zoomTo, zoomFromCenter };
 }

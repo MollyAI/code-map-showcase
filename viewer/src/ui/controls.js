@@ -15,6 +15,7 @@ import { makeLayout } from '../layout/metrics.js';
 import { applyI18nStatic, pickBilingual, t } from '../i18n.js';
 import { diagramOf } from '../data/diagram.js';
 import { compileDiagram } from '../diagram/mermaid-compile.js';
+import { copyImageToClipboard } from '../export/png.js';
 
 const settings = createSettings();
 
@@ -70,8 +71,19 @@ function closestButton(target) {
   return target instanceof Element ? /** @type {HTMLElement | null} */ (target.closest('button')) : null;
 }
 
-/** @param {any} els */
-export function initControls(els) {
+/**
+ * @param {any} els
+ * @param {import('../render/backend.js').RenderBackend} backend
+ */
+export function initControls(els, backend) {
+  // The copy button is mode-aware (Mermaid source in flow, PNG image in layer);
+  // its tooltip tracks the active mode + language. Declared at function scope so
+  // both the grouping (mode switch) and language IIFEs can refresh it. Hoisted.
+  function refreshCopyTitle() {
+    if (!els.copyBtn) return;
+    els.copyBtn.title = t(state.activeView === 'flow' ? 'copy_mermaid' : 'copy_image', state.lang);
+  }
+
   // grouping: layer bands / flow pipeline — persisted, migrates legacy "subsystem".
   (function initGrouping() {
     // Reflect flow mode onto the layout chrome: show the left flow sidebar
@@ -81,9 +93,6 @@ export function initControls(els) {
       const isFlow = state.activeView === 'flow';
       els.layout.classList.toggle('flow-active', isFlow);
       els.layout.classList.toggle('flow-open', isFlow && !state.flowSidebarCollapsed);
-      // "copy Mermaid" only makes sense in flow mode (it copies the active
-      // flow's compiled Mermaid source).
-      if (els.copyMermaidBtn) els.copyMermaidBtn.hidden = !isFlow;
     }
     /** @param {string} mode */
     function apply(mode) {
@@ -93,10 +102,34 @@ export function initControls(els) {
     }
     state.flowSidebarCollapsed = settings.get('flow-collapsed') === 'true';
     apply(settings.get('grouping', 'layer') || 'layer');
+
+    // Switching mode resets the viewport to 100% + top-left aligned (the load
+    // resting state). The flow sidebar's 280ms margin transition changes the
+    // canvas width *after* this render, so we (1) freeze the live ResizeObserver
+    // rescale via state.viewTransitioning — the font size stays constant through
+    // the slide instead of being scaled frame-by-frame against a now-stale
+    // baseWidth — and (2) re-lay-out once at the settled width + re-home when it
+    // lands. Clicking the already-active mode is a no-op (no churn, no rescale).
+    /** @type {ReturnType<typeof setTimeout> | undefined} */
+    let settleT;
+    const TRANSITION_SETTLE_MS = 320;   // a touch past the .canvas-wrap margin transition (280ms)
     els.groupToggle.addEventListener('click', (/** @type {Event} */ ev) => {
       const b = closestButton(ev.target); if (!b) return;
-      apply(b.dataset.group || 'layer'); settings.set('grouping', state.activeView);
-      state.selected = null; setState({});
+      const next = migrateGrouping(b.dataset.group || 'layer');
+      if (next === state.activeView) return;
+      apply(next); settings.set('grouping', state.activeView);
+      refreshCopyTitle();   // copy button now means the other thing (source ⇄ image)
+      state.selected = null;
+      state.zoom = 1;
+      state.viewTransitioning = true;
+      setState({});
+      requestAnimationFrame(() => backend.goHome());
+      clearTimeout(settleT);
+      settleT = setTimeout(() => {
+        state.viewTransitioning = false;
+        setState({});
+        requestAnimationFrame(() => backend.goHome());
+      }, TRANSITION_SETTLE_MS);
     });
     // pick a flow from the left sidebar list
     els.flowList.addEventListener('click', (/** @type {Event} */ ev) => {
@@ -122,20 +155,6 @@ export function initControls(els) {
     els.flowExpand.addEventListener('click', () => {
       state.flowSidebarCollapsed = false; settings.set('flow-collapsed', 'false');
       applyFlowChrome(); setState({});
-    });
-    // copy the active flow's compiled Mermaid source to the clipboard (interop:
-    // paste into GitHub / docs / mermaid.live). Reuses the render compiler.
-    els.copyMermaidBtn?.addEventListener('click', async () => {
-      const f = state.flowsById.get(state.activeFlow);
-      const dg = f && diagramOf(f, state.classById);
-      if (!dg) return;
-      const { def } = compileDiagram(dg, state.classById, state.lang);
-      try {
-        await navigator.clipboard.writeText(def);
-        const btn = els.copyMermaidBtn;
-        btn.classList.add('copied'); btn.title = t('copied', state.lang);
-        setTimeout(() => { btn.classList.remove('copied'); btn.title = t('copy_mermaid', state.lang); }, 1200);
-      } catch { /* clipboard blocked — no-op */ }
     });
   })();
 
@@ -197,6 +216,7 @@ export function initControls(els) {
       state.lang = (lang === 'zh' || lang === 'en') ? lang : 'en';
       els.langToggle.textContent = state.lang === 'zh' ? '中' : 'EN';
       applyI18nStatic(document, state.lang);
+      refreshCopyTitle();   // mode-aware title isn't a static data-i18n-title — set it after
     }
     const stored = settings.get('lang');
     const browserZh = navigator.language && navigator.language.startsWith('zh');
@@ -205,6 +225,37 @@ export function initControls(els) {
       const next = state.lang === 'en' ? 'zh' : 'en';
       apply(next); settings.set('lang', next);
       if (state.raw) setState({});   // re-render map + detail in the new language
+    });
+  })();
+
+  // copy button: always present in both modes (so a mode switch never reflows
+  // the topbar). Its action is mode-aware — copy the active flow's compiled
+  // Mermaid source in flow mode (interop: paste into GitHub / mermaid.live), or
+  // copy the layer map as a PNG image to the clipboard in layer mode.
+  (function initCopy() {
+    const btn = els.copyBtn;
+    if (!btn) return;
+    btn.addEventListener('click', async () => {
+      if (btn.getAttribute('aria-busy') === 'true') return;
+      btn.setAttribute('aria-busy', 'true');
+      try {
+        if (state.activeView === 'flow') {
+          const f = state.flowsById.get(state.activeFlow);
+          const dg = f && diagramOf(f, state.classById);
+          if (!dg) return;
+          const { def } = compileDiagram(dg, state.classById, state.lang);
+          await navigator.clipboard.writeText(def);
+        } else {
+          await copyImageToClipboard(backend.getSvg());
+        }
+        btn.classList.add('copied');
+        btn.title = t('copied', state.lang);
+        setTimeout(() => { btn.classList.remove('copied'); refreshCopyTitle(); }, 1200);
+      } catch (err) {
+        console.error('[code-map] copy failed:', err);
+      } finally {
+        btn.removeAttribute('aria-busy');
+      }
     });
   })();
 }

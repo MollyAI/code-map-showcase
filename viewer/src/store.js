@@ -11,6 +11,7 @@ export const state = /** @type {any} */ ({
   activeFlow: null, selected: null,
   flowSidebarCollapsed: false,  // left flow sidebar collapsed state (flow mode)
   zoom: 1, fontScale: 1, fontSize: 'medium', lang: 'en',
+  viewTransitioning: false,     // true while the flow-sidebar margin transition runs after a mode switch — freezes the live ResizeObserver rescale so the font size stays constant through the slide
   LAYOUT: null,                // current layout metrics (makeLayout(fontScale)); set in controls
   baseWidth: 0, baseHeight: 0, // SVG content dims at zoom=1
   classById: new Map(), flowsById: new Map(),
