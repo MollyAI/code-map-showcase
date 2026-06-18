@@ -178,7 +178,7 @@ header.topbar {
 .toggle button.active { background: var(--bg-3); color: var(--text-0); }
 .toggle button:hover:not(.active) { color: var(--text-1); }
 
-.theme-toggle, .lang-toggle, .export-toggle {
+.theme-toggle, .lang-toggle, .export-toggle, .copy-mermaid-toggle {
   background: var(--bg-1);
   border: 1px solid var(--line);
   border-radius: 5px;
@@ -189,9 +189,12 @@ header.topbar {
   cursor: pointer;
   transition: color 0.15s, background 0.15s, border-color 0.15s;
 }
-.theme-toggle:hover, .lang-toggle:hover, .export-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
-.theme-toggle svg, .lang-toggle svg, .export-toggle svg { width: 17px; height: 17px; display: block; }
+.theme-toggle:hover, .lang-toggle:hover, .export-toggle:hover, .copy-mermaid-toggle:hover { color: var(--text-0); border-color: var(--line-strong); }
+.theme-toggle svg, .lang-toggle svg, .export-toggle svg, .copy-mermaid-toggle svg { width: 17px; height: 17px; display: block; }
 .export-toggle[aria-busy="true"] { opacity: 0.5; pointer-events: none; }
+/* the display:inline-flex above would otherwise defeat the `hidden` attribute */
+.copy-mermaid-toggle[hidden] { display: none; }
+.copy-mermaid-toggle.copied { color: var(--accent); border-color: var(--accent); }
 .theme-toggle .icon-sun  { display: none; }
 .theme-toggle .icon-moon { display: block; }
 body.light .theme-toggle .icon-sun  { display: block; }
@@ -331,12 +334,18 @@ body.light .theme-toggle .icon-moon { display: none; }
 }
 /* When the title holds a full function signature, use mono + a calmer size so
    long signatures stay readable instead of dominating the panel. */
-.class-title.is-signature {
+.signature {
   font-family: var(--font-mono);
-  font-weight: 500;
-  font-size: calc(15px * var(--fs-scale));
-  letter-spacing: 0;
-  line-height: 1.4;
+  font-size: calc(13px * var(--fs-scale));
+  line-height: 1.45;
+  color: var(--text-1);
+  background: var(--bg-2);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 8px 10px;
+  margin: 8px 0 0;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
 }
 
 .class-kind {
@@ -700,14 +709,6 @@ body.light .theme-toggle .icon-moon { display: none; }
 .edge.active.out { stroke: var(--accent); }
 .edge.dimmed { opacity: 0.04; }
 
-/* flow-mode edges: a calm resting orange that selection brings into focus.
-   When a node is selected, the edges on its flow slice go `.active` (lit) and
-   every other edge goes `.dimmed` — so a disabled (dimmed) node's connectors
-   read as disabled too, instead of the whole flow staying fully highlighted. */
-.edge.flow { stroke: var(--accent); opacity: 0.5; stroke-width: 1.4; }
-.edge.flow.active { opacity: 1; stroke-width: 1.7; }
-.edge.flow.dimmed { opacity: 0.05; }
-
 /* tooltip */
 .tooltip {
   position: fixed;
@@ -834,52 +835,24 @@ body.light .theme-toggle .icon-moon { display: none; }
 ::-webkit-scrollbar-corner { background: var(--bg-0); }
 
 
-/* dispatch (interface → implementor) flow edges: dashed, slightly muted */
-.edge.flow.dispatch { stroke-dasharray: 5 4; stroke-opacity: 0.85; }
-
-/* ---- flow diagrams: pipeline stages + sequence lifelines (v1.13) ---- */
-.stage-band rect.bg { fill: var(--bg-1); stroke: var(--line); }
-.stage-band.stage-c0 rect.bg { fill: var(--stage-0-bg); stroke: var(--stage-0-line); }
-.stage-band.stage-c1 rect.bg { fill: var(--stage-1-bg); stroke: var(--stage-1-line); }
-.stage-band.stage-c2 rect.bg { fill: var(--stage-2-bg); stroke: var(--stage-2-line); }
-.stage-band.stage-c3 rect.bg { fill: var(--stage-3-bg); stroke: var(--stage-3-line); }
-.stage-title { font: 600 calc(12px * var(--fs-scale)) var(--font-mono); fill: var(--text-1); }
-.stage-band.stage-c0 .stage-title { fill: var(--stage-0-text); }
-.stage-band.stage-c1 .stage-title { fill: var(--stage-1-text); }
-.stage-band.stage-c2 .stage-title { fill: var(--stage-2-text); }
-.stage-band.stage-c3 .stage-title { fill: var(--stage-3-text); }
-/* decl nodes inside a tinted stage: clean uniform cards (panel tone) */
-.node.in-stage rect { fill: var(--bg-1); }
-.edge-label {
-  font: 500 calc(10.5px * var(--fs-scale)) var(--font-mono); fill: var(--text-1); text-anchor: middle;
-  paint-order: stroke; stroke: var(--bg-0); stroke-width: 3px; stroke-linejoin: round;
+/* ---- flow diagrams: rendered by Mermaid (loaded from CDN) ---- */
+/* Mermaid emits a self-contained <svg> with its own <style>; we only need to
+   let it size naturally inside our canvas. The in-house pipeline/sequence CSS
+   (stage bands, lifelines, edge-labels, synthetic nodes) was removed when
+   Mermaid took over. */
+.mermaid-flow { overflow: visible; }
+/* CDN-unreachable fallback: the compiled Mermaid source, copyable. */
+.flow-fallback {
+  font-size: 13px; color: var(--text-1);
+  padding: 4px 8px; max-width: 100%;
 }
-.edge-label.start { text-anchor: start; }   /* self-loop labels hang right of the loop */
-/* diagram edges are few and hand-authored — render them confident, not
-   hairball-faint. call/data solid accent; return = cyan dashed (the classic
-   sync-call vs return distinction); control stays muted. */
-.edge.flow.k-data, .edge.flow.k-call, .edge.flow.k-self { opacity: 0.85; stroke-width: 1.5; }
-.edge.flow.k-control { opacity: 0.45; }
-.edge.flow.k-return { stroke: var(--cyan); stroke-dasharray: 6 5; opacity: 0.95; stroke-width: 1.5; }
-/* re-assert selection states AFTER the k-* rules: equal specificity means
-   source order decides, and dimming/lighting must beat the per-kind opacity */
-.edge.flow.active { opacity: 1; stroke-width: 1.7; }
-.edge.flow.dimmed { opacity: 0.05; }
-.node.synthetic rect { fill: var(--bg-2); stroke: var(--line-strong); }
-.node.synthetic .fold { fill: none; stroke: var(--line-strong); }
-.node.synthetic.artifact rect { fill: var(--artifact-bg); stroke: var(--artifact-line); }
-.node.synthetic.artifact .fold { stroke: var(--artifact-line); }
-.node.synthetic.artifact .nlabel { fill: var(--artifact-text); }
-/* sequence participants are column headers — card-like, bolder label */
-.node.synthetic.participant rect { fill: var(--bg-1); stroke: var(--line-strong); stroke-width: 1.2; }
-.node.synthetic.participant .nlabel { font-weight: 600; fill: var(--text-0); }
-.lifeline { stroke: var(--lifeline); stroke-width: 1.3; stroke-dasharray: 5 4; }
-/* Sequence diagrams render one size up — see SEQ_FONT_MULT in layout/sequence.js.
-   The layout sizes boxes for this exact multiplier; keep the two in sync. */
-.seq-scope .edge-label { font-size: calc(10.5px * var(--fs-scale) * 1.25); }
-.seq-scope .node .nlabel { font-size: calc(11px * var(--fs-scale) * 1.25); }
-.seq-arrowhead { fill: var(--accent); }
-.seq-arrowhead.return { fill: var(--cyan); }
+.flow-fallback p { margin: 0 0 10px; color: var(--text-2); }
+.flow-fallback pre {
+  font: 400 12px var(--font-mono); color: var(--text-0);
+  background: var(--bg-1); border: 1px solid var(--line); border-radius: 6px;
+  padding: 12px; overflow: auto; white-space: pre; user-select: all;
+}
+.flow-fallback a { color: var(--accent); display: inline-block; margin-top: 8px; }
 .flow-item-kind { margin-right: 6px; color: var(--text-3); font-size: 10px; }
 
 /* ======================================================================

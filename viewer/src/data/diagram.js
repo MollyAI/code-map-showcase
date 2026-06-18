@@ -1,10 +1,10 @@
 // --------------------------------------------------------------------
 // data/diagram — pure validation + helpers for the Phase-2-authored
-// flow.diagram annotation layer (spec: docs/superpowers/specs/
-// 2026-06-11-flow-diagram-redesign-design.md §3). DOM-free.
-// Invalid or absent diagram → callers fall back to the DAG renderer
-// (miss rather than misidentify): validateDiagram never throws, it
-// collects errors; diagramOf returns null unless fully valid.
+// flow.diagram annotation layer. DOM-free. This stays the grounding gate
+// after Mermaid took over rendering: a flow whose diagram is invalid or
+// absent is hidden from the flow list (diagramOf → null). validateDiagram
+// never throws — it collects errors; the compiled Mermaid is only ever fed
+// a fully-validated diagram. (miss rather than misidentify.)
 // --------------------------------------------------------------------
 
 import { pickBilingual } from '../i18n.js';
@@ -111,29 +111,9 @@ function validateSequence(dg, classById, errors) {
   }
 }
 
-/** The validated diagram, or null (→ DAG fallback).
+/** The validated diagram, or null (→ flow hidden from the list).
  * @param {any} flow @param {Map<string, any>} classById */
 export function diagramOf(flow, classById) {
   if (!flow || !flow.diagram) return null;
   return validateDiagram(flow, classById).ok ? flow.diagram : null;
-}
-
-/** 时序图选中集：参与者自身 + 触及它的 step 的两端（interact/selection 用）。
- * @param {any} dg @param {string} id @returns {Set<string>} */
-export function sequenceHighlight(dg, id) {
-  const set = new Set([id]);
-  for (const s of dg.steps || []) {
-    if (s.from === id || s.to === id) { set.add(s.from); set.add(s.to); }
-  }
-  return set;
-}
-
-/** 流水线选中集补充：把含已点亮 decl 的 stage id 也加入（这样 stage↔stage
- *  links 的 data-from/to 能命中选中集，不至于整图连线全部压暗）。
- * @param {any} dg @param {Set<string>} set @returns {Set<string>} */
-export function withLitStages(dg, set) {
-  for (const s of dg.stages || []) {
-    if ((s.nodes || []).some((/** @type {string} */ n) => set.has(n))) set.add(s.id);
-  }
-  return set;
 }

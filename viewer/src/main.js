@@ -44,6 +44,7 @@ const els = {
   flowExpand: $('flow-expand'),
   themeToggle: $('theme-toggle'),
   exportBtn: $('export-toggle'),
+  copyMermaidBtn: $('copy-mermaid-toggle'),
   langToggle: $('lang-toggle'),
   fontToggle: $('font-size-toggle'),
   canvasWrap: $('canvas-wrap'),
@@ -97,6 +98,9 @@ const ctx = {
   renderDetail: detail.renderDetail,
   canvasWidth: () => els.canvasWrap.clientWidth - 2 * CANVAS_PAD_L,
   populateFlowList: () => populateFlowList(els),
+  // Schedule a full re-render — used by the flow view's async Mermaid bridge to
+  // re-enter once a diagram has rendered (then computeLayout hits its cache).
+  requestRender: () => setState({}),
 };
 
 /** @param {string} msg */

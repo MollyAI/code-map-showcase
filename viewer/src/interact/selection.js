@@ -7,9 +7,8 @@
 // --------------------------------------------------------------------
 
 import { state } from '../store.js';
-import { buildEdgePath, flowEdgeClass } from '../render/edges.js';
+import { buildEdgePath } from '../render/edges.js';
 import { NS } from '../render/backend.js';
-import { diagramOf, sequenceHighlight, withLitStages } from '../data/diagram.js';
 
 /**
  * @param {object} deps
@@ -19,75 +18,26 @@ import { diagramOf, sequenceHighlight, withLitStages } from '../data/diagram.js'
  */
 export function createSelection({ backend, renderDetail, layoutEl }) {
   // The set of node ids kept lit for the current selection (the selected id
-  // included). Layer mode: the selected node's direct graph neighbours. Flow
-  // mode: the slice of the flow that runs THROUGH the selected node — its
-  // ancestors up to the seed plus its whole subtree — so the highlight always
-  // reads as one continuous chain rather than the disconnected "bright islands
-  // over a dimmed flow" that selecting on the global edge index produced.
+  // included) — the selected node's direct graph neighbours. Layer mode only:
+  // flow mode renders via Mermaid (its nodes aren't in nodeById, so selection
+  // visual-state / edge re-styling don't run there — click only opens detail).
   /** @param {string} id @returns {Set<string>} */
   function highlightSet(id) {
-    if (state.activeView === 'flow') return flowHighlight(id);
     const set = new Set([id]);
     for (const e of (state.edgesFromIdx.get(id) || [])) set.add(e.to);
     for (const e of (state.edgesToIdx.get(id) || [])) set.add(e.from);
     return set;
   }
 
-  /** Ancestors (single parent chain to the seed) + the subtree below `id`,
-   *  walked over the active flow's own edges. Diagram-annotated flows
-   *  override: sequence → the participant + its step endpoints; pipeline →
-   *  the DAG walk plus the stage ids containing lit decls (so stage↔stage
-   *  links can stay lit). @param {string} id @returns {Set<string>} */
-  function flowHighlight(id) {
-    const set = new Set([id]);
-    const flow = state.flowsById.get(state.activeFlow);
-    if (!flow) return set;
-    const dg = diagramOf(flow, state.classById);
-    if (dg && dg.type === 'sequence') return sequenceHighlight(dg, id);
-    if (Array.isArray(flow.edges)) {
-      /** @type {Map<string, string>} */
-      const parent = new Map();
-      /** @type {Map<string, string[]>} */
-      const children = new Map();
-      for (const e of flow.edges) {
-        parent.set(e.to, e.from);
-        if (!children.has(e.from)) children.set(e.from, []);
-        /** @type {string[]} */ (children.get(e.from)).push(e.to);
-      }
-      let p = parent.get(id);
-      while (p && !set.has(p)) { set.add(p); p = parent.get(p); }
-      const stack = [id];
-      while (stack.length) {
-        const u = /** @type {string} */ (stack.pop());
-        for (const v of (children.get(u) || [])) if (!set.has(v)) { set.add(v); stack.push(v); }
-      }
-    }
-    if (dg && dg.type === 'pipeline') return withLitStages(dg, set);
-    return set;
-  }
-
   // Layer mode: rebuild #edges with just the selected node's in/out edges (the
-  // deliberate anti-hairball design). Flow mode: the flow renderer already drew
-  // the edges, so re-style them in place — edges touching a dimmed node dim WITH
-  // it (a disabled item's connectors should read as disabled too), and only the
-  // selected slice stays lit. With no selection both modes fall to a calm
-  // resting state.
+  // deliberate anti-hairball design). Flow mode (Mermaid) has no `#edges` group
+  // and no registered nodes, so this early-returns. With no selection it falls
+  // to a calm resting state.
   /** @param {Set<string> | null} [hl] the current highlight set, or null when nothing is selected */
   function drawEdges(hl) {
     const svg = backend.getSvg();
     const layer = svg.querySelector('#edges');
     if (!layer) return;
-
-    if (state.activeView === 'flow') {
-      for (const path of layer.querySelectorAll('path.edge')) {
-        const from = path.getAttribute('data-from') || '';
-        const to = path.getAttribute('data-to') || '';
-        const kind = path.getAttribute('data-kind') || 'uses';
-        const lit = !!(hl && hl.has(from) && hl.has(to));
-        path.setAttribute('class', flowEdgeClass(kind, { active: lit, dimmed: !!hl && !lit }));
-      }
-      return;
-    }
 
     while (layer.firstChild) layer.removeChild(layer.firstChild);
     if (!state.selected) return;
@@ -111,12 +61,16 @@ export function createSelection({ backend, renderDetail, layoutEl }) {
 
   function applySelection() {
     const id = state.selected;
-    const has = !!(id && state.nodeById.has(id));
-    const hl = has ? highlightSet(/** @type {string} */ (id)) : null;
+    const inNode = !!(id && state.nodeById.has(id));
+    const hl = inNode ? highlightSet(/** @type {string} */ (id)) : null;
     const peers = hl ? new Set([...hl].filter((x) => x !== id)) : null;
     backend.applyVisualState(state.nodeById, layoutEl, peers);
     drawEdges(hl);
-    renderDetail(has ? state.nodeById.get(id).datum : null);
+    // Detail datum: a layer node from nodeById, or — for a Mermaid flow node
+    // (not registered in nodeById) — the decl from classById. So click→detail
+    // works in flow mode even though visual-state/edges don't.
+    const datum = id ? (inNode ? state.nodeById.get(id).datum : (state.classById.get(id) || null)) : null;
+    renderDetail(datum);
   }
 
   // Clicking the selected node deselects it.

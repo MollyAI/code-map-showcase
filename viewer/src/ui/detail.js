@@ -122,14 +122,16 @@ export function createDetail({ detailBody, canvasWrap, onSelectTarget }) {
 
     const isMethod = ['function', 'method', 'composable_function'].includes(c.kind);
     const desc = pickDescription(c);
-    const titleText = (isMethod && c.signature) ? c.signature : (c.display_name || c.name);
+    const titleText = c.display_name || c.name;
+    const showSig = isMethod && c.signature && c.signature !== titleText;
     const fileName = (c.path || '').split('/').pop();
     const lineSuffix = c.line ? `:${c.line}` : '';
 
     detailBody.innerHTML = `
       <div>
         <div class="kicker">${escapeHtml(layer?.name || '')} <span style="opacity:0.5">·</span> ${escapeHtml(c.kind || 'class')}${c.language ? ` <span style="opacity:0.5">·</span> <span class="lang-tag">${escapeHtml(c.language)}</span>` : ''}</div>
-        <h2 class="class-title${(isMethod && c.signature) ? ' is-signature' : ''}">${escapeHtml(titleText)}</h2>
+        <h2 class="class-title">${escapeHtml(titleText)}</h2>
+        ${showSig ? `<pre class="signature">${escapeHtml(c.signature)}</pre>` : ''}
         ${tags.length ? `<div class="tag-row">${tags.map((/** @type {string} */ tag) => {
           const muted = tag === 'ai-inferred' || tag === 'excluded';
           return `<span class="tag-chip${muted ? ' muted' : ''}">${escapeHtml(tag)}</span>`;

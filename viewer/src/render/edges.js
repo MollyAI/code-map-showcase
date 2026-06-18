@@ -1,13 +1,15 @@
 // --------------------------------------------------------------------
-// render/edges — pure SVG edge-path `d` string builders, extracted from
-// viewer/index.html's `buildEdgePath` (layer-band edges) and
-// `buildFlowEdgePath` (flow edges).
+// render/edges — pure SVG edge-path `d` string builder for layer-band
+// edges (`buildEdgePath`), extracted from viewer/index.html.
 //
-// The originals each created a `<path>` element via document.createElementNS,
-// set its CSS class, and computed its `d` attribute. Only the geometry — the
-// `d` string — lives here; the DOM `<path>` creation and class assignment stay
-// in the renderer (drawEdges / renderFlow). These functions are therefore pure:
-// they read no globals, touch no DOM, and can be imported under node.
+// The flow-edge builders (`buildFlowEdgePath`/`buildLinkPath`/`flowEdgeClass`)
+// were removed when Mermaid took over flow rendering (it draws its own edges).
+//
+// The original created a `<path>` element via document.createElementNS, set its
+// CSS class, and computed its `d` attribute. Only the geometry — the `d` string
+// — lives here; the DOM `<path>` creation and class assignment stay in the
+// renderer (drawEdges). This function is therefore pure: it reads no globals,
+// touches no DOM, and can be imported under node.
 //
 // Geometry that the originals read off live node objects (`from`/`to` with
 // `{x, y, w, h}`) is taken verbatim as the `Rect` inputs. The only global the
@@ -67,55 +69,4 @@ export function buildEdgePath(from, to, nodeH = 28) {
   const c1 = { x: p1.x, y: p1.y + dy * 0.5 };
   const c2 = { x: p2.x, y: p2.y - dy * 0.5 };
   return `M ${p1.x} ${p1.y} C ${c1.x} ${c1.y}, ${c2.x} ${c2.y}, ${p2.x} ${p2.y}`;
-}
-
-/**
- * Build the `d` string for a flow edge: a horizontal cubic from the right edge
- * of `from` to the left edge of `to`. Verbatim from the original
- * `buildFlowEdgePath`'s geometry — the horizontal control-point offset is
- * `max((Δx) * 0.5, 20)`.
- *
- * @param {Rect} from  source node geometry
- * @param {Rect} to    target node geometry
- * @returns {string} the SVG path `d` attribute string
- */
-export function buildFlowEdgePath(from, to) {
-  const p1 = { x: from.x + from.w, y: from.y + from.h / 2 };
-  const p2 = { x: to.x,           y: to.y + to.h / 2     };
-  const dx = Math.max((p2.x - p1.x) * 0.5, 20);
-  return `M ${p1.x} ${p1.y} C ${p1.x + dx} ${p1.y}, ${p2.x - dx} ${p2.y}, ${p2.x} ${p2.y}`;
-}
-
-/**
- * Link path that also handles BACKWARD links (target left of source) by
- * mirroring buildFlowEdgePath: left edge of `from` → right edge of `to`.
- * Forward links delegate to buildFlowEdgePath unchanged. Used by the
- * pipeline-diagram renderer, whose Phase-2-authored links may point
- * anywhere (stage↔stage, node↔node).
- * @param {Rect} from @param {Rect} to @returns {string}
- */
-export function buildLinkPath(from, to) {
-  if (to.x >= from.x + from.w) return buildFlowEdgePath(from, to);
-  const p1 = { x: from.x,      y: from.y + from.h / 2 };
-  const p2 = { x: to.x + to.w, y: to.y + to.h / 2     };
-  const dx = Math.max((p1.x - p2.x) * 0.5, 20);
-  return `M ${p1.x} ${p1.y} C ${p1.x - dx} ${p1.y}, ${p2.x + dx} ${p2.y}, ${p2.x} ${p2.y}`;
-}
-
-/**
- * Class string for a flow edge `<path>`. Single source of truth shared by the
- * flow renderer (registry) and the selection re-styler (selection), so a
- * `dispatch` edge keeps its dashed style through selection. `active` wins over
- * `dimmed` when both are set.
- * @param {string} [kind]  edge kind ('uses' | 'dispatch')
- * @param {{ active?: boolean, dimmed?: boolean }} [opts]
- * @returns {string}
- */
-export function flowEdgeClass(kind, { active = false, dimmed = false } = {}) {
-  let cls = 'edge flow';
-  if (kind === 'dispatch') cls += ' dispatch';
-  else if (kind && kind !== 'uses') cls += ' k-' + kind;
-  if (active) cls += ' active';
-  else if (dimmed) cls += ' dimmed';
-  return cls;
 }

@@ -11,11 +11,9 @@ import { t, pickBilingual } from '../i18n.js';
 import { countLabel } from '../data/counts.js';
 import { layoutLayers } from '../layout/layers.js';
 import { layoutGrouped } from '../layout/groups.js';
-import { layoutPipeline } from '../layout/pipeline.js';
-import { layoutSequence } from '../layout/sequence.js';
 import { diagramOf } from '../data/diagram.js';
+import { renderFlow } from '../diagram/mermaid-render.js';
 import { makeNodeEl } from './node.js';
-import { buildPipelineContent, buildSequenceContent } from './diagrams.js';
 import { renderScene } from './scene.js';
 import { NS } from './backend.js';
 
@@ -64,9 +62,6 @@ export function appendNode(st, group, n, ctx, decorateNode) {
 }
 
 const NO_DECOR = () => [];
-// Pipeline-diagram decl nodes: uniform "card on tinted stage" look — the
-// flow-core/flow-hub accents read as noise inside stage containers.
-const IN_STAGE = () => ['in-stage'];
 
 /** @type {import('./scene.js').ViewDef} */
 const layerView = {
@@ -182,47 +177,96 @@ const layerView = {
 const flowView = {
   id: 'flow',
   labelKey: 'group_flows',
+  // Mermaid renders asynchronously, but the view lifecycle is synchronous. The
+  // bridge: kick the async render off here, cache the result keyed by
+  // flow|lang|theme (so a flow/language/theme change re-renders), and request
+  // another render on resolve — which then hits the cache. Until then, a
+  // 'flow-loading' placeholder. Mermaid sizes the diagram; we read its viewBox.
   computeLayout(st, ctx) {
     ctx.populateFlowList();   // refresh the left flow sidebar before laying out
     const canvasWidth = ctx.canvasWidth();
     const flow = resolveActiveFlow(st);
     if (!flow) return { width: Math.max(canvasWidth, 200), height: 200, kind: 'empty' };
-    const dg = diagramOf(flow, st.classById);   // invalid/absent → null → DAG 回退
-    if (dg && dg.type === 'pipeline') {
-      const lay = layoutPipeline(flow, st.classById, st.LAYOUT);
-      return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'pipeline', lay };
+    const dg = diagramOf(flow, st.classById);   // invalid/absent → null → empty
+    if (!dg) return { width: Math.max(canvasWidth, 200), height: 200, kind: 'empty' };
+
+    const key = `${flow.id}|${st.lang}|${currentTheme()}`;
+    const cache = st.flowRender;
+    if (cache && cache.key === key) {
+      if (cache.fallback) return { width: Math.max(canvasWidth, 200), height: Math.max(cache.height || 300, 300), kind: 'flow-fallback', def: cache.def };
+      return { width: Math.max(cache.width, canvasWidth), height: Math.max(cache.height, 200), kind: 'flow-mermaid', svg: cache.svg, bind: cache.bind };
     }
-    if (dg && dg.type === 'sequence') {
-      const lay = layoutSequence(flow, st.LAYOUT);
-      return { width: Math.max(lay.width, canvasWidth), height: Math.max(lay.height, 200), kind: 'sequence', lay };
+    if (st.flowRenderPending !== key) {
+      st.flowRenderPending = key;
+      renderFlow({ diagram: dg, classById: st.classById, lang: st.lang, theme: currentTheme(), onSelect: ctx.handlers.onSelect })
+        .then((res) => {
+          st.flowRender = res.ok
+            ? { key, svg: res.svg, bind: res.bind, width: res.width, height: res.height }
+            : { key, fallback: true, def: res.def, height: 300 };
+          if (st.flowRenderPending === key) st.flowRenderPending = null;
+          ctx.requestRender();
+        });
     }
-    // No DAG fallback — flowsById only holds flows with a valid diagram.
-    return { width: Math.max(canvasWidth, 200), height: 200, kind: 'empty' };
+    return { width: Math.max(canvasWidth, 200), height: 200, kind: 'flow-loading' };
   },
   buildContent(backend, layout, ctx) {
     const st = ctx.state;
-    if (layout.kind === 'empty') {
+    if (layout.kind === 'empty' || layout.kind === 'flow-loading') {
       const txt = document.createElementNS(NS, 'text');
       txt.setAttribute('class', 'summary');
       txt.setAttribute('x', String(layout.width / 2));
       txt.setAttribute('y', '100');
       txt.setAttribute('text-anchor', 'middle');
-      txt.textContent = t('flow_empty', st.lang);
+      txt.textContent = t(layout.kind === 'flow-loading' ? 'flow_loading' : 'flow_empty', st.lang);
       backend.add(txt);
       return;
     }
-    if (layout.kind === 'pipeline') {
-      buildPipelineContent(backend, layout.lay, ctx, { appendNode, flowDecorate: IN_STAGE });
+    if (layout.kind === 'flow-mermaid') {
+      // Parse Mermaid's SVG string fresh each render (ids are stable, so the
+      // cached bindFunctions re-attaches click handlers to this element) and
+      // nest it in our main SVG — pan/zoom/export all keep working unchanged.
+      const doc = new DOMParser().parseFromString(layout.svg, 'image/svg+xml');
+      const inner = /** @type {any} */ (document.importNode(doc.documentElement, true));
+      inner.setAttribute('x', '0');
+      inner.setAttribute('y', '0');
+      inner.setAttribute('class', 'mermaid-flow');
+      backend.add(inner);
+      if (layout.bind) { try { layout.bind(inner); } catch (e) { console.warn('[code-map] mermaid bindFunctions failed:', e); } }
       return;
     }
-    if (layout.kind === 'sequence') {
-      buildSequenceContent(backend, layout.lay, ctx, { appendNode, flowDecorate: NO_DECOR });
+    if (layout.kind === 'flow-fallback') {
+      buildFlowFallback(backend, layout, st);
       return;
     }
-    // No other kinds: computeLayout only emits 'empty' (handled above) /
-    // 'pipeline' / 'sequence'. The DAG ('flow') renderer was removed in v1.19.
   },
 };
+
+/** Current theme for Mermaid: the viewer keeps theme on body.light (no state
+ *  field), so read it from the DOM. */
+function currentTheme() {
+  return (typeof document !== 'undefined' && document.body.classList.contains('light')) ? 'light' : 'dark';
+}
+
+/** CDN-failure fallback: show the compiled Mermaid source as copyable text +
+ *  a mermaid.live link, inside a foreignObject so it scrolls/selects. */
+function buildFlowFallback(backend, layout, st) {
+  const fo = document.createElementNS(NS, 'foreignObject');
+  fo.setAttribute('x', '20'); fo.setAttribute('y', '20');
+  fo.setAttribute('width', String(Math.max(layout.width - 40, 320)));
+  fo.setAttribute('height', String(Math.max(layout.height - 40, 240)));
+  const div = document.createElement('div');
+  div.className = 'flow-fallback';
+  const note = document.createElement('p');
+  note.textContent = t('flow_cdn_failed', st.lang);
+  const pre = document.createElement('pre');
+  pre.textContent = layout.def;
+  const link = document.createElement('a');
+  link.href = 'https://mermaid.live/'; link.target = '_blank'; link.rel = 'noopener';
+  link.textContent = 'mermaid.live';
+  div.append(note, pre, link);
+  fo.appendChild(div);
+  backend.add(fo);
+}
 
 export function registerBuiltinViews() {
   registerView(layerView);

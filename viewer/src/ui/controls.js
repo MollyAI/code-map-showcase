@@ -12,8 +12,9 @@
 import { state, setState } from '../store.js';
 import { createSettings, migrateGrouping } from '../settings.js';
 import { makeLayout } from '../layout/metrics.js';
-import { applyI18nStatic, pickBilingual } from '../i18n.js';
+import { applyI18nStatic, pickBilingual, t } from '../i18n.js';
 import { diagramOf } from '../data/diagram.js';
+import { compileDiagram } from '../diagram/mermaid-compile.js';
 
 const settings = createSettings();
 
@@ -80,6 +81,9 @@ export function initControls(els) {
       const isFlow = state.activeView === 'flow';
       els.layout.classList.toggle('flow-active', isFlow);
       els.layout.classList.toggle('flow-open', isFlow && !state.flowSidebarCollapsed);
+      // "copy Mermaid" only makes sense in flow mode (it copies the active
+      // flow's compiled Mermaid source).
+      if (els.copyMermaidBtn) els.copyMermaidBtn.hidden = !isFlow;
     }
     /** @param {string} mode */
     function apply(mode) {
@@ -119,6 +123,20 @@ export function initControls(els) {
       state.flowSidebarCollapsed = false; settings.set('flow-collapsed', 'false');
       applyFlowChrome(); setState({});
     });
+    // copy the active flow's compiled Mermaid source to the clipboard (interop:
+    // paste into GitHub / docs / mermaid.live). Reuses the render compiler.
+    els.copyMermaidBtn?.addEventListener('click', async () => {
+      const f = state.flowsById.get(state.activeFlow);
+      const dg = f && diagramOf(f, state.classById);
+      if (!dg) return;
+      const { def } = compileDiagram(dg, state.classById, state.lang);
+      try {
+        await navigator.clipboard.writeText(def);
+        const btn = els.copyMermaidBtn;
+        btn.classList.add('copied'); btn.title = t('copied', state.lang);
+        setTimeout(() => { btn.classList.remove('copied'); btn.title = t('copy_mermaid', state.lang); }, 1200);
+      } catch { /* clipboard blocked — no-op */ }
+    });
   })();
 
   // resize re-layout (debounced).
@@ -144,6 +162,9 @@ export function initControls(els) {
       apply(next); settings.set('theme', next);
       if (crossfadeTimer) clearTimeout(crossfadeTimer);
       crossfadeTimer = setTimeout(() => document.body.classList.remove('theme-switching'), 450);
+      // Layer mode recolours via CSS, but a Mermaid flow bakes its theme into
+      // the rendered SVG — re-render so it picks up the new light/dark theme.
+      if (state.raw && state.activeView === 'flow') setState({});
     });
   })();
 

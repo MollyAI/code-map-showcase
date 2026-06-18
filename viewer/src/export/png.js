@@ -72,58 +72,81 @@ async function saveBlob(blob, suggestedName) {
 }
 
 /**
+ * Shared rasterize tail: size the clone, serialize, draw onto a PADded 2x
+ * canvas over the page background, save.
+ * @param {SVGSVGElement} clone
+ * @param {{ width: number, height: number, viewBox: string }} box
+ * @param {HTMLElement} projectNameEl
+ */
+async function rasterize(clone, box, projectNameEl) {
+  const scale = 2;  // crisp on hi-dpi displays
+  const pad = 64;   // breathing room around the diagram, in viewBox units
+  clone.setAttribute('xmlns', NS);
+  clone.setAttribute('width', String(box.width));
+  clone.setAttribute('height', String(box.height));
+  clone.setAttribute('viewBox', box.viewBox);
+
+  const xml = new XMLSerializer().serializeToString(clone);
+  const svgUrl = URL.createObjectURL(new Blob([xml], { type: 'image/svg+xml;charset=utf-8' }));
+  try {
+    const img = new Image();
+    await new Promise((resolve, reject) => {
+      img.onload = resolve;
+      img.onerror = () => reject(new Error('svg render failed'));
+      img.src = svgUrl;
+    });
+
+    const canvas = document.createElement('canvas');
+    canvas.width = Math.ceil((box.width + pad * 2) * scale);
+    canvas.height = Math.ceil((box.height + pad * 2) * scale);
+    const ctx = /** @type {CanvasRenderingContext2D} */ (canvas.getContext('2d'));
+    // paint the page background so the PNG isn't transparent
+    const bg = getComputedStyle(document.body).getPropertyValue('--bg-0').trim() || '#0a0e13';
+    ctx.fillStyle = bg;
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // offset the diagram by `pad` (scaled) so the fill reads as a uniform margin
+    ctx.setTransform(scale, 0, 0, scale, pad * scale, pad * scale);
+    ctx.drawImage(img, 0, 0);
+
+    const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
+    if (!blob) return;
+    const name = (projectNameEl.textContent || 'code-map').trim().replace(/[^\w.-]+/g, '-') || 'code-map';
+    await saveBlob(blob, `${name}-code-map.png`);
+  } finally {
+    URL.revokeObjectURL(svgUrl);
+  }
+}
+
+/**
  * @param {object} deps
  * @param {SVGSVGElement} deps.svg
  * @param {HTMLElement} deps.projectNameEl
  */
 function makeExporter({ svg, projectNameEl }) {
   return async function exportPng() {
+    // Flow mode: Mermaid's nested <svg> is self-contained — its own viewBox,
+    // an embedded <style>, and <marker> arrowheads referenced by url(#...).
+    // Export it verbatim: clone WITHOUT inlineStyles so ids survive (stripping
+    // them would break the marker refs and the id-scoped <style>).
+    const mermaidSvg = /** @type {SVGSVGElement | null} */ (svg.querySelector('svg.mermaid-flow'));
+    if (mermaidSvg) {
+      const mvb = mermaidSvg.viewBox.baseVal;
+      const w = mvb && mvb.width ? mvb.width : (parseFloat(mermaidSvg.getAttribute('width') || '') || 0);
+      const h = mvb && mvb.height ? mvb.height : (parseFloat(mermaidSvg.getAttribute('height') || '') || 0);
+      if (!w || !h) return;
+      const viewBox = mermaidSvg.getAttribute('viewBox') || `0 0 ${w} ${h}`;
+      return rasterize(/** @type {any} */ (mermaidSvg.cloneNode(true)), { width: w, height: h, viewBox }, projectNameEl);
+    }
+
+    // Layer mode: WYSIWYG clone of the live SVG — selection highlight, dimmed
+    // peers and the selected node's #edges are carried through; inlineStyles
+    // bakes the computed paint of that exact state (external CSS is lost on
+    // serialization) and strips ids/classes.
     const vb = svg.viewBox.baseVal;
     if (!vb || !vb.width || !vb.height) return; // nothing rendered yet
-
-    // WYSIWYG: clone the live SVG verbatim — selection highlight, dimmed peers
-    // and the selected node's edges (in #edges) are all carried through, and
-    // inlineStyles bakes the computed paint of that exact state onto the clone.
     const clone = /** @type {SVGSVGElement} */ (svg.cloneNode(true));
     inlineStyles(svg, clone);
-
-    const scale = 2;  // crisp on hi-dpi displays
-    const pad = 64;   // breathing room around the diagram, in viewBox units
-    clone.setAttribute('xmlns', NS);
-    clone.setAttribute('width', String(vb.width));
-    clone.setAttribute('height', String(vb.height));
-    clone.setAttribute('viewBox', `0 0 ${vb.width} ${vb.height}`);
-
-    const xml = new XMLSerializer().serializeToString(clone);
-    const svgUrl = URL.createObjectURL(new Blob([xml], { type: 'image/svg+xml;charset=utf-8' }));
-
-    try {
-      const img = new Image();
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = () => reject(new Error('svg render failed'));
-        img.src = svgUrl;
-      });
-
-      const canvas = document.createElement('canvas');
-      canvas.width = Math.ceil((vb.width + pad * 2) * scale);
-      canvas.height = Math.ceil((vb.height + pad * 2) * scale);
-      const ctx = /** @type {CanvasRenderingContext2D} */ (canvas.getContext('2d'));
-      // paint the page background so the PNG isn't transparent
-      const bg = getComputedStyle(document.body).getPropertyValue('--bg-0').trim() || '#0a0e13';
-      ctx.fillStyle = bg;
-      ctx.fillRect(0, 0, canvas.width, canvas.height);
-      // offset the diagram by `pad` (scaled) so the fill reads as a uniform margin
-      ctx.setTransform(scale, 0, 0, scale, pad * scale, pad * scale);
-      ctx.drawImage(img, 0, 0);
-
-      const blob = await new Promise((resolve) => canvas.toBlob(resolve, 'image/png'));
-      if (!blob) return;
-      const name = (projectNameEl.textContent || 'code-map').trim().replace(/[^\w.-]+/g, '-') || 'code-map';
-      await saveBlob(blob, `${name}-code-map.png`);
-    } finally {
-      URL.revokeObjectURL(svgUrl);
-    }
+    return rasterize(clone, { width: vb.width, height: vb.height, viewBox: `0 0 ${vb.width} ${vb.height}` }, projectNameEl);
   };
 }
 
