@@ -62,6 +62,26 @@
       "description": "A powerful HTTP client for Dart and Flutter, which supports global settings, Interceptors, FormData, aborting and canceling a request, files uploading and downloading, requests timeout, custom adapters, etc."
     },
     {
+      "slug": "eventbus",
+      "name": "EventBus",
+      "languages": [
+        "java"
+      ],
+      "files": 33,
+      "declarations": 33,
+      "layers": 8,
+      "flows": 6,
+      "edges": 47,
+      "git": {
+        "branch": "master",
+        "short": "0194926",
+        "commit": "0194926b3bcf70cc0d7bfd3c5da16708dd5ab876"
+      },
+      "generated_at": "2026-06-18T09:17:47",
+      "refined": true,
+      "description": "Event bus for Android and Java that simplifies communication between Activities, Fragments, Threads, Services, etc. Less code, better quality."
+    },
+    {
       "slug": "flask",
       "name": "flask",
       "languages": [
