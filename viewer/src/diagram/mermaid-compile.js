@@ -6,8 +6,12 @@
 // Mermaid node ids — Mermaid would sanitize/break them. We mint short
 // aliases (n0,n1,… / a0,a1,…) and return idMap alias→declId for click
 // wiring. Pipeline link endpoints may be stage ids (validateDiagram
-// allows stage↔stage links), so a stage's subgraph reuses aliasFor(s.id)
-// — a link to the stage id then resolves to the same subgraph alias.
+// allows stage↔stage links). Mermaid/dagre lays out subgraph→subgraph
+// edges poorly (the target subgraph floats out of the LR rank flow —
+// the layout-mess bug), so a stage-endpoint link is redirected onto a
+// representative node INSIDE that stage (its first node); the edge then
+// pins the subgraph into the row. The old in-house renderer drew stage
+// edges directly; Mermaid can't.
 //
 // Labels are bilingual via pickBilingual and escaped for Mermaid's
 // ["..."] / : message syntax. The full raw signature is never emitted —
@@ -66,10 +70,18 @@ function compilePipeline(dg, classById, lang) {
     const shape = x.kind === 'actor' ? `(["${esc(x.name)}"])` : `[/"${esc(x.name)}"/]`;
     lines.push(`  ${a}${shape}`);
   }
+  // stage id → its first node id; a stage-endpoint link attaches to that
+  // node so dagre keeps the subgraph in the rank flow (no floating subgraph).
+  const stageRep = new Map();
+  for (const s of dg.stages || []) {
+    const rep = (s.nodes || [])[0];
+    if (rep != null) stageRep.set(s.id, rep);
+  }
+  const endpoint = (id) => aliasFor(stageRep.get(id) ?? id);
   for (const l of dg.links || []) {
     const op = LINK_OP[l.kind] || LINK_OP.data;
     const lbl = esc(pickBilingual(l, 'label', lang));
-    lines.push(`  ${aliasFor(l.from)} ${op}|"${lbl}"| ${aliasFor(l.to)}`);
+    lines.push(`  ${endpoint(l.from)} ${op}|"${lbl}"| ${endpoint(l.to)}`);
   }
   return { def: [...lines, ...clicks].join('\n'), idMap };
 }
