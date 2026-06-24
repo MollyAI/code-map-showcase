@@ -317,6 +317,26 @@
       "generated_at": "2026-06-16T13:23:04",
       "refined": true,
       "description": "VibeApp is an on-device Android app builder powered by a specialized harness for code generation, build validation, and crash-repair loops."
+    },
+    {
+      "slug": "xv6-riscv",
+      "name": "xv6-riscv",
+      "languages": [
+        "c"
+      ],
+      "files": 65,
+      "declarations": 353,
+      "layers": 10,
+      "flows": 6,
+      "edges": 572,
+      "git": {
+        "branch": "riscv",
+        "short": "241bdd0",
+        "commit": "241bdd02c813f084c797e94d70db0563a68115ef"
+      },
+      "generated_at": "2026-06-24T12:37:07",
+      "refined": true,
+      "description": "Xv6 for RISC-V"
     }
   ]
 }
